@@ -1,0 +1,104 @@
+{
+  "name": "Transform_Sneak_Idle",
+  "description": "PSQ变身玩家潜行待机：进入待机时三个动作等概率随机；待机循环不重抽、不切换，离开待机后重新进入再随机。",
+  "priority": 2147483615,
+  "replacementAnimDatas": [
+    {
+      "projectName": "DefaultFemale",
+      "path": "data\\meshes\\actors\\character\\animations\\OpenAnimationReplacer\\PSQ Succubus\\Transform_Sneak_Idle\\_variants_sneakmtidle",
+      "variantMode": 0,
+      "variantStateScope": 1,
+      "blendBetweenVariants": false,
+      "resetRandomOnLoopOrEcho": false,
+      "sharePlayedHistory": false,
+      "variants": [
+        {
+          "filename": "sneakmtidle.hkx",
+          "weight": 1.0
+        },
+        {
+          "filename": "GS393.hkx",
+          "weight": 1.0
+        },
+        {
+          "filename": "FOXANIM13.hkx",
+          "weight": 1.0
+        }
+      ]
+    }
+  ],
+  "replaceOnLoop": false,
+  "conditions": [
+    {
+      "condition": "IsActorBase",
+      "requiredVersion": "1.0.0.0",
+      "Actor base": {
+        "pluginName": "Skyrim.esm",
+        "formID": "7"
+      }
+    },
+    {
+      "condition": "HasMagicEffect",
+      "requiredVersion": "1.0.0.0",
+      "Magic effect": {
+        "pluginName": "PSQ PlayerSuccubusQuest.esm",
+        "formID": "1236"
+      }
+    },
+    {
+      "condition": "OR",
+      "requiredVersion": "1.0.0.0",
+      "negated": true,
+      "Conditions": [
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_IsFlying",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_GroundHover",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_LocalTakeoff",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_LocalLanding",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        }
+      ]
+    }
+  ]
+}

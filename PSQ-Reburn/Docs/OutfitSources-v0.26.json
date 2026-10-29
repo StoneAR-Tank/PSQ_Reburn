@@ -1,0 +1,958 @@
+{
+  "schema": 1,
+  "status": "All other outfits use independent original integrations; only Hiroshi / X Succubus remains bundled",
+  "current_asset_pack": "PSQ Reburn - 变身服装包",
+  "record_owner": "PSQ PlayerSuccubusQuest.esm",
+  "sets": [
+    {
+      "set": 1,
+      "label": "DX Succubus",
+      "original_page_verified": false,
+      "original_plugin": "DX Succubus Armor.esp",
+      "original_3BA_conversion_page": null,
+      "current_records": [
+        {
+          "type": "ARMO",
+          "form_id": "009F83",
+          "editor_id": "PSQOutfit01cuirass",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009F85",
+          "editor_id": "PSQOutfit01boots",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009F87",
+          "editor_id": "PSQOutfit01gloves",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009F89",
+          "editor_id": "PSQOutfit01horns",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009F8B",
+          "editor_id": "PSQOutfit01tail",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009F8D",
+          "editor_id": "PSQOutfit01wings",
+          "models": []
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009F82",
+          "editor_id": "PSQOutfit01cuirassAA",
+          "models": [
+            "PSQ\\Outfits\\Set01\\cuirass_1.nif",
+            "PSQ\\Outfits\\Set01\\cuirass_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009F84",
+          "editor_id": "PSQOutfit01bootsAA",
+          "models": [
+            "PSQ\\Outfits\\Set01\\boots_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009F86",
+          "editor_id": "PSQOutfit01glovesAA",
+          "models": [
+            "PSQ\\Outfits\\Set01\\gloves_1.nif",
+            "PSQ\\Outfits\\Set01\\gloves_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009F88",
+          "editor_id": "PSQOutfit01hornsAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Horns_1.nif",
+            "PSQ\\Outfits\\Set01\\horns_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009F8A",
+          "editor_id": "PSQOutfit01tailAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Tail_1.nif",
+            "PSQ\\Outfits\\Set01\\tail_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009F8C",
+          "editor_id": "PSQOutfit01wingsAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Wings_1.nif",
+            "PSQ\\Outfits\\Set01\\wings_1.nif"
+          ]
+        }
+      ],
+      "parts": [
+        "cuirass",
+        "boots",
+        "gloves",
+        "horns",
+        "tail",
+        "wings"
+      ],
+      "future_policy": "resolve each supported part independently; never assume an original outfit includes PSQ-added wings/horns/tail",
+      "integration": "original detection + PSQ six-part fitted assembly",
+      "runtime_model_root": "PSQ/ExternalOutfits/DX",
+      "missing_source_policy": "reject new selection; saved absent-source configuration uses safe Set08 / Hiroshi models",
+      "standalone_enhanced": true,
+      "legacy_resources_removed": true,
+      "native_required_for_new_selection": true
+    },
+    {
+      "set": 2,
+      "label": "Helena Succubus",
+      "original_page_verified": false,
+      "original_plugin": "Helena Succubus [SE].esp",
+      "original_3BA_conversion_page": null,
+      "current_records": [
+        {
+          "type": "ARMO",
+          "form_id": "009F8F",
+          "editor_id": "PSQOutfit02cuirass",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009F91",
+          "editor_id": "PSQOutfit02boots",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009F93",
+          "editor_id": "PSQOutfit02gloves",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009F95",
+          "editor_id": "PSQOutfit02horns",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009F97",
+          "editor_id": "PSQOutfit02tail",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009F99",
+          "editor_id": "PSQOutfit02wings",
+          "models": []
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009F8E",
+          "editor_id": "PSQOutfit02cuirassAA",
+          "models": [
+            "PSQ\\Outfits\\Set02\\cuirass_1.nif",
+            "PSQ\\Outfits\\Set02\\cuirass_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009F90",
+          "editor_id": "PSQOutfit02bootsAA",
+          "models": [
+            "PSQ\\Outfits\\Set02\\boots_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009F92",
+          "editor_id": "PSQOutfit02glovesAA",
+          "models": [
+            "PSQ\\Outfits\\Set02\\gloves_1.nif",
+            "PSQ\\Outfits\\Set02\\gloves_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009F94",
+          "editor_id": "PSQOutfit02hornsAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Horns_1.nif",
+            "PSQ\\Outfits\\Set02\\horns_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009F96",
+          "editor_id": "PSQOutfit02tailAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Tail_1.nif",
+            "PSQ\\Outfits\\Set02\\tail_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009F98",
+          "editor_id": "PSQOutfit02wingsAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Wings_1.nif",
+            "PSQ\\Outfits\\Set02\\wings_1.nif"
+          ]
+        }
+      ],
+      "parts": [
+        "cuirass",
+        "boots",
+        "gloves",
+        "horns",
+        "tail",
+        "wings"
+      ],
+      "future_policy": "resolve each supported part independently; never assume an original outfit includes PSQ-added wings/horns/tail",
+      "integration": "original detection + PSQ six-part fitted assembly",
+      "runtime_model_root": "PSQ/ExternalOutfits/Helena",
+      "missing_source_policy": "reject new selection; saved absent-source configuration uses safe Set08 / Hiroshi models",
+      "standalone_enhanced": true,
+      "legacy_resources_removed": true,
+      "native_required_for_new_selection": true
+    },
+    {
+      "set": 3,
+      "label": "Dragon Princess",
+      "original_page_verified": false,
+      "original_plugin": "BBP_Dragon_Princess.esp",
+      "original_3BA_conversion_page": null,
+      "current_records": [
+        {
+          "type": "ARMO",
+          "form_id": "009F9B",
+          "editor_id": "PSQOutfit03cuirass",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009F9D",
+          "editor_id": "PSQOutfit03boots",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009F9F",
+          "editor_id": "PSQOutfit03gloves",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FA1",
+          "editor_id": "PSQOutfit03horns",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FA3",
+          "editor_id": "PSQOutfit03tail",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FA5",
+          "editor_id": "PSQOutfit03wings",
+          "models": []
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009F9A",
+          "editor_id": "PSQOutfit03cuirassAA",
+          "models": [
+            "PSQ\\Outfits\\Set03\\cuirass_1.nif",
+            "PSQ\\Outfits\\Set03\\cuirass_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009F9C",
+          "editor_id": "PSQOutfit03bootsAA",
+          "models": [
+            "PSQ\\Outfits\\Set03\\boots_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009F9E",
+          "editor_id": "PSQOutfit03glovesAA",
+          "models": [
+            "PSQ\\Outfits\\Set03\\gloves_1.nif",
+            "PSQ\\Outfits\\Set03\\gloves_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FA0",
+          "editor_id": "PSQOutfit03hornsAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Horns_1.nif",
+            "PSQ\\Outfits\\Set03\\horns_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FA2",
+          "editor_id": "PSQOutfit03tailAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Tail_1.nif",
+            "PSQ\\Outfits\\Set03\\tail_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FA4",
+          "editor_id": "PSQOutfit03wingsAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Wings_1.nif",
+            "PSQ\\Outfits\\Set03\\wings_1.nif"
+          ]
+        }
+      ],
+      "parts": [
+        "cuirass",
+        "boots",
+        "gloves",
+        "horns",
+        "tail",
+        "wings"
+      ],
+      "future_policy": "resolve each supported part independently; never assume an original outfit includes PSQ-added wings/horns/tail",
+      "six_part_adapter": true,
+      "adapter_root": "PSQ/ExternalOutfits/DragonPrincess",
+      "native_required_for_new_selection": true,
+      "legacy_resources_removed": true,
+      "missing_source_policy": "reject new selection; saved absent-source configuration uses safe Set08 / Hiroshi models"
+    },
+    {
+      "set": 4,
+      "label": "Ageha Abyss",
+      "original_page_verified": false,
+      "original_plugin": "C5Kev's Ageha Abyss Armor.esp",
+      "original_3BA_conversion_page": null,
+      "current_records": [
+        {
+          "type": "ARMO",
+          "form_id": "009FA7",
+          "editor_id": "PSQOutfit04cuirass",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FA9",
+          "editor_id": "PSQOutfit04boots",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FAB",
+          "editor_id": "PSQOutfit04gloves",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FAD",
+          "editor_id": "PSQOutfit04horns",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FAF",
+          "editor_id": "PSQOutfit04tail",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FB1",
+          "editor_id": "PSQOutfit04wings",
+          "models": []
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FA6",
+          "editor_id": "PSQOutfit04cuirassAA",
+          "models": [
+            "PSQ\\Outfits\\Set04\\cuirass_1.nif",
+            "PSQ\\Outfits\\Set04\\cuirass_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FA8",
+          "editor_id": "PSQOutfit04bootsAA",
+          "models": [
+            "PSQ\\Outfits\\Set04\\boots_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FAA",
+          "editor_id": "PSQOutfit04glovesAA",
+          "models": [
+            "PSQ\\Outfits\\Set04\\gloves_1.nif",
+            "PSQ\\Outfits\\Set04\\gloves_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FAC",
+          "editor_id": "PSQOutfit04hornsAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Horns_1.nif",
+            "PSQ\\Outfits\\Set04\\horns_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FAE",
+          "editor_id": "PSQOutfit04tailAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Tail_1.nif",
+            "PSQ\\Outfits\\Set04\\tail_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FB0",
+          "editor_id": "PSQOutfit04wingsAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Wings_1.nif",
+            "PSQ\\Outfits\\Set04\\wings_1.nif"
+          ]
+        }
+      ],
+      "parts": [
+        "cuirass",
+        "boots",
+        "gloves",
+        "horns",
+        "tail",
+        "wings"
+      ],
+      "future_policy": "resolve each supported part independently; never assume an original outfit includes PSQ-added wings/horns/tail",
+      "legacy_resources_removed": true,
+      "native_required_for_new_selection": true,
+      "missing_source_policy": "reject new selection; saved absent-source configuration uses safe Set08 / Hiroshi models",
+      "six_part_adapter": true,
+      "adapter_root": "PSQ/ExternalOutfits/Ageha"
+    },
+    {
+      "set": 5,
+      "label": "TERA Succubus",
+      "original_page_verified": false,
+      "original_plugin": "TR9DmRxSS_HR.esp",
+      "original_3BA_conversion_page": null,
+      "current_records": [
+        {
+          "type": "ARMO",
+          "form_id": "009FB3",
+          "editor_id": "PSQOutfit05cuirass",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FB5",
+          "editor_id": "PSQOutfit05boots",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FB7",
+          "editor_id": "PSQOutfit05gloves",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FB9",
+          "editor_id": "PSQOutfit05horns",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FBB",
+          "editor_id": "PSQOutfit05tail",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FBD",
+          "editor_id": "PSQOutfit05wings",
+          "models": []
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FB2",
+          "editor_id": "PSQOutfit05cuirassAA",
+          "models": [
+            "PSQ\\Outfits\\Set05\\cuirass_1.nif",
+            "PSQ\\Outfits\\Set05\\cuirass_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FB4",
+          "editor_id": "PSQOutfit05bootsAA",
+          "models": [
+            "PSQ\\Outfits\\Set05\\boots_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FB6",
+          "editor_id": "PSQOutfit05glovesAA",
+          "models": [
+            "PSQ\\Outfits\\Set05\\gloves_1.nif",
+            "PSQ\\Outfits\\Set05\\gloves_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FB8",
+          "editor_id": "PSQOutfit05hornsAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Horns_1.nif",
+            "PSQ\\Outfits\\Set05\\horns_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FBA",
+          "editor_id": "PSQOutfit05tailAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Tail_1.nif",
+            "PSQ\\Outfits\\Set05\\tail_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FBC",
+          "editor_id": "PSQOutfit05wingsAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Wings_1.nif",
+            "PSQ\\Outfits\\Set05\\wings_1.nif"
+          ]
+        }
+      ],
+      "parts": [
+        "cuirass",
+        "boots",
+        "gloves",
+        "horns",
+        "tail",
+        "wings"
+      ],
+      "future_policy": "resolve each supported part independently; never assume an original outfit includes PSQ-added wings/horns/tail",
+      "six_part_adapter": true,
+      "adapter_root": "PSQ/ExternalOutfits/TERA9DM",
+      "native_required_for_new_selection": true,
+      "legacy_resources_removed": true,
+      "missing_source_policy": "reject new selection; saved absent-source configuration uses safe Set08 / Hiroshi models"
+    },
+    {
+      "set": 6,
+      "label": "Succubus Sister Shinano",
+      "original_page_verified": false,
+      "original_plugin": "gui-SucubusSister Shinano.esp",
+      "original_3BA_conversion_page": null,
+      "current_records": [
+        {
+          "type": "ARMO",
+          "form_id": "009FBF",
+          "editor_id": "PSQOutfit06cuirass",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FC1",
+          "editor_id": "PSQOutfit06boots",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FC3",
+          "editor_id": "PSQOutfit06gloves",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FC5",
+          "editor_id": "PSQOutfit06horns",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FC7",
+          "editor_id": "PSQOutfit06tail",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FC9",
+          "editor_id": "PSQOutfit06wings",
+          "models": []
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FBE",
+          "editor_id": "PSQOutfit06cuirassAA",
+          "models": [
+            "PSQ\\Outfits\\Set04\\cuirass_1.nif",
+            "PSQ\\Outfits\\Set04\\cuirass_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FC0",
+          "editor_id": "PSQOutfit06bootsAA",
+          "models": [
+            "PSQ\\Outfits\\Set04\\boots_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FC2",
+          "editor_id": "PSQOutfit06glovesAA",
+          "models": [
+            "PSQ\\Outfits\\Set04\\gloves_1.nif",
+            "PSQ\\Outfits\\Set04\\gloves_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FC4",
+          "editor_id": "PSQOutfit06hornsAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Horns_1.nif",
+            "PSQ\\Outfits\\Set04\\horns_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FC6",
+          "editor_id": "PSQOutfit06tailAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Tail_1.nif",
+            "PSQ\\Outfits\\Set04\\tail_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FC8",
+          "editor_id": "PSQOutfit06wingsAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Wings_1.nif",
+            "PSQ\\Outfits\\Set04\\wings_1.nif"
+          ]
+        }
+      ],
+      "parts": [
+        "cuirass",
+        "boots",
+        "gloves",
+        "horns",
+        "tail",
+        "wings"
+      ],
+      "future_policy": "resolve each supported part independently; never assume an original outfit includes PSQ-added wings/horns/tail",
+      "integration": "original-only; no legacy Shinano asset fallback",
+      "source_plugin_local_ids": {
+        "body1": "000807",
+        "glove1": "000801",
+        "hat1": "000803",
+        "shoes1": "000805",
+        "tail1": "000809",
+        "skirt1": "00080B",
+        "Strip1": "00080D",
+        "toy": "00080F",
+        "upper1": "000811",
+        "wing1": "000813"
+      },
+      "PSQ_compatibility_slots": {
+        "cuirass": 32,
+        "boots": 37,
+        "gloves": 33,
+        "horns": 44,
+        "tail": 40,
+        "wings": 45
+      },
+      "legacy_resources_removed": true,
+      "missing_source_policy": "reject new selection; saved absent-source configuration uses safe Set08 / Hiroshi models",
+      "native_required_for_new_selection": true
+    },
+    {
+      "set": 7,
+      "label": "Vampire",
+      "original_page_verified": false,
+      "original_plugin": "(SSE) SW vampire.esp",
+      "original_3BA_conversion_page": null,
+      "current_records": [
+        {
+          "type": "ARMO",
+          "form_id": "009FCB",
+          "editor_id": "PSQOutfit07cuirass",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FCD",
+          "editor_id": "PSQOutfit07boots",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FCF",
+          "editor_id": "PSQOutfit07gloves",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FD1",
+          "editor_id": "PSQOutfit07horns",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FD3",
+          "editor_id": "PSQOutfit07tail",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FD5",
+          "editor_id": "PSQOutfit07wings",
+          "models": []
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FCA",
+          "editor_id": "PSQOutfit07cuirassAA",
+          "models": [
+            "PSQ\\Outfits\\Set07\\cuirass_1.nif",
+            "PSQ\\Outfits\\Set07\\cuirass_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FCC",
+          "editor_id": "PSQOutfit07bootsAA",
+          "models": [
+            "PSQ\\Outfits\\Set07\\boots_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FCE",
+          "editor_id": "PSQOutfit07glovesAA",
+          "models": [
+            "PSQ\\Outfits\\Set07\\gloves_1.nif",
+            "PSQ\\Outfits\\Set07\\gloves_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FD0",
+          "editor_id": "PSQOutfit07hornsAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Horns_1.nif",
+            "PSQ\\Outfits\\Set07\\horns_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FD2",
+          "editor_id": "PSQOutfit07tailAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Tail_1.nif",
+            "PSQ\\Outfits\\Set07\\tail_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FD4",
+          "editor_id": "PSQOutfit07wingsAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Wings_1.nif",
+            "PSQ\\Outfits\\Set07\\wings_1.nif"
+          ]
+        }
+      ],
+      "parts": [
+        "cuirass",
+        "boots",
+        "gloves",
+        "horns",
+        "tail",
+        "wings"
+      ],
+      "future_policy": "resolve each supported part independently; never assume an original outfit includes PSQ-added wings/horns/tail",
+      "legacy_resources_removed": true,
+      "native_required_for_new_selection": true,
+      "missing_source_policy": "reject new selection; saved absent-source configuration uses safe Set08 / Hiroshi models",
+      "six_part_adapter": true,
+      "adapter_root": "PSQ/ExternalOutfits/Vampire"
+    },
+    {
+      "set": 8,
+      "label": "X Succubus",
+      "original_page_verified": false,
+      "original_plugin": null,
+      "original_3BA_conversion_page": null,
+      "current_records": [
+        {
+          "type": "ARMO",
+          "form_id": "009FD7",
+          "editor_id": "PSQOutfit08cuirass",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FD9",
+          "editor_id": "PSQOutfit08boots",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FDB",
+          "editor_id": "PSQOutfit08gloves",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FDD",
+          "editor_id": "PSQOutfit08horns",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FDF",
+          "editor_id": "PSQOutfit08tail",
+          "models": []
+        },
+        {
+          "type": "ARMO",
+          "form_id": "009FE1",
+          "editor_id": "PSQOutfit08wings",
+          "models": []
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FD6",
+          "editor_id": "PSQOutfit08cuirassAA",
+          "models": [
+            "PSQ\\Outfits\\Set08\\cuirass_1.nif",
+            "PSQ\\Outfits\\Set08\\cuirass_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FD8",
+          "editor_id": "PSQOutfit08bootsAA",
+          "models": [
+            "PSQ\\Outfits\\Set08\\boots_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FDA",
+          "editor_id": "PSQOutfit08glovesAA",
+          "models": [
+            "PSQ\\Outfits\\Set08\\gloves_1.nif",
+            "PSQ\\Outfits\\Set08\\gloves_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FDC",
+          "editor_id": "PSQOutfit08hornsAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Horns_1.nif",
+            "PSQ\\Outfits\\Set08\\horns_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FDE",
+          "editor_id": "PSQOutfit08tailAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Tail_1.nif",
+            "PSQ\\Outfits\\Set08\\tail_1.nif"
+          ]
+        },
+        {
+          "type": "ARMA",
+          "form_id": "009FE0",
+          "editor_id": "PSQOutfit08wingsAA",
+          "models": [
+            "PSQ\\SuccubusArmor\\Male\\Wings_1.nif",
+            "PSQ\\Outfits\\Set08\\wings_1.nif"
+          ]
+        }
+      ],
+      "parts": [
+        "cuirass",
+        "boots",
+        "gloves",
+        "horns",
+        "tail",
+        "wings"
+      ],
+      "future_policy": "resolve each supported part independently; never assume an original outfit includes PSQ-added wings/horns/tail",
+      "bundled": true,
+      "bundled_label": "Hiroshi / X Succubus"
+    },
+    {
+      "set": 100,
+      "label": "TERA魅魔装甲",
+      "original_plugin": "TeraSuccubusArmor.esp",
+      "body": "CBBE",
+      "independent_from_set": 5,
+      "six_part_adapter": true,
+      "native_required_for_new_selection": true,
+      "default_color": "BP",
+      "horns_wings": "PSQ Set05",
+      "adapter_root": "PSQ/ExternalOutfits/TERAHarry",
+      "ARMO_local_ids": [
+        "00B000",
+        "00B001",
+        "00B002",
+        "00B003",
+        "00B004",
+        "00B005"
+      ],
+      "game_runtime_tested": false,
+      "legacy_resources_removed": true,
+      "missing_source_policy": "reject new selection; saved absent-source configuration uses safe Set08 / Hiroshi models"
+    }
+  ],
+  "bundled_sets": [
+    8
+  ],
+  "external_only_sets": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    100
+  ]
+}

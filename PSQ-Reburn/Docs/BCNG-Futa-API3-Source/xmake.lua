@@ -1,0 +1,879 @@
+set_xmakever("3.1.0")
+
+local version = "1.3.7"
+local psqBridgeVersion = "1.3.7.3"
+set_project("BodyChangeNG")
+set_version(version)
+set_license("GPL-3.0")
+set_languages("c++23")
+set_warnings("allextra")
+set_policy("package.requires_lock", true)
+set_config("skse_xbyak", true)
+set_config("skyrim_se", true)
+set_config("skyrim_ae", true)
+set_config("skyrim_vr", false)
+
+add_rules("mode.debug", "mode.release", "mode.releasedbg")
+add_rules("plugin.vsxmake.autoupdate")
+
+-- CommonLibSSE-NG is an exact, independently vendored upstream stable tag.
+includes("third_party/CommonLibSSE-NG")
+add_requires("nlohmann_json v3.12.0")
+-- FACT records may be zlib-compressed. Static, exact stable dependency; no
+-- extra runtime DLL and no changes to CommonLib's verified package closure.
+add_requires("zlib v1.3.2", {system = false, configs = {shared = false}})
+
+-- Read-only investigation build. Off for normal distribution; no new hooks,
+-- persistent state, material writes, or automatic recovery attempts.
+option("skin_diagnostics")
+    set_default(false)
+    set_showmenu(true)
+    set_description("Record native skin forms and loaded material readiness")
+option_end()
+
+target("BodyChangeNG")
+    set_kind("shared")
+    set_basename("BodyChangeNG")
+    set_targetdir("build/v" .. psqBridgeVersion .. "/windows/x64/$(mode)")
+    set_encodings("utf-8")
+    -- CommonLib's plugin rule emits a Windows .rc file.  Keep the resource
+    -- compiler inherited from XMake's detected MSVC/Windows SDK toolchain so
+    -- the matching SDK include environment (notably winres.h) is preserved.
+
+    add_deps("commonlibsse-ng")
+    add_packages("nlohmann_json", "zlib")
+    add_rules("commonlibsse-ng.plugin", {
+        name = "Body Change NG",
+        author = "compilecraftworks",
+        description = "Standalone BodySlide body and skin manager"
+    })
+
+    add_defines('BODY_CHANGE_NG_VERSION="' .. psqBridgeVersion .. '"')
+    add_defines("BODY_CHANGE_NG_RUNTIME")
+    if has_config("skin_diagnostics") then
+        add_defines("BCNG_SKIN_DIAGNOSTICS")
+    end
+    add_files("src/**.cpp")
+    add_headerfiles("src/**.h")
+    add_files(
+        "third_party/imgui/imgui.cpp",
+        "third_party/imgui/imgui_draw.cpp",
+        "third_party/imgui/imgui_tables.cpp",
+        "third_party/imgui/imgui_widgets.cpp",
+        "third_party/imgui/misc/cpp/imgui_stdlib.cpp",
+        "third_party/imgui/backends/imgui_impl_dx11.cpp",
+        "third_party/imgui/backends/imgui_impl_win32.cpp",
+        "third_party/pugixml/src/pugixml.cpp"
+    )
+    add_includedirs("src", "third_party/imgui", "third_party/imgui/backends", "third_party/pugixml/src")
+    add_syslinks("d3d11", "dxgi", "d3dcompiler", "windowscodecs", "ole32", "user32", "bcrypt")
+    set_pcxxheader("src/PCH.h")
+
+
+target("BodyChangeNGBodyTextureRecoveryTests")
+    set_default(false)
+    set_kind("binary")
+    set_basename("BodyChangeNGBodyTextureRecoveryChecks")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_includedirs("src")
+    add_files("tests/BodyTextureRecoveryTests.cpp")
+    on_load(function (target)
+        local generated = path.join(target:autogendir(), "body-texture-recovery")
+        target:add("includedirs", generated)
+        local function extract(file, first, last, output)
+            local source = io.readfile(file)
+            local begin = assert(source:find(first, 1, true))
+            local finish = assert(source:find(last, begin + #first, true))
+            local destination = path.join(generated, output)
+            local content = source:sub(begin, finish - 1)
+            if not os.isfile(destination) or io.readfile(destination) ~= content then
+                io.writefile(destination, content)
+            end
+        end
+        extract("src/BodyChangeNG/NativeSkinBackend.cpp", "    struct BodyTextureObservation final", "    void VerifyBodyTexturesNow(", "body_texture_observer.inc")
+        extract("src/BodyChangeNG/NativeSkinBackend.cpp", "    void VerifyBodyTexturesNow(", "    [[nodiscard]] bool CanRebaseFromRsv(", "body_texture_verify.inc")
+        extract("src/BodyChangeNG/NativeSkinBackend.cpp", "    std::optional<bool> LiveStateMatches(", "    void QueueVerifyBodyTextures(", "body_texture_live.inc")
+        extract("src/BodyChangeNG/ActorRegistry.cpp", "    bool ActorRegistry::NeedsSkinApply(", "    void ActorRegistry::MarkBodyApplied(", "body_texture_registry.inc")
+    end)
+
+target("BodyChangeNGCache")
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tools")
+    set_encodings("utf-8")
+    add_files("tools/cache/main.cpp", "tools/cache/CacheCompaction.cpp")
+    add_syslinks("bcrypt", "ole32", "uuid", "user32")
+
+target("BodyChangeNGCacheMaintenanceTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_includedirs("src", "tools/cache")
+    add_files("tests/CacheMaintenanceTests.cpp", "tools/cache/CacheCompaction.cpp")
+    add_syslinks("bcrypt")
+
+target("BodyChangeNGRemovalPreparationTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/RemovalPreparationTests.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGFactionEditorIDTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_includedirs("src")
+    add_packages("zlib")
+    add_files("tests/FactionEditorIDTests.cpp", "src/BodyChangeNG/FactionEditorIDs.cpp")
+    on_load(function (target)
+        local source = io.readfile("src/BodyChangeNG/UI.cpp")
+        local parts = {}
+        for _, signature in ipairs({"    struct DistributionTargetOption", "    struct DistributionTargetSnapshot",
+            "    void CompleteFactionEditorIDs("}) do
+            local first = assert(source:find(signature, 1, true))
+            local suffix = signature:find("struct", 1, true) and "\n    };" or "\n    }"
+            local last = assert(source:find(suffix, first, true)) + #suffix - 1
+            table.insert(parts, source:sub(first, last))
+        end
+        local generated = path.join(target:autogendir(), "faction-editor-ids")
+        os.mkdir(generated)
+        local file = path.join(generated, "FactionEditorUI.inl")
+        local contents = table.concat(parts, "\n\n")
+        if not os.isfile(file) or io.readfile(file) ~= contents then io.writefile(file, contents) end
+        target:add("includedirs", generated)
+    end)
+
+target("BodyChangeNGDistributionTargetReadTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_includedirs("src")
+    add_files("tests/DistributionTargetReadTests.cpp")
+
+target("BodyChangeNGDistributionEditorTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_includedirs("src")
+    add_files("tests/DistributionEditorTests.cpp")
+
+target("BodyChangeNGDistributionEditorUITests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_defines("IMGUI_ENABLE_TEST_ENGINE")
+    add_packages("nlohmann_json")
+    add_includedirs("src", "third_party/imgui")
+    add_files("tests/DistributionEditorUITests.cpp", "third_party/imgui/imgui.cpp",
+        "third_party/imgui/imgui_draw.cpp", "third_party/imgui/imgui_tables.cpp",
+        "third_party/imgui/imgui_widgets.cpp", "third_party/imgui/misc/cpp/imgui_stdlib.cpp")
+    on_load(function (target)
+        local source = io.readfile("src/BodyChangeNG/UI.cpp")
+        local functions = {}
+        for _, signature in ipairs({
+            "    [[nodiscard]] bool RightAlignedButton(", "    [[nodiscard]] bool EscapePressed()",
+            "    void ResetDistributionEditorAuxiliary()",
+            "    [[nodiscard]] bcn::DistributionRule NewDistributionRule()",
+            "    [[nodiscard]] const char* DistributionPoolLabel(",
+            "    [[nodiscard]] std::size_t RuleDistributionPoolCount(",
+            "    void OpenDistributionEditorFromCatalog()", "    void OpenDistributionConditions(",
+            "    template <class Refresh, class SelectAll>",
+            "    [[nodiscard]] const char* TargetLabel(", "    [[nodiscard]] const char* DistributionScopeLabel(",
+            "    void DrawDistributionTargetSearch()", "    [[nodiscard]] bool DistributionTargetCombo(",
+            "    [[nodiscard]] bool DistributionFormTargetCombo(", "    void NotifyDistributionEditor(",
+            "    [[nodiscard]] bool DistributionScopeCombo(", "    [[nodiscard]] bool SaveActiveDistributionRules()",
+            "    void DiscardDistributionDraft()", "    void DrawDistributionItemPopup()",
+            "    void DrawDistributionPopup()"}) do
+            local first = assert(source:find(signature, 1, true))
+            local last = assert(source:find("\n    }", first, true)) + #"\n    }" - 1
+            table.insert(functions, source:sub(first, last))
+        end
+        local generated = path.join(target:autogendir(), "distribution-editor-ui")
+        os.mkdir(generated)
+        local file = path.join(generated, "DistributionEditorUI.inl")
+        local contents = table.concat(functions, "\n\n") .. "\n"
+        if not os.isfile(file) or io.readfile(file) ~= contents then io.writefile(file, contents) end
+        source = io.readfile("src/BodyChangeNG/NativeImGuiHost.cpp")
+        local first = assert(source:find("    [[nodiscard]] bool CurrentEditableTextInputActive()", 1, true))
+        local last = assert(source:find("\n    }", first, true)) + #"\n    }" - 1
+        local typingFile = path.join(generated, "DistributionTypingUI.inl")
+        local typing = source:sub(first, last) .. "\n"
+        if not os.isfile(typingFile) or io.readfile(typingFile) ~= typing then io.writefile(typingFile, typing) end
+        target:add("includedirs", generated)
+    end)
+
+target("BodyChangeNGDistributionAuthoringTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_packages("nlohmann_json")
+    add_includedirs("src")
+    add_files("tests/DistributionAuthoringTests.cpp")
+    on_load(function (target)
+        local source = io.readfile("src/BodyChangeNG/DistributionAuthoringRuntime.cpp")
+        local functions = {}
+        for _, signature in ipairs({"    bool ResolveNamedTarget(", "    std::vector<DistributionRule> ReadableRules("}) do
+            local first = assert(source:find(signature, 1, true))
+            local last = assert(source:find("\n    }", first, true)) + #"\n    }" - 1
+            table.insert(functions, source:sub(first, last))
+        end
+        local generated = path.join(target:autogendir(), "distribution-authoring")
+        os.mkdir(generated)
+        local file = path.join(generated, "DistributionAuthoringRuntime.inl")
+        local content = table.concat(functions, "\n\n") .. "\n"
+        if not os.isfile(file) or io.readfile(file) ~= content then io.writefile(file, content) end
+        target:add("includedirs", generated)
+    end)
+
+target("BodyChangeNGDistributionPersistenceTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_packages("nlohmann_json")
+    add_includedirs("src")
+    add_files("tests/DistributionPersistenceTests.cpp")
+    on_load(function (target)
+        local source = io.readfile("src/BodyChangeNG/Distribution.cpp")
+        local start = assert(source:find("    [[nodiscard]] bool WriteDistributionFile(", 1, true))
+        local finish = assert(source:find("\n    }", start, true)) + #"\n    }" - 1
+        local schema = assert(source:match("constexpr auto kSchemaVersion = %d+;"))
+        local generated = path.join(target:autogendir(), "distribution-persistence")
+        os.mkdir(generated)
+        local file = path.join(generated, "DistributionWriter.inl")
+        local contents = schema .. "\n" .. source:sub(start, finish)
+        if not os.isfile(file) or io.readfile(file) ~= contents then io.writefile(file, contents) end
+        target:add("includedirs", generated)
+    end)
+
+target("BodyChangeNGCatalogRefreshTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/CatalogRefreshTests.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGDistributionLifecycleTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/DistributionLifecycleTests.cpp")
+    add_includedirs("src")
+    on_load(function (target)
+        local generated = path.join(target:autogendir(), "distribution-lifecycle")
+        target:add("includedirs", generated)
+        local source = io.readfile("src/BodyChangeNG/UI.cpp")
+        local functions = {}
+        for _, name in ipairs({"ResetDistributionEditor", "ClearDistributionCatalogSelection",
+                               "ResetDistributionSelectionSession", "DiscardDistributionDraft"}) do
+            local start = assert(source:find("    void " .. name .. "()", 1, true))
+            local finish = assert(source:find("\n    }", start, true)) + #"\n    }" - 1
+            table.insert(functions, source:sub(start, finish))
+        end
+        os.mkdir(generated)
+        local file = path.join(generated, "DistributionLifecycleFunctions.inl")
+        local content = table.concat(functions, "\n\n") .. "\n"
+        if not os.isfile(file) or io.readfile(file) ~= content then io.writefile(file, content) end
+        local queue = io.readfile("src/BodyChangeNG/FrameTasks.cpp")
+        local start = assert(queue:find("    bool CurrentWorkAllowed()", 1, true))
+        local finish = assert(queue:find("\n    }", start, true)) + #"\n    }" - 1
+        file = path.join(generated, "MutationCheckpoint.inl")
+        content = queue:sub(start, finish) .. "\n"
+        if not os.isfile(file) or io.readfile(file) ~= content then io.writefile(file, content) end
+    end)
+
+target("BodyChangeNGPopupPlacementTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_includedirs("src", "third_party/imgui")
+    add_files("tests/PopupPlacementTests.cpp", "third_party/imgui/imgui.cpp",
+        "third_party/imgui/imgui_draw.cpp", "third_party/imgui/imgui_tables.cpp",
+        "third_party/imgui/imgui_widgets.cpp")
+
+target("BodyChangeNGNativeAddonPolicyTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/NativeAddonPolicyTests.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGHotkeyTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/HotkeyTests.cpp", "src/BodyChangeNG/Hotkey.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGCatalogPerformanceProbe")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    add_includedirs("src", "third_party/imgui")
+    add_files("tests/CatalogPerformanceProbe.cpp", "third_party/imgui/imgui.cpp",
+        "third_party/imgui/imgui_draw.cpp", "third_party/imgui/imgui_tables.cpp",
+        "third_party/imgui/imgui_widgets.cpp")
+
+target("BodyChangeNGMouseInputReplayTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    add_includedirs("src", "third_party/imgui")
+    add_files("tests/MouseInputReplayTests.cpp", "third_party/imgui/imgui.cpp",
+        "third_party/imgui/imgui_draw.cpp", "third_party/imgui/imgui_tables.cpp",
+        "third_party/imgui/imgui_widgets.cpp")
+
+target("BodyChangeNGWheelFilterTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_includedirs("src")
+    add_files("tests/WheelFilterTests.cpp")
+    on_load(function (target)
+        local source = io.readfile("src/BodyChangeNG/TextInputFilter.cpp")
+        local first = assert(source:find("    constexpr auto kRightMouseButton =", 1, true))
+        local last = assert(source:find("    void HookedPollInputDevices(", first, true))
+        local generated = path.join(target:autogendir(), "wheel-filter")
+        os.mkdir(generated)
+        target:add("includedirs", generated)
+        local file = path.join(generated, "wheel_filter_production.inc")
+        local content = source:sub(first, last - 1)
+        if not os.isfile(file) or io.readfile(file) ~= content then io.writefile(file, content) end
+    end)
+
+target("BodyChangeNGPresetCatalogTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/PresetCatalogTests.cpp", "src/BodyChangeNG/PresetCatalog.cpp", "src/BodyChangeNG/CatalogRoots.cpp",
+        "src/BodyChangeNG/BodyFamilyRules.cpp", "third_party/pugixml/src/pugixml.cpp")
+    add_includedirs("src", "third_party/pugixml/src")
+
+target("BodyChangeNGDistributionPresetTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/DistributionPresetTests.cpp", "src/BodyChangeNG/PresetCatalog.cpp",
+        "src/BodyChangeNG/CatalogRoots.cpp", "src/BodyChangeNG/BodyFamilyRules.cpp",
+        "third_party/pugixml/src/pugixml.cpp")
+    add_includedirs("src", "third_party/pugixml/src")
+    on_load(function (target)
+        local generated = path.join(target:autogendir(), "distribution-presets")
+        target:add("includedirs", generated)
+        local function extract(file, firstMarker, lastMarker, name)
+            local source = io.readfile(file)
+            local first = assert(source:find(firstMarker, 1, true))
+            local last = assert(source:find(lastMarker, first, true))
+            local content = source:sub(first, last - 1)
+            local output = path.join(generated, name)
+            if not os.isfile(output) or io.readfile(output) ~= content then io.writefile(output, content) end
+        end
+        extract("src/BodyChangeNG/UI.cpp", "    [[nodiscard]] bcn::body_family::Mask DistributionCatalogFamily(",
+            "    [[nodiscard]] RE::Actor* SelectedActor()", "distribution_body_items.inc")
+        extract("src/BodyChangeNG/Distribution.cpp", "    [[nodiscard]] std::vector<std::string> CompatiblePresetPoolIds(",
+            "    [[nodiscard]] std::vector<std::string> CompatiblePresetPool(", "distribution_preset_pool.inc")
+    end)
+
+target("BodyChangeNGUbeMorphTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/UbeMorphTests.cpp", "src/BodyChangeNG/PresetCatalog.cpp", "src/BodyChangeNG/CatalogRoots.cpp",
+        "src/BodyChangeNG/BodyFamilyRules.cpp", "third_party/pugixml/src/pugixml.cpp")
+    add_includedirs("src", "third_party/pugixml/src")
+
+target("BodyChangeNGAssetCatalogTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_deps("commonlibsse-ng")
+    add_packages("nlohmann_json")
+    add_files(
+        "tests/AssetCatalogTests.cpp",
+        "src/BodyChangeNG/BodyFamily.cpp",
+        "src/BodyChangeNG/BodyFamilyRules.cpp",
+        "src/BodyChangeNG/CatalogRoots.cpp",
+        "src/BodyChangeNG/Hotkey.cpp",
+        "src/BodyChangeNG/PlayerTint.cpp",
+        "src/BodyChangeNG/FrameTasks.cpp",
+        "src/BodyChangeNG/RuntimeAssetCache.cpp",
+        "src/BodyChangeNG/Settings.cpp",
+        "src/BodyChangeNG/SlaveTatsCatalog.cpp",
+        "src/BodyChangeNG/SkinProfiles.cpp",
+        "src/BodyChangeNG/SkinApplicationPlan.cpp"
+    )
+    add_includedirs("src")
+    set_pcxxheader("src/PCH.h")
+
+target("BodyChangeNGSkinArchitectureTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/SkinArchitectureTests.cpp", "src/BodyChangeNG/SkinApplicationPlan.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGFaceSkinPolicyTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/FaceSkinPolicyTests.cpp")
+    add_includedirs("src")
+    on_load(function (target)
+        local generated = path.join(target:autogendir(), "face-node")
+        target:add("includedirs", generated)
+        local source = io.readfile("src/BodyChangeNG/FaceSkinNodeAccess.cpp")
+        local first = assert(source:find("    std::string ResolveNodeName(", 1, true))
+        local last = assert(source:find("    NodeAccess NodeAccess::Connect()", first, true))
+        local output = path.join(generated, "face_resolve_node.inc")
+        local content = source:sub(first, last - 1)
+        if not os.isfile(output) or io.readfile(output) ~= content then io.writefile(output, content) end
+    end)
+
+target("BodyChangeNGFacePreviewTransactionTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    add_files("tests/FacePreviewTransactionTests.cpp")
+    add_includedirs("src")
+    on_load(function (target)
+        local generated = path.join(target:autogendir(), "face-preview-transaction")
+        target:add("includedirs", generated)
+        local function extract(file, first, last, output)
+            local source = io.readfile(file):gsub("\r\n", "\n")
+            local begin = assert(source:find(first, 1, true))
+            local finish = last and assert(source:find(last, begin + #first, true)) or (#source + 1)
+            local content = source:sub(begin, finish - 1)
+            local dest = path.join(generated, output)
+            if not os.isfile(dest) or io.readfile(dest) ~= content then io.writefile(dest, content) end
+        end
+        extract("src/BodyChangeNG/FacePreviewTransaction.cpp", "namespace\n{", nil, "preview_transaction.inc")
+        extract("src/BodyChangeNG/FaceSkinNodeAccess.h", "    struct SavedKey", "    // Owned name", "preview_saved_key.inc")
+        extract("src/BodyChangeNG/FaceSkinNodeAccess.cpp", "    bool NodeAccess::ReadSaved(", nil, "preview_key_access.inc")
+        -- Compile the pinned upstream accessor/relocation body with a fake
+        -- loaded runtime, not a duplicated BCNG offset-selection formula.
+        local relocation = io.readfile("third_party/CommonLibSSE-NG/include/REL/Relocation.h"):gsub("\r\n", "\n")
+        local first = assert(relocation:find("\ttemplate <class T, class This>\n\t[[nodiscard]] inline T& RelocateMemberIfNewer", 1, true))
+        local last = assert(relocation:find("\n\t}", first, true))
+        io.writefile(path.join(generated, "save_relocate.inc"), relocation:sub(first, last + 3))
+        extract("third_party/CommonLibSSE-NG/include/REL/RuntimeDataAccessors.h",
+            "#define RUNTIME_DATA_ACCESSOR_VERSIONED_EX", "// Standard name variants", "save_accessor_macro.inc")
+        extract("third_party/CommonLibSSE-NG/include/REL/RuntimeDataAccessors.h",
+            "#define RUNTIME_DATA_ACCESSOR_VERSIONED(StructType", "// Generates a GetXXX() accessor for a field", "save_accessor_alias.inc")
+        local manager = io.readfile("third_party/CommonLibSSE-NG/include/RE/B/BGSSaveLoadManager.h")
+        local accessor = assert(manager:match("[^\r\n]*RUNTIME_DATA_ACCESSOR_VERSIONED%(RUNTIME_DATA,[^\r\n]+"))
+        io.writefile(path.join(generated, "save_manager_accessor.inc"), accessor)
+    end)
+
+target("BodyChangeNGFacePreviewReplayTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    add_files("tests/FacePreviewReplayTests.cpp")
+    add_includedirs("src")
+    on_load(function (target)
+        local generated = path.join(target:autogendir(), "face-preview-replay")
+        target:add("includedirs", generated)
+        local source = io.readfile("src/BodyChangeNG/FaceSkinOverrides.cpp")
+        for _, item in ipairs({
+            {"    struct PreviewObservation", "    static_assert(offsetof", "preview_state.inc"},
+            {"    bool CurrentPreview(", "    void CheckRebuild(", "preview_observer.inc"}
+        }) do
+            local first = assert(source:find(item[1], 1, true))
+            local last = assert(source:find(item[2], first + #item[1], true))
+            local file = path.join(generated, item[3])
+            local content = source:sub(first, last - 1)
+            if not os.isfile(file) or io.readfile(file) ~= content then io.writefile(file, content) end
+        end
+    end)
+
+for _, probeName in ipairs({"BodyChangeNGFailurePathTests", "BodyChangeNGOfflineMemoryProbe"}) do
+target(probeName)
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    add_files("tests/FailurePathTests.cpp")
+    add_includedirs("src")
+    if probeName == "BodyChangeNGOfflineMemoryProbe" then
+        add_defines("BCNG_OFFLINE_MEMORY_PROBE")
+        set_targetdir("build/v" .. version .. "/trials/offline-memory")
+    end
+    on_load(function (target)
+        -- Compile exact production function bodies with fake VM/allocator
+        -- dependencies. Generated includes are diagnostic build artifacts.
+        local generated = path.join(target:autogendir(), "failure-paths")
+        target:add("includedirs", generated)
+        local function extract(file, first, last, output)
+            local source = io.readfile(file)
+            local begin = assert(source:find(first, 1, true))
+            local finish = assert(source:find(last, begin + #first, true))
+            io.writefile(path.join(generated, output), source:sub(begin, finish - 1))
+        end
+        extract("src/BodyChangeNG/FaceSkinOverrides.cpp", "    class Callback final", "    struct Batch :", "face_callback.inc")
+        extract("src/BodyChangeNG/FaceSkinOverrides.cpp", "        template<class... Args>", "        void Read(bool saved", "face_call.inc")
+        extract("src/BodyChangeNG/FaceSkinOverrides.cpp", "        void Finish(bool success)", "        void RollbackChannel()", "face_finish.inc")
+        extract("src/BodyChangeNG/NativeSkinBackend.cpp", "    template <class T>", "    [[nodiscard]] RE::BGSTextureSet* CurrentFaceTexture", "duplicate_form.inc")
+        extract("src/BodyChangeNG/NativeSkinBackend.cpp", "    [[nodiscard]] std::optional<TextureBinding> CloneTexture(", "    [[nodiscard]] std::string NativeFormPath", "clone_texture.inc")
+        extract("src/BodyChangeNG/NativeSkinBackend.cpp", "    [[nodiscard]] std::optional<TextureBinding> CreateModelTexture(", "    [[nodiscard]] bool SetModelAlternateTextures", "model_texture.inc")
+        extract("src/BodyChangeNG/NativeSkinBackend.cpp", "    struct PendingModelTexture final", "    struct ModelArrayHeap", "pending_model.inc")
+        extract("src/BodyChangeNG/NativeSkinBackend.cpp", "    [[nodiscard]] bool SetModelAlternateTextures", "    [[nodiscard]] bool MaterializeEmbeddedSkinAtlases", "model_array.inc")
+        extract("src/BodyChangeNG/NativeSkinBackend.cpp", "    bool RestoreOwnedPointers(BaseInstance& instance)", "    std::shared_ptr<AppliedSnapshot> CaptureApplied", "restore_owned.inc")
+        extract("src/BodyChangeNG/NativeSkinBackend.cpp", "    [[nodiscard]] std::optional<BaseInstance> BuildInstance(", "    [[nodiscard]] bool RequestStillCurrent(", "build_instance.inc")
+    end)
+end
+
+target("BodyChangeNGAppearanceIntegrationTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/AppearanceIntegrationTests.cpp")
+    add_includedirs("src")
+    on_load(function (target)
+        local generated = path.join(target:autogendir(), "appearance-integration")
+        target:add("includedirs", generated)
+        os.mkdir(generated)
+        local function extract(file, signature, output)
+            local source = io.readfile(file)
+            local start = assert(source:find(signature, 1, true))
+            local finish = assert(source:find("\n    }", start, true)) + #"\n    }" - 1
+            local destination = path.join(generated, output)
+            local content = source:sub(start, finish)
+            if not os.isfile(destination) or io.readfile(destination) ~= content then
+                io.writefile(destination, content)
+            end
+        end
+        extract("src/BodyChangeNG/RaceMenuOverlay.cpp", "    [[nodiscard]] bcn::overlay::ApplyResult ApplyNow(", "overlay_apply.inc")
+        extract("src/BodyChangeNG/RaceMenuOverlay.cpp", "    void QueueReapplySaved(", "overlay_reapply.inc")
+        extract("src/BodyChangeNG/FrameTasks.cpp", "    void Pump(", "frame_pump.inc")
+        extract("src/BodyChangeNG/RaceMenuBodyMorph.cpp", "    std::optional<bool> LiveBodyChangeStateMatches(", "body_live.inc")
+        extract("src/BodyChangeNG/RaceMenuBodyMorph.cpp", "    void QueueVerifySavedBody(", "body_verify.inc")
+    end)
+
+target("BodyChangeNGAppearanceLifecycleTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/AppearanceLifecycleTests.cpp")
+    add_includedirs("src")
+    on_load(function (target)
+        local generated = path.join(target:autogendir(), "appearance-lifecycle")
+        target:add("includedirs", generated)
+        os.mkdir(generated)
+        local function extract(file, signature, output)
+            local source = io.readfile(file)
+            local start = assert(source:find(signature, 1, true))
+            local closing = "\n" .. signature:match("^ *") .. "}"
+            local finish = assert(source:find(closing, start, true)) + #closing - 1
+            local destination = path.join(generated, output)
+            local content = source:sub(start, finish)
+            if not os.isfile(destination) or io.readfile(destination) ~= content then
+                io.writefile(destination, content)
+            end
+        end
+        extract("src/BodyChangeNG/FrameTasks.cpp", "    void Pump(", "frame_pump.inc")
+        extract("src/BodyChangeNG/RaceMenuBodyMorph.cpp", "    void QueueActorTask(", "body_queue_actor.inc")
+        extract("src/BodyChangeNG/RaceMenuBodyMorph.cpp", "    void ApplyVisibleMorphs(", "body_visual_refresh.inc")
+        extract("src/BodyChangeNG/RaceMenuBodyMorph.cpp", "    void ClearPreviewNow(", "body_clear_preview.inc")
+        extract("src/BodyChangeNG/RaceMenuBodyMorph.cpp", "    void QueueCancelPreview()", "body_cancel_preview.inc")
+        extract("src/BodyChangeNG/RaceMenuBodyMorph.cpp", "    void QueueClearInactivePreview(", "body_clear_inactive.inc")
+        extract("src/BodyChangeNG/RaceMenuBodyMorph.cpp", "    void QueueClearBodyChangeMorphs(", "body_clear_default.inc")
+        extract("src/BodyChangeNG/RaceMenuBodyMorph.cpp", "    void QueueReapplyCurrent(", "body_reapply.inc")
+        extract("src/BodyChangeNG/OutfitRefit.cpp", "    void OutfitRefit::ProcessActor(", "outfit_process.inc")
+        extract("src/BodyChangeNG/RaceMenuOverlay.cpp", "    void QueueCancelPreviews(", "overlay_cancel.inc")
+        extract("src/BodyChangeNG/RaceMenuOverlay.cpp", "    void QueueReapplySaved(", "overlay_reapply.inc")
+        extract("src/BodyChangeNG/ActorEvents.cpp", "        void ReapplyPlayerSelectionsAfterRaceMenu(", "player_restore.inc")
+    end)
+
+target("BodyChangeNGPreviewRestoreTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/PreviewRestoreTests.cpp")
+    add_includedirs("src")
+    on_load(function (target)
+        local generated = path.join(target:autogendir(), "preview-restore")
+        target:add("includedirs", generated)
+        local function extract(file, first, last, output)
+            local source = io.readfile(file)
+            local begin = assert(source:find(first, 1, true))
+            local finish = assert(source:find(last, begin + #first, true))
+            local destination = path.join(generated, output)
+            local content = source:sub(begin, finish - 1)
+            if not os.isfile(destination) or io.readfile(destination) ~= content then
+                io.writefile(destination, content)
+            end
+        end
+        extract("src/BodyChangeNG/ActorRegistry.cpp", "    void ActorRegistry::ForgetTransient(", "    void ActorRegistry::Revert(", "registry_forget.inc")
+        extract("src/BodyChangeNG/RaceMenuOverlay.cpp", "    void RemoveDetachedPreviewValue(", "    [[nodiscard]] bcn::overlay::ApplyResult RemoveOneNow(", "overlay_cleanup.inc")
+        extract("src/BodyChangeNG/RaceMenuOverlay.cpp", "    void ForgetActorState(", "    void ResetSessionState(", "overlay_forget.inc")
+        extract("src/BodyChangeNG/NativeSkinBackend.cpp", "    void CompleteMutation(", "    [[nodiscard]] std::optional<BaseInstance> BuildInstance(", "native_complete.inc")
+        extract("src/BodyChangeNG/NativeSkinBackend.cpp", "    void ClearNow(", "    [[nodiscard]] std::vector<bcn::runtime_assets::TexturePreparation> Preparations(", "native_clear.inc")
+        extract("src/BodyChangeNG/NativeSkinBackend.cpp", "    std::optional<std::uint32_t> SourceBodyFamily(", "    std::optional<std::string> CurrentProfileId(", "native_sourcefamily.inc")
+        extract("src/BodyChangeNG/SkinApplication.cpp", "    ApplyResult QueueClear(", "    std::optional<std::string> CurrentProfileId(", "skin_clear.inc")
+        extract("src/BodyChangeNG/SkinApplication.cpp", "    ApplyResult QueueApply(", "    ApplyResult QueueClear(", "skin_apply.inc")
+    end)
+
+target("BodyChangeNGFormDeleteGuardProbe")
+    set_default(false)
+    set_kind("shared")
+    set_targetdir("build/v" .. version .. "/trials/form-delete-probe")
+    set_encodings("utf-8")
+    add_defines("BODY_CHANGE_NG_GUARD_PROBE", "NOMINMAX", "WIN32_LEAN_AND_MEAN")
+    add_files("tests/FormDeleteGuardProbeBridge.cpp", "src/BodyChangeNG/RaceMenuFormDeleteGuardCore.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGFormDeletePolicyTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/FormDeletePolicyTests.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGRaceMenuExtraDataTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_defines("BODY_CHANGE_NG_EXTRA_DATA_TEST", "NOMINMAX", "WIN32_LEAN_AND_MEAN")
+    add_files("tests/RaceMenuExtraDataTests.cpp", "src/BodyChangeNG/RaceMenuExtraDataGuard.cpp")
+    add_includedirs("src")
+    add_syslinks("bcrypt")
+
+target("BodyChangeNGCodePatternTests")
+    set_default(false)
+    set_kind("binary")
+    set_rundir(os.projectdir()) -- this test also guards source-level queue routing
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/CodePatternTests.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGTexturePathIsolationTests")
+    set_default(false)
+    set_kind("binary")
+    set_rundir(os.projectdir()) -- this test inspects repository source files
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/TexturePathIsolationTests.cpp")
+
+target("BodyChangeNGOverlayPolicyTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_includedirs("src")
+    add_files("tests/OverlayPolicyTests.cpp")
+
+target("BodyChangeNGSkinSessionStateTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/SkinSessionStateTests.cpp", "src/BodyChangeNG/SkinSessionState.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGBodyFamilyTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/BodyFamilyTests.cpp", "src/BodyChangeNG/BodyFamilyRules.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGRenderedOutfitTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/RenderedOutfitTests.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGOutfitRefitRulesTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_packages("nlohmann_json")
+    add_files("tests/OutfitRefitRulesTests.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGOBodyNumericTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_includedirs("src")
+    add_files("tests/OBodyNumericTests.cpp", "src/BodyChangeNG/PresetCatalog.cpp",
+        "src/BodyChangeNG/CatalogRoots.cpp", "src/BodyChangeNG/BodyFamilyRules.cpp",
+        "third_party/pugixml/src/pugixml.cpp")
+    add_includedirs("third_party/pugixml/src")
+
+target("BodyChangeNGBodyMorphKeyTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    add_includedirs("src")
+    add_files("tests/BodyMorphKeyTests.cpp")
+
+target("BodyChangeNGUbeGenitalTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_includedirs("src")
+    add_files("tests/UbeGenitalTests.cpp")
+
+target("BodyChangeNGUbeNippleTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_includedirs("src")
+    add_files("tests/UbeNippleTests.cpp")
+
+target("BodyChangeNGAsyncWorkGuardTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/AsyncWorkGuardTests.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGFrameTaskQueueTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/FrameTaskQueueTests.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGActorStateTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/ActorStateTests.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGGenitalPersistenceTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/GenitalPersistenceTests.cpp", "src/BodyChangeNG/SkinSessionState.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGRuntimeLayoutTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_deps("commonlibsse-ng")
+    add_packages("nlohmann_json")
+    add_files("tests/RuntimeLayoutTests.cpp")
+    add_includedirs("src")
+    set_pcxxheader("src/PCH.h")
+
+target("BodyChangeNGPathMigrationTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_files("tests/PathMigrationTests.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGRaceMenuPresetMigrationTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_packages("nlohmann_json")
+    add_files("tests/RaceMenuPresetMigrationTests.cpp", "src/BodyChangeNG/RaceMenuPresetMigrationRules.cpp")
+    add_includedirs("src")
+
+target("BodyChangeNGBodyMorphAbiTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_deps("commonlibsse-ng")
+    add_packages("nlohmann_json")
+    add_includedirs("src")
+    add_files("tests/BodyMorphAbiTests.cpp")
+    set_pcxxheader("src/PCH.h")
+    on_load(function (target)
+        local source = io.readfile("src/BodyChangeNG/RaceMenuBodyMorph.cpp")
+        local first = assert(source:find("    namespace skee", 1, true))
+        local last = assert(source:find("    constexpr auto kCommittedKey", first, true))
+        local generated = path.join(target:autogendir(), "body-morph-abi")
+        os.mkdir(generated)
+        local destination = path.join(generated, "body_morph_abi.inc")
+        local contents = source:sub(first, last - 1)
+        if not os.isfile(destination) or io.readfile(destination) ~= contents then io.writefile(destination, contents) end
+        target:add("includedirs", generated)
+    end)
+
+
+target("BodyChangeNGBodySliderEditTests")
+    set_default(false)
+    set_kind("binary")
+    set_targetdir("build/v" .. version .. "/tests")
+    set_encodings("utf-8")
+    add_includedirs("src")
+    add_files("tests/BodySliderEditTests.cpp")
+    on_load(function (target)
+        local source = io.readfile("src/BodyChangeNG/RaceMenuBodyMorph.cpp")
+        local generated = path.join(target:autogendir(), "body-editor")
+        os.mkdir(generated)
+        target:add("includedirs", generated)
+        local function write(name, contents)
+            local destination = path.join(generated, name)
+            if not os.isfile(destination) or io.readfile(destination) ~= contents then io.writefile(destination, contents) end
+        end
+        local function section(first, last, name)
+            local a = assert(source:find(first, 1, true))
+            local b = assert(source:find(last, a + #first, true))
+            write(name, source:sub(a, b - 1))
+        end
+        local function func(signature, name)
+            local a = assert(source:find(signature, 1, true))
+            local opening = assert(source:find("{", a, true))
+            local depth, finish = 0, nil
+            for i = opening, #source do
+                local c = source:sub(i, i)
+                if c == "{" then depth = depth + 1 elseif c == "}" then depth = depth - 1 end
+                if depth == 0 then finish = i; break end
+            end
+            write(name, source:sub(a, assert(finish)))
+        end
+        section("    struct BodyEditorSession final", "    std::mutex g_previewLock;", "body_editor_state.inc")
+        section("    class OwnedMorphCollector final", "    class PreviewBaseCollector final", "body_owned_collector.inc")
+        func("    void MigrateLegacyBodyChangeKeys(", "body_migrate_keys.inc")
+        func("    bool IsBodySliderEditing(", "body_editor_active.inc")
+        func("    [[nodiscard]] bool UsesAdditiveBodyMorphs(", "body_editor_mode.inc")
+        func("    bool BeginBodySliderEdit(", "body_editor_begin.inc")
+        func("    void FinishBodySliderEdit(", "body_editor_finish.inc")
+    end)

@@ -1,0 +1,104 @@
+{
+  "name": "Transform_Spellsword_Dest",
+  "description": "Transform 1H+spell destroy",
+  "priority": 2147483605,
+  "replaceOnLoop": true,
+  "conditions": [
+    {
+      "condition": "IsActorBase",
+      "requiredVersion": "1.0.0.0",
+      "negated": false,
+      "Actor base": {
+        "pluginName": "Skyrim.esm",
+        "formID": "7"
+      }
+    },
+    {
+      "condition": "HasMagicEffect",
+      "requiredVersion": "1.0.0.0",
+      "negated": false,
+      "Magic effect": {
+        "pluginName": "PSQ PlayerSuccubusQuest.esm",
+        "formID": "1236"
+      }
+    },
+    {
+      "condition": "IsFemale",
+      "requiredVersion": "1.0.0.0",
+      "negated": false
+    },
+    {
+      "condition": "IsEquippedType",
+      "requiredVersion": "1.0.0.0",
+      "negated": false,
+      "Left hand": false,
+      "Type": {
+        "value": 1
+      }
+    },
+    {
+      "condition": "IsEquippedType",
+      "requiredVersion": "1.0.0.0",
+      "negated": false,
+      "Left hand": true,
+      "Type": {
+        "value": 14
+      }
+    },
+    {
+      "condition": "OR",
+      "requiredVersion": "1.0.0.0",
+      "negated": true,
+      "Conditions": [
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_IsFlying",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_GroundHover",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_LocalTakeoff",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_LocalLanding",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        }
+      ]
+    }
+  ]
+}

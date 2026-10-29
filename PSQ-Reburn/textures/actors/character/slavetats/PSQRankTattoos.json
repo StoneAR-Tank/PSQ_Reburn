@@ -1,0 +1,62 @@
+[
+  {
+    "name": "01级·初级魅魔",
+    "section": "PSQ 十级魅魔纹样",
+    "texture": "PSQRankTattoos\\Rank01.dds",
+    "area": "Body"
+  },
+  {
+    "name": "02级·下等魅魔",
+    "section": "PSQ 十级魅魔纹样",
+    "texture": "PSQRankTattoos\\Rank02.dds",
+    "area": "Body"
+  },
+  {
+    "name": "03级·次等魅魔",
+    "section": "PSQ 十级魅魔纹样",
+    "texture": "PSQRankTattoos\\Rank03.dds",
+    "area": "Body"
+  },
+  {
+    "name": "04级·中等魅魔",
+    "section": "PSQ 十级魅魔纹样",
+    "texture": "PSQRankTattoos\\Rank04.dds",
+    "area": "Body"
+  },
+  {
+    "name": "05级·高等魅魔",
+    "section": "PSQ 十级魅魔纹样",
+    "texture": "PSQRankTattoos\\Rank05.dds",
+    "area": "Body"
+  },
+  {
+    "name": "06级·魅魔贵族",
+    "section": "PSQ 十级魅魔纹样",
+    "texture": "PSQRankTattoos\\Rank06.dds",
+    "area": "Body"
+  },
+  {
+    "name": "07级·魅魔公主",
+    "section": "PSQ 十级魅魔纹样",
+    "texture": "PSQRankTattoos\\Rank07.dds",
+    "area": "Body"
+  },
+  {
+    "name": "08级·魅魔皇后",
+    "section": "PSQ 十级魅魔纹样",
+    "texture": "PSQRankTattoos\\Rank08.dds",
+    "area": "Body"
+  },
+  {
+    "name": "09级·魅魔女帝",
+    "section": "PSQ 十级魅魔纹样",
+    "texture": "PSQRankTattoos\\Rank09.dds",
+    "area": "Body"
+  },
+  {
+    "name": "10级·魅魔女神",
+    "section": "PSQ 十级魅魔纹样",
+    "texture": "PSQRankTattoos\\Rank10.dds",
+    "area": "Body"
+  }
+]

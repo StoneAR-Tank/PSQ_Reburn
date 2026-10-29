@@ -1,0 +1,175 @@
+{
+  "name": "Dual_Destruction_Movement",
+  "priority": 2147483612,
+  "replaceOnLoop": true,
+  "conditions": [
+    {
+      "condition": "PRESET",
+      "requiredVersion": "2.2.0.0",
+      "Preset": "PSQ_DualMagic_Base"
+    },
+    {
+      "condition": "OR",
+      "requiredVersion": "1.0.0.0",
+      "Conditions": [
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 12
+          },
+          "Left hand": false
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 13
+          },
+          "Left hand": false
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 14
+          },
+          "Left hand": false
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 15
+          },
+          "Left hand": false
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 16
+          },
+          "Left hand": false
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 17
+          },
+          "Left hand": false
+        }
+      ]
+    },
+    {
+      "condition": "OR",
+      "requiredVersion": "1.0.0.0",
+      "Conditions": [
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 12
+          },
+          "Left hand": true
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 13
+          },
+          "Left hand": true
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 14
+          },
+          "Left hand": true
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 15
+          },
+          "Left hand": true
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 16
+          },
+          "Left hand": true
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 17
+          },
+          "Left hand": true
+        }
+      ]
+    },
+    {
+      "condition": "OR",
+      "requiredVersion": "1.0.0.0",
+      "negated": true,
+      "Conditions": [
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_IsFlying",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_GroundHover",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_LocalTakeoff",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_LocalLanding",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        }
+      ]
+    }
+  ]
+}

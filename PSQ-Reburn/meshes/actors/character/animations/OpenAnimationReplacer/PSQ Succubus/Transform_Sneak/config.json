@@ -1,0 +1,86 @@
+{
+  "name": "Transform_Sneak",
+  "description": "Transform sneak locomotion",
+  "priority": 2147483602,
+  "replaceOnLoop": true,
+  "conditions": [
+    {
+      "condition": "IsWeaponDrawn",
+      "requiredVersion": "1.0.0.0",
+      "negated": true
+    },
+    {
+      "condition": "IsActorBase",
+      "requiredVersion": "1.0.0.0",
+      "negated": false,
+      "Actor base": {
+        "pluginName": "Skyrim.esm",
+        "formID": "7"
+      }
+    },
+    {
+      "condition": "HasMagicEffect",
+      "requiredVersion": "1.0.0.0",
+      "negated": false,
+      "Magic effect": {
+        "pluginName": "PSQ PlayerSuccubusQuest.esm",
+        "formID": "1236"
+      }
+    },
+    {
+      "condition": "OR",
+      "requiredVersion": "1.0.0.0",
+      "negated": true,
+      "Conditions": [
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_IsFlying",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_GroundHover",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_LocalTakeoff",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_LocalLanding",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        }
+      ]
+    }
+  ]
+}

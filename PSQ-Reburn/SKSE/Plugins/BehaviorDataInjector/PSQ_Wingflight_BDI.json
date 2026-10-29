@@ -1,0 +1,14 @@
+[
+  {
+    "projectPath": "actors\\Character",
+    "type": "kBool",
+    "name": "PSQ_WingflightAirborne",
+    "value": false
+  },
+  {
+    "projectPath": "actors\\VampireLord",
+    "type": "kBool",
+    "name": "PSQ_WingflightAirborne",
+    "value": false
+  }
+]

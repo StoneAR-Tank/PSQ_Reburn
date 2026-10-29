@@ -1,0 +1,46 @@
+{
+  "name": "PSQ Dual Magic",
+  "author": "Gunslicer",
+  "description": "Female player in PSQ transformed or flight state. Replaces old PSQ magic animation sets.",
+  "conditionPresets": [
+    {
+      "name": "PSQ_DualMagic_Base",
+      "conditions": [
+        {
+          "condition": "IsFemale",
+          "requiredVersion": "1.0.0.0"
+        },
+        {
+          "condition": "IsActorBase",
+          "requiredVersion": "1.0.0.0",
+          "Actor base": {
+            "pluginName": "Skyrim.esm",
+            "formID": "7"
+          }
+        },
+        {
+          "condition": "OR",
+          "requiredVersion": "1.0.0.0",
+          "Conditions": [
+            {
+              "condition": "HasMagicEffect",
+              "requiredVersion": "1.0.0.0",
+              "Magic effect": {
+                "pluginName": "PSQ PlayerSuccubusQuest.esm",
+                "formID": "1236"
+              }
+            },
+            {
+              "condition": "HasMagicEffect",
+              "requiredVersion": "1.0.0.0",
+              "Magic effect": {
+                "pluginName": "PSQ PlayerSuccubusQuest.esm",
+                "formID": "E77"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

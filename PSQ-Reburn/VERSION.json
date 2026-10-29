@@ -1,0 +1,788 @@
+{
+  "name": "PSQ Reburn",
+  "version": "0.27",
+  "date": "2026-10-30",
+  "channel": "test-release",
+  "optional_modules_separate": [
+    "Wingflight",
+    "YY Lovely Shout"
+  ],
+  "runtime_acceptance_complete": false,
+  "framework_compat": {
+    "version": "0.21",
+    "date": "2026-10-20",
+    "arousal_master_optional": true,
+    "sexlab_targets": [
+      "SE 1.63",
+      "P+ 2.19.0"
+    ],
+    "arousal_targets": [
+      "SLO Aroused NG 3.3.5",
+      "OSL Aroused 2.9.3 API",
+      "SLA-compatible API",
+      "registered external provider"
+    ],
+    "runtime_acceptance_complete": false
+  },
+  "tattoo_fix": {
+    "version": "0.3",
+    "date": "2026-10-20",
+    "dynamic_body_layer": true,
+    "migrate_legacy_save": true,
+    "runtime_acceptance_complete": false
+  },
+  "race_compat": {
+    "version": "0.4",
+    "date": "2026-10-20",
+    "optional_racecompatibility": "2.16",
+    "mcm_version": 139,
+    "default_appearance_policy": "auto_preserve_custom",
+    "UBE_assets_installed": false,
+    "UBE_asset_compatibility_verified": false,
+    "runtime_acceptance_complete": false
+  },
+  "wingflight_compat": {
+    "version": "0.5",
+    "date": "2026-10-20",
+    "source_commit": "d0dd000277be53b9c6244de2f15b34fb61c9fa53",
+    "mcm_version": 143,
+    "runtime_acceptance_complete": false,
+    "static_wings": "logical_flight_without_bone_animation",
+    "runtime_bundled": true,
+    "base_mod_bundled": false,
+    "translation_bundled": false,
+    "dll_sha256": "8b03870ef8ac7c0004ac7d4d3901acc03ae4a4aaaef165f8abed201188ffc076",
+    "PSQ_flight_hotkey": false
+  },
+  "satiation_health_fix": {
+    "version": "0.6",
+    "source_tests": 203,
+    "satiation_tests": 19,
+    "runtime_acceptance_complete": false,
+    "requires_matching_plugin_and_script": true
+  },
+  "body_refresh_fix": {
+    "version": "0.7",
+    "date": "2026-10-21",
+    "build_preset": "tuanzi1",
+    "projects": 55,
+    "asset_files": 165,
+    "source_tests": 216,
+    "runtime_acceptance_complete": false
+  },
+  "localization_split": {
+    "version": "0.8",
+    "date": "2026-10-21",
+    "runtime_mod": "PSQ Reburn (bundled compatibility DLL, current v0.22)",
+    "optional_translation_mod": "Wingflight-CHS-0.4.1-1.0",
+    "PSQ_runtime_files_unchanged": true,
+    "game_runtime_tested": false
+  },
+  "optional_horns": {
+    "built_in_generic_reader": true,
+    "mcm_version": 143,
+    "provider_assets_bundled": false,
+    "catalog_bundled": true,
+    "optional_asset_mod": "Pei style horns",
+    "optional_asset_plugin": "DPstylehorn.esp",
+    "asset_files_bundled": false
+  },
+  "integrated_release": {
+    "full_PSQ": true,
+    "source_layers": [
+      "PSQ-Reburn-v0.21",
+      "PSQ-Reburn-Compat-0.8",
+      "PSQ-Optional-Horns-Bridge-1.0"
+    ],
+    "source_tests": 234,
+    "external_assets_removed": [
+      "Flying Animations Resource"
+    ],
+    "external_modules": [
+      "Wingflight base",
+      "Wingflight-CHS-0.4.1-1.0",
+      "Pei style horns"
+    ]
+  },
+  "wingflight_only": {
+    "Real_Flying_supported": false,
+    "flight_controller": "Wingflight",
+    "mcm_version": 143,
+    "source_tests": 246,
+    "removed_plugin_records": 8,
+    "cleanup_only_records": [
+      "000E76",
+      "000E78"
+    ],
+    "game_runtime_tested": false
+  },
+  "optional_appearance_resources": [
+    "Animated Dragon Wings",
+    "Animated Fairy Wings",
+    "Pei style horns"
+  ],
+  "source_tests": 262,
+  "deferred_damage_fix": {
+    "version": "0.9.2",
+    "per_scene_per_actor_ledger": true,
+    "health_and_stamina_accumulate": true,
+    "cumulative_kill_threshold": true,
+    "nonlethal_final_health_floor": 1,
+    "duplicate_end_protection": true,
+    "old_scene_damage_not_replayed": true,
+    "source_tests": 262,
+    "game_runtime_tested": false
+  },
+  "package_revision": 38,
+  "display_version": "v0.26",
+  "version_relabel": {
+    "date": "2026-10-26",
+    "previous_package_label": "0.22",
+    "previous_package_revision": 18,
+    "runtime_content_changed": false
+  },
+  "mcm_version": 151,
+  "flight_hotkey_removal": {
+    "menu_and_dispatch_removed": true,
+    "legacy_key_registration_cleared_on_load": true,
+    "native_key_reservation_released": true,
+    "manual_hotkey_authorization_removed": true,
+    "game_runtime_tested": false
+  },
+  "distribution": {
+    "source_code_bundled": true,
+    "development_logs_bundled": false,
+    "runtime_files_unchanged": false,
+    "licenses_retained": true,
+    "BodySlide_projects_retained": true,
+    "source_code_scope": "Body Change NG 1.3.7.2 corresponding source; Wingflight source referenced in its documentation",
+    "BodySlide_outfit_projects_in_separate_mod": true
+  },
+  "framework_compat_revision": {
+    "date": "2026-10-22",
+    "mcm_version": 144,
+    "sexlab_reference_targets": [
+      "SE 1.63",
+      "P+ 2.19.0"
+    ],
+    "pplus_source_commit": "d578f8176142e0e77de7734e86e0017763de6a31",
+    "arousal_targets": [
+      "SLA-compatible API",
+      "SLO Aroused NG",
+      "OSL 2.3",
+      "OSL 2.9.3 API",
+      "registered external provider"
+    ],
+    "osl_2_3_missing_api_calls_removed": true,
+    "osl_detection_requires_sla_stub": false,
+    "legacy_slso_callbacks_mutually_exclusive": true,
+    "pplus_grinding_not_vaginal": true,
+    "PSQ_pending_scene_records_discarded_on_load": true,
+    "wingflight_modes": [
+      "PSQ bridge",
+      "independent native"
+    ],
+    "independent_Wingflight_translation_modified": false,
+    "external_mods_modified": false,
+    "shared_scripts_identical_in_dual_compile": true,
+    "runtime_acceptance_complete": false
+  },
+  "slif_ng_compat": {
+    "date": "2026-10-22",
+    "target_package": "0.4.16",
+    "mcm_version": 145,
+    "integrated_into_PSQ": true,
+    "extra_patch_plugin": false,
+    "old_SLIF_supported": true,
+    "native_SKSE_plugin_name": "SLIFNG",
+    "dll_file_name": "BodyInflationNG.dll",
+    "source_name": "PSQ Reburn",
+    "legacy_morph_deduplication": true,
+    "global_migration_automatic": false,
+    "global_migration_owner": "SLIF NG MCM",
+    "external_mods_modified": false,
+    "NG_core_installed_or_enabled": false,
+    "shared_scripts_identical_in_dual_compile": true,
+    "runtime_acceptance_complete": false
+  },
+  "drain_math_fix": {
+    "date": "2026-10-23",
+    "restores_original_v022_bytecode_semantics": true,
+    "experience_divisor": "succubus_rank * 100",
+    "accidental_experience_multiplier_removed": 10000,
+    "satiation_delay": "10 - (now - last)",
+    "legitimate_multiple_orgasms_preserved": true,
+    "experience_balance_changed": false,
+    "save_values_modified": false,
+    "external_mods_modified": false,
+    "runtime_acceptance_complete": false
+  },
+  "load_stat_refresh_fix": {
+    "date": "2026-10-23",
+    "integrated_into_PSQ": true,
+    "load_requests_coalesced": true,
+    "stale_load_and_racial_ui_generation_guards": true,
+    "healthy_saved_effects_retained": true,
+    "runtime_record_restore_without_effect_reattachment": true,
+    "legacy_cache_fields_retained_and_isolated": true,
+    "interrupted_transactions_still_recovered": true,
+    "audited_racial_rebuild_one_time": true,
+    "bonus_balance_changed": false,
+    "save_files_edited": false,
+    "external_mods_modified": false,
+    "runtime_acceptance_complete": false
+  },
+  "transform_pool_pipeline": {
+    "date": "2026-10-23",
+    "early_health_magicka_stamina_batch": true,
+    "final_after_visual_dispatch": true,
+    "successful_full_stable_readback_required": true,
+    "maximum_final_attempts": 4,
+    "all_pool_effect_readiness": true,
+    "unique_PSQ_effect_records_added": 7,
+    "original_archetypes_flags_and_magnitudes_preserved": true,
+    "old_shared_effects_retained_for_save_compatibility": true,
+    "post_completion_autoheal": false,
+    "load_exit_cancel_guard": true,
+    "save_files_edited": false,
+    "external_mods_modified": false,
+    "engine_effect_stacking_tested": false,
+    "runtime_acceptance_complete": false
+  },
+  "energy_bar_styles": {
+    "date": "2026-10-23",
+    "styles": [
+      "off",
+      "classic",
+      "angular"
+    ],
+    "default": "classic",
+    "legacy_swf_retained_byte_exact": true,
+    "legacy_visibility_and_position_retained": true,
+    "hotkey_retains_selected_style": true,
+    "non_succubus_hidden": true,
+    "same_widget_id_source_migration": true,
+    "new_style_current_and_maximum_text": true,
+    "extra_timers": false,
+    "extra_plugin": false,
+    "external_HUD_mod_required": false,
+    "external_mods_modified": false,
+    "game_runtime_tested": false
+  },
+  "energy_bar_ui_compat": {
+    "date": "2026-10-23",
+    "style_name": "Dragonborn Reskin",
+    "matched_HUD": "Dragonborn Reskin - TrueHUD",
+    "HUD_shell": "Outlander UI II",
+    "private_AS2_class": "psq.reburn.widgets.EnergyMeterWidgetV2",
+    "private_widget_symbol": "PSQEnergyMeterWidgetV2",
+    "old_style_preserved": true,
+    "art_changed": false,
+    "gameplay_scripts_changed": false,
+    "external_mods_modified": false,
+    "user_confirmed_previous_new_style_visible_after_reload": true,
+    "new_revision_game_runtime_tested": false
+  },
+  "localization_menu_fix": {
+    "date": "2026-10-23",
+    "primary_UI_languages": [
+      "chinese",
+      "english"
+    ],
+    "primary_UI_text": "Chinese",
+    "existing_Chinese_translations_reused": true,
+    "new_page_names": {
+      "$PSQ_Page8": "魔法与特性",
+      "$PSQ_Page4": "热键设置"
+    },
+    "fill_direction_display_localized": true,
+    "fill_direction_internal_values_changed": false,
+    "missing_confirmation_keys_added": true,
+    "other_locale_text_preserved_except_requested_names_and_new_keys": true,
+    "new_energy_bar_design_unchanged": true,
+    "external_mods_modified": false,
+    "game_runtime_tested": false
+  },
+  "fast_mode_depleted_scene_end": {
+    "date": "2026-10-24",
+    "enabled_only_with_fast_mode_and_drain": true,
+    "trigger": "all eligible partners actual post-settlement stored energy depleted",
+    "group_requires_all_eligible_targets": true,
+    "player_full_meter_is_not_trigger": true,
+    "stock_probe_does_not_regenerate_or_debit": true,
+    "normal_SexLab_EndAnimation": true,
+    "legacy_SexLab_SLSO_and_PPlus219_compile_checked": true,
+    "PPlus_forced_ending_orgasms_do_not_settle_again": true,
+    "existing_settlement_arithmetic_preserved": true,
+    "deferred_damage_normal_end_preserved": true,
+    "scene_owned_claim_and_callback_guards": true,
+    "new_polling_timer": false,
+    "new_external_plugin": false,
+    "external_mods_modified": false,
+    "game_runtime_tested": false
+  },
+  "recovery_audit_fixes": {
+    "date": "2026-10-24",
+    "issues_fixed": [
+      1,
+      2,
+      4,
+      5
+    ],
+    "unresolved_original_equipment_ledger": true,
+    "normal_form_manual_recovery_no_transform": true,
+    "failed_entry_refill_bounded_one_shot_retry": true,
+    "refill_cancels_on_new_consumption_or_combat": true,
+    "energy_sense_null_array_cast_removed": true,
+    "fast_mode_retired_key_cleanup": true,
+    "fertility_interface_changed": false,
+    "flight_core_changed": false,
+    "familiar_features_changed": false,
+    "bonus_balance_changed": false,
+    "external_mods_modified": false,
+    "legacy_and_PPlus219_compile_checked": true,
+    "game_runtime_tested": false
+  },
+  "own_inflation_removed": {
+    "date": "2026-10-24",
+    "belly_breast_growth_output_removed": true,
+    "direct_bone_morph_inflation_removed": true,
+    "SLIF_NG_positive_submission_removed": true,
+    "standalone_transform_breast_multiplier_and_hotkey_removed": true,
+    "NPC_breast_option_removed": true,
+    "old_save_owned_output_cleanup": true,
+    "external_sources_untouched": true,
+    "generic_body_preset_switching_preserved": true,
+    "reserves_digestion_milk_and_soulgem_gameplay_preserved": false,
+    "public_old_interfaces_retained_as_no_output_shims": true,
+    "mcm_version": 149,
+    "external_mods_modified": false,
+    "game_runtime_tested": false,
+    "superseded_by_reproduction_removal": true
+  },
+  "own_reproduction_removed": {
+    "date": "2026-10-24",
+    "soulgem_pregnancy_gestation_birth_removed": true,
+    "milk_production_milking_removed": true,
+    "pregnancy_page_and_displays_removed": true,
+    "reserves_digestion_moved_to_drain_page": true,
+    "Fertility_Mode_display_and_event_bridge_removed": true,
+    "milker_merchant_storage_and_recipe_entries_removed": true,
+    "milk_cheese_recipe_and_own_iNeed_registrations_removed": true,
+    "old_owned_state_and_slow_cleanup": true,
+    "old_script_bindings_and_FormIDs_retained_for_save_compatibility": true,
+    "existing_physical_items_and_assets_preserved": true,
+    "FHU_reserve_transfer_digestion_unchanged": true,
+    "other_gameplay_balance_unchanged": true,
+    "MCM_version": 150,
+    "external_mods_modified": false,
+    "game_runtime_tested": false
+  },
+  "body_change_ng_integration": {
+    "date": "2026-10-25",
+    "provider": "Body Change NG local PSQ API variant",
+    "upstream_version": "1.3.7",
+    "provider_revision": "1.3.7.2",
+    "provider_api": 2,
+    "provider_SKSE_version": 16973938,
+    "provider_DLL_sha256": "ce6aba6d5302f38570e4baec8fe8d1b7a8f740c8bf98920b3bc7e206982ba5b5",
+    "native_temporary_body_layer": true,
+    "normal_body_selection_preserved": true,
+    "old_PSQ_positive_morph_writer_disabled": true,
+    "enter_exit_reload_recovery_race_uninstall_covered": true,
+    "catalog_from_BCNG": true,
+    "menu_pagination": 120,
+    "no_legacy_fallback": true,
+    "other_BCNG_settings_and_rules_preserved": true,
+    "FHU_and_retired_gameplay_preserved": true,
+    "matched_Zeroed_Sliders_Build_Morphs_required": true,
+    "MCM_version": 151,
+    "game_runtime_tested": false,
+    "compatibility_files_inside_PSQ_only": true,
+    "provider_relative_path": "SKSE/Plugins/BodyChangeNG.dll",
+    "original_BodyChange_module_restored": true,
+    "PSQ_overrides_BodyChange_in_MO2": true
+  },
+  "osyrn_flight_compat": {
+    "target": "Core 0.2.2 / Wingflight 0.4.1",
+    "date": "2026-10-26",
+    "PSQ_OAR_groups": 21,
+    "flight_state_guards": [
+      "Wingflight_IsFlying",
+      "Wingflight_GroundHover",
+      "Wingflight_LocalTakeoff",
+      "Wingflight_LocalLanding"
+    ],
+    "external_files_modified": false,
+    "DLL_changes": false,
+    "runtime_tested": false,
+    "offline_cases": 470,
+    "background_probe_max_attempts": 4,
+    "background_probe_earliest_seconds": [
+      0,
+      6,
+      18,
+      42
+    ],
+    "manual_reprobe": true,
+    "live_flight_guards_preserved": true,
+    "connected_bridge_query_min_seconds": 1,
+    "conditional_Mage_Leap_component_prompt": true
+  },
+  "performance_first_three": {
+    "date": "2026-10-26",
+    "release_owned_equipment_before_original_restore": true,
+    "MCM_keeps_warm_appearance_cache": true,
+    "explicit_resource_refresh": true,
+    "coalesced_native_equipment_morph_refresh": true,
+    "bounded_legacy_refresh_fallback": true,
+    "external_mods_changed": false,
+    "game_runtime_tested": false
+  },
+  "background_maintenance": {
+    "date": "2026-10-26",
+    "zero_delta_writes_skipped": true,
+    "state_refresh_preserved": true,
+    "retired_completed_epoch_fast_path": true,
+    "retired_fields_revalidated": true,
+    "SLIF_owned_source_recheck_seconds": 60,
+    "FHU_transfer_receipts_unchanged": true,
+    "new_timers": false,
+    "offline_PAS_cases": 318,
+    "runtime_tested": false
+  },
+  "release_v025": {
+    "full_install": true,
+    "base_package_revision": 18,
+    "all_current_runtime_hashes_preserved": true,
+    "compatibility_files_inside_PSQ": true,
+    "MCM_version": 151,
+    "plugin_name_unchanged": true,
+    "external_flight_modules_bundled": false,
+    "runtime_tested": false
+  },
+  "three_issue_fix": {
+    "date": "2026-10-26",
+    "candidate_menu_compaction": true,
+    "scene_end_stamp_guard": true,
+    "fast_mode_per_count_catchup": true,
+    "new_persistent_fields": false,
+    "main_PEX_sha256": "db36e335090bcf4a66e932d68b5a39a57c7dddba0c7617398263358f5be31612",
+    "game_runtime_tested": false
+  },
+  "release_v026": {
+    "based_on": "v0.25 revision20",
+    "runtime_files_unchanged": true,
+    "source_code_bundled": false,
+    "build_logs_bundled": false,
+    "historical_development_documents_bundled": false,
+    "offline_final_PAS_tests": 61,
+    "game_runtime_tested": false
+  },
+  "outfit_resource_split": {
+    "date": "2026-10-27",
+    "asset_mod": "PSQ Reburn - 八套变身服装",
+    "moved_files": 475,
+    "BodySlide_projects": 48,
+    "resource_only": true,
+    "plugin_records_unchanged": true,
+    "runtime_file_bytes_unchanged": true,
+    "other_mods_modified": false,
+    "original_mod_detection_implemented": false,
+    "game_runtime_tested": false
+  },
+  "shinano_original_integration": {
+    "date": "2026-10-27",
+    "plugin": "gui-SucubusSister Shinano.esp",
+    "plugin_sha256": "3e57707b5146734b05512f34006f1f5d312fbfef15302c6d4226cb11659abce5",
+    "preserves_PSQ_six_piece_assembly_and_slots": true,
+    "uses_private_PSQ_compatibility_meshes": true,
+    "preserves_current_fitted_geometry_and_skinning": true,
+    "incorporates_SMP_upper_constraint_fix": true,
+    "fallback_when_source_unavailable": true,
+    "old_armor_FormIDs_unchanged": true,
+    "no_extra_ESP": true,
+    "all_compatibility_files_inside_PSQ": true,
+    "source_mod_directory_modified": false,
+    "actual_PAS_cases": 416,
+    "NIF_checks": 18,
+    "BodySlide_compat_projects": 6,
+    "current_main_sha256": "a8998b4b4c019964fd024fc3ca55161d40aad175200300beff79818521e45fbe",
+    "unrelated_500_main_functions_byte_preserved": true,
+    "game_runtime_tested": false,
+    "legacy_PSQ_Shinano_fallback": false,
+    "legacy_resources_removed": true,
+    "native_required_for_new_selection": true,
+    "missing_source_policy": "reject new Set06 selection; existing saved Set06 uses default Set04 models",
+    "ESM_default_model_records_retargeted": 6
+  },
+  "legacy_Shinano_retirement": {
+    "date": "2026-10-27",
+    "removed_resource_files": 57,
+    "removed_bytes": 1373872451,
+    "old_BodySlide_projects_removed": 6,
+    "remaining_bundled_BodySlide_projects": 42,
+    "original_mod_untouched": true,
+    "other_seven_outfits_untouched": true,
+    "private_PSQ_assembly_adapter_retained": true,
+    "record_FormIDs_preserved": true,
+    "old_archive_backups_retained": true,
+    "runtime_tested": false
+  },
+  "DX_standalone_enhancement": {
+    "date": "2026-10-28",
+    "source": "PSQ Set01 fitted 3BA",
+    "target": "DX Succubus Armor.esp",
+    "enhanced_parts": 9,
+    "original_parts": 10,
+    "original_ESP_modified": false,
+    "PSQ_transform_logic_changed": false,
+    "all_compat_files_inside_PSQ": true,
+    "game_runtime_tested": false
+  },
+  "three_original_outfits": {
+    "date": "2026-10-28",
+    "six_part_contract": [
+      "cuirass",
+      "boots",
+      "gloves",
+      "horns",
+      "tail",
+      "wings"
+    ],
+    "original_plugins": [
+      "DX Succubus Armor.esp",
+      "Helena Succubus [SE].esp",
+      "gui-SucubusSister Shinano.esp"
+    ],
+    "all_patches_in_PSQ": true,
+    "Helena_extra_items": [
+      "tail",
+      "independent wings"
+    ],
+    "original_asset_directories_unchanged_except_metadata_and_name": true,
+    "old_framework_and_PPlus_static_compile": true,
+    "actual_PAS_cases": 1378,
+    "game_runtime_tested": false
+  },
+  "external_outfit_retirement": {
+    "date": "2026-10-29",
+    "external_sets": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      100
+    ],
+    "remaining_bundled_sets": [
+      8
+    ],
+    "remaining_bundled_label": "Hiroshi / X Succubus",
+    "remaining_bundled_BS_projects": 6,
+    "removed_resource_files": 116,
+    "removed_from_pack_bytes": 249942195,
+    "shared_dependencies_in_core": 46,
+    "six_part_adapters_preserved": true,
+    "original_mods_unchanged": true,
+    "requires_original_for_new_selection": true,
+    "saved_missing_source_default_set": 8,
+    "existing_FormIDs_preserved": true,
+    "ESM_default_records_retargeted": 60,
+    "actual_PAS_cases": 854,
+    "game_runtime_tested": false
+  },
+  "MCM_color_confirmation_fix": {
+    "date": "2026-10-28",
+    "cause": "missing default OnColorAcceptST event",
+    "saved_colors": [
+      "hair",
+      "skin",
+      "energybar",
+      "NPC skin"
+    ],
+    "all_existing_menu_functions_byte_preserved": 317,
+    "actual_PAS_tests": 258,
+    "game_runtime_tested": false
+  },
+  "outfit_label_simplification": {
+    "date": "2026-10-29",
+    "outfit_and_wing_choices_names_only": true,
+    "compatibility_detection_unchanged": true
+  },
+  "Ageha_Vampire_HarryTERA_integration": {
+    "date": "2026-10-29",
+    "external_sets": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      100
+    ],
+    "remaining_bundled_sets": [
+      3,
+      5,
+      8
+    ],
+    "remaining_bundled_BS_projects": 18,
+    "removed_resource_files": 110,
+    "shared_dependencies_in_core": 19,
+    "six_part_adapters_preserved": true,
+    "original_mods_unchanged": true,
+    "requires_original_for_new_selection": true,
+    "saved_missing_source_default_set": 3,
+    "new_TERA_choice": 100,
+    "old_TERA_choice": 5,
+    "new_TERA_body": "CBBE, not a completed 3BA conversion",
+    "new_TERA_horns_wings": "reuses old PSQ Set05",
+    "actual_PAS_cases": 568,
+    "game_runtime_tested": false
+  },
+  "DragonPrincess_TERA9DM_integration": {
+    "date": "2026-10-29",
+    "sets": [
+      3,
+      5
+    ],
+    "plugins": [
+      "BBP_Dragon_Princess.esp",
+      "TR9DmRxSS_HR.esp"
+    ],
+    "six_part_adapters": true,
+    "native_required_for_new_selection": true,
+    "old_form_ids_preserved": true,
+    "new_records": 0,
+    "original_mods_modified": false,
+    "all_compat_files_inside_PSQ": true,
+    "BS_projects": 12,
+    "actual_PAS_cases": 822,
+    "game_runtime_tested": false
+  },
+  "YY_Lovely_Shout_split": {
+    "date": "2026-10-29",
+    "standalone_mod": "YY Lovely Shout - 可爱龙吼 - OAR SE",
+    "animations_moved": 7,
+    "HKX_bytes_unchanged": true,
+    "PSQ_only_conditions_preserved": true,
+    "compatibility_config_inside_PSQ": true,
+    "no_scripts_or_plugins_changed": true,
+    "game_runtime_tested": false
+  },
+  "Hiroshi_only_resource_pack": {
+    "date": "2026-10-29",
+    "external_sets": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      100
+    ],
+    "remaining_bundled_sets": [
+      8
+    ],
+    "remaining_bundled_label": "Hiroshi / X Succubus",
+    "remaining_bundled_BS_projects": 6,
+    "removed_resource_files": 116,
+    "removed_from_pack_bytes": 249942195,
+    "shared_dependencies_in_core": 46,
+    "six_part_adapters_preserved": true,
+    "original_mods_unchanged": true,
+    "requires_original_for_new_selection": true,
+    "saved_missing_source_default_set": 8,
+    "existing_FormIDs_preserved": true,
+    "ESM_default_records_retargeted": 60,
+    "actual_PAS_cases": 854,
+    "game_runtime_tested": false
+  },
+  "MilkEconomy_cleanup": {
+    "date": "2026-10-29",
+    "active_external_MME_integration_absent": true,
+    "obsolete_milker_costume_and_BodySlide_removed": true,
+    "milk_products_and_recipes_retired": true,
+    "milk_sound_removed": true,
+    "removed_files": 21,
+    "removed_asset_bytes": 428417522,
+    "old_FormIDs_preserved_as_empty_records": [
+      "000DB9",
+      "000DBC",
+      "000DDF",
+      "000DE0",
+      "000DE1",
+      "000DE2",
+      "000E2C",
+      "000E2D",
+      "000E2E",
+      "000E37",
+      "000E38",
+      "000E39",
+      "002CE2"
+    ],
+    "empty_old_save_cleanup_scripts_kept": true,
+    "semen_potion_model_relocated": "meshes/PSQ/SemenPotion/MediumBottle.nif",
+    "FHU_and_digestion_unchanged": true,
+    "independent_MME_mod_untouched": true,
+    "actual_PAS_cases": 194,
+    "game_runtime_tested": false
+  },
+  "weakness_retirement_live_color_fix": {
+    "date": "2026-10-29",
+    "weakness_base_stat_mutation_removed": true,
+    "historical_base_stats_not_guessed": true,
+    "transformed_hair_color_refreshes_immediately": true,
+    "hair_toggle_off_restores_original": true,
+    "skin_failure_feedback_localized": true,
+    "translation_files": 17,
+    "actual_PAS_cases": 156,
+    "runtime_acceptance_complete": false
+  },
+  "post_menu_appearance_color": {
+    "date": "2026-10-29",
+    "save_while_transformed_and_busy": true,
+    "state_specific_SkyUI_callbacks": true,
+    "refresh_after_menu_close_and_transform_completion": true,
+    "tint_write_readback": true,
+    "direct_chinese_failure_messages": true,
+    "does_not_cancel_deferred_attribute_refill": true,
+    "actual_PAS_cases": 134,
+    "runtime_acceptance_complete": false
+  },
+  "TRX_futanari_integration": {
+    "date": "2026-10-30",
+    "optional_plugin": "SOS - TRX - Futanari Addon.esp",
+    "direct_native_equipment_reference": true,
+    "current_and_original_plugin_ids_supported": true,
+    "choices": [
+      "TRX 普通",
+      "TRX 轻甲",
+      "TRX 重甲"
+    ],
+    "old_bundled_meshes_and_textures_removed": 26,
+    "old_asset_bytes_removed": 49344025,
+    "legacy_formids_retained_as_empty_records": 20,
+    "native_mods_unchanged": true,
+    "actual_PAS_cases": 286,
+    "runtime_acceptance_complete": false
+  },
+  "BCNG_futanari_skin_management": {
+    "date": "2026-10-30",
+    "DLL_interface": "1.3.7.3 / API3",
+    "dll_sha256": "6e4b01c5d617b5829e4f0960cee21f8b3fb8715da13778e5f99b52a18b75264e",
+    "PSQ_controls_equipment_and_gameplay": true,
+    "BCNG_controls_futanari_textures": true,
+    "separate_human_succubus_settings": true,
+    "default": "follow_BCNG",
+    "preserves_original_selection_and_external_manual_takeover": true,
+    "geometry_ready_event_no_continuous_polling": true,
+    "native_TRX_default_texture_pack_files": 5,
+    "imported_texture_bytes": 44740068,
+    "native_policy_checks": 66,
+    "actual_PAS_cases": 462,
+    "runtime_acceptance_complete": false
+  }
+}

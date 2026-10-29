@@ -1,0 +1,200 @@
+{
+  "name": "Flight_Jump",
+  "description": "Flight jump with wings",
+  "priority": 2147483604,
+  "replaceOnLoop": true,
+  "conditions": [
+    {
+      "condition": "IsWeaponDrawn",
+      "requiredVersion": "1.0.0.0",
+      "negated": true
+    },
+    {
+      "condition": "HasMagicEffect",
+      "requiredVersion": "1.0.0.0",
+      "negated": false,
+      "Magic effect": {
+        "pluginName": "PSQ PlayerSuccubusQuest.esm",
+        "formID": "E77"
+      }
+    },
+    {
+      "condition": "OR",
+      "requiredVersion": "1.0.0.0",
+      "Conditions": [
+        {
+          "condition": "IsWorn",
+          "requiredVersion": "1.0.0.0",
+          "negated": false,
+          "Form": {
+            "pluginName": "PSQ PlayerSuccubusQuest.esm",
+            "formID": "D89"
+          }
+        },
+        {
+          "condition": "IsWorn",
+          "requiredVersion": "1.0.0.0",
+          "negated": false,
+          "Form": {
+            "pluginName": "PSQ PlayerSuccubusQuest.esm",
+            "formID": "E67"
+          }
+        },
+        {
+          "condition": "IsWorn",
+          "requiredVersion": "1.0.0.0",
+          "negated": false,
+          "Form": {
+            "pluginName": "PSQ PlayerSuccubusQuest.esm",
+            "formID": "E68"
+          }
+        },
+        {
+          "condition": "IsWorn",
+          "requiredVersion": "1.0.0.0",
+          "negated": false,
+          "Form": {
+            "pluginName": "PSQ PlayerSuccubusQuest.esm",
+            "formID": "E69"
+          }
+        },
+        {
+          "condition": "IsWorn",
+          "requiredVersion": "1.0.0.0",
+          "negated": false,
+          "Form": {
+            "pluginName": "PSQ PlayerSuccubusQuest.esm",
+            "formID": "E6A"
+          }
+        },
+        {
+          "condition": "IsWorn",
+          "requiredVersion": "1.0.0.0",
+          "negated": false,
+          "Form": {
+            "pluginName": "PSQ PlayerSuccubusQuest.esm",
+            "formID": "E6B"
+          }
+        },
+        {
+          "condition": "IsWorn",
+          "requiredVersion": "1.0.0.0",
+          "negated": false,
+          "Form": {
+            "pluginName": "PSQ PlayerSuccubusQuest.esm",
+            "formID": "E6C"
+          }
+        },
+        {
+          "condition": "IsWorn",
+          "requiredVersion": "1.0.0.0",
+          "negated": false,
+          "Form": {
+            "pluginName": "PSQ PlayerSuccubusQuest.esm",
+            "formID": "E6D"
+          }
+        },
+        {
+          "condition": "IsWorn",
+          "requiredVersion": "1.0.0.0",
+          "negated": false,
+          "Form": {
+            "pluginName": "PSQ PlayerSuccubusQuest.esm",
+            "formID": "E6E"
+          }
+        },
+        {
+          "condition": "IsWorn",
+          "requiredVersion": "1.0.0.0",
+          "negated": false,
+          "Form": {
+            "pluginName": "PSQ PlayerSuccubusQuest.esm",
+            "formID": "E6F"
+          }
+        },
+        {
+          "condition": "IsWorn",
+          "requiredVersion": "1.0.0.0",
+          "negated": false,
+          "Form": {
+            "pluginName": "PSQ PlayerSuccubusQuest.esm",
+            "formID": "E70"
+          }
+        },
+        {
+          "condition": "IsWorn",
+          "requiredVersion": "1.0.0.0",
+          "negated": false,
+          "Form": {
+            "pluginName": "PSQ PlayerSuccubusQuest.esm",
+            "formID": "E76"
+          }
+        },
+        {
+          "condition": "IsWorn",
+          "requiredVersion": "1.0.0.0",
+          "negated": false,
+          "Form": {
+            "pluginName": "PSQ PlayerSuccubusQuest.esm",
+            "formID": "E83"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "OR",
+      "requiredVersion": "1.0.0.0",
+      "negated": true,
+      "Conditions": [
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_IsFlying",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_GroundHover",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_LocalTakeoff",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_LocalLanding",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        }
+      ]
+    }
+  ]
+}

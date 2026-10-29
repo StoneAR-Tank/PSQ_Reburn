@@ -1,0 +1,3 @@
+Body Change NG 1.3.7
+Git revision: a41e9ca1c11aedb5fc2da0e83e60d269f03905cd
+Dependency pins: DEPENDENCIES.md and xmake-requires.lock

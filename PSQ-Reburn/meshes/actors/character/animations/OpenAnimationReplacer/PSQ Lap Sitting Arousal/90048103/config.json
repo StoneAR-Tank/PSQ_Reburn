@@ -1,0 +1,81 @@
+{
+  "name": "90048103",
+  "priority": 2147483611,
+  "interruptible": true,
+  "hasCustomBlendTimeOnInterrupt": true,
+  "blendTimeOnInterrupt": 0.30000001192092896,
+  "conditions": [
+    {
+      "condition": "IsForm",
+      "requiredVersion": "1.0.0.0",
+      "Form": {
+        "pluginName": "Skyrim.esm",
+        "formID": "14"
+      }
+    },
+    {
+      "condition": "HasMagicEffect",
+      "requiredVersion": "1.0.0.0",
+      "Magic effect": {
+        "pluginName": "PSQ PlayerSuccubusQuest.esm",
+        "formID": "1236"
+      }
+    },
+    {
+      "condition": "OR",
+      "requiredVersion": "1.0.0.0",
+      "negated": true,
+      "Conditions": [
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_IsFlying",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_GroundHover",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_LocalTakeoff",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_LocalLanding",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        }
+      ]
+    }
+  ],
+  "description": "Player only, while PSQ Henshin is active. No arousal requirement."
+}

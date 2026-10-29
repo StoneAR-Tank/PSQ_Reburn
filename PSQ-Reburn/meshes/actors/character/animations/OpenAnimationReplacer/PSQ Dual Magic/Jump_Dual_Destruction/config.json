@@ -1,0 +1,88 @@
+{
+  "name": "PSQ Jump Dual Destruction",
+  "priority": 2147483613,
+  "replaceOnLoop": false,
+  "conditions": [
+    {
+      "condition": "PRESET",
+      "requiredVersion": "2.2.0.0",
+      "Preset": "PSQ_DualMagic_Base"
+    },
+    {
+      "condition": "IsEquippedType",
+      "requiredVersion": "1.0.0.0",
+      "Type": {
+        "value": 14.0
+      },
+      "Left hand": false
+    },
+    {
+      "condition": "IsWeaponDrawn",
+      "requiredVersion": "1.0.0.0"
+    },
+    {
+      "condition": "IsEquippedType",
+      "requiredVersion": "1.0.0.0",
+      "Type": {
+        "value": 14.0
+      },
+      "Left hand": true
+    },
+    {
+      "condition": "OR",
+      "requiredVersion": "1.0.0.0",
+      "negated": true,
+      "Conditions": [
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_IsFlying",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_GroundHover",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_LocalTakeoff",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_LocalLanding",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        }
+      ]
+    }
+  ],
+  "description": "Female player in PSQ transformed or flight state, both hands destruction magic, weapon drawn. Gunslicer jump animations."
+}

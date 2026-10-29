@@ -1,0 +1,821 @@
+<?xml version='1.0' encoding='utf8'?>
+<system xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="description.xsd">
+	
+	<per-triangle-shape name="VirtualGround">
+		<margin>3</margin>
+		<prenetration>0.01</prenetration>
+		<tag>ground</tag>
+	</per-triangle-shape>
+	
+
+	
+	<bone-default>
+		<margin-multiplier>0.8</margin-multiplier>
+		<restitution>0.5</restitution>
+	</bone-default>
+	
+	
+	<bone name="NPC Spine [Spn0]" />
+	<bone name="NPC Spine1 [Spn1]" />
+	<bone name="NPC Spine2 [Spn2]" />
+	<bone name="NPC Belly" />
+	<bone name="NPC Pelvis [Pelv]" />
+	
+	<bone name="NPC L Foot [Lft ]" />
+	<bone name="NPC R Foot [Lft ]" />
+	<bone name="NPC L Hand [LHnd]" />
+	<bone name="NPC R Hand [RHnd]" />
+	<bone name="NPC Head [Head]" />
+	<bone name="NPC L Clavicle [LClv]" />
+	<bone name="NPC R Clavicle [RClv]" />
+	
+	<bone name="NPC L Forearm [LLar]" />
+	<bone name="NPC R Forearm [RLar]" />
+	<bone name="NPC L ForearmTwist1 [LLt1]" />
+	<bone name="NPC R ForearmTwist1 [RLt1]" />
+	<bone name="NPC L ForearmTwist2 [LLt2]" />
+	<bone name="NPC R ForearmTwist2 [RLt2]" />
+	<bone name="NPC L UpperArm [LUar]" />
+	<bone name="NPC R UpperArm [RUar]" />
+	<bone name="NPC L UpperarmTwist1 [LUt1]" />
+	<bone name="NPC R UpperarmTwist1 [RUt1]" />
+	<bone name="NPC L UpperarmTwist2 [LUt2]" />
+	<bone name="NPC R UpperarmTwist2 [RUt2]" />
+	
+	
+	<bone name="L Breast01" />
+	<bone name="R Breast01" />
+	<bone name="L Breast02" />
+	<bone name="R Breast02" />
+	<bone name="L Breast03" />
+	<bone name="R Breast03" />
+	
+	<bone name="NPC L Butt" />
+	<bone name="NPC R Butt" />
+	
+	
+	<bone name="NPC L Calf [LClf]" />
+	<bone name="NPC R Calf [RClf]" />
+	<bone name="NPC L RearCalf [LrClf]" />
+	<bone name="NPC R RearCalf [LrClf]" />
+	
+	<bone name="NPC L Thigh [LThg]" />
+	<bone name="NPC R Thigh [RThg]" />
+	<bone name="NPC L RearThigh" />
+	<bone name="NPC R RearThigh" />
+	<bone name="NPC L FrontThigh" />
+	<bone name="NPC R FrontThigh" />
+	
+	<bone name="NPC L Pussy02" />
+	<bone name="NPC R Pussy02" />
+	<bone name="VaginaB1" />
+	<bone name="Clitoral1" />
+	
+	
+	<bone name="NPC RT Anus2" />
+	<bone name="NPC LT Anus2" />
+	<bone name="NPC RB Anus2" />
+	<bone name="NPC LB Anus2" />
+	<bone name="NPC Anus Deep2" />
+	
+	<bone name="NPC L Toe0 [LToe]" />
+	<bone name="NPC R Toe0 [RToe]" />
+	
+
+	<per-triangle-shape name="uup">
+		<margin>0.6</margin>
+		<priority>100</priority>
+		<penetration>1</penetration>
+		<shared>private</shared>
+		<tag>h6</tag>
+		<can-collide-with-tag>h9</can-collide-with-tag>
+		<no-collide-with-tag>ground</no-collide-with-tag>	
+		<no-collide-with-tag>h6</no-collide-with-tag>
+		<weight-threshold bone="NPC Belly">1</weight-threshold>
+		<weight-threshold bone="NPC Spine [Spn0]">0.3</weight-threshold>
+		<weight-threshold bone="NPC Spine1 [Spn1]">0.3</weight-threshold>
+		<weight-threshold bone="NPC Spine2 [Spn2]">1</weight-threshold>
+		
+		<weight-threshold bone="L Breast01">0.1</weight-threshold>
+		<weight-threshold bone="L Breast02">0.2</weight-threshold>
+		<weight-threshold bone="L Breast03">0.3</weight-threshold>
+		<weight-threshold bone="NPC L Butt">0.1</weight-threshold>
+		<weight-threshold bone="NPC L Calf [LClf]">0.3</weight-threshold>
+		<weight-threshold bone="NPC L Clavicle [LClv]">1</weight-threshold>
+		<weight-threshold bone="NPC L Foot [Lft ]">0.2</weight-threshold>
+		<weight-threshold bone="NPC L Forearm [LLar]">1</weight-threshold>
+		<weight-threshold bone="NPC L ForearmTwist1 [LLt1]">1</weight-threshold>
+		<weight-threshold bone="NPC L ForearmTwist2 [LLt2]">1</weight-threshold>
+		<weight-threshold bone="NPC L FrontThigh [LClv]">1</weight-threshold>
+		<weight-threshold bone="NPC L Hand [LHnd]">1</weight-threshold>
+		<weight-threshold bone="NPC L Pussy02">1</weight-threshold>
+		<weight-threshold bone="NPC L RearCalf [LrClf]">1</weight-threshold>
+		<weight-threshold bone="NPC L RearThigh">1</weight-threshold>
+		<weight-threshold bone="NPC L Thigh [LThg]">0.3</weight-threshold>
+		<weight-threshold bone="NPC L UpperArm [LUar]">1</weight-threshold>
+		<weight-threshold bone="NPC L UpperarmTwist1 [LUt1]">1</weight-threshold>
+		<weight-threshold bone="NPC L UpperarmTwist2 [LUt2]">1</weight-threshold>
+		
+		<weight-threshold bone="R Breast01">1</weight-threshold>
+		<weight-threshold bone="R Breast02">1</weight-threshold>
+		<weight-threshold bone="R Breast03">1</weight-threshold>
+		<weight-threshold bone="NPC R Butt">0.1</weight-threshold>
+		<weight-threshold bone="NPC R Calf [RClf]">0.3</weight-threshold>
+		<weight-threshold bone="NPC R Clavicle [RClv]">1</weight-threshold>
+		<weight-threshold bone="NPC R Foot [Rft ]">0.3</weight-threshold>
+		<weight-threshold bone="NPC R Forearm [RLar]">1</weight-threshold>
+		<weight-threshold bone="NPC R ForearmTwist1 [RLt1]">1</weight-threshold>
+		<weight-threshold bone="NPC R ForearmTwist2 [RLt2]">1</weight-threshold>
+		<weight-threshold bone="NPC R FrontThigh [RClv]">1</weight-threshold>
+		<weight-threshold bone="NPC R Hand [RHnd]">1</weight-threshold>
+		<weight-threshold bone="NPC R Pussy02">1</weight-threshold>
+		<weight-threshold bone="NPC R RearCalf [RrClf]">1</weight-threshold>
+		<weight-threshold bone="NPC R RearThigh">1</weight-threshold>
+		<weight-threshold bone="NPC R Thigh [RThg]">0.3</weight-threshold>
+		<weight-threshold bone="NPC R UpperArm [RUar]">1</weight-threshold>
+		<weight-threshold bone="NPC R UpperarmTwist1 [RUt1]">1</weight-threshold>
+		<weight-threshold bone="NPC R UpperarmTwist2 [RUt2]">1</weight-threshold>
+		</per-triangle-shape>	
+
+	
+
+
+	<bone-default>
+		<margin-multiplier>0.01</margin-multiplier>
+	</bone-default>
+	
+
+	<bone name="qq1 1" />
+	<bone name="qq2 1" />
+	<bone name="qq3 1" />
+	<bone name="qq4 1" />
+	<bone name="qq5 1" />
+    <bone name="qq6 1" />
+	<bone-default>
+		<mass>0.002</mass>
+		<inertia x="0.02" y="0.02" z="0.02" />
+		<centerOfMassTransform>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</centerOfMassTransform>
+		<linearDamping>0.8</linearDamping>
+		<angularDamping>0.6</angularDamping>
+		<margin-multiplier>0.6</margin-multiplier>
+		<gravity-factor>0.98</gravity-factor>
+		<friction>0</friction>
+		<restitution>0</restitution>
+	</bone-default>
+	
+	
+	<bone name="qq7 1" />
+	<bone name="qq8 1" />
+
+   
+	<bone name="qq7 2" />
+	<bone name="qq8 2" />
+	
+
+	<bone-default>
+	<linearDamping>0.85</linearDamping>
+		<angularDamping>0.7</angularDamping>
+		<margin-multiplier>0.9</margin-multiplier>
+	</bone-default>
+
+	<bone name="qq7 3" />
+	<bone name="qq8 3" />
+
+	<bone name="qq7 4" />
+	<bone name="qq8 4" />
+	
+	<bone name="qq8 5" />
+    <bone name="qq8 6" />
+	
+
+    <constraint-group>
+	<generic-constraint-default>
+		<frameInB>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</frameInB>
+		<useLinearReferenceFrameA>false</useLinearReferenceFrameA>
+		<linearLowerLimit x="0" y="0" z="0" />
+		<linearUpperLimit x="0" y="0" z="0" />
+		<angularLowerLimit x="0" y="0" z="0" />
+		<angularUpperLimit x="0" y="0" z="0" />
+		<linearStiffness x="0" y="0" z="0" />
+		<angularStiffness x="0" y="0" z="0" />
+		<linearDamping x="0" y="0" z="0" />
+		<angularDamping x="0" y="0" z="0" />
+		<linearEquilibrium x="0" y="0" z="0" />
+		<angularEquilibrium x="0" y="0" z="0" />
+	</generic-constraint-default>
+        
+		<generic-constraint bodyA="qq7 1" bodyB="L Breast03" />
+	
+	<generic-constraint-default>
+		<frameInB>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</frameInB>
+		<useLinearReferenceFrameA>false</useLinearReferenceFrameA>
+		<linearLowerLimit x="0" y="0" z="0" />
+		<linearUpperLimit x="0" y="0" z="0" />
+		<angularLowerLimit x="-0.12" y="-0.13" z="-0.34" />
+		<angularUpperLimit x="0.12" y="0.5" z="0.34" />
+		<linearStiffness x="0" y="0" z="0" />
+		<angularStiffness x="0" y="0" z="0" />
+		<linearDamping x="0" y="0" z="0" />
+		<angularDamping x="0" y="0" z="0" />
+		<linearEquilibrium x="0" y="0" z="0" />
+		<angularEquilibrium x="0" y="0" z="0" />
+	</generic-constraint-default>
+        
+		<generic-constraint bodyA="qq7 2" bodyB="qq7 1" />
+		<generic-constraint bodyA="qq7 3" bodyB="qq7 2" />
+		<generic-constraint bodyA="qq7 4" bodyB="qq7 3" />
+
+	</constraint-group>
+  
+
+    <constraint-group>
+      <generic-constraint-default>
+		<frameInB>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</frameInB>
+		<useLinearReferenceFrameA>false</useLinearReferenceFrameA>
+		<linearLowerLimit x="0" y="0" z="0" />
+		<linearUpperLimit x="0" y="0" z="0" />
+		<angularLowerLimit x="0" y="0" z="0" />
+		<angularUpperLimit x="0" y="0" z="0" />
+		<linearStiffness x="0" y="0" z="0" />
+		<angularStiffness x="0" y="0" z="0" />
+		<linearDamping x="0" y="0" z="0" />
+		<angularDamping x="0" y="0" z="0" />
+		<linearEquilibrium x="0" y="0" z="0" />
+		<angularEquilibrium x="0" y="0" z="0" />
+	</generic-constraint-default>
+        
+		<generic-constraint bodyA="qq8 1" bodyB="L Breast03" />
+	
+	<generic-constraint-default>
+		<frameInB>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</frameInB>
+		<useLinearReferenceFrameA>false</useLinearReferenceFrameA>
+		<linearLowerLimit x="0" y="0" z="0" />
+		<linearUpperLimit x="0" y="0" z="0" />
+		<angularLowerLimit x="-0.12" y="-0.13" z="-0.34" />
+		<angularUpperLimit x="0.12" y="0.5" z="0.34" />
+		<linearStiffness x="0" y="0" z="0" />
+		<angularStiffness x="0" y="0" z="0" />
+		<linearDamping x="0" y="0" z="0" />
+		<angularDamping x="0" y="0" z="0" />
+		<linearEquilibrium x="0" y="0" z="0" />
+		<angularEquilibrium x="0" y="0" z="0" />
+	</generic-constraint-default>
+        
+		<generic-constraint bodyA="qq8 2" bodyB="qq8 1" />
+		<generic-constraint bodyA="qq8 3" bodyB="qq8 2" />
+		<generic-constraint bodyA="qq8 4" bodyB="qq8 3" />
+        <generic-constraint bodyA="qq8 5" bodyB="qq8 4" />
+		<generic-constraint bodyA="qq8 6" bodyB="qq8 5" />
+	</constraint-group>
+	
+
+    <bone-default>
+		<mass>0.2</mass>
+		<inertia x="5" y="5" z="5" />
+		<centerOfMassTransform>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</centerOfMassTransform>
+		<linearDamping>0.5</linearDamping>
+		<angularDamping>0.6</angularDamping>
+		<margin-multiplier>0.6</margin-multiplier>
+		<gravity-factor>1</gravity-factor>
+		<friction>0</friction>
+		<restitution>0</restitution>
+	</bone-default>
+	
+	<bone name="qq1 2" />
+	<bone name="qq2 2" />
+	<bone name="qq3 2" />
+	<bone name="qq4 2" />
+	<bone name="qq5 2" />
+    <bone name="qq6 2" />
+   
+	
+	<bone name="qq1 3" />
+	<bone name="qq2 3" />
+	<bone name="qq3 3" />
+	<bone name="qq4 3" />
+	<bone name="qq5 3" />
+    <bone name="qq6 3" />
+   
+
+	<bone name="qq1 4" />
+	<bone name="qq2 4" />
+	<bone name="qq3 4" />
+	<bone name="qq4 4" />
+	<bone name="qq5 4" />
+    <bone name="qq6 4" />
+   
+
+	<bone-default>
+	<linearDamping>0.55</linearDamping>
+		<angularDamping>0.7</angularDamping>
+		<margin-multiplier>0.9</margin-multiplier>
+	</bone-default>
+
+	<bone name="qq1 5" />
+	<bone name="qq2 5" />
+	<bone name="qq3 5" />
+	<bone name="qq4 5" />
+	<bone name="qq5 5" />
+    <bone name="qq6 5" />
+
+	<bone name="qq1 6" />
+	<bone name="qq2 6" />
+	<bone name="qq3 6" />
+	<bone name="qq4 6" />
+	<bone name="qq5 6" />
+    <bone name="qq6 6" />
+	
+	<bone name="qq1 7" />
+	<bone name="qq2 7" />
+	<bone name="qq3 7" />
+	<bone name="qq4 7" />
+	<bone name="qq5 7" />
+    <bone name="qq6 7" />
+
+	<bone-default>
+	<linearDamping>0.6</linearDamping>
+		<angularDamping>0.75</angularDamping>
+		<margin-multiplier>1.3</margin-multiplier>
+	</bone-default>
+
+	<bone name="qq1 8" />
+	<bone name="qq2 8" />
+	<bone name="qq3 8" />
+	<bone name="qq4 8" />
+	<bone name="qq5 8" />
+    <bone name="qq6 8" />
+	
+	<bone name="qq1 9" />
+	<bone name="qq2 9" />
+	<bone name="qq3 9" />
+	<bone name="qq4 9" />
+	<bone name="qq5 9" />
+    <bone name="qq6 9" />
+	
+	<bone name="qq1 10" />
+	<bone name="qq2 10" />
+	<bone name="qq3 10" />
+	<bone name="qq4 10" />
+	<bone name="qq5 10" />
+    <bone name="qq6 10" />
+
+	
+	<bone-default>
+	<linearDamping>0.94</linearDamping>
+		<angularDamping>0.8</angularDamping>
+		<margin-multiplier>1.3</margin-multiplier>
+	</bone-default>
+
+	<bone name="qq1 11" />
+	<bone name="qq2 11" />
+	<bone name="qq3 11" />
+	<bone name="qq4 11" />
+	<bone name="qq5 11" />
+    <bone name="qq6 11" />
+	
+	<bone name="qq1 12" />
+	<bone name="qq2 12" />
+	<bone name="qq3 12" />
+	<bone name="qq4 12" />
+	<bone name="qq5 12" />
+    <bone name="qq6 12" />
+	
+	<bone name="qq1 13" />
+	<bone name="qq2 13" />
+	<bone name="qq3 13" />
+	<bone name="qq4 13" />
+	<bone name="qq5 13" />
+    <bone name="qq6 13" />
+
+	
+	<generic-constraint-default>
+		<frameInB>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</frameInB>
+		<useLinearReferenceFrameA>false</useLinearReferenceFrameA>
+		<linearLowerLimit x="0" y="0" z="0" />
+		<linearUpperLimit x="0" y="0" z="0" />
+		<angularLowerLimit x="-0.12" y="-0.2" z="-0.34" />
+		<angularUpperLimit x="0.12" y="0.5" z="0.34" />
+		<linearStiffness x="0" y="0" z="0" />
+		<angularStiffness x="0" y="0" z="0" />
+		<linearDamping x="0" y="0" z="0" />
+		<angularDamping x="0" y="0" z="0" />
+		<linearEquilibrium x="0" y="0" z="0" />
+		<angularEquilibrium x="0" y="0" z="0" />
+	</generic-constraint-default>
+
+	<constraint-group>
+		<generic-constraint bodyA="qq1 2" bodyB="qq1 1" />
+		<generic-constraint bodyA="qq1 3" bodyB="qq1 2" />
+		<generic-constraint bodyA="qq1 4" bodyB="qq1 3" />
+		<generic-constraint bodyA="qq1 5" bodyB="qq1 4" />
+		<generic-constraint bodyA="qq1 6" bodyB="qq1 5" />
+		<generic-constraint bodyA="qq1 7" bodyB="qq1 6" />
+		<generic-constraint bodyA="qq1 8" bodyB="qq1 7" />
+		<generic-constraint bodyA="qq1 9" bodyB="qq1 8" />
+	</constraint-group>
+	    
+	
+	<constraint-group>
+		<generic-constraint bodyA="qq2 2" bodyB="qq2 1" />
+		<generic-constraint bodyA="qq2 3" bodyB="qq2 2" />
+		<generic-constraint bodyA="qq2 4" bodyB="qq2 3" />
+		<generic-constraint bodyA="qq2 5" bodyB="qq2 4" />
+		<generic-constraint bodyA="qq2 6" bodyB="qq2 5" />
+		<generic-constraint bodyA="qq2 7" bodyB="qq2 6" />
+		<generic-constraint bodyA="qq2 8" bodyB="qq2 7" />
+	</constraint-group>
+		
+		
+	<constraint-group>
+		<generic-constraint bodyA="qq3 2" bodyB="qq3 1" />
+		<generic-constraint bodyA="qq3 3" bodyB="qq3 2" />
+		<generic-constraint bodyA="qq3 4" bodyB="qq3 3" />
+		<generic-constraint bodyA="qq3 5" bodyB="qq3 4" />
+		<generic-constraint bodyA="qq3 6" bodyB="qq3 5" />
+		<generic-constraint bodyA="qq3 7" bodyB="qq3 6" />
+		<generic-constraint bodyA="qq3 8" bodyB="qq3 7" />
+		<generic-constraint bodyA="qq3 9" bodyB="qq3 8" />
+		<generic-constraint bodyA="qq3 10" bodyB="qq3 9" />
+		<generic-constraint bodyA="qq3 11" bodyB="qq3 10" />
+		<generic-constraint bodyA="qq3 12" bodyB="qq3 11" />
+		<generic-constraint bodyA="qq3 13" bodyB="qq3 12" />
+	</constraint-group>
+		
+		
+	<constraint-group>
+		<generic-constraint bodyA="qq4 2" bodyB="qq4 1" />
+		<generic-constraint bodyA="qq4 3" bodyB="qq4 2" />
+		<generic-constraint bodyA="qq4 4" bodyB="qq4 3" />
+		<generic-constraint bodyA="qq4 5" bodyB="qq4 4" />
+		<generic-constraint bodyA="qq4 6" bodyB="qq4 5" />
+		<generic-constraint bodyA="qq4 7" bodyB="qq4 6" />
+		<generic-constraint bodyA="qq4 8" bodyB="qq4 7" />
+		<generic-constraint bodyA="qq4 9" bodyB="qq4 8" />
+		<generic-constraint bodyA="qq4 10" bodyB="qq4 9" />
+		<generic-constraint bodyA="qq4 11" bodyB="qq4 10" />
+
+	</constraint-group>
+		
+	
+	<constraint-group>
+		<generic-constraint bodyA="qq5 2" bodyB="qq5 1" />
+		<generic-constraint bodyA="qq5 3" bodyB="qq5 2" />
+		<generic-constraint bodyA="qq5 4" bodyB="qq5 3" />
+		<generic-constraint bodyA="qq5 5" bodyB="qq5 4" />
+	</constraint-group>
+		   
+		   
+	<constraint-group>
+		<generic-constraint bodyA="qq6 2" bodyB="qq6 1" />
+		<generic-constraint bodyA="qq6 3" bodyB="qq6 2" />
+		<generic-constraint bodyA="qq6 4" bodyB="qq6 3" />
+		<generic-constraint bodyA="qq6 5" bodyB="qq6 4" />
+	</constraint-group>
+	
+	
+	<generic-constraint-default>
+		<frameInB>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</frameInB>
+		<useLinearReferenceFrameA>false</useLinearReferenceFrameA>
+		<linearLowerLimit x="0" y="0" z="0" />
+		<linearUpperLimit x="0" y="0" z="0" />
+		<angularLowerLimit x="-0.02" y="-0.03" z="-0.04" />
+		<angularUpperLimit x="0.02" y="0.03" z="0.04" />
+		<linearStiffness x="0" y="0" z="0" />
+		<angularStiffness x="0" y="0" z="0" />
+		<linearDamping x="0" y="0" z="0" />
+		<angularDamping x="0" y="0" z="0" />
+		<linearEquilibrium x="0" y="0" z="0" />
+		<angularEquilibrium x="0" y="0" z="0" />
+	</generic-constraint-default>
+	
+	<generic-constraint bodyA="qq6 5" bodyB="qq5 5" />
+	
+	
+	<bone-default>
+		<mass>0.4</mass>
+		<inertia x="15" y="15" z="15" />
+		<centerOfMassTransform>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</centerOfMassTransform>
+		<linearDamping>0.7</linearDamping>
+		<angularDamping>0.6</angularDamping>
+		<margin-multiplier>0.8</margin-multiplier>
+		<gravity-factor>0.97</gravity-factor>
+		<friction>0</friction>
+		<restitution>0</restitution>
+	</bone-default>
+	
+    <bone-default>
+	<linearDamping>0.75</linearDamping>
+		<angularDamping>0.7</angularDamping>
+		<margin-multiplier>0.9</margin-multiplier>
+	</bone-default>
+
+	<bone-default>
+	<linearDamping>0.8</linearDamping>
+		<angularDamping>0.75</angularDamping>
+		<margin-multiplier>1.3</margin-multiplier>
+	</bone-default>
+
+	<constraint-group>
+	<generic-constraint-default>
+		<frameInB>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</frameInB>
+		<useLinearReferenceFrameA>false</useLinearReferenceFrameA>
+		<linearLowerLimit x="0" y="0" z="0" />
+		<linearUpperLimit x="0" y="0" z="0" />
+		<angularLowerLimit x="-0.12" y="0" z="-0.2" />
+		<angularUpperLimit x="0.12" y="0.7" z="0.2" />
+		<linearStiffness x="0" y="0" z="0" />
+		<angularStiffness x="0" y="0" z="0" />
+		<linearDamping x="0" y="0" z="0" />
+		<angularDamping x="0" y="0" z="0" />
+		<linearEquilibrium x="0" y="0" z="0" />
+		<angularEquilibrium x="0" y="0" z="0" />
+	</generic-constraint-default>
+       
+		<generic-constraint bodyA="oo1 2" bodyB="oo1 1" />
+		<generic-constraint bodyA="oo1 3" bodyB="oo1 2" />
+		<generic-constraint bodyA="oo1 4" bodyB="oo1 3" />
+		
+		<generic-constraint-default>
+		<frameInB>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</frameInB>
+		<useLinearReferenceFrameA>false</useLinearReferenceFrameA>
+		<linearLowerLimit x="0" y="0" z="0" />
+		<linearUpperLimit x="0" y="0" z="0" />
+		<angularLowerLimit x="-0.12" y="-0.2" z="-0.2" />
+		<angularUpperLimit x="0.12" y="0.7" z="0.2" />
+		<linearStiffness x="0" y="0" z="0" />
+		<angularStiffness x="0" y="0" z="0" />
+		<linearDamping x="0" y="0" z="0" />
+		<angularDamping x="0" y="0" z="0" />
+		<linearEquilibrium x="0" y="0" z="0" />
+		<angularEquilibrium x="0" y="0" z="0" />
+	</generic-constraint-default>
+		
+		<generic-constraint bodyA="oo1 5" bodyB="oo1 4" />
+		<generic-constraint bodyA="oo1 6" bodyB="oo1 5" />
+		<generic-constraint bodyA="oo1 7" bodyB="oo1 6" />
+		<generic-constraint bodyA="oo1 8" bodyB="oo1 7" />
+		<generic-constraint bodyA="oo1 9" bodyB="oo1 8" />
+		<generic-constraint bodyA="oo1 10" bodyB="oo1 9" />
+		<generic-constraint bodyA="oo1 11" bodyB="oo1 10" />
+
+    </constraint-group>
+        
+		
+	<constraint-group>
+	<generic-constraint-default>
+		<frameInB>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</frameInB>
+		<useLinearReferenceFrameA>false</useLinearReferenceFrameA>
+		<linearLowerLimit x="0" y="0" z="0" />
+		<linearUpperLimit x="0" y="0" z="0" />
+		<angularLowerLimit x="-0.12" y="0" z="-0.2" />
+		<angularUpperLimit x="0.12" y="0.7" z="0.2" />
+		<linearStiffness x="0" y="0" z="0" />
+		<angularStiffness x="0" y="0" z="0" />
+		<linearDamping x="0" y="0" z="0" />
+		<angularDamping x="0" y="0" z="0" />
+		<linearEquilibrium x="0" y="0" z="0" />
+		<angularEquilibrium x="0" y="0" z="0" />
+	</generic-constraint-default>
+       
+		<generic-constraint bodyA="oo2 2" bodyB="oo2 1" />
+		<generic-constraint bodyA="oo2 3" bodyB="oo2 2" />
+		<generic-constraint bodyA="oo2 4" bodyB="oo2 3" />
+		
+		<generic-constraint-default>
+		<frameInB>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</frameInB>
+		<useLinearReferenceFrameA>false</useLinearReferenceFrameA>
+		<linearLowerLimit x="0" y="0" z="0" />
+		<linearUpperLimit x="0" y="0" z="0" />
+		<angularLowerLimit x="-0.12" y="-0.2" z="-0.2" />
+		<angularUpperLimit x="0.12" y="0.7" z="0.2" />
+		<linearStiffness x="0" y="0" z="0" />
+		<angularStiffness x="0" y="0" z="0" />
+		<linearDamping x="0" y="0" z="0" />
+		<angularDamping x="0" y="0" z="0" />
+		<linearEquilibrium x="0" y="0" z="0" />
+		<angularEquilibrium x="0" y="0" z="0" />
+	</generic-constraint-default>
+		
+		<generic-constraint bodyA="oo2 5" bodyB="oo2 4" />
+		<generic-constraint bodyA="oo2 6" bodyB="oo2 5" />
+		<generic-constraint bodyA="oo2 7" bodyB="oo2 6" />
+		<generic-constraint bodyA="oo2 8" bodyB="oo2 7" />
+		<generic-constraint bodyA="oo2 9" bodyB="oo2 8" />
+		<generic-constraint bodyA="oo2 10" bodyB="oo2 9" />
+		<generic-constraint bodyA="oo2 11" bodyB="oo2 10" />
+
+	</constraint-group>
+		
+		
+	<constraint-group>
+	<generic-constraint-default>
+		<frameInB>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</frameInB>
+		<useLinearReferenceFrameA>false</useLinearReferenceFrameA>
+		<linearLowerLimit x="0" y="0" z="0" />
+		<linearUpperLimit x="0" y="0" z="0" />
+		<angularLowerLimit x="-0.12" y="0.1" z="-0.2" />
+		<angularUpperLimit x="0.12" y="0.7" z="0.2" />
+		<linearStiffness x="0" y="0" z="0" />
+		<angularStiffness x="0" y="0" z="0" />
+		<linearDamping x="0" y="0" z="0" />
+		<angularDamping x="0" y="0" z="0" />
+		<linearEquilibrium x="0" y="0" z="0" />
+		<angularEquilibrium x="0" y="0" z="0" />
+	</generic-constraint-default>
+       
+		<generic-constraint bodyA="oo3 2" bodyB="oo3 1" />
+		<generic-constraint bodyA="oo3 3" bodyB="oo3 2" />
+		<generic-constraint bodyA="oo3 4" bodyB="oo3 3" />
+		
+		<generic-constraint-default>
+		<frameInB>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</frameInB>
+		<useLinearReferenceFrameA>false</useLinearReferenceFrameA>
+		<linearLowerLimit x="0" y="0" z="0" />
+		<linearUpperLimit x="0" y="0" z="0" />
+		<angularLowerLimit x="-0.12" y="-0.2" z="-0.2" />
+		<angularUpperLimit x="0.12" y="0.7" z="0.2" />
+		<linearStiffness x="0" y="0" z="0" />
+		<angularStiffness x="0" y="0" z="0" />
+		<linearDamping x="0" y="0" z="0" />
+		<angularDamping x="0" y="0" z="0" />
+		<linearEquilibrium x="0" y="0" z="0" />
+		<angularEquilibrium x="0" y="0" z="0" />
+	</generic-constraint-default>
+		
+		<generic-constraint bodyA="oo3 5" bodyB="oo3 4" />
+		<generic-constraint bodyA="oo3 6" bodyB="oo3 5" />
+		<generic-constraint bodyA="oo3 7" bodyB="oo3 6" />
+		<generic-constraint bodyA="oo3 8" bodyB="oo3 7" />
+		<generic-constraint bodyA="oo3 9" bodyB="oo3 8" />
+		<generic-constraint bodyA="oo3 10" bodyB="oo3 9" />
+		<generic-constraint bodyA="oo3 11" bodyB="oo3 10" />
+
+	</constraint-group>
+	
+	
+	<generic-constraint-default>
+    <frameInLerp>
+			<translationLerp>0</translationLerp>
+			<rotationLerp>0</rotationLerp>
+    </frameInLerp>
+	<linearLowerLimit x="-4" y="-4" z="-4" />
+    <linearUpperLimit x="4" y="4" z="4" />
+    <angularLowerLimit x="-1" y="-1" z="-1" />
+    <angularUpperLimit x="1" y="1" z="1" />
+	  <linearStiffness x="0" y="0" z="0" />
+    <angularStiffness x="0" y="0" z="0" />
+    </generic-constraint-default>
+
+	<per-vertex-shape name="Straps">
+	<margin>0.7</margin>
+	<priority>0</priority>
+	<shared>private</shared>
+	<tag>h9</tag>
+	<can-collide-with-tag>h6</can-collide-with-tag>
+	<can-collide-with-tag>ground</can-collide-with-tag>
+	<no-collide-with-tag>h9</no-collide-with-tag>
+	
+	<weight-threshold bone="qq6 2">1</weight-threshold>		
+	<weight-threshold bone="qq6 3">0.4</weight-threshold>
+	<weight-threshold bone="qq6 4">0.4</weight-threshold>
+	<weight-threshold bone="qq6 5">0.4</weight-threshold>
+	<weight-threshold bone="qq6 6">0.4</weight-threshold>
+	<weight-threshold bone="qq6 7">0.4</weight-threshold>
+	<weight-threshold bone="qq6 8">0.4</weight-threshold>
+	<weight-threshold bone="qq6 9">0.4</weight-threshold>
+	<weight-threshold bone="qq6 10">0.4</weight-threshold>
+	
+	<weight-threshold bone="qq5 2">1</weight-threshold>		
+	<weight-threshold bone="qq5 3">0.4</weight-threshold>
+	<weight-threshold bone="qq5 4">0.4</weight-threshold>
+	<weight-threshold bone="qq5 5">0.4</weight-threshold>
+	<weight-threshold bone="qq5 6">0.4</weight-threshold>
+	<weight-threshold bone="qq5 7">0.4</weight-threshold>
+	<weight-threshold bone="qq5 8">0.4</weight-threshold>
+	<weight-threshold bone="qq5 9">0.4</weight-threshold>
+	<weight-threshold bone="qq5 10">0.4</weight-threshold>
+	
+	<weight-threshold bone="qq4 2">1</weight-threshold>		
+	<weight-threshold bone="qq4 3">0.4</weight-threshold>
+	<weight-threshold bone="qq4 4">0.4</weight-threshold>
+	<weight-threshold bone="qq4 5">0.4</weight-threshold>
+	<weight-threshold bone="qq4 6">0.4</weight-threshold>
+	<weight-threshold bone="qq4 7">0.4</weight-threshold>
+	<weight-threshold bone="qq4 8">0.4</weight-threshold>
+	<weight-threshold bone="qq4 9">0.4</weight-threshold>
+	<weight-threshold bone="qq4 10">0.4</weight-threshold>
+	<weight-threshold bone="qq4 11">0.4</weight-threshold>
+	
+	<weight-threshold bone="qq3 2">1</weight-threshold>		
+	<weight-threshold bone="qq3 3">0.4</weight-threshold>
+	<weight-threshold bone="qq3 4">0.4</weight-threshold>
+	<weight-threshold bone="qq3 5">0.4</weight-threshold>
+	<weight-threshold bone="qq3 6">0.4</weight-threshold>
+	<weight-threshold bone="qq3 7">0.4</weight-threshold>
+	<weight-threshold bone="qq3 8">0.4</weight-threshold>
+	<weight-threshold bone="qq3 9">0.4</weight-threshold>
+	<weight-threshold bone="qq3 10">0.4</weight-threshold>
+	<weight-threshold bone="qq3 11">0.4</weight-threshold>
+	<weight-threshold bone="qq3 12">0.4</weight-threshold>
+	<weight-threshold bone="qq3 13">0.4</weight-threshold>
+
+	
+	<weight-threshold bone="qq2 2">1</weight-threshold>		
+	<weight-threshold bone="qq2 3">0.4</weight-threshold>
+	<weight-threshold bone="qq2 4">0.4</weight-threshold>
+	<weight-threshold bone="qq2 5">0.4</weight-threshold>
+	<weight-threshold bone="qq2 6">0.4</weight-threshold>
+	<weight-threshold bone="qq2 7">0.4</weight-threshold>
+	<weight-threshold bone="qq2 8">0.4</weight-threshold>
+	<weight-threshold bone="qq2 9">0.4</weight-threshold>
+	<weight-threshold bone="qq2 10">0.4</weight-threshold>
+	
+	<weight-threshold bone="qq1 2">1</weight-threshold>		
+	<weight-threshold bone="qq1 3">0.4</weight-threshold>
+	<weight-threshold bone="qq1 4">0.4</weight-threshold>
+	<weight-threshold bone="qq1 5">0.4</weight-threshold>
+	<weight-threshold bone="qq1 6">0.4</weight-threshold>
+	<weight-threshold bone="qq1 7">0.4</weight-threshold>
+	<weight-threshold bone="qq1 8">0.4</weight-threshold>
+	<weight-threshold bone="qq1 9">0.4</weight-threshold>
+	<weight-threshold bone="qq1 10">0.4</weight-threshold>
+	
+	</per-vertex-shape>
+	
+	<per-vertex-shape name="Jewelry">
+	<margin>0.4</margin>
+	<priority>0</priority>
+	<penetration>-0.2</penetration>
+	<shared>private</shared>
+	<tag>h9</tag>
+	<can-collide-with-tag>h6</can-collide-with-tag>
+	<no-collide-with-tag>h9</no-collide-with-tag>
+	
+	<weight-threshold bone="qq7 2">0.4</weight-threshold>		
+	<weight-threshold bone="qq7 3">0.4</weight-threshold>
+	<weight-threshold bone="qq7 4">0.4</weight-threshold>
+	<weight-threshold bone="qq7 5">0.4</weight-threshold>
+	<weight-threshold bone="qq7 6">0.4</weight-threshold>
+	<weight-threshold bone="qq7 7">0.4</weight-threshold>
+	<weight-threshold bone="qq7 8">0.4</weight-threshold>
+	<weight-threshold bone="qq7 9">0.4</weight-threshold>
+	<weight-threshold bone="qq7 10">0.4</weight-threshold>
+	
+	<weight-threshold bone="qq8 2">0.4</weight-threshold>		
+	<weight-threshold bone="qq8 3">0.4</weight-threshold>
+	<weight-threshold bone="qq8 4">0.4</weight-threshold>
+	<weight-threshold bone="qq8 5">0.4</weight-threshold>
+	<weight-threshold bone="qq8 6">0.4</weight-threshold>
+	<weight-threshold bone="qq8 7">0.4</weight-threshold>
+	<weight-threshold bone="qq8 8">0.4</weight-threshold>
+	<weight-threshold bone="qq8 9">0.4</weight-threshold>
+	<weight-threshold bone="qq8 10">0.4</weight-threshold>
+	
+	</per-vertex-shape>
+	
+	</system>

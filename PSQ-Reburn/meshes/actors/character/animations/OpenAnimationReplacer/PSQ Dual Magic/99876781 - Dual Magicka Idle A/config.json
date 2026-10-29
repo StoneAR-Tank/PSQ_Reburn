@@ -1,0 +1,215 @@
+{
+  "name": "99876781 - Dual Magicka Idle A",
+  "priority": 2147483608,
+  "interruptible": true,
+  "replaceOnLoop": true,
+  "conditions": [
+    {
+      "condition": "PRESET",
+      "requiredVersion": "2.2.0.0",
+      "Preset": "PSQ_DualMagic_Base"
+    },
+    {
+      "condition": "OR",
+      "requiredVersion": "1.0.0.0",
+      "Conditions": [
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 12
+          },
+          "Left hand": false
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 13
+          },
+          "Left hand": false
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 14
+          },
+          "Left hand": false
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 15
+          },
+          "Left hand": false
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 16
+          },
+          "Left hand": false
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 17
+          },
+          "Left hand": false
+        }
+      ]
+    },
+    {
+      "condition": "OR",
+      "requiredVersion": "1.0.0.0",
+      "Conditions": [
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 12
+          },
+          "Left hand": true
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 13
+          },
+          "Left hand": true
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 14
+          },
+          "Left hand": true
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 15
+          },
+          "Left hand": true
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 16
+          },
+          "Left hand": true
+        },
+        {
+          "condition": "IsEquippedType",
+          "requiredVersion": "1.0.0.0",
+          "Type": {
+            "value": 17
+          },
+          "Left hand": true
+        }
+      ]
+    },
+    {
+      "condition": "IsMovementDirection",
+      "requiredVersion": "1.0.0.0",
+      "Direction": {
+        "value": 0.0
+      }
+    },
+    {
+      "condition": "IsInCombat",
+      "requiredVersion": "1.0.0.0",
+      "negated": true
+    },
+    {
+      "condition": "IsSneaking",
+      "requiredVersion": "1.0.0.0",
+      "negated": true
+    },
+    {
+      "condition": "IsWeaponDrawn",
+      "requiredVersion": "1.0.0.0"
+    },
+    {
+      "condition": "Random",
+      "requiredVersion": "2.3.0.0",
+      "State": {
+        "scope": "Local",
+        "shouldResetOnLoopOrEcho": false
+      },
+      "Minimum random value": {
+        "value": 0.0
+      },
+      "Maximum random value": {
+        "value": 1.0
+      },
+      "Comparison": "<",
+      "Numeric value": {
+        "value": 0.5
+      }
+    },
+    {
+      "condition": "OR",
+      "requiredVersion": "1.0.0.0",
+      "negated": true,
+      "Conditions": [
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_IsFlying",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_GroundHover",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_LocalTakeoff",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        },
+        {
+          "condition": "CompareValues",
+          "requiredVersion": "1.0.0.0",
+          "Value A": {
+            "graphVariable": "Wingflight_LocalLanding",
+            "graphVariableType": "Bool"
+          },
+          "Comparison": "==",
+          "Value B": {
+            "value": 1
+          }
+        }
+      ]
+    }
+  ]
+}
