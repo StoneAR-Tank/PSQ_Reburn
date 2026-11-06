@@ -39,6 +39,43 @@ PSQ Reburn 是《上古卷轴 V：天际特别版》的魅魔系统修改版，�
 - **powerofthree's Papyrus Extender**：能量感知、眷属眼睛等扩展功能需要，安装与游戏匹配的版本及其前置。
 - **其他可选兼容**：SLSO、FHU、UIExtensions、EFF／NFF、iNeed、Mannaz、GT_SoftBody、TDF、Apropos2 等按需要安装。各模组仍需满足自己的前置要求。
 
+## 服装原址与下载指路
+
+以下服装按需安装，不是 PSQ 本体的全部必需前置。请选择与游戏版本、身体及所需插件匹配的版本；原作、移植版和身形转换版可能使用不同插件名称。对应适配仍保留上衣、靴子、手套、角、尾巴和翅膀六部分。
+
+| 服装 | 原址或查找线索 | 说明 |
+| --- | --- | --- |
+| DX Succubus（Set01） | [DX Succubus 原版 SE / UNP](https://www.nexusmods.com/skyrimspecialedition/mods/36642) · [CBBE BodySlide 版](https://www.nexusmods.com/skyrimspecialedition/mods/36619) · [UBE 转换](https://www.nexusmods.com/skyrimspecialedition/mods/116652) | 安装与身体匹配的版本；UBE 转换与 PSQ 适配的搭配方式见包内 DX UBE 文档。 |
+| Helena Succubus（Set02） | [Rektas 服装页面](https://rektas.wixsite.com/website/post/helena-succubus) | 选择适用的 SE 与身体版本。 |
+| Dragon Princess（Set03） | [SE 3BF BodySlide 版本线索](https://schaken-mods.com/forums/topic/32100-se-dragon-princess-3bf-bs/) | 这是相关移植版本线索，不是已核实的作者原址；PSQ 已接入的版本插件为 `BBP_Dragon_Princess.esp`，下载后请核对。 |
+| Ageha Abyss（Set04） | 原址与适配版本待核实 | 已有线索标注为未授权搬运，暂不作为原址；请选择合法来源，并核对实际插件和版本。 |
+| TERA Succubus 9DM（Set05） | [TERA Succubus 9DM SE 相关版本](https://schaken-mods.com/file/tera-succubus-9dm-se) | PSQ 已接入的版本插件为 `TR9DmRxSS_HR.esp`；页面所提供文件是否与该插件一致尚待核验。不要与下方 Harry TERA 混淆。 |
+| SucubusSister Shinano（Set06） | [lilyrim 发布页面](https://www.patreon.com/u11199437/posts/free-shinano-117275572) | 包含信浓服装；请按作者说明安装匹配版本及物理前置。 |
+| SW Vampire（Set07） | [相关页面线索](https://arca.live/b/tullius/96130274) | 页面当前无法验证，具体文件和插件仍需核对。 |
+| Hirosin X Succubus（Set08） | [原帖线索](https://arca.live/b/tullius/90058800) · [服装索引](https://modbooru.com/mods/x-succubus-set.1670) | PSQ 使用单独的 Hiroshi／X 魅魔资源包作为回退资源；该资源包不包含在本次 Release 中，原帖目前无法直接核验。 |
+| TERA Succubus Armor（Harry TERA，编号 100） | [Harry2135 作者页面](https://www.patreon.com/posts/tera-succubus-18130754) · [Daymarr SE 移植页面](https://www.daymarrworkshop.com/post/tera-succubus-armor-cbbe-tbd-se) | 作者页为原版资料，SE 移植版及插件需另行核对；不要与 Set05 的 9DM 版本混淆。 |
+
+仅链接原作或相关页面，不代表对应版本、转载许可或运行效果已经核验。某些页面可能要求登录、成人内容设置或单独选择 SE 和身体版本。下载并启用原作后，可在 PSQ 的 MCM 兼容页面检查识别状态；按身体预设构建对应的 PSQ BodySlide 适配组并勾选 Build Morphs。
+
+## MO2 推荐排序
+
+以下为 **MO2 左侧模组文件覆盖顺序**，从上到下优先级逐渐升高；只启用自己实际使用的可选项：
+
+```text
+基础前置、骨骼、身体、物理和 BodySlide
+SexLab 或 P+、对应欲望框架及其前置
+Body Change NG、TRX 及各自前置（按功能选装）
+独立服装原作及其所需资源（按需要安装）
+PSQ Reburn 本体
+为当前版本制作的 PSQ 专用兼容补丁／BodySlide 输出（按需）
+独立 Wingflight / OSYRN 飞行核心及适用汉化（按需，确认其 Wingflight.dll 生效）
+```
+
+- 本体应覆盖 Body Change NG 的同名 `BodyChangeNG.dll` 以及相应独立服装的 PSQ 兼容文件；在 MO2 的冲突信息中核对实际生效来源。升级 Body Change NG 后，应确认 PSQ 接口 DLL 与新版本匹配。
+- BodySlide 输出只有在使用正确的 PSQ 适配组、匹配身体与预设并勾选 Build Morphs 后，才应覆盖相应旧模型；不要让过时输出覆盖新版修正。外部补丁若覆盖 PSQ 文件，应确认它明确支持当前 PSQ 版本。
+- 使用独立飞行时，让所选飞行核心提供 `Wingflight.dll`；PSQ 的 Body Change DLL 与飞行 DLL 各自检查，覆盖顺序不代表所有文件都应由同一个模组提供。
+- **MO2 右侧插件顺序与左侧文件优先级不同。** 启用所需原作插件，并保证各插件主文件存在且排在依赖它的插件之前；根据插件类型、冲突和实际前置检查，不要仅照搬左侧顺序或重命名插件。
+
 ## 安装与升级
 
 1. 结束互动，退出变身和飞行，在地面另存并备份 `.ess` 与对应的 `.skse` 存档，然后退出游戏。
