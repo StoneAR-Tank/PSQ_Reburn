@@ -1,7 +1,7 @@
 {
   "name": "PSQ Reburn",
-  "version": "0.27",
-  "date": "2026-10-30",
+  "version": "0.28",
+  "date": "2026-11-06",
   "channel": "test-release",
   "optional_modules_separate": [
     "Wingflight",
@@ -133,7 +133,7 @@
     "source_tests": 262,
     "game_runtime_tested": false
   },
-  "package_revision": 38,
+  "package_revision": 61,
   "display_version": "v0.26",
   "version_relabel": {
     "date": "2026-10-26",
@@ -784,5 +784,265 @@
     "native_policy_checks": 66,
     "actual_PAS_cases": 462,
     "runtime_acceptance_complete": false
+  },
+  "FUTA_body_shape_page": {
+    "date": "2026-10-30",
+    "page": "身体形态变化",
+    "settings_spells_hotkeys_and_NPC_options_consolidated": true,
+    "human_and_succubus_size_controls": true,
+    "genitals_and_scrotum_independent": true,
+    "scale_min": 0.25,
+    "scale_max": 3.0,
+    "scale_key": "PSQ_TRXFuta",
+    "foreign_scale_keys_preserved": true,
+    "idempotent_node_updates": true,
+    "TRX_native_nodes_verified": true,
+    "actual_PAS_cases": 140,
+    "runtime_acceptance_complete": false
+  },
+  "FUTA_clothing_visibility": {
+    "date": "2026-10-30",
+    "covered_slots": [
+      32,
+      49,
+      52
+    ],
+    "own_TRX_excluded": true,
+    "automatic_hide_and_restore": true,
+    "no_continuous_polling": true,
+    "appearance_busy_and_load_ticket_guards": true,
+    "temporary_item_and_foreign_equipment_ownership_preserved": true,
+    "actual_PAS_cases": 192,
+    "runtime_acceptance_complete": false
+  },
+  "TERA_complete_parts_and_empty_accessories": {
+    "date": "2026-10-30",
+    "outfit": 100,
+    "upper_slots": [
+      32,
+      35,
+      49,
+      52
+    ],
+    "boots_slots": [
+      37,
+      46
+    ],
+    "empty_parts": [
+      "角饰",
+      "翅膀"
+    ],
+    "six_part_interface_preserved": true,
+    "borrowed_BS_projects_removed": true,
+    "TRX_transform_armor_backup_excluded": true,
+    "PAS_cases": 326,
+    "runtime_acceptance_complete": false
+  },
+  "TERA_BodySlide_refresh": {
+    "date": "2026-10-30",
+    "outfit": 100,
+    "preset": "- Zeroed Sliders -",
+    "BuildMorphs": true,
+    "projects": 7,
+    "output_files": 21,
+    "embedded_body_morphs_preserved": 89,
+    "body_slider_references_repaired": 90,
+    "slot_fix_preserved": true,
+    "standalone_mod_unchanged": true,
+    "runtime_acceptance_complete": false
+  },
+  "UBE_interface_compatibility": {
+    "date": "2026-10-31",
+    "installed_UBE": "2.0 U0.7 + U0.7.1",
+    "native_races_verified": 18,
+    "BodyChange_presets_observed": 23,
+    "actual_actor_skin_detection": true,
+    "temporary_UBE_preset_supported": true,
+    "headparts_require_valid_race_list": true,
+    "native_cover_and_addons_protected": true,
+    "unconverted_CBBE_equipment_TRX_tattoos_skipped": true,
+    "current_UBE_skin_preserved": true,
+    "outfit_conversion_included": false,
+    "new_DLL_or_ESP": false,
+    "PAS_cases": 104,
+    "runtime_acceptance_complete": false
+  },
+  "BCNG_1_3_8_API4": {
+    "date": "2026-11-01",
+    "upstream": "1.3.8",
+    "modified_DLL": "1.3.8.1",
+    "Papyrus_API": 4,
+    "standalone_optional": true,
+    "external_mod_untouched": true,
+    "body_and_skin_backend": "Body Change NG",
+    "transform_skin_selector": true,
+    "restore_previous_skin_selection": true,
+    "later_different_manual_selection_wins": true,
+    "new_BCNG_releases_require_matching_patch": true,
+    "PAS_cases": 276,
+    "native_test_programs": 7,
+    "game_runtime_tested": false
+  },
+  "equipment_swap_plan_20261101": {
+    "single_operation_plan": true,
+    "direct_slot_conflicts_replaced_by_equip": true,
+    "early_headgear_and_extra_armor_stripping_preserved": true,
+    "PSQ_reactions_deferred_during_swap": true,
+    "original_recovery_ledger_unchanged": true,
+    "BCNG_and_other_mods_untouched": true,
+    "PAS_cases": 530,
+    "game_runtime_tested": false,
+    "speedup_measured": false
+  },
+  "original_accessory_visibility": {
+    "date": "2026-11-02",
+    "PSQAppearance_DLL": "1.0.0.1",
+    "API": 1,
+    "enabled_by_default": true,
+    "worn_bonuses_retained": true,
+    "base_body_and_headgear_equip_rules_preserved": true,
+    "restore_on_exit_and_uninstall": true,
+    "reapply_on_load_and_model_rebuild": true,
+    "interval_seconds": 0.75,
+    "missing_helper_falls_back_to_unequip": true,
+    "PAS_cases": 652,
+    "native_policy_checks": 623,
+    "game_runtime_tested": false,
+    "speedup_measured": false
+  },
+  "dx_author_ube_integration": {
+    "source": "Nexus 116652",
+    "custom_refit_used": false,
+    "optional_patch": "PSQ cloth UBE patch",
+    "six_parts": true,
+    "runtime_verified": false
+  },
+  "body_matched_henshin_outfits": {
+    "date": "2026-11-03",
+    "UBE_private_armors": 46,
+    "existing_DX_private_armors": 6,
+    "no_3BA_fallback_for_UBE": true,
+    "MCM_body_type_filter": true,
+    "six_parts": true,
+    "no_new_script_properties": true,
+    "compiled_PEX_routing_cases": 2508,
+    "legacy_and_Pplus219_compiled": true,
+    "game_runtime_tested": false
+  },
+  "multi_equipment_swap_optimization": {
+    "date": "2026-11-03",
+    "example": "Shattered Royal Armor: 16 pieces",
+    "sparse_occupied_slot_checks": true,
+    "native_worn_snapshots_with_consistency_check": true,
+    "early_hidden_accessory_filter": true,
+    "current_plan_exact_membership_route_reuse": true,
+    "original_inventory_ledger_preserved": true,
+    "foreign_slot_protection_preserved": true,
+    "no_external_mod_changes": true,
+    "no_new_DLL_or_plugin": true,
+    "legacy_and_Pplus219_compiled": true,
+    "offline_assertions": 1160,
+    "unrelated_functions_byte_identical": 564,
+    "game_runtime_tested": false,
+    "speedup_measured": false
+  },
+  "henshin_scene_revision": {
+    "date": "2026-11-04",
+    "primary_armor_before_accessories": true,
+    "exit_visibility_worker_race_fixed": true,
+    "disable_visibility_stale_worker_fixed": true,
+    "refill_array_null_cast_fixed": true,
+    "body_catalog_and_legacy_outfit_array_checks_fixed": true,
+    "appearance_helper_version": "1.0.0.2",
+    "appearance_helper_API": 2,
+    "fresh_native_body_and_outfit_queries": true,
+    "body_query_NPC_and_legacy_fallback": true,
+    "original_inventory_ledger_preserved": true,
+    "body_type_isolation_preserved": true,
+    "detailed_entry_attribute_and_visual_timing": true,
+    "external_mods_unchanged": true,
+    "legacy_and_Pplus219_compiled": true,
+    "compiled_flow_assertions": 1732,
+    "native_body_assertions": 217,
+    "native_visibility_assertions": 623,
+    "runtime_tested": false,
+    "controlled_speedup_measured": false
+  },
+  "bodyslide_family_groups": {
+    "date": "2026-11-04",
+    "UBE_projects_grouped": 16,
+    "GT_3BA_projects_grouped": 9,
+    "misassigned_presets_corrected": 2,
+    "meshes_rebuilt": false
+  },
+  "henshin_batch_query_revision": {
+    "date": "2026-11-05",
+    "appearance_helper_version": "1.0.0.3",
+    "appearance_helper_API": 3,
+    "fresh_main_thread_read_only_batches": true,
+    "inventory_writes_and_restore_guards_preserved": true,
+    "pool_percentage_verification_preserved": true,
+    "legacy_and_Pplus219_compiled": true,
+    "runtime_tested": false,
+    "controlled_speedup_measured": false
+  },
+  "henshin_foreground_revision": {
+    "date": "2026-11-05",
+    "background_appearance_work_deferred": true,
+    "energy_and_digestion_settlements_preserved": true,
+    "automatic_recovery_queries_consolidated": true,
+    "manual_recovery_replacement_preserved": true,
+    "entry_readonly_guards_reduced": true,
+    "native_DLL_unchanged": true,
+    "legacy_and_Pplus219_compiled": true,
+    "offline_assertions": 2374,
+    "runtime_tested": false,
+    "controlled_speedup_measured": false
+  },
+  "body_preset_ube_outfit_repair": {
+    "runtime_meshes": 76,
+    "bodyslide_sources": 38,
+    "native_api": 4,
+    "save_format_changed": false,
+    "game_tested": false
+  },
+  "transformed_load_accessories": {
+    "reapply_saved_outfit_visibility_on_load": true,
+    "offline_checks": 296,
+    "runtime_tested": false
+  },
+  "transform_hair_and_loading": {
+    "original_hair_restore": true,
+    "dual_framework_offline_verified": true,
+    "runtime_tested": false,
+    "controlled_speedup_measured": false
+  },
+  "transform_loading_revision_59": {
+    "areas": [
+      "equipment",
+      "visual",
+      "stats"
+    ],
+    "dual_framework_offline_verified": true,
+    "runtime_tested": false,
+    "controlled_speedup_measured": false
+  },
+  "transform_tail_and_loading_revision_60": {
+    "areas": [
+      "tail",
+      "performance"
+    ],
+    "dual_framework_offline_verified": true,
+    "runtime_tested": false,
+    "controlled_speedup_measured": false
+  },
+  "transform_loading_revision_61": {
+    "areas": [
+      "cleanup",
+      "entry"
+    ],
+    "dual_framework_offline_verified": true,
+    "runtime_tested": false,
+    "controlled_speedup_measured": false
   }
 }

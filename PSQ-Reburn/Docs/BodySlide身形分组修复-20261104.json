@@ -1,0 +1,61 @@
+{
+  "UBE_projects": [
+    "GT_Softbody (UBE-Necoco)",
+    "GT_Softbody Breast Physics Spell(UBE Necoco)",
+    "GT_SoftbodyMax (UBE-Necoco) SexAnimation",
+    "GT_Softbody_ACollision (UBE-Necoco)",
+    "GT_Softbody_BaseCollision (UBE-Necoco)",
+    "GT_Softbody_HACollision (UBE-Necoco)",
+    "GT_Softbody_HVACollision (UBE-Necoco)",
+    "GT_Softbody_HVCollision (UBE-Necoco)",
+    "GT_Softbody_VACollision (UBE-Necoco)",
+    "GT_Softbody_VCollision (UBE-Necoco)",
+    "UBE 2.0 [Caenarvon] Cosplay Basics Stockings T Knee",
+    "UBE 2.0 [Caenarvon] Cosplay Basics Stockings T Knee T2",
+    "UBE 2.0 [Caenarvon] Cosplay Basics Stockings T Knee T3",
+    "UBE SE 2.0 Release SMP Object for 3BA configs - Player SoS",
+    "UBE SE 2.0 Release SOS Addon + SMP Collision",
+    "UBE SE 2.0 Release SOS Addon Male"
+  ],
+  "GT_3BA_projects": [
+    "GT_Softbody (CBBE)",
+    "GT_Softbody Breast Physics Spell(CBBE)",
+    "GT_SoftbodyUltra (CBBE)",
+    "GT_Softbody_ACollision (CBBE)",
+    "GT_Softbody_HACollision (CBBE)",
+    "GT_Softbody_HVACollision (CBBE)",
+    "GT_Softbody_HVCollision (CBBE)",
+    "GT_Softbody_VACollision (CBBE)",
+    "GT_Softbody_VCollision (CBBE)"
+  ],
+  "preset_changes": [
+    {
+      "preset": "Aphrodelyn",
+      "removed_groups": [
+        "UBE",
+        "UBE 2.0 KS Hairdos SMP hair collisions for RM",
+        "UBE 2.0 [Dint999] hair collisions for RM",
+        "UBE Female",
+        "UBE Male",
+        "UBE Welded Penis"
+      ]
+    },
+    {
+      "preset": "ErinRaceBody ILNGary",
+      "removed_groups": [
+        "UBE"
+      ]
+    }
+  ],
+  "source_presets": {
+    "D:\\NSKV\\JIZIYU\\mods\\随从-04-阿芙洛黛琳-无明绝技整合版\\CalienteTools\\BodySlide\\SliderPresets\\Aphrodelyn.xml": "78c2d4b8ff9b23141a2cae8a52afbe8b371c821f3c3a3d3510a4476b74b8736a",
+    "D:\\NSKV\\JIZIYU\\mods\\随从-01-奥璃-绿林之歌整合版\\CalienteTools\\BodySlide\\SliderPresets\\ErinRaceBody ILNGary.xml": "19114592792d1436491194f5fa7ea5c3b2cb8b032dc352f0a914097d0a0eb8f4"
+  },
+  "original_generated_UBE_files_verified": 30,
+  "BS_rebuild_needed": false,
+  "unrelated_existing_issue": [
+    "D:\\NSKV\\JIZIYU\\mods\\UBE Vanilla Armor and Clothes\\CalienteTools\\BodySlide\\SliderSets\\UBE Dawnguard - Body - Prisoner Bloody.osp",
+    "mismatched tag: line 1363, column 6"
+  ],
+  "runtime_verified": false
+}

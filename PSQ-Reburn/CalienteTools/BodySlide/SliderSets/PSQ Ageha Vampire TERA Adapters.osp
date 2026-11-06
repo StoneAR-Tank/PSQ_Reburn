@@ -11364,7 +11364,7 @@
         <SourceFile>Corset.nif</SourceFile>
         <OutputPath>meshes\PSQ\ExternalOutfits\TERAHarry</OutputPath>
         <OutputFile GenWeights="true" PreventMorphFile="false">Corset</OutputFile>
-        <Shape target="BaseShapeHR" DataFolder="CBBE">CBBE</Shape>
+        <Shape target="BaseShapeHR" DataFolder="PSQ TERA Harry Adapter">CBBE</Shape>
         <Shape target="corset">corset</Shape>
         <Shape target="corset_bra">corset_bra</Shape>
         <Shape target="corset_laces">corset_laces</Shape>
@@ -11373,339 +11373,429 @@
             <Data name="corsetAppleCheeks" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetAppleCheeks</Data>
             <Data name="corset_lacesAppleCheeks" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesAppleCheeks</Data>
             <Data name="corset_metalAppleCheeks" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalAppleCheeks</Data>
-        </Slider>
+        <Data name="BaseShapeHRAppleCheeks" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRAppleCheeks</Data>
+            </Slider>
         <Slider name="Arms" invert="false" small="0" big="0">
             <Data name="corsetArms" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetArms</Data>
-        </Slider>
+        <Data name="BaseShapeHRarms" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRarms</Data>
+            </Slider>
         <Slider name="Back" invert="false" small="0" big="0">
             <Data name="corsetBack" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBack</Data>
             <Data name="corset_lacesBack" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBack</Data>
             <Data name="corset_metalBack" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalBack</Data>
-        </Slider>
+        <Data name="BaseShapeHRBack" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBack</Data>
+            </Slider>
         <Slider name="BackArch" invert="false" small="0" big="0">
             <Data name="corsetBackArch" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBackArch</Data>
             <Data name="corset_lacesBackArch" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBackArch</Data>
             <Data name="corset_metalBackArch" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalBackArch</Data>
-        </Slider>
+        <Data name="BaseShapeHRBackArch" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBackArch</Data>
+            </Slider>
         <Slider name="Belly" invert="false" small="0" big="0">
             <Data name="corsetBelly" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBelly</Data>
             <Data name="corset_braBelly" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBelly</Data>
             <Data name="corset_lacesBelly" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBelly</Data>
-        </Slider>
+        <Data name="BaseShapeHRBelly" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBelly</Data>
+            </Slider>
         <Slider name="BigBelly" invert="false" small="0" big="0">
             <Data name="corsetBigBelly" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBigBelly</Data>
             <Data name="corset_lacesBigBelly" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBigBelly</Data>
-        </Slider>
+        <Data name="BaseShapeHRBigBelly" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBigBelly</Data>
+            </Slider>
         <Slider name="BigButt" invert="false" small="0" big="0">
             <Data name="corsetBigButt" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBigButt</Data>
             <Data name="corset_lacesBigButt" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBigButt</Data>
             <Data name="corset_metalBigButt" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalBigButt</Data>
-        </Slider>
+        <Data name="BaseShapeHRBigButt" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBigButt</Data>
+            </Slider>
         <Slider name="BigTorso" invert="false" small="0" big="0">
             <Data name="corsetBigTorso" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBigTorso</Data>
             <Data name="corset_braBigTorso" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBigTorso</Data>
             <Data name="corset_lacesBigTorso" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBigTorso</Data>
             <Data name="corset_metalBigTorso" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalBigTorso</Data>
-        </Slider>
+        <Data name="BaseShapeHRBigTorso" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBigTorso</Data>
+            </Slider>
         <Slider name="BreastCenter" invert="false" small="0" big="0">
             <Data name="corsetBreastCenter" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBreastCenter</Data>
             <Data name="corset_braBreastCenter" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBreastCenter</Data>
             <Data name="corset_lacesBreastCenter" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBreastCenter</Data>
-        </Slider>
+        <Data name="BaseShapeHRBreastCenter" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBreastCenter</Data>
+            </Slider>
         <Slider name="BreastCenterBig" invert="false" small="0" big="0">
             <Data name="corsetBreastCenterBig" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBreastCenterBig</Data>
             <Data name="corset_braBreastCenterBig" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBreastCenterBig</Data>
             <Data name="corset_lacesBreastCenterBig" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBreastCenterBig</Data>
-        </Slider>
+        <Data name="BaseShapeHRBreastCenterBig" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBreastCenterBig</Data>
+            </Slider>
         <Slider name="BreastCleavage" invert="false" small="0" big="0">
             <Data name="corsetBreastCleavage" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBreastCleavage</Data>
             <Data name="corset_braBreastCleavage" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBreastCleavage</Data>
             <Data name="corset_lacesBreastCleavage" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBreastCleavage</Data>
-        </Slider>
+        <Data name="BaseShapeHRBreastCleavage" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBreastCleavage</Data>
+            </Slider>
         <Slider name="BreastFlatness2" invert="false" small="0" big="0">
             <Data name="corsetBreastFlatness2" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBreastFlatness2</Data>
             <Data name="corset_braBreastFlatness2" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBreastFlatness2</Data>
             <Data name="corset_lacesBreastFlatness2" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBreastFlatness2</Data>
-        </Slider>
+        <Data name="BaseShapeHRBreastFlatness2" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBreastFlatness2</Data>
+            </Slider>
         <Slider name="BreastFlatness" invert="false" small="0" big="0">
             <Data name="corsetBreastFlatness" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBreastFlatness</Data>
             <Data name="corset_braBreastFlatness" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBreastFlatness</Data>
             <Data name="corset_lacesBreastFlatness" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBreastFlatness</Data>
-        </Slider>
+        <Data name="BaseShapeHRBreastFlattness" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBreastFlattness</Data>
+            </Slider>
         <Slider name="BreastGravity2" invert="false" small="0" big="0">
             <Data name="corsetBreastGravity2" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBreastGravity2</Data>
             <Data name="corset_braBreastGravity2" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBreastGravity2</Data>
             <Data name="corset_lacesBreastGravity2" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBreastGravity2</Data>
-        </Slider>
+        <Data name="BaseShapeHRBreastGravity2" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBreastGravity2</Data>
+            </Slider>
         <Slider name="BreastHeight" invert="false" small="0" big="0">
             <Data name="corsetBreastHeight" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBreastHeight</Data>
             <Data name="corset_braBreastHeight" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBreastHeight</Data>
             <Data name="corset_lacesBreastHeight" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBreastHeight</Data>
-        </Slider>
+        <Data name="BaseShapeHRBreastHeight" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBreastHeight</Data>
+            </Slider>
         <Slider name="BreastPerkiness" invert="false" small="0" big="0">
             <Data name="corsetBreastPerkiness" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBreastPerkiness</Data>
             <Data name="corset_braBreastPerkiness" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBreastPerkiness</Data>
             <Data name="corset_lacesBreastPerkiness" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBreastPerkiness</Data>
-        </Slider>
+        <Data name="BaseShapeHRBreastPerkiness" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBreastPerkiness</Data>
+            </Slider>
         <Slider name="Breasts" invert="false" small="0" big="0">
             <Data name="corsetBreasts" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBreasts</Data>
             <Data name="corset_braBreasts" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBreasts</Data>
             <Data name="corset_lacesBreasts" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBreasts</Data>
-        </Slider>
+        <Data name="BaseShapeHRBreasts" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBreasts</Data>
+            </Slider>
         <Slider name="BreastsFantasy" invert="false" small="0" big="0">
             <Data name="corsetBreastsFantasy" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBreastsFantasy</Data>
             <Data name="corset_braBreastsFantasy" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBreastsFantasy</Data>
             <Data name="corset_lacesBreastsFantasy" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBreastsFantasy</Data>
-        </Slider>
+        <Data name="BaseShapeHRBreastsFantasy" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBreastsFantasy</Data>
+            </Slider>
         <Slider name="BreastsGone" invert="false" small="0" big="0">
             <Data name="corsetBreastsGone" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBreastsGone</Data>
             <Data name="corset_braBreastsGone" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBreastsGone</Data>
             <Data name="corset_lacesBreastsGone" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBreastsGone</Data>
-        </Slider>
+        <Data name="BaseShapeHRBreastsGone" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBreastsGone</Data>
+            </Slider>
         <Slider name="BreastsNewSH" invert="false" small="0" big="0">
             <Data name="corsetBreastsNewSH" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBreastsNewSH</Data>
             <Data name="corset_braBreastsNewSH" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBreastsNewSH</Data>
             <Data name="corset_lacesBreastsNewSH" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBreastsNewSH</Data>
-        </Slider>
+        <Data name="BaseShapeHRBreastsNewSH" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBreastsNewSH</Data>
+            </Slider>
         <Slider name="BreastsSmall" invert="false" small="0" big="0">
             <Data name="corsetBreastsSmall" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBreastsSmall</Data>
             <Data name="corset_braBreastsSmall" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBreastsSmall</Data>
             <Data name="corset_lacesBreastsSmall" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBreastsSmall</Data>
-        </Slider>
+        <Data name="BaseShapeHRBreastsSmall" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBreastsSmall</Data>
+            </Slider>
         <Slider name="BreastsSmall2" invert="false" small="0" big="0">
             <Data name="corsetBreastsSmall2" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBreastsSmall2</Data>
             <Data name="corset_braBreastsSmall2" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBreastsSmall2</Data>
             <Data name="corset_lacesBreastsSmall2" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBreastsSmall2</Data>
-        </Slider>
+        <Data name="BaseShapeHRBreastsSmall2" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBreastsSmall2</Data>
+            </Slider>
         <Slider name="BreastsTogether" invert="false" small="0" big="0">
             <Data name="corsetBreastsTogether" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBreastsTogether</Data>
             <Data name="corset_braBreastsTogether" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBreastsTogether</Data>
             <Data name="corset_lacesBreastsTogether" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBreastsTogether</Data>
-        </Slider>
+        <Data name="BaseShapeHRBreastsTogether" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBreastsTogether</Data>
+            </Slider>
         <Slider name="BreastTopSlope" invert="false" small="0" big="0">
             <Data name="corsetBreastTopSlope" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBreastTopSlope</Data>
             <Data name="corset_braBreastTopSlope" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBreastTopSlope</Data>
             <Data name="corset_lacesBreastTopSlope" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBreastTopSlope</Data>
-        </Slider>
+        <Data name="BaseShapeHRBreastTopSlope" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBreastTopSlope</Data>
+            </Slider>
         <Slider name="BreastWidth" invert="false" small="0" big="0">
             <Data name="corsetBreastWidth" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetBreastWidth</Data>
             <Data name="corset_braBreastWidth" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braBreastWidth</Data>
             <Data name="corset_lacesBreastWidth" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesBreastWidth</Data>
-        </Slider>
+        <Data name="BaseShapeHRBreastWidth" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRBreastWidth</Data>
+            </Slider>
         <Slider name="Butt" invert="false" small="0" big="0">
             <Data name="corsetButt" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetButt</Data>
             <Data name="corset_lacesButt" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesButt</Data>
             <Data name="corset_metalButt" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalButt</Data>
-        </Slider>
+        <Data name="BaseShapeHRButt" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRButt</Data>
+            </Slider>
         <Slider name="ButtClassic" invert="false" small="0" big="0">
             <Data name="corsetButtClassic" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetButtClassic</Data>
             <Data name="corset_lacesButtClassic" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesButtClassic</Data>
             <Data name="corset_metalButtClassic" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalButtClassic</Data>
-        </Slider>
+        <Data name="BaseShapeHRButtClassic" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRButtClassic</Data>
+            </Slider>
         <Slider name="ButtShape2" invert="false" small="0" big="0">
             <Data name="corsetButtShape2" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetButtShape2</Data>
             <Data name="corset_lacesButtShape2" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesButtShape2</Data>
             <Data name="corset_metalButtShape2" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalButtShape2</Data>
-        </Slider>
+        <Data name="BaseShapeHRButtShape2" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRButtShape2</Data>
+            </Slider>
         <Slider name="ButtSmall" invert="false" small="0" big="0">
             <Data name="corsetButtSmall" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetButtSmall</Data>
             <Data name="corset_lacesButtSmall" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesButtSmall</Data>
             <Data name="corset_metalButtSmall" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalButtSmall</Data>
-        </Slider>
+        <Data name="BaseShapeHRButtSmall" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRButtSmall</Data>
+            </Slider>
         <Slider name="ChestDepth" invert="false" small="0" big="0">
             <Data name="corsetChestDepth" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetChestDepth</Data>
             <Data name="corset_braChestDepth" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braChestDepth</Data>
             <Data name="corset_lacesChestDepth" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesChestDepth</Data>
-        </Slider>
+        <Data name="BaseShapeHRChestDepth" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRChestDepth</Data>
+            </Slider>
         <Slider name="ChestWidth" invert="false" small="0" big="0">
             <Data name="corsetChestWidth" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetChestWidth</Data>
             <Data name="corset_braChestWidth" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braChestWidth</Data>
             <Data name="corset_lacesChestWidth" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesChestWidth</Data>
             <Data name="corset_metalChestWidth" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalChestWidth</Data>
-        </Slider>
+        <Data name="BaseShapeHRChestWidth" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRChestWidth</Data>
+            </Slider>
         <Slider name="ChubbyArms" invert="false" small="0" big="0">
             <Data name="corsetChubbyArms" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetChubbyArms</Data>
-        </Slider>
+        <Data name="BaseShapeHRChubbyArms" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRChubbyArms</Data>
+            </Slider>
         <Slider name="ChubbyButt" invert="false" small="0" big="0">
             <Data name="corsetChubbyButt" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetChubbyButt</Data>
             <Data name="corset_lacesChubbyButt" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesChubbyButt</Data>
             <Data name="corset_metalChubbyButt" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalChubbyButt</Data>
-        </Slider>
+        <Data name="BaseShapeHRChubbyButt" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRChubbyButt</Data>
+            </Slider>
         <Slider name="ChubbyWaist" invert="false" small="0" big="0">
             <Data name="corsetChubbyWaist" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetChubbyWaist</Data>
             <Data name="corset_lacesChubbyWaist" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesChubbyWaist</Data>
             <Data name="corset_metalChubbyWaist" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalChubbyWaist</Data>
-        </Slider>
+        <Data name="BaseShapeHRChubbyWaist" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRChubbyWaist</Data>
+            </Slider>
         <Slider name="CrotchBack" invert="false" small="0" big="0">
             <Data name="corsetCrotchBack" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetCrotchBack</Data>
             <Data name="corset_lacesCrotchBack" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesCrotchBack</Data>
-        </Slider>
+        <Data name="BaseShapeHRCrotchBack" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRCrotchBack</Data>
+            </Slider>
         <Slider name="DoubleMelon" invert="false" small="0" big="0">
             <Data name="corsetDoubleMelon" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetDoubleMelon</Data>
             <Data name="corset_braDoubleMelon" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braDoubleMelon</Data>
             <Data name="corset_lacesDoubleMelon" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesDoubleMelon</Data>
-        </Slider>
+        <Data name="BaseShapeHRDoubleMelon" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRDoubleMelon</Data>
+            </Slider>
         <Slider name="HipBone" invert="false" small="0" big="0">
             <Data name="corsetHipBone" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetHipBone</Data>
             <Data name="corset_lacesHipBone" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesHipBone</Data>
-        </Slider>
+        <Data name="BaseShapeHRHipbone" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRHipbone</Data>
+            </Slider>
         <Slider name="HipForward" invert="false" small="0" big="0">
             <Data name="corsetHipForward" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetHipForward</Data>
             <Data name="corset_braHipForward" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braHipForward</Data>
             <Data name="corset_lacesHipForward" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesHipForward</Data>
             <Data name="corset_metalHipForward" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalHipForward</Data>
-        </Slider>
+        <Data name="BaseShapeHRHipForward" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRHipForward</Data>
+            </Slider>
         <Slider name="Hips" invert="false" small="0" big="0">
             <Data name="corsetHips" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetHips</Data>
             <Data name="corset_lacesHips" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesHips</Data>
             <Data name="corset_metalHips" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalHips</Data>
-        </Slider>
+        <Data name="BaseShapeHRHips" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRHips</Data>
+            </Slider>
         <Slider name="HipUpperWidth" invert="false" small="0" big="0">
             <Data name="corsetHipUpperWidth" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetHipUpperWidth</Data>
             <Data name="corset_lacesHipUpperWidth" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesHipUpperWidth</Data>
             <Data name="corset_metalHipUpperWidth" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalHipUpperWidth</Data>
-        </Slider>
+        <Data name="BaseShapeHRHipUpperWidth" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRHipUpperWidth</Data>
+            </Slider>
         <Slider name="MuscleAbs" invert="false" small="0" big="0">
             <Data name="corsetMuscleAbs" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetMuscleAbs</Data>
             <Data name="corset_lacesMuscleAbs" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesMuscleAbs</Data>
-        </Slider>
+        <Data name="BaseShapeHRMuscleAbs" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRMuscleAbs</Data>
+            </Slider>
         <Slider name="MuscleArms" invert="false" small="0" big="0">
             <Data name="corsetMuscleArms" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetMuscleArms</Data>
-        </Slider>
+        <Data name="BaseShapeHRMuscleArms" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRMuscleArms</Data>
+            </Slider>
         <Slider name="MusclePecs" invert="false" small="0" big="0">
             <Data name="corsetMusclePecs" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetMusclePecs</Data>
             <Data name="corset_braMusclePecs" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braMusclePecs</Data>
-        </Slider>
+        <Data name="BaseShapeHRMusclePecs" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRMusclePecs</Data>
+            </Slider>
         <Slider name="NipBGone" invert="false" small="0" big="0">
             <Data name="corsetNipBGone" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetNipBGone</Data>
             <Data name="corset_braNipBGone" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braNipBGone</Data>
-        </Slider>
+        <Data name="BaseShapeHRNipBGone" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRNipBGone</Data>
+            </Slider>
         <Slider name="NippleDistance" invert="false" small="0" big="0">
             <Data name="corsetNippleDistance" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetNippleDistance</Data>
             <Data name="corset_braNippleDistance" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braNippleDistance</Data>
             <Data name="corset_lacesNippleDistance" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesNippleDistance</Data>
-        </Slider>
+        <Data name="BaseShapeHRNippleDistance" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRNippleDistance</Data>
+            </Slider>
         <Slider name="NippleDown" invert="false" small="0" big="0">
             <Data name="corsetNippleDown" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetNippleDown</Data>
             <Data name="corset_braNippleDown" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braNippleDown</Data>
             <Data name="corset_lacesNippleDown" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesNippleDown</Data>
-        </Slider>
+        <Data name="BaseShapeHRNippleDown" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRNippleDown</Data>
+            </Slider>
         <Slider name="NippleLength" invert="false" small="0" big="0">
             <Data name="corset_braNippleLength" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braNippleLength</Data>
-        </Slider>
+        <Data name="BaseShapeHRNippleLength" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRNippleLength</Data>
+            </Slider>
         <Slider name="NippleManga" invert="false" small="0" big="0">
             <Data name="corset_braNippleManga" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braNippleManga</Data>
-        </Slider>
+        <Data name="BaseShapeHRNippleManga" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRNippleManga</Data>
+            </Slider>
         <Slider name="NipplePerkiness" invert="false" small="0" big="0">
             <Data name="corsetNipplePerkiness" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetNipplePerkiness</Data>
             <Data name="corset_braNipplePerkiness" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braNipplePerkiness</Data>
-        </Slider>
+        <Data name="BaseShapeHRNipplePerkiness" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRNipplePerkiness</Data>
+            </Slider>
         <Slider name="NipplePerkManga" invert="false" small="0" big="0">
             <Data name="corsetNipplePerkManga" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetNipplePerkManga</Data>
             <Data name="corset_braNipplePerkManga" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braNipplePerkManga</Data>
-        </Slider>
+        <Data name="BaseShapeHRNipplePerkManga" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRNipplePerkManga</Data>
+            </Slider>
         <Slider name="NippleSize" invert="false" small="0" big="0">
             <Data name="corsetNippleSize" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetNippleSize</Data>
             <Data name="corset_braNippleSize" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braNippleSize</Data>
             <Data name="corset_lacesNippleSize" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesNippleSize</Data>
-        </Slider>
+        <Data name="BaseShapeHRNippleSize" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRNippleSize</Data>
+            </Slider>
         <Slider name="NippleTip" invert="false" small="0" big="0">
             <Data name="corsetNippleTip" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetNippleTip</Data>
             <Data name="corset_braNippleTip" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braNippleTip</Data>
-        </Slider>
+        <Data name="BaseShapeHRNippleTip" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRNippleTip</Data>
+            </Slider>
         <Slider name="NippleTipManga" invert="false" small="0" big="0">
             <Data name="corset_braNippleTipManga" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braNippleTipManga</Data>
-        </Slider>
+        <Data name="BaseShapeHRNippleTipManga" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRNippleTipManga</Data>
+            </Slider>
         <Slider name="NippleUp" invert="false" small="0" big="0">
             <Data name="corsetNippleUp" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetNippleUp</Data>
             <Data name="corset_braNippleUp" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braNippleUp</Data>
             <Data name="corset_lacesNippleUp" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesNippleUp</Data>
-        </Slider>
+        <Data name="BaseShapeHRNippleUp" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRNippleUp</Data>
+            </Slider>
         <Slider name="PregnancyBelly" invert="false" small="0" big="0">
             <Data name="corsetPregnancyBelly" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetPregnancyBelly</Data>
             <Data name="corset_braPregnancyBelly" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braPregnancyBelly</Data>
             <Data name="corset_lacesPregnancyBelly" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesPregnancyBelly</Data>
-        </Slider>
+        <Data name="BaseShapeHRPregnancyBelly" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRPregnancyBelly</Data>
+            </Slider>
         <Slider name="PushUp" invert="false" small="0" big="0">
             <Data name="corsetPushUp" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetPushUp</Data>
             <Data name="corset_braPushUp" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braPushUp</Data>
             <Data name="corset_lacesPushUp" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesPushUp</Data>
-        </Slider>
+        <Data name="BaseShapeHRPushUp" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRPushUp</Data>
+            </Slider>
         <Slider name="RibsProminance" invert="false" small="0" big="0">
             <Data name="corsetRibsProminance" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetRibsProminance</Data>
             <Data name="corset_lacesRibsProminance" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesRibsProminance</Data>
-        </Slider>
+        <Data name="BaseShapeHRRibsProminance" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRRibsProminance</Data>
+            </Slider>
         <Slider name="RoundAss" invert="false" small="0" big="0">
             <Data name="corsetRoundAss" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetRoundAss</Data>
-        </Slider>
+        <Data name="BaseShapeHRRoundAss" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRRoundAss</Data>
+            </Slider>
         <Slider name="ShoulderWidth" invert="false" small="0" big="0">
             <Data name="corsetShoulderWidth" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetShoulderWidth</Data>
             <Data name="corset_braShoulderWidth" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braShoulderWidth</Data>
             <Data name="corset_lacesShoulderWidth" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesShoulderWidth</Data>
             <Data name="corset_metalShoulderWidth" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalShoulderWidth</Data>
-        </Slider>
+        <Data name="BaseShapeHRshoulderWidth" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRshoulderWidth</Data>
+            </Slider>
         <Slider name="SlimThighs" invert="false" small="0" big="0">
             <Data name="corsetSlimThighs" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetSlimThighs</Data>
-        </Slider>
+        <Data name="BaseShapeHRSlimThighs" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRSlimThighs</Data>
+            </Slider>
         <Slider name="SternumDepth" invert="false" small="0" big="0">
             <Data name="corsetSternumDepth" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetSternumDepth</Data>
             <Data name="corset_braSternumDepth" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braSternumDepth</Data>
             <Data name="corset_lacesSternumDepth" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesSternumDepth</Data>
-        </Slider>
+        <Data name="BaseShapeHRSternumDepth" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRSternumDepth</Data>
+            </Slider>
         <Slider name="SternumHeight" invert="false" small="0" big="0">
             <Data name="corsetSternumHeight" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetSternumHeight</Data>
             <Data name="corset_braSternumHeight" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braSternumHeight</Data>
             <Data name="corset_lacesSternumHeight" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesSternumHeight</Data>
-        </Slider>
+        <Data name="BaseShapeHRSternumHeight" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRSternumHeight</Data>
+            </Slider>
         <Slider name="TummyTuck" invert="false" small="0" big="0">
             <Data name="corsetTummyTuck" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetTummyTuck</Data>
             <Data name="corset_lacesTummyTuck" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesTummyTuck</Data>
-        </Slider>
+        <Data name="BaseShapeHRTummyTuck" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRTummyTuck</Data>
+            </Slider>
         <Slider name="Waist" invert="false" small="0" big="0">
             <Data name="corsetWaist" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetWaist</Data>
             <Data name="corset_lacesWaist" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesWaist</Data>
             <Data name="corset_metalWaist" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalWaist</Data>
-        </Slider>
+        <Data name="BaseShapeHRwaist" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRwaist</Data>
+            </Slider>
         <Slider name="WaistHeight" invert="false" small="0" big="0">
             <Data name="corsetWaistHeight" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetWaistHeight</Data>
             <Data name="corset_lacesWaistHeight" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesWaistHeight</Data>
             <Data name="corset_metalWaistHeight" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalWaistHeight</Data>
-        </Slider>
+        <Data name="BaseShapeHRWaistHeight" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRWaistHeight</Data>
+            </Slider>
         <Slider name="WideWaistLine" invert="false" small="0" big="0">
             <Data name="corsetWideWaistLine" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetWideWaistLine</Data>
             <Data name="corset_lacesWideWaistLine" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesWideWaistLine</Data>
             <Data name="corset_metalWideWaistLine" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalWideWaistLine</Data>
-        </Slider>
+        <Data name="BaseShapeHRWideWaistLine" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRWideWaistLine</Data>
+            </Slider>
         <Slider name="7B Lower" invert="false" small="0" big="0">
             <Data name="corset7B Lower" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset7B Lower</Data>
             <Data name="corset_laces7B Lower" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_laces7B Lower</Data>
             <Data name="corset_metal7B Lower" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metal7B Lower</Data>
-        </Slider>
+        <Data name="BaseShapeHR7B Lower" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHR7B Lower</Data>
+            </Slider>
         <Slider name="7B Upper" invert="false" small="0" big="0">
             <Data name="corset7B Upper" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset7B Upper</Data>
             <Data name="corset_bra7B Upper" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_bra7B Upper</Data>
             <Data name="corset_laces7B Upper" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_laces7B Upper</Data>
             <Data name="corset_metal7B Upper" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metal7B Upper</Data>
-        </Slider>
+        <Data name="BaseShapeHR7B Upper" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHR7B Upper</Data>
+            </Slider>
         <Slider name="VanillaSSEHi" invert="false" small="0" big="0">
             <Data name="corsetVanillaSSEHi" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetVanillaSSEHi</Data>
             <Data name="corset_braVanillaSSEHi" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braVanillaSSEHi</Data>
             <Data name="corset_lacesVanillaSSEHi" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesVanillaSSEHi</Data>
             <Data name="corset_metalVanillaSSEHi" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalVanillaSSEHi</Data>
-        </Slider>
+        <Data name="BaseShapeHRVanillaSSEHi" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRVanillaSSEHi</Data>
+            </Slider>
         <Slider name="VanillaSSELo" invert="false" small="0" big="0">
             <Data name="corsetVanillaSSELo" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetVanillaSSELo</Data>
             <Data name="corset_braVanillaSSELo" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braVanillaSSELo</Data>
             <Data name="corset_lacesVanillaSSELo" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesVanillaSSELo</Data>
             <Data name="corset_metalVanillaSSELo" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalVanillaSSELo</Data>
-        </Slider>
+        <Data name="BaseShapeHRVanillaSSELo" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRVanillaSSELo</Data>
+            </Slider>
         <Slider name="OldBaseShape" invert="false" small="0" big="0">
             <Data name="corsetOldBaseShape" target="corset" local="true">CBBE SE - Tera Succubus BP Corset.osd\corsetOldBaseShape</Data>
             <Data name="corset_braOldBaseShape" target="corset_bra" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_braOldBaseShape</Data>
             <Data name="corset_lacesOldBaseShape" target="corset_laces" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_lacesOldBaseShape</Data>
             <Data name="corset_metalOldBaseShape" target="corset_metal" local="true">CBBE SE - Tera Succubus BP Corset.osd\corset_metalOldBaseShape</Data>
-        </Slider>
-    </SliderSet>
+        <Data name="BaseShapeHROldBaseShape" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHROldBaseShape</Data>
+            </Slider>
+    <Slider name="AnkleSize" invert="false" small="100" big="0"><Data name="BaseShapeHRAnkleSize" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRAnkleSize</Data>
+        </Slider><Slider name="AreolaSize" invert="false" small="0" big="0" uv="true"><Data name="BaseShapeHRAreolaSize" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRAreolaSize</Data>
+        </Slider><Slider name="ButtCrack" invert="false" small="0" big="0"><Data name="BaseShapeHRButtCrack" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRButtCrack</Data>
+        </Slider><Slider name="CalfSize" invert="false" small="0" big="0"><Data name="BaseShapeHRCalfSize" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRCalfSize</Data>
+        </Slider><Slider name="CalfSmooth" invert="false" small="0" big="0"><Data name="BaseShapeHRCalfSmooth" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRCalfSmooth</Data>
+        </Slider><Slider name="ChubbyLegs" invert="false" small="0" big="0"><Data name="BaseShapeHRChubbyLegs" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRChubbyLegs</Data>
+        </Slider><Slider name="ForearmSize" invert="false" small="0" big="0"><Data name="BaseShapeHRForearmSize" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRForearmSize</Data>
+        </Slider><Slider name="Groin" invert="false" small="0" big="0"><Data name="BaseShapeHRGroin" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRGroin</Data>
+        </Slider><Slider name="KneeHeight" invert="false" small="0" big="0"><Data name="BaseShapeHRKneeHeight" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRKneeHeight</Data>
+        </Slider><Slider name="KneeShape" invert="false" small="0" big="0"><Data name="BaseShapeHRKneeShape" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRKneeShape</Data>
+        </Slider><Slider name="LegShapeClassic" invert="false" small="0" big="0"><Data name="BaseShapeHRLegShapeClassic" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRLegShapeClassic</Data>
+        </Slider><Slider name="LegsThin" invert="false" small="0" big="0"><Data name="BaseShapeHRLegsThin" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRLegsThin</Data>
+        </Slider><Slider name="MuscleButt" invert="false" small="0" big="0"><Data name="BaseShapeHRMuscleButt" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRMuscleButt</Data>
+        </Slider><Slider name="MuscleLegs" invert="false" small="0" big="0"><Data name="BaseShapeHRMuscleLegs" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRMuscleLegs</Data>
+        </Slider><Slider name="NeckSeam" invert="false" small="100" big="0" hidden="true"><Data name="BaseShapeHRNeckSeam" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRNeckSeam</Data>
+        </Slider><Slider name="ShoulderSmooth" invert="false" small="0" big="0"><Data name="BaseShapeHRShoulderSmooth" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRShoulderSmooth</Data>
+        </Slider><Slider name="ShoulderTweak" invert="false" small="0" big="0"><Data name="BaseShapeHRshouldertweak" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRshouldertweak</Data>
+        </Slider><Slider name="Thighs" invert="false" small="0" big="0"><Data name="BaseShapeHRThighs" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRThighs</Data>
+        </Slider><Slider name="WristSize" invert="false" small="100" big="0"><Data name="BaseShapeHRWristSize" target="BaseShapeHR" local="true">PSQ TERA CBBE Body.osd\BaseShapeHRWristSize</Data>
+        </Slider></SliderSet>
 <SliderSet name="PSQ TERA Harry - Collar">
         <DataFolder>PSQ TERA Harry Adapter</DataFolder>
         <SourceFile>Collar.nif</SourceFile>
@@ -12415,22 +12505,5 @@
             <Data name="glovesVanillaSSELo" target="gloves" local="true">CBBE SE - Tera Succubus BP Gauntlets.osd\glovesVanillaSSELo</Data>
             <Data name="gloves_metalVanillaSSELo" target="gloves_metal" local="true">CBBE SE - Tera Succubus BP Gauntlets.osd\gloves_metalVanillaSSELo</Data>
         </Slider>
-    </SliderSet>
-<SliderSet name="PSQ TERA Harry - horns">
-        <DataFolder>PSQ TERA Harry Adapter</DataFolder>
-        <SourceFile>horns.nif</SourceFile>
-        <OutputPath>meshes\PSQ\ExternalOutfits\TERAHarry</OutputPath>
-        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">horns</OutputFile>
-        <Shape target="TR9DMSuccuCle:1">TR9DMSuccuCle:1</Shape>
-        <Shape target="TR9DMSuccuCle:2">TR9DMSuccuCle:2</Shape>
-    </SliderSet>
-    <SliderSet name="PSQ TERA Harry - wings">
-        <DataFolder>PSQ TERA Harry Adapter</DataFolder>
-        <SourceFile>wings.nif</SourceFile>
-        <OutputPath>meshes\PSQ\ExternalOutfits\TERAHarry</OutputPath>
-        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">wings</OutputFile>
-        <Shape target="TERASuccubusWings9DMRX:1">TERASuccubusWings9DMRX:1</Shape>
-        <Shape target="TERASuccubusWings9DMRX:2">TERASuccubusWings9DMRX:2</Shape>
-        <Shape target="TERASuccubusWings9DMRX:3">TERASuccubusWings9DMRX:3</Shape>
     </SliderSet>
 </SliderSetInfo>

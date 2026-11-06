@@ -456,7 +456,7 @@
     },
     {
       "set": 5,
-      "label": "TERA Succubus",
+      "label": "TERA魅魔2",
       "original_page_verified": false,
       "original_plugin": "TR9DmRxSS_HR.esp",
       "original_3BA_conversion_page": null,
@@ -920,14 +920,14 @@
     },
     {
       "set": 100,
-      "label": "TERA魅魔装甲",
+      "label": "TERA魅魔",
       "original_plugin": "TeraSuccubusArmor.esp",
       "body": "CBBE",
       "independent_from_set": 5,
       "six_part_adapter": true,
       "native_required_for_new_selection": true,
       "default_color": "BP",
-      "horns_wings": "PSQ Set05",
+      "horns_wings": "none",
       "adapter_root": "PSQ/ExternalOutfits/TERAHarry",
       "ARMO_local_ids": [
         "00B000",
@@ -939,7 +939,29 @@
       ],
       "game_runtime_tested": false,
       "legacy_resources_removed": true,
-      "missing_source_policy": "reject new selection; saved absent-source configuration uses safe Set08 / Hiroshi models"
+      "missing_source_policy": "reject new selection; saved absent-source configuration uses safe Set08 / Hiroshi models",
+      "empty_parts": [
+        "horns",
+        "wings"
+      ],
+      "upper_components": [
+        "Corset",
+        "Collar",
+        "Garter",
+        "Panty"
+      ],
+      "boots_components": [
+        "Boots",
+        "Stockings"
+      ],
+      "slot_mapping": {
+        "Corset": 32,
+        "Collar": 35,
+        "Garter": 49,
+        "Panty": 52,
+        "Boots": 37,
+        "Stockings": 46
+      }
     }
   ],
   "bundled_sets": [

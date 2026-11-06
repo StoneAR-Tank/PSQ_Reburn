@@ -1,6 +1,6 @@
 Scriptname BCNGPSQBridge Hidden Native
-; Optional local PSQ adapter, interface version 3. Requires the modified
-; Body Change NG 1.3.7.3 provider; stock 1.3.7 has none of these natives.
+; Optional local PSQ adapter, interface version 4. Requires the modified
+; Body Change NG 1.3.8.1 provider; stock 1.3.7 has none of these natives.
 ; PSQ must verify that exact SKSE plugin revision before invoking any function.
 Int Function GetVersion() Global Native
 Bool Function IsReady() Global Native
@@ -22,3 +22,12 @@ String Function GetFutanariSelectionId(Actor Target) Global Native
 Int Function GetFutanariSelectionMode(Actor Target) Global Native
 Int Function RequestFutanariSkin(Actor Target, String ProfileId) Global Native
 Int Function RestoreFutanariSelection(Actor Target, String ExpectedId, String OriginalId, Int OriginalMode) Global Native
+
+; API4: body-skin catalogs and selection restoration, performed by BCNG.
+String[] Function GetSkinIds(Actor Target) Global Native
+String Function GetSkinName(String ProfileId) Global Native
+String Function GetSkinSelectionId(Actor Target) Global Native
+Int Function GetSkinSelectionMode(Actor Target) Global Native
+Int Function RequestSkin(Actor Target, String ProfileId) Global Native
+Int Function RestoreSkinSelection(Actor Target, String ExpectedId, String OriginalId, Int OriginalMode) Global Native
+Int Function GetSkinApplicationState(Actor Target, String ProfileId) Global Native
