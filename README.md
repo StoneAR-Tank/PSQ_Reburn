@@ -94,3 +94,6 @@ PSQ Reburn 本体
 - **服装、动作、模型、贴图、音效、框架及其他兼容模组的原作者与贡献者** — 感谢各位的创作。各资源的权利和许可归其原作者所有，请参阅随附文件及原项目页面。
 - **StoneAR-Tank** — PSQ Reburn 的修改、整合与发布。进化纹样采用 AI 辅助设计。
 
+## 支持项目
+
+PSQ Reburn 免费发布。如果你喜欢这个项目，欢迎通过 [Patreon](https://www.patreon.com/c/StoneAS) 赞助支持，感谢！
