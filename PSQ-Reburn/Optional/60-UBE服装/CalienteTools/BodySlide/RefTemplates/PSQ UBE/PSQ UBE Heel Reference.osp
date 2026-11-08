@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf8'?>
+<SliderSetInfo version="1">
+  <SliderSet name="PSQ UBE Heel Reference">
+    <DataFolder>PSQ_Package_20261106\UBE\F012</DataFolder>
+    <SourceFile>PSQ UBE Heel Reference.nif</SourceFile>
+    <OutputPath>meshes/PSQ/UBE/References</OutputPath>
+    <OutputFile GenWeights="true">psq_ube_heel_reference</OutputFile>
+    <Shape target="Feet">Feet</Shape>
+    <Slider name="SquarePeg3d" invert="false" small="0" big="0">
+      <Data name="FeetSquarePeg3d" target="Feet" local="true">PSQ UBE Heel Reference.osd\FeetSquarePeg3d</Data>
+    </Slider>
+    <Slider name="Donaught" invert="false" small="0" big="0">
+      <Data name="FeetDonaught" target="Feet" local="true">PSQ UBE Heel Reference.osd\FeetDonaught</Data>
+    </Slider>
+    <Slider name="Juicy_body" invert="false" small="0" big="0">
+      <Data name="FeetJuicy_body" target="Feet" local="true">PSQ UBE Heel Reference.osd\FeetJuicy_body</Data>
+    </Slider>
+    <Slider name="Peachy" invert="false" small="0" big="0">
+      <Data name="FeetPeachy" target="Feet" local="true">PSQ UBE Heel Reference.osd\FeetPeachy</Data>
+    </Slider>
+    <Slider name="ClaviclesFront" invert="false" small="0" big="0">
+      <Data name="FeetClaviclesFront" target="Feet" local="true">PSQ UBE Heel Reference.osd\FeetClaviclesFront</Data>
+    </Slider>
+    <Slider name="HipsAndLegsDistanceApart p|n" invert="false" small="0" big="0">
+      <Data name="FeetHipsAndLegsDistanceApart p|n" target="Feet" local="true">PSQ UBE Heel Reference.osd\FeetHipsAndLegsDistanceApart p|n</Data>
+    </Slider>
+    <Slider name="ShinSize p|n" invert="false" small="0" big="0">
+      <Data name="FeetShinSize p|n" target="Feet" local="true">PSQ UBE Heel Reference.osd\FeetShinSize p|n</Data>
+    </Slider>
+    <Slider name="Shin_Forward" invert="false" small="0" big="0">
+      <Data name="FeetShin_Forward" target="Feet" local="true">PSQ UBE Heel Reference.osd\FeetShin_Forward</Data>
+    </Slider>
+    <Slider name="Bowed_Calves" invert="false" small="0" big="0">
+      <Data name="FeetBowed_Calves" target="Feet" local="true">PSQ UBE Heel Reference.osd\FeetBowed_Calves</Data>
+    </Slider>
+    <Slider name="AnkleThickness p|n" invert="false" small="0" big="0">
+      <Data name="FeetAnkleThickness p|n" target="Feet" local="true">PSQ UBE Heel Reference.osd\FeetAnkleThickness p|n</Data>
+    </Slider>
+    <Slider name="Thicc_calves" invert="false" small="0" big="0">
+      <Data name="FeetThicc_calves" target="Feet" local="true">PSQ UBE Heel Reference.osd\FeetThicc_calves</Data>
+    </Slider>
+    <Slider name="FeetSize n|p" invert="false" small="0" big="0">
+      <Data name="FeetFeetSize n|p" target="Feet" local="true">PSQ UBE Heel Reference.osd\FeetFeetSize n|p</Data>
+    </Slider>
+    <Slider name="Normals_recalc" invert="false" small="0" big="0" hidden="true">
+      <Data name="FeetNormals_recalc" target="Feet" local="true">PSQ UBE Heel Reference.osd\FeetNormals_recalc</Data>
+    </Slider>
+    <Slider name="ToeNailsZap" invert="false" small="0" big="0" zap="true">
+      <Data name="FeetToeNailsZap" target="Feet" local="true">PSQ UBE Heel Reference.osd\FeetToeNailsZap</Data>
+    </Slider>
+    <Slider name="ToeNails_Length" invert="false" small="0" big="0">
+      <Data name="FeetToeNails_Length" target="Feet" local="true">PSQ UBE Heel Reference.osd\FeetToeNails_Length</Data>
+    </Slider>
+    <Slider name="Claw_ToeNails" invert="false" small="0" big="0">
+      <Data name="FeetClaw_ToeNails" target="Feet" local="true">PSQ UBE Heel Reference.osd\FeetClaw_ToeNails</Data>
+    </Slider>
+    <Slider name="HiHeelz_CBBE_to_UBE" invert="false" small="0" big="0" hidden="true">
+      <Data name="FeetHiHeelz_CBBE_to_UBE" target="Feet" local="true">PSQ UBE Heel Reference.osd\FeetHiHeelz_CBBE_to_UBE</Data>
+    </Slider>
+  </SliderSet>
+</SliderSetInfo>

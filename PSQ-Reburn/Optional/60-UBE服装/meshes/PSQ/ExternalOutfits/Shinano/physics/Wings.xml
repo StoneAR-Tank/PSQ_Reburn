@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<system xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="description.xsd">
+	<!-- ground -->
+	<per-triangle-shape name="VirtualGround">
+		<margin>1</margin>
+		<prenetration>4</prenetration>
+		<tag>ground</tag>
+	</per-triangle-shape>
+
+
+  
+    <bone name="NPC L Foot [Lft ]"/>
+	<bone name="NPC R Foot [Rft ]"/>
+	<bone name="NPC R RearThigh"/> 
+	<bone name="NPC L RearThigh"/> 
+	<bone name="NPC L RearCalf [LrClf]"/> 
+	<bone name="NPC R RearCalf [RrClf]"/> 
+	<bone name="NPC R FrontThigh"/> 
+	<bone name="NPC L FrontThigh"/> 
+	<bone name="NPC Spine [Spn0]"/>
+	<bone name="NPC Spine2 [Spn2]"/>
+	<bone name="NPC Spine1 [Spn1]"/>
+	<bone name="NPC Pelvis [Pelv]"/>
+	<bone name="NPC Head [Head]"/>
+	<bone name="NPC L Clavicle [LClv]"/>
+	<bone name="NPC R Clavicle [RClv]"/>
+	<bone name="NPC L Breast"/> 
+	<bone name="NPC R Breast"/> 
+	<bone name="NPC L Breast01"/> 
+	<bone name="NPC R Breast01"/> 
+	<bone name="NPC L Forearm [LLar]"/>
+	<bone name="NPC R Forearm [RLar]"/>
+	<bone name="NPC L ForearmTwist1 [LLt1]"/>
+	<bone name="NPC R ForearmTwist1 [RLt1]"/>
+	<bone name="NPC L ForearmTwist2 [LLt2]"/>
+	<bone name="NPC R ForearmTwist2 [RLt2]"/>
+	<bone name="NPC L UpperArm [LUar]"/>
+	<bone name="NPC R UpperArm [RUar]"/>
+	<bone name="NPC L UpperarmTwist1 [LUt1]"/>
+	<bone name="NPC R UpperarmTwist1 [RUt1]"/>
+	<bone name="NPC L UpperarmTwist2 [LUt2]"/>
+	<bone name="NPC R UpperarmTwist2 [RUt2]"/>
+	<bone name="NPC L Butt"/>  
+	<bone name="NPC R Butt"/>  
+	<bone name="NPC L Pussy02"/> 
+	<bone name="NPC R Pussy02"/> 
+	<bone name="NPC Belly"/>  
+	<bone name="NPC L Hand [LHnd]"/>
+	<bone name="NPC R Hand [RHnd]"/>
+	<bone name="Clitoral1"/> 
+    <bone name="VaginaB1"/> 
+    <bone name="VaginaDeep1"/> 
+	<bone name="NPC RB Anus2"/> 
+	<bone name="NPC LB Anus2"/> 
+    <bone name="NPC RT Anus2"/> 
+    <bone name="NPC LT Anus2"/> 
+    <bone name="NPC Anus Deep2"/> 
+	
+
+	<bone name="L Breast01"/> 
+	<bone name="L Breast02"/> 
+	<bone name="L Breast03"/> 
+	<bone name="R Breast01"/> 
+	<bone name="R Breast02"/> 
+	<bone name="R Breast03"/> 
+	
+	<bone name="NPC R Finger00 [RF00]"/>
+	<bone name="NPC R Finger01 [RF01]"/>
+	<bone name="NPC R Finger02 [RF02]"/>
+	<bone name="NPC R Finger10 [RF10]"/>
+	<bone name="NPC R Finger11 [RF11]"/>
+	<bone name="NPC R Finger12 [RF12]"/>
+	<bone name="NPC R Finger20 [RF20]"/>
+	<bone name="NPC R Finger21 [RF21]"/>
+	<bone name="NPC R Finger22 [RF22]"/>
+	<bone name="NPC R Finger30 [RF30]"/>
+	<bone name="NPC R Finger31 [RF31]"/>
+	<bone name="NPC R Finger32 [RF32]"/>
+	<bone name="NPC R Finger40 [RF40]"/>
+	<bone name="NPC R Finger41 [RF41]"/>
+	<bone name="NPC R Finger42 [RF42]"/>
+	<bone name="NPC L Finger00 [LF00]"/>
+	<bone name="NPC L Finger01 [LF01]"/>
+	<bone name="NPC L Finger02 [LF02]"/>
+	<bone name="NPC L Finger10 [LF10]"/>
+	<bone name="NPC L Finger11 [LF11]"/>
+	<bone name="NPC L Finger12 [LF12]"/>
+	<bone name="NPC L Finger20 [LF20]"/>
+	<bone name="NPC L Finger21 [LF21]"/>
+	<bone name="NPC L Finger22 [LF22]"/>
+	<bone name="NPC L Finger30 [LF30]"/>
+	<bone name="NPC L Finger31 [LF31]"/>
+	<bone name="NPC L Finger32 [LF32]"/>
+	<bone name="NPC L Finger40 [LF40]"/>
+	<bone name="NPC L Finger41 [LF41]"/>
+	<bone name="NPC L Finger42 [LF42]"/>
+	
+	<bone name="NPC L Toe0 [LToe]"/>
+	<bone name="NPC R Toe0 [RToe]"/>
+
+	<bone name="L Breast00"/>
+	<bone name="R Breast00"/>
+	<bone name="CME R Clavicle [RClv]"/>
+	<bone name="CME L Clavicle [LClv]"/>
+	<bone name="Belly"/>
+	<bone name="NPC L PreButt"/>
+	<bone name="NPC R PreButt"/>
+	<bone name="NPC L Thigh [LThg]"/>
+	<bone name="NPC R Thigh [RThg]"/>
+	<bone name="NPC L Calf [LClf]"/>
+	<bone name="NPC R Calf [RClf]"/>
+	<bone name="Clitoral"/>
+	<bone name="VaginaB"/>
+	<bone name="VaginaDeep"/>
+	<bone name="NPC L Pussy01"/>
+	<bone name="NPC R Pussy01"/>
+	<bone name="NPC LT Anus1"/>
+	<bone name="NPC RT Anus1"/>
+	<bone name="NPC Anus Deep1"/>
+	<bone name="NPC LB Anus1"/>
+	<bone name="NPC RB Anus1"/>
+	
+	<bone name="qq1 1"/>
+    <bone name="qq5 1"/>
+
+
+   <bone-default>
+		<mass>0.4</mass>
+		<inertia x="9" y="9" z="9" />
+		<centerOfMassTransform>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</centerOfMassTransform>
+		<linearDamping>0.99</linearDamping>
+		<angularDamping>0.98</angularDamping>
+		<margin-multiplier>0.8</margin-multiplier>
+		<gravity-factor>0.1</gravity-factor>
+		<friction>0</friction>
+		<restitution>0</restitution>
+	</bone-default>
+	
+	<bone name="qq1 2"/>
+    <bone name="qq5 2"/>
+	
+	<bone name="qq1 3"/>
+    <bone name="qq5 3"/>
+	
+	<bone name="qq1 4"/>
+    <bone name="qq5 4"/>
+
+	<bone-default>
+		<mass>0.004</mass>
+		<inertia x="0.1" y="0.1" z="0.1" />
+		<centerOfMassTransform>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</centerOfMassTransform>
+		<linearDamping>0.94</linearDamping>
+		<angularDamping>0.94</angularDamping>
+		<margin-multiplier>0.8</margin-multiplier>
+		<gravity-factor>0.1</gravity-factor>
+		<friction>0</friction>
+		<restitution>0</restitution>
+	</bone-default>
+	
+    <bone name="qq2 1"/>
+    <bone name="qq3 1"/>	
+    <bone name="qq4 1"/>
+    <bone name="qq6 1"/>	
+	<bone name="qq7 1"/>
+    <bone name="qq8 1"/>
+
+    <bone name="qq2 2"/>
+    <bone name="qq3 2"/>	
+    <bone name="qq4 2"/>
+    <bone name="qq6 2"/>	
+	<bone name="qq7 2"/>
+    <bone name="qq8 2"/>
+	
+    <bone name="qq2 3"/>
+    <bone name="qq3 3"/>	
+    <bone name="qq4 3"/>
+    <bone name="qq6 3"/>	
+	<bone name="qq7 3"/>
+    <bone name="qq8 3"/>
+
+
+	<generic-constraint-default>
+		<frameInB>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</frameInB>
+		<useLinearReferenceFrameA>false</useLinearReferenceFrameA>
+		<linearLowerLimit x="0" y="0" z="0" />
+		<linearUpperLimit x="0" y="0" z="0" />
+		<angularLowerLimit x="-0.021" y="-0.021" z="0.02" />
+		<angularUpperLimit x="0.021" y="0.021" z="0.05" />
+		<linearStiffness x="0" y="0" z="0" />
+		<angularStiffness x="0" y="0" z="0" />
+		<linearDamping x="0" y="0" z="0" />
+		<angularDamping x="0" y="0" z="0" />
+		<linearEquilibrium x="0" y="0" z="0" />
+		<angularEquilibrium x="0" y="0" z="0" />
+	</generic-constraint-default>
+	
+	<constraint-group>
+		<generic-constraint bodyA="qq1 2" bodyB="qq1 1"/>
+		<generic-constraint bodyA="qq1 3" bodyB="qq1 2"/>
+		<generic-constraint bodyA="qq1 4" bodyB="qq1 3"/>
+	</constraint-group>
+       
+
+    <generic-constraint-default>
+		<frameInB>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</frameInB>
+		<useLinearReferenceFrameA>false</useLinearReferenceFrameA>
+		<linearLowerLimit x="0" y="0" z="0" />
+		<linearUpperLimit x="0" y="0" z="0" />
+		<angularLowerLimit x="-0.021" y="-0.021" z="-0.05" />
+		<angularUpperLimit x="0.021" y="0.021" z="-0.02" />
+		<linearStiffness x="0" y="0" z="0" />
+		<angularStiffness x="0" y="0" z="0" />
+		<linearDamping x="0" y="0" z="0" />
+		<angularDamping x="0" y="0" z="0" />
+		<linearEquilibrium x="0" y="0" z="0" />
+		<angularEquilibrium x="0" y="0" z="0" />
+	</generic-constraint-default>
+
+	   
+	<constraint-group>
+		<generic-constraint bodyA="qq5 2" bodyB="qq5 1"/>
+		<generic-constraint bodyA="qq5 3" bodyB="qq5 2"/>
+		<generic-constraint bodyA="qq5 4" bodyB="qq5 3"/>
+	</constraint-group>
+		
+
+	<generic-constraint-default>
+		<frameInB>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</frameInB>
+		<useLinearReferenceFrameA>false</useLinearReferenceFrameA>
+		<linearLowerLimit x="0" y="0" z="0" />
+		<linearUpperLimit x="0" y="0" z="0" />
+		<angularLowerLimit x="-0.041" y="-0.04" z="-0.04" />
+		<angularUpperLimit x="0.041" y="0.04" z="0.04" />
+		<linearStiffness x="0" y="0" z="0" />
+		<angularStiffness x="0" y="0" z="0" />
+		<linearDamping x="0" y="0" z="0" />
+		<angularDamping x="0" y="0" z="0" />
+		<linearEquilibrium x="0" y="0" z="0" />
+		<angularEquilibrium x="0" y="0" z="0" />
+	</generic-constraint-default>
+	
+
+	<generic-constraint bodyA="qq2 1" bodyB="qq1 3"/>
+	<generic-constraint bodyA="qq2 2" bodyB="qq2 1"/>
+
+
+	<generic-constraint bodyA="qq3 1" bodyB="qq1 4"/>
+	<generic-constraint bodyA="qq3 2" bodyB="qq3 1"/>
+	<generic-constraint bodyA="qq3 3" bodyB="qq3 2"/>
+	
+	<generic-constraint bodyA="qq4 1" bodyB="qq1 4"/>
+	<generic-constraint bodyA="qq4 2" bodyB="qq4 1"/>
+	<generic-constraint bodyA="qq4 3" bodyB="qq4 2"/>
+
+	<generic-constraint bodyA="qq6 1" bodyB="qq5 3"/>
+	<generic-constraint bodyA="qq6 2" bodyB="qq6 1"/>
+
+
+	<generic-constraint bodyA="qq7 1" bodyB="qq5 4"/>
+	<generic-constraint bodyA="qq7 2" bodyB="qq7 1"/>
+	<generic-constraint bodyA="qq7 3" bodyB="qq7 2"/>
+	
+	<generic-constraint bodyA="qq8 1" bodyB="qq5 4"/>
+	<generic-constraint bodyA="qq8 2" bodyB="qq8 1"/>
+	<generic-constraint bodyA="qq8 3" bodyB="qq8 2"/>
+
+
+	<generic-constraint-default>
+		<frameInLerp>
+				<translationLerp>0</translationLerp>
+				<rotationLerp>0</rotationLerp>
+		</frameInLerp>
+		<linearLowerLimit x="-4" y="-4" z="-4"/>
+		<linearUpperLimit x="4" y="4" z="4"/>
+		<angularLowerLimit x="-1" y="-1" z="-1"/>
+		<angularUpperLimit x="1" y="1" z="1"/>
+		  <linearStiffness x="0" y="0" z="0"/>
+		<angularStiffness x="0" y="0" z="0"/>
+    </generic-constraint-default>
+
+	<generic-constraint bodyA="qq3 1" bodyB="qq2 1"/>
+	<generic-constraint bodyA="qq3 2" bodyB="qq2 2"/>
+	<generic-constraint bodyA="qq3 3" bodyB="qq2 3"/>
+	<generic-constraint bodyA="qq3 4" bodyB="qq2 4"/>
+	<generic-constraint bodyA="qq3 5" bodyB="qq2 5"/>
+	<generic-constraint bodyA="qq3 6" bodyB="qq2 6"/>
+	
+	<generic-constraint bodyA="qq4 1" bodyB="qq3 1"/>
+	<generic-constraint bodyA="qq4 2" bodyB="qq3 2"/>
+	<generic-constraint bodyA="qq4 3" bodyB="qq3 3"/>
+	<generic-constraint bodyA="qq4 4" bodyB="qq3 4"/>
+	<generic-constraint bodyA="qq4 5" bodyB="qq3 5"/>
+	<generic-constraint bodyA="qq4 6" bodyB="qq3 6"/>		
+
+	
+	<generic-constraint bodyA="qq3 1" bodyB="qq2 1"/>
+	<generic-constraint bodyA="qq3 2" bodyB="qq2 2"/>
+	<generic-constraint bodyA="qq3 3" bodyB="qq2 3"/>
+	<generic-constraint bodyA="qq3 4" bodyB="qq2 4"/>
+	<generic-constraint bodyA="qq3 5" bodyB="qq2 5"/>
+	<generic-constraint bodyA="qq3 6" bodyB="qq2 6"/>
+	
+	<generic-constraint bodyA="qq4 1" bodyB="qq3 1"/>
+	<generic-constraint bodyA="qq4 2" bodyB="qq3 2"/>
+	<generic-constraint bodyA="qq4 3" bodyB="qq3 3"/>
+	<generic-constraint bodyA="qq4 4" bodyB="qq3 4"/>
+	<generic-constraint bodyA="qq4 5" bodyB="qq3 5"/>
+	<generic-constraint bodyA="qq4 6" bodyB="qq3 6"/>	
+
+		
+</system>

@@ -1,0 +1,1340 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SliderSetInfo version="1"><SliderSet name="PSQ 3BA 变身 - 吸血鬼 - 尾巴">
+        <DataFolder>PSQ_Package_20261106\3BA\F010</DataFolder>
+        <SourceFile>tail.nif</SourceFile>
+        <OutputPath>meshes\PSQ\ExternalOutfits\Vampire</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">tail</OutputFile>
+        <Shape target="Tail">Tail</Shape>
+        <Shape target="VirtualGround">VirtualGround</Shape>
+        <Shape target="body_feet">body_feet</Shape>
+        <Shape target="uup">uup</Shape>
+    </SliderSet>
+    <SliderSet name="PSQ 3BA 变身 - 吸血鬼 - 手套">
+        <DataFolder>PSQ_Package_20261106\3BA\F010</DataFolder>
+        <SourceFile>gloves.nif</SourceFile>
+        <OutputPath>meshes\PSQ\ExternalOutfits\Vampire</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">gloves</OutputFile>
+        <Shape target="Hands" DataFolder="PSQ_Package_20261106\3BA\F013">Hands</Shape>
+        <Shape target="PC_A_EQ_Vampire_Glove_05">PC_A_EQ_Vampire_Glove_05</Shape>
+        <Shape target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ">PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ</Shape>
+        <Shape target="PC_A_EQ_Vampire_Glove_05.007_PC_A_EQ_">PC_A_EQ_Vampire_Glove_05.007_PC_A_EQ_</Shape>
+        <Shape target="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQ">PC_A_EQ_Vampire_Glove_05.010_PC_A_EQ</Shape>
+        <Slider name="ArmpitShape_v2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQArmpitShape_v2" target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.001_PC_A_EQArmpitShape_v2</Data>
+        </Slider>
+        <Slider name="Arms" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQArms" target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.001_PC_A_EQArms</Data>
+            <Data name="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQArms" target="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.010_PC_A_EQArms</Data>
+        </Slider>
+        <Slider name="BigTorso" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQBigTorso" target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.001_PC_A_EQBigTorso</Data>
+            <Data name="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQBigTorso" target="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.010_PC_A_EQBigTorso</Data>
+        </Slider>
+        <Slider name="BreastsNewSH" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQBreastsNewSH" target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.001_PC_A_EQBreastsNewSH</Data>
+        </Slider>
+        <Slider name="BreastsSmall" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQBreastsSmall" target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.001_PC_A_EQBreastsSmall</Data>
+        </Slider>
+        <Slider name="BreastsSmall2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQBreastsSmall2" target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.001_PC_A_EQBreastsSmall2</Data>
+        </Slider>
+        <Slider name="ChestWidth" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQChestWidth" target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.001_PC_A_EQChestWidth</Data>
+        </Slider>
+        <Slider name="ChubbyArms" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQChubbyArms" target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.001_PC_A_EQChubbyArms</Data>
+            <Data name="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQChubbyArms" target="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.010_PC_A_EQChubbyArms</Data>
+        </Slider>
+        <Slider name="ForearmSize" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQForearmSize" target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.001_PC_A_EQForearmSize</Data>
+            <Data name="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQForearmSize" target="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.010_PC_A_EQForearmSize</Data>
+        </Slider>
+        <Slider name="MuscleArms" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQMuscleArms" target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.001_PC_A_EQMuscleArms</Data>
+            <Data name="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQMuscleArms" target="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.010_PC_A_EQMuscleArms</Data>
+        </Slider>
+        <Slider name="MuscleBack_v2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQMuscleBack_v2" target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.001_PC_A_EQMuscleBack_v2</Data>
+        </Slider>
+        <Slider name="MuscleMoreArms_v2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQMuscleMoreArms_v2" target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.001_PC_A_EQMuscleMoreArms_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQMuscleMoreArms_v2" target="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.010_PC_A_EQMuscleMoreArms_v2</Data>
+        </Slider>
+        <Slider name="ShoulderWidth" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Glove_05ShoulderWidth" target="PC_A_EQ_Vampire_Glove_05" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05ShoulderWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQShoulderWidth" target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.001_PC_A_EQShoulderWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQShoulderWidth" target="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.010_PC_A_EQShoulderWidth</Data>
+        </Slider>
+        <Slider name="7B Upper" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ7B Upper" target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ7B Upper</Data>
+            <Data name="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQ7B Upper" target="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.010_PC_A_EQ7B Upper</Data>
+        </Slider>
+        <Slider name="VanillaSSEHi" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQVanillaSSEHi" target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.001_PC_A_EQVanillaSSEHi</Data>
+            <Data name="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQVanillaSSEHi" target="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.010_PC_A_EQVanillaSSEHi</Data>
+        </Slider>
+        <Slider name="VanillaSSELo" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQVanillaSSELo" target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.001_PC_A_EQVanillaSSELo</Data>
+            <Data name="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQVanillaSSELo" target="PC_A_EQ_Vampire_Glove_05.010_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.010_PC_A_EQVanillaSSELo</Data>
+        </Slider>
+        <Slider name="OldBaseShape" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQOldBaseShape" target="PC_A_EQ_Vampire_Glove_05.001_PC_A_EQ" local="true">SSE_SW_vampire - PSQ Gloves.osd\PC_A_EQ_Vampire_Glove_05.001_PC_A_EQOldBaseShape</Data>
+        </Slider>
+    </SliderSet>
+    <SliderSet name="PSQ 3BA 变身 - 吸血鬼 - 翅膀">
+        <DataFolder>PSQ_Package_20261106\3BA\F010</DataFolder>
+        <SourceFile>wings.nif</SourceFile>
+        <OutputPath>meshes\PSQ\ExternalOutfits\Vampire</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">wings</OutputFile>
+        <Shape target="PC_A_EQ_Vampire_Back_10">PC_A_EQ_Vampire_Back_10</Shape>
+        <Shape target="PC_A_EQ_Vampire_HairAcc01_01">PC_A_EQ_Vampire_HairAcc01_01</Shape>
+    </SliderSet>
+<SliderSet name="PSQ 3BA 变身 - 吸血鬼 - 胸甲">
+        <DataFolder>PSQ_Package_20261106\3BA\F010</DataFolder>
+        <SourceFile>cuirass.nif</SourceFile>
+        <OutputPath>meshes\PSQ\ExternalOutfits\Vampire</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">cuirass</OutputFile>
+        <Shape target="3BA" DataFolder="PSQ_Package_20261106\3BA\F013">3BA</Shape>
+        <Shape target="3BA_Anus">3BA_Anus</Shape>
+        <Shape target="3BA_Vagina">3BA_Vagina</Shape>
+        <Shape target="PC_A_EQ_Vampire_Back_10">PC_A_EQ_Vampire_Back_10</Shape>
+        <Shape target="PC_A_EQ_Vampire_Costume03_09">PC_A_EQ_Vampire_Costume03_09</Shape>
+        <Shape target="PC_A_EQ_Vampire_Costume03_09.004">PC_A_EQ_Vampire_Costume03_09.004</Shape>
+        <Shape target="PC_A_EQ_Vampire_Costume03_09.006">PC_A_EQ_Vampire_Costume03_09.006</Shape>
+        <Shape target="PC_A_EQ_Vampire_Costume03_09.007">PC_A_EQ_Vampire_Costume03_09.007</Shape>
+        <Shape target="PC_A_EQ_Vampire_Costume03_09.010">PC_A_EQ_Vampire_Costume03_09.010</Shape>
+        <Shape target="PC_A_EQ_Vampire_Costume03_09.011">PC_A_EQ_Vampire_Costume03_09.011</Shape>
+        <Shape target="PC_A_EQ_Vampire_Costume03_09.017">PC_A_EQ_Vampire_Costume03_09.017</Shape>
+        <Shape target="PC_A_EQ_Vampire_Costume03_09.018">PC_A_EQ_Vampire_Costume03_09.018</Shape>
+        <Shape target="PC_A_EQ_Vampire_Costume03_09.020">PC_A_EQ_Vampire_Costume03_09.020</Shape>
+        <Shape target="PC_A_EQ_Vampire_HairAcc01_01">PC_A_EQ_Vampire_HairAcc01_01</Shape>
+        <Slider name="ArmpitShape_v2" invert="false" small="0" big="0">
+            <Data name="3BAArmpitShape_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAArmpitShape_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09ArmpitShape_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09ArmpitShape_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ArmpitShape_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ArmpitShape_v2</Data>
+        </Slider>
+        <Slider name="AnkleSize" invert="false" small="100" big="0">
+            <Data name="3BAAnkleSize" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAAnkleSize</Data>
+        </Slider>
+        <Slider name="AppleCheeks" invert="false" small="0" big="0">
+            <Data name="3BAAppleCheeks" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAAppleCheeks</Data>
+            <Data name="3BA_VaginaAppleCheeks" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaAppleCheeks</Data>
+            <Data name="3BA_AnusAppleCheeks" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusAppleCheeks</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09AppleCheeks" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09AppleCheeks</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004AppleCheeks" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004AppleCheeks</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007AppleCheeks" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007AppleCheeks</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017AppleCheeks" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017AppleCheeks</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018AppleCheeks" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018AppleCheeks</Data>
+        </Slider>
+        <Slider name="AreolaSize" invert="false" small="0" big="0" uv="true">
+            <Data name="3BAAreolaSize" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAAreolaSize</Data>
+        </Slider>
+        <Slider name="AreolaPull_v2" invert="false" small="0" big="0">
+            <Data name="3BAAreolaPull_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAAreolaPull_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09AreolaPull_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09AreolaPull_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006AreolaPull_v2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006AreolaPull_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011AreolaPull_v2" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011AreolaPull_v2</Data>
+        </Slider>
+        <Slider name="Arms" invert="false" small="0" big="0">
+            <Data name="3BAArms" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAArms</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09Arms" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09Arms</Data>
+        </Slider>
+        <Slider name="Back" invert="false" small="0" big="0">
+            <Data name="3BABack" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABack</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09Back" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09Back</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004Back" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004Back</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007Back" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007Back</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017Back" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017Back</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018Back" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018Back</Data>
+        </Slider>
+        <Slider name="BackArch" invert="false" small="0" big="0">
+            <Data name="3BABackArch" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABackArch</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BackArch" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BackArch</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004BackArch" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004BackArch</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BackArch" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BackArch</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017BackArch" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017BackArch</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018BackArch" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018BackArch</Data>
+        </Slider>
+        <Slider name="BackValley_v2" invert="false" small="0" big="0">
+            <Data name="3BABackValley_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABackValley_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BackValley_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BackValley_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BackValley_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BackValley_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017BackValley_v2" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017BackValley_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018BackValley_v2" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018BackValley_v2</Data>
+        </Slider>
+        <Slider name="BackWing_v2" invert="false" small="0" big="0">
+            <Data name="3BABackWing_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABackWing_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BackWing_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BackWing_v2</Data>
+        </Slider>
+        <Slider name="Belly" invert="false" small="0" big="0">
+            <Data name="3BABelly" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABelly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09Belly" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09Belly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004Belly" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004Belly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006Belly" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006Belly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007Belly" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007Belly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010Belly" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010Belly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011Belly" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011Belly</Data>
+        </Slider>
+        <Slider name="BellyFrontUpFat_v2" invert="false" small="0" big="0">
+            <Data name="3BABellyFrontUpFat_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABellyFrontUpFat_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BellyFrontUpFat_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BellyFrontUpFat_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BellyFrontUpFat_v2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BellyFrontUpFat_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BellyFrontUpFat_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BellyFrontUpFat_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BellyFrontUpFat_v2" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BellyFrontUpFat_v2</Data>
+        </Slider>
+        <Slider name="BellyFrontDownFat_v2" invert="false" small="0" big="0">
+            <Data name="3BABellyFrontDownFat_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABellyFrontDownFat_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004BellyFrontDownFat_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004BellyFrontDownFat_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BellyFrontDownFat_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BellyFrontDownFat_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BellyFrontDownFat_v2" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BellyFrontDownFat_v2</Data>
+        </Slider>
+        <Slider name="BellySideUpFat_v2" invert="false" small="0" big="0">
+            <Data name="3BABellySideUpFat_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABellySideUpFat_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BellySideUpFat_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BellySideUpFat_v2</Data>
+        </Slider>
+        <Slider name="BellySideDownFat_v2" invert="false" small="0" big="0">
+            <Data name="3BABellySideDownFat_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABellySideDownFat_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004BellySideDownFat_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004BellySideDownFat_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BellySideDownFat_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BellySideDownFat_v2</Data>
+        </Slider>
+        <Slider name="BellyUnder_v2" invert="false" small="0" big="0">
+            <Data name="3BABellyUnder_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABellyUnder_v2</Data>
+            <Data name="3BA_VaginaBellyUnder_v2" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaBellyUnder_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004BellyUnder_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004BellyUnder_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BellyUnder_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BellyUnder_v2</Data>
+        </Slider>
+        <Slider name="BigBelly" invert="false" small="0" big="0">
+            <Data name="3BABigBelly" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABigBelly</Data>
+            <Data name="3BA_VaginaBigBelly" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaBigBelly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BigBelly" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BigBelly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004BigBelly" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004BigBelly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BigBelly" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BigBelly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BigBelly" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BigBelly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BigBelly" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BigBelly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BigBelly" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BigBelly</Data>
+        </Slider>
+        <Slider name="BigButt" invert="false" small="0" big="0">
+            <Data name="3BABigButt" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABigButt</Data>
+            <Data name="3BA_VaginaBigButt" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaBigButt</Data>
+            <Data name="3BA_AnusBigButt" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusBigButt</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BigButt" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BigButt</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004BigButt" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004BigButt</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BigButt" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BigButt</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BigButt" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BigButt</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BigButt" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BigButt</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017BigButt" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017BigButt</Data>
+        </Slider>
+        <Slider name="BigTorso" invert="false" small="0" big="0">
+            <Data name="3BABigTorso" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABigTorso</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BigTorso" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BigTorso</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004BigTorso" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004BigTorso</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BigTorso" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BigTorso</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BigTorso" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BigTorso</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BigTorso" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BigTorso</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BigTorso" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BigTorso</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017BigTorso" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017BigTorso</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018BigTorso" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018BigTorso</Data>
+        </Slider>
+        <Slider name="BreastCenter" invert="false" small="0" big="0">
+            <Data name="3BABreastCenter" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastCenter</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastCenter" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastCenter</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastCenter" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastCenter</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastCenter" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastCenter</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastCenter" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastCenter</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastCenter" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastCenter</Data>
+        </Slider>
+        <Slider name="BreastCenterBig" invert="false" small="0" big="0">
+            <Data name="3BABreastCenterBig" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastCenterBig</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastCenterBig" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastCenterBig</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastCenterBig" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastCenterBig</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastCenterBig" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastCenterBig</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastCenterBig" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastCenterBig</Data>
+        </Slider>
+        <Slider name="BreastCleavage" invert="false" small="0" big="0">
+            <Data name="3BABreastCleavage" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastCleavage</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastCleavage" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastCleavage</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastCleavage" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastCleavage</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastCleavage" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastCleavage</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastCleavage" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastCleavage</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastCleavage" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastCleavage</Data>
+        </Slider>
+        <Slider name="BreastsConverage_v2" invert="false" small="0" big="0">
+            <Data name="3BABreastsConverage_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastsConverage_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastsConverage_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastsConverage_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastsConverage_v2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastsConverage_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastsConverage_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastsConverage_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastsConverage_v2" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastsConverage_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastsConverage_v2" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastsConverage_v2</Data>
+        </Slider>
+        <Slider name="BreastFlatness2" invert="false" small="0" big="0">
+            <Data name="3BABreastFlatness2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastFlatness2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastFlatness2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastFlatness2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastFlatness2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastFlatness2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastFlatness2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastFlatness2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastFlatness2" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastFlatness2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastFlatness2" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastFlatness2</Data>
+        </Slider>
+        <Slider name="BreastFlatness" invert="false" small="0" big="0">
+            <Data name="3BABreastFlatness" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastFlatness</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastFlatness" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastFlatness</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastFlatness" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastFlatness</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastFlatness" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastFlatness</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastFlatness" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastFlatness</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastFlatness" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastFlatness</Data>
+        </Slider>
+        <Slider name="BreastGravity2" invert="false" small="0" big="0">
+            <Data name="3BABreastGravity2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastGravity2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastGravity2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastGravity2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastGravity2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastGravity2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastGravity2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastGravity2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastGravity2" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastGravity2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastGravity2" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastGravity2</Data>
+        </Slider>
+        <Slider name="BreastHeight" invert="false" small="0" big="0">
+            <Data name="3BABreastHeight" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastHeight" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastHeight" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastHeight" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastHeight" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastHeight" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastHeight</Data>
+        </Slider>
+        <Slider name="BreastPerkiness" invert="false" small="0" big="0">
+            <Data name="3BABreastPerkiness" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastPerkiness</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastPerkiness" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastPerkiness</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastPerkiness" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastPerkiness</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastPerkiness" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastPerkiness</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastPerkiness" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastPerkiness</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastPerkiness" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastPerkiness</Data>
+        </Slider>
+        <Slider name="Breasts" invert="false" small="0" big="0">
+            <Data name="3BABreasts" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreasts</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09Breasts" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09Breasts</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006Breasts" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006Breasts</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007Breasts" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007Breasts</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010Breasts" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010Breasts</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011Breasts" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011Breasts</Data>
+        </Slider>
+        <Slider name="BreastsFantasy" invert="false" small="0" big="0">
+            <Data name="3BABreastsFantasy" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastsFantasy</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastsFantasy" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastsFantasy</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastsFantasy" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastsFantasy</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastsFantasy" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastsFantasy</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastsFantasy" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastsFantasy</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastsFantasy" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastsFantasy</Data>
+        </Slider>
+        <Slider name="BreastsGone" invert="false" small="0" big="0">
+            <Data name="3BABreastsGone" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastsGone</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastsGone" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastsGone</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastsGone" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastsGone</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastsGone" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastsGone</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastsGone" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastsGone</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastsGone" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastsGone</Data>
+        </Slider>
+        <Slider name="BreastsNewSH" invert="false" small="0" big="0">
+            <Data name="3BABreastsNewSH" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastsNewSH</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastsNewSH" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastsNewSH</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastsNewSH" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastsNewSH</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastsNewSH" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastsNewSH</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastsNewSH" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastsNewSH</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastsNewSH" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastsNewSH</Data>
+        </Slider>
+        <Slider name="BreastsNewSHSymmetry" invert="false" small="0" big="0">
+            <Data name="3BABreastsNewSHSymmetry" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastsNewSHSymmetry</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastsNewSHSymmetry" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastsNewSHSymmetry</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastsNewSHSymmetry" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastsNewSHSymmetry</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastsNewSHSymmetry" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastsNewSHSymmetry</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastsNewSHSymmetry" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastsNewSHSymmetry</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastsNewSHSymmetry" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastsNewSHSymmetry</Data>
+        </Slider>
+        <Slider name="BreastsSmall" invert="false" small="0" big="0">
+            <Data name="3BABreastsSmall" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastsSmall</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastsSmall" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastsSmall</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004BreastsSmall" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004BreastsSmall</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastsSmall" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastsSmall</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastsSmall" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastsSmall</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastsSmall" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastsSmall</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastsSmall" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastsSmall</Data>
+        </Slider>
+        <Slider name="BreastsSmall2" invert="false" small="0" big="0">
+            <Data name="3BABreastsSmall2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastsSmall2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastsSmall2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastsSmall2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004BreastsSmall2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004BreastsSmall2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastsSmall2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastsSmall2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastsSmall2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastsSmall2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastsSmall2" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastsSmall2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastsSmall2" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastsSmall2</Data>
+        </Slider>
+        <Slider name="BreastsTogether" invert="false" small="0" big="0">
+            <Data name="3BABreastsTogether" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastsTogether</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastsTogether" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastsTogether</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastsTogether" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastsTogether</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastsTogether" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastsTogether</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastsTogether" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastsTogether</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastsTogether" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastsTogether</Data>
+        </Slider>
+        <Slider name="BreastTopSlope" invert="false" small="0" big="0">
+            <Data name="3BABreastTopSlope" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastTopSlope</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastTopSlope" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastTopSlope</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastTopSlope" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastTopSlope</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastTopSlope" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastTopSlope</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastTopSlope" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastTopSlope</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastTopSlope" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastTopSlope</Data>
+        </Slider>
+        <Slider name="BreastWidth" invert="false" small="0" big="0">
+            <Data name="3BABreastWidth" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastWidth" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastWidth" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastWidth" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastWidth" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastWidth" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastWidth</Data>
+        </Slider>
+        <Slider name="BreastSideShape" invert="false" small="0" big="0">
+            <Data name="3BABreastSideShape" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastSideShape</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastSideShape" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastSideShape</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastSideShape" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastSideShape</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastSideShape" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastSideShape</Data>
+        </Slider>
+        <Slider name="BreastUnderDepth" invert="false" small="0" big="0">
+            <Data name="3BABreastUnderDepth" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastUnderDepth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastUnderDepth" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastUnderDepth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastUnderDepth" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastUnderDepth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastUnderDepth" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastUnderDepth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastUnderDepth" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastUnderDepth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastUnderDepth" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastUnderDepth</Data>
+        </Slider>
+        <Slider name="BreastsPressed_v2" invert="false" small="0" big="0">
+            <Data name="3BABreastsPressed_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BABreastsPressed_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09BreastsPressed_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09BreastsPressed_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006BreastsPressed_v2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006BreastsPressed_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007BreastsPressed_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007BreastsPressed_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010BreastsPressed_v2" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010BreastsPressed_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011BreastsPressed_v2" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011BreastsPressed_v2</Data>
+        </Slider>
+        <Slider name="Butt" invert="false" small="0" big="0">
+            <Data name="3BAButt" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAButt</Data>
+            <Data name="3BA_VaginaButt" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaButt</Data>
+            <Data name="3BA_AnusButt" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusButt</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004Butt" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004Butt</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007Butt" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007Butt</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017Butt" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017Butt</Data>
+        </Slider>
+        <Slider name="ButtSaggy_v2" invert="false" small="0" big="0">
+            <Data name="3BAButtSaggy_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAButtSaggy_v2</Data>
+            <Data name="3BA_AnusButtSaggy_v2" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusButtSaggy_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004ButtSaggy_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004ButtSaggy_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ButtSaggy_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ButtSaggy_v2</Data>
+        </Slider>
+        <Slider name="ButtClassic" invert="false" small="0" big="0">
+            <Data name="3BAButtClassic" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAButtClassic</Data>
+            <Data name="3BA_VaginaButtClassic" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaButtClassic</Data>
+            <Data name="3BA_AnusButtClassic" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusButtClassic</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09ButtClassic" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09ButtClassic</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004ButtClassic" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004ButtClassic</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ButtClassic" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ButtClassic</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010ButtClassic" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010ButtClassic</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017ButtClassic" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017ButtClassic</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018ButtClassic" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018ButtClassic</Data>
+        </Slider>
+        <Slider name="ButtCrack" invert="false" small="0" big="0">
+            <Data name="3BAButtCrack" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAButtCrack</Data>
+            <Data name="3BA_VaginaButtCrack" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaButtCrack</Data>
+            <Data name="3BA_AnusButtCrack" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusButtCrack</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004ButtCrack" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004ButtCrack</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ButtCrack" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ButtCrack</Data>
+        </Slider>
+        <Slider name="ButtShape2" invert="false" small="0" big="0">
+            <Data name="3BAButtShape2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAButtShape2</Data>
+            <Data name="3BA_VaginaButtShape2" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaButtShape2</Data>
+            <Data name="3BA_AnusButtShape2" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusButtShape2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09ButtShape2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09ButtShape2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004ButtShape2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004ButtShape2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ButtShape2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ButtShape2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010ButtShape2" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010ButtShape2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017ButtShape2" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017ButtShape2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018ButtShape2" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018ButtShape2</Data>
+        </Slider>
+        <Slider name="ButtSmall" invert="false" small="0" big="0">
+            <Data name="3BAButtSmall" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAButtSmall</Data>
+            <Data name="3BA_VaginaButtSmall" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaButtSmall</Data>
+            <Data name="3BA_AnusButtSmall" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusButtSmall</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09ButtSmall" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09ButtSmall</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004ButtSmall" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004ButtSmall</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ButtSmall" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ButtSmall</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010ButtSmall" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010ButtSmall</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011ButtSmall" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011ButtSmall</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017ButtSmall" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017ButtSmall</Data>
+        </Slider>
+        <Slider name="ButtDimples" invert="false" small="0" big="0">
+            <Data name="3BAButtDimples" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAButtDimples</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ButtDimples" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ButtDimples</Data>
+        </Slider>
+        <Slider name="ButtUnderFold" invert="false" small="0" big="0">
+            <Data name="3BAButtUnderFold" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAButtUnderFold</Data>
+            <Data name="3BA_VaginaButtUnderFold" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaButtUnderFold</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004ButtUnderFold" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004ButtUnderFold</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ButtUnderFold" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ButtUnderFold</Data>
+        </Slider>
+        <Slider name="ButtPressed_v2" invert="false" small="0" big="0">
+            <Data name="3BAButtPressed_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAButtPressed_v2</Data>
+            <Data name="3BA_VaginaButtPressed_v2" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaButtPressed_v2</Data>
+            <Data name="3BA_AnusButtPressed_v2" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusButtPressed_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004ButtPressed_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004ButtPressed_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ButtPressed_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ButtPressed_v2</Data>
+        </Slider>
+        <Slider name="ButtNarrow_v2" invert="false" small="0" big="0">
+            <Data name="3BAButtNarrow_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAButtNarrow_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004ButtNarrow_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004ButtNarrow_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ButtNarrow_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ButtNarrow_v2</Data>
+        </Slider>
+        <Slider name="CalfSize" invert="false" small="0" big="0">
+            <Data name="3BACalfSize" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BACalfSize</Data>
+        </Slider>
+        <Slider name="CalfSmooth" invert="false" small="0" big="0">
+            <Data name="3BACalfSmooth" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BACalfSmooth</Data>
+        </Slider>
+        <Slider name="CalfFBThicc_v2" invert="false" small="0" big="0">
+            <Data name="3BACalfFBThicc_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BACalfFBThicc_v2</Data>
+        </Slider>
+        <Slider name="ChestDepth" invert="false" small="0" big="0">
+            <Data name="3BAChestDepth" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAChestDepth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09ChestDepth" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09ChestDepth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004ChestDepth" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004ChestDepth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006ChestDepth" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006ChestDepth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ChestDepth" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ChestDepth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010ChestDepth" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010ChestDepth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011ChestDepth" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011ChestDepth</Data>
+        </Slider>
+        <Slider name="ChestWidth" invert="false" small="0" big="0">
+            <Data name="3BAChestWidth" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAChestWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09ChestWidth" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09ChestWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004ChestWidth" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004ChestWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006ChestWidth" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006ChestWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ChestWidth" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ChestWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010ChestWidth" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010ChestWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011ChestWidth" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011ChestWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017ChestWidth" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017ChestWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018ChestWidth" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018ChestWidth</Data>
+        </Slider>
+        <Slider name="ChubbyArms" invert="false" small="0" big="0">
+            <Data name="3BAChubbyArms" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAChubbyArms</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09ChubbyArms" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09ChubbyArms</Data>
+        </Slider>
+        <Slider name="ChubbyButt" invert="false" small="0" big="0">
+            <Data name="3BAChubbyButt" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAChubbyButt</Data>
+            <Data name="3BA_VaginaChubbyButt" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaChubbyButt</Data>
+            <Data name="3BA_AnusChubbyButt" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusChubbyButt</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09ChubbyButt" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09ChubbyButt</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004ChubbyButt" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004ChubbyButt</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ChubbyButt" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ChubbyButt</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010ChubbyButt" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010ChubbyButt</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017ChubbyButt" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017ChubbyButt</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018ChubbyButt" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018ChubbyButt</Data>
+        </Slider>
+        <Slider name="ChubbyLegs" invert="false" small="0" big="0">
+            <Data name="3BAChubbyLegs" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAChubbyLegs</Data>
+            <Data name="3BA_VaginaChubbyLegs" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaChubbyLegs</Data>
+            <Data name="3BA_AnusChubbyLegs" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusChubbyLegs</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004ChubbyLegs" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004ChubbyLegs</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ChubbyLegs" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ChubbyLegs</Data>
+        </Slider>
+        <Slider name="ChubbyWaist" invert="false" small="0" big="0">
+            <Data name="3BAChubbyWaist" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAChubbyWaist</Data>
+            <Data name="3BA_VaginaChubbyWaist" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaChubbyWaist</Data>
+            <Data name="3BA_AnusChubbyWaist" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusChubbyWaist</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09ChubbyWaist" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09ChubbyWaist</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004ChubbyWaist" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004ChubbyWaist</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006ChubbyWaist" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006ChubbyWaist</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ChubbyWaist" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ChubbyWaist</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010ChubbyWaist" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010ChubbyWaist</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011ChubbyWaist" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011ChubbyWaist</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017ChubbyWaist" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017ChubbyWaist</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018ChubbyWaist" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018ChubbyWaist</Data>
+        </Slider>
+        <Slider name="CrotchBack" invert="false" small="0" big="0">
+            <Data name="3BACrotchBack" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BACrotchBack</Data>
+            <Data name="3BA_VaginaCrotchBack" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaCrotchBack</Data>
+            <Data name="3BA_AnusCrotchBack" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusCrotchBack</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004CrotchBack" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004CrotchBack</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007CrotchBack" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007CrotchBack</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010CrotchBack" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010CrotchBack</Data>
+        </Slider>
+        <Slider name="Clavicle_v2" invert="false" small="0" big="0">
+            <Data name="3BAClavicle_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAClavicle_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09Clavicle_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09Clavicle_v2</Data>
+        </Slider>
+        <Slider name="DoubleMelon" invert="false" small="0" big="0">
+            <Data name="3BADoubleMelon" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BADoubleMelon</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09DoubleMelon" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09DoubleMelon</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006DoubleMelon" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006DoubleMelon</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007DoubleMelon" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007DoubleMelon</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010DoubleMelon" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010DoubleMelon</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011DoubleMelon" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011DoubleMelon</Data>
+        </Slider>
+        <Slider name="ForearmSize" invert="false" small="0" big="0">
+            <Data name="3BAForearmSize" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAForearmSize</Data>
+        </Slider>
+        <Slider name="Groin" invert="false" small="0" big="0">
+            <Data name="3BAGroin" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAGroin</Data>
+            <Data name="3BA_VaginaGroin" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaGroin</Data>
+            <Data name="3BA_AnusGroin" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusGroin</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004Groin" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004Groin</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007Groin" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007Groin</Data>
+        </Slider>
+        <Slider name="HipBone" invert="false" small="0" big="0">
+            <Data name="3BAHipBone" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAHipBone</Data>
+            <Data name="3BA_VaginaHipBone" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaHipBone</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004HipBone" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004HipBone</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007HipBone" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007HipBone</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010HipBone" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010HipBone</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017HipBone" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017HipBone</Data>
+        </Slider>
+        <Slider name="HipForward" invert="false" small="0" big="0">
+            <Data name="3BAHipForward" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAHipForward</Data>
+            <Data name="3BA_VaginaHipForward" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaHipForward</Data>
+            <Data name="3BA_AnusHipForward" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusHipForward</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09HipForward" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09HipForward</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004HipForward" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004HipForward</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006HipForward" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006HipForward</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007HipForward" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007HipForward</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010HipForward" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010HipForward</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011HipForward" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011HipForward</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017HipForward" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017HipForward</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018HipForward" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018HipForward</Data>
+        </Slider>
+        <Slider name="Hips" invert="false" small="0" big="0">
+            <Data name="3BAHips" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAHips</Data>
+            <Data name="3BA_VaginaHips" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaHips</Data>
+            <Data name="3BA_AnusHips" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusHips</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09Hips" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09Hips</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004Hips" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004Hips</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007Hips" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007Hips</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010Hips" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010Hips</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017Hips" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017Hips</Data>
+        </Slider>
+        <Slider name="HipUpperWidth" invert="false" small="0" big="0">
+            <Data name="3BAHipUpperWidth" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAHipUpperWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09HipUpperWidth" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09HipUpperWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004HipUpperWidth" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004HipUpperWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007HipUpperWidth" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007HipUpperWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011HipUpperWidth" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011HipUpperWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017HipUpperWidth" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017HipUpperWidth</Data>
+        </Slider>
+        <Slider name="HipCarved" invert="false" small="0" big="0">
+            <Data name="3BAHipCarved" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAHipCarved</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004HipCarved" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004HipCarved</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007HipCarved" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007HipCarved</Data>
+        </Slider>
+        <Slider name="HipNarrow_v2" invert="false" small="0" big="0">
+            <Data name="3BAHipNarrow_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAHipNarrow_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004HipNarrow_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004HipNarrow_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007HipNarrow_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007HipNarrow_v2</Data>
+        </Slider>
+        <Slider name="KneeHeight" invert="false" small="0" big="0">
+            <Data name="3BAKneeHeight" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAKneeHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007KneeHeight" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007KneeHeight</Data>
+        </Slider>
+        <Slider name="KneeShape" invert="false" small="0" big="0">
+            <Data name="3BAKneeShape" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAKneeShape</Data>
+        </Slider>
+        <Slider name="KneeTogether_v2" invert="false" small="0" big="0">
+            <Data name="3BAKneeTogether_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAKneeTogether_v2</Data>
+        </Slider>
+        <Slider name="LegShapeClassic" invert="false" small="0" big="0">
+            <Data name="3BALegShapeClassic" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BALegShapeClassic</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007LegShapeClassic" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007LegShapeClassic</Data>
+        </Slider>
+        <Slider name="LegsThin" invert="false" small="0" big="0">
+            <Data name="3BALegsThin" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BALegsThin</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007LegsThin" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007LegsThin</Data>
+        </Slider>
+        <Slider name="MuscleAbs" invert="false" small="0" big="0">
+            <Data name="3BAMuscleAbs" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAMuscleAbs</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09MuscleAbs" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09MuscleAbs</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004MuscleAbs" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004MuscleAbs</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006MuscleAbs" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006MuscleAbs</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007MuscleAbs" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007MuscleAbs</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010MuscleAbs" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010MuscleAbs</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011MuscleAbs" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011MuscleAbs</Data>
+        </Slider>
+        <Slider name="MuscleArms" invert="false" small="0" big="0">
+            <Data name="3BAMuscleArms" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAMuscleArms</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09MuscleArms" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09MuscleArms</Data>
+        </Slider>
+        <Slider name="MuscleButt" invert="false" small="0" big="0">
+            <Data name="3BAMuscleButt" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAMuscleButt</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004MuscleButt" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004MuscleButt</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007MuscleButt" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007MuscleButt</Data>
+        </Slider>
+        <Slider name="MuscleLegs" invert="false" small="0" big="0">
+            <Data name="3BAMuscleLegs" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAMuscleLegs</Data>
+            <Data name="3BA_VaginaMuscleLegs" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaMuscleLegs</Data>
+            <Data name="3BA_AnusMuscleLegs" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusMuscleLegs</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004MuscleLegs" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004MuscleLegs</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007MuscleLegs" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007MuscleLegs</Data>
+        </Slider>
+        <Slider name="MusclePecs" invert="false" small="0" big="0">
+            <Data name="3BAMusclePecs" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAMusclePecs</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09MusclePecs" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09MusclePecs</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006MusclePecs" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006MusclePecs</Data>
+        </Slider>
+        <Slider name="MuscleBack_v2" invert="false" small="0" big="0">
+            <Data name="3BAMuscleBack_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAMuscleBack_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09MuscleBack_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09MuscleBack_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004MuscleBack_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004MuscleBack_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007MuscleBack_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007MuscleBack_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017MuscleBack_v2" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017MuscleBack_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018MuscleBack_v2" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018MuscleBack_v2</Data>
+        </Slider>
+        <Slider name="MuscleMoreAbs_v2" invert="false" small="0" big="0">
+            <Data name="3BAMuscleMoreAbs_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAMuscleMoreAbs_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09MuscleMoreAbs_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09MuscleMoreAbs_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004MuscleMoreAbs_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004MuscleMoreAbs_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007MuscleMoreAbs_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007MuscleMoreAbs_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010MuscleMoreAbs_v2" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010MuscleMoreAbs_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011MuscleMoreAbs_v2" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011MuscleMoreAbs_v2</Data>
+        </Slider>
+        <Slider name="MuscleMoreArms_v2" invert="false" small="0" big="0">
+            <Data name="3BAMuscleMoreArms_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAMuscleMoreArms_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09MuscleMoreArms_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09MuscleMoreArms_v2</Data>
+        </Slider>
+        <Slider name="MuscleMoreLegs_v2" invert="false" small="0" big="0">
+            <Data name="3BAMuscleMoreLegs_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAMuscleMoreLegs_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004MuscleMoreLegs_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004MuscleMoreLegs_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007MuscleMoreLegs_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007MuscleMoreLegs_v2</Data>
+        </Slider>
+        <Slider name="NavelEven" invert="false" small="0" big="0">
+            <Data name="3BANavelEven" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANavelEven</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007NavelEven" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007NavelEven</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010NavelEven" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010NavelEven</Data>
+        </Slider>
+        <Slider name="NeckSeam" invert="false" small="100" big="0" hidden="true">
+            <Data name="3BANeckSeam" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANeckSeam</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NeckSeam" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NeckSeam</Data>
+        </Slider>
+        <Slider name="NipBGone" invert="false" small="0" big="0">
+            <Data name="3BANipBGone" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANipBGone</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NipBGone" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NipBGone</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NipBGone" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NipBGone</Data>
+        </Slider>
+        <Slider name="NippleDistance" invert="false" small="0" big="0">
+            <Data name="3BANippleDistance" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleDistance</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleDistance" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleDistance</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleDistance" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleDistance</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007NippleDistance" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007NippleDistance</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010NippleDistance" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010NippleDistance</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011NippleDistance" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011NippleDistance</Data>
+        </Slider>
+        <Slider name="NippleDown" invert="false" small="0" big="0">
+            <Data name="3BANippleDown" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleDown</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleDown" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleDown</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleDown" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleDown</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007NippleDown" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007NippleDown</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010NippleDown" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010NippleDown</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011NippleDown" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011NippleDown</Data>
+        </Slider>
+        <Slider name="NippleLength" invert="false" small="0" big="0">
+            <Data name="3BANippleLength" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleLength</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleLength" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleLength</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleLength" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleLength</Data>
+        </Slider>
+        <Slider name="NippleManga" invert="false" small="0" big="0">
+            <Data name="3BANippleManga" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleManga</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleManga" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleManga</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleManga" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleManga</Data>
+        </Slider>
+        <Slider name="NipplePerkiness" invert="false" small="0" big="0">
+            <Data name="3BANipplePerkiness" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANipplePerkiness</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NipplePerkiness" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NipplePerkiness</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NipplePerkiness" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NipplePerkiness</Data>
+        </Slider>
+        <Slider name="NipplePerkManga" invert="false" small="0" big="0">
+            <Data name="3BANipplePerkManga" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANipplePerkManga</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NipplePerkManga" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NipplePerkManga</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NipplePerkManga" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NipplePerkManga</Data>
+        </Slider>
+        <Slider name="NippleSize" invert="false" small="0" big="0">
+            <Data name="3BANippleSize" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleSize</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleSize" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleSize</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleSize" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleSize</Data>
+        </Slider>
+        <Slider name="NippleTip" invert="false" small="0" big="0">
+            <Data name="3BANippleTip" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleTip</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleTip" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleTip</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleTip" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleTip</Data>
+        </Slider>
+        <Slider name="NippleTipManga" invert="false" small="0" big="0">
+            <Data name="3BANippleTipManga" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleTipManga</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleTipManga" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleTipManga</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleTipManga" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleTipManga</Data>
+        </Slider>
+        <Slider name="NippleUp" invert="false" small="0" big="0">
+            <Data name="3BANippleUp" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleUp</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleUp" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleUp</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleUp" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleUp</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007NippleUp" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007NippleUp</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010NippleUp" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010NippleUp</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011NippleUp" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011NippleUp</Data>
+        </Slider>
+        <Slider name="NippleDip" invert="false" small="0" big="0">
+            <Data name="3BANippleDip" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleDip</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleDip" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleDip</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleDip" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleDip</Data>
+        </Slider>
+        <Slider name="NippleCrease_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleCrease_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleCrease_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleCrease_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleCrease_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleCrease_v2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleCrease_v2</Data>
+        </Slider>
+        <Slider name="NipplePuffy_v2" invert="false" small="0" big="0">
+            <Data name="3BANipplePuffy_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANipplePuffy_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NipplePuffy_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NipplePuffy_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NipplePuffy_v2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NipplePuffy_v2</Data>
+        </Slider>
+        <Slider name="NippleShy_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleShy_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleShy_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleShy_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleShy_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleShy_v2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleShy_v2</Data>
+        </Slider>
+        <Slider name="NippleThicc_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleThicc_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleThicc_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleThicc_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleThicc_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleThicc_v2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleThicc_v2</Data>
+        </Slider>
+        <Slider name="NippleInvert_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleInvert_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleInvert_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleInvert_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleInvert_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleInvert_v2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleInvert_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007NippleInvert_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007NippleInvert_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010NippleInvert_v2" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010NippleInvert_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011NippleInvert_v2" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011NippleInvert_v2</Data>
+        </Slider>
+        <Slider name="NippleSquash1_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleSquash1_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleSquash1_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleSquash1_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleSquash1_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleSquash1_v2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleSquash1_v2</Data>
+        </Slider>
+        <Slider name="NippleSquash2_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleSquash2_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleSquash2_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleSquash2_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleSquash2_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleSquash2_v2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleSquash2_v2</Data>
+        </Slider>
+        <Slider name="NippleBump_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleBump_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleBump_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleBump_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleBump_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleBump_v2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleBump_v2</Data>
+        </Slider>
+        <Slider name="NippleCrumpled_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleCrumpled_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleCrumpled_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleCrumpled_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleCrumpled_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleCrumpled_v2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleCrumpled_v2</Data>
+        </Slider>
+        <Slider name="NippleTube_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleTube_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BANippleTube_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09NippleTube_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09NippleTube_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006NippleTube_v2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006NippleTube_v2</Data>
+        </Slider>
+        <Slider name="PregnancyBelly" invert="false" small="0" big="0">
+            <Data name="3BAPregnancyBelly" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAPregnancyBelly</Data>
+            <Data name="3BA_VaginaPregnancyBelly" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaPregnancyBelly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09PregnancyBelly" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09PregnancyBelly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004PregnancyBelly" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004PregnancyBelly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006PregnancyBelly" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006PregnancyBelly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007PregnancyBelly" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007PregnancyBelly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010PregnancyBelly" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010PregnancyBelly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011PregnancyBelly" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011PregnancyBelly</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017PregnancyBelly" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017PregnancyBelly</Data>
+        </Slider>
+        <Slider name="PushUp" invert="false" small="0" big="0">
+            <Data name="3BAPushUp" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAPushUp</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09PushUp" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09PushUp</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006PushUp" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006PushUp</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007PushUp" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007PushUp</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010PushUp" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010PushUp</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011PushUp" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011PushUp</Data>
+        </Slider>
+        <Slider name="RibsMore_v2" invert="false" small="0" big="0">
+            <Data name="3BARibsMore_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BARibsMore_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09RibsMore_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09RibsMore_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006RibsMore_v2" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006RibsMore_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007RibsMore_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007RibsMore_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010RibsMore_v2" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010RibsMore_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011RibsMore_v2" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011RibsMore_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017RibsMore_v2" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017RibsMore_v2</Data>
+        </Slider>
+        <Slider name="RibsProminance" invert="false" small="0" big="0">
+            <Data name="3BARibsProminance" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BARibsProminance</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09RibsProminance" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09RibsProminance</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006RibsProminance" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006RibsProminance</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007RibsProminance" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007RibsProminance</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010RibsProminance" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010RibsProminance</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011RibsProminance" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011RibsProminance</Data>
+        </Slider>
+        <Slider name="RoundAss" invert="false" small="0" big="0">
+            <Data name="3BARoundAss" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BARoundAss</Data>
+            <Data name="3BA_VaginaRoundAss" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaRoundAss</Data>
+            <Data name="3BA_AnusRoundAss" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusRoundAss</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004RoundAss" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004RoundAss</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007RoundAss" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007RoundAss</Data>
+        </Slider>
+        <Slider name="ShoulderSmooth" invert="false" small="0" big="0">
+            <Data name="3BAShoulderSmooth" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAShoulderSmooth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09ShoulderSmooth" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09ShoulderSmooth</Data>
+        </Slider>
+        <Slider name="ShoulderTweak" invert="false" small="0" big="0">
+            <Data name="3BAShoulderTweak" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAShoulderTweak</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09ShoulderTweak" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09ShoulderTweak</Data>
+        </Slider>
+        <Slider name="ShoulderWidth" invert="false" small="0" big="0">
+            <Data name="3BAShoulderWidth" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAShoulderWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09ShoulderWidth" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09ShoulderWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006ShoulderWidth" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006ShoulderWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ShoulderWidth" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ShoulderWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010ShoulderWidth" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010ShoulderWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011ShoulderWidth" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011ShoulderWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017ShoulderWidth" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017ShoulderWidth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018ShoulderWidth" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018ShoulderWidth</Data>
+        </Slider>
+        <Slider name="SlimThighs" invert="false" small="0" big="0">
+            <Data name="3BASlimThighs" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BASlimThighs</Data>
+            <Data name="3BA_VaginaSlimThighs" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaSlimThighs</Data>
+            <Data name="3BA_AnusSlimThighs" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusSlimThighs</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004SlimThighs" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004SlimThighs</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007SlimThighs" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007SlimThighs</Data>
+        </Slider>
+        <Slider name="SternumDepth" invert="false" small="0" big="0">
+            <Data name="3BASternumDepth" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BASternumDepth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09SternumDepth" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09SternumDepth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006SternumDepth" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006SternumDepth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007SternumDepth" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007SternumDepth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010SternumDepth" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010SternumDepth</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011SternumDepth" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011SternumDepth</Data>
+        </Slider>
+        <Slider name="SternumHeight" invert="false" small="0" big="0">
+            <Data name="3BASternumHeight" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BASternumHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09SternumHeight" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09SternumHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006SternumHeight" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006SternumHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007SternumHeight" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007SternumHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010SternumHeight" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010SternumHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011SternumHeight" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011SternumHeight</Data>
+        </Slider>
+        <Slider name="Thighs" invert="false" small="0" big="0">
+            <Data name="3BAThighs" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAThighs</Data>
+            <Data name="3BA_VaginaThighs" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaThighs</Data>
+            <Data name="3BA_AnusThighs" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusThighs</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004Thighs" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004Thighs</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007Thighs" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007Thighs</Data>
+        </Slider>
+        <Slider name="ThighOutsideThicc_v2" invert="false" small="0" big="0">
+            <Data name="3BAThighOutsideThicc_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAThighOutsideThicc_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004ThighOutsideThicc_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004ThighOutsideThicc_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ThighOutsideThicc_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ThighOutsideThicc_v2</Data>
+        </Slider>
+        <Slider name="ThighInsideThicc_v2" invert="false" small="0" big="0">
+            <Data name="3BAThighInsideThicc_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAThighInsideThicc_v2</Data>
+            <Data name="3BA_VaginaThighInsideThicc_v2" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaThighInsideThicc_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004ThighInsideThicc_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004ThighInsideThicc_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ThighInsideThicc_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ThighInsideThicc_v2</Data>
+        </Slider>
+        <Slider name="ThighFBThicc_v2" invert="false" small="0" big="0">
+            <Data name="3BAThighFBThicc_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAThighFBThicc_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004ThighFBThicc_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004ThighFBThicc_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007ThighFBThicc_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007ThighFBThicc_v2</Data>
+        </Slider>
+        <Slider name="LegSpread_v2" invert="false" small="0" big="0">
+            <Data name="3BALegSpread_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BALegSpread_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004LegSpread_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004LegSpread_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007LegSpread_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007LegSpread_v2</Data>
+        </Slider>
+        <Slider name="TummyTuck" invert="false" small="0" big="0">
+            <Data name="3BATummyTuck" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BATummyTuck</Data>
+            <Data name="3BA_VaginaTummyTuck" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaTummyTuck</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004TummyTuck" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004TummyTuck</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007TummyTuck" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007TummyTuck</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010TummyTuck" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010TummyTuck</Data>
+        </Slider>
+        <Slider name="UNPHip_v2" invert="false" small="0" big="0">
+            <Data name="3BAUNPHip_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAUNPHip_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09UNPHip_v2" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09UNPHip_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004UNPHip_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004UNPHip_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007UNPHip_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007UNPHip_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010UNPHip_v2" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010UNPHip_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011UNPHip_v2" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011UNPHip_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017UNPHip_v2" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017UNPHip_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018UNPHip_v2" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018UNPHip_v2</Data>
+        </Slider>
+        <Slider name="Waist" invert="false" small="0" big="0">
+            <Data name="3BAWaist" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAWaist</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09Waist" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09Waist</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004Waist" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004Waist</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007Waist" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007Waist</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010Waist" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010Waist</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011Waist" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011Waist</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017Waist" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017Waist</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018Waist" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018Waist</Data>
+        </Slider>
+        <Slider name="WaistHeight" invert="false" small="0" big="0">
+            <Data name="3BAWaistHeight" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAWaistHeight</Data>
+            <Data name="3BA_VaginaWaistHeight" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaWaistHeight</Data>
+            <Data name="3BA_AnusWaistHeight" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusWaistHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09WaistHeight" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09WaistHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004WaistHeight" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004WaistHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006WaistHeight" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006WaistHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007WaistHeight" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007WaistHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010WaistHeight" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010WaistHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011WaistHeight" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011WaistHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017WaistHeight" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017WaistHeight</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018WaistHeight" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018WaistHeight</Data>
+        </Slider>
+        <Slider name="WideWaistLine" invert="false" small="0" big="0">
+            <Data name="3BAWideWaistLine" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAWideWaistLine</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09WideWaistLine" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09WideWaistLine</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004WideWaistLine" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004WideWaistLine</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007WideWaistLine" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007WideWaistLine</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011WideWaistLine" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011WideWaistLine</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017WideWaistLine" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017WideWaistLine</Data>
+        </Slider>
+        <Slider name="WristSize" invert="false" small="100" big="0">
+            <Data name="3BAWristSize" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAWristSize</Data>
+        </Slider>
+        <Slider name="7BLeg_v2" invert="false" small="0" big="0">
+            <Data name="3BA7BLeg_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA7BLeg_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.0047BLeg_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.0047BLeg_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.0077BLeg_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.0077BLeg_v2</Data>
+        </Slider>
+        <Slider name="7B Lower" invert="false" small="0" big="0">
+            <Data name="3BA7B Lower" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA7B Lower</Data>
+            <Data name="3BA_Vagina7B Lower" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_Vagina7B Lower</Data>
+            <Data name="3BA_Anus7B Lower" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_Anus7B Lower</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_097B Lower" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_097B Lower</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.0047B Lower" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.0047B Lower</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.0077B Lower" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.0077B Lower</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.0107B Lower" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.0107B Lower</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.0117B Lower" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.0117B Lower</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.0177B Lower" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.0177B Lower</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.0187B Lower" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.0187B Lower</Data>
+        </Slider>
+        <Slider name="7B Upper" invert="false" small="0" big="0">
+            <Data name="3BA7B Upper" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA7B Upper</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_097B Upper" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_097B Upper</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.0067B Upper" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.0067B Upper</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.0077B Upper" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.0077B Upper</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.0107B Upper" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.0107B Upper</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.0117B Upper" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.0117B Upper</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.0177B Upper" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.0177B Upper</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.0187B Upper" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.0187B Upper</Data>
+        </Slider>
+        <Slider name="VanillaSSEHi" invert="false" small="0" big="0">
+            <Data name="3BAVanillaSSEHi" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAVanillaSSEHi</Data>
+            <Data name="3BA_VaginaVanillaSSEHi" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaVanillaSSEHi</Data>
+            <Data name="3BA_AnusVanillaSSEHi" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusVanillaSSEHi</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09VanillaSSEHi" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09VanillaSSEHi</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004VanillaSSEHi" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004VanillaSSEHi</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006VanillaSSEHi" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006VanillaSSEHi</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007VanillaSSEHi" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007VanillaSSEHi</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010VanillaSSEHi" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010VanillaSSEHi</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011VanillaSSEHi" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011VanillaSSEHi</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017VanillaSSEHi" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017VanillaSSEHi</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018VanillaSSEHi" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018VanillaSSEHi</Data>
+        </Slider>
+        <Slider name="VanillaSSELo" invert="false" small="0" big="0">
+            <Data name="3BAVanillaSSELo" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAVanillaSSELo</Data>
+            <Data name="3BA_VaginaVanillaSSELo" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaVanillaSSELo</Data>
+            <Data name="3BA_AnusVanillaSSELo" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusVanillaSSELo</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09VanillaSSELo" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09VanillaSSELo</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004VanillaSSELo" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004VanillaSSELo</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006VanillaSSELo" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006VanillaSSELo</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007VanillaSSELo" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007VanillaSSELo</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010VanillaSSELo" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010VanillaSSELo</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011VanillaSSELo" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011VanillaSSELo</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017VanillaSSELo" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017VanillaSSELo</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018VanillaSSELo" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018VanillaSSELo</Data>
+        </Slider>
+        <Slider name="OldBaseShape" invert="false" small="0" big="0">
+            <Data name="3BAOldBaseShape" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAOldBaseShape</Data>
+            <Data name="3BA_VaginaOldBaseShape" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaOldBaseShape</Data>
+            <Data name="3BA_AnusOldBaseShape" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusOldBaseShape</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09OldBaseShape" target="PC_A_EQ_Vampire_Costume03_09" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09OldBaseShape</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004OldBaseShape" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004OldBaseShape</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.006OldBaseShape" target="PC_A_EQ_Vampire_Costume03_09.006" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.006OldBaseShape</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007OldBaseShape" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007OldBaseShape</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.010OldBaseShape" target="PC_A_EQ_Vampire_Costume03_09.010" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.010OldBaseShape</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.011OldBaseShape" target="PC_A_EQ_Vampire_Costume03_09.011" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.011OldBaseShape</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.017OldBaseShape" target="PC_A_EQ_Vampire_Costume03_09.017" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.017OldBaseShape</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.018OldBaseShape" target="PC_A_EQ_Vampire_Costume03_09.018" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.018OldBaseShape</Data>
+        </Slider>
+        <Slider name="Innieoutie" invert="false" small="0" big="0">
+            <Data name="3BAInnieoutie" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAInnieoutie</Data>
+            <Data name="3BA_VaginaInnieoutie" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaInnieoutie</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004Innieoutie" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004Innieoutie</Data>
+        </Slider>
+        <Slider name="LabiaTightUp" invert="false" small="0" big="0">
+            <Data name="3BALabiaTightUp" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BALabiaTightUp</Data>
+            <Data name="3BA_VaginaLabiaTightUp" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaLabiaTightUp</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004LabiaTightUp" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004LabiaTightUp</Data>
+        </Slider>
+        <Slider name="Labiapuffyness" invert="false" small="0" big="0">
+            <Data name="3BALabiapuffyness" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BALabiapuffyness</Data>
+            <Data name="3BA_VaginaLabiapuffyness" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaLabiapuffyness</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004Labiapuffyness" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004Labiapuffyness</Data>
+        </Slider>
+        <Slider name="LabiaMorePuffyness_v2" invert="false" small="0" big="0">
+            <Data name="3BALabiaMorePuffyness_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BALabiaMorePuffyness_v2</Data>
+            <Data name="3BA_VaginaLabiaMorePuffyness_v2" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaLabiaMorePuffyness_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004LabiaMorePuffyness_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004LabiaMorePuffyness_v2</Data>
+        </Slider>
+        <Slider name="Labiaprotrude" invert="false" small="0" big="0">
+            <Data name="3BALabiaprotrude" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BALabiaprotrude</Data>
+            <Data name="3BA_VaginaLabiaprotrude" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaLabiaprotrude</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004Labiaprotrude" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004Labiaprotrude</Data>
+        </Slider>
+        <Slider name="Labiaprotrude2" invert="false" small="0" big="0">
+            <Data name="3BALabiaprotrude2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BALabiaprotrude2</Data>
+            <Data name="3BA_VaginaLabiaprotrude2" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaLabiaprotrude2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004Labiaprotrude2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004Labiaprotrude2</Data>
+        </Slider>
+        <Slider name="Labiaprotrudeback" invert="false" small="0" big="0">
+            <Data name="3BA_VaginaLabiaprotrudeback" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaLabiaprotrudeback</Data>
+        </Slider>
+        <Slider name="Labiaspread" invert="false" small="0" big="0">
+            <Data name="3BALabiaspread" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BALabiaspread</Data>
+            <Data name="3BA_VaginaLabiaspread" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaLabiaspread</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004Labiaspread" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004Labiaspread</Data>
+        </Slider>
+        <Slider name="LabiaCrumpled_v2" invert="false" small="0" big="0">
+            <Data name="3BALabiaCrumpled_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BALabiaCrumpled_v2</Data>
+            <Data name="3BA_VaginaLabiaCrumpled_v2" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaLabiaCrumpled_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004LabiaCrumpled_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004LabiaCrumpled_v2</Data>
+        </Slider>
+        <Slider name="LabiaNeat_v2" invert="false" small="0" big="0">
+            <Data name="3BALabiaNeat_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BALabiaNeat_v2</Data>
+            <Data name="3BA_VaginaLabiaNeat_v2" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaLabiaNeat_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004LabiaNeat_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004LabiaNeat_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007LabiaNeat_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007LabiaNeat_v2</Data>
+        </Slider>
+        <Slider name="LabiaBulgogi_v2" invert="false" small="0" big="0">
+            <Data name="3BALabiaBulgogi_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BALabiaBulgogi_v2</Data>
+            <Data name="3BA_VaginaLabiaBulgogi_v2" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaLabiaBulgogi_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004LabiaBulgogi_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004LabiaBulgogi_v2</Data>
+        </Slider>
+        <Slider name="Vaginasize" invert="false" small="0" big="0">
+            <Data name="3BA_VaginaVaginasize" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaVaginasize</Data>
+        </Slider>
+        <Slider name="VaginaHole" invert="false" small="0" big="0">
+            <Data name="3BAVaginaHole" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAVaginaHole</Data>
+            <Data name="3BA_VaginaVaginaHole" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaVaginaHole</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004VaginaHole" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004VaginaHole</Data>
+        </Slider>
+        <Slider name="Clit" invert="false" small="0" big="0">
+            <Data name="3BAClit" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAClit</Data>
+            <Data name="3BA_VaginaClit" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaClit</Data>
+        </Slider>
+        <Slider name="ClitSwell_v2" invert="false" small="0" big="0">
+            <Data name="3BAClitSwell_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAClitSwell_v2</Data>
+            <Data name="3BA_VaginaClitSwell_v2" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaClitSwell_v2</Data>
+        </Slider>
+        <Slider name="Cutepuffyness" invert="false" small="0" big="0">
+            <Data name="3BACutepuffyness" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BACutepuffyness</Data>
+            <Data name="3BA_VaginaCutepuffyness" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaCutepuffyness</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004Cutepuffyness" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004Cutepuffyness</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007Cutepuffyness" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007Cutepuffyness</Data>
+        </Slider>
+        <Slider name="CBPC" invert="false" small="0" big="0">
+            <Data name="3BACBPC" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BACBPC</Data>
+            <Data name="3BA_VaginaCBPC" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaCBPC</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004CBPC" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004CBPC</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007CBPC" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007CBPC</Data>
+        </Slider>
+        <Slider name="CrotchGap" invert="false" small="0" big="0">
+            <Data name="3BACrotchGap" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BACrotchGap</Data>
+            <Data name="3BA_VaginaCrotchGap" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaCrotchGap</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004CrotchGap" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004CrotchGap</Data>
+        </Slider>
+        <Slider name="AnalLoose_v2" invert="false" small="0" big="0">
+            <Data name="3BAAnalLoose_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAAnalLoose_v2</Data>
+            <Data name="3BA_VaginaAnalLoose_v2" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaAnalLoose_v2</Data>
+            <Data name="3BA_AnusAnalLoose_v2" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusAnalLoose_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004AnalLoose_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004AnalLoose_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.007AnalLoose_v2" target="PC_A_EQ_Vampire_Costume03_09.007" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.007AnalLoose_v2</Data>
+        </Slider>
+        <Slider name="AnalPosition_v2" invert="false" small="0" big="0">
+            <Data name="3BAAnalPosition_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAAnalPosition_v2</Data>
+            <Data name="3BA_VaginaAnalPosition_v2" target="3BA_Vagina" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_VaginaAnalPosition_v2</Data>
+            <Data name="3BA_AnusAnalPosition_v2" target="3BA_Anus" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BA_AnusAnalPosition_v2</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.004AnalPosition_v2" target="PC_A_EQ_Vampire_Costume03_09.004" local="true">SSE_SW_vampire - PSQ Cuirass.osd\PC_A_EQ_Vampire_Costume03_09.004AnalPosition_v2</Data>
+        </Slider>
+        <Slider name="AnalTexPos_v2" invert="false" small="0" big="0" uv="true">
+            <Data name="3BAAnalTexPos_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAAnalTexPos_v2</Data>
+        </Slider>
+        <Slider name="AnalTexPosRe_v2" invert="false" small="0" big="0" uv="true">
+            <Data name="3BAAnalTexPosRe_v2" target="3BA" local="true">SSE_SW_vampire - PSQ Cuirass.osd\3BAAnalTexPosRe_v2</Data>
+        </Slider>
+    </SliderSet>
+    <SliderSet name="PSQ 3BA 变身 - 吸血鬼 - 角饰">
+        <DataFolder>PSQ_Package_20261106\3BA\F010</DataFolder>
+        <SourceFile>horns.nif</SourceFile>
+        <OutputPath>meshes\PSQ\ExternalOutfits\Vampire</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">horns</OutputFile>
+        <Shape target="PC_A_EQ_Vampire_HairAcc01_01">PC_A_EQ_Vampire_HairAcc01_01</Shape>
+    </SliderSet>
+    <SliderSet name="PSQ 3BA 变身 - 吸血鬼 - 靴子">
+        <DataFolder>PSQ_Package_20261106\3BA\F010</DataFolder>
+        <SourceFile>boots.nif</SourceFile>
+        <OutputPath>meshes\PSQ\ExternalOutfits\Vampire</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">boots</OutputFile>
+        <Shape target="Feet_2" DataFolder="PSQ_Package_20261106\3BA\F013">Feet_2</Shape>
+        <Shape target="PC_A_EQ_Vampire_Costume03_09.003">PC_A_EQ_Vampire_Costume03_09.003</Shape>
+        <Shape target="PC_A_EQ_Vampire_Shoes_12.001">PC_A_EQ_Vampire_Shoes_12.001</Shape>
+        <Slider name="AnkleSize" invert="false" small="100" big="0">
+            <Data name="Feet_2AnkleSize" target="Feet_2" local="true">SSE_SW_vampire - PSQ Boots.osd\Feet_2AnkleSize</Data>
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003AnkleSize" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003AnkleSize</Data>
+        </Slider>
+        <Slider name="AppleCheeks" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003AppleCheeks" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003AppleCheeks</Data>
+        </Slider>
+        <Slider name="BigButt" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003BigButt" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003BigButt</Data>
+        </Slider>
+        <Slider name="Butt" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003Butt" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003Butt</Data>
+        </Slider>
+        <Slider name="ButtSaggy_v2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003ButtSaggy_v2" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003ButtSaggy_v2</Data>
+        </Slider>
+        <Slider name="ButtClassic" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003ButtClassic" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003ButtClassic</Data>
+        </Slider>
+        <Slider name="ButtShape2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003ButtShape2" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003ButtShape2</Data>
+        </Slider>
+        <Slider name="ButtSmall" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003ButtSmall" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003ButtSmall</Data>
+        </Slider>
+        <Slider name="ButtUnderFold" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003ButtUnderFold" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003ButtUnderFold</Data>
+        </Slider>
+        <Slider name="ButtPressed_v2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003ButtPressed_v2" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003ButtPressed_v2</Data>
+        </Slider>
+        <Slider name="ButtNarrow_v2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003ButtNarrow_v2" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003ButtNarrow_v2</Data>
+        </Slider>
+        <Slider name="CalfSize" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003CalfSize" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003CalfSize</Data>
+        </Slider>
+        <Slider name="CalfSmooth" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003CalfSmooth" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003CalfSmooth</Data>
+        </Slider>
+        <Slider name="CalfFBThicc_v2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003CalfFBThicc_v2" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003CalfFBThicc_v2</Data>
+        </Slider>
+        <Slider name="ChubbyButt" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003ChubbyButt" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003ChubbyButt</Data>
+        </Slider>
+        <Slider name="ChubbyLegs" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003ChubbyLegs" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003ChubbyLegs</Data>
+        </Slider>
+        <Slider name="ChubbyWaist" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003ChubbyWaist" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003ChubbyWaist</Data>
+        </Slider>
+        <Slider name="CrotchBack" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003CrotchBack" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003CrotchBack</Data>
+        </Slider>
+        <Slider name="Groin" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003Groin" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003Groin</Data>
+        </Slider>
+        <Slider name="HipBone" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003HipBone" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003HipBone</Data>
+        </Slider>
+        <Slider name="HipForward" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003HipForward" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003HipForward</Data>
+        </Slider>
+        <Slider name="Hips" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003Hips" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003Hips</Data>
+        </Slider>
+        <Slider name="HipCarved" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003HipCarved" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003HipCarved</Data>
+        </Slider>
+        <Slider name="HipNarrow_v2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003HipNarrow_v2" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003HipNarrow_v2</Data>
+        </Slider>
+        <Slider name="KneeHeight" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003KneeHeight" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003KneeHeight</Data>
+        </Slider>
+        <Slider name="KneeShape" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003KneeShape" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003KneeShape</Data>
+        </Slider>
+        <Slider name="KneeTogether_v2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003KneeTogether_v2" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003KneeTogether_v2</Data>
+        </Slider>
+        <Slider name="LegShapeClassic" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003LegShapeClassic" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003LegShapeClassic</Data>
+        </Slider>
+        <Slider name="LegsThin" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003LegsThin" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003LegsThin</Data>
+        </Slider>
+        <Slider name="MuscleButt" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003MuscleButt" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003MuscleButt</Data>
+        </Slider>
+        <Slider name="MuscleLegs" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003MuscleLegs" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003MuscleLegs</Data>
+        </Slider>
+        <Slider name="MuscleMoreLegs_v2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003MuscleMoreLegs_v2" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003MuscleMoreLegs_v2</Data>
+        </Slider>
+        <Slider name="PregnancyBelly" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003PregnancyBelly" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003PregnancyBelly</Data>
+        </Slider>
+        <Slider name="RoundAss" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003RoundAss" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003RoundAss</Data>
+        </Slider>
+        <Slider name="SlimThighs" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003SlimThighs" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003SlimThighs</Data>
+        </Slider>
+        <Slider name="Thighs" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003Thighs" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003Thighs</Data>
+        </Slider>
+        <Slider name="ThighOutsideThicc_v2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003ThighOutsideThicc_v2" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003ThighOutsideThicc_v2</Data>
+        </Slider>
+        <Slider name="ThighInsideThicc_v2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003ThighInsideThicc_v2" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003ThighInsideThicc_v2</Data>
+        </Slider>
+        <Slider name="ThighFBThicc_v2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003ThighFBThicc_v2" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003ThighFBThicc_v2</Data>
+        </Slider>
+        <Slider name="LegSpread_v2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003LegSpread_v2" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003LegSpread_v2</Data>
+        </Slider>
+        <Slider name="TummyTuck" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003TummyTuck" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003TummyTuck</Data>
+        </Slider>
+        <Slider name="UNPHip_v2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003UNPHip_v2" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003UNPHip_v2</Data>
+        </Slider>
+        <Slider name="WideWaistLine" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003WideWaistLine" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003WideWaistLine</Data>
+        </Slider>
+        <Slider name="7BLeg_v2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.0037BLeg_v2" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.0037BLeg_v2</Data>
+        </Slider>
+        <Slider name="7B Lower" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.0037B Lower" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.0037B Lower</Data>
+        </Slider>
+        <Slider name="VanillaSSEHi" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003VanillaSSEHi" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003VanillaSSEHi</Data>
+        </Slider>
+        <Slider name="VanillaSSELo" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003VanillaSSELo" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003VanillaSSELo</Data>
+        </Slider>
+        <Slider name="OldBaseShape" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003OldBaseShape" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003OldBaseShape</Data>
+        </Slider>
+        <Slider name="LabiaNeat_v2" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003LabiaNeat_v2" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003LabiaNeat_v2</Data>
+        </Slider>
+        <Slider name="CrotchGap" invert="false" small="0" big="0">
+            <Data name="PC_A_EQ_Vampire_Costume03_09.003CrotchGap" target="PC_A_EQ_Vampire_Costume03_09.003" local="true">SSE_SW_vampire - PSQ Boots.osd\PC_A_EQ_Vampire_Costume03_09.003CrotchGap</Data>
+        </Slider>
+    </SliderSet>
+    </SliderSetInfo>

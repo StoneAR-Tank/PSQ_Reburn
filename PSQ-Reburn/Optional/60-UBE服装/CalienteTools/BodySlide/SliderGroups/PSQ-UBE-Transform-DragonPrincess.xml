@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SliderGroups>
+  <Group name="PSQ UBE Outfits">
+    <Member name="PSQ UBE 变身 - 龙之公主 - 尾巴" />
+    <Member name="PSQ UBE 变身 - 龙之公主 - 手套" />
+    <Member name="PSQ UBE 变身 - 龙之公主 - 翅膀" />
+    <Member name="PSQ UBE 变身 - 龙之公主 - 胸甲" />
+    <Member name="PSQ UBE 变身 - 龙之公主 - 角饰" />
+    <Member name="PSQ UBE 变身 - 龙之公主 - 靴子" />
+  </Group>
+  <Group name="UBE">
+    <Member name="PSQ UBE 变身 - 龙之公主 - 尾巴" />
+    <Member name="PSQ UBE 变身 - 龙之公主 - 手套" />
+    <Member name="PSQ UBE 变身 - 龙之公主 - 翅膀" />
+    <Member name="PSQ UBE 变身 - 龙之公主 - 胸甲" />
+    <Member name="PSQ UBE 变身 - 龙之公主 - 角饰" />
+    <Member name="PSQ UBE 变身 - 龙之公主 - 靴子" />
+  </Group>
+  <Group name="UBE Female">
+    <Member name="PSQ UBE 变身 - 龙之公主 - 尾巴" />
+    <Member name="PSQ UBE 变身 - 龙之公主 - 手套" />
+    <Member name="PSQ UBE 变身 - 龙之公主 - 翅膀" />
+    <Member name="PSQ UBE 变身 - 龙之公主 - 胸甲" />
+    <Member name="PSQ UBE 变身 - 龙之公主 - 角饰" />
+    <Member name="PSQ UBE 变身 - 龙之公主 - 靴子" />
+  </Group>
+</SliderGroups>

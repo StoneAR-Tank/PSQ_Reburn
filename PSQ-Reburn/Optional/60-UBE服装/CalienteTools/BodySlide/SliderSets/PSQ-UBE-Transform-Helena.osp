@@ -1,0 +1,2388 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SliderSetInfo version="1"><SliderSet name="PSQ UBE 变身 - 海伦娜魅魔 - 尾巴">
+    <ReferenceInfo ProjectFile="SliderSets\UBE SE 2.0 Release Body.osp" ProjectName="UBE SE 2.0 Release Body" ShapeName="BaseShape" />
+    <DataFolder>PSQ_Package_20261106\UBE\F013</DataFolder>
+    <SourceFile>tail.nif</SourceFile>
+    <OutputPath>meshes/!UBE/PSQ/ExternalOutfits/Helena</OutputPath>
+    <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">tail</OutputFile>
+    <Shape target="Tail">Tail</Shape>
+    <Shape target="VirtualGround">VirtualGround</Shape>
+    <Shape target="body_feet">body_feet</Shape>
+    <Shape target="uup">uup</Shape>
+    <Slider name="SkinnyMorph" invert="false" small="100" big="0" hidden="true">
+      <Data name="uupSkinnyMorph" target="uup" local="true">tail.osd\uupSkinnyMorph</Data>
+    </Slider>
+    <Slider name="NeckSize__HEAD&gt;" invert="false" small="0" big="0" hidden="true">
+      <Data name="uupNeckSize__HEAD&gt;" target="uup" local="true">tail.osd\uupNeckSize__HEAD&gt;</Data>
+    </Slider>
+    <Slider name="UpperChestHeight_n|p__HEAD&gt;" invert="false" small="0" big="0" hidden="true">
+      <Data name="uupUpperChestHeight_n|p__HEAD&gt;" target="uup" local="true">tail.osd\uupUpperChestHeight_n|p__HEAD&gt;</Data>
+    </Slider>
+    <Slider name="NipplesShowUp" invert="false" small="100" big="100">
+      <Data name="uupNipplesShowUp" target="uup" local="true">tail.osd\uupNipplesShowUp</Data>
+    </Slider>
+    <Slider name="BiggerHands_CBBE-like" invert="false" small="0" big="0">
+      <Data name="uupBiggerHands_CBBE-like" target="uup" local="true">tail.osd\uupBiggerHands_CBBE-like</Data>
+    </Slider>
+    <Slider name="Amazon" invert="false" small="0" big="0">
+      <Data name="TailAmazon" target="Tail" local="true">tail.osd\TailAmazon</Data>
+      <Data name="uupAmazon" target="uup" local="true">tail.osd\uupAmazon</Data>
+    </Slider>
+    <Slider name="FitnessDetails_2.0" invert="false" small="0" big="0">
+      <Data name="TailFitnessDetails_2.0" target="Tail" local="true">tail.osd\TailFitnessDetails_2.0</Data>
+      <Data name="uupFitnessDetails_2.0" target="uup" local="true">tail.osd\uupFitnessDetails_2.0</Data>
+    </Slider>
+    <Slider name="Skinny2.0" invert="false" small="0" big="0">
+      <Data name="TailSkinny2.0" target="Tail" local="true">tail.osd\TailSkinny2.0</Data>
+      <Data name="uupSkinny2.0" target="uup" local="true">tail.osd\uupSkinny2.0</Data>
+    </Slider>
+    <Slider name="SquarePeg3d" invert="false" small="0" big="0">
+      <Data name="TailSquarePeg3d" target="Tail" local="true">tail.osd\TailSquarePeg3d</Data>
+      <Data name="uupSquarePeg3d" target="uup" local="true">tail.osd\uupSquarePeg3d</Data>
+      <Data name="body_feetSquarePeg3d" target="body_feet" local="true">tail.osd\body_feetSquarePeg3d</Data>
+    </Slider>
+    <Slider name="TBD  2.0" invert="false" small="0" big="0">
+      <Data name="TailTBD  2.0" target="Tail" local="true">tail.osd\TailTBD  2.0</Data>
+      <Data name="uupTBD  2.0" target="uup" local="true">tail.osd\uupTBD  2.0</Data>
+    </Slider>
+    <Slider name="Donaught" invert="false" small="0" big="0">
+      <Data name="TailDonaught" target="Tail" local="true">tail.osd\TailDonaught</Data>
+      <Data name="uupDonaught" target="uup" local="true">tail.osd\uupDonaught</Data>
+      <Data name="body_feetDonaught" target="body_feet" local="true">tail.osd\body_feetDonaught</Data>
+    </Slider>
+    <Slider name="Juicy_body" invert="false" small="0" big="0">
+      <Data name="TailJuicy_body" target="Tail" local="true">tail.osd\TailJuicy_body</Data>
+      <Data name="uupJuicy_body" target="uup" local="true">tail.osd\uupJuicy_body</Data>
+      <Data name="body_feetJuicy_body" target="body_feet" local="true">tail.osd\body_feetJuicy_body</Data>
+    </Slider>
+    <Slider name="Peachy" invert="false" small="0" big="0">
+      <Data name="TailPeachy" target="Tail" local="true">tail.osd\TailPeachy</Data>
+      <Data name="uupPeachy" target="uup" local="true">tail.osd\uupPeachy</Data>
+      <Data name="body_feetPeachy" target="body_feet" local="true">tail.osd\body_feetPeachy</Data>
+    </Slider>
+    <Slider name="Venus" invert="false" small="0" big="0">
+      <Data name="TailVenus" target="Tail" local="true">tail.osd\TailVenus</Data>
+      <Data name="uupVenus" target="uup" local="true">tail.osd\uupVenus</Data>
+    </Slider>
+    <Slider name="Upper_TorsoSize n|p" invert="false" small="0" big="0">
+      <Data name="uupUpper_TorsoSize n|p" target="uup" local="true">tail.osd\uupUpper_TorsoSize n|p</Data>
+    </Slider>
+    <Slider name="ChestUpperSize n|p" invert="false" small="0" big="0">
+      <Data name="uupChestUpperSize n|p" target="uup" local="true">tail.osd\uupChestUpperSize n|p</Data>
+    </Slider>
+    <Slider name="Clavicles_Width n|p" invert="false" small="0" big="0">
+      <Data name="uupClavicles_Width n|p" target="uup" local="true">tail.osd\uupClavicles_Width n|p</Data>
+    </Slider>
+    <Slider name="ClaviclesFront" invert="false" small="0" big="0">
+      <Data name="uupClaviclesFront" target="uup" local="true">tail.osd\uupClaviclesFront</Data>
+    </Slider>
+    <Slider name="ClaviclesAngle" invert="false" small="0" big="0">
+      <Data name="uupClaviclesAngle" target="uup" local="true">tail.osd\uupClaviclesAngle</Data>
+    </Slider>
+    <Slider name="Clavicle_Center_upper" invert="false" small="0" big="0">
+      <Data name="uupClavicle_Center_upper" target="uup" local="true">tail.osd\uupClavicle_Center_upper</Data>
+    </Slider>
+    <Slider name="Clavicles_Center_height" invert="false" small="0" big="0">
+      <Data name="uupClavicles_Center_height" target="uup" local="true">tail.osd\uupClavicles_Center_height</Data>
+    </Slider>
+    <Slider name="LowerNeckMuscles" invert="false" small="0" big="0">
+      <Data name="uupLowerNeckMuscles" target="uup" local="true">tail.osd\uupLowerNeckMuscles</Data>
+    </Slider>
+    <Slider name="SternumDepth n|p" invert="false" small="0" big="0">
+      <Data name="uupSternumDepth n|p" target="uup" local="true">tail.osd\uupSternumDepth n|p</Data>
+    </Slider>
+    <Slider name="PectoralisMuscles" invert="false" small="0" big="0">
+      <Data name="uupPectoralisMuscles" target="uup" local="true">tail.osd\uupPectoralisMuscles</Data>
+    </Slider>
+    <Slider name="PectoralCreases" invert="false" small="0" big="0">
+      <Data name="uupPectoralCreases" target="uup" local="true">tail.osd\uupPectoralCreases</Data>
+    </Slider>
+    <Slider name="RibcageSize n|p" invert="false" small="0" big="0">
+      <Data name="TailRibcageSize n|p" target="Tail" local="true">tail.osd\TailRibcageSize n|p</Data>
+      <Data name="uupRibcageSize n|p" target="uup" local="true">tail.osd\uupRibcageSize n|p</Data>
+    </Slider>
+    <Slider name="Big_SaggyBreasts" invert="false" small="0" big="0">
+      <Data name="uupBig_SaggyBreasts" target="uup" local="true">tail.osd\uupBig_SaggyBreasts</Data>
+    </Slider>
+    <Slider name="Juicy_breasts" invert="false" small="0" big="0">
+      <Data name="uupJuicy_breasts" target="uup" local="true">tail.osd\uupJuicy_breasts</Data>
+    </Slider>
+    <Slider name="BreastsTBD" invert="false" small="0" big="0">
+      <Data name="uupBreastsTBD" target="uup" local="true">tail.osd\uupBreastsTBD</Data>
+    </Slider>
+    <Slider name="BreastsBigger" invert="false" small="0" big="0">
+      <Data name="uupBreastsBigger" target="uup" local="true">tail.osd\uupBreastsBigger</Data>
+    </Slider>
+    <Slider name="BreastsSmaller" invert="false" small="0" big="0">
+      <Data name="uupBreastsSmaller" target="uup" local="true">tail.osd\uupBreastsSmaller</Data>
+    </Slider>
+    <Slider name="BreastArmpitsWidth n|p" invert="false" small="0" big="0">
+      <Data name="uupBreastArmpitsWidth n|p" target="uup" local="true">tail.osd\uupBreastArmpitsWidth n|p</Data>
+    </Slider>
+    <Slider name="BreastCenterGapLowerHeight n|p" invert="false" small="0" big="0">
+      <Data name="uupBreastCenterGapLowerHeight n|p" target="uup" local="true">tail.osd\uupBreastCenterGapLowerHeight n|p</Data>
+    </Slider>
+    <Slider name="BreastCenterGapWidth n|p" invert="false" small="0" big="0">
+      <Data name="uupBreastCenterGapWidth n|p" target="uup" local="true">tail.osd\uupBreastCenterGapWidth n|p</Data>
+    </Slider>
+    <Slider name="Breasts_Perky" invert="false" small="0" big="0">
+      <Data name="uupBreasts_Perky" target="uup" local="true">tail.osd\uupBreasts_Perky</Data>
+    </Slider>
+    <Slider name="BreastFlat" invert="false" small="0" big="0">
+      <Data name="uupBreastFlat" target="uup" local="true">tail.osd\uupBreastFlat</Data>
+    </Slider>
+    <Slider name="Breast Diameter_small" invert="false" small="0" big="0">
+      <Data name="uupBreast Diameter_small" target="uup" local="true">tail.osd\uupBreast Diameter_small</Data>
+    </Slider>
+    <Slider name="Breast Diameter_big" invert="false" small="0" big="0">
+      <Data name="uupBreast Diameter_big" target="uup" local="true">tail.osd\uupBreast Diameter_big</Data>
+    </Slider>
+    <Slider name="BreastsRotate_Y" invert="false" small="0" big="0">
+      <Data name="uupBreastsRotate_Y" target="uup" local="true">tail.osd\uupBreastsRotate_Y</Data>
+    </Slider>
+    <Slider name="BreastsCupSag n|p" invert="false" small="0" big="0">
+      <Data name="uupBreastsCupSag n|p" target="uup" local="true">tail.osd\uupBreastsCupSag n|p</Data>
+    </Slider>
+    <Slider name="BreastUpperCurve n|p" invert="false" small="0" big="0">
+      <Data name="uupBreastUpperCurve n|p" target="uup" local="true">tail.osd\uupBreastUpperCurve n|p</Data>
+    </Slider>
+    <Slider name="BreastUnderCurve" invert="false" small="0" big="0">
+      <Data name="uupBreastUnderCurve" target="uup" local="true">tail.osd\uupBreastUnderCurve</Data>
+    </Slider>
+    <Slider name="SaggingBreastsZone" invert="false" small="0" big="0">
+      <Data name="uupSaggingBreastsZone" target="uup" local="true">tail.osd\uupSaggingBreastsZone</Data>
+    </Slider>
+    <Slider name="Manly_chest" invert="false" small="0" big="0">
+      <Data name="uupManly_chest" target="uup" local="true">tail.osd\uupManly_chest</Data>
+    </Slider>
+    <Slider name="Trap_chest" invert="false" small="0" big="0">
+      <Data name="uupTrap_chest" target="uup" local="true">tail.osd\uupTrap_chest</Data>
+    </Slider>
+    <Slider name="BreastsZero" invert="false" small="0" big="0">
+      <Data name="uupBreastsZero" target="uup" local="true">tail.osd\uupBreastsZero</Data>
+    </Slider>
+    <Slider name="BreastsPositionWidth n|p" invert="false" small="0" big="0">
+      <Data name="uupBreastsPositionWidth n|p" target="uup" local="true">tail.osd\uupBreastsPositionWidth n|p</Data>
+    </Slider>
+    <Slider name="NipplesPerkiness" invert="false" small="0" big="0">
+      <Data name="uupNipplesPerkiness" target="uup" local="true">tail.osd\uupNipplesPerkiness</Data>
+    </Slider>
+    <Slider name="NippleHeight n|p" invert="false" small="0" big="0">
+      <Data name="uupNippleHeight n|p" target="uup" local="true">tail.osd\uupNippleHeight n|p</Data>
+    </Slider>
+    <Slider name="NippleCircularCrease" invert="false" small="0" big="0">
+      <Data name="uupNippleCircularCrease" target="uup" local="true">tail.osd\uupNippleCircularCrease</Data>
+    </Slider>
+    <Slider name="NippleCreaseCentral" invert="false" small="0" big="0">
+      <Data name="uupNippleCreaseCentral" target="uup" local="true">tail.osd\uupNippleCreaseCentral</Data>
+    </Slider>
+    <Slider name="NippleCreaseHorizontal" invert="false" small="0" big="0">
+      <Data name="uupNippleCreaseHorizontal" target="uup" local="true">tail.osd\uupNippleCreaseHorizontal</Data>
+    </Slider>
+    <Slider name="NippleCreaseVertical" invert="false" small="0" big="0">
+      <Data name="uupNippleCreaseVertical" target="uup" local="true">tail.osd\uupNippleCreaseVertical</Data>
+    </Slider>
+    <Slider name="NippleDiameter n|p" invert="false" small="0" big="0">
+      <Data name="uupNippleDiameter n|p" target="uup" local="true">tail.osd\uupNippleDiameter n|p</Data>
+    </Slider>
+    <Slider name="NippleDispertionSides n|p" invert="false" small="0" big="0">
+      <Data name="uupNippleDispertionSides n|p" target="uup" local="true">tail.osd\uupNippleDispertionSides n|p</Data>
+    </Slider>
+    <Slider name="NippleFlatten" invert="false" small="0" big="0">
+      <Data name="uupNippleFlatten" target="uup" local="true">tail.osd\uupNippleFlatten</Data>
+    </Slider>
+    <Slider name="AreolaeSizeBig" invert="false" small="0" big="0">
+      <Data name="uupAreolaeSizeBig" target="uup" local="true">tail.osd\uupAreolaeSizeBig</Data>
+    </Slider>
+    <Slider name="AreolaeSizeSmall" invert="false" small="0" big="0">
+      <Data name="uupAreolaeSizeSmall" target="uup" local="true">tail.osd\uupAreolaeSizeSmall</Data>
+    </Slider>
+    <Slider name="AreolaHorizontal" invert="false" small="0" big="0">
+      <Data name="uupAreolaHorizontal" target="uup" local="true">tail.osd\uupAreolaHorizontal</Data>
+    </Slider>
+    <Slider name="AreolaVertical" invert="false" small="0" big="0">
+      <Data name="uupAreolaVertical" target="uup" local="true">tail.osd\uupAreolaVertical</Data>
+    </Slider>
+    <Slider name="AreolaErection" invert="false" small="0" big="0">
+      <Data name="uupAreolaErection" target="uup" local="true">tail.osd\uupAreolaErection</Data>
+    </Slider>
+    <Slider name="NippleHorizontal n|p" invert="false" small="0" big="0">
+      <Data name="uupNippleHorizontal n|p" target="uup" local="true">tail.osd\uupNippleHorizontal n|p</Data>
+    </Slider>
+    <Slider name="NippleInverted_PuffyAreola" invert="false" small="0" big="0">
+      <Data name="uupNippleInverted_PuffyAreola" target="uup" local="true">tail.osd\uupNippleInverted_PuffyAreola</Data>
+    </Slider>
+    <Slider name="NippleLength" invert="false" small="0" big="0">
+      <Data name="uupNippleLength" target="uup" local="true">tail.osd\uupNippleLength</Data>
+    </Slider>
+    <Slider name="Nippleinverted" invert="false" small="0" big="0">
+      <Data name="uupNippleinverted" target="uup" local="true">tail.osd\uupNippleinverted</Data>
+    </Slider>
+    <Slider name="Nipples_Fantasy" invert="false" small="0" big="0">
+      <Data name="uupNipples_Fantasy" target="uup" local="true">tail.osd\uupNipples_Fantasy</Data>
+    </Slider>
+    <Slider name="ShoulderOuterSize n|p" invert="false" small="0" big="0">
+      <Data name="uupShoulderOuterSize n|p" target="uup" local="true">tail.osd\uupShoulderOuterSize n|p</Data>
+    </Slider>
+    <Slider name="MusclyArms" invert="false" small="0" big="0">
+      <Data name="uupMusclyArms" target="uup" local="true">tail.osd\uupMusclyArms</Data>
+    </Slider>
+    <Slider name="ShoulderWidthBig" invert="false" small="0" big="0">
+      <Data name="uupShoulderWidthBig" target="uup" local="true">tail.osd\uupShoulderWidthBig</Data>
+    </Slider>
+    <Slider name="ShoulderWidthSmall" invert="false" small="0" big="0">
+      <Data name="uupShoulderWidthSmall" target="uup" local="true">tail.osd\uupShoulderWidthSmall</Data>
+    </Slider>
+    <Slider name="Deltoidmuscles" invert="false" small="0" big="0">
+      <Data name="uupDeltoidmuscles" target="uup" local="true">tail.osd\uupDeltoidmuscles</Data>
+    </Slider>
+    <Slider name="Arms_width" invert="false" small="0" big="0">
+      <Data name="uupArms_width" target="uup" local="true">tail.osd\uupArms_width</Data>
+    </Slider>
+    <Slider name="UpperArmSize n|p" invert="false" small="0" big="0">
+      <Data name="uupUpperArmSize n|p" target="uup" local="true">tail.osd\uupUpperArmSize n|p</Data>
+    </Slider>
+    <Slider name="Triceps" invert="false" small="0" big="0">
+      <Data name="uupTriceps" target="uup" local="true">tail.osd\uupTriceps</Data>
+    </Slider>
+    <Slider name="Biceps" invert="false" small="0" big="0">
+      <Data name="uupBiceps" target="uup" local="true">tail.osd\uupBiceps</Data>
+    </Slider>
+    <Slider name="Thicc_forearms" invert="false" small="0" big="0">
+      <Data name="uupThicc_forearms" target="uup" local="true">tail.osd\uupThicc_forearms</Data>
+    </Slider>
+    <Slider name="ForearmSize" invert="false" small="0" big="0">
+      <Data name="uupForearmSize" target="uup" local="true">tail.osd\uupForearmSize</Data>
+    </Slider>
+    <Slider name="WristSize n|p" invert="false" small="0" big="0">
+      <Data name="uupWristSize n|p" target="uup" local="true">tail.osd\uupWristSize n|p</Data>
+    </Slider>
+    <Slider name="SpineMuscles" invert="false" small="0" big="0">
+      <Data name="TailSpineMuscles" target="Tail" local="true">tail.osd\TailSpineMuscles</Data>
+      <Data name="uupSpineMuscles" target="uup" local="true">tail.osd\uupSpineMuscles</Data>
+    </Slider>
+    <Slider name="Trapezius_upper" invert="false" small="0" big="0">
+      <Data name="uupTrapezius_upper" target="uup" local="true">tail.osd\uupTrapezius_upper</Data>
+    </Slider>
+    <Slider name="Trapezius_lower" invert="false" small="0" big="0">
+      <Data name="uupTrapezius_lower" target="uup" local="true">tail.osd\uupTrapezius_lower</Data>
+    </Slider>
+    <Slider name="Trapezius_smaller" invert="false" small="0" big="0">
+      <Data name="uupTrapezius_smaller" target="uup" local="true">tail.osd\uupTrapezius_smaller</Data>
+    </Slider>
+    <Slider name="ScapulaDepth" invert="false" small="0" big="0">
+      <Data name="uupScapulaDepth" target="uup" local="true">tail.osd\uupScapulaDepth</Data>
+    </Slider>
+    <Slider name="SpineDiscs_Prominence" invert="false" small="0" big="0">
+      <Data name="TailSpineDiscs_Prominence" target="Tail" local="true">tail.osd\TailSpineDiscs_Prominence</Data>
+      <Data name="uupSpineDiscs_Prominence" target="uup" local="true">tail.osd\uupSpineDiscs_Prominence</Data>
+    </Slider>
+    <Slider name="LatsSize" invert="false" small="0" big="0">
+      <Data name="TailLatsSize" target="Tail" local="true">tail.osd\TailLatsSize</Data>
+      <Data name="uupLatsSize" target="uup" local="true">tail.osd\uupLatsSize</Data>
+    </Slider>
+    <Slider name="BackDepth n|p" invert="false" small="0" big="0">
+      <Data name="TailBackDepth n|p" target="Tail" local="true">tail.osd\TailBackDepth n|p</Data>
+      <Data name="uupBackDepth n|p" target="uup" local="true">tail.osd\uupBackDepth n|p</Data>
+    </Slider>
+    <Slider name="BackValley" invert="false" small="0" big="0">
+      <Data name="TailBackValley" target="Tail" local="true">tail.osd\TailBackValley</Data>
+      <Data name="uupBackValley" target="uup" local="true">tail.osd\uupBackValley</Data>
+    </Slider>
+    <Slider name="BackFatFolds" invert="false" small="0" big="0">
+      <Data name="TailBackFatFolds" target="Tail" local="true">tail.osd\TailBackFatFolds</Data>
+      <Data name="uupBackFatFolds" target="uup" local="true">tail.osd\uupBackFatFolds</Data>
+    </Slider>
+    <Slider name="BackUnderArmpitsFatFolds" invert="false" small="0" big="0">
+      <Data name="uupBackUnderArmpitsFatFolds" target="uup" local="true">tail.osd\uupBackUnderArmpitsFatFolds</Data>
+    </Slider>
+    <Slider name="WaistLine n|p" invert="false" small="0" big="0">
+      <Data name="TailWaistLine n|p" target="Tail" local="true">tail.osd\TailWaistLine n|p</Data>
+      <Data name="uupWaistLine n|p" target="uup" local="true">tail.osd\uupWaistLine n|p</Data>
+    </Slider>
+    <Slider name="WaistThickness n|p" invert="false" small="0" big="0">
+      <Data name="uupWaistThickness n|p" target="uup" local="true">tail.osd\uupWaistThickness n|p</Data>
+    </Slider>
+    <Slider name="FrontRibsProminence" invert="false" small="0" big="0">
+      <Data name="uupFrontRibsProminence" target="uup" local="true">tail.osd\uupFrontRibsProminence</Data>
+    </Slider>
+    <Slider name="CostalAnglePointed" invert="false" small="0" big="0">
+      <Data name="uupCostalAnglePointed" target="uup" local="true">tail.osd\uupCostalAnglePointed</Data>
+    </Slider>
+    <Slider name="BellyCenterDepth n|p" invert="false" small="0" big="0">
+      <Data name="uupBellyCenterDepth n|p" target="uup" local="true">tail.osd\uupBellyCenterDepth n|p</Data>
+    </Slider>
+    <Slider name="BellyLowerDepth n|p" invert="false" small="0" big="0">
+      <Data name="uupBellyLowerDepth n|p" target="uup" local="true">tail.osd\uupBellyLowerDepth n|p</Data>
+    </Slider>
+    <Slider name="BellyWidth n|p" invert="false" small="0" big="0">
+      <Data name="uupBellyWidth n|p" target="uup" local="true">tail.osd\uupBellyWidth n|p</Data>
+    </Slider>
+    <Slider name="ExternalObliqueStraighten" invert="false" small="0" big="0">
+      <Data name="uupExternalObliqueStraighten" target="uup" local="true">tail.osd\uupExternalObliqueStraighten</Data>
+    </Slider>
+    <Slider name="BellyHorizontalCrease" invert="false" small="0" big="0">
+      <Data name="uupBellyHorizontalCrease" target="uup" local="true">tail.osd\uupBellyHorizontalCrease</Data>
+    </Slider>
+    <Slider name="BellyVerticalCrease" invert="false" small="0" big="0">
+      <Data name="uupBellyVerticalCrease" target="uup" local="true">tail.osd\uupBellyVerticalCrease</Data>
+    </Slider>
+    <Slider name="BellyVerticalCrease_Lower" invert="false" small="0" big="0">
+      <Data name="uupBellyVerticalCrease_Lower" target="uup" local="true">tail.osd\uupBellyVerticalCrease_Lower</Data>
+    </Slider>
+    <Slider name="Belly_lower_crease" invert="false" small="0" big="0">
+      <Data name="uupBelly_lower_crease" target="uup" local="true">tail.osd\uupBelly_lower_crease</Data>
+    </Slider>
+    <Slider name="BellyFatty" invert="false" small="0" big="0">
+      <Data name="TailBellyFatty" target="Tail" local="true">tail.osd\TailBellyFatty</Data>
+      <Data name="uupBellyFatty" target="uup" local="true">tail.osd\uupBellyFatty</Data>
+    </Slider>
+    <Slider name="SoftBelly" invert="false" small="0" big="0">
+      <Data name="uupSoftBelly" target="uup" local="true">tail.osd\uupSoftBelly</Data>
+    </Slider>
+    <Slider name="Navel Width n|p" invert="false" small="0" big="0">
+      <Data name="uupNavel Width n|p" target="uup" local="true">tail.osd\uupNavel Width n|p</Data>
+    </Slider>
+    <Slider name="LessProminentAbs" invert="false" small="0" big="0">
+      <Data name="uupLessProminentAbs" target="uup" local="true">tail.osd\uupLessProminentAbs</Data>
+    </Slider>
+    <Slider name="Belly_Prominence" invert="false" small="0" big="0">
+      <Data name="uupBelly_Prominence" target="uup" local="true">tail.osd\uupBelly_Prominence</Data>
+    </Slider>
+    <Slider name="RectusOuterDepth" invert="false" small="0" big="0">
+      <Data name="uupRectusOuterDepth" target="uup" local="true">tail.osd\uupRectusOuterDepth</Data>
+    </Slider>
+    <Slider name="AbsAsymmetry n|p" invert="false" small="0" big="0">
+      <Data name="uupAbsAsymmetry n|p" target="uup" local="true">tail.osd\uupAbsAsymmetry n|p</Data>
+    </Slider>
+    <Slider name="HigherAbs" invert="false" small="0" big="0">
+      <Data name="uupHigherAbs" target="uup" local="true">tail.osd\uupHigherAbs</Data>
+    </Slider>
+    <Slider name="HigherAbs_crease" invert="false" small="0" big="0">
+      <Data name="uupHigherAbs_crease" target="uup" local="true">tail.osd\uupHigherAbs_crease</Data>
+    </Slider>
+    <Slider name="CentralAbs" invert="false" small="0" big="0">
+      <Data name="uupCentralAbs" target="uup" local="true">tail.osd\uupCentralAbs</Data>
+    </Slider>
+    <Slider name="LowerAbs" invert="false" small="0" big="0">
+      <Data name="uupLowerAbs" target="uup" local="true">tail.osd\uupLowerAbs</Data>
+    </Slider>
+    <Slider name="LowerAbsHorizontalCrease" invert="false" small="0" big="0">
+      <Data name="uupLowerAbsHorizontalCrease" target="uup" local="true">tail.osd\uupLowerAbsHorizontalCrease</Data>
+    </Slider>
+    <Slider name="AponeurosisExternalOblique" invert="false" small="0" big="0">
+      <Data name="uupAponeurosisExternalOblique" target="uup" local="true">tail.osd\uupAponeurosisExternalOblique</Data>
+    </Slider>
+    <Slider name="PregnancyBelly" invert="false" small="0" big="0">
+      <Data name="TailPregnancyBelly" target="Tail" local="true">tail.osd\TailPregnancyBelly</Data>
+      <Data name="uupPregnancyBelly" target="uup" local="true">tail.osd\uupPregnancyBelly</Data>
+    </Slider>
+    <Slider name="HipSize p|n" invert="false" small="0" big="0">
+      <Data name="TailHipSize p|n" target="Tail" local="true">tail.osd\TailHipSize p|n</Data>
+      <Data name="uupHipSize p|n" target="uup" local="true">tail.osd\uupHipSize p|n</Data>
+    </Slider>
+    <Slider name="HipsAndLegsDistanceApart p|n" invert="false" small="0" big="0">
+      <Data name="TailHipsAndLegsDistanceApart p|n" target="Tail" local="true">tail.osd\TailHipsAndLegsDistanceApart p|n</Data>
+      <Data name="uupHipsAndLegsDistanceApart p|n" target="uup" local="true">tail.osd\uupHipsAndLegsDistanceApart p|n</Data>
+      <Data name="body_feetHipsAndLegsDistanceApart p|n" target="body_feet" local="true">tail.osd\body_feetHipsAndLegsDistanceApart p|n</Data>
+    </Slider>
+    <Slider name="HipHeight p|n" invert="false" small="0" big="0">
+      <Data name="TailHipHeight p|n" target="Tail" local="true">tail.osd\TailHipHeight p|n</Data>
+      <Data name="uupHipHeight p|n" target="uup" local="true">tail.osd\uupHipHeight p|n</Data>
+    </Slider>
+    <Slider name="HipWideSideway p|n" invert="false" small="0" big="0">
+      <Data name="TailHipWideSideway p|n" target="Tail" local="true">tail.osd\TailHipWideSideway p|n</Data>
+      <Data name="uupHipWideSideway p|n" target="uup" local="true">tail.osd\uupHipWideSideway p|n</Data>
+    </Slider>
+    <Slider name="SmoothHips" invert="false" small="0" big="0">
+      <Data name="uupSmoothHips" target="uup" local="true">tail.osd\uupSmoothHips</Data>
+    </Slider>
+    <Slider name="HipPointyBones" invert="false" small="0" big="0">
+      <Data name="uupHipPointyBones" target="uup" local="true">tail.osd\uupHipPointyBones</Data>
+    </Slider>
+    <Slider name="Hipbone p|n" invert="false" small="0" big="0">
+      <Data name="TailHipbone p|n" target="Tail" local="true">tail.osd\TailHipbone p|n</Data>
+      <Data name="uupHipbone p|n" target="uup" local="true">tail.osd\uupHipbone p|n</Data>
+    </Slider>
+    <Slider name="Hip_Upper_Width n|p" invert="false" small="0" big="0">
+      <Data name="TailHip_Upper_Width n|p" target="Tail" local="true">tail.osd\TailHip_Upper_Width n|p</Data>
+      <Data name="uupHip_Upper_Width n|p" target="uup" local="true">tail.osd\uupHip_Upper_Width n|p</Data>
+    </Slider>
+    <Slider name="Hip_Wide" invert="false" small="0" big="0">
+      <Data name="uupHip_Wide" target="uup" local="true">tail.osd\uupHip_Wide</Data>
+    </Slider>
+    <Slider name="Hip_narrow" invert="false" small="0" big="0">
+      <Data name="uupHip_narrow" target="uup" local="true">tail.osd\uupHip_narrow</Data>
+    </Slider>
+    <Slider name="HipsOuterBonesFatty" invert="false" small="0" big="0">
+      <Data name="TailHipsOuterBonesFatty" target="Tail" local="true">tail.osd\TailHipsOuterBonesFatty</Data>
+      <Data name="uupHipsOuterBonesFatty" target="uup" local="true">tail.osd\uupHipsOuterBonesFatty</Data>
+    </Slider>
+    <Slider name="HipsSideMuscles" invert="false" small="0" big="0">
+      <Data name="uupHipsSideMuscles" target="uup" local="true">tail.osd\uupHipsSideMuscles</Data>
+    </Slider>
+    <Slider name="SacralDimples" invert="false" small="0" big="0">
+      <Data name="TailSacralDimples" target="Tail" local="true">tail.osd\TailSacralDimples</Data>
+      <Data name="uupSacralDimples" target="uup" local="true">tail.osd\uupSacralDimples</Data>
+    </Slider>
+    <Slider name="GreaterTrochanterBone" invert="false" small="0" big="0">
+      <Data name="uupGreaterTrochanterBone" target="uup" local="true">tail.osd\uupGreaterTrochanterBone</Data>
+    </Slider>
+    <Slider name="GluteSize p|n" invert="false" small="0" big="0">
+      <Data name="TailGluteSize p|n" target="Tail" local="true">tail.osd\TailGluteSize p|n</Data>
+      <Data name="uupGluteSize p|n" target="uup" local="true">tail.osd\uupGluteSize p|n</Data>
+    </Slider>
+    <Slider name="GluteHeight p|n" invert="false" small="0" big="0">
+      <Data name="TailGluteHeight p|n" target="Tail" local="true">tail.osd\TailGluteHeight p|n</Data>
+      <Data name="uupGluteHeight p|n" target="uup" local="true">tail.osd\uupGluteHeight p|n</Data>
+    </Slider>
+    <Slider name="GluteSpread p|n" invert="false" small="0" big="0">
+      <Data name="TailGluteSpread p|n" target="Tail" local="true">tail.osd\TailGluteSpread p|n</Data>
+      <Data name="uupGluteSpread p|n" target="uup" local="true">tail.osd\uupGluteSpread p|n</Data>
+    </Slider>
+    <Slider name="GluteStretch p|n" invert="false" small="0" big="0">
+      <Data name="TailGluteStretch p|n" target="Tail" local="true">tail.osd\TailGluteStretch p|n</Data>
+      <Data name="uupGluteStretch p|n" target="uup" local="true">tail.osd\uupGluteStretch p|n</Data>
+    </Slider>
+    <Slider name="GluteTwistX p|n" invert="false" small="0" big="0">
+      <Data name="TailGluteTwistX p|n" target="Tail" local="true">tail.osd\TailGluteTwistX p|n</Data>
+      <Data name="uupGluteTwistX p|n" target="uup" local="true">tail.osd\uupGluteTwistX p|n</Data>
+    </Slider>
+    <Slider name="GluteOuterHeight p|n" invert="false" small="0" big="0">
+      <Data name="TailGluteOuterHeight p|n" target="Tail" local="true">tail.osd\TailGluteOuterHeight p|n</Data>
+      <Data name="uupGluteOuterHeight p|n" target="uup" local="true">tail.osd\uupGluteOuterHeight p|n</Data>
+    </Slider>
+    <Slider name="GluteSeparateWidth p|n" invert="false" small="0" big="0">
+      <Data name="TailGluteSeparateWidth p|n" target="Tail" local="true">tail.osd\TailGluteSeparateWidth p|n</Data>
+      <Data name="uupGluteSeparateWidth p|n" target="uup" local="true">tail.osd\uupGluteSeparateWidth p|n</Data>
+    </Slider>
+    <Slider name="GlutesUpperDepth p|n" invert="false" small="0" big="0">
+      <Data name="TailGlutesUpperDepth p|n" target="Tail" local="true">tail.osd\TailGlutesUpperDepth p|n</Data>
+      <Data name="uupGlutesUpperDepth p|n" target="uup" local="true">tail.osd\uupGlutesUpperDepth p|n</Data>
+    </Slider>
+    <Slider name="GluteUpperWidth p|n" invert="false" small="0" big="0">
+      <Data name="TailGluteUpperWidth p|n" target="Tail" local="true">tail.osd\TailGluteUpperWidth p|n</Data>
+      <Data name="uupGluteUpperWidth p|n" target="uup" local="true">tail.osd\uupGluteUpperWidth p|n</Data>
+    </Slider>
+    <Slider name="GluteLower" invert="false" small="0" big="0">
+      <Data name="TailGluteLower" target="Tail" local="true">tail.osd\TailGluteLower</Data>
+      <Data name="uupGluteLower" target="uup" local="true">tail.osd\uupGluteLower</Data>
+    </Slider>
+    <Slider name="GluteLowerHeight p|n" invert="false" small="0" big="0">
+      <Data name="TailGluteLowerHeight p|n" target="Tail" local="true">tail.osd\TailGluteLowerHeight p|n</Data>
+      <Data name="uupGluteLowerHeight p|n" target="uup" local="true">tail.osd\uupGluteLowerHeight p|n</Data>
+    </Slider>
+    <Slider name="GluteLowerWidth p|n" invert="false" small="0" big="0">
+      <Data name="TailGluteLowerWidth p|n" target="Tail" local="true">tail.osd\TailGluteLowerWidth p|n</Data>
+      <Data name="uupGluteLowerWidth p|n" target="uup" local="true">tail.osd\uupGluteLowerWidth p|n</Data>
+    </Slider>
+    <Slider name="GluteInnerHeight p|n" invert="false" small="0" big="0">
+      <Data name="TailGluteInnerHeight p|n" target="Tail" local="true">tail.osd\TailGluteInnerHeight p|n</Data>
+      <Data name="uupGluteInnerHeight p|n" target="uup" local="true">tail.osd\uupGluteInnerHeight p|n</Data>
+    </Slider>
+    <Slider name="Glutes_tighter" invert="false" small="0" big="0">
+      <Data name="TailGlutes_tighter" target="Tail" local="true">tail.osd\TailGlutes_tighter</Data>
+      <Data name="uupGlutes_tighter" target="uup" local="true">tail.osd\uupGlutes_tighter</Data>
+    </Slider>
+    <Slider name="GluteusDefinition" invert="false" small="0" big="0">
+      <Data name="TailGluteusDefinition" target="Tail" local="true">tail.osd\TailGluteusDefinition</Data>
+      <Data name="uupGluteusDefinition" target="uup" local="true">tail.osd\uupGluteusDefinition</Data>
+    </Slider>
+    <Slider name="GluteFolds" invert="false" small="0" big="0">
+      <Data name="uupGluteFolds" target="uup" local="true">tail.osd\uupGluteFolds</Data>
+    </Slider>
+    <Slider name="PubicAreaSize p|n" invert="false" small="0" big="0">
+      <Data name="uupPubicAreaSize p|n" target="uup" local="true">tail.osd\uupPubicAreaSize p|n</Data>
+    </Slider>
+    <Slider name="PubicAreaHilly" invert="false" small="0" big="0">
+      <Data name="uupPubicAreaHilly" target="uup" local="true">tail.osd\uupPubicAreaHilly</Data>
+    </Slider>
+    <Slider name="PussyCute" invert="false" small="0" big="0">
+      <Data name="uupPussyCute" target="uup" local="true">tail.osd\uupPussyCute</Data>
+    </Slider>
+    <Slider name="ClitorisErection" invert="false" small="0" big="0">
+      <Data name="uupClitorisErection" target="uup" local="true">tail.osd\uupClitorisErection</Data>
+    </Slider>
+    <Slider name="Vagina_shape" invert="false" small="0" big="0">
+      <Data name="uupVagina_shape" target="uup" local="true">tail.osd\uupVagina_shape</Data>
+    </Slider>
+    <Slider name="Vagina_shape_wider" invert="false" small="0" big="0">
+      <Data name="uupVagina_shape_wider" target="uup" local="true">tail.osd\uupVagina_shape_wider</Data>
+    </Slider>
+    <Slider name="Vagina_Fantasy" invert="false" small="0" big="0">
+      <Data name="uupVagina_Fantasy" target="uup" local="true">tail.osd\uupVagina_Fantasy</Data>
+    </Slider>
+    <Slider name="Vagina_spread" invert="false" small="0" big="0" hidden="true">
+      <Data name="uupVagina_spread" target="uup" local="true">tail.osd\uupVagina_spread</Data>
+    </Slider>
+    <Slider name="AnusSize" invert="false" small="0" big="0">
+      <Data name="uupAnusSize" target="uup" local="true">tail.osd\uupAnusSize</Data>
+    </Slider>
+    <Slider name="BiggerAnus" invert="false" small="0" big="0">
+      <Data name="uupBiggerAnus" target="uup" local="true">tail.osd\uupBiggerAnus</Data>
+    </Slider>
+    <Slider name="AnusTriangular" invert="false" small="0" big="0">
+      <Data name="uupAnusTriangular" target="uup" local="true">tail.osd\uupAnusTriangular</Data>
+    </Slider>
+    <Slider name="AnusSpread" invert="false" small="0" big="0" hidden="true">
+      <Data name="uupAnusSpread" target="uup" local="true">tail.osd\uupAnusSpread</Data>
+    </Slider>
+    <Slider name="UpperThighsSizeBig" invert="false" small="0" big="0">
+      <Data name="TailUpperThighsSizeBig" target="Tail" local="true">tail.osd\TailUpperThighsSizeBig</Data>
+      <Data name="uupUpperThighsSizeBig" target="uup" local="true">tail.osd\uupUpperThighsSizeBig</Data>
+    </Slider>
+    <Slider name="LowerThighsSizeBig" invert="false" small="0" big="0">
+      <Data name="uupLowerThighsSizeBig" target="uup" local="true">tail.osd\uupLowerThighsSizeBig</Data>
+    </Slider>
+    <Slider name="UpperThighsSizeSmall" invert="false" small="0" big="0">
+      <Data name="TailUpperThighsSizeSmall" target="Tail" local="true">tail.osd\TailUpperThighsSizeSmall</Data>
+      <Data name="uupUpperThighsSizeSmall" target="uup" local="true">tail.osd\uupUpperThighsSizeSmall</Data>
+    </Slider>
+    <Slider name="LowerThighsSizeSmall" invert="false" small="0" big="0">
+      <Data name="uupLowerThighsSizeSmall" target="uup" local="true">tail.osd\uupLowerThighsSizeSmall</Data>
+    </Slider>
+    <Slider name="UpperThighsChubby" invert="false" small="0" big="0">
+      <Data name="uupUpperThighsChubby" target="uup" local="true">tail.osd\uupUpperThighsChubby</Data>
+    </Slider>
+    <Slider name="ThighApart" invert="false" small="0" big="0">
+      <Data name="TailThighApart" target="Tail" local="true">tail.osd\TailThighApart</Data>
+      <Data name="uupThighApart" target="uup" local="true">tail.osd\uupThighApart</Data>
+    </Slider>
+    <Slider name="ThighFrontDepth" invert="false" small="0" big="0">
+      <Data name="uupThighFrontDepth" target="uup" local="true">tail.osd\uupThighFrontDepth</Data>
+    </Slider>
+    <Slider name="UpperThighsDepth" invert="false" small="0" big="0">
+      <Data name="uupUpperThighsDepth" target="uup" local="true">tail.osd\uupUpperThighsDepth</Data>
+    </Slider>
+    <Slider name="ThighBackDepth" invert="false" small="0" big="0">
+      <Data name="uupThighBackDepth" target="uup" local="true">tail.osd\uupThighBackDepth</Data>
+    </Slider>
+    <Slider name="UpperInnerThighSize p|n" invert="false" small="0" big="0">
+      <Data name="TailUpperInnerThighSize p|n" target="Tail" local="true">tail.osd\TailUpperInnerThighSize p|n</Data>
+      <Data name="uupUpperInnerThighSize p|n" target="uup" local="true">tail.osd\uupUpperInnerThighSize p|n</Data>
+    </Slider>
+    <Slider name="LowerInnerThighSize p|n" invert="false" small="0" big="0">
+      <Data name="uupLowerInnerThighSize p|n" target="uup" local="true">tail.osd\uupLowerInnerThighSize p|n</Data>
+    </Slider>
+    <Slider name="LowerOuterThighSize Bigger" invert="false" small="0" big="0">
+      <Data name="uupLowerOuterThighSize Bigger" target="uup" local="true">tail.osd\uupLowerOuterThighSize Bigger</Data>
+    </Slider>
+    <Slider name="ThighsOuter big" invert="false" small="0" big="0">
+      <Data name="TailThighsOuter big" target="Tail" local="true">tail.osd\TailThighsOuter big</Data>
+      <Data name="uupThighsOuter big" target="uup" local="true">tail.osd\uupThighsOuter big</Data>
+    </Slider>
+    <Slider name="ThighsOuter small" invert="false" small="0" big="0">
+      <Data name="uupThighsOuter small" target="uup" local="true">tail.osd\uupThighsOuter small</Data>
+    </Slider>
+    <Slider name="Thighs_Inner_Size_n|p" invert="false" small="0" big="0">
+      <Data name="uupThighs_Inner_Size_n|p" target="uup" local="true">tail.osd\uupThighs_Inner_Size_n|p</Data>
+    </Slider>
+    <Slider name="RectusFemoris" invert="false" small="0" big="0">
+      <Data name="uupRectusFemoris" target="uup" local="true">tail.osd\uupRectusFemoris</Data>
+    </Slider>
+    <Slider name="VastusLateralis" invert="false" small="0" big="0">
+      <Data name="uupVastusLateralis" target="uup" local="true">tail.osd\uupVastusLateralis</Data>
+    </Slider>
+    <Slider name="VastusMedialis" invert="false" small="0" big="0">
+      <Data name="uupVastusMedialis" target="uup" local="true">tail.osd\uupVastusMedialis</Data>
+    </Slider>
+    <Slider name="IllotibialTract" invert="false" small="0" big="0">
+      <Data name="uupIllotibialTract" target="uup" local="true">tail.osd\uupIllotibialTract</Data>
+    </Slider>
+    <Slider name="Hamstrings" invert="false" small="0" big="0">
+      <Data name="uupHamstrings" target="uup" local="true">tail.osd\uupHamstrings</Data>
+    </Slider>
+    <Slider name="KneeBoneSize p|n" invert="false" small="0" big="0">
+      <Data name="uupKneeBoneSize p|n" target="uup" local="true">tail.osd\uupKneeBoneSize p|n</Data>
+    </Slider>
+    <Slider name="KneeDefinition" invert="false" small="0" big="0">
+      <Data name="uupKneeDefinition" target="uup" local="true">tail.osd\uupKneeDefinition</Data>
+    </Slider>
+    <Slider name="KneeOuter p|n" invert="false" small="0" big="0">
+      <Data name="uupKneeOuter p|n" target="uup" local="true">tail.osd\uupKneeOuter p|n</Data>
+    </Slider>
+    <Slider name="CalfUpperSize p|n" invert="false" small="0" big="0">
+      <Data name="uupCalfUpperSize p|n" target="uup" local="true">tail.osd\uupCalfUpperSize p|n</Data>
+    </Slider>
+    <Slider name="ShinSize p|n" invert="false" small="0" big="0">
+      <Data name="uupShinSize p|n" target="uup" local="true">tail.osd\uupShinSize p|n</Data>
+      <Data name="body_feetShinSize p|n" target="body_feet" local="true">tail.osd\body_feetShinSize p|n</Data>
+    </Slider>
+    <Slider name="Shin_Forward" invert="false" small="0" big="0">
+      <Data name="uupShin_Forward" target="uup" local="true">tail.osd\uupShin_Forward</Data>
+      <Data name="body_feetShin_Forward" target="body_feet" local="true">tail.osd\body_feetShin_Forward</Data>
+    </Slider>
+    <Slider name="Bowed_Calves" invert="false" small="0" big="0">
+      <Data name="uupBowed_Calves" target="uup" local="true">tail.osd\uupBowed_Calves</Data>
+      <Data name="body_feetBowed_Calves" target="body_feet" local="true">tail.osd\body_feetBowed_Calves</Data>
+    </Slider>
+    <Slider name="AnkleThickness p|n" invert="false" small="0" big="0">
+      <Data name="uupAnkleThickness p|n" target="uup" local="true">tail.osd\uupAnkleThickness p|n</Data>
+      <Data name="body_feetAnkleThickness p|n" target="body_feet" local="true">tail.osd\body_feetAnkleThickness p|n</Data>
+    </Slider>
+    <Slider name="Thicc_calves" invert="false" small="0" big="0">
+      <Data name="uupThicc_calves" target="uup" local="true">tail.osd\uupThicc_calves</Data>
+      <Data name="body_feetThicc_calves" target="body_feet" local="true">tail.osd\body_feetThicc_calves</Data>
+    </Slider>
+    <Slider name="FeetSize n|p" invert="false" small="0" big="0">
+      <Data name="uupFeetSize n|p" target="uup" local="true">tail.osd\uupFeetSize n|p</Data>
+      <Data name="body_feetFeetSize n|p" target="body_feet" local="true">tail.osd\body_feetFeetSize n|p</Data>
+    </Slider>
+    <Slider name="Normals_recalc" invert="false" small="0" big="0" hidden="true">
+      <Data name="uupNormals_recalc" target="uup" local="true">tail.osd\uupNormals_recalc</Data>
+    </Slider>
+    <Slider name="GluteFlex_L" invert="false" small="0" big="0" hidden="true">
+      <Data name="TailGluteFlex_L" target="Tail" local="true">tail.osd\TailGluteFlex_L</Data>
+      <Data name="uupGluteFlex_L" target="uup" local="true">tail.osd\uupGluteFlex_L</Data>
+    </Slider>
+    <Slider name="GluteFlex_R" invert="false" small="0" big="0" hidden="true">
+      <Data name="TailGluteFlex_R" target="Tail" local="true">tail.osd\TailGluteFlex_R</Data>
+      <Data name="uupGluteFlex_R" target="uup" local="true">tail.osd\uupGluteFlex_R</Data>
+    </Slider>
+    <Slider name="ThighsFlex_L" invert="false" small="0" big="0" hidden="true">
+      <Data name="uupThighsFlex_L" target="uup" local="true">tail.osd\uupThighsFlex_L</Data>
+    </Slider>
+    <Slider name="ThighsFlex_R" invert="false" small="0" big="0" hidden="true">
+      <Data name="uupThighsFlex_R" target="uup" local="true">tail.osd\uupThighsFlex_R</Data>
+    </Slider>
+    <Slider name="AbsFlex" invert="false" small="0" big="0" hidden="true">
+      <Data name="uupAbsFlex" target="uup" local="true">tail.osd\uupAbsFlex</Data>
+    </Slider>
+    <Slider name="ArmBending_L" invert="false" small="0" big="0" hidden="true">
+      <Data name="uupArmBending_L" target="uup" local="true">tail.osd\uupArmBending_L</Data>
+    </Slider>
+    <Slider name="ArmBending_R" invert="false" small="0" big="0" hidden="true">
+      <Data name="uupArmBending_R" target="uup" local="true">tail.osd\uupArmBending_R</Data>
+    </Slider>
+    <Slider name="Nyl2_Root" invert="false" small="0" big="0" hidden="true">
+      <Data name="uupNyl2_Root" target="uup" local="true">tail.osd\uupNyl2_Root</Data>
+    </Slider>
+  </SliderSet>
+<SliderSet name="PSQ UBE 变身 - 海伦娜魅魔 - 手套">
+    <ReferenceInfo ProjectFile="SliderSets\UBE SE 2.0 Release Hands.osp" ProjectName="UBE SE 2.0 Release Hands" ShapeName="Hands" />
+    <DataFolder>PSQ_Package_20261106\UBE\F013</DataFolder>
+    <SourceFile>gloves.nif</SourceFile>
+    <OutputPath>meshes/!UBE/PSQ/ExternalOutfits/Helena</OutputPath>
+    <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">gloves</OutputFile>
+    <Shape target="Gauntlets" DataFolder="PSQ_Package_20261106\UBE\F013">Gauntlets</Shape>
+    <Shape target="Glow" DataFolder="PSQ_Package_20261106\UBE\F013">Glow</Shape>
+    <Shape target="Hands" DataFolder="PSQ_Package_20261106\UBE\F020" SmoothSeamNormalsAngle="120">Hands</Shape>
+    <Shape target="Lace" DataFolder="PSQ_Package_20261106\UBE\F013">Lace</Shape>
+    <Shape target="Stocking" DataFolder="PSQ_Package_20261106\UBE\F013">Stocking</Shape>
+    <Slider name="UpperChestHeight_n|p__HEAD&gt;" invert="false" small="0" big="0" hidden="true">
+      <Data name="GauntletsUpperChestHeight_n|p__HEAD&gt;" target="Gauntlets">gloves.osd\GauntletsUpperChestHeight_n|p__HEAD&gt;</Data>
+      <Data name="LaceUpperChestHeight_n|p__HEAD&gt;" target="Lace">gloves.osd\LaceUpperChestHeight_n|p__HEAD&gt;</Data>
+    </Slider>
+    <Slider name="BiggerHands_CBBE-like" invert="false" small="0" big="0">
+      <Data name="HandsBiggerHands_CBBE-like" target="Hands">UBE SE 2.0 Release Hands.osd\HandsBiggerHands_CBBE-like</Data>
+      <Data name="GauntletsBiggerHands_CBBE-like" target="Gauntlets">gloves.osd\GauntletsBiggerHands_CBBE-like</Data>
+      <Data name="GlowBiggerHands_CBBE-like" target="Glow">gloves.osd\GlowBiggerHands_CBBE-like</Data>
+      <Data name="LaceBiggerHands_CBBE-like" target="Lace">gloves.osd\LaceBiggerHands_CBBE-like</Data>
+      <Data name="StockingBiggerHands_CBBE-like" target="Stocking">gloves.osd\StockingBiggerHands_CBBE-like</Data>
+    </Slider>
+    <Slider name="Amazon" invert="false" small="0" big="0">
+      <Data name="HandsAmazon" target="Hands">UBE SE 2.0 Release Hands.osd\HandsAmazon</Data>
+      <Data name="GauntletsAmazon" target="Gauntlets">gloves.osd\GauntletsAmazon</Data>
+      <Data name="GlowAmazon" target="Glow">gloves.osd\GlowAmazon</Data>
+      <Data name="LaceAmazon" target="Lace">gloves.osd\LaceAmazon</Data>
+      <Data name="StockingAmazon" target="Stocking">gloves.osd\StockingAmazon</Data>
+    </Slider>
+    <Slider name="FitnessDetails_2.0" invert="false" small="0" big="0">
+      <Data name="HandsFitnessDetails_2.0" target="Hands">UBE SE 2.0 Release Hands.osd\HandsFitnessDetails_2.0</Data>
+      <Data name="GauntletsFitnessDetails_2.0" target="Gauntlets">gloves.osd\GauntletsFitnessDetails_2.0</Data>
+      <Data name="GlowFitnessDetails_2.0" target="Glow">gloves.osd\GlowFitnessDetails_2.0</Data>
+      <Data name="LaceFitnessDetails_2.0" target="Lace">gloves.osd\LaceFitnessDetails_2.0</Data>
+      <Data name="StockingFitnessDetails_2.0" target="Stocking">gloves.osd\StockingFitnessDetails_2.0</Data>
+    </Slider>
+    <Slider name="Skinny2.0" invert="false" small="0" big="0">
+      <Data name="HandsSkinny2.0" target="Hands">UBE SE 2.0 Release Hands.osd\HandsSkinny2.0</Data>
+      <Data name="GauntletsSkinny2.0" target="Gauntlets">gloves.osd\GauntletsSkinny2.0</Data>
+      <Data name="LaceSkinny2.0" target="Lace">gloves.osd\LaceSkinny2.0</Data>
+      <Data name="StockingSkinny2.0" target="Stocking">gloves.osd\StockingSkinny2.0</Data>
+    </Slider>
+    <Slider name="SquarePeg3d" invert="false" small="0" big="0">
+      <Data name="GauntletsSquarePeg3d" target="Gauntlets">gloves.osd\GauntletsSquarePeg3d</Data>
+      <Data name="LaceSquarePeg3d" target="Lace">gloves.osd\LaceSquarePeg3d</Data>
+      <Data name="StockingSquarePeg3d" target="Stocking">gloves.osd\StockingSquarePeg3d</Data>
+    </Slider>
+    <Slider name="TBD  2.0" invert="false" small="0" big="0">
+      <Data name="GauntletsTBD  2.0" target="Gauntlets">gloves.osd\GauntletsTBD  2.0</Data>
+      <Data name="LaceTBD  2.0" target="Lace">gloves.osd\LaceTBD  2.0</Data>
+      <Data name="StockingTBD  2.0" target="Stocking">gloves.osd\StockingTBD  2.0</Data>
+    </Slider>
+    <Slider name="Donaught" invert="false" small="0" big="0">
+      <Data name="HandsDonaught" target="Hands">UBE SE 2.0 Release Hands.osd\HandsDonaught</Data>
+      <Data name="GauntletsDonaught" target="Gauntlets">gloves.osd\GauntletsDonaught</Data>
+      <Data name="GlowDonaught" target="Glow">gloves.osd\GlowDonaught</Data>
+      <Data name="LaceDonaught" target="Lace">gloves.osd\LaceDonaught</Data>
+      <Data name="StockingDonaught" target="Stocking">gloves.osd\StockingDonaught</Data>
+    </Slider>
+    <Slider name="Juicy_body" invert="false" small="0" big="0">
+      <Data name="HandsJuicy_body" target="Hands">UBE SE 2.0 Release Hands.osd\HandsJuicy_body</Data>
+      <Data name="GauntletsJuicy_body" target="Gauntlets">gloves.osd\GauntletsJuicy_body</Data>
+      <Data name="GlowJuicy_body" target="Glow">gloves.osd\GlowJuicy_body</Data>
+      <Data name="LaceJuicy_body" target="Lace">gloves.osd\LaceJuicy_body</Data>
+      <Data name="StockingJuicy_body" target="Stocking">gloves.osd\StockingJuicy_body</Data>
+    </Slider>
+    <Slider name="Peachy" invert="false" small="0" big="0">
+      <Data name="HandsPeachy" target="Hands">UBE SE 2.0 Release Hands.osd\HandsPeachy</Data>
+      <Data name="GauntletsPeachy" target="Gauntlets">gloves.osd\GauntletsPeachy</Data>
+      <Data name="GlowPeachy" target="Glow">gloves.osd\GlowPeachy</Data>
+      <Data name="LacePeachy" target="Lace">gloves.osd\LacePeachy</Data>
+      <Data name="StockingPeachy" target="Stocking">gloves.osd\StockingPeachy</Data>
+    </Slider>
+    <Slider name="Venus" invert="false" small="0" big="0">
+      <Data name="HandsVenus" target="Hands">UBE SE 2.0 Release Hands.osd\HandsVenus</Data>
+      <Data name="GauntletsVenus" target="Gauntlets">gloves.osd\GauntletsVenus</Data>
+      <Data name="StockingVenus" target="Stocking">gloves.osd\StockingVenus</Data>
+    </Slider>
+    <Slider name="Upper_TorsoSize n|p" invert="false" small="0" big="0">
+      <Data name="GauntletsUpper_TorsoSize n|p" target="Gauntlets">gloves.osd\GauntletsUpper_TorsoSize n|p</Data>
+      <Data name="LaceUpper_TorsoSize n|p" target="Lace">gloves.osd\LaceUpper_TorsoSize n|p</Data>
+      <Data name="StockingUpper_TorsoSize n|p" target="Stocking">gloves.osd\StockingUpper_TorsoSize n|p</Data>
+    </Slider>
+    <Slider name="ChestUpperSize n|p" invert="false" small="0" big="0">
+      <Data name="GauntletsChestUpperSize n|p" target="Gauntlets">gloves.osd\GauntletsChestUpperSize n|p</Data>
+    </Slider>
+    <Slider name="Clavicles_Width n|p" invert="false" small="0" big="0">
+      <Data name="GauntletsClavicles_Width n|p" target="Gauntlets">gloves.osd\GauntletsClavicles_Width n|p</Data>
+      <Data name="LaceClavicles_Width n|p" target="Lace">gloves.osd\LaceClavicles_Width n|p</Data>
+    </Slider>
+    <Slider name="SternumDepth n|p" invert="false" small="0" big="0">
+      <Data name="GauntletsSternumDepth n|p" target="Gauntlets">gloves.osd\GauntletsSternumDepth n|p</Data>
+      <Data name="StockingSternumDepth n|p" target="Stocking">gloves.osd\StockingSternumDepth n|p</Data>
+    </Slider>
+    <Slider name="PectoralisMuscles" invert="false" small="0" big="0">
+      <Data name="GauntletsPectoralisMuscles" target="Gauntlets">gloves.osd\GauntletsPectoralisMuscles</Data>
+      <Data name="StockingPectoralisMuscles" target="Stocking">gloves.osd\StockingPectoralisMuscles</Data>
+    </Slider>
+    <Slider name="RibcageSize n|p" invert="false" small="0" big="0">
+      <Data name="GauntletsRibcageSize n|p" target="Gauntlets">gloves.osd\GauntletsRibcageSize n|p</Data>
+    </Slider>
+    <Slider name="Big_SaggyBreasts" invert="false" small="0" big="0">
+      <Data name="GauntletsBig_SaggyBreasts" target="Gauntlets">gloves.osd\GauntletsBig_SaggyBreasts</Data>
+    </Slider>
+    <Slider name="Juicy_breasts" invert="false" small="0" big="0">
+      <Data name="GauntletsJuicy_breasts" target="Gauntlets">gloves.osd\GauntletsJuicy_breasts</Data>
+    </Slider>
+    <Slider name="BreastsTBD" invert="false" small="0" big="0">
+      <Data name="GauntletsBreastsTBD" target="Gauntlets">gloves.osd\GauntletsBreastsTBD</Data>
+    </Slider>
+    <Slider name="BreastArmpitsWidth n|p" invert="false" small="0" big="0">
+      <Data name="GauntletsBreastArmpitsWidth n|p" target="Gauntlets">gloves.osd\GauntletsBreastArmpitsWidth n|p</Data>
+      <Data name="StockingBreastArmpitsWidth n|p" target="Stocking">gloves.osd\StockingBreastArmpitsWidth n|p</Data>
+    </Slider>
+    <Slider name="Breasts_Perky" invert="false" small="0" big="0">
+      <Data name="GauntletsBreasts_Perky" target="Gauntlets">gloves.osd\GauntletsBreasts_Perky</Data>
+    </Slider>
+    <Slider name="BreastsRotate_Y" invert="false" small="0" big="0">
+      <Data name="GauntletsBreastsRotate_Y" target="Gauntlets">gloves.osd\GauntletsBreastsRotate_Y</Data>
+    </Slider>
+    <Slider name="Manly_chest" invert="false" small="0" big="0">
+      <Data name="GauntletsManly_chest" target="Gauntlets">gloves.osd\GauntletsManly_chest</Data>
+    </Slider>
+    <Slider name="Trap_chest" invert="false" small="0" big="0">
+      <Data name="GauntletsTrap_chest" target="Gauntlets">gloves.osd\GauntletsTrap_chest</Data>
+    </Slider>
+    <Slider name="BreastsZero" invert="false" small="0" big="0">
+      <Data name="GauntletsBreastsZero" target="Gauntlets">gloves.osd\GauntletsBreastsZero</Data>
+    </Slider>
+    <Slider name="ShoulderOuterSize n|p" invert="false" small="0" big="0">
+      <Data name="GauntletsShoulderOuterSize n|p" target="Gauntlets">gloves.osd\GauntletsShoulderOuterSize n|p</Data>
+      <Data name="LaceShoulderOuterSize n|p" target="Lace">gloves.osd\LaceShoulderOuterSize n|p</Data>
+      <Data name="StockingShoulderOuterSize n|p" target="Stocking">gloves.osd\StockingShoulderOuterSize n|p</Data>
+    </Slider>
+    <Slider name="MusclyArms" invert="false" small="0" big="0">
+      <Data name="HandsMusclyArms" target="Hands">UBE SE 2.0 Release Hands.osd\HandsMusclyArms</Data>
+      <Data name="GauntletsMusclyArms" target="Gauntlets">gloves.osd\GauntletsMusclyArms</Data>
+      <Data name="LaceMusclyArms" target="Lace">gloves.osd\LaceMusclyArms</Data>
+      <Data name="StockingMusclyArms" target="Stocking">gloves.osd\StockingMusclyArms</Data>
+    </Slider>
+    <Slider name="ShoulderWidthBig" invert="false" small="0" big="0">
+      <Data name="HandsShoulderWidthBig" target="Hands">UBE SE 2.0 Release Hands.osd\HandsShoulderWidthBig</Data>
+      <Data name="GauntletsShoulderWidthBig" target="Gauntlets">gloves.osd\GauntletsShoulderWidthBig</Data>
+      <Data name="GlowShoulderWidthBig" target="Glow">gloves.osd\GlowShoulderWidthBig</Data>
+      <Data name="LaceShoulderWidthBig" target="Lace">gloves.osd\LaceShoulderWidthBig</Data>
+      <Data name="StockingShoulderWidthBig" target="Stocking">gloves.osd\StockingShoulderWidthBig</Data>
+    </Slider>
+    <Slider name="ShoulderWidthSmall" invert="false" small="0" big="0">
+      <Data name="HandsShoulderWidthSmall" target="Hands">UBE SE 2.0 Release Hands.osd\HandsShoulderWidthSmall</Data>
+      <Data name="GauntletsShoulderWidthSmall" target="Gauntlets">gloves.osd\GauntletsShoulderWidthSmall</Data>
+      <Data name="GlowShoulderWidthSmall" target="Glow">gloves.osd\GlowShoulderWidthSmall</Data>
+      <Data name="LaceShoulderWidthSmall" target="Lace">gloves.osd\LaceShoulderWidthSmall</Data>
+      <Data name="StockingShoulderWidthSmall" target="Stocking">gloves.osd\StockingShoulderWidthSmall</Data>
+    </Slider>
+    <Slider name="Deltoidmuscles" invert="false" small="0" big="0">
+      <Data name="GauntletsDeltoidmuscles" target="Gauntlets">gloves.osd\GauntletsDeltoidmuscles</Data>
+      <Data name="LaceDeltoidmuscles" target="Lace">gloves.osd\LaceDeltoidmuscles</Data>
+      <Data name="StockingDeltoidmuscles" target="Stocking">gloves.osd\StockingDeltoidmuscles</Data>
+    </Slider>
+    <Slider name="Arms_width" invert="false" small="0" big="0">
+      <Data name="HandsArms_width" target="Hands">UBE SE 2.0 Release Hands.osd\HandsArms_width</Data>
+      <Data name="GauntletsArms_width" target="Gauntlets">gloves.osd\GauntletsArms_width</Data>
+      <Data name="LaceArms_width" target="Lace">gloves.osd\LaceArms_width</Data>
+      <Data name="StockingArms_width" target="Stocking">gloves.osd\StockingArms_width</Data>
+    </Slider>
+    <Slider name="UpperArmSize n|p" invert="false" small="0" big="0">
+      <Data name="GauntletsUpperArmSize n|p" target="Gauntlets">gloves.osd\GauntletsUpperArmSize n|p</Data>
+      <Data name="LaceUpperArmSize n|p" target="Lace">gloves.osd\LaceUpperArmSize n|p</Data>
+      <Data name="StockingUpperArmSize n|p" target="Stocking">gloves.osd\StockingUpperArmSize n|p</Data>
+    </Slider>
+    <Slider name="Triceps" invert="false" small="0" big="0">
+      <Data name="GauntletsTriceps" target="Gauntlets">gloves.osd\GauntletsTriceps</Data>
+      <Data name="LaceTriceps" target="Lace">gloves.osd\LaceTriceps</Data>
+      <Data name="StockingTriceps" target="Stocking">gloves.osd\StockingTriceps</Data>
+    </Slider>
+    <Slider name="Biceps" invert="false" small="0" big="0">
+      <Data name="GauntletsBiceps" target="Gauntlets">gloves.osd\GauntletsBiceps</Data>
+      <Data name="LaceBiceps" target="Lace">gloves.osd\LaceBiceps</Data>
+      <Data name="StockingBiceps" target="Stocking">gloves.osd\StockingBiceps</Data>
+    </Slider>
+    <Slider name="Thicc_forearms" invert="false" small="0" big="0">
+      <Data name="HandsThicc_forearms" target="Hands">UBE SE 2.0 Release Hands.osd\HandsThicc_forearms</Data>
+      <Data name="GauntletsThicc_forearms" target="Gauntlets">gloves.osd\GauntletsThicc_forearms</Data>
+      <Data name="GlowThicc_forearms" target="Glow">gloves.osd\GlowThicc_forearms</Data>
+      <Data name="LaceThicc_forearms" target="Lace">gloves.osd\LaceThicc_forearms</Data>
+      <Data name="StockingThicc_forearms" target="Stocking">gloves.osd\StockingThicc_forearms</Data>
+    </Slider>
+    <Slider name="ForearmSize" invert="false" small="0" big="0">
+      <Data name="HandsForearmSize" target="Hands">UBE SE 2.0 Release Hands.osd\HandsForearmSize</Data>
+      <Data name="GauntletsForearmSize" target="Gauntlets">gloves.osd\GauntletsForearmSize</Data>
+      <Data name="StockingForearmSize" target="Stocking">gloves.osd\StockingForearmSize</Data>
+    </Slider>
+    <Slider name="WristSize n|p" invert="false" small="0" big="0">
+      <Data name="HandsWristSize n|p" target="Hands">UBE SE 2.0 Release Hands.osd\HandsWristSize n|p</Data>
+      <Data name="GauntletsWristSize n|p" target="Gauntlets">gloves.osd\GauntletsWristSize n|p</Data>
+      <Data name="LaceWristSize n|p" target="Lace">gloves.osd\LaceWristSize n|p</Data>
+      <Data name="StockingWristSize n|p" target="Stocking">gloves.osd\StockingWristSize n|p</Data>
+    </Slider>
+    <Slider name="SpineMuscles" invert="false" small="0" big="0">
+      <Data name="GauntletsSpineMuscles" target="Gauntlets">gloves.osd\GauntletsSpineMuscles</Data>
+      <Data name="LaceSpineMuscles" target="Lace">gloves.osd\LaceSpineMuscles</Data>
+      <Data name="StockingSpineMuscles" target="Stocking">gloves.osd\StockingSpineMuscles</Data>
+    </Slider>
+    <Slider name="ScapulaDepth" invert="false" small="0" big="0">
+      <Data name="GauntletsScapulaDepth" target="Gauntlets">gloves.osd\GauntletsScapulaDepth</Data>
+      <Data name="LaceScapulaDepth" target="Lace">gloves.osd\LaceScapulaDepth</Data>
+    </Slider>
+    <Slider name="LatsSize" invert="false" small="0" big="0">
+      <Data name="GauntletsLatsSize" target="Gauntlets">gloves.osd\GauntletsLatsSize</Data>
+      <Data name="StockingLatsSize" target="Stocking">gloves.osd\StockingLatsSize</Data>
+    </Slider>
+    <Slider name="BackDepth n|p" invert="false" small="0" big="0">
+      <Data name="GauntletsBackDepth n|p" target="Gauntlets">gloves.osd\GauntletsBackDepth n|p</Data>
+    </Slider>
+    <Slider name="BackFatFolds" invert="false" small="0" big="0">
+      <Data name="GauntletsBackFatFolds" target="Gauntlets">gloves.osd\GauntletsBackFatFolds</Data>
+    </Slider>
+    <Slider name="BackUnderArmpitsFatFolds" invert="false" small="0" big="0">
+      <Data name="GauntletsBackUnderArmpitsFatFolds" target="Gauntlets">gloves.osd\GauntletsBackUnderArmpitsFatFolds</Data>
+    </Slider>
+    <Slider name="WaistThickness n|p" invert="false" small="0" big="0">
+      <Data name="GauntletsWaistThickness n|p" target="Gauntlets">gloves.osd\GauntletsWaistThickness n|p</Data>
+    </Slider>
+    <Slider name="CalfUpperSize p|n" invert="false" small="0" big="0">
+      <Data name="GauntletsCalfUpperSize p|n" target="Gauntlets">gloves.osd\GauntletsCalfUpperSize p|n</Data>
+      <Data name="LaceCalfUpperSize p|n" target="Lace">gloves.osd\LaceCalfUpperSize p|n</Data>
+      <Data name="StockingCalfUpperSize p|n" target="Stocking">gloves.osd\StockingCalfUpperSize p|n</Data>
+    </Slider>
+    <Slider name="Shin_Forward" invert="false" small="0" big="0">
+      <Data name="GauntletsShin_Forward" target="Gauntlets">gloves.osd\GauntletsShin_Forward</Data>
+      <Data name="LaceShin_Forward" target="Lace">gloves.osd\LaceShin_Forward</Data>
+      <Data name="StockingShin_Forward" target="Stocking">gloves.osd\StockingShin_Forward</Data>
+    </Slider>
+    <Slider name="Normals_recalc" invert="false" small="0" big="0" hidden="true">
+      <Data name="HandsNormals_recalc" target="Hands">UBE SE 2.0 Release Hands.osd\HandsNormals_recalc</Data>
+    </Slider>
+    <Slider name="ArmBending_L" invert="false" small="0" big="0" hidden="true">
+      <Data name="GauntletsArmBending_L" target="Gauntlets">gloves.osd\GauntletsArmBending_L</Data>
+      <Data name="LaceArmBending_L" target="Lace">gloves.osd\LaceArmBending_L</Data>
+      <Data name="StockingArmBending_L" target="Stocking">gloves.osd\StockingArmBending_L</Data>
+    </Slider>
+    <Slider name="ArmBending_R" invert="false" small="0" big="0" hidden="true">
+      <Data name="GauntletsArmBending_R" target="Gauntlets">gloves.osd\GauntletsArmBending_R</Data>
+      <Data name="LaceArmBending_R" target="Lace">gloves.osd\LaceArmBending_R</Data>
+      <Data name="StockingArmBending_R" target="Stocking">gloves.osd\StockingArmBending_R</Data>
+    </Slider>
+    <Slider name="Longer_fingers" invert="false" small="0" big="0">
+      <Data name="HandsLonger_fingers" target="Hands">UBE SE 2.0 Release Hands.osd\HandsLonger_fingers</Data>
+      <Data name="GauntletsLonger_fingers" target="Gauntlets">gloves.osd\GauntletsLonger_fingers</Data>
+      <Data name="GlowLonger_fingers" target="Glow">gloves.osd\GlowLonger_fingers</Data>
+      <Data name="LaceLonger_fingers" target="Lace">gloves.osd\LaceLonger_fingers</Data>
+      <Data name="StockingLonger_fingers" target="Stocking">gloves.osd\StockingLonger_fingers</Data>
+    </Slider>
+    <Slider name="Nails_Length n|p" invert="false" small="0" big="0">
+      <Data name="HandsNails_Length n|p" target="Hands">UBE SE 2.0 Release Hands.osd\HandsNails_Length n|p</Data>
+    </Slider>
+    <Slider name="Claw_Nails" invert="false" small="0" big="0">
+      <Data name="HandsClaw_Nails" target="Hands">UBE SE 2.0 Release Hands.osd\HandsClaw_Nails</Data>
+    </Slider>
+    <Slider name="HandNailsZap" invert="false" small="0" big="0" zap="true">
+      <Data name="HandsHandNailsZap" target="Hands">UBE SE 2.0 Release Hands.osd\HandsHandNailsZap</Data>
+    </Slider>
+    <Slider name="Claw_Nails_2" invert="false" small="0" big="0">
+      <Data name="HandsClaw_Nails_2" target="Hands">UBE SE 2.0 Release Hands.osd\HandsClaw_Nails_2</Data>
+    </Slider>
+    <Slider name="art_FingernailsHeight" invert="false" small="0" big="0">
+      <Data name="Handsart_FingernailsHeight" target="Hands">UBE SE 2.0 Release Hands.osd\Handsart_FingernailsHeight</Data>
+    </Slider>
+    <Slider name="HandsRedone" invert="false" small="0" big="0">
+      <Data name="HandsHandsRedone" target="Hands">UBE SE 2.0 Release Hands.osd\HandsHandsRedone</Data>
+      <Data name="GauntletsHandsRedone" target="Gauntlets">gloves.osd\GauntletsHandsRedone</Data>
+      <Data name="GlowHandsRedone" target="Glow">gloves.osd\GlowHandsRedone</Data>
+      <Data name="LaceHandsRedone" target="Lace">gloves.osd\LaceHandsRedone</Data>
+      <Data name="StockingHandsRedone" target="Stocking">gloves.osd\StockingHandsRedone</Data>
+    </Slider>
+    <Slider name="art_FingernailsWidth" invert="false" small="0" big="0">
+      <Data name="Handsart_FingernailsWidth" target="Hands">UBE SE 2.0 Release Hands.osd\Handsart_FingernailsWidth</Data>
+    </Slider>
+    <Slider name="art_NailsSquare" invert="false" small="0" big="0">
+      <Data name="Handsart_NailsSquare" target="Hands">UBE SE 2.0 Release Hands.osd\Handsart_NailsSquare</Data>
+    </Slider>
+    <Slider name="art_ThumbnailWidth" invert="false" small="0" big="0">
+      <Data name="Handsart_ThumbnailWidth" target="Hands">UBE SE 2.0 Release Hands.osd\Handsart_ThumbnailWidth</Data>
+    </Slider>
+    <Slider name="art_ThumbnailHeight" invert="false" small="0" big="0">
+      <Data name="Handsart_ThumbnailHeight" target="Hands">UBE SE 2.0 Release Hands.osd\Handsart_ThumbnailHeight</Data>
+    </Slider>
+    <Slider name="art_ShortThumb" invert="false" small="0" big="0">
+      <Data name="Handsart_ShortThumb" target="Hands">UBE SE 2.0 Release Hands.osd\Handsart_ShortThumb</Data>
+      <Data name="Laceart_ShortThumb" target="Lace">gloves.osd\Laceart_ShortThumb</Data>
+      <Data name="Stockingart_ShortThumb" target="Stocking">gloves.osd\Stockingart_ShortThumb</Data>
+    </Slider>
+    <Slider name="art_LongFingers" invert="false" small="0" big="0">
+      <Data name="Handsart_LongFingers" target="Hands">UBE SE 2.0 Release Hands.osd\Handsart_LongFingers</Data>
+    </Slider>
+    <Slider name="art_Smooth" invert="false" small="0" big="0">
+      <Data name="Handsart_Smooth" target="Hands">UBE SE 2.0 Release Hands.osd\Handsart_Smooth</Data>
+      <Data name="Gauntletsart_Smooth" target="Gauntlets">gloves.osd\Gauntletsart_Smooth</Data>
+      <Data name="Glowart_Smooth" target="Glow">gloves.osd\Glowart_Smooth</Data>
+      <Data name="Laceart_Smooth" target="Lace">gloves.osd\Laceart_Smooth</Data>
+      <Data name="Stockingart_Smooth" target="Stocking">gloves.osd\Stockingart_Smooth</Data>
+    </Slider>
+    <Slider name="art_Weight" invert="false" small="0" big="0">
+      <Data name="Handsart_Weight" target="Hands">UBE SE 2.0 Release Hands.osd\Handsart_Weight</Data>
+      <Data name="Gauntletsart_Weight" target="Gauntlets">gloves.osd\Gauntletsart_Weight</Data>
+      <Data name="Glowart_Weight" target="Glow">gloves.osd\Glowart_Weight</Data>
+      <Data name="Laceart_Weight" target="Lace">gloves.osd\Laceart_Weight</Data>
+      <Data name="Stockingart_Weight" target="Stocking">gloves.osd\Stockingart_Weight</Data>
+    </Slider>
+    <Slider name="art_Gaunt" invert="false" small="0" big="0">
+      <Data name="Handsart_Gaunt" target="Hands">UBE SE 2.0 Release Hands.osd\Handsart_Gaunt</Data>
+      <Data name="Gauntletsart_Gaunt" target="Gauntlets">gloves.osd\Gauntletsart_Gaunt</Data>
+      <Data name="Glowart_Gaunt" target="Glow">gloves.osd\Glowart_Gaunt</Data>
+      <Data name="Laceart_Gaunt" target="Lace">gloves.osd\Laceart_Gaunt</Data>
+      <Data name="Stockingart_Gaunt" target="Stocking">gloves.osd\Stockingart_Gaunt</Data>
+    </Slider>
+    <Slider name="art_Type1" invert="false" small="0" big="0">
+      <Data name="Handsart_Type1" target="Hands">UBE SE 2.0 Release Hands.osd\Handsart_Type1</Data>
+      <Data name="Gauntletsart_Type1" target="Gauntlets">gloves.osd\Gauntletsart_Type1</Data>
+      <Data name="Glowart_Type1" target="Glow">gloves.osd\Glowart_Type1</Data>
+      <Data name="Laceart_Type1" target="Lace">gloves.osd\Laceart_Type1</Data>
+      <Data name="Stockingart_Type1" target="Stocking">gloves.osd\Stockingart_Type1</Data>
+    </Slider>
+    <Slider name="art_Type2" invert="false" small="0" big="0">
+      <Data name="Handsart_Type2" target="Hands">UBE SE 2.0 Release Hands.osd\Handsart_Type2</Data>
+      <Data name="Gauntletsart_Type2" target="Gauntlets">gloves.osd\Gauntletsart_Type2</Data>
+      <Data name="Glowart_Type2" target="Glow">gloves.osd\Glowart_Type2</Data>
+      <Data name="Laceart_Type2" target="Lace">gloves.osd\Laceart_Type2</Data>
+      <Data name="Stockingart_Type2" target="Stocking">gloves.osd\Stockingart_Type2</Data>
+    </Slider>
+    <Slider name="art_Width" invert="false" small="0" big="0">
+      <Data name="Handsart_Width" target="Hands">UBE SE 2.0 Release Hands.osd\Handsart_Width</Data>
+      <Data name="Gauntletsart_Width" target="Gauntlets">gloves.osd\Gauntletsart_Width</Data>
+      <Data name="Glowart_Width" target="Glow">gloves.osd\Glowart_Width</Data>
+      <Data name="Laceart_Width" target="Lace">gloves.osd\Laceart_Width</Data>
+      <Data name="Stockingart_Width" target="Stocking">gloves.osd\Stockingart_Width</Data>
+    </Slider>
+    <Slider name="art_Curve" invert="false" small="0" big="0">
+      <Data name="Handsart_Curve" target="Hands">UBE SE 2.0 Release Hands.osd\Handsart_Curve</Data>
+      <Data name="Gauntletsart_Curve" target="Gauntlets">gloves.osd\Gauntletsart_Curve</Data>
+      <Data name="Glowart_Curve" target="Glow">gloves.osd\Glowart_Curve</Data>
+      <Data name="Laceart_Curve" target="Lace">gloves.osd\Laceart_Curve</Data>
+      <Data name="Stockingart_Curve" target="Stocking">gloves.osd\Stockingart_Curve</Data>
+    </Slider>
+  </SliderSet>
+<SliderSet name="PSQ UBE 变身 - 海伦娜魅魔 - 翅膀">
+    <ReferenceInfo ProjectFile="SliderSets\UBE SE 2.0 Release Body.osp" ProjectName="UBE SE 2.0 Release Body" ShapeName="BaseShape" />
+    <DataFolder>PSQ_Package_20261106\UBE\F013</DataFolder>
+    <SourceFile>wings.nif</SourceFile>
+    <OutputPath>meshes/!UBE/PSQ/ExternalOutfits/Helena</OutputPath>
+    <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">wings</OutputFile>
+    <Shape target="Wings">Wings</Shape>
+    <Slider name="UpperChestHeight_n|p__HEAD&gt;" invert="false" small="0" big="0" hidden="true">
+      <Data name="WingsUpperChestHeight_n|p__HEAD&gt;" target="Wings" local="true">wings.osd\WingsUpperChestHeight_n|p__HEAD&gt;</Data>
+    </Slider>
+    <Slider name="Amazon" invert="false" small="0" big="0">
+      <Data name="WingsAmazon" target="Wings" local="true">wings.osd\WingsAmazon</Data>
+    </Slider>
+    <Slider name="FitnessDetails_2.0" invert="false" small="0" big="0">
+      <Data name="WingsFitnessDetails_2.0" target="Wings" local="true">wings.osd\WingsFitnessDetails_2.0</Data>
+    </Slider>
+    <Slider name="Skinny2.0" invert="false" small="0" big="0">
+      <Data name="WingsSkinny2.0" target="Wings" local="true">wings.osd\WingsSkinny2.0</Data>
+    </Slider>
+    <Slider name="SquarePeg3d" invert="false" small="0" big="0">
+      <Data name="WingsSquarePeg3d" target="Wings" local="true">wings.osd\WingsSquarePeg3d</Data>
+    </Slider>
+    <Slider name="TBD  2.0" invert="false" small="0" big="0">
+      <Data name="WingsTBD  2.0" target="Wings" local="true">wings.osd\WingsTBD  2.0</Data>
+    </Slider>
+    <Slider name="Donaught" invert="false" small="0" big="0">
+      <Data name="WingsDonaught" target="Wings" local="true">wings.osd\WingsDonaught</Data>
+    </Slider>
+    <Slider name="Juicy_body" invert="false" small="0" big="0">
+      <Data name="WingsJuicy_body" target="Wings" local="true">wings.osd\WingsJuicy_body</Data>
+    </Slider>
+    <Slider name="Peachy" invert="false" small="0" big="0">
+      <Data name="WingsPeachy" target="Wings" local="true">wings.osd\WingsPeachy</Data>
+    </Slider>
+    <Slider name="Venus" invert="false" small="0" big="0">
+      <Data name="WingsVenus" target="Wings" local="true">wings.osd\WingsVenus</Data>
+    </Slider>
+    <Slider name="Upper_TorsoSize n|p" invert="false" small="0" big="0">
+      <Data name="WingsUpper_TorsoSize n|p" target="Wings" local="true">wings.osd\WingsUpper_TorsoSize n|p</Data>
+    </Slider>
+    <Slider name="RibcageSize n|p" invert="false" small="0" big="0">
+      <Data name="WingsRibcageSize n|p" target="Wings" local="true">wings.osd\WingsRibcageSize n|p</Data>
+    </Slider>
+    <Slider name="ShoulderOuterSize n|p" invert="false" small="0" big="0">
+      <Data name="WingsShoulderOuterSize n|p" target="Wings" local="true">wings.osd\WingsShoulderOuterSize n|p</Data>
+    </Slider>
+    <Slider name="MusclyArms" invert="false" small="0" big="0">
+      <Data name="WingsMusclyArms" target="Wings" local="true">wings.osd\WingsMusclyArms</Data>
+    </Slider>
+    <Slider name="ShoulderWidthBig" invert="false" small="0" big="0">
+      <Data name="WingsShoulderWidthBig" target="Wings" local="true">wings.osd\WingsShoulderWidthBig</Data>
+    </Slider>
+    <Slider name="ShoulderWidthSmall" invert="false" small="0" big="0">
+      <Data name="WingsShoulderWidthSmall" target="Wings" local="true">wings.osd\WingsShoulderWidthSmall</Data>
+    </Slider>
+    <Slider name="Deltoidmuscles" invert="false" small="0" big="0">
+      <Data name="WingsDeltoidmuscles" target="Wings" local="true">wings.osd\WingsDeltoidmuscles</Data>
+    </Slider>
+    <Slider name="Arms_width" invert="false" small="0" big="0">
+      <Data name="WingsArms_width" target="Wings" local="true">wings.osd\WingsArms_width</Data>
+    </Slider>
+    <Slider name="UpperArmSize n|p" invert="false" small="0" big="0">
+      <Data name="WingsUpperArmSize n|p" target="Wings" local="true">wings.osd\WingsUpperArmSize n|p</Data>
+    </Slider>
+    <Slider name="Triceps" invert="false" small="0" big="0">
+      <Data name="WingsTriceps" target="Wings" local="true">wings.osd\WingsTriceps</Data>
+    </Slider>
+    <Slider name="SpineMuscles" invert="false" small="0" big="0">
+      <Data name="WingsSpineMuscles" target="Wings" local="true">wings.osd\WingsSpineMuscles</Data>
+    </Slider>
+    <Slider name="ScapulaDepth" invert="false" small="0" big="0">
+      <Data name="WingsScapulaDepth" target="Wings" local="true">wings.osd\WingsScapulaDepth</Data>
+    </Slider>
+    <Slider name="SpineDiscs_Prominence" invert="false" small="0" big="0">
+      <Data name="WingsSpineDiscs_Prominence" target="Wings" local="true">wings.osd\WingsSpineDiscs_Prominence</Data>
+    </Slider>
+    <Slider name="LatsSize" invert="false" small="0" big="0">
+      <Data name="WingsLatsSize" target="Wings" local="true">wings.osd\WingsLatsSize</Data>
+    </Slider>
+    <Slider name="BackDepth n|p" invert="false" small="0" big="0">
+      <Data name="WingsBackDepth n|p" target="Wings" local="true">wings.osd\WingsBackDepth n|p</Data>
+    </Slider>
+    <Slider name="BackValley" invert="false" small="0" big="0">
+      <Data name="WingsBackValley" target="Wings" local="true">wings.osd\WingsBackValley</Data>
+    </Slider>
+    <Slider name="BackFatFolds" invert="false" small="0" big="0">
+      <Data name="WingsBackFatFolds" target="Wings" local="true">wings.osd\WingsBackFatFolds</Data>
+    </Slider>
+    <Slider name="BackUnderArmpitsFatFolds" invert="false" small="0" big="0">
+      <Data name="WingsBackUnderArmpitsFatFolds" target="Wings" local="true">wings.osd\WingsBackUnderArmpitsFatFolds</Data>
+    </Slider>
+    <Slider name="WaistLine n|p" invert="false" small="0" big="0">
+      <Data name="WingsWaistLine n|p" target="Wings" local="true">wings.osd\WingsWaistLine n|p</Data>
+    </Slider>
+    <Slider name="WaistThickness n|p" invert="false" small="0" big="0">
+      <Data name="WingsWaistThickness n|p" target="Wings" local="true">wings.osd\WingsWaistThickness n|p</Data>
+    </Slider>
+    <Slider name="ExternalObliqueStraighten" invert="false" small="0" big="0">
+      <Data name="WingsExternalObliqueStraighten" target="Wings" local="true">wings.osd\WingsExternalObliqueStraighten</Data>
+    </Slider>
+    <Slider name="BellyFatty" invert="false" small="0" big="0">
+      <Data name="WingsBellyFatty" target="Wings" local="true">wings.osd\WingsBellyFatty</Data>
+    </Slider>
+    <Slider name="PregnancyBelly" invert="false" small="0" big="0">
+      <Data name="WingsPregnancyBelly" target="Wings" local="true">wings.osd\WingsPregnancyBelly</Data>
+    </Slider>
+    <Slider name="HipSize p|n" invert="false" small="0" big="0">
+      <Data name="WingsHipSize p|n" target="Wings" local="true">wings.osd\WingsHipSize p|n</Data>
+    </Slider>
+    <Slider name="HipsAndLegsDistanceApart p|n" invert="false" small="0" big="0">
+      <Data name="WingsHipsAndLegsDistanceApart p|n" target="Wings" local="true">wings.osd\WingsHipsAndLegsDistanceApart p|n</Data>
+    </Slider>
+    <Slider name="HipHeight p|n" invert="false" small="0" big="0">
+      <Data name="WingsHipHeight p|n" target="Wings" local="true">wings.osd\WingsHipHeight p|n</Data>
+    </Slider>
+    <Slider name="HipWideSideway p|n" invert="false" small="0" big="0">
+      <Data name="WingsHipWideSideway p|n" target="Wings" local="true">wings.osd\WingsHipWideSideway p|n</Data>
+    </Slider>
+    <Slider name="SmoothHips" invert="false" small="0" big="0">
+      <Data name="WingsSmoothHips" target="Wings" local="true">wings.osd\WingsSmoothHips</Data>
+    </Slider>
+    <Slider name="Hipbone p|n" invert="false" small="0" big="0">
+      <Data name="WingsHipbone p|n" target="Wings" local="true">wings.osd\WingsHipbone p|n</Data>
+    </Slider>
+    <Slider name="Hip_Upper_Width n|p" invert="false" small="0" big="0">
+      <Data name="WingsHip_Upper_Width n|p" target="Wings" local="true">wings.osd\WingsHip_Upper_Width n|p</Data>
+    </Slider>
+    <Slider name="Hip_Wide" invert="false" small="0" big="0">
+      <Data name="WingsHip_Wide" target="Wings" local="true">wings.osd\WingsHip_Wide</Data>
+    </Slider>
+    <Slider name="Hip_narrow" invert="false" small="0" big="0">
+      <Data name="WingsHip_narrow" target="Wings" local="true">wings.osd\WingsHip_narrow</Data>
+    </Slider>
+    <Slider name="SacralDimples" invert="false" small="0" big="0">
+      <Data name="WingsSacralDimples" target="Wings" local="true">wings.osd\WingsSacralDimples</Data>
+    </Slider>
+    <Slider name="GreaterTrochanterBone" invert="false" small="0" big="0">
+      <Data name="WingsGreaterTrochanterBone" target="Wings" local="true">wings.osd\WingsGreaterTrochanterBone</Data>
+    </Slider>
+    <Slider name="GluteSize p|n" invert="false" small="0" big="0">
+      <Data name="WingsGluteSize p|n" target="Wings" local="true">wings.osd\WingsGluteSize p|n</Data>
+    </Slider>
+    <Slider name="GluteHeight p|n" invert="false" small="0" big="0">
+      <Data name="WingsGluteHeight p|n" target="Wings" local="true">wings.osd\WingsGluteHeight p|n</Data>
+    </Slider>
+    <Slider name="GluteSpread p|n" invert="false" small="0" big="0">
+      <Data name="WingsGluteSpread p|n" target="Wings" local="true">wings.osd\WingsGluteSpread p|n</Data>
+    </Slider>
+    <Slider name="GluteStretch p|n" invert="false" small="0" big="0">
+      <Data name="WingsGluteStretch p|n" target="Wings" local="true">wings.osd\WingsGluteStretch p|n</Data>
+    </Slider>
+    <Slider name="GluteTwistX p|n" invert="false" small="0" big="0">
+      <Data name="WingsGluteTwistX p|n" target="Wings" local="true">wings.osd\WingsGluteTwistX p|n</Data>
+    </Slider>
+    <Slider name="GluteOuterHeight p|n" invert="false" small="0" big="0">
+      <Data name="WingsGluteOuterHeight p|n" target="Wings" local="true">wings.osd\WingsGluteOuterHeight p|n</Data>
+    </Slider>
+    <Slider name="GluteSeparateWidth p|n" invert="false" small="0" big="0">
+      <Data name="WingsGluteSeparateWidth p|n" target="Wings" local="true">wings.osd\WingsGluteSeparateWidth p|n</Data>
+    </Slider>
+    <Slider name="GlutesUpperDepth p|n" invert="false" small="0" big="0">
+      <Data name="WingsGlutesUpperDepth p|n" target="Wings" local="true">wings.osd\WingsGlutesUpperDepth p|n</Data>
+    </Slider>
+    <Slider name="GluteUpperWidth p|n" invert="false" small="0" big="0">
+      <Data name="WingsGluteUpperWidth p|n" target="Wings" local="true">wings.osd\WingsGluteUpperWidth p|n</Data>
+    </Slider>
+    <Slider name="GluteLower" invert="false" small="0" big="0">
+      <Data name="WingsGluteLower" target="Wings" local="true">wings.osd\WingsGluteLower</Data>
+    </Slider>
+    <Slider name="GluteLowerWidth p|n" invert="false" small="0" big="0">
+      <Data name="WingsGluteLowerWidth p|n" target="Wings" local="true">wings.osd\WingsGluteLowerWidth p|n</Data>
+    </Slider>
+    <Slider name="GluteusDefinition" invert="false" small="0" big="0">
+      <Data name="WingsGluteusDefinition" target="Wings" local="true">wings.osd\WingsGluteusDefinition</Data>
+    </Slider>
+    <Slider name="ThighApart" invert="false" small="0" big="0">
+      <Data name="WingsThighApart" target="Wings" local="true">wings.osd\WingsThighApart</Data>
+    </Slider>
+    <Slider name="ThighsOuter big" invert="false" small="0" big="0">
+      <Data name="WingsThighsOuter big" target="Wings" local="true">wings.osd\WingsThighsOuter big</Data>
+    </Slider>
+    <Slider name="ThighsOuter small" invert="false" small="0" big="0">
+      <Data name="WingsThighsOuter small" target="Wings" local="true">wings.osd\WingsThighsOuter small</Data>
+    </Slider>
+    <Slider name="CalfUpperSize p|n" invert="false" small="0" big="0">
+      <Data name="WingsCalfUpperSize p|n" target="Wings" local="true">wings.osd\WingsCalfUpperSize p|n</Data>
+    </Slider>
+    <Slider name="Shin_Forward" invert="false" small="0" big="0">
+      <Data name="WingsShin_Forward" target="Wings" local="true">wings.osd\WingsShin_Forward</Data>
+    </Slider>
+    <Slider name="GluteFlex_L" invert="false" small="0" big="0" hidden="true">
+      <Data name="WingsGluteFlex_L" target="Wings" local="true">wings.osd\WingsGluteFlex_L</Data>
+    </Slider>
+    <Slider name="GluteFlex_R" invert="false" small="0" big="0" hidden="true">
+      <Data name="WingsGluteFlex_R" target="Wings" local="true">wings.osd\WingsGluteFlex_R</Data>
+    </Slider>
+    <Slider name="ArmBending_L" invert="false" small="0" big="0" hidden="true">
+      <Data name="WingsArmBending_L" target="Wings" local="true">wings.osd\WingsArmBending_L</Data>
+    </Slider>
+    <Slider name="ArmBending_R" invert="false" small="0" big="0" hidden="true">
+      <Data name="WingsArmBending_R" target="Wings" local="true">wings.osd\WingsArmBending_R</Data>
+    </Slider>
+  </SliderSet>
+<SliderSet name="PSQ UBE 变身 - 海伦娜魅魔 - 胸甲">
+    <ReferenceInfo ProjectFile="SliderSets\UBE SE 2.0 Release Body.osp" ProjectName="UBE SE 2.0 Release Body" ShapeName="BaseShape" />
+    <DataFolder>PSQ_Package_20261106\UBE\F013</DataFolder>
+    <SourceFile>cuirass.nif</SourceFile>
+    <OutputPath>meshes\!UBE\PSQ\ExternalOutfits\Helena</OutputPath>
+    <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">cuirass</OutputFile>
+    <Shape target="BaseShape" DataFolder="PSQ_Package_20261106\UBE\F018" SmoothSeamNormalsAngle="120">BaseShape</Shape>
+    <Shape target="Corset" DataFolder="PSQ_Package_20261106\UBE\F013">Corset</Shape>
+    <Shape target="Neck" DataFolder="PSQ_Package_20261106\UBE\F013">Neck</Shape>
+    <Slider name="SkinnyMorph" invert="false" small="100" big="0" hidden="true">
+      <Data name="BaseShapeSkinnyMorph" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeSkinnyMorph</Data>
+      <Data name="NeckSkinnyMorph" target="Neck">cuirass.osd\NeckSkinnyMorph</Data>
+    </Slider>
+    <Slider name="NeckSize__HEAD&gt;" invert="false" small="0" big="0" hidden="true">
+      <Data name="BaseShapeNeckSize__HEAD&gt;" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNeckSize__HEAD&gt;</Data>
+      <Data name="NeckNeckSize__HEAD&gt;" target="Neck">cuirass.osd\NeckNeckSize__HEAD&gt;</Data>
+    </Slider>
+    <Slider name="UpperChestHeight_n|p__HEAD&gt;" invert="false" small="0" big="0" hidden="true">
+      <Data name="BaseShapeUpperChestHeight_n|p__HEAD&gt;" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeUpperChestHeight_n|p__HEAD&gt;</Data>
+      <Data name="CorsetUpperChestHeight_n|p__HEAD&gt;" target="Corset">cuirass.osd\CorsetUpperChestHeight_n|p__HEAD&gt;</Data>
+      <Data name="NeckUpperChestHeight_n|p__HEAD&gt;" target="Neck">cuirass.osd\NeckUpperChestHeight_n|p__HEAD&gt;</Data>
+    </Slider>
+    <Slider name="NipplesShowUp" invert="false" small="100" big="100">
+      <Data name="BaseShapeNipplesShowUp" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNipplesShowUp</Data>
+      <Data name="CorsetNipplesShowUp" target="Corset">cuirass.osd\CorsetNipplesShowUp</Data>
+    </Slider>
+    <Slider name="BiggerHands_CBBE-like" invert="false" small="0" big="0">
+      <Data name="BaseShapeBiggerHands_CBBE-like" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBiggerHands_CBBE-like</Data>
+    </Slider>
+    <Slider name="Amazon" invert="false" small="0" big="0">
+      <Data name="BaseShapeAmazon" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAmazon</Data>
+      <Data name="CorsetAmazon" target="Corset">cuirass.osd\CorsetAmazon</Data>
+      <Data name="NeckAmazon" target="Neck">cuirass.osd\NeckAmazon</Data>
+    </Slider>
+    <Slider name="FitnessDetails_2.0" invert="false" small="0" big="0">
+      <Data name="BaseShapeFitnessDetails_2.0" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeFitnessDetails_2.0</Data>
+      <Data name="CorsetFitnessDetails_2.0" target="Corset">cuirass.osd\CorsetFitnessDetails_2.0</Data>
+      <Data name="NeckFitnessDetails_2.0" target="Neck">cuirass.osd\NeckFitnessDetails_2.0</Data>
+    </Slider>
+    <Slider name="Skinny2.0" invert="false" small="0" big="0">
+      <Data name="BaseShapeSkinny2.0" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeSkinny2.0</Data>
+      <Data name="CorsetSkinny2.0" target="Corset">cuirass.osd\CorsetSkinny2.0</Data>
+      <Data name="NeckSkinny2.0" target="Neck">cuirass.osd\NeckSkinny2.0</Data>
+    </Slider>
+    <Slider name="SquarePeg3d" invert="false" small="0" big="0">
+      <Data name="BaseShapeSquarePeg3d" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeSquarePeg3d</Data>
+      <Data name="CorsetSquarePeg3d" target="Corset">cuirass.osd\CorsetSquarePeg3d</Data>
+      <Data name="NeckSquarePeg3d" target="Neck">cuirass.osd\NeckSquarePeg3d</Data>
+    </Slider>
+    <Slider name="TBD  2.0" invert="false" small="0" big="0">
+      <Data name="BaseShapeTBD  2.0" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeTBD  2.0</Data>
+      <Data name="CorsetTBD  2.0" target="Corset">cuirass.osd\CorsetTBD  2.0</Data>
+      <Data name="NeckTBD  2.0" target="Neck">cuirass.osd\NeckTBD  2.0</Data>
+    </Slider>
+    <Slider name="Donaught" invert="false" small="0" big="0">
+      <Data name="BaseShapeDonaught" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeDonaught</Data>
+      <Data name="CorsetDonaught" target="Corset">cuirass.osd\CorsetDonaught</Data>
+      <Data name="NeckDonaught" target="Neck">cuirass.osd\NeckDonaught</Data>
+    </Slider>
+    <Slider name="Juicy_body" invert="false" small="0" big="0">
+      <Data name="BaseShapeJuicy_body" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeJuicy_body</Data>
+      <Data name="CorsetJuicy_body" target="Corset">cuirass.osd\CorsetJuicy_body</Data>
+      <Data name="NeckJuicy_body" target="Neck">cuirass.osd\NeckJuicy_body</Data>
+    </Slider>
+    <Slider name="Peachy" invert="false" small="0" big="0">
+      <Data name="BaseShapePeachy" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapePeachy</Data>
+      <Data name="CorsetPeachy" target="Corset">cuirass.osd\CorsetPeachy</Data>
+      <Data name="NeckPeachy" target="Neck">cuirass.osd\NeckPeachy</Data>
+    </Slider>
+    <Slider name="Venus" invert="false" small="0" big="0">
+      <Data name="BaseShapeVenus" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeVenus</Data>
+      <Data name="CorsetVenus" target="Corset">cuirass.osd\CorsetVenus</Data>
+      <Data name="NeckVenus" target="Neck">cuirass.osd\NeckVenus</Data>
+    </Slider>
+    <Slider name="Upper_TorsoSize n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeUpper_TorsoSize n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeUpper_TorsoSize n|p</Data>
+      <Data name="CorsetUpper_TorsoSize n|p" target="Corset">cuirass.osd\CorsetUpper_TorsoSize n|p</Data>
+      <Data name="NeckUpper_TorsoSize n|p" target="Neck">cuirass.osd\NeckUpper_TorsoSize n|p</Data>
+    </Slider>
+    <Slider name="ChestUpperSize n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeChestUpperSize n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeChestUpperSize n|p</Data>
+      <Data name="CorsetChestUpperSize n|p" target="Corset">cuirass.osd\CorsetChestUpperSize n|p</Data>
+      <Data name="NeckChestUpperSize n|p" target="Neck">cuirass.osd\NeckChestUpperSize n|p</Data>
+    </Slider>
+    <Slider name="Clavicles_Width n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeClavicles_Width n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeClavicles_Width n|p</Data>
+      <Data name="NeckClavicles_Width n|p" target="Neck">cuirass.osd\NeckClavicles_Width n|p</Data>
+    </Slider>
+    <Slider name="ClaviclesFront" invert="false" small="0" big="0">
+      <Data name="BaseShapeClaviclesFront" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeClaviclesFront</Data>
+      <Data name="NeckClaviclesFront" target="Neck">cuirass.osd\NeckClaviclesFront</Data>
+    </Slider>
+    <Slider name="ClaviclesAngle" invert="false" small="0" big="0">
+      <Data name="BaseShapeClaviclesAngle" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeClaviclesAngle</Data>
+      <Data name="NeckClaviclesAngle" target="Neck">cuirass.osd\NeckClaviclesAngle</Data>
+    </Slider>
+    <Slider name="Clavicle_Center_upper" invert="false" small="0" big="0">
+      <Data name="BaseShapeClavicle_Center_upper" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeClavicle_Center_upper</Data>
+      <Data name="NeckClavicle_Center_upper" target="Neck">cuirass.osd\NeckClavicle_Center_upper</Data>
+    </Slider>
+    <Slider name="Clavicles_Center_height" invert="false" small="0" big="0">
+      <Data name="BaseShapeClavicles_Center_height" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeClavicles_Center_height</Data>
+      <Data name="NeckClavicles_Center_height" target="Neck">cuirass.osd\NeckClavicles_Center_height</Data>
+    </Slider>
+    <Slider name="LowerNeckMuscles" invert="false" small="0" big="0">
+      <Data name="BaseShapeLowerNeckMuscles" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeLowerNeckMuscles</Data>
+      <Data name="NeckLowerNeckMuscles" target="Neck">cuirass.osd\NeckLowerNeckMuscles</Data>
+    </Slider>
+    <Slider name="SternumDepth n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeSternumDepth n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeSternumDepth n|p</Data>
+      <Data name="CorsetSternumDepth n|p" target="Corset">cuirass.osd\CorsetSternumDepth n|p</Data>
+      <Data name="NeckSternumDepth n|p" target="Neck">cuirass.osd\NeckSternumDepth n|p</Data>
+    </Slider>
+    <Slider name="PectoralisMuscles" invert="false" small="0" big="0">
+      <Data name="BaseShapePectoralisMuscles" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapePectoralisMuscles</Data>
+      <Data name="CorsetPectoralisMuscles" target="Corset">cuirass.osd\CorsetPectoralisMuscles</Data>
+      <Data name="NeckPectoralisMuscles" target="Neck">cuirass.osd\NeckPectoralisMuscles</Data>
+    </Slider>
+    <Slider name="PectoralCreases" invert="false" small="0" big="0">
+      <Data name="BaseShapePectoralCreases" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapePectoralCreases</Data>
+      <Data name="NeckPectoralCreases" target="Neck">cuirass.osd\NeckPectoralCreases</Data>
+    </Slider>
+    <Slider name="RibcageSize n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeRibcageSize n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeRibcageSize n|p</Data>
+      <Data name="CorsetRibcageSize n|p" target="Corset">cuirass.osd\CorsetRibcageSize n|p</Data>
+      <Data name="NeckRibcageSize n|p" target="Neck">cuirass.osd\NeckRibcageSize n|p</Data>
+    </Slider>
+    <Slider name="Big_SaggyBreasts" invert="false" small="0" big="0">
+      <Data name="BaseShapeBig_SaggyBreasts" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBig_SaggyBreasts</Data>
+      <Data name="CorsetBig_SaggyBreasts" target="Corset">cuirass.osd\CorsetBig_SaggyBreasts</Data>
+    </Slider>
+    <Slider name="Juicy_breasts" invert="false" small="0" big="0">
+      <Data name="BaseShapeJuicy_breasts" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeJuicy_breasts</Data>
+      <Data name="CorsetJuicy_breasts" target="Corset">cuirass.osd\CorsetJuicy_breasts</Data>
+      <Data name="NeckJuicy_breasts" target="Neck">cuirass.osd\NeckJuicy_breasts</Data>
+    </Slider>
+    <Slider name="BreastsTBD" invert="false" small="0" big="0">
+      <Data name="BaseShapeBreastsTBD" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBreastsTBD</Data>
+      <Data name="CorsetBreastsTBD" target="Corset">cuirass.osd\CorsetBreastsTBD</Data>
+      <Data name="NeckBreastsTBD" target="Neck">cuirass.osd\NeckBreastsTBD</Data>
+    </Slider>
+    <Slider name="BreastsBigger" invert="false" small="0" big="0">
+      <Data name="BaseShapeBreastsBigger" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBreastsBigger</Data>
+      <Data name="CorsetBreastsBigger" target="Corset">cuirass.osd\CorsetBreastsBigger</Data>
+    </Slider>
+    <Slider name="BreastsSmaller" invert="false" small="0" big="0">
+      <Data name="BaseShapeBreastsSmaller" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBreastsSmaller</Data>
+      <Data name="CorsetBreastsSmaller" target="Corset">cuirass.osd\CorsetBreastsSmaller</Data>
+      <Data name="NeckBreastsSmaller" target="Neck">cuirass.osd\NeckBreastsSmaller</Data>
+    </Slider>
+    <Slider name="BreastArmpitsWidth n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeBreastArmpitsWidth n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBreastArmpitsWidth n|p</Data>
+      <Data name="CorsetBreastArmpitsWidth n|p" target="Corset">cuirass.osd\CorsetBreastArmpitsWidth n|p</Data>
+      <Data name="NeckBreastArmpitsWidth n|p" target="Neck">cuirass.osd\NeckBreastArmpitsWidth n|p</Data>
+    </Slider>
+    <Slider name="BreastCenterGapLowerHeight n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeBreastCenterGapLowerHeight n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBreastCenterGapLowerHeight n|p</Data>
+      <Data name="CorsetBreastCenterGapLowerHeight n|p" target="Corset">cuirass.osd\CorsetBreastCenterGapLowerHeight n|p</Data>
+    </Slider>
+    <Slider name="BreastCenterGapWidth n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeBreastCenterGapWidth n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBreastCenterGapWidth n|p</Data>
+      <Data name="CorsetBreastCenterGapWidth n|p" target="Corset">cuirass.osd\CorsetBreastCenterGapWidth n|p</Data>
+    </Slider>
+    <Slider name="Breasts_Perky" invert="false" small="0" big="0">
+      <Data name="BaseShapeBreasts_Perky" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBreasts_Perky</Data>
+      <Data name="CorsetBreasts_Perky" target="Corset">cuirass.osd\CorsetBreasts_Perky</Data>
+      <Data name="NeckBreasts_Perky" target="Neck">cuirass.osd\NeckBreasts_Perky</Data>
+    </Slider>
+    <Slider name="BreastFlat" invert="false" small="0" big="0">
+      <Data name="BaseShapeBreastFlat" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBreastFlat</Data>
+      <Data name="CorsetBreastFlat" target="Corset">cuirass.osd\CorsetBreastFlat</Data>
+      <Data name="NeckBreastFlat" target="Neck">cuirass.osd\NeckBreastFlat</Data>
+    </Slider>
+    <Slider name="Breast Diameter_small" invert="false" small="0" big="0">
+      <Data name="BaseShapeBreast Diameter_small" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBreast Diameter_small</Data>
+      <Data name="CorsetBreast Diameter_small" target="Corset">cuirass.osd\CorsetBreast Diameter_small</Data>
+    </Slider>
+    <Slider name="Breast Diameter_big" invert="false" small="0" big="0">
+      <Data name="BaseShapeBreast Diameter_big" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBreast Diameter_big</Data>
+      <Data name="CorsetBreast Diameter_big" target="Corset">cuirass.osd\CorsetBreast Diameter_big</Data>
+    </Slider>
+    <Slider name="BreastsRotate_Y" invert="false" small="0" big="0">
+      <Data name="BaseShapeBreastsRotate_Y" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBreastsRotate_Y</Data>
+      <Data name="CorsetBreastsRotate_Y" target="Corset">cuirass.osd\CorsetBreastsRotate_Y</Data>
+    </Slider>
+    <Slider name="BreastsCupSag n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeBreastsCupSag n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBreastsCupSag n|p</Data>
+      <Data name="CorsetBreastsCupSag n|p" target="Corset">cuirass.osd\CorsetBreastsCupSag n|p</Data>
+      <Data name="NeckBreastsCupSag n|p" target="Neck">cuirass.osd\NeckBreastsCupSag n|p</Data>
+    </Slider>
+    <Slider name="BreastUpperCurve n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeBreastUpperCurve n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBreastUpperCurve n|p</Data>
+      <Data name="CorsetBreastUpperCurve n|p" target="Corset">cuirass.osd\CorsetBreastUpperCurve n|p</Data>
+      <Data name="NeckBreastUpperCurve n|p" target="Neck">cuirass.osd\NeckBreastUpperCurve n|p</Data>
+    </Slider>
+    <Slider name="BreastUnderCurve" invert="false" small="0" big="0">
+      <Data name="BaseShapeBreastUnderCurve" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBreastUnderCurve</Data>
+      <Data name="CorsetBreastUnderCurve" target="Corset">cuirass.osd\CorsetBreastUnderCurve</Data>
+    </Slider>
+    <Slider name="SaggingBreastsZone" invert="false" small="0" big="0">
+      <Data name="BaseShapeSaggingBreastsZone" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeSaggingBreastsZone</Data>
+      <Data name="CorsetSaggingBreastsZone" target="Corset">cuirass.osd\CorsetSaggingBreastsZone</Data>
+    </Slider>
+    <Slider name="Manly_chest" invert="false" small="0" big="0">
+      <Data name="BaseShapeManly_chest" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeManly_chest</Data>
+      <Data name="CorsetManly_chest" target="Corset">cuirass.osd\CorsetManly_chest</Data>
+      <Data name="NeckManly_chest" target="Neck">cuirass.osd\NeckManly_chest</Data>
+    </Slider>
+    <Slider name="Trap_chest" invert="false" small="0" big="0">
+      <Data name="BaseShapeTrap_chest" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeTrap_chest</Data>
+      <Data name="CorsetTrap_chest" target="Corset">cuirass.osd\CorsetTrap_chest</Data>
+      <Data name="NeckTrap_chest" target="Neck">cuirass.osd\NeckTrap_chest</Data>
+    </Slider>
+    <Slider name="BreastsZero" invert="false" small="0" big="0">
+      <Data name="BaseShapeBreastsZero" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBreastsZero</Data>
+      <Data name="CorsetBreastsZero" target="Corset">cuirass.osd\CorsetBreastsZero</Data>
+      <Data name="NeckBreastsZero" target="Neck">cuirass.osd\NeckBreastsZero</Data>
+    </Slider>
+    <Slider name="BreastsPositionWidth n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeBreastsPositionWidth n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBreastsPositionWidth n|p</Data>
+      <Data name="CorsetBreastsPositionWidth n|p" target="Corset">cuirass.osd\CorsetBreastsPositionWidth n|p</Data>
+      <Data name="NeckBreastsPositionWidth n|p" target="Neck">cuirass.osd\NeckBreastsPositionWidth n|p</Data>
+    </Slider>
+    <Slider name="NipplesPerkiness" invert="false" small="0" big="0">
+      <Data name="BaseShapeNipplesPerkiness" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNipplesPerkiness</Data>
+      <Data name="CorsetNipplesPerkiness" target="Corset">cuirass.osd\CorsetNipplesPerkiness</Data>
+    </Slider>
+    <Slider name="NippleHeight n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeNippleHeight n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNippleHeight n|p</Data>
+      <Data name="CorsetNippleHeight n|p" target="Corset">cuirass.osd\CorsetNippleHeight n|p</Data>
+    </Slider>
+    <Slider name="NippleCircularCrease" invert="false" small="0" big="0">
+      <Data name="BaseShapeNippleCircularCrease" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNippleCircularCrease</Data>
+      <Data name="CorsetNippleCircularCrease" target="Corset">cuirass.osd\CorsetNippleCircularCrease</Data>
+    </Slider>
+    <Slider name="NEW_NippleCircularCrease_Uv_fix" invert="false" small="0" big="0" uv="true">
+      <Data name="BaseShapeNEW_NippleCircularCrease_Uv_fix" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNEW_NippleCircularCrease_Uv_fix</Data>
+    </Slider>
+    <Slider name="NippleCreaseCentral" invert="false" small="0" big="0">
+      <Data name="BaseShapeNippleCreaseCentral" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNippleCreaseCentral</Data>
+      <Data name="CorsetNippleCreaseCentral" target="Corset">cuirass.osd\CorsetNippleCreaseCentral</Data>
+    </Slider>
+    <Slider name="NippleCreaseHorizontal" invert="false" small="0" big="0">
+      <Data name="BaseShapeNippleCreaseHorizontal" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNippleCreaseHorizontal</Data>
+      <Data name="CorsetNippleCreaseHorizontal" target="Corset">cuirass.osd\CorsetNippleCreaseHorizontal</Data>
+    </Slider>
+    <Slider name="NippleCreaseVertical" invert="false" small="0" big="0">
+      <Data name="BaseShapeNippleCreaseVertical" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNippleCreaseVertical</Data>
+      <Data name="CorsetNippleCreaseVertical" target="Corset">cuirass.osd\CorsetNippleCreaseVertical</Data>
+    </Slider>
+    <Slider name="NippleDiameter n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeNippleDiameter n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNippleDiameter n|p</Data>
+      <Data name="CorsetNippleDiameter n|p" target="Corset">cuirass.osd\CorsetNippleDiameter n|p</Data>
+    </Slider>
+    <Slider name="NEW_NippleDiameter_neg_value_Uv_fix" invert="false" small="0" big="0" uv="true">
+      <Data name="BaseShapeNEW_NippleDiameter_neg_value_Uv_fix" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNEW_NippleDiameter_neg_value_Uv_fix</Data>
+    </Slider>
+    <Slider name="NippleDispertionSides n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeNippleDispertionSides n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNippleDispertionSides n|p</Data>
+      <Data name="CorsetNippleDispertionSides n|p" target="Corset">cuirass.osd\CorsetNippleDispertionSides n|p</Data>
+    </Slider>
+    <Slider name="NippleFlatten" invert="false" small="0" big="0">
+      <Data name="BaseShapeNippleFlatten" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNippleFlatten</Data>
+      <Data name="CorsetNippleFlatten" target="Corset">cuirass.osd\CorsetNippleFlatten</Data>
+    </Slider>
+    <Slider name="AreolaeSizeBig" invert="false" small="0" big="0">
+      <Data name="BaseShapeAreolaeSizeBig" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAreolaeSizeBig</Data>
+      <Data name="CorsetAreolaeSizeBig" target="Corset">cuirass.osd\CorsetAreolaeSizeBig</Data>
+    </Slider>
+    <Slider name="AreolaeSizeBig_UV_fix" invert="false" small="0" big="0" uv="true">
+      <Data name="BaseShapeAreolaeSizeBig_UV_fix" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAreolaeSizeBig_UV_fix</Data>
+    </Slider>
+    <Slider name="AreolaeSizeSmall" invert="false" small="0" big="0">
+      <Data name="BaseShapeAreolaeSizeSmall" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAreolaeSizeSmall</Data>
+      <Data name="CorsetAreolaeSizeSmall" target="Corset">cuirass.osd\CorsetAreolaeSizeSmall</Data>
+    </Slider>
+    <Slider name="AreolaHorizontal" invert="false" small="0" big="0">
+      <Data name="BaseShapeAreolaHorizontal" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAreolaHorizontal</Data>
+      <Data name="CorsetAreolaHorizontal" target="Corset">cuirass.osd\CorsetAreolaHorizontal</Data>
+    </Slider>
+    <Slider name="AreolaVertical" invert="false" small="0" big="0">
+      <Data name="BaseShapeAreolaVertical" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAreolaVertical</Data>
+      <Data name="CorsetAreolaVertical" target="Corset">cuirass.osd\CorsetAreolaVertical</Data>
+    </Slider>
+    <Slider name="AreolaErection" invert="false" small="0" big="0">
+      <Data name="BaseShapeAreolaErection" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAreolaErection</Data>
+      <Data name="CorsetAreolaErection" target="Corset">cuirass.osd\CorsetAreolaErection</Data>
+    </Slider>
+    <Slider name="NippleHorizontal n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeNippleHorizontal n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNippleHorizontal n|p</Data>
+      <Data name="CorsetNippleHorizontal n|p" target="Corset">cuirass.osd\CorsetNippleHorizontal n|p</Data>
+    </Slider>
+    <Slider name="NippleInverted_PuffyAreola" invert="false" small="0" big="0">
+      <Data name="BaseShapeNippleInverted_PuffyAreola" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNippleInverted_PuffyAreola</Data>
+      <Data name="CorsetNippleInverted_PuffyAreola" target="Corset">cuirass.osd\CorsetNippleInverted_PuffyAreola</Data>
+    </Slider>
+    <Slider name="NippleInverted_PuffyAreola_UV_fix" invert="false" small="0" big="0" uv="true">
+      <Data name="BaseShapeNippleInverted_PuffyAreola_UV_fix" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNippleInverted_PuffyAreola_UV_fix</Data>
+    </Slider>
+    <Slider name="NippleLength" invert="false" small="0" big="0">
+      <Data name="BaseShapeNippleLength" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNippleLength</Data>
+      <Data name="CorsetNippleLength" target="Corset">cuirass.osd\CorsetNippleLength</Data>
+    </Slider>
+    <Slider name="Nippleinverted" invert="false" small="0" big="0">
+      <Data name="BaseShapeNippleinverted" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNippleinverted</Data>
+      <Data name="CorsetNippleinverted" target="Corset">cuirass.osd\CorsetNippleinverted</Data>
+    </Slider>
+    <Slider name="Nipples_Fantasy" invert="false" small="0" big="0">
+      <Data name="BaseShapeNipples_Fantasy" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNipples_Fantasy</Data>
+      <Data name="CorsetNipples_Fantasy" target="Corset">cuirass.osd\CorsetNipples_Fantasy</Data>
+    </Slider>
+    <Slider name="NEW_Nipples_Fantasy_UV_fix" invert="false" small="0" big="0" uv="true">
+      <Data name="BaseShapeNEW_Nipples_Fantasy_UV_fix" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNEW_Nipples_Fantasy_UV_fix</Data>
+    </Slider>
+    <Slider name="ShoulderOuterSize n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeShoulderOuterSize n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeShoulderOuterSize n|p</Data>
+      <Data name="CorsetShoulderOuterSize n|p" target="Corset">cuirass.osd\CorsetShoulderOuterSize n|p</Data>
+    </Slider>
+    <Slider name="MusclyArms" invert="false" small="0" big="0">
+      <Data name="BaseShapeMusclyArms" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeMusclyArms</Data>
+      <Data name="CorsetMusclyArms" target="Corset">cuirass.osd\CorsetMusclyArms</Data>
+      <Data name="NeckMusclyArms" target="Neck">cuirass.osd\NeckMusclyArms</Data>
+    </Slider>
+    <Slider name="ShoulderWidthBig" invert="false" small="0" big="0">
+      <Data name="BaseShapeShoulderWidthBig" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeShoulderWidthBig</Data>
+      <Data name="CorsetShoulderWidthBig" target="Corset">cuirass.osd\CorsetShoulderWidthBig</Data>
+      <Data name="NeckShoulderWidthBig" target="Neck">cuirass.osd\NeckShoulderWidthBig</Data>
+    </Slider>
+    <Slider name="ShoulderWidthSmall" invert="false" small="0" big="0">
+      <Data name="BaseShapeShoulderWidthSmall" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeShoulderWidthSmall</Data>
+      <Data name="CorsetShoulderWidthSmall" target="Corset">cuirass.osd\CorsetShoulderWidthSmall</Data>
+      <Data name="NeckShoulderWidthSmall" target="Neck">cuirass.osd\NeckShoulderWidthSmall</Data>
+    </Slider>
+    <Slider name="Deltoidmuscles" invert="false" small="0" big="0">
+      <Data name="BaseShapeDeltoidmuscles" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeDeltoidmuscles</Data>
+      <Data name="CorsetDeltoidmuscles" target="Corset">cuirass.osd\CorsetDeltoidmuscles</Data>
+    </Slider>
+    <Slider name="Arms_width" invert="false" small="0" big="0">
+      <Data name="BaseShapeArms_width" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeArms_width</Data>
+      <Data name="CorsetArms_width" target="Corset">cuirass.osd\CorsetArms_width</Data>
+    </Slider>
+    <Slider name="UpperArmSize n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeUpperArmSize n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeUpperArmSize n|p</Data>
+      <Data name="CorsetUpperArmSize n|p" target="Corset">cuirass.osd\CorsetUpperArmSize n|p</Data>
+    </Slider>
+    <Slider name="Triceps" invert="false" small="0" big="0">
+      <Data name="BaseShapeTriceps" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeTriceps</Data>
+      <Data name="CorsetTriceps" target="Corset">cuirass.osd\CorsetTriceps</Data>
+    </Slider>
+    <Slider name="Biceps" invert="false" small="0" big="0">
+      <Data name="BaseShapeBiceps" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBiceps</Data>
+      <Data name="CorsetBiceps" target="Corset">cuirass.osd\CorsetBiceps</Data>
+    </Slider>
+    <Slider name="Thicc_forearms" invert="false" small="0" big="0">
+      <Data name="BaseShapeThicc_forearms" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeThicc_forearms</Data>
+    </Slider>
+    <Slider name="ForearmSize" invert="false" small="0" big="0">
+      <Data name="BaseShapeForearmSize" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeForearmSize</Data>
+      <Data name="CorsetForearmSize" target="Corset">cuirass.osd\CorsetForearmSize</Data>
+    </Slider>
+    <Slider name="WristSize n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeWristSize n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeWristSize n|p</Data>
+    </Slider>
+    <Slider name="SpineMuscles" invert="false" small="0" big="0">
+      <Data name="BaseShapeSpineMuscles" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeSpineMuscles</Data>
+      <Data name="CorsetSpineMuscles" target="Corset">cuirass.osd\CorsetSpineMuscles</Data>
+      <Data name="NeckSpineMuscles" target="Neck">cuirass.osd\NeckSpineMuscles</Data>
+    </Slider>
+    <Slider name="Trapezius_upper" invert="false" small="0" big="0">
+      <Data name="BaseShapeTrapezius_upper" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeTrapezius_upper</Data>
+      <Data name="NeckTrapezius_upper" target="Neck">cuirass.osd\NeckTrapezius_upper</Data>
+    </Slider>
+    <Slider name="Trapezius_lower" invert="false" small="0" big="0">
+      <Data name="BaseShapeTrapezius_lower" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeTrapezius_lower</Data>
+      <Data name="CorsetTrapezius_lower" target="Corset">cuirass.osd\CorsetTrapezius_lower</Data>
+      <Data name="NeckTrapezius_lower" target="Neck">cuirass.osd\NeckTrapezius_lower</Data>
+    </Slider>
+    <Slider name="Trapezius_smaller" invert="false" small="0" big="0">
+      <Data name="BaseShapeTrapezius_smaller" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeTrapezius_smaller</Data>
+      <Data name="NeckTrapezius_smaller" target="Neck">cuirass.osd\NeckTrapezius_smaller</Data>
+    </Slider>
+    <Slider name="ScapulaDepth" invert="false" small="0" big="0">
+      <Data name="BaseShapeScapulaDepth" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeScapulaDepth</Data>
+      <Data name="CorsetScapulaDepth" target="Corset">cuirass.osd\CorsetScapulaDepth</Data>
+    </Slider>
+    <Slider name="SpineDiscs_Prominence" invert="false" small="0" big="0">
+      <Data name="BaseShapeSpineDiscs_Prominence" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeSpineDiscs_Prominence</Data>
+      <Data name="CorsetSpineDiscs_Prominence" target="Corset">cuirass.osd\CorsetSpineDiscs_Prominence</Data>
+      <Data name="NeckSpineDiscs_Prominence" target="Neck">cuirass.osd\NeckSpineDiscs_Prominence</Data>
+    </Slider>
+    <Slider name="LatsSize" invert="false" small="0" big="0">
+      <Data name="BaseShapeLatsSize" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeLatsSize</Data>
+      <Data name="CorsetLatsSize" target="Corset">cuirass.osd\CorsetLatsSize</Data>
+    </Slider>
+    <Slider name="BackDepth n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeBackDepth n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBackDepth n|p</Data>
+      <Data name="CorsetBackDepth n|p" target="Corset">cuirass.osd\CorsetBackDepth n|p</Data>
+    </Slider>
+    <Slider name="BackValley" invert="false" small="0" big="0">
+      <Data name="BaseShapeBackValley" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBackValley</Data>
+      <Data name="CorsetBackValley" target="Corset">cuirass.osd\CorsetBackValley</Data>
+    </Slider>
+    <Slider name="BackFatFolds" invert="false" small="0" big="0">
+      <Data name="BaseShapeBackFatFolds" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBackFatFolds</Data>
+      <Data name="CorsetBackFatFolds" target="Corset">cuirass.osd\CorsetBackFatFolds</Data>
+    </Slider>
+    <Slider name="BackUnderArmpitsFatFolds" invert="false" small="0" big="0">
+      <Data name="BaseShapeBackUnderArmpitsFatFolds" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBackUnderArmpitsFatFolds</Data>
+      <Data name="CorsetBackUnderArmpitsFatFolds" target="Corset">cuirass.osd\CorsetBackUnderArmpitsFatFolds</Data>
+    </Slider>
+    <Slider name="WaistLine n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeWaistLine n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeWaistLine n|p</Data>
+      <Data name="CorsetWaistLine n|p" target="Corset">cuirass.osd\CorsetWaistLine n|p</Data>
+    </Slider>
+    <Slider name="WaistThickness n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeWaistThickness n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeWaistThickness n|p</Data>
+      <Data name="CorsetWaistThickness n|p" target="Corset">cuirass.osd\CorsetWaistThickness n|p</Data>
+    </Slider>
+    <Slider name="FrontRibsProminence" invert="false" small="0" big="0">
+      <Data name="BaseShapeFrontRibsProminence" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeFrontRibsProminence</Data>
+      <Data name="CorsetFrontRibsProminence" target="Corset">cuirass.osd\CorsetFrontRibsProminence</Data>
+    </Slider>
+    <Slider name="CostalAnglePointed" invert="false" small="0" big="0">
+      <Data name="BaseShapeCostalAnglePointed" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeCostalAnglePointed</Data>
+      <Data name="CorsetCostalAnglePointed" target="Corset">cuirass.osd\CorsetCostalAnglePointed</Data>
+    </Slider>
+    <Slider name="BellyCenterDepth n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeBellyCenterDepth n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBellyCenterDepth n|p</Data>
+      <Data name="CorsetBellyCenterDepth n|p" target="Corset">cuirass.osd\CorsetBellyCenterDepth n|p</Data>
+    </Slider>
+    <Slider name="BellyLowerDepth n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeBellyLowerDepth n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBellyLowerDepth n|p</Data>
+      <Data name="CorsetBellyLowerDepth n|p" target="Corset">cuirass.osd\CorsetBellyLowerDepth n|p</Data>
+    </Slider>
+    <Slider name="BellyWidth n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeBellyWidth n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBellyWidth n|p</Data>
+      <Data name="CorsetBellyWidth n|p" target="Corset">cuirass.osd\CorsetBellyWidth n|p</Data>
+    </Slider>
+    <Slider name="ExternalObliqueStraighten" invert="false" small="0" big="0">
+      <Data name="BaseShapeExternalObliqueStraighten" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeExternalObliqueStraighten</Data>
+      <Data name="CorsetExternalObliqueStraighten" target="Corset">cuirass.osd\CorsetExternalObliqueStraighten</Data>
+    </Slider>
+    <Slider name="BellyHorizontalCrease" invert="false" small="0" big="0">
+      <Data name="BaseShapeBellyHorizontalCrease" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBellyHorizontalCrease</Data>
+      <Data name="CorsetBellyHorizontalCrease" target="Corset">cuirass.osd\CorsetBellyHorizontalCrease</Data>
+    </Slider>
+    <Slider name="BellyVerticalCrease" invert="false" small="0" big="0">
+      <Data name="BaseShapeBellyVerticalCrease" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBellyVerticalCrease</Data>
+      <Data name="CorsetBellyVerticalCrease" target="Corset">cuirass.osd\CorsetBellyVerticalCrease</Data>
+    </Slider>
+    <Slider name="BellyVerticalCrease_Lower" invert="false" small="0" big="0">
+      <Data name="BaseShapeBellyVerticalCrease_Lower" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBellyVerticalCrease_Lower</Data>
+      <Data name="CorsetBellyVerticalCrease_Lower" target="Corset">cuirass.osd\CorsetBellyVerticalCrease_Lower</Data>
+    </Slider>
+    <Slider name="Belly_lower_crease" invert="false" small="0" big="0">
+      <Data name="BaseShapeBelly_lower_crease" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBelly_lower_crease</Data>
+      <Data name="CorsetBelly_lower_crease" target="Corset">cuirass.osd\CorsetBelly_lower_crease</Data>
+    </Slider>
+    <Slider name="BellyFatty" invert="false" small="0" big="0">
+      <Data name="BaseShapeBellyFatty" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBellyFatty</Data>
+      <Data name="CorsetBellyFatty" target="Corset">cuirass.osd\CorsetBellyFatty</Data>
+    </Slider>
+    <Slider name="SoftBelly" invert="false" small="0" big="0">
+      <Data name="BaseShapeSoftBelly" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeSoftBelly</Data>
+      <Data name="CorsetSoftBelly" target="Corset">cuirass.osd\CorsetSoftBelly</Data>
+    </Slider>
+    <Slider name="Navel Width n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeNavel Width n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNavel Width n|p</Data>
+      <Data name="CorsetNavel Width n|p" target="Corset">cuirass.osd\CorsetNavel Width n|p</Data>
+    </Slider>
+    <Slider name="LessProminentAbs" invert="false" small="0" big="0">
+      <Data name="BaseShapeLessProminentAbs" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeLessProminentAbs</Data>
+      <Data name="CorsetLessProminentAbs" target="Corset">cuirass.osd\CorsetLessProminentAbs</Data>
+    </Slider>
+    <Slider name="Belly_Prominence" invert="false" small="0" big="0">
+      <Data name="BaseShapeBelly_Prominence" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBelly_Prominence</Data>
+      <Data name="CorsetBelly_Prominence" target="Corset">cuirass.osd\CorsetBelly_Prominence</Data>
+    </Slider>
+    <Slider name="RectusOuterDepth" invert="false" small="0" big="0">
+      <Data name="BaseShapeRectusOuterDepth" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeRectusOuterDepth</Data>
+      <Data name="CorsetRectusOuterDepth" target="Corset">cuirass.osd\CorsetRectusOuterDepth</Data>
+    </Slider>
+    <Slider name="AbsAsymmetry n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeAbsAsymmetry n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAbsAsymmetry n|p</Data>
+      <Data name="CorsetAbsAsymmetry n|p" target="Corset">cuirass.osd\CorsetAbsAsymmetry n|p</Data>
+    </Slider>
+    <Slider name="HigherAbs" invert="false" small="0" big="0">
+      <Data name="BaseShapeHigherAbs" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeHigherAbs</Data>
+      <Data name="CorsetHigherAbs" target="Corset">cuirass.osd\CorsetHigherAbs</Data>
+    </Slider>
+    <Slider name="HigherAbs_crease" invert="false" small="0" big="0">
+      <Data name="BaseShapeHigherAbs_crease" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeHigherAbs_crease</Data>
+      <Data name="CorsetHigherAbs_crease" target="Corset">cuirass.osd\CorsetHigherAbs_crease</Data>
+    </Slider>
+    <Slider name="CentralAbs" invert="false" small="0" big="0">
+      <Data name="BaseShapeCentralAbs" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeCentralAbs</Data>
+      <Data name="CorsetCentralAbs" target="Corset">cuirass.osd\CorsetCentralAbs</Data>
+    </Slider>
+    <Slider name="LowerAbs" invert="false" small="0" big="0">
+      <Data name="BaseShapeLowerAbs" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeLowerAbs</Data>
+      <Data name="CorsetLowerAbs" target="Corset">cuirass.osd\CorsetLowerAbs</Data>
+    </Slider>
+    <Slider name="LowerAbsHorizontalCrease" invert="false" small="0" big="0">
+      <Data name="BaseShapeLowerAbsHorizontalCrease" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeLowerAbsHorizontalCrease</Data>
+      <Data name="CorsetLowerAbsHorizontalCrease" target="Corset">cuirass.osd\CorsetLowerAbsHorizontalCrease</Data>
+    </Slider>
+    <Slider name="AponeurosisExternalOblique" invert="false" small="0" big="0">
+      <Data name="BaseShapeAponeurosisExternalOblique" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAponeurosisExternalOblique</Data>
+      <Data name="CorsetAponeurosisExternalOblique" target="Corset">cuirass.osd\CorsetAponeurosisExternalOblique</Data>
+    </Slider>
+    <Slider name="PregnancyBelly" invert="false" small="0" big="0">
+      <Data name="BaseShapePregnancyBelly" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapePregnancyBelly</Data>
+      <Data name="CorsetPregnancyBelly" target="Corset">cuirass.osd\CorsetPregnancyBelly</Data>
+    </Slider>
+    <Slider name="HipSize p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeHipSize p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeHipSize p|n</Data>
+      <Data name="CorsetHipSize p|n" target="Corset">cuirass.osd\CorsetHipSize p|n</Data>
+    </Slider>
+    <Slider name="HipsAndLegsDistanceApart p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeHipsAndLegsDistanceApart p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeHipsAndLegsDistanceApart p|n</Data>
+      <Data name="CorsetHipsAndLegsDistanceApart p|n" target="Corset">cuirass.osd\CorsetHipsAndLegsDistanceApart p|n</Data>
+    </Slider>
+    <Slider name="HipHeight p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeHipHeight p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeHipHeight p|n</Data>
+      <Data name="CorsetHipHeight p|n" target="Corset">cuirass.osd\CorsetHipHeight p|n</Data>
+    </Slider>
+    <Slider name="HipWideSideway p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeHipWideSideway p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeHipWideSideway p|n</Data>
+      <Data name="CorsetHipWideSideway p|n" target="Corset">cuirass.osd\CorsetHipWideSideway p|n</Data>
+    </Slider>
+    <Slider name="SmoothHips" invert="false" small="0" big="0">
+      <Data name="BaseShapeSmoothHips" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeSmoothHips</Data>
+      <Data name="CorsetSmoothHips" target="Corset">cuirass.osd\CorsetSmoothHips</Data>
+    </Slider>
+    <Slider name="HipPointyBones" invert="false" small="0" big="0">
+      <Data name="BaseShapeHipPointyBones" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeHipPointyBones</Data>
+    </Slider>
+    <Slider name="Hipbone p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeHipbone p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeHipbone p|n</Data>
+      <Data name="CorsetHipbone p|n" target="Corset">cuirass.osd\CorsetHipbone p|n</Data>
+    </Slider>
+    <Slider name="Hip_Upper_Width n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeHip_Upper_Width n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeHip_Upper_Width n|p</Data>
+      <Data name="CorsetHip_Upper_Width n|p" target="Corset">cuirass.osd\CorsetHip_Upper_Width n|p</Data>
+    </Slider>
+    <Slider name="Hip_Wide" invert="false" small="0" big="0">
+      <Data name="BaseShapeHip_Wide" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeHip_Wide</Data>
+      <Data name="CorsetHip_Wide" target="Corset">cuirass.osd\CorsetHip_Wide</Data>
+    </Slider>
+    <Slider name="Hip_narrow" invert="false" small="0" big="0">
+      <Data name="BaseShapeHip_narrow" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeHip_narrow</Data>
+      <Data name="CorsetHip_narrow" target="Corset">cuirass.osd\CorsetHip_narrow</Data>
+    </Slider>
+    <Slider name="HipsOuterBonesFatty" invert="false" small="0" big="0">
+      <Data name="BaseShapeHipsOuterBonesFatty" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeHipsOuterBonesFatty</Data>
+    </Slider>
+    <Slider name="HipsSideMuscles" invert="false" small="0" big="0">
+      <Data name="BaseShapeHipsSideMuscles" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeHipsSideMuscles</Data>
+    </Slider>
+    <Slider name="SacralDimples" invert="false" small="0" big="0">
+      <Data name="BaseShapeSacralDimples" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeSacralDimples</Data>
+      <Data name="CorsetSacralDimples" target="Corset">cuirass.osd\CorsetSacralDimples</Data>
+    </Slider>
+    <Slider name="GreaterTrochanterBone" invert="false" small="0" big="0">
+      <Data name="BaseShapeGreaterTrochanterBone" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGreaterTrochanterBone</Data>
+      <Data name="CorsetGreaterTrochanterBone" target="Corset">cuirass.osd\CorsetGreaterTrochanterBone</Data>
+    </Slider>
+    <Slider name="GluteSize p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeGluteSize p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGluteSize p|n</Data>
+      <Data name="CorsetGluteSize p|n" target="Corset">cuirass.osd\CorsetGluteSize p|n</Data>
+    </Slider>
+    <Slider name="GluteHeight p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeGluteHeight p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGluteHeight p|n</Data>
+      <Data name="CorsetGluteHeight p|n" target="Corset">cuirass.osd\CorsetGluteHeight p|n</Data>
+    </Slider>
+    <Slider name="GluteSpread p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeGluteSpread p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGluteSpread p|n</Data>
+      <Data name="CorsetGluteSpread p|n" target="Corset">cuirass.osd\CorsetGluteSpread p|n</Data>
+    </Slider>
+    <Slider name="GluteStretch p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeGluteStretch p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGluteStretch p|n</Data>
+      <Data name="CorsetGluteStretch p|n" target="Corset">cuirass.osd\CorsetGluteStretch p|n</Data>
+    </Slider>
+    <Slider name="GluteTwistX p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeGluteTwistX p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGluteTwistX p|n</Data>
+      <Data name="CorsetGluteTwistX p|n" target="Corset">cuirass.osd\CorsetGluteTwistX p|n</Data>
+    </Slider>
+    <Slider name="GluteOuterHeight p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeGluteOuterHeight p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGluteOuterHeight p|n</Data>
+      <Data name="CorsetGluteOuterHeight p|n" target="Corset">cuirass.osd\CorsetGluteOuterHeight p|n</Data>
+    </Slider>
+    <Slider name="GluteSeparateWidth p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeGluteSeparateWidth p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGluteSeparateWidth p|n</Data>
+      <Data name="CorsetGluteSeparateWidth p|n" target="Corset">cuirass.osd\CorsetGluteSeparateWidth p|n</Data>
+    </Slider>
+    <Slider name="GlutesUpperDepth p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeGlutesUpperDepth p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGlutesUpperDepth p|n</Data>
+      <Data name="CorsetGlutesUpperDepth p|n" target="Corset">cuirass.osd\CorsetGlutesUpperDepth p|n</Data>
+    </Slider>
+    <Slider name="GluteUpperWidth p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeGluteUpperWidth p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGluteUpperWidth p|n</Data>
+      <Data name="CorsetGluteUpperWidth p|n" target="Corset">cuirass.osd\CorsetGluteUpperWidth p|n</Data>
+    </Slider>
+    <Slider name="GluteLower" invert="false" small="0" big="0">
+      <Data name="BaseShapeGluteLower" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGluteLower</Data>
+      <Data name="CorsetGluteLower" target="Corset">cuirass.osd\CorsetGluteLower</Data>
+    </Slider>
+    <Slider name="GluteLowerHeight p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeGluteLowerHeight p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGluteLowerHeight p|n</Data>
+      <Data name="CorsetGluteLowerHeight p|n" target="Corset">cuirass.osd\CorsetGluteLowerHeight p|n</Data>
+    </Slider>
+    <Slider name="GluteLowerWidth p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeGluteLowerWidth p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGluteLowerWidth p|n</Data>
+      <Data name="CorsetGluteLowerWidth p|n" target="Corset">cuirass.osd\CorsetGluteLowerWidth p|n</Data>
+    </Slider>
+    <Slider name="GluteInnerHeight p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeGluteInnerHeight p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGluteInnerHeight p|n</Data>
+      <Data name="CorsetGluteInnerHeight p|n" target="Corset">cuirass.osd\CorsetGluteInnerHeight p|n</Data>
+    </Slider>
+    <Slider name="Glutes_tighter" invert="false" small="0" big="0">
+      <Data name="BaseShapeGlutes_tighter" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGlutes_tighter</Data>
+      <Data name="CorsetGlutes_tighter" target="Corset">cuirass.osd\CorsetGlutes_tighter</Data>
+    </Slider>
+    <Slider name="GluteusDefinition" invert="false" small="0" big="0">
+      <Data name="BaseShapeGluteusDefinition" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGluteusDefinition</Data>
+      <Data name="CorsetGluteusDefinition" target="Corset">cuirass.osd\CorsetGluteusDefinition</Data>
+    </Slider>
+    <Slider name="GluteFolds" invert="false" small="0" big="0">
+      <Data name="BaseShapeGluteFolds" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGluteFolds</Data>
+      <Data name="CorsetGluteFolds" target="Corset">cuirass.osd\CorsetGluteFolds</Data>
+    </Slider>
+    <Slider name="PubicAreaSize p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapePubicAreaSize p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapePubicAreaSize p|n</Data>
+      <Data name="CorsetPubicAreaSize p|n" target="Corset">cuirass.osd\CorsetPubicAreaSize p|n</Data>
+    </Slider>
+    <Slider name="PubicAreaHilly" invert="false" small="0" big="0">
+      <Data name="BaseShapePubicAreaHilly" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapePubicAreaHilly</Data>
+      <Data name="CorsetPubicAreaHilly" target="Corset">cuirass.osd\CorsetPubicAreaHilly</Data>
+    </Slider>
+    <Slider name="PussyCute" invert="false" small="0" big="0">
+      <Data name="BaseShapePussyCute" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapePussyCute</Data>
+      <Data name="CorsetPussyCute" target="Corset">cuirass.osd\CorsetPussyCute</Data>
+    </Slider>
+    <Slider name="ClitorisErection" invert="false" small="0" big="0">
+      <Data name="BaseShapeClitorisErection" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeClitorisErection</Data>
+      <Data name="CorsetClitorisErection" target="Corset">cuirass.osd\CorsetClitorisErection</Data>
+    </Slider>
+    <Slider name="Vagina_shape" invert="false" small="0" big="0">
+      <Data name="BaseShapeVagina_shape" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeVagina_shape</Data>
+      <Data name="CorsetVagina_shape" target="Corset">cuirass.osd\CorsetVagina_shape</Data>
+    </Slider>
+    <Slider name="Vagina_shape_wider" invert="false" small="0" big="0">
+      <Data name="BaseShapeVagina_shape_wider" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeVagina_shape_wider</Data>
+      <Data name="CorsetVagina_shape_wider" target="Corset">cuirass.osd\CorsetVagina_shape_wider</Data>
+    </Slider>
+    <Slider name="Vagina_Fantasy" invert="false" small="0" big="0">
+      <Data name="BaseShapeVagina_Fantasy" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeVagina_Fantasy</Data>
+      <Data name="CorsetVagina_Fantasy" target="Corset">cuirass.osd\CorsetVagina_Fantasy</Data>
+    </Slider>
+    <Slider name="Vagina_spread" invert="false" small="0" big="0" hidden="true">
+      <Data name="BaseShapeVagina_spread" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeVagina_spread</Data>
+      <Data name="CorsetVagina_spread" target="Corset">cuirass.osd\CorsetVagina_spread</Data>
+    </Slider>
+    <Slider name="AnusSize" invert="false" small="0" big="0">
+      <Data name="BaseShapeAnusSize" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAnusSize</Data>
+      <Data name="CorsetAnusSize" target="Corset">cuirass.osd\CorsetAnusSize</Data>
+    </Slider>
+    <Slider name="BiggerAnus" invert="false" small="0" big="0">
+      <Data name="BaseShapeBiggerAnus" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBiggerAnus</Data>
+      <Data name="CorsetBiggerAnus" target="Corset">cuirass.osd\CorsetBiggerAnus</Data>
+    </Slider>
+    <Slider name="AnusTriangular" invert="false" small="0" big="0">
+      <Data name="BaseShapeAnusTriangular" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAnusTriangular</Data>
+      <Data name="CorsetAnusTriangular" target="Corset">cuirass.osd\CorsetAnusTriangular</Data>
+    </Slider>
+    <Slider name="AnusSpread" invert="false" small="0" big="0" hidden="true">
+      <Data name="BaseShapeAnusSpread" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAnusSpread</Data>
+      <Data name="CorsetAnusSpread" target="Corset">cuirass.osd\CorsetAnusSpread</Data>
+    </Slider>
+    <Slider name="UpperThighsSizeBig" invert="false" small="0" big="0">
+      <Data name="BaseShapeUpperThighsSizeBig" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeUpperThighsSizeBig</Data>
+      <Data name="CorsetUpperThighsSizeBig" target="Corset">cuirass.osd\CorsetUpperThighsSizeBig</Data>
+    </Slider>
+    <Slider name="LowerThighsSizeBig" invert="false" small="0" big="0">
+      <Data name="BaseShapeLowerThighsSizeBig" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeLowerThighsSizeBig</Data>
+      <Data name="CorsetLowerThighsSizeBig" target="Corset">cuirass.osd\CorsetLowerThighsSizeBig</Data>
+    </Slider>
+    <Slider name="UpperThighsSizeSmall" invert="false" small="0" big="0">
+      <Data name="BaseShapeUpperThighsSizeSmall" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeUpperThighsSizeSmall</Data>
+      <Data name="CorsetUpperThighsSizeSmall" target="Corset">cuirass.osd\CorsetUpperThighsSizeSmall</Data>
+    </Slider>
+    <Slider name="LowerThighsSizeSmall" invert="false" small="0" big="0">
+      <Data name="BaseShapeLowerThighsSizeSmall" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeLowerThighsSizeSmall</Data>
+    </Slider>
+    <Slider name="UpperThighsChubby" invert="false" small="0" big="0">
+      <Data name="BaseShapeUpperThighsChubby" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeUpperThighsChubby</Data>
+      <Data name="CorsetUpperThighsChubby" target="Corset">cuirass.osd\CorsetUpperThighsChubby</Data>
+    </Slider>
+    <Slider name="ThighApart" invert="false" small="0" big="0">
+      <Data name="BaseShapeThighApart" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeThighApart</Data>
+      <Data name="CorsetThighApart" target="Corset">cuirass.osd\CorsetThighApart</Data>
+    </Slider>
+    <Slider name="ThighFrontDepth" invert="false" small="0" big="0">
+      <Data name="BaseShapeThighFrontDepth" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeThighFrontDepth</Data>
+      <Data name="CorsetThighFrontDepth" target="Corset">cuirass.osd\CorsetThighFrontDepth</Data>
+    </Slider>
+    <Slider name="UpperThighsDepth" invert="false" small="0" big="0">
+      <Data name="BaseShapeUpperThighsDepth" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeUpperThighsDepth</Data>
+      <Data name="CorsetUpperThighsDepth" target="Corset">cuirass.osd\CorsetUpperThighsDepth</Data>
+    </Slider>
+    <Slider name="ThighBackDepth" invert="false" small="0" big="0">
+      <Data name="BaseShapeThighBackDepth" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeThighBackDepth</Data>
+    </Slider>
+    <Slider name="UpperInnerThighSize p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeUpperInnerThighSize p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeUpperInnerThighSize p|n</Data>
+      <Data name="CorsetUpperInnerThighSize p|n" target="Corset">cuirass.osd\CorsetUpperInnerThighSize p|n</Data>
+    </Slider>
+    <Slider name="LowerInnerThighSize p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeLowerInnerThighSize p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeLowerInnerThighSize p|n</Data>
+    </Slider>
+    <Slider name="LowerOuterThighSize Bigger" invert="false" small="0" big="0">
+      <Data name="BaseShapeLowerOuterThighSize Bigger" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeLowerOuterThighSize Bigger</Data>
+    </Slider>
+    <Slider name="ThighsOuter big" invert="false" small="0" big="0">
+      <Data name="BaseShapeThighsOuter big" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeThighsOuter big</Data>
+      <Data name="CorsetThighsOuter big" target="Corset">cuirass.osd\CorsetThighsOuter big</Data>
+    </Slider>
+    <Slider name="ThighsOuter small" invert="false" small="0" big="0">
+      <Data name="BaseShapeThighsOuter small" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeThighsOuter small</Data>
+      <Data name="CorsetThighsOuter small" target="Corset">cuirass.osd\CorsetThighsOuter small</Data>
+    </Slider>
+    <Slider name="Thighs_Inner_Size_n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeThighs_Inner_Size_n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeThighs_Inner_Size_n|p</Data>
+      <Data name="CorsetThighs_Inner_Size_n|p" target="Corset">cuirass.osd\CorsetThighs_Inner_Size_n|p</Data>
+    </Slider>
+    <Slider name="RectusFemoris" invert="false" small="0" big="0">
+      <Data name="BaseShapeRectusFemoris" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeRectusFemoris</Data>
+      <Data name="CorsetRectusFemoris" target="Corset">cuirass.osd\CorsetRectusFemoris</Data>
+    </Slider>
+    <Slider name="VastusLateralis" invert="false" small="0" big="0">
+      <Data name="BaseShapeVastusLateralis" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeVastusLateralis</Data>
+    </Slider>
+    <Slider name="VastusMedialis" invert="false" small="0" big="0">
+      <Data name="BaseShapeVastusMedialis" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeVastusMedialis</Data>
+    </Slider>
+    <Slider name="IllotibialTract" invert="false" small="0" big="0">
+      <Data name="BaseShapeIllotibialTract" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeIllotibialTract</Data>
+    </Slider>
+    <Slider name="Hamstrings" invert="false" small="0" big="0">
+      <Data name="BaseShapeHamstrings" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeHamstrings</Data>
+    </Slider>
+    <Slider name="KneeBoneSize p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeKneeBoneSize p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeKneeBoneSize p|n</Data>
+    </Slider>
+    <Slider name="KneeDefinition" invert="false" small="0" big="0">
+      <Data name="BaseShapeKneeDefinition" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeKneeDefinition</Data>
+    </Slider>
+    <Slider name="KneeOuter p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeKneeOuter p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeKneeOuter p|n</Data>
+    </Slider>
+    <Slider name="CalfUpperSize p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeCalfUpperSize p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeCalfUpperSize p|n</Data>
+      <Data name="CorsetCalfUpperSize p|n" target="Corset">cuirass.osd\CorsetCalfUpperSize p|n</Data>
+      <Data name="NeckCalfUpperSize p|n" target="Neck">cuirass.osd\NeckCalfUpperSize p|n</Data>
+    </Slider>
+    <Slider name="ShinSize p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeShinSize p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeShinSize p|n</Data>
+    </Slider>
+    <Slider name="Shin_Forward" invert="false" small="0" big="0">
+      <Data name="BaseShapeShin_Forward" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeShin_Forward</Data>
+      <Data name="CorsetShin_Forward" target="Corset">cuirass.osd\CorsetShin_Forward</Data>
+      <Data name="NeckShin_Forward" target="Neck">cuirass.osd\NeckShin_Forward</Data>
+    </Slider>
+    <Slider name="Bowed_Calves" invert="false" small="0" big="0">
+      <Data name="BaseShapeBowed_Calves" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeBowed_Calves</Data>
+    </Slider>
+    <Slider name="AnkleThickness p|n" invert="false" small="0" big="0">
+      <Data name="BaseShapeAnkleThickness p|n" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAnkleThickness p|n</Data>
+    </Slider>
+    <Slider name="Thicc_calves" invert="false" small="0" big="0">
+      <Data name="BaseShapeThicc_calves" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeThicc_calves</Data>
+    </Slider>
+    <Slider name="FeetSize n|p" invert="false" small="0" big="0">
+      <Data name="BaseShapeFeetSize n|p" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeFeetSize n|p</Data>
+    </Slider>
+    <Slider name="Normals_recalc" invert="false" small="0" big="0" hidden="true">
+      <Data name="BaseShapeNormals_recalc" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNormals_recalc</Data>
+    </Slider>
+    <Slider name="GluteFlex_L" invert="false" small="0" big="0" hidden="true">
+      <Data name="BaseShapeGluteFlex_L" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGluteFlex_L</Data>
+      <Data name="CorsetGluteFlex_L" target="Corset">cuirass.osd\CorsetGluteFlex_L</Data>
+    </Slider>
+    <Slider name="GluteFlex_R" invert="false" small="0" big="0" hidden="true">
+      <Data name="BaseShapeGluteFlex_R" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeGluteFlex_R</Data>
+      <Data name="CorsetGluteFlex_R" target="Corset">cuirass.osd\CorsetGluteFlex_R</Data>
+    </Slider>
+    <Slider name="ThighsFlex_L" invert="false" small="0" big="0" hidden="true">
+      <Data name="BaseShapeThighsFlex_L" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeThighsFlex_L</Data>
+      <Data name="CorsetThighsFlex_L" target="Corset">cuirass.osd\CorsetThighsFlex_L</Data>
+    </Slider>
+    <Slider name="ThighsFlex_R" invert="false" small="0" big="0" hidden="true">
+      <Data name="BaseShapeThighsFlex_R" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeThighsFlex_R</Data>
+      <Data name="CorsetThighsFlex_R" target="Corset">cuirass.osd\CorsetThighsFlex_R</Data>
+    </Slider>
+    <Slider name="AbsFlex" invert="false" small="0" big="0" hidden="true">
+      <Data name="BaseShapeAbsFlex" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAbsFlex</Data>
+      <Data name="CorsetAbsFlex" target="Corset">cuirass.osd\CorsetAbsFlex</Data>
+    </Slider>
+    <Slider name="ArmBending_L" invert="false" small="0" big="0" hidden="true">
+      <Data name="BaseShapeArmBending_L" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeArmBending_L</Data>
+      <Data name="CorsetArmBending_L" target="Corset">cuirass.osd\CorsetArmBending_L</Data>
+    </Slider>
+    <Slider name="ArmBending_R" invert="false" small="0" big="0" hidden="true">
+      <Data name="BaseShapeArmBending_R" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeArmBending_R</Data>
+      <Data name="CorsetArmBending_R" target="Corset">cuirass.osd\CorsetArmBending_R</Data>
+    </Slider>
+    <Slider name="Nyl2_Root" invert="false" small="0" big="0" hidden="true">
+      <Data name="BaseShapeNyl2_Root" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeNyl2_Root</Data>
+      <Data name="CorsetNyl2_Root" target="Corset">cuirass.osd\CorsetNyl2_Root</Data>
+    </Slider>
+    <Slider name="AreolaeSizeSmall_UV_fix" invert="false" small="0" big="0" uv="true">
+      <Data name="BaseShapeAreolaeSizeSmall_UV_fix" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAreolaeSizeSmall_UV_fix</Data>
+    </Slider>
+  </SliderSet>
+<SliderSet name="PSQ UBE 变身 - 海伦娜魅魔 - 角饰">
+    <ReferenceInfo ProjectFile="SliderSets\UBE SE 2.0 Release Body.osp" ProjectName="UBE SE 2.0 Release Body" ShapeName="BaseShape" />
+    <DataFolder>PSQ_Package_20261106\UBE\F013</DataFolder>
+    <SourceFile>horns.nif</SourceFile>
+    <OutputPath>meshes/!UBE/PSQ/ExternalOutfits/Helena</OutputPath>
+    <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">horns</OutputFile>
+    <Shape target="Horn">Horn</Shape>
+  </SliderSet>
+<SliderSet name="PSQ UBE 变身 - 海伦娜魅魔 - 靴子">
+    <ReferenceInfo ProjectFile="RefTemplates\PSQ UBE\PSQ UBE Heel Reference.osp" ProjectName="PSQ UBE Heel Reference" ShapeName="Feet" />
+    <DataFolder>PSQ_Package_20261106\UBE\F013</DataFolder>
+    <SourceFile>boots.nif</SourceFile>
+    <OutputPath>meshes/!UBE/PSQ/ExternalOutfits/Helena</OutputPath>
+    <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">boots</OutputFile>
+    <Shape target="Boots" DataFolder="PSQ_Package_20261106\UBE\F013">Boots</Shape>
+    <Shape target="Feet" DataFolder="PSQ_Package_20261106\UBE\F012">Feet</Shape>
+    <Shape target="Lace" DataFolder="PSQ_Package_20261106\UBE\F013">Lace</Shape>
+    <Shape target="Stocking" DataFolder="PSQ_Package_20261106\UBE\F013">Stocking</Shape>
+    <Slider name="NipplesShowUp" invert="false" small="100" big="100">
+      <Data name="StockingNipplesShowUp" target="Stocking">boots.osd\StockingNipplesShowUp</Data>
+    </Slider>
+    <Slider name="Amazon" invert="false" small="0" big="0">
+      <Data name="BootsAmazon" target="Boots">boots.osd\BootsAmazon</Data>
+      <Data name="LaceAmazon" target="Lace">boots.osd\LaceAmazon</Data>
+      <Data name="StockingAmazon" target="Stocking">boots.osd\StockingAmazon</Data>
+    </Slider>
+    <Slider name="FitnessDetails_2.0" invert="false" small="0" big="0">
+      <Data name="BootsFitnessDetails_2.0" target="Boots">boots.osd\BootsFitnessDetails_2.0</Data>
+      <Data name="LaceFitnessDetails_2.0" target="Lace">boots.osd\LaceFitnessDetails_2.0</Data>
+      <Data name="StockingFitnessDetails_2.0" target="Stocking">boots.osd\StockingFitnessDetails_2.0</Data>
+    </Slider>
+    <Slider name="Skinny2.0" invert="false" small="0" big="0">
+      <Data name="BootsSkinny2.0" target="Boots">boots.osd\BootsSkinny2.0</Data>
+      <Data name="LaceSkinny2.0" target="Lace">boots.osd\LaceSkinny2.0</Data>
+      <Data name="StockingSkinny2.0" target="Stocking">boots.osd\StockingSkinny2.0</Data>
+    </Slider>
+    <Slider name="SquarePeg3d" invert="false" small="0" big="0">
+      <Data name="FeetSquarePeg3d" target="Feet">PSQ UBE Heel Reference.osd\FeetSquarePeg3d</Data>
+      <Data name="BootsSquarePeg3d" target="Boots">boots.osd\BootsSquarePeg3d</Data>
+      <Data name="StockingSquarePeg3d" target="Stocking">boots.osd\StockingSquarePeg3d</Data>
+    </Slider>
+    <Slider name="TBD  2.0" invert="false" small="0" big="0">
+      <Data name="BootsTBD  2.0" target="Boots">boots.osd\BootsTBD  2.0</Data>
+      <Data name="LaceTBD  2.0" target="Lace">boots.osd\LaceTBD  2.0</Data>
+      <Data name="StockingTBD  2.0" target="Stocking">boots.osd\StockingTBD  2.0</Data>
+    </Slider>
+    <Slider name="Donaught" invert="false" small="0" big="0">
+      <Data name="FeetDonaught" target="Feet">PSQ UBE Heel Reference.osd\FeetDonaught</Data>
+      <Data name="BootsDonaught" target="Boots">boots.osd\BootsDonaught</Data>
+      <Data name="StockingDonaught" target="Stocking">boots.osd\StockingDonaught</Data>
+    </Slider>
+    <Slider name="Juicy_body" invert="false" small="0" big="0">
+      <Data name="FeetJuicy_body" target="Feet">PSQ UBE Heel Reference.osd\FeetJuicy_body</Data>
+      <Data name="BootsJuicy_body" target="Boots">boots.osd\BootsJuicy_body</Data>
+      <Data name="StockingJuicy_body" target="Stocking">boots.osd\StockingJuicy_body</Data>
+    <Data name="LaceJuicy_body" target="Lace">boots.osd\LaceJuicy_body</Data></Slider>
+    <Slider name="Peachy" invert="false" small="0" big="0">
+      <Data name="FeetPeachy" target="Feet">PSQ UBE Heel Reference.osd\FeetPeachy</Data>
+      <Data name="BootsPeachy" target="Boots">boots.osd\BootsPeachy</Data>
+      <Data name="StockingPeachy" target="Stocking">boots.osd\StockingPeachy</Data>
+    </Slider>
+    <Slider name="Venus" invert="false" small="0" big="0">
+      <Data name="BootsVenus" target="Boots">boots.osd\BootsVenus</Data>
+      <Data name="LaceVenus" target="Lace">boots.osd\LaceVenus</Data>
+      <Data name="StockingVenus" target="Stocking">boots.osd\StockingVenus</Data>
+    </Slider>
+    <Slider name="ClaviclesFront" invert="false" small="0" big="0">
+      <Data name="FeetClaviclesFront" target="Feet">PSQ UBE Heel Reference.osd\FeetClaviclesFront</Data>
+    </Slider>
+    <Slider name="HipSize p|n" invert="false" small="0" big="0">
+      <Data name="BootsHipSize p|n" target="Boots">boots.osd\BootsHipSize p|n</Data>
+      <Data name="LaceHipSize p|n" target="Lace">boots.osd\LaceHipSize p|n</Data>
+      <Data name="StockingHipSize p|n" target="Stocking">boots.osd\StockingHipSize p|n</Data>
+    </Slider>
+    <Slider name="HipsAndLegsDistanceApart p|n" invert="false" small="0" big="0">
+      <Data name="FeetHipsAndLegsDistanceApart p|n" target="Feet">PSQ UBE Heel Reference.osd\FeetHipsAndLegsDistanceApart p|n</Data>
+      <Data name="BootsHipsAndLegsDistanceApart p|n" target="Boots">boots.osd\BootsHipsAndLegsDistanceApart p|n</Data>
+      <Data name="StockingHipsAndLegsDistanceApart p|n" target="Stocking">boots.osd\StockingHipsAndLegsDistanceApart p|n</Data>
+    </Slider>
+    <Slider name="Hipbone p|n" invert="false" small="0" big="0">
+      <Data name="BootsHipbone p|n" target="Boots">boots.osd\BootsHipbone p|n</Data>
+    </Slider>
+    <Slider name="Hip_Upper_Width n|p" invert="false" small="0" big="0">
+      <Data name="BootsHip_Upper_Width n|p" target="Boots">boots.osd\BootsHip_Upper_Width n|p</Data>
+      <Data name="LaceHip_Upper_Width n|p" target="Lace">boots.osd\LaceHip_Upper_Width n|p</Data>
+      <Data name="StockingHip_Upper_Width n|p" target="Stocking">boots.osd\StockingHip_Upper_Width n|p</Data>
+    </Slider>
+    <Slider name="Hip_Wide" invert="false" small="0" big="0">
+      <Data name="BootsHip_Wide" target="Boots">boots.osd\BootsHip_Wide</Data>
+      <Data name="LaceHip_Wide" target="Lace">boots.osd\LaceHip_Wide</Data>
+      <Data name="StockingHip_Wide" target="Stocking">boots.osd\StockingHip_Wide</Data>
+    </Slider>
+    <Slider name="Hip_narrow" invert="false" small="0" big="0">
+      <Data name="BootsHip_narrow" target="Boots">boots.osd\BootsHip_narrow</Data>
+      <Data name="LaceHip_narrow" target="Lace">boots.osd\LaceHip_narrow</Data>
+      <Data name="StockingHip_narrow" target="Stocking">boots.osd\StockingHip_narrow</Data>
+    </Slider>
+    <Slider name="HipsOuterBonesFatty" invert="false" small="0" big="0">
+      <Data name="BootsHipsOuterBonesFatty" target="Boots">boots.osd\BootsHipsOuterBonesFatty</Data>
+      <Data name="LaceHipsOuterBonesFatty" target="Lace">boots.osd\LaceHipsOuterBonesFatty</Data>
+      <Data name="StockingHipsOuterBonesFatty" target="Stocking">boots.osd\StockingHipsOuterBonesFatty</Data>
+    </Slider>
+    <Slider name="HipsSideMuscles" invert="false" small="0" big="0">
+      <Data name="BootsHipsSideMuscles" target="Boots">boots.osd\BootsHipsSideMuscles</Data>
+      <Data name="LaceHipsSideMuscles" target="Lace">boots.osd\LaceHipsSideMuscles</Data>
+      <Data name="StockingHipsSideMuscles" target="Stocking">boots.osd\StockingHipsSideMuscles</Data>
+    </Slider>
+    <Slider name="GreaterTrochanterBone" invert="false" small="0" big="0">
+      <Data name="BootsGreaterTrochanterBone" target="Boots">boots.osd\BootsGreaterTrochanterBone</Data>
+    </Slider>
+    <Slider name="GluteSize p|n" invert="false" small="0" big="0">
+      <Data name="BootsGluteSize p|n" target="Boots">boots.osd\BootsGluteSize p|n</Data>
+      <Data name="LaceGluteSize p|n" target="Lace">boots.osd\LaceGluteSize p|n</Data>
+    </Slider>
+    <Slider name="GluteHeight p|n" invert="false" small="0" big="0">
+      <Data name="BootsGluteHeight p|n" target="Boots">boots.osd\BootsGluteHeight p|n</Data>
+      <Data name="LaceGluteHeight p|n" target="Lace">boots.osd\LaceGluteHeight p|n</Data>
+      <Data name="StockingGluteHeight p|n" target="Stocking">boots.osd\StockingGluteHeight p|n</Data>
+    </Slider>
+    <Slider name="GluteSpread p|n" invert="false" small="0" big="0">
+      <Data name="BootsGluteSpread p|n" target="Boots">boots.osd\BootsGluteSpread p|n</Data>
+      <Data name="LaceGluteSpread p|n" target="Lace">boots.osd\LaceGluteSpread p|n</Data>
+      <Data name="StockingGluteSpread p|n" target="Stocking">boots.osd\StockingGluteSpread p|n</Data>
+    </Slider>
+    <Slider name="GluteStretch p|n" invert="false" small="0" big="0">
+      <Data name="BootsGluteStretch p|n" target="Boots">boots.osd\BootsGluteStretch p|n</Data>
+      <Data name="LaceGluteStretch p|n" target="Lace">boots.osd\LaceGluteStretch p|n</Data>
+    </Slider>
+    <Slider name="GluteTwistX p|n" invert="false" small="0" big="0">
+      <Data name="BootsGluteTwistX p|n" target="Boots">boots.osd\BootsGluteTwistX p|n</Data>
+      <Data name="LaceGluteTwistX p|n" target="Lace">boots.osd\LaceGluteTwistX p|n</Data>
+      <Data name="StockingGluteTwistX p|n" target="Stocking">boots.osd\StockingGluteTwistX p|n</Data>
+    </Slider>
+    <Slider name="GluteOuterHeight p|n" invert="false" small="0" big="0">
+      <Data name="BootsGluteOuterHeight p|n" target="Boots">boots.osd\BootsGluteOuterHeight p|n</Data>
+      <Data name="LaceGluteOuterHeight p|n" target="Lace">boots.osd\LaceGluteOuterHeight p|n</Data>
+      <Data name="StockingGluteOuterHeight p|n" target="Stocking">boots.osd\StockingGluteOuterHeight p|n</Data>
+    </Slider>
+    <Slider name="GluteSeparateWidth p|n" invert="false" small="0" big="0">
+      <Data name="BootsGluteSeparateWidth p|n" target="Boots">boots.osd\BootsGluteSeparateWidth p|n</Data>
+      <Data name="LaceGluteSeparateWidth p|n" target="Lace">boots.osd\LaceGluteSeparateWidth p|n</Data>
+      <Data name="StockingGluteSeparateWidth p|n" target="Stocking">boots.osd\StockingGluteSeparateWidth p|n</Data>
+    </Slider>
+    <Slider name="GlutesUpperDepth p|n" invert="false" small="0" big="0">
+      <Data name="BootsGlutesUpperDepth p|n" target="Boots">boots.osd\BootsGlutesUpperDepth p|n</Data>
+      <Data name="LaceGlutesUpperDepth p|n" target="Lace">boots.osd\LaceGlutesUpperDepth p|n</Data>
+      <Data name="StockingGlutesUpperDepth p|n" target="Stocking">boots.osd\StockingGlutesUpperDepth p|n</Data>
+    </Slider>
+    <Slider name="GluteUpperWidth p|n" invert="false" small="0" big="0">
+      <Data name="BootsGluteUpperWidth p|n" target="Boots">boots.osd\BootsGluteUpperWidth p|n</Data>
+      <Data name="LaceGluteUpperWidth p|n" target="Lace">boots.osd\LaceGluteUpperWidth p|n</Data>
+    </Slider>
+    <Slider name="GluteLowerHeight p|n" invert="false" small="0" big="0">
+      <Data name="BootsGluteLowerHeight p|n" target="Boots">boots.osd\BootsGluteLowerHeight p|n</Data>
+      <Data name="LaceGluteLowerHeight p|n" target="Lace">boots.osd\LaceGluteLowerHeight p|n</Data>
+      <Data name="StockingGluteLowerHeight p|n" target="Stocking">boots.osd\StockingGluteLowerHeight p|n</Data>
+    </Slider>
+    <Slider name="GluteLowerWidth p|n" invert="false" small="0" big="0">
+      <Data name="BootsGluteLowerWidth p|n" target="Boots">boots.osd\BootsGluteLowerWidth p|n</Data>
+      <Data name="LaceGluteLowerWidth p|n" target="Lace">boots.osd\LaceGluteLowerWidth p|n</Data>
+    </Slider>
+    <Slider name="GluteInnerHeight p|n" invert="false" small="0" big="0">
+      <Data name="BootsGluteInnerHeight p|n" target="Boots">boots.osd\BootsGluteInnerHeight p|n</Data>
+    </Slider>
+    <Slider name="GluteusDefinition" invert="false" small="0" big="0">
+      <Data name="BootsGluteusDefinition" target="Boots">boots.osd\BootsGluteusDefinition</Data>
+      <Data name="LaceGluteusDefinition" target="Lace">boots.osd\LaceGluteusDefinition</Data>
+      <Data name="StockingGluteusDefinition" target="Stocking">boots.osd\StockingGluteusDefinition</Data>
+    </Slider>
+    <Slider name="GluteFolds" invert="false" small="0" big="0">
+      <Data name="BootsGluteFolds" target="Boots">boots.osd\BootsGluteFolds</Data>
+      <Data name="LaceGluteFolds" target="Lace">boots.osd\LaceGluteFolds</Data>
+      <Data name="StockingGluteFolds" target="Stocking">boots.osd\StockingGluteFolds</Data>
+    </Slider>
+    <Slider name="UpperThighsSizeBig" invert="false" small="0" big="0">
+      <Data name="BootsUpperThighsSizeBig" target="Boots">boots.osd\BootsUpperThighsSizeBig</Data>
+      <Data name="LaceUpperThighsSizeBig" target="Lace">boots.osd\LaceUpperThighsSizeBig</Data>
+      <Data name="StockingUpperThighsSizeBig" target="Stocking">boots.osd\StockingUpperThighsSizeBig</Data>
+    </Slider>
+    <Slider name="LowerThighsSizeBig" invert="false" small="0" big="0">
+      <Data name="BootsLowerThighsSizeBig" target="Boots">boots.osd\BootsLowerThighsSizeBig</Data>
+      <Data name="LaceLowerThighsSizeBig" target="Lace">boots.osd\LaceLowerThighsSizeBig</Data>
+      <Data name="StockingLowerThighsSizeBig" target="Stocking">boots.osd\StockingLowerThighsSizeBig</Data>
+    </Slider>
+    <Slider name="UpperThighsSizeSmall" invert="false" small="0" big="0">
+      <Data name="BootsUpperThighsSizeSmall" target="Boots">boots.osd\BootsUpperThighsSizeSmall</Data>
+      <Data name="LaceUpperThighsSizeSmall" target="Lace">boots.osd\LaceUpperThighsSizeSmall</Data>
+      <Data name="StockingUpperThighsSizeSmall" target="Stocking">boots.osd\StockingUpperThighsSizeSmall</Data>
+    </Slider>
+    <Slider name="LowerThighsSizeSmall" invert="false" small="0" big="0">
+      <Data name="BootsLowerThighsSizeSmall" target="Boots">boots.osd\BootsLowerThighsSizeSmall</Data>
+      <Data name="LaceLowerThighsSizeSmall" target="Lace">boots.osd\LaceLowerThighsSizeSmall</Data>
+      <Data name="StockingLowerThighsSizeSmall" target="Stocking">boots.osd\StockingLowerThighsSizeSmall</Data>
+    </Slider>
+    <Slider name="UpperThighsChubby" invert="false" small="0" big="0">
+      <Data name="BootsUpperThighsChubby" target="Boots">boots.osd\BootsUpperThighsChubby</Data>
+      <Data name="LaceUpperThighsChubby" target="Lace">boots.osd\LaceUpperThighsChubby</Data>
+      <Data name="StockingUpperThighsChubby" target="Stocking">boots.osd\StockingUpperThighsChubby</Data>
+    </Slider>
+    <Slider name="ThighApart" invert="false" small="0" big="0">
+      <Data name="BootsThighApart" target="Boots">boots.osd\BootsThighApart</Data>
+      <Data name="LaceThighApart" target="Lace">boots.osd\LaceThighApart</Data>
+      <Data name="StockingThighApart" target="Stocking">boots.osd\StockingThighApart</Data>
+    </Slider>
+    <Slider name="ThighFrontDepth" invert="false" small="0" big="0">
+      <Data name="BootsThighFrontDepth" target="Boots">boots.osd\BootsThighFrontDepth</Data>
+      <Data name="LaceThighFrontDepth" target="Lace">boots.osd\LaceThighFrontDepth</Data>
+      <Data name="StockingThighFrontDepth" target="Stocking">boots.osd\StockingThighFrontDepth</Data>
+    </Slider>
+    <Slider name="UpperThighsDepth" invert="false" small="0" big="0">
+      <Data name="BootsUpperThighsDepth" target="Boots">boots.osd\BootsUpperThighsDepth</Data>
+      <Data name="LaceUpperThighsDepth" target="Lace">boots.osd\LaceUpperThighsDepth</Data>
+      <Data name="StockingUpperThighsDepth" target="Stocking">boots.osd\StockingUpperThighsDepth</Data>
+    </Slider>
+    <Slider name="ThighBackDepth" invert="false" small="0" big="0">
+      <Data name="BootsThighBackDepth" target="Boots">boots.osd\BootsThighBackDepth</Data>
+      <Data name="LaceThighBackDepth" target="Lace">boots.osd\LaceThighBackDepth</Data>
+      <Data name="StockingThighBackDepth" target="Stocking">boots.osd\StockingThighBackDepth</Data>
+    </Slider>
+    <Slider name="UpperInnerThighSize p|n" invert="false" small="0" big="0">
+      <Data name="BootsUpperInnerThighSize p|n" target="Boots">boots.osd\BootsUpperInnerThighSize p|n</Data>
+      <Data name="StockingUpperInnerThighSize p|n" target="Stocking">boots.osd\StockingUpperInnerThighSize p|n</Data>
+    </Slider>
+    <Slider name="LowerInnerThighSize p|n" invert="false" small="0" big="0">
+      <Data name="BootsLowerInnerThighSize p|n" target="Boots">boots.osd\BootsLowerInnerThighSize p|n</Data>
+      <Data name="StockingLowerInnerThighSize p|n" target="Stocking">boots.osd\StockingLowerInnerThighSize p|n</Data>
+    </Slider>
+    <Slider name="LowerOuterThighSize Bigger" invert="false" small="0" big="0">
+      <Data name="BootsLowerOuterThighSize Bigger" target="Boots">boots.osd\BootsLowerOuterThighSize Bigger</Data>
+      <Data name="LaceLowerOuterThighSize Bigger" target="Lace">boots.osd\LaceLowerOuterThighSize Bigger</Data>
+      <Data name="StockingLowerOuterThighSize Bigger" target="Stocking">boots.osd\StockingLowerOuterThighSize Bigger</Data>
+    </Slider>
+    <Slider name="ThighsOuter big" invert="false" small="0" big="0">
+      <Data name="BootsThighsOuter big" target="Boots">boots.osd\BootsThighsOuter big</Data>
+      <Data name="LaceThighsOuter big" target="Lace">boots.osd\LaceThighsOuter big</Data>
+      <Data name="StockingThighsOuter big" target="Stocking">boots.osd\StockingThighsOuter big</Data>
+    </Slider>
+    <Slider name="ThighsOuter small" invert="false" small="0" big="0">
+      <Data name="BootsThighsOuter small" target="Boots">boots.osd\BootsThighsOuter small</Data>
+      <Data name="LaceThighsOuter small" target="Lace">boots.osd\LaceThighsOuter small</Data>
+      <Data name="StockingThighsOuter small" target="Stocking">boots.osd\StockingThighsOuter small</Data>
+    </Slider>
+    <Slider name="Thighs_Inner_Size_n|p" invert="false" small="0" big="0">
+      <Data name="BootsThighs_Inner_Size_n|p" target="Boots">boots.osd\BootsThighs_Inner_Size_n|p</Data>
+      <Data name="StockingThighs_Inner_Size_n|p" target="Stocking">boots.osd\StockingThighs_Inner_Size_n|p</Data>
+    </Slider>
+    <Slider name="RectusFemoris" invert="false" small="0" big="0">
+      <Data name="BootsRectusFemoris" target="Boots">boots.osd\BootsRectusFemoris</Data>
+      <Data name="StockingRectusFemoris" target="Stocking">boots.osd\StockingRectusFemoris</Data>
+    </Slider>
+    <Slider name="VastusLateralis" invert="false" small="0" big="0">
+      <Data name="BootsVastusLateralis" target="Boots">boots.osd\BootsVastusLateralis</Data>
+      <Data name="LaceVastusLateralis" target="Lace">boots.osd\LaceVastusLateralis</Data>
+      <Data name="StockingVastusLateralis" target="Stocking">boots.osd\StockingVastusLateralis</Data>
+    </Slider>
+    <Slider name="VastusMedialis" invert="false" small="0" big="0">
+      <Data name="BootsVastusMedialis" target="Boots">boots.osd\BootsVastusMedialis</Data>
+      <Data name="StockingVastusMedialis" target="Stocking">boots.osd\StockingVastusMedialis</Data>
+    </Slider>
+    <Slider name="IllotibialTract" invert="false" small="0" big="0">
+      <Data name="BootsIllotibialTract" target="Boots">boots.osd\BootsIllotibialTract</Data>
+      <Data name="LaceIllotibialTract" target="Lace">boots.osd\LaceIllotibialTract</Data>
+      <Data name="StockingIllotibialTract" target="Stocking">boots.osd\StockingIllotibialTract</Data>
+    </Slider>
+    <Slider name="Hamstrings" invert="false" small="0" big="0">
+      <Data name="BootsHamstrings" target="Boots">boots.osd\BootsHamstrings</Data>
+      <Data name="LaceHamstrings" target="Lace">boots.osd\LaceHamstrings</Data>
+      <Data name="StockingHamstrings" target="Stocking">boots.osd\StockingHamstrings</Data>
+    </Slider>
+    <Slider name="KneeBoneSize p|n" invert="false" small="0" big="0">
+      <Data name="BootsKneeBoneSize p|n" target="Boots">boots.osd\BootsKneeBoneSize p|n</Data>
+      <Data name="StockingKneeBoneSize p|n" target="Stocking">boots.osd\StockingKneeBoneSize p|n</Data>
+    </Slider>
+    <Slider name="KneeDefinition" invert="false" small="0" big="0">
+      <Data name="BootsKneeDefinition" target="Boots">boots.osd\BootsKneeDefinition</Data>
+      <Data name="StockingKneeDefinition" target="Stocking">boots.osd\StockingKneeDefinition</Data>
+    </Slider>
+    <Slider name="KneeOuter p|n" invert="false" small="0" big="0">
+      <Data name="BootsKneeOuter p|n" target="Boots">boots.osd\BootsKneeOuter p|n</Data>
+      <Data name="StockingKneeOuter p|n" target="Stocking">boots.osd\StockingKneeOuter p|n</Data>
+    </Slider>
+    <Slider name="CalfUpperSize p|n" invert="false" small="0" big="0">
+      <Data name="BootsCalfUpperSize p|n" target="Boots">boots.osd\BootsCalfUpperSize p|n</Data>
+      <Data name="StockingCalfUpperSize p|n" target="Stocking">boots.osd\StockingCalfUpperSize p|n</Data>
+    </Slider>
+    <Slider name="ShinSize p|n" invert="false" small="0" big="0">
+      <Data name="FeetShinSize p|n" target="Feet">PSQ UBE Heel Reference.osd\FeetShinSize p|n</Data>
+      <Data name="BootsShinSize p|n" target="Boots">boots.osd\BootsShinSize p|n</Data>
+      <Data name="StockingShinSize p|n" target="Stocking">boots.osd\StockingShinSize p|n</Data>
+    </Slider>
+    <Slider name="Shin_Forward" invert="false" small="0" big="0">
+      <Data name="FeetShin_Forward" target="Feet">PSQ UBE Heel Reference.osd\FeetShin_Forward</Data>
+      <Data name="BootsShin_Forward" target="Boots">boots.osd\BootsShin_Forward</Data>
+      <Data name="StockingShin_Forward" target="Stocking">boots.osd\StockingShin_Forward</Data>
+    </Slider>
+    <Slider name="Bowed_Calves" invert="false" small="0" big="0">
+      <Data name="FeetBowed_Calves" target="Feet">PSQ UBE Heel Reference.osd\FeetBowed_Calves</Data>
+      <Data name="BootsBowed_Calves" target="Boots">boots.osd\BootsBowed_Calves</Data>
+      <Data name="StockingBowed_Calves" target="Stocking">boots.osd\StockingBowed_Calves</Data>
+    <Data name="LaceBowed_Calves" target="Lace">boots.osd\LaceBowed_Calves</Data></Slider>
+    <Slider name="AnkleThickness p|n" invert="false" small="0" big="0">
+      <Data name="FeetAnkleThickness p|n" target="Feet">PSQ UBE Heel Reference.osd\FeetAnkleThickness p|n</Data>
+      <Data name="BootsAnkleThickness p|n" target="Boots">boots.osd\BootsAnkleThickness p|n</Data>
+      <Data name="StockingAnkleThickness p|n" target="Stocking">boots.osd\StockingAnkleThickness p|n</Data>
+    </Slider>
+    <Slider name="Thicc_calves" invert="false" small="0" big="0">
+      <Data name="FeetThicc_calves" target="Feet">PSQ UBE Heel Reference.osd\FeetThicc_calves</Data>
+      <Data name="BootsThicc_calves" target="Boots">boots.osd\BootsThicc_calves</Data>
+      <Data name="StockingThicc_calves" target="Stocking">boots.osd\StockingThicc_calves</Data>
+    </Slider>
+    <Slider name="FeetSize n|p" invert="false" small="0" big="0">
+      <Data name="FeetFeetSize n|p" target="Feet">PSQ UBE Heel Reference.osd\FeetFeetSize n|p</Data>
+      <Data name="BootsFeetSize n|p" target="Boots">boots.osd\BootsFeetSize n|p</Data>
+      <Data name="StockingFeetSize n|p" target="Stocking">boots.osd\StockingFeetSize n|p</Data>
+    </Slider>
+    <Slider name="Normals_recalc" invert="false" small="0" big="0" hidden="true">
+      <Data name="FeetNormals_recalc" target="Feet">PSQ UBE Heel Reference.osd\FeetNormals_recalc</Data>
+    </Slider>
+    <Slider name="GluteFlex_L" invert="false" small="0" big="0" hidden="true">
+      <Data name="BootsGluteFlex_L" target="Boots">boots.osd\BootsGluteFlex_L</Data>
+      <Data name="LaceGluteFlex_L" target="Lace">boots.osd\LaceGluteFlex_L</Data>
+      <Data name="StockingGluteFlex_L" target="Stocking">boots.osd\StockingGluteFlex_L</Data>
+    </Slider>
+    <Slider name="GluteFlex_R" invert="false" small="0" big="0" hidden="true">
+      <Data name="BootsGluteFlex_R" target="Boots">boots.osd\BootsGluteFlex_R</Data>
+      <Data name="LaceGluteFlex_R" target="Lace">boots.osd\LaceGluteFlex_R</Data>
+      <Data name="StockingGluteFlex_R" target="Stocking">boots.osd\StockingGluteFlex_R</Data>
+    </Slider>
+    <Slider name="ThighsFlex_L" invert="false" small="0" big="0" hidden="true">
+      <Data name="BootsThighsFlex_L" target="Boots">boots.osd\BootsThighsFlex_L</Data>
+      <Data name="LaceThighsFlex_L" target="Lace">boots.osd\LaceThighsFlex_L</Data>
+      <Data name="StockingThighsFlex_L" target="Stocking">boots.osd\StockingThighsFlex_L</Data>
+    </Slider>
+    <Slider name="ThighsFlex_R" invert="false" small="0" big="0" hidden="true">
+      <Data name="BootsThighsFlex_R" target="Boots">boots.osd\BootsThighsFlex_R</Data>
+      <Data name="LaceThighsFlex_R" target="Lace">boots.osd\LaceThighsFlex_R</Data>
+      <Data name="StockingThighsFlex_R" target="Stocking">boots.osd\StockingThighsFlex_R</Data>
+    </Slider>
+    <Slider name="ToeNailsZap" invert="false" small="0" big="0" zap="true">
+      <Data name="FeetToeNailsZap" target="Feet">PSQ UBE Heel Reference.osd\FeetToeNailsZap</Data>
+    </Slider>
+    <Slider name="ToeNails_Length" invert="false" small="0" big="0">
+      <Data name="FeetToeNails_Length" target="Feet">PSQ UBE Heel Reference.osd\FeetToeNails_Length</Data>
+      <Data name="BootsToeNails_Length" target="Boots">boots.osd\BootsToeNails_Length</Data>
+    </Slider>
+    <Slider name="Claw_ToeNails" invert="false" small="0" big="0">
+      <Data name="FeetClaw_ToeNails" target="Feet">PSQ UBE Heel Reference.osd\FeetClaw_ToeNails</Data>
+      <Data name="BootsClaw_ToeNails" target="Boots">boots.osd\BootsClaw_ToeNails</Data>
+    </Slider>
+    <Slider name="HiHeelz_CBBE_to_UBE" invert="false" small="0" big="0" hidden="true">
+      <Data name="FeetHiHeelz_CBBE_to_UBE" target="Feet">PSQ UBE Heel Reference.osd\FeetHiHeelz_CBBE_to_UBE</Data>
+      <Data name="BootsHiHeelz_CBBE_to_UBE" target="Boots">boots.osd\BootsHiHeelz_CBBE_to_UBE</Data>
+      <Data name="StockingHiHeelz_CBBE_to_UBE" target="Stocking">boots.osd\StockingHiHeelz_CBBE_to_UBE</Data>
+    </Slider>
+  </SliderSet>
+</SliderSetInfo>

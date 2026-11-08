@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SliderGroups>
+  <Group name="PSQ UBE Outfits">
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 尾巴" />
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 手套" />
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 翅膀" />
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 胸甲" />
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 角饰" />
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 靴子" />
+  </Group>
+  <Group name="UBE">
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 尾巴" />
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 手套" />
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 翅膀" />
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 胸甲" />
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 角饰" />
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 靴子" />
+  </Group>
+  <Group name="UBE Female">
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 尾巴" />
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 手套" />
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 翅膀" />
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 胸甲" />
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 角饰" />
+    <Member name="PSQ UBE 变身 - 吸血鬼 - 靴子" />
+  </Group>
+</SliderGroups>

@@ -1,7 +1,7 @@
 {
   "name": "PSQ Reburn",
-  "version": "0.28",
-  "date": "2026-11-06",
+  "version": "0.29",
+  "date": "2026-11-08",
   "channel": "test-release",
   "optional_modules_separate": [
     "Wingflight",
@@ -134,7 +134,7 @@
     "game_runtime_tested": false
   },
   "package_revision": 61,
-  "display_version": "v0.26",
+  "display_version": "v0.29",
   "version_relabel": {
     "date": "2026-10-26",
     "previous_package_label": "0.22",
@@ -557,8 +557,7 @@
     ],
     "all_patches_in_PSQ": true,
     "Helena_extra_items": [
-      "tail",
-      "independent wings"
+      "provided by standalone Helena outfit"
     ],
     "original_asset_directories_unchanged_except_metadata_and_name": true,
     "old_framework_and_PPlus_static_compile": true,
@@ -913,7 +912,7 @@
   "dx_author_ube_integration": {
     "source": "Nexus 116652",
     "custom_refit_used": false,
-    "optional_patch": "PSQ cloth UBE patch",
+    "optional_patch": "PSQ UBE Outfits.esp",
     "six_parts": true,
     "runtime_verified": false
   },
@@ -1044,5 +1043,21 @@
     "dual_framework_offline_verified": true,
     "runtime_tested": false,
     "controlled_speedup_measured": false
+  },
+  "packaging": {
+    "format": "FOMOD",
+    "body_slide_build": "user-managed",
+    "gameplay_revision": 61,
+    "oar_installation": "included-with-core",
+    "bodyslide_project_installation": "included-with-core",
+    "ube_outfits": "optional-included-user-builds-bodyslide",
+    "satiation": "three-tier-drain-and-skill-experience",
+    "apropos_damage_repair": "optional-default-off",
+    "ube_dx": "merged variant of PSQ UBE Outfits.esp",
+    "body_slide_groups": [
+      "PSQ 3BA Outfits",
+      "PSQ UBE Outfits"
+    ],
+    "ube_softbody_layer": false
   }
 }

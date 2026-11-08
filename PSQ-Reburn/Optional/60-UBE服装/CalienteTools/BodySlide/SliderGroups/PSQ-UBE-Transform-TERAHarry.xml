@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SliderGroups>
+  <Group name="PSQ UBE Outfits">
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 内裤" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 吊袜带" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 尾巴" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 护手" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 胸衣" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 长袜" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 靴子" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 项圈" />
+  </Group>
+  <Group name="UBE">
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 内裤" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 吊袜带" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 尾巴" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 护手" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 胸衣" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 长袜" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 靴子" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 项圈" />
+  </Group>
+  <Group name="UBE Female">
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 内裤" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 吊袜带" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 尾巴" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 护手" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 胸衣" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 长袜" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 靴子" />
+    <Member name="PSQ UBE 变身 - TERA魅魔 - 项圈" />
+  </Group>
+</SliderGroups>

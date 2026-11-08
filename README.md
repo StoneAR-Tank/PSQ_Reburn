@@ -4,10 +4,10 @@ PSQ Reburn 是《上古卷轴 V：天际特别版》的魅魔系统模组，基�
 
 成为魅魔，在普通形态与魅魔形态之间切换，通过吸取能量成长，并搭配自己喜欢的外观与服装。
 
-**当前版本：v0.28**  
-[下载 PSQ Reburn](https://github.com/StoneAR-Tank/PSQ_Reburn/releases/tag/v0.28)
+**当前版本：v0.29**  
+[下载 PSQ Reburn](https://github.com/StoneAR-Tank/PSQ_Reburn/releases/tag/v0.29)
 
-下载页面提供 PSQ 本体。想使用独立服装、飞行或其他可选功能，请另外安装对应模组。v0.28 的部分改动还需要进一步进行游戏内验证。
+下载页面提供完整版和 FOMOD 安装包。普通玩家推荐使用 FOMOD，在安装时选择自己需要的组件；完整版包含可手动选择的组件。独立服装、飞行或其他可选功能仍需另装对应模组。部分功能还需要进一步进行游戏内验证。
 
 ## 功能介绍
 
@@ -17,6 +17,7 @@ PSQ Reburn 是《上古卷轴 V：天际特别版》的魅魔系统模组，基�
 - **身形与皮肤切换**：配合 Body Change NG，为不同形态选择身形和皮肤。
 - **扶她外观**：配合 TRX 扶她模组，为不同形态选择外观。
 - **其他功能**：包含魅魔纹身、法阵、眷属和使魔等内容，并支持部分其他模组的联动。
+- **魅魔商人与饱食模式**：使用魅魔商人购买物品，也可以根据需要开启饱食模式，让能量状态影响成长。
 
 游戏内可通过 MCM 菜单调整设置。可用的外观和联动功能取决于已安装的模组。
 
@@ -58,7 +59,7 @@ PSQ Reburn 是《上古卷轴 V：天际特别版》的魅魔系统模组，基�
 | TERA Succubus 9DM | [相关 SE 版本](https://schaken-mods.com/file/tera-succubus-9dm-se) | 该页面的版本是否与 PSQ 接入版本完全一致尚待确认；请勿与下方 Harry TERA 混淆。 |
 | SucubusSister Shinano | [lilyrim 发布页面](https://www.patreon.com/u11199437/posts/free-shinano-117275572) | 按页面说明安装所需身体及物理前置。 |
 | SW Vampire | [相关页面线索](https://arca.live/b/tullius/96130274) | 页面目前无法直接核实，请确认服装版本。 |
-| Hirosin X Succubus | [原帖线索](https://arca.live/b/tullius/90058800) · [服装资料](https://modbooru.com/mods/x-succubus-set.1670) | PSQ 使用单独的 Hiroshi／X 魅魔资源包作为备用外观；该资源包不包含在本次下载中。 |
+| Hirosin X Succubus | [原帖线索](https://arca.live/b/tullius/90058800) · [服装资料](https://modbooru.com/mods/x-succubus-set.1670) | PSQ 的 Hiroshi／X 魅魔变身资源随本体提供；独立服装请按需安装。 |
 | TERA Succubus Armor（Harry TERA） | [作者页面](https://www.patreon.com/posts/tera-succubus-18130754) · [SE 移植页面](https://www.daymarrworkshop.com/post/tera-succubus-armor-cbbe-tbd-se) | 原版与 SE 移植版请按页面要求选择；不要与 TERA Succubus 9DM 混淆。 |
 
 装好服装后，可以在 PSQ 的 MCM 兼容页面查看是否识别。使用 BodySlide 时，选择与身体相同的预设，构建对应的 PSQ 服装，并勾选 **Build Morphs（建立变形）**。
@@ -82,7 +83,7 @@ MO2 **右侧插件列表**需要另外检查：启用所需的服装插件，并
 ## 安装与升级
 
 1. 结束互动、退出变身和飞行，在安全地点保存游戏，并备份存档。
-2. 安装所需前置和 PSQ Reburn v0.28，停用旧版 PSQ 及旧的 PSQ 累积补丁。
+2. 安装所需前置和 PSQ Reburn v0.29，停用旧版 PSQ 及旧的 PSQ 累积补丁。FOMOD 会根据已启用的前置推荐部分选项，请确认版本并按需调整。
 3. 根据需要安装服装、Body Change NG、TRX 或飞行模组，并按上方建议检查 MO2 排序。
 4. 重新启动游戏，在 PSQ 的 MCM 菜单中检查设置和兼容状态，再尝试变身。
 

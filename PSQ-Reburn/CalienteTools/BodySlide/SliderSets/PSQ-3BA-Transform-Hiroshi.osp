@@ -1,0 +1,1514 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SliderSetInfo version="1"><SliderSet name="PSQ 3BA 变身 - Hiroshi - 尾巴">
+        <DataFolder>PSQ_Package_20261106\3BA\F014</DataFolder>
+        <SourceFile>Tail Black.nif</SourceFile>
+        <OutputPath>meshes\PSQ\Outfits\Set08</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">tail</OutputFile>
+        <Shape target="Tail">Tail</Shape>
+        <Shape target="VirtualGround">VirtualGround</Shape>
+        <Shape target="body_feet">body_feet</Shape>
+        <Shape target="uup">uup</Shape>
+    </SliderSet>
+    <SliderSet name="PSQ 3BA 变身 - Hiroshi - 手套">
+        <DataFolder>PSQ_Package_20261106\3BA\F014</DataFolder>
+        <SourceFile>gloves Black.nif</SourceFile>
+        <OutputPath>meshes\PSQ\Outfits\Set08</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">gloves</OutputFile>
+        <Shape target="ARm_Sleeve_MEtal">ARm_Sleeve_MEtal</Shape>
+        <Shape target="Hand_wing">Hand_wing</Shape>
+        <Shape target="Hands" DataFolder="PSQ_Package_20261106\3BA\F002">Hands</Shape>
+        <Shape target="Sleeve">Sleeve</Shape>
+        <Slider name="ArmpitShape_v2" invert="false" small="0" big="0">
+            <Data name="SleeveArmpitShape_v2" target="Sleeve" local="true">gloves Black.osd\SleeveArmpitShape_v2</Data>
+        </Slider>
+        <Slider name="Arms" invert="false" small="0" big="0">
+            <Data name="ARm_Sleeve_MEtalArms" target="ARm_Sleeve_MEtal" local="true">gloves Black.osd\ARm_Sleeve_MEtalArms</Data>
+            <Data name="SleeveArms" target="Sleeve" local="true">gloves Black.osd\SleeveArms</Data>
+        </Slider>
+        <Slider name="BigTorso" invert="false" small="0" big="0">
+            <Data name="ARm_Sleeve_MEtalBigTorso" target="ARm_Sleeve_MEtal" local="true">gloves Black.osd\ARm_Sleeve_MEtalBigTorso</Data>
+            <Data name="SleeveBigTorso" target="Sleeve" local="true">gloves Black.osd\SleeveBigTorso</Data>
+        </Slider>
+        <Slider name="BreastsNewSH" invert="false" small="0" big="0">
+            <Data name="SleeveBreastsNewSH" target="Sleeve" local="true">gloves Black.osd\SleeveBreastsNewSH</Data>
+        </Slider>
+        <Slider name="BreastsSmall" invert="false" small="0" big="0">
+            <Data name="SleeveBreastsSmall" target="Sleeve" local="true">gloves Black.osd\SleeveBreastsSmall</Data>
+        </Slider>
+        <Slider name="BreastsSmall2" invert="false" small="0" big="0">
+            <Data name="ARm_Sleeve_MEtalBreastsSmall2" target="ARm_Sleeve_MEtal" local="true">gloves Black.osd\ARm_Sleeve_MEtalBreastsSmall2</Data>
+            <Data name="SleeveBreastsSmall2" target="Sleeve" local="true">gloves Black.osd\SleeveBreastsSmall2</Data>
+        </Slider>
+        <Slider name="ChestWidth" invert="false" small="0" big="0">
+            <Data name="SleeveChestWidth" target="Sleeve" local="true">gloves Black.osd\SleeveChestWidth</Data>
+        </Slider>
+        <Slider name="ChubbyArms" invert="false" small="0" big="0">
+            <Data name="ARm_Sleeve_MEtalChubbyArms" target="ARm_Sleeve_MEtal" local="true">gloves Black.osd\ARm_Sleeve_MEtalChubbyArms</Data>
+            <Data name="SleeveChubbyArms" target="Sleeve" local="true">gloves Black.osd\SleeveChubbyArms</Data>
+        </Slider>
+        <Slider name="ForearmSize" invert="false" small="0" big="0">
+            <Data name="ARm_Sleeve_MEtalForearmSize" target="ARm_Sleeve_MEtal" local="true">gloves Black.osd\ARm_Sleeve_MEtalForearmSize</Data>
+            <Data name="SleeveForearmSize" target="Sleeve" local="true">gloves Black.osd\SleeveForearmSize</Data>
+        </Slider>
+        <Slider name="MuscleArms" invert="false" small="0" big="0">
+            <Data name="ARm_Sleeve_MEtalMuscleArms" target="ARm_Sleeve_MEtal" local="true">gloves Black.osd\ARm_Sleeve_MEtalMuscleArms</Data>
+            <Data name="SleeveMuscleArms" target="Sleeve" local="true">gloves Black.osd\SleeveMuscleArms</Data>
+        </Slider>
+        <Slider name="MuscleBack_v2" invert="false" small="0" big="0">
+            <Data name="SleeveMuscleBack_v2" target="Sleeve" local="true">gloves Black.osd\SleeveMuscleBack_v2</Data>
+        </Slider>
+        <Slider name="MuscleMoreArms_v2" invert="false" small="0" big="0">
+            <Data name="ARm_Sleeve_MEtalMuscleMoreArms_v2" target="ARm_Sleeve_MEtal" local="true">gloves Black.osd\ARm_Sleeve_MEtalMuscleMoreArms_v2</Data>
+            <Data name="SleeveMuscleMoreArms_v2" target="Sleeve" local="true">gloves Black.osd\SleeveMuscleMoreArms_v2</Data>
+        </Slider>
+        <Slider name="ShoulderWidth" invert="false" small="0" big="0">
+            <Data name="ARm_Sleeve_MEtalShoulderWidth" target="ARm_Sleeve_MEtal" local="true">gloves Black.osd\ARm_Sleeve_MEtalShoulderWidth</Data>
+            <Data name="SleeveShoulderWidth" target="Sleeve" local="true">gloves Black.osd\SleeveShoulderWidth</Data>
+        </Slider>
+        <Slider name="WristSize" invert="false" small="100" big="0">
+            <Data name="HandsWristSize" target="Hands">CBBE Hands.osd\HandsWristSize</Data>
+            <Data name="ARm_Sleeve_MEtalWristSize" target="ARm_Sleeve_MEtal" local="true">gloves Black.osd\ARm_Sleeve_MEtalWristSize</Data>
+            <Data name="SleeveWristSize" target="Sleeve" local="true">gloves Black.osd\SleeveWristSize</Data>
+            <Data name="Hand_wingWristSize" target="Hand_wing" local="true">gloves Black.osd\Hand_wingWristSize</Data>
+        </Slider>
+        <Slider name="7B Upper" invert="false" small="0" big="0">
+            <Data name="ARm_Sleeve_MEtal7B Upper" target="ARm_Sleeve_MEtal" local="true">gloves Black.osd\ARm_Sleeve_MEtal7B Upper</Data>
+            <Data name="Sleeve7B Upper" target="Sleeve" local="true">gloves Black.osd\Sleeve7B Upper</Data>
+        </Slider>
+        <Slider name="VanillaSSEHi" invert="false" small="0" big="0">
+            <Data name="ARm_Sleeve_MEtalVanillaSSEHi" target="ARm_Sleeve_MEtal" local="true">gloves Black.osd\ARm_Sleeve_MEtalVanillaSSEHi</Data>
+            <Data name="SleeveVanillaSSEHi" target="Sleeve" local="true">gloves Black.osd\SleeveVanillaSSEHi</Data>
+        </Slider>
+        <Slider name="VanillaSSELo" invert="false" small="0" big="0">
+            <Data name="ARm_Sleeve_MEtalVanillaSSELo" target="ARm_Sleeve_MEtal" local="true">gloves Black.osd\ARm_Sleeve_MEtalVanillaSSELo</Data>
+            <Data name="SleeveVanillaSSELo" target="Sleeve" local="true">gloves Black.osd\SleeveVanillaSSELo</Data>
+        </Slider>
+        <Slider name="OldBaseShape" invert="false" small="0" big="0">
+            <Data name="SleeveOldBaseShape" target="Sleeve" local="true">gloves Black.osd\SleeveOldBaseShape</Data>
+        </Slider>
+    </SliderSet>
+    <SliderSet name="PSQ 3BA 变身 - Hiroshi - 翅膀">
+        <DataFolder>PSQ_Package_20261106\3BA\F014</DataFolder>
+        <SourceFile>Wings Black.nif</SourceFile>
+        <OutputPath>meshes\PSQ\Outfits\Set08</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">wings</OutputFile>
+        <Shape target="Wing">Wing</Shape>
+        <Shape target="Wing_Chain">Wing_Chain</Shape>
+    </SliderSet>
+<SliderSet name="PSQ 3BA 变身 - Hiroshi - 胸甲">
+        <DataFolder>PSQ_Package_20261106\3BA\F014</DataFolder>
+        <SourceFile>Cuirass Black.nif</SourceFile>
+        <OutputPath>meshes\PSQ\Outfits\Set08</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">cuirass</OutputFile>
+        <Shape target="3BA" DataFolder="PSQ_Package_20261106\3BA\F012">3BA</Shape>
+        <Shape target="3BA_Anus" DataFolder="PSQ_Package_20261106\3BA\F012">3BA_Anus</Shape>
+        <Shape target="3BA_Vagina" DataFolder="PSQ_Package_20261106\3BA\F012">3BA_Vagina</Shape>
+        <Shape target="Corset_Normal">Corset_Normal</Shape>
+        <Shape target="NEck">NEck</Shape>
+        <Shape target="NEck_MEtals">NEck_MEtals</Shape>
+        <Shape target="Suirt_Band">Suirt_Band</Shape>
+        <Shape target="Suit_MEtal">Suit_MEtal</Shape>
+        <Shape target="bodygater">bodygater</Shape>
+        <Slider name="ArmpitShape_v2" invert="false" small="0" big="0">
+            <Data name="3BAArmpitShape_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAArmpitShape_v2</Data>
+            <Data name="bodygaterArmpitShape_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterArmpitShape_v2</Data>
+            <Data name="Corset_NormalArmpitShape_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalArmpitShape_v2</Data>
+        </Slider>
+        <Slider name="AnkleSize" invert="false" small="100" big="0">
+            <Data name="3BAAnkleSize" target="3BA">SE 3BBB Body Amazing v2.osd\3BAAnkleSize</Data>
+        </Slider>
+        <Slider name="AppleCheeks" invert="false" small="0" big="0">
+            <Data name="3BAAppleCheeks" target="3BA">SE 3BBB Body Amazing v2.osd\3BAAppleCheeks</Data>
+            <Data name="3BA_VaginaAppleCheeks" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaAppleCheeks</Data>
+            <Data name="3BA_AnusAppleCheeks" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusAppleCheeks</Data>
+            <Data name="NEck_MEtalsAppleCheeks" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsAppleCheeks</Data>
+            <Data name="bodygaterAppleCheeks" target="bodygater" local="true">Cuirass Black.osd\bodygaterAppleCheeks</Data>
+            <Data name="Corset_NormalAppleCheeks" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalAppleCheeks</Data>
+        </Slider>
+        <Slider name="AreolaSize" invert="false" small="0" big="0" uv="true">
+            <Data name="3BAAreolaSize" target="3BA">SE 3BBB Body Amazing v2.osd\3BAAreolaSize</Data>
+        </Slider>
+        <Slider name="AreolaPull_v2" invert="false" small="0" big="0">
+            <Data name="3BAAreolaPull_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAAreolaPull_v2</Data>
+            <Data name="bodygaterAreolaPull_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterAreolaPull_v2</Data>
+            <Data name="Corset_NormalAreolaPull_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalAreolaPull_v2</Data>
+        </Slider>
+        <Slider name="Arms" invert="false" small="0" big="0">
+            <Data name="3BAArms" target="3BA">SE 3BBB Body Amazing v2.osd\3BAArms</Data>
+            <Data name="NEck_MEtalsArms" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsArms</Data>
+            <Data name="bodygaterArms" target="bodygater" local="true">Cuirass Black.osd\bodygaterArms</Data>
+            <Data name="Corset_NormalArms" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalArms</Data>
+        </Slider>
+        <Slider name="Back" invert="false" small="0" big="0">
+            <Data name="3BABack" target="3BA">SE 3BBB Body Amazing v2.osd\3BABack</Data>
+            <Data name="NEck_MEtalsBack" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBack</Data>
+            <Data name="bodygaterBack" target="bodygater" local="true">Cuirass Black.osd\bodygaterBack</Data>
+            <Data name="Corset_NormalBack" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBack</Data>
+        </Slider>
+        <Slider name="BackArch" invert="false" small="0" big="0">
+            <Data name="3BABackArch" target="3BA">SE 3BBB Body Amazing v2.osd\3BABackArch</Data>
+            <Data name="NEck_MEtalsBackArch" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBackArch</Data>
+            <Data name="bodygaterBackArch" target="bodygater" local="true">Cuirass Black.osd\bodygaterBackArch</Data>
+            <Data name="Corset_NormalBackArch" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBackArch</Data>
+        </Slider>
+        <Slider name="BackValley_v2" invert="false" small="0" big="0">
+            <Data name="3BABackValley_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BABackValley_v2</Data>
+            <Data name="NEck_MEtalsBackValley_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBackValley_v2</Data>
+            <Data name="bodygaterBackValley_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterBackValley_v2</Data>
+            <Data name="Corset_NormalBackValley_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBackValley_v2</Data>
+        </Slider>
+        <Slider name="BackWing_v2" invert="false" small="0" big="0">
+            <Data name="3BABackWing_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BABackWing_v2</Data>
+            <Data name="NEck_MEtalsBackWing_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBackWing_v2</Data>
+            <Data name="bodygaterBackWing_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterBackWing_v2</Data>
+            <Data name="Corset_NormalBackWing_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBackWing_v2</Data>
+        </Slider>
+        <Slider name="Belly" invert="false" small="0" big="0">
+            <Data name="3BABelly" target="3BA">SE 3BBB Body Amazing v2.osd\3BABelly</Data>
+            <Data name="NEck_MEtalsBelly" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBelly</Data>
+            <Data name="bodygaterBelly" target="bodygater" local="true">Cuirass Black.osd\bodygaterBelly</Data>
+            <Data name="Suirt_BandBelly" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBelly</Data>
+            <Data name="Suit_MEtalBelly" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBelly</Data>
+            <Data name="Corset_NormalBelly" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBelly</Data>
+        </Slider>
+        <Slider name="BellyFrontUpFat_v2" invert="false" small="0" big="0">
+            <Data name="3BABellyFrontUpFat_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BABellyFrontUpFat_v2</Data>
+            <Data name="NEck_MEtalsBellyFrontUpFat_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBellyFrontUpFat_v2</Data>
+            <Data name="bodygaterBellyFrontUpFat_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterBellyFrontUpFat_v2</Data>
+            <Data name="Suirt_BandBellyFrontUpFat_v2" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBellyFrontUpFat_v2</Data>
+            <Data name="Suit_MEtalBellyFrontUpFat_v2" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBellyFrontUpFat_v2</Data>
+            <Data name="Corset_NormalBellyFrontUpFat_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBellyFrontUpFat_v2</Data>
+        </Slider>
+        <Slider name="BellyFrontDownFat_v2" invert="false" small="0" big="0">
+            <Data name="3BABellyFrontDownFat_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BABellyFrontDownFat_v2</Data>
+            <Data name="NEck_MEtalsBellyFrontDownFat_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBellyFrontDownFat_v2</Data>
+            <Data name="bodygaterBellyFrontDownFat_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterBellyFrontDownFat_v2</Data>
+            <Data name="Corset_NormalBellyFrontDownFat_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBellyFrontDownFat_v2</Data>
+        </Slider>
+        <Slider name="BellySideUpFat_v2" invert="false" small="0" big="0">
+            <Data name="3BABellySideUpFat_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BABellySideUpFat_v2</Data>
+            <Data name="NEck_MEtalsBellySideUpFat_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBellySideUpFat_v2</Data>
+            <Data name="bodygaterBellySideUpFat_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterBellySideUpFat_v2</Data>
+            <Data name="Corset_NormalBellySideUpFat_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBellySideUpFat_v2</Data>
+        </Slider>
+        <Slider name="BellySideDownFat_v2" invert="false" small="0" big="0">
+            <Data name="3BABellySideDownFat_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BABellySideDownFat_v2</Data>
+            <Data name="NEck_MEtalsBellySideDownFat_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBellySideDownFat_v2</Data>
+            <Data name="bodygaterBellySideDownFat_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterBellySideDownFat_v2</Data>
+            <Data name="Corset_NormalBellySideDownFat_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBellySideDownFat_v2</Data>
+        </Slider>
+        <Slider name="BellyUnder_v2" invert="false" small="0" big="0">
+            <Data name="3BABellyUnder_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BABellyUnder_v2</Data>
+            <Data name="3BA_VaginaBellyUnder_v2" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaBellyUnder_v2</Data>
+            <Data name="NEck_MEtalsBellyUnder_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBellyUnder_v2</Data>
+            <Data name="bodygaterBellyUnder_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterBellyUnder_v2</Data>
+            <Data name="Corset_NormalBellyUnder_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBellyUnder_v2</Data>
+        </Slider>
+        <Slider name="BigBelly" invert="false" small="0" big="0">
+            <Data name="3BABigBelly" target="3BA">SE 3BBB Body Amazing v2.osd\3BABigBelly</Data>
+            <Data name="3BA_VaginaBigBelly" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaBigBelly</Data>
+            <Data name="NEck_MEtalsBigBelly" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBigBelly</Data>
+            <Data name="bodygaterBigBelly" target="bodygater" local="true">Cuirass Black.osd\bodygaterBigBelly</Data>
+            <Data name="Suirt_BandBigBelly" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBigBelly</Data>
+            <Data name="Suit_MEtalBigBelly" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBigBelly</Data>
+            <Data name="Corset_NormalBigBelly" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBigBelly</Data>
+        </Slider>
+        <Slider name="BigButt" invert="false" small="0" big="0">
+            <Data name="3BABigButt" target="3BA">SE 3BBB Body Amazing v2.osd\3BABigButt</Data>
+            <Data name="3BA_VaginaBigButt" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaBigButt</Data>
+            <Data name="3BA_AnusBigButt" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusBigButt</Data>
+            <Data name="NEck_MEtalsBigButt" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBigButt</Data>
+            <Data name="bodygaterBigButt" target="bodygater" local="true">Cuirass Black.osd\bodygaterBigButt</Data>
+            <Data name="Corset_NormalBigButt" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBigButt</Data>
+        </Slider>
+        <Slider name="BigTorso" invert="false" small="0" big="0">
+            <Data name="3BABigTorso" target="3BA">SE 3BBB Body Amazing v2.osd\3BABigTorso</Data>
+            <Data name="NEckBigTorso" target="NEck" local="true">Cuirass Black.osd\NEckBigTorso</Data>
+            <Data name="NEck_MEtalsBigTorso" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBigTorso</Data>
+            <Data name="bodygaterBigTorso" target="bodygater" local="true">Cuirass Black.osd\bodygaterBigTorso</Data>
+            <Data name="Suirt_BandBigTorso" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBigTorso</Data>
+            <Data name="Suit_MEtalBigTorso" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBigTorso</Data>
+            <Data name="Corset_NormalBigTorso" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBigTorso</Data>
+        </Slider>
+        <Slider name="BreastCenter" invert="false" small="0" big="0">
+            <Data name="3BABreastCenter" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastCenter</Data>
+            <Data name="NEck_MEtalsBreastCenter" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastCenter</Data>
+            <Data name="bodygaterBreastCenter" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastCenter</Data>
+            <Data name="Suirt_BandBreastCenter" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreastCenter</Data>
+            <Data name="Suit_MEtalBreastCenter" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreastCenter</Data>
+            <Data name="Corset_NormalBreastCenter" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastCenter</Data>
+        </Slider>
+        <Slider name="BreastCenterBig" invert="false" small="0" big="0">
+            <Data name="3BABreastCenterBig" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastCenterBig</Data>
+            <Data name="bodygaterBreastCenterBig" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastCenterBig</Data>
+            <Data name="Suirt_BandBreastCenterBig" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreastCenterBig</Data>
+            <Data name="Suit_MEtalBreastCenterBig" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreastCenterBig</Data>
+            <Data name="Corset_NormalBreastCenterBig" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastCenterBig</Data>
+        </Slider>
+        <Slider name="BreastCleavage" invert="false" small="0" big="0">
+            <Data name="3BABreastCleavage" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastCleavage</Data>
+            <Data name="NEck_MEtalsBreastCleavage" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastCleavage</Data>
+            <Data name="bodygaterBreastCleavage" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastCleavage</Data>
+            <Data name="Suirt_BandBreastCleavage" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreastCleavage</Data>
+            <Data name="Suit_MEtalBreastCleavage" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreastCleavage</Data>
+            <Data name="Corset_NormalBreastCleavage" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastCleavage</Data>
+        </Slider>
+        <Slider name="BreastsConverage_v2" invert="false" small="0" big="0">
+            <Data name="3BABreastsConverage_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastsConverage_v2</Data>
+            <Data name="NEck_MEtalsBreastsConverage_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastsConverage_v2</Data>
+            <Data name="bodygaterBreastsConverage_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastsConverage_v2</Data>
+            <Data name="Suirt_BandBreastsConverage_v2" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreastsConverage_v2</Data>
+            <Data name="Suit_MEtalBreastsConverage_v2" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreastsConverage_v2</Data>
+            <Data name="Corset_NormalBreastsConverage_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastsConverage_v2</Data>
+        </Slider>
+        <Slider name="BreastFlatness2" invert="false" small="0" big="0">
+            <Data name="3BABreastFlatness2" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastFlatness2</Data>
+            <Data name="NEck_MEtalsBreastFlatness2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastFlatness2</Data>
+            <Data name="bodygaterBreastFlatness2" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastFlatness2</Data>
+            <Data name="Suirt_BandBreastFlatness2" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreastFlatness2</Data>
+            <Data name="Suit_MEtalBreastFlatness2" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreastFlatness2</Data>
+            <Data name="Corset_NormalBreastFlatness2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastFlatness2</Data>
+        </Slider>
+        <Slider name="BreastFlatness" invert="false" small="0" big="0">
+            <Data name="3BABreastFlatness" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastFlatness</Data>
+            <Data name="NEck_MEtalsBreastFlatness" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastFlatness</Data>
+            <Data name="bodygaterBreastFlatness" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastFlatness</Data>
+            <Data name="Suirt_BandBreastFlatness" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreastFlatness</Data>
+            <Data name="Suit_MEtalBreastFlatness" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreastFlatness</Data>
+            <Data name="Corset_NormalBreastFlatness" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastFlatness</Data>
+        </Slider>
+        <Slider name="BreastGravity2" invert="false" small="0" big="0">
+            <Data name="3BABreastGravity2" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastGravity2</Data>
+            <Data name="NEck_MEtalsBreastGravity2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastGravity2</Data>
+            <Data name="bodygaterBreastGravity2" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastGravity2</Data>
+            <Data name="Suirt_BandBreastGravity2" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreastGravity2</Data>
+            <Data name="Suit_MEtalBreastGravity2" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreastGravity2</Data>
+            <Data name="Corset_NormalBreastGravity2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastGravity2</Data>
+        </Slider>
+        <Slider name="BreastHeight" invert="false" small="0" big="0">
+            <Data name="3BABreastHeight" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastHeight</Data>
+            <Data name="NEck_MEtalsBreastHeight" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastHeight</Data>
+            <Data name="bodygaterBreastHeight" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastHeight</Data>
+            <Data name="Suirt_BandBreastHeight" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreastHeight</Data>
+            <Data name="Suit_MEtalBreastHeight" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreastHeight</Data>
+            <Data name="Corset_NormalBreastHeight" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastHeight</Data>
+        </Slider>
+        <Slider name="BreastPerkiness" invert="false" small="0" big="0">
+            <Data name="3BABreastPerkiness" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastPerkiness</Data>
+            <Data name="NEck_MEtalsBreastPerkiness" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastPerkiness</Data>
+            <Data name="bodygaterBreastPerkiness" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastPerkiness</Data>
+            <Data name="Corset_NormalBreastPerkiness" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastPerkiness</Data>
+        </Slider>
+        <Slider name="Breasts" invert="false" small="0" big="0">
+            <Data name="3BABreasts" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreasts</Data>
+            <Data name="NEck_MEtalsBreasts" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreasts</Data>
+            <Data name="bodygaterBreasts" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreasts</Data>
+            <Data name="Suirt_BandBreasts" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreasts</Data>
+            <Data name="Suit_MEtalBreasts" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreasts</Data>
+            <Data name="Corset_NormalBreasts" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreasts</Data>
+        </Slider>
+        <Slider name="BreastsFantasy" invert="false" small="0" big="0">
+            <Data name="3BABreastsFantasy" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastsFantasy</Data>
+            <Data name="NEck_MEtalsBreastsFantasy" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastsFantasy</Data>
+            <Data name="bodygaterBreastsFantasy" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastsFantasy</Data>
+            <Data name="Corset_NormalBreastsFantasy" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastsFantasy</Data>
+        </Slider>
+        <Slider name="BreastsGone" invert="false" small="0" big="0">
+            <Data name="3BABreastsGone" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastsGone</Data>
+            <Data name="NEck_MEtalsBreastsGone" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastsGone</Data>
+            <Data name="bodygaterBreastsGone" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastsGone</Data>
+            <Data name="Suirt_BandBreastsGone" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreastsGone</Data>
+            <Data name="Suit_MEtalBreastsGone" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreastsGone</Data>
+            <Data name="Corset_NormalBreastsGone" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastsGone</Data>
+        </Slider>
+        <Slider name="BreastsNewSH" invert="false" small="0" big="0">
+            <Data name="3BABreastsNewSH" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastsNewSH</Data>
+            <Data name="NEck_MEtalsBreastsNewSH" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastsNewSH</Data>
+            <Data name="bodygaterBreastsNewSH" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastsNewSH</Data>
+            <Data name="Suirt_BandBreastsNewSH" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreastsNewSH</Data>
+            <Data name="Suit_MEtalBreastsNewSH" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreastsNewSH</Data>
+            <Data name="Corset_NormalBreastsNewSH" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastsNewSH</Data>
+        </Slider>
+        <Slider name="BreastsNewSHSymmetry" invert="false" small="0" big="0">
+            <Data name="3BABreastsNewSHSymmetry" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastsNewSHSymmetry</Data>
+            <Data name="NEck_MEtalsBreastsNewSHSymmetry" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastsNewSHSymmetry</Data>
+            <Data name="bodygaterBreastsNewSHSymmetry" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastsNewSHSymmetry</Data>
+            <Data name="Suirt_BandBreastsNewSHSymmetry" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreastsNewSHSymmetry</Data>
+            <Data name="Suit_MEtalBreastsNewSHSymmetry" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreastsNewSHSymmetry</Data>
+            <Data name="Corset_NormalBreastsNewSHSymmetry" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastsNewSHSymmetry</Data>
+        </Slider>
+        <Slider name="BreastsSmall" invert="false" small="0" big="0">
+            <Data name="3BABreastsSmall" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastsSmall</Data>
+            <Data name="NEck_MEtalsBreastsSmall" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastsSmall</Data>
+            <Data name="bodygaterBreastsSmall" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastsSmall</Data>
+            <Data name="Suirt_BandBreastsSmall" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreastsSmall</Data>
+            <Data name="Suit_MEtalBreastsSmall" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreastsSmall</Data>
+            <Data name="Corset_NormalBreastsSmall" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastsSmall</Data>
+        </Slider>
+        <Slider name="BreastsSmall2" invert="false" small="0" big="0">
+            <Data name="3BABreastsSmall2" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastsSmall2</Data>
+            <Data name="NEck_MEtalsBreastsSmall2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastsSmall2</Data>
+            <Data name="bodygaterBreastsSmall2" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastsSmall2</Data>
+            <Data name="Suirt_BandBreastsSmall2" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreastsSmall2</Data>
+            <Data name="Suit_MEtalBreastsSmall2" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreastsSmall2</Data>
+            <Data name="Corset_NormalBreastsSmall2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastsSmall2</Data>
+        </Slider>
+        <Slider name="BreastsTogether" invert="false" small="0" big="0">
+            <Data name="3BABreastsTogether" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastsTogether</Data>
+            <Data name="NEck_MEtalsBreastsTogether" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastsTogether</Data>
+            <Data name="bodygaterBreastsTogether" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastsTogether</Data>
+            <Data name="Suirt_BandBreastsTogether" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreastsTogether</Data>
+            <Data name="Suit_MEtalBreastsTogether" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreastsTogether</Data>
+            <Data name="Corset_NormalBreastsTogether" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastsTogether</Data>
+        </Slider>
+        <Slider name="BreastTopSlope" invert="false" small="0" big="0">
+            <Data name="3BABreastTopSlope" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastTopSlope</Data>
+            <Data name="NEck_MEtalsBreastTopSlope" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastTopSlope</Data>
+            <Data name="bodygaterBreastTopSlope" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastTopSlope</Data>
+            <Data name="Suirt_BandBreastTopSlope" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreastTopSlope</Data>
+            <Data name="Suit_MEtalBreastTopSlope" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreastTopSlope</Data>
+            <Data name="Corset_NormalBreastTopSlope" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastTopSlope</Data>
+        </Slider>
+        <Slider name="BreastWidth" invert="false" small="0" big="0">
+            <Data name="3BABreastWidth" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastWidth</Data>
+            <Data name="NEck_MEtalsBreastWidth" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastWidth</Data>
+            <Data name="bodygaterBreastWidth" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastWidth</Data>
+            <Data name="Suirt_BandBreastWidth" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreastWidth</Data>
+            <Data name="Suit_MEtalBreastWidth" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreastWidth</Data>
+            <Data name="Corset_NormalBreastWidth" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastWidth</Data>
+        </Slider>
+        <Slider name="BreastSideShape" invert="false" small="0" big="0">
+            <Data name="3BABreastSideShape" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastSideShape</Data>
+            <Data name="NEck_MEtalsBreastSideShape" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastSideShape</Data>
+            <Data name="bodygaterBreastSideShape" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastSideShape</Data>
+            <Data name="Corset_NormalBreastSideShape" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastSideShape</Data>
+        </Slider>
+        <Slider name="BreastUnderDepth" invert="false" small="0" big="0">
+            <Data name="3BABreastUnderDepth" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastUnderDepth</Data>
+            <Data name="NEck_MEtalsBreastUnderDepth" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastUnderDepth</Data>
+            <Data name="bodygaterBreastUnderDepth" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastUnderDepth</Data>
+            <Data name="Suirt_BandBreastUnderDepth" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandBreastUnderDepth</Data>
+            <Data name="Suit_MEtalBreastUnderDepth" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalBreastUnderDepth</Data>
+            <Data name="Corset_NormalBreastUnderDepth" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastUnderDepth</Data>
+        </Slider>
+        <Slider name="BreastsPressed_v2" invert="false" small="0" big="0">
+            <Data name="3BABreastsPressed_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BABreastsPressed_v2</Data>
+            <Data name="NEck_MEtalsBreastsPressed_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsBreastsPressed_v2</Data>
+            <Data name="bodygaterBreastsPressed_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterBreastsPressed_v2</Data>
+            <Data name="Corset_NormalBreastsPressed_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalBreastsPressed_v2</Data>
+        </Slider>
+        <Slider name="Butt" invert="false" small="0" big="0">
+            <Data name="3BAButt" target="3BA">SE 3BBB Body Amazing v2.osd\3BAButt</Data>
+            <Data name="3BA_VaginaButt" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaButt</Data>
+            <Data name="3BA_AnusButt" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusButt</Data>
+            <Data name="NEck_MEtalsButt" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsButt</Data>
+            <Data name="bodygaterButt" target="bodygater" local="true">Cuirass Black.osd\bodygaterButt</Data>
+            <Data name="Corset_NormalButt" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalButt</Data>
+        </Slider>
+        <Slider name="ButtSaggy_v2" invert="false" small="0" big="0">
+            <Data name="3BAButtSaggy_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAButtSaggy_v2</Data>
+            <Data name="3BA_AnusButtSaggy_v2" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusButtSaggy_v2</Data>
+            <Data name="NEck_MEtalsButtSaggy_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsButtSaggy_v2</Data>
+            <Data name="Corset_NormalButtSaggy_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalButtSaggy_v2</Data>
+        </Slider>
+        <Slider name="ButtClassic" invert="false" small="0" big="0">
+            <Data name="3BAButtClassic" target="3BA">SE 3BBB Body Amazing v2.osd\3BAButtClassic</Data>
+            <Data name="3BA_VaginaButtClassic" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaButtClassic</Data>
+            <Data name="3BA_AnusButtClassic" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusButtClassic</Data>
+            <Data name="NEck_MEtalsButtClassic" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsButtClassic</Data>
+            <Data name="bodygaterButtClassic" target="bodygater" local="true">Cuirass Black.osd\bodygaterButtClassic</Data>
+            <Data name="Corset_NormalButtClassic" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalButtClassic</Data>
+        </Slider>
+        <Slider name="ButtCrack" invert="false" small="0" big="0">
+            <Data name="3BAButtCrack" target="3BA">SE 3BBB Body Amazing v2.osd\3BAButtCrack</Data>
+            <Data name="3BA_VaginaButtCrack" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaButtCrack</Data>
+            <Data name="3BA_AnusButtCrack" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusButtCrack</Data>
+            <Data name="NEck_MEtalsButtCrack" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsButtCrack</Data>
+            <Data name="bodygaterButtCrack" target="bodygater" local="true">Cuirass Black.osd\bodygaterButtCrack</Data>
+            <Data name="Corset_NormalButtCrack" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalButtCrack</Data>
+        </Slider>
+        <Slider name="ButtShape2" invert="false" small="0" big="0">
+            <Data name="3BAButtShape2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAButtShape2</Data>
+            <Data name="3BA_VaginaButtShape2" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaButtShape2</Data>
+            <Data name="3BA_AnusButtShape2" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusButtShape2</Data>
+            <Data name="NEck_MEtalsButtShape2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsButtShape2</Data>
+            <Data name="bodygaterButtShape2" target="bodygater" local="true">Cuirass Black.osd\bodygaterButtShape2</Data>
+            <Data name="Corset_NormalButtShape2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalButtShape2</Data>
+        </Slider>
+        <Slider name="ButtSmall" invert="false" small="0" big="0">
+            <Data name="3BAButtSmall" target="3BA">SE 3BBB Body Amazing v2.osd\3BAButtSmall</Data>
+            <Data name="3BA_VaginaButtSmall" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaButtSmall</Data>
+            <Data name="3BA_AnusButtSmall" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusButtSmall</Data>
+            <Data name="NEck_MEtalsButtSmall" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsButtSmall</Data>
+            <Data name="bodygaterButtSmall" target="bodygater" local="true">Cuirass Black.osd\bodygaterButtSmall</Data>
+            <Data name="Corset_NormalButtSmall" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalButtSmall</Data>
+        </Slider>
+        <Slider name="ButtDimples" invert="false" small="0" big="0">
+            <Data name="3BAButtDimples" target="3BA">SE 3BBB Body Amazing v2.osd\3BAButtDimples</Data>
+            <Data name="NEck_MEtalsButtDimples" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsButtDimples</Data>
+            <Data name="bodygaterButtDimples" target="bodygater" local="true">Cuirass Black.osd\bodygaterButtDimples</Data>
+            <Data name="Corset_NormalButtDimples" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalButtDimples</Data>
+        </Slider>
+        <Slider name="ButtUnderFold" invert="false" small="0" big="0">
+            <Data name="3BAButtUnderFold" target="3BA">SE 3BBB Body Amazing v2.osd\3BAButtUnderFold</Data>
+            <Data name="3BA_VaginaButtUnderFold" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaButtUnderFold</Data>
+            <Data name="Corset_NormalButtUnderFold" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalButtUnderFold</Data>
+        </Slider>
+        <Slider name="ButtPressed_v2" invert="false" small="0" big="0">
+            <Data name="3BAButtPressed_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAButtPressed_v2</Data>
+            <Data name="3BA_VaginaButtPressed_v2" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaButtPressed_v2</Data>
+            <Data name="3BA_AnusButtPressed_v2" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusButtPressed_v2</Data>
+            <Data name="NEck_MEtalsButtPressed_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsButtPressed_v2</Data>
+            <Data name="bodygaterButtPressed_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterButtPressed_v2</Data>
+            <Data name="Corset_NormalButtPressed_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalButtPressed_v2</Data>
+        </Slider>
+        <Slider name="ButtNarrow_v2" invert="false" small="0" big="0">
+            <Data name="3BAButtNarrow_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAButtNarrow_v2</Data>
+            <Data name="NEck_MEtalsButtNarrow_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsButtNarrow_v2</Data>
+            <Data name="bodygaterButtNarrow_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterButtNarrow_v2</Data>
+            <Data name="Corset_NormalButtNarrow_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalButtNarrow_v2</Data>
+        </Slider>
+        <Slider name="CalfSize" invert="false" small="0" big="0">
+            <Data name="3BACalfSize" target="3BA">SE 3BBB Body Amazing v2.osd\3BACalfSize</Data>
+        </Slider>
+        <Slider name="CalfSmooth" invert="false" small="0" big="0">
+            <Data name="3BACalfSmooth" target="3BA">SE 3BBB Body Amazing v2.osd\3BACalfSmooth</Data>
+        </Slider>
+        <Slider name="CalfFBThicc_v2" invert="false" small="0" big="0">
+            <Data name="3BACalfFBThicc_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BACalfFBThicc_v2</Data>
+        </Slider>
+        <Slider name="ChestDepth" invert="false" small="0" big="0">
+            <Data name="3BAChestDepth" target="3BA">SE 3BBB Body Amazing v2.osd\3BAChestDepth</Data>
+            <Data name="NEck_MEtalsChestDepth" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsChestDepth</Data>
+            <Data name="bodygaterChestDepth" target="bodygater" local="true">Cuirass Black.osd\bodygaterChestDepth</Data>
+            <Data name="Suirt_BandChestDepth" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandChestDepth</Data>
+            <Data name="Suit_MEtalChestDepth" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalChestDepth</Data>
+            <Data name="Corset_NormalChestDepth" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalChestDepth</Data>
+        </Slider>
+        <Slider name="ChestWidth" invert="false" small="0" big="0">
+            <Data name="3BAChestWidth" target="3BA">SE 3BBB Body Amazing v2.osd\3BAChestWidth</Data>
+            <Data name="NEck_MEtalsChestWidth" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsChestWidth</Data>
+            <Data name="bodygaterChestWidth" target="bodygater" local="true">Cuirass Black.osd\bodygaterChestWidth</Data>
+            <Data name="Suirt_BandChestWidth" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandChestWidth</Data>
+            <Data name="Suit_MEtalChestWidth" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalChestWidth</Data>
+            <Data name="Corset_NormalChestWidth" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalChestWidth</Data>
+        </Slider>
+        <Slider name="ChubbyArms" invert="false" small="0" big="0">
+            <Data name="3BAChubbyArms" target="3BA">SE 3BBB Body Amazing v2.osd\3BAChubbyArms</Data>
+            <Data name="NEck_MEtalsChubbyArms" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsChubbyArms</Data>
+            <Data name="bodygaterChubbyArms" target="bodygater" local="true">Cuirass Black.osd\bodygaterChubbyArms</Data>
+            <Data name="Corset_NormalChubbyArms" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalChubbyArms</Data>
+        </Slider>
+        <Slider name="ChubbyButt" invert="false" small="0" big="0">
+            <Data name="3BAChubbyButt" target="3BA">SE 3BBB Body Amazing v2.osd\3BAChubbyButt</Data>
+            <Data name="3BA_VaginaChubbyButt" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaChubbyButt</Data>
+            <Data name="3BA_AnusChubbyButt" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusChubbyButt</Data>
+            <Data name="NEck_MEtalsChubbyButt" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsChubbyButt</Data>
+            <Data name="bodygaterChubbyButt" target="bodygater" local="true">Cuirass Black.osd\bodygaterChubbyButt</Data>
+            <Data name="Suirt_BandChubbyButt" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandChubbyButt</Data>
+            <Data name="Suit_MEtalChubbyButt" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalChubbyButt</Data>
+            <Data name="Corset_NormalChubbyButt" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalChubbyButt</Data>
+        </Slider>
+        <Slider name="ChubbyLegs" invert="false" small="0" big="0">
+            <Data name="3BAChubbyLegs" target="3BA">SE 3BBB Body Amazing v2.osd\3BAChubbyLegs</Data>
+            <Data name="3BA_VaginaChubbyLegs" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaChubbyLegs</Data>
+            <Data name="3BA_AnusChubbyLegs" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusChubbyLegs</Data>
+            <Data name="NEck_MEtalsChubbyLegs" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsChubbyLegs</Data>
+            <Data name="bodygaterChubbyLegs" target="bodygater" local="true">Cuirass Black.osd\bodygaterChubbyLegs</Data>
+            <Data name="Corset_NormalChubbyLegs" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalChubbyLegs</Data>
+        </Slider>
+        <Slider name="ChubbyWaist" invert="false" small="0" big="0">
+            <Data name="3BAChubbyWaist" target="3BA">SE 3BBB Body Amazing v2.osd\3BAChubbyWaist</Data>
+            <Data name="3BA_VaginaChubbyWaist" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaChubbyWaist</Data>
+            <Data name="3BA_AnusChubbyWaist" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusChubbyWaist</Data>
+            <Data name="NEck_MEtalsChubbyWaist" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsChubbyWaist</Data>
+            <Data name="bodygaterChubbyWaist" target="bodygater" local="true">Cuirass Black.osd\bodygaterChubbyWaist</Data>
+            <Data name="Suirt_BandChubbyWaist" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandChubbyWaist</Data>
+            <Data name="Suit_MEtalChubbyWaist" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalChubbyWaist</Data>
+            <Data name="Corset_NormalChubbyWaist" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalChubbyWaist</Data>
+        </Slider>
+        <Slider name="CrotchBack" invert="false" small="0" big="0">
+            <Data name="3BACrotchBack" target="3BA">SE 3BBB Body Amazing v2.osd\3BACrotchBack</Data>
+            <Data name="3BA_VaginaCrotchBack" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaCrotchBack</Data>
+            <Data name="3BA_AnusCrotchBack" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusCrotchBack</Data>
+            <Data name="NEck_MEtalsCrotchBack" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsCrotchBack</Data>
+            <Data name="bodygaterCrotchBack" target="bodygater" local="true">Cuirass Black.osd\bodygaterCrotchBack</Data>
+            <Data name="Corset_NormalCrotchBack" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalCrotchBack</Data>
+        </Slider>
+        <Slider name="Clavicle_v2" invert="false" small="0" big="0">
+            <Data name="3BAClavicle_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAClavicle_v2</Data>
+            <Data name="NEck_MEtalsClavicle_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsClavicle_v2</Data>
+            <Data name="bodygaterClavicle_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterClavicle_v2</Data>
+        </Slider>
+        <Slider name="DoubleMelon" invert="false" small="0" big="0">
+            <Data name="3BADoubleMelon" target="3BA">SE 3BBB Body Amazing v2.osd\3BADoubleMelon</Data>
+            <Data name="NEck_MEtalsDoubleMelon" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsDoubleMelon</Data>
+            <Data name="bodygaterDoubleMelon" target="bodygater" local="true">Cuirass Black.osd\bodygaterDoubleMelon</Data>
+            <Data name="Suirt_BandDoubleMelon" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandDoubleMelon</Data>
+            <Data name="Suit_MEtalDoubleMelon" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalDoubleMelon</Data>
+            <Data name="Corset_NormalDoubleMelon" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalDoubleMelon</Data>
+        </Slider>
+        <Slider name="ForearmSize" invert="false" small="0" big="0">
+            <Data name="3BAForearmSize" target="3BA">SE 3BBB Body Amazing v2.osd\3BAForearmSize</Data>
+        </Slider>
+        <Slider name="Groin" invert="false" small="0" big="0">
+            <Data name="3BAGroin" target="3BA">SE 3BBB Body Amazing v2.osd\3BAGroin</Data>
+            <Data name="3BA_VaginaGroin" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaGroin</Data>
+            <Data name="3BA_AnusGroin" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusGroin</Data>
+            <Data name="NEck_MEtalsGroin" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsGroin</Data>
+            <Data name="bodygaterGroin" target="bodygater" local="true">Cuirass Black.osd\bodygaterGroin</Data>
+            <Data name="Corset_NormalGroin" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalGroin</Data>
+        </Slider>
+        <Slider name="HipBone" invert="false" small="0" big="0">
+            <Data name="3BAHipBone" target="3BA">SE 3BBB Body Amazing v2.osd\3BAHipBone</Data>
+            <Data name="3BA_VaginaHipBone" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaHipBone</Data>
+            <Data name="NEck_MEtalsHipBone" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsHipBone</Data>
+            <Data name="bodygaterHipBone" target="bodygater" local="true">Cuirass Black.osd\bodygaterHipBone</Data>
+            <Data name="Corset_NormalHipBone" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalHipBone</Data>
+        </Slider>
+        <Slider name="HipForward" invert="false" small="0" big="0">
+            <Data name="3BAHipForward" target="3BA">SE 3BBB Body Amazing v2.osd\3BAHipForward</Data>
+            <Data name="3BA_VaginaHipForward" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaHipForward</Data>
+            <Data name="3BA_AnusHipForward" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusHipForward</Data>
+            <Data name="NEck_MEtalsHipForward" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsHipForward</Data>
+            <Data name="bodygaterHipForward" target="bodygater" local="true">Cuirass Black.osd\bodygaterHipForward</Data>
+            <Data name="Suirt_BandHipForward" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandHipForward</Data>
+            <Data name="Suit_MEtalHipForward" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalHipForward</Data>
+            <Data name="Corset_NormalHipForward" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalHipForward</Data>
+        </Slider>
+        <Slider name="Hips" invert="false" small="0" big="0">
+            <Data name="3BAHips" target="3BA">SE 3BBB Body Amazing v2.osd\3BAHips</Data>
+            <Data name="3BA_VaginaHips" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaHips</Data>
+            <Data name="3BA_AnusHips" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusHips</Data>
+            <Data name="NEck_MEtalsHips" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsHips</Data>
+            <Data name="bodygaterHips" target="bodygater" local="true">Cuirass Black.osd\bodygaterHips</Data>
+            <Data name="Suirt_BandHips" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandHips</Data>
+            <Data name="Suit_MEtalHips" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalHips</Data>
+            <Data name="Corset_NormalHips" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalHips</Data>
+        </Slider>
+        <Slider name="HipUpperWidth" invert="false" small="0" big="0">
+            <Data name="3BAHipUpperWidth" target="3BA">SE 3BBB Body Amazing v2.osd\3BAHipUpperWidth</Data>
+            <Data name="NEck_MEtalsHipUpperWidth" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsHipUpperWidth</Data>
+            <Data name="bodygaterHipUpperWidth" target="bodygater" local="true">Cuirass Black.osd\bodygaterHipUpperWidth</Data>
+            <Data name="Corset_NormalHipUpperWidth" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalHipUpperWidth</Data>
+        </Slider>
+        <Slider name="HipCarved" invert="false" small="0" big="0">
+            <Data name="3BAHipCarved" target="3BA">SE 3BBB Body Amazing v2.osd\3BAHipCarved</Data>
+            <Data name="NEck_MEtalsHipCarved" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsHipCarved</Data>
+            <Data name="bodygaterHipCarved" target="bodygater" local="true">Cuirass Black.osd\bodygaterHipCarved</Data>
+            <Data name="Corset_NormalHipCarved" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalHipCarved</Data>
+        </Slider>
+        <Slider name="HipNarrow_v2" invert="false" small="0" big="0">
+            <Data name="3BAHipNarrow_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAHipNarrow_v2</Data>
+            <Data name="NEck_MEtalsHipNarrow_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsHipNarrow_v2</Data>
+            <Data name="bodygaterHipNarrow_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterHipNarrow_v2</Data>
+            <Data name="Corset_NormalHipNarrow_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalHipNarrow_v2</Data>
+        </Slider>
+        <Slider name="KneeHeight" invert="false" small="0" big="0">
+            <Data name="3BAKneeHeight" target="3BA">SE 3BBB Body Amazing v2.osd\3BAKneeHeight</Data>
+        </Slider>
+        <Slider name="KneeShape" invert="false" small="0" big="0">
+            <Data name="3BAKneeShape" target="3BA">SE 3BBB Body Amazing v2.osd\3BAKneeShape</Data>
+        </Slider>
+        <Slider name="KneeTogether_v2" invert="false" small="0" big="0">
+            <Data name="3BAKneeTogether_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAKneeTogether_v2</Data>
+        </Slider>
+        <Slider name="LegShapeClassic" invert="false" small="0" big="0">
+            <Data name="3BALegShapeClassic" target="3BA">SE 3BBB Body Amazing v2.osd\3BALegShapeClassic</Data>
+        </Slider>
+        <Slider name="LegsThin" invert="false" small="0" big="0">
+            <Data name="3BALegsThin" target="3BA">SE 3BBB Body Amazing v2.osd\3BALegsThin</Data>
+            <Data name="NEck_MEtalsLegsThin" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsLegsThin</Data>
+        </Slider>
+        <Slider name="MuscleAbs" invert="false" small="0" big="0">
+            <Data name="3BAMuscleAbs" target="3BA">SE 3BBB Body Amazing v2.osd\3BAMuscleAbs</Data>
+            <Data name="NEck_MEtalsMuscleAbs" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsMuscleAbs</Data>
+            <Data name="bodygaterMuscleAbs" target="bodygater" local="true">Cuirass Black.osd\bodygaterMuscleAbs</Data>
+            <Data name="Suirt_BandMuscleAbs" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandMuscleAbs</Data>
+            <Data name="Suit_MEtalMuscleAbs" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalMuscleAbs</Data>
+            <Data name="Corset_NormalMuscleAbs" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalMuscleAbs</Data>
+        </Slider>
+        <Slider name="MuscleArms" invert="false" small="0" big="0">
+            <Data name="3BAMuscleArms" target="3BA">SE 3BBB Body Amazing v2.osd\3BAMuscleArms</Data>
+            <Data name="NEck_MEtalsMuscleArms" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsMuscleArms</Data>
+            <Data name="bodygaterMuscleArms" target="bodygater" local="true">Cuirass Black.osd\bodygaterMuscleArms</Data>
+            <Data name="Corset_NormalMuscleArms" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalMuscleArms</Data>
+        </Slider>
+        <Slider name="MuscleButt" invert="false" small="0" big="0">
+            <Data name="3BAMuscleButt" target="3BA">SE 3BBB Body Amazing v2.osd\3BAMuscleButt</Data>
+            <Data name="NEck_MEtalsMuscleButt" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsMuscleButt</Data>
+            <Data name="bodygaterMuscleButt" target="bodygater" local="true">Cuirass Black.osd\bodygaterMuscleButt</Data>
+            <Data name="Corset_NormalMuscleButt" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalMuscleButt</Data>
+        </Slider>
+        <Slider name="MuscleLegs" invert="false" small="0" big="0">
+            <Data name="3BAMuscleLegs" target="3BA">SE 3BBB Body Amazing v2.osd\3BAMuscleLegs</Data>
+            <Data name="3BA_VaginaMuscleLegs" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaMuscleLegs</Data>
+            <Data name="3BA_AnusMuscleLegs" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusMuscleLegs</Data>
+            <Data name="NEck_MEtalsMuscleLegs" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsMuscleLegs</Data>
+            <Data name="Corset_NormalMuscleLegs" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalMuscleLegs</Data>
+        </Slider>
+        <Slider name="MusclePecs" invert="false" small="0" big="0">
+            <Data name="3BAMusclePecs" target="3BA">SE 3BBB Body Amazing v2.osd\3BAMusclePecs</Data>
+            <Data name="NEck_MEtalsMusclePecs" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsMusclePecs</Data>
+            <Data name="bodygaterMusclePecs" target="bodygater" local="true">Cuirass Black.osd\bodygaterMusclePecs</Data>
+            <Data name="Corset_NormalMusclePecs" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalMusclePecs</Data>
+        </Slider>
+        <Slider name="MuscleBack_v2" invert="false" small="0" big="0">
+            <Data name="3BAMuscleBack_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAMuscleBack_v2</Data>
+            <Data name="NEckMuscleBack_v2" target="NEck" local="true">Cuirass Black.osd\NEckMuscleBack_v2</Data>
+            <Data name="NEck_MEtalsMuscleBack_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsMuscleBack_v2</Data>
+            <Data name="bodygaterMuscleBack_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterMuscleBack_v2</Data>
+            <Data name="Corset_NormalMuscleBack_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalMuscleBack_v2</Data>
+        </Slider>
+        <Slider name="MuscleMoreAbs_v2" invert="false" small="0" big="0">
+            <Data name="3BAMuscleMoreAbs_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAMuscleMoreAbs_v2</Data>
+            <Data name="NEck_MEtalsMuscleMoreAbs_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsMuscleMoreAbs_v2</Data>
+            <Data name="bodygaterMuscleMoreAbs_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterMuscleMoreAbs_v2</Data>
+            <Data name="Suirt_BandMuscleMoreAbs_v2" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandMuscleMoreAbs_v2</Data>
+            <Data name="Suit_MEtalMuscleMoreAbs_v2" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalMuscleMoreAbs_v2</Data>
+            <Data name="Corset_NormalMuscleMoreAbs_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalMuscleMoreAbs_v2</Data>
+        </Slider>
+        <Slider name="MuscleMoreArms_v2" invert="false" small="0" big="0">
+            <Data name="3BAMuscleMoreArms_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAMuscleMoreArms_v2</Data>
+            <Data name="NEck_MEtalsMuscleMoreArms_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsMuscleMoreArms_v2</Data>
+            <Data name="bodygaterMuscleMoreArms_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterMuscleMoreArms_v2</Data>
+            <Data name="Corset_NormalMuscleMoreArms_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalMuscleMoreArms_v2</Data>
+        </Slider>
+        <Slider name="MuscleMoreLegs_v2" invert="false" small="0" big="0">
+            <Data name="3BAMuscleMoreLegs_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAMuscleMoreLegs_v2</Data>
+            <Data name="NEck_MEtalsMuscleMoreLegs_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsMuscleMoreLegs_v2</Data>
+            <Data name="bodygaterMuscleMoreLegs_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterMuscleMoreLegs_v2</Data>
+            <Data name="Corset_NormalMuscleMoreLegs_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalMuscleMoreLegs_v2</Data>
+        </Slider>
+        <Slider name="NavelEven" invert="false" small="0" big="0">
+            <Data name="3BANavelEven" target="3BA">SE 3BBB Body Amazing v2.osd\3BANavelEven</Data>
+        </Slider>
+        <Slider name="NeckSeam" invert="false" small="100" big="0" hidden="true">
+            <Data name="3BANeckSeam" target="3BA">SE 3BBB Body Amazing v2.osd\3BANeckSeam</Data>
+            <Data name="NEckNeckSeam" target="NEck" local="true">Cuirass Black.osd\NEckNeckSeam</Data>
+            <Data name="NEck_MEtalsNeckSeam" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsNeckSeam</Data>
+            <Data name="bodygaterNeckSeam" target="bodygater" local="true">Cuirass Black.osd\bodygaterNeckSeam</Data>
+        </Slider>
+        <Slider name="NipBGone" invert="false" small="0" big="0">
+            <Data name="3BANipBGone" target="3BA">SE 3BBB Body Amazing v2.osd\3BANipBGone</Data>
+            <Data name="Corset_NormalNipBGone" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNipBGone</Data>
+        </Slider>
+        <Slider name="NippleDistance" invert="false" small="0" big="0">
+            <Data name="3BANippleDistance" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleDistance</Data>
+            <Data name="NEck_MEtalsNippleDistance" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsNippleDistance</Data>
+            <Data name="bodygaterNippleDistance" target="bodygater" local="true">Cuirass Black.osd\bodygaterNippleDistance</Data>
+            <Data name="Suirt_BandNippleDistance" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandNippleDistance</Data>
+            <Data name="Suit_MEtalNippleDistance" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalNippleDistance</Data>
+            <Data name="Corset_NormalNippleDistance" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleDistance</Data>
+        </Slider>
+        <Slider name="NippleDown" invert="false" small="0" big="0">
+            <Data name="3BANippleDown" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleDown</Data>
+            <Data name="NEck_MEtalsNippleDown" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsNippleDown</Data>
+            <Data name="bodygaterNippleDown" target="bodygater" local="true">Cuirass Black.osd\bodygaterNippleDown</Data>
+            <Data name="Suirt_BandNippleDown" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandNippleDown</Data>
+            <Data name="Suit_MEtalNippleDown" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalNippleDown</Data>
+            <Data name="Corset_NormalNippleDown" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleDown</Data>
+        </Slider>
+        <Slider name="NippleLength" invert="false" small="0" big="0">
+            <Data name="3BANippleLength" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleLength</Data>
+            <Data name="bodygaterNippleLength" target="bodygater" local="true">Cuirass Black.osd\bodygaterNippleLength</Data>
+            <Data name="Corset_NormalNippleLength" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleLength</Data>
+        </Slider>
+        <Slider name="NippleManga" invert="false" small="0" big="0">
+            <Data name="3BANippleManga" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleManga</Data>
+            <Data name="Corset_NormalNippleManga" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleManga</Data>
+        </Slider>
+        <Slider name="NipplePerkiness" invert="false" small="0" big="0">
+            <Data name="3BANipplePerkiness" target="3BA">SE 3BBB Body Amazing v2.osd\3BANipplePerkiness</Data>
+            <Data name="Corset_NormalNipplePerkiness" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNipplePerkiness</Data>
+        </Slider>
+        <Slider name="NipplePerkManga" invert="false" small="0" big="0">
+            <Data name="3BANipplePerkManga" target="3BA">SE 3BBB Body Amazing v2.osd\3BANipplePerkManga</Data>
+            <Data name="Corset_NormalNipplePerkManga" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNipplePerkManga</Data>
+        </Slider>
+        <Slider name="NippleSize" invert="false" small="0" big="0">
+            <Data name="3BANippleSize" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleSize</Data>
+            <Data name="bodygaterNippleSize" target="bodygater" local="true">Cuirass Black.osd\bodygaterNippleSize</Data>
+            <Data name="Corset_NormalNippleSize" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleSize</Data>
+        </Slider>
+        <Slider name="NippleTip" invert="false" small="0" big="0">
+            <Data name="3BANippleTip" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleTip</Data>
+            <Data name="Corset_NormalNippleTip" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleTip</Data>
+        </Slider>
+        <Slider name="NippleTipManga" invert="false" small="0" big="0">
+            <Data name="3BANippleTipManga" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleTipManga</Data>
+            <Data name="Corset_NormalNippleTipManga" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleTipManga</Data>
+        </Slider>
+        <Slider name="NippleUp" invert="false" small="0" big="0">
+            <Data name="3BANippleUp" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleUp</Data>
+            <Data name="NEck_MEtalsNippleUp" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsNippleUp</Data>
+            <Data name="bodygaterNippleUp" target="bodygater" local="true">Cuirass Black.osd\bodygaterNippleUp</Data>
+            <Data name="Corset_NormalNippleUp" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleUp</Data>
+        </Slider>
+        <Slider name="NippleDip" invert="false" small="0" big="0">
+            <Data name="3BANippleDip" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleDip</Data>
+            <Data name="Corset_NormalNippleDip" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleDip</Data>
+        </Slider>
+        <Slider name="NippleCrease_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleCrease_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleCrease_v2</Data>
+            <Data name="Corset_NormalNippleCrease_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleCrease_v2</Data>
+        </Slider>
+        <Slider name="NipplePuffy_v2" invert="false" small="0" big="0">
+            <Data name="3BANipplePuffy_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BANipplePuffy_v2</Data>
+            <Data name="Corset_NormalNipplePuffy_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNipplePuffy_v2</Data>
+        </Slider>
+        <Slider name="NippleShy_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleShy_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleShy_v2</Data>
+            <Data name="Corset_NormalNippleShy_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleShy_v2</Data>
+        </Slider>
+        <Slider name="NippleThicc_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleThicc_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleThicc_v2</Data>
+            <Data name="Corset_NormalNippleThicc_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleThicc_v2</Data>
+        </Slider>
+        <Slider name="NippleInvert_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleInvert_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleInvert_v2</Data>
+            <Data name="bodygaterNippleInvert_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterNippleInvert_v2</Data>
+            <Data name="Corset_NormalNippleInvert_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleInvert_v2</Data>
+        </Slider>
+        <Slider name="NippleSquash1_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleSquash1_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleSquash1_v2</Data>
+            <Data name="Corset_NormalNippleSquash1_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleSquash1_v2</Data>
+        </Slider>
+        <Slider name="NippleSquash2_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleSquash2_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleSquash2_v2</Data>
+            <Data name="Corset_NormalNippleSquash2_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleSquash2_v2</Data>
+        </Slider>
+        <Slider name="NippleBump_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleBump_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleBump_v2</Data>
+            <Data name="Corset_NormalNippleBump_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleBump_v2</Data>
+        </Slider>
+        <Slider name="NippleCrumpled_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleCrumpled_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleCrumpled_v2</Data>
+            <Data name="Corset_NormalNippleCrumpled_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleCrumpled_v2</Data>
+        </Slider>
+        <Slider name="NippleTube_v2" invert="false" small="0" big="0">
+            <Data name="3BANippleTube_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BANippleTube_v2</Data>
+            <Data name="Corset_NormalNippleTube_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalNippleTube_v2</Data>
+        </Slider>
+        <Slider name="PregnancyBelly" invert="false" small="0" big="0">
+            <Data name="3BAPregnancyBelly" target="3BA">SE 3BBB Body Amazing v2.osd\3BAPregnancyBelly</Data>
+            <Data name="3BA_VaginaPregnancyBelly" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaPregnancyBelly</Data>
+            <Data name="NEck_MEtalsPregnancyBelly" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsPregnancyBelly</Data>
+            <Data name="bodygaterPregnancyBelly" target="bodygater" local="true">Cuirass Black.osd\bodygaterPregnancyBelly</Data>
+            <Data name="Suirt_BandPregnancyBelly" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandPregnancyBelly</Data>
+            <Data name="Suit_MEtalPregnancyBelly" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalPregnancyBelly</Data>
+            <Data name="Corset_NormalPregnancyBelly" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalPregnancyBelly</Data>
+        </Slider>
+        <Slider name="PushUp" invert="false" small="0" big="0">
+            <Data name="3BAPushUp" target="3BA">SE 3BBB Body Amazing v2.osd\3BAPushUp</Data>
+            <Data name="NEck_MEtalsPushUp" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsPushUp</Data>
+            <Data name="bodygaterPushUp" target="bodygater" local="true">Cuirass Black.osd\bodygaterPushUp</Data>
+            <Data name="Suirt_BandPushUp" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandPushUp</Data>
+            <Data name="Suit_MEtalPushUp" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalPushUp</Data>
+            <Data name="Corset_NormalPushUp" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalPushUp</Data>
+        </Slider>
+        <Slider name="RibsMore_v2" invert="false" small="0" big="0">
+            <Data name="3BARibsMore_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BARibsMore_v2</Data>
+            <Data name="NEck_MEtalsRibsMore_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsRibsMore_v2</Data>
+            <Data name="bodygaterRibsMore_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterRibsMore_v2</Data>
+            <Data name="Suirt_BandRibsMore_v2" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandRibsMore_v2</Data>
+            <Data name="Suit_MEtalRibsMore_v2" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalRibsMore_v2</Data>
+            <Data name="Corset_NormalRibsMore_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalRibsMore_v2</Data>
+        </Slider>
+        <Slider name="RibsProminance" invert="false" small="0" big="0">
+            <Data name="3BARibsProminance" target="3BA">SE 3BBB Body Amazing v2.osd\3BARibsProminance</Data>
+            <Data name="NEck_MEtalsRibsProminance" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsRibsProminance</Data>
+            <Data name="bodygaterRibsProminance" target="bodygater" local="true">Cuirass Black.osd\bodygaterRibsProminance</Data>
+            <Data name="Suirt_BandRibsProminance" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandRibsProminance</Data>
+            <Data name="Suit_MEtalRibsProminance" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalRibsProminance</Data>
+            <Data name="Corset_NormalRibsProminance" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalRibsProminance</Data>
+        </Slider>
+        <Slider name="RoundAss" invert="false" small="0" big="0">
+            <Data name="3BARoundAss" target="3BA">SE 3BBB Body Amazing v2.osd\3BARoundAss</Data>
+            <Data name="3BA_VaginaRoundAss" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaRoundAss</Data>
+            <Data name="3BA_AnusRoundAss" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusRoundAss</Data>
+            <Data name="NEck_MEtalsRoundAss" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsRoundAss</Data>
+            <Data name="bodygaterRoundAss" target="bodygater" local="true">Cuirass Black.osd\bodygaterRoundAss</Data>
+            <Data name="Corset_NormalRoundAss" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalRoundAss</Data>
+        </Slider>
+        <Slider name="ShoulderSmooth" invert="false" small="0" big="0">
+            <Data name="3BAShoulderSmooth" target="3BA">SE 3BBB Body Amazing v2.osd\3BAShoulderSmooth</Data>
+            <Data name="NEck_MEtalsShoulderSmooth" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsShoulderSmooth</Data>
+            <Data name="bodygaterShoulderSmooth" target="bodygater" local="true">Cuirass Black.osd\bodygaterShoulderSmooth</Data>
+        </Slider>
+        <Slider name="ShoulderTweak" invert="false" small="0" big="0">
+            <Data name="3BAShoulderTweak" target="3BA">SE 3BBB Body Amazing v2.osd\3BAShoulderTweak</Data>
+            <Data name="NEckShoulderTweak" target="NEck" local="true">Cuirass Black.osd\NEckShoulderTweak</Data>
+            <Data name="NEck_MEtalsShoulderTweak" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsShoulderTweak</Data>
+            <Data name="bodygaterShoulderTweak" target="bodygater" local="true">Cuirass Black.osd\bodygaterShoulderTweak</Data>
+        </Slider>
+        <Slider name="ShoulderWidth" invert="false" small="0" big="0">
+            <Data name="3BAShoulderWidth" target="3BA">SE 3BBB Body Amazing v2.osd\3BAShoulderWidth</Data>
+            <Data name="NEckShoulderWidth" target="NEck" local="true">Cuirass Black.osd\NEckShoulderWidth</Data>
+            <Data name="NEck_MEtalsShoulderWidth" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsShoulderWidth</Data>
+            <Data name="bodygaterShoulderWidth" target="bodygater" local="true">Cuirass Black.osd\bodygaterShoulderWidth</Data>
+            <Data name="Corset_NormalShoulderWidth" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalShoulderWidth</Data>
+        </Slider>
+        <Slider name="SlimThighs" invert="false" small="0" big="0">
+            <Data name="3BASlimThighs" target="3BA">SE 3BBB Body Amazing v2.osd\3BASlimThighs</Data>
+            <Data name="3BA_VaginaSlimThighs" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaSlimThighs</Data>
+            <Data name="3BA_AnusSlimThighs" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusSlimThighs</Data>
+            <Data name="NEck_MEtalsSlimThighs" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsSlimThighs</Data>
+            <Data name="bodygaterSlimThighs" target="bodygater" local="true">Cuirass Black.osd\bodygaterSlimThighs</Data>
+            <Data name="Corset_NormalSlimThighs" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalSlimThighs</Data>
+        </Slider>
+        <Slider name="SternumDepth" invert="false" small="0" big="0">
+            <Data name="3BASternumDepth" target="3BA">SE 3BBB Body Amazing v2.osd\3BASternumDepth</Data>
+            <Data name="NEck_MEtalsSternumDepth" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsSternumDepth</Data>
+            <Data name="bodygaterSternumDepth" target="bodygater" local="true">Cuirass Black.osd\bodygaterSternumDepth</Data>
+            <Data name="Suirt_BandSternumDepth" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandSternumDepth</Data>
+            <Data name="Suit_MEtalSternumDepth" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalSternumDepth</Data>
+            <Data name="Corset_NormalSternumDepth" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalSternumDepth</Data>
+        </Slider>
+        <Slider name="SternumHeight" invert="false" small="0" big="0">
+            <Data name="3BASternumHeight" target="3BA">SE 3BBB Body Amazing v2.osd\3BASternumHeight</Data>
+            <Data name="NEck_MEtalsSternumHeight" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsSternumHeight</Data>
+            <Data name="bodygaterSternumHeight" target="bodygater" local="true">Cuirass Black.osd\bodygaterSternumHeight</Data>
+            <Data name="Suirt_BandSternumHeight" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandSternumHeight</Data>
+            <Data name="Suit_MEtalSternumHeight" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalSternumHeight</Data>
+            <Data name="Corset_NormalSternumHeight" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalSternumHeight</Data>
+        </Slider>
+        <Slider name="Thighs" invert="false" small="0" big="0">
+            <Data name="3BAThighs" target="3BA">SE 3BBB Body Amazing v2.osd\3BAThighs</Data>
+            <Data name="3BA_VaginaThighs" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaThighs</Data>
+            <Data name="3BA_AnusThighs" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusThighs</Data>
+            <Data name="NEck_MEtalsThighs" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsThighs</Data>
+            <Data name="bodygaterThighs" target="bodygater" local="true">Cuirass Black.osd\bodygaterThighs</Data>
+            <Data name="Corset_NormalThighs" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalThighs</Data>
+        </Slider>
+        <Slider name="ThighOutsideThicc_v2" invert="false" small="0" big="0">
+            <Data name="3BAThighOutsideThicc_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAThighOutsideThicc_v2</Data>
+            <Data name="NEck_MEtalsThighOutsideThicc_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsThighOutsideThicc_v2</Data>
+        </Slider>
+        <Slider name="ThighInsideThicc_v2" invert="false" small="0" big="0">
+            <Data name="3BAThighInsideThicc_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAThighInsideThicc_v2</Data>
+            <Data name="3BA_VaginaThighInsideThicc_v2" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaThighInsideThicc_v2</Data>
+            <Data name="Corset_NormalThighInsideThicc_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalThighInsideThicc_v2</Data>
+        </Slider>
+        <Slider name="ThighFBThicc_v2" invert="false" small="0" big="0">
+            <Data name="3BAThighFBThicc_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAThighFBThicc_v2</Data>
+            <Data name="Corset_NormalThighFBThicc_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalThighFBThicc_v2</Data>
+        </Slider>
+        <Slider name="LegSpread_v2" invert="false" small="0" big="0">
+            <Data name="3BALegSpread_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BALegSpread_v2</Data>
+            <Data name="NEck_MEtalsLegSpread_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsLegSpread_v2</Data>
+            <Data name="bodygaterLegSpread_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterLegSpread_v2</Data>
+            <Data name="Corset_NormalLegSpread_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalLegSpread_v2</Data>
+        </Slider>
+        <Slider name="TummyTuck" invert="false" small="0" big="0">
+            <Data name="3BATummyTuck" target="3BA">SE 3BBB Body Amazing v2.osd\3BATummyTuck</Data>
+            <Data name="3BA_VaginaTummyTuck" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaTummyTuck</Data>
+            <Data name="NEck_MEtalsTummyTuck" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsTummyTuck</Data>
+            <Data name="bodygaterTummyTuck" target="bodygater" local="true">Cuirass Black.osd\bodygaterTummyTuck</Data>
+            <Data name="Suirt_BandTummyTuck" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandTummyTuck</Data>
+            <Data name="Suit_MEtalTummyTuck" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalTummyTuck</Data>
+            <Data name="Corset_NormalTummyTuck" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalTummyTuck</Data>
+        </Slider>
+        <Slider name="UNPHip_v2" invert="false" small="0" big="0">
+            <Data name="3BAUNPHip_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAUNPHip_v2</Data>
+            <Data name="NEck_MEtalsUNPHip_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsUNPHip_v2</Data>
+            <Data name="bodygaterUNPHip_v2" target="bodygater" local="true">Cuirass Black.osd\bodygaterUNPHip_v2</Data>
+            <Data name="Suirt_BandUNPHip_v2" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandUNPHip_v2</Data>
+            <Data name="Suit_MEtalUNPHip_v2" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalUNPHip_v2</Data>
+            <Data name="Corset_NormalUNPHip_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalUNPHip_v2</Data>
+        </Slider>
+        <Slider name="Waist" invert="false" small="0" big="0">
+            <Data name="3BAWaist" target="3BA">SE 3BBB Body Amazing v2.osd\3BAWaist</Data>
+            <Data name="NEck_MEtalsWaist" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsWaist</Data>
+            <Data name="bodygaterWaist" target="bodygater" local="true">Cuirass Black.osd\bodygaterWaist</Data>
+            <Data name="Suirt_BandWaist" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandWaist</Data>
+            <Data name="Suit_MEtalWaist" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalWaist</Data>
+            <Data name="Corset_NormalWaist" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalWaist</Data>
+        </Slider>
+        <Slider name="WaistHeight" invert="false" small="0" big="0">
+            <Data name="3BAWaistHeight" target="3BA">SE 3BBB Body Amazing v2.osd\3BAWaistHeight</Data>
+            <Data name="3BA_VaginaWaistHeight" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaWaistHeight</Data>
+            <Data name="3BA_AnusWaistHeight" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusWaistHeight</Data>
+            <Data name="NEck_MEtalsWaistHeight" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsWaistHeight</Data>
+            <Data name="bodygaterWaistHeight" target="bodygater" local="true">Cuirass Black.osd\bodygaterWaistHeight</Data>
+            <Data name="Suirt_BandWaistHeight" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandWaistHeight</Data>
+            <Data name="Suit_MEtalWaistHeight" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalWaistHeight</Data>
+            <Data name="Corset_NormalWaistHeight" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalWaistHeight</Data>
+        </Slider>
+        <Slider name="WideWaistLine" invert="false" small="0" big="0">
+            <Data name="3BAWideWaistLine" target="3BA">SE 3BBB Body Amazing v2.osd\3BAWideWaistLine</Data>
+            <Data name="NEck_MEtalsWideWaistLine" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsWideWaistLine</Data>
+            <Data name="bodygaterWideWaistLine" target="bodygater" local="true">Cuirass Black.osd\bodygaterWideWaistLine</Data>
+            <Data name="Corset_NormalWideWaistLine" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalWideWaistLine</Data>
+        </Slider>
+        <Slider name="WristSize" invert="false" small="100" big="0">
+            <Data name="3BAWristSize" target="3BA">SE 3BBB Body Amazing v2.osd\3BAWristSize</Data>
+        </Slider>
+        <Slider name="7BLeg_v2" invert="false" small="0" big="0">
+            <Data name="3BA7BLeg_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BA7BLeg_v2</Data>
+            <Data name="NEck_MEtals7BLeg_v2" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtals7BLeg_v2</Data>
+        </Slider>
+        <Slider name="7B Lower" invert="false" small="0" big="0">
+            <Data name="3BA7B Lower" target="3BA">SE 3BBB Body Amazing v2.osd\3BA7B Lower</Data>
+            <Data name="3BA_Vagina7B Lower" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_Vagina7B Lower</Data>
+            <Data name="3BA_Anus7B Lower" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_Anus7B Lower</Data>
+            <Data name="NEck_MEtals7B Lower" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtals7B Lower</Data>
+            <Data name="bodygater7B Lower" target="bodygater" local="true">Cuirass Black.osd\bodygater7B Lower</Data>
+            <Data name="Suirt_Band7B Lower" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_Band7B Lower</Data>
+            <Data name="Suit_MEtal7B Lower" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtal7B Lower</Data>
+            <Data name="Corset_Normal7B Lower" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_Normal7B Lower</Data>
+        </Slider>
+        <Slider name="7B Upper" invert="false" small="0" big="0">
+            <Data name="3BA7B Upper" target="3BA">SE 3BBB Body Amazing v2.osd\3BA7B Upper</Data>
+            <Data name="NEck7B Upper" target="NEck" local="true">Cuirass Black.osd\NEck7B Upper</Data>
+            <Data name="NEck_MEtals7B Upper" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtals7B Upper</Data>
+            <Data name="bodygater7B Upper" target="bodygater" local="true">Cuirass Black.osd\bodygater7B Upper</Data>
+            <Data name="Suirt_Band7B Upper" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_Band7B Upper</Data>
+            <Data name="Suit_MEtal7B Upper" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtal7B Upper</Data>
+            <Data name="Corset_Normal7B Upper" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_Normal7B Upper</Data>
+        </Slider>
+        <Slider name="VanillaSSEHi" invert="false" small="0" big="0">
+            <Data name="3BAVanillaSSEHi" target="3BA">SE 3BBB Body Amazing v2.osd\3BAVanillaSSEHi</Data>
+            <Data name="3BA_VaginaVanillaSSEHi" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaVanillaSSEHi</Data>
+            <Data name="3BA_AnusVanillaSSEHi" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusVanillaSSEHi</Data>
+            <Data name="NEckVanillaSSEHi" target="NEck" local="true">Cuirass Black.osd\NEckVanillaSSEHi</Data>
+            <Data name="NEck_MEtalsVanillaSSEHi" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsVanillaSSEHi</Data>
+            <Data name="bodygaterVanillaSSEHi" target="bodygater" local="true">Cuirass Black.osd\bodygaterVanillaSSEHi</Data>
+            <Data name="Suirt_BandVanillaSSEHi" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandVanillaSSEHi</Data>
+            <Data name="Suit_MEtalVanillaSSEHi" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalVanillaSSEHi</Data>
+            <Data name="Corset_NormalVanillaSSEHi" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalVanillaSSEHi</Data>
+        </Slider>
+        <Slider name="VanillaSSELo" invert="false" small="0" big="0">
+            <Data name="3BAVanillaSSELo" target="3BA">SE 3BBB Body Amazing v2.osd\3BAVanillaSSELo</Data>
+            <Data name="3BA_VaginaVanillaSSELo" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaVanillaSSELo</Data>
+            <Data name="3BA_AnusVanillaSSELo" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusVanillaSSELo</Data>
+            <Data name="NEckVanillaSSELo" target="NEck" local="true">Cuirass Black.osd\NEckVanillaSSELo</Data>
+            <Data name="NEck_MEtalsVanillaSSELo" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsVanillaSSELo</Data>
+            <Data name="bodygaterVanillaSSELo" target="bodygater" local="true">Cuirass Black.osd\bodygaterVanillaSSELo</Data>
+            <Data name="Suirt_BandVanillaSSELo" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandVanillaSSELo</Data>
+            <Data name="Suit_MEtalVanillaSSELo" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalVanillaSSELo</Data>
+            <Data name="Corset_NormalVanillaSSELo" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalVanillaSSELo</Data>
+        </Slider>
+        <Slider name="OldBaseShape" invert="false" small="0" big="0">
+            <Data name="3BAOldBaseShape" target="3BA">SE 3BBB Body Amazing v2.osd\3BAOldBaseShape</Data>
+            <Data name="3BA_VaginaOldBaseShape" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaOldBaseShape</Data>
+            <Data name="3BA_AnusOldBaseShape" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusOldBaseShape</Data>
+            <Data name="NEck_MEtalsOldBaseShape" target="NEck_MEtals" local="true">Cuirass Black.osd\NEck_MEtalsOldBaseShape</Data>
+            <Data name="bodygaterOldBaseShape" target="bodygater" local="true">Cuirass Black.osd\bodygaterOldBaseShape</Data>
+            <Data name="Suirt_BandOldBaseShape" target="Suirt_Band" local="true">Cuirass Black.osd\Suirt_BandOldBaseShape</Data>
+            <Data name="Suit_MEtalOldBaseShape" target="Suit_MEtal" local="true">Cuirass Black.osd\Suit_MEtalOldBaseShape</Data>
+            <Data name="Corset_NormalOldBaseShape" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalOldBaseShape</Data>
+        </Slider>
+        <Slider name="Innieoutie" invert="false" small="0" big="0">
+            <Data name="3BAInnieoutie" target="3BA">SE 3BBB Body Amazing v2.osd\3BAInnieoutie</Data>
+            <Data name="3BA_VaginaInnieoutie" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaInnieoutie</Data>
+            <Data name="Corset_NormalInnieoutie" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalInnieoutie</Data>
+        </Slider>
+        <Slider name="LabiaTightUp" invert="false" small="0" big="0">
+            <Data name="3BALabiaTightUp" target="3BA">SE 3BBB Body Amazing v2.osd\3BALabiaTightUp</Data>
+            <Data name="3BA_VaginaLabiaTightUp" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaLabiaTightUp</Data>
+            <Data name="Corset_NormalLabiaTightUp" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalLabiaTightUp</Data>
+        </Slider>
+        <Slider name="Labiapuffyness" invert="false" small="0" big="0">
+            <Data name="3BALabiapuffyness" target="3BA">SE 3BBB Body Amazing v2.osd\3BALabiapuffyness</Data>
+            <Data name="3BA_VaginaLabiapuffyness" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaLabiapuffyness</Data>
+            <Data name="Corset_NormalLabiapuffyness" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalLabiapuffyness</Data>
+        </Slider>
+        <Slider name="LabiaMorePuffyness_v2" invert="false" small="0" big="0">
+            <Data name="3BALabiaMorePuffyness_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BALabiaMorePuffyness_v2</Data>
+            <Data name="3BA_VaginaLabiaMorePuffyness_v2" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaLabiaMorePuffyness_v2</Data>
+            <Data name="Corset_NormalLabiaMorePuffyness_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalLabiaMorePuffyness_v2</Data>
+        </Slider>
+        <Slider name="Labiaprotrude" invert="false" small="0" big="0">
+            <Data name="3BALabiaprotrude" target="3BA">SE 3BBB Body Amazing v2.osd\3BALabiaprotrude</Data>
+            <Data name="3BA_VaginaLabiaprotrude" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaLabiaprotrude</Data>
+            <Data name="Corset_NormalLabiaprotrude" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalLabiaprotrude</Data>
+        </Slider>
+        <Slider name="Labiaprotrude2" invert="false" small="0" big="0">
+            <Data name="3BALabiaprotrude2" target="3BA">SE 3BBB Body Amazing v2.osd\3BALabiaprotrude2</Data>
+            <Data name="3BA_VaginaLabiaprotrude2" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaLabiaprotrude2</Data>
+            <Data name="Corset_NormalLabiaprotrude2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalLabiaprotrude2</Data>
+        </Slider>
+        <Slider name="Labiaprotrudeback" invert="false" small="0" big="0">
+            <Data name="3BA_VaginaLabiaprotrudeback" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaLabiaprotrudeback</Data>
+        </Slider>
+        <Slider name="Labiaspread" invert="false" small="0" big="0">
+            <Data name="3BALabiaspread" target="3BA">SE 3BBB Body Amazing v2.osd\3BALabiaspread</Data>
+            <Data name="3BA_VaginaLabiaspread" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaLabiaspread</Data>
+            <Data name="Corset_NormalLabiaspread" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalLabiaspread</Data>
+        </Slider>
+        <Slider name="LabiaCrumpled_v2" invert="false" small="0" big="0">
+            <Data name="3BALabiaCrumpled_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BALabiaCrumpled_v2</Data>
+            <Data name="3BA_VaginaLabiaCrumpled_v2" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaLabiaCrumpled_v2</Data>
+            <Data name="Corset_NormalLabiaCrumpled_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalLabiaCrumpled_v2</Data>
+        </Slider>
+        <Slider name="LabiaNeat_v2" invert="false" small="0" big="0">
+            <Data name="3BALabiaNeat_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BALabiaNeat_v2</Data>
+            <Data name="3BA_VaginaLabiaNeat_v2" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaLabiaNeat_v2</Data>
+            <Data name="Corset_NormalLabiaNeat_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalLabiaNeat_v2</Data>
+        </Slider>
+        <Slider name="LabiaBulgogi_v2" invert="false" small="0" big="0">
+            <Data name="3BALabiaBulgogi_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BALabiaBulgogi_v2</Data>
+            <Data name="3BA_VaginaLabiaBulgogi_v2" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaLabiaBulgogi_v2</Data>
+            <Data name="Corset_NormalLabiaBulgogi_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalLabiaBulgogi_v2</Data>
+        </Slider>
+        <Slider name="Vaginasize" invert="false" small="0" big="0">
+            <Data name="3BA_VaginaVaginasize" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaVaginasize</Data>
+        </Slider>
+        <Slider name="VaginaHole" invert="false" small="0" big="0">
+            <Data name="3BAVaginaHole" target="3BA">SE 3BBB Body Amazing v2.osd\3BAVaginaHole</Data>
+            <Data name="3BA_VaginaVaginaHole" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaVaginaHole</Data>
+            <Data name="Corset_NormalVaginaHole" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalVaginaHole</Data>
+        </Slider>
+        <Slider name="Clit" invert="false" small="0" big="0">
+            <Data name="3BAClit" target="3BA">SE 3BBB Body Amazing v2.osd\3BAClit</Data>
+            <Data name="3BA_VaginaClit" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaClit</Data>
+            <Data name="Corset_NormalClit" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalClit</Data>
+        </Slider>
+        <Slider name="ClitSwell_v2" invert="false" small="0" big="0">
+            <Data name="3BAClitSwell_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAClitSwell_v2</Data>
+            <Data name="3BA_VaginaClitSwell_v2" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaClitSwell_v2</Data>
+            <Data name="Corset_NormalClitSwell_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalClitSwell_v2</Data>
+        </Slider>
+        <Slider name="Cutepuffyness" invert="false" small="0" big="0">
+            <Data name="3BACutepuffyness" target="3BA">SE 3BBB Body Amazing v2.osd\3BACutepuffyness</Data>
+            <Data name="3BA_VaginaCutepuffyness" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaCutepuffyness</Data>
+            <Data name="Corset_NormalCutepuffyness" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalCutepuffyness</Data>
+        </Slider>
+        <Slider name="CBPC" invert="false" small="0" big="0">
+            <Data name="3BACBPC" target="3BA">SE 3BBB Body Amazing v2.osd\3BACBPC</Data>
+            <Data name="3BA_VaginaCBPC" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaCBPC</Data>
+            <Data name="Corset_NormalCBPC" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalCBPC</Data>
+        </Slider>
+        <Slider name="CrotchGap" invert="false" small="0" big="0">
+            <Data name="3BACrotchGap" target="3BA">SE 3BBB Body Amazing v2.osd\3BACrotchGap</Data>
+            <Data name="3BA_VaginaCrotchGap" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaCrotchGap</Data>
+            <Data name="Corset_NormalCrotchGap" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalCrotchGap</Data>
+        </Slider>
+        <Slider name="AnalLoose_v2" invert="false" small="0" big="0">
+            <Data name="3BAAnalLoose_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAAnalLoose_v2</Data>
+            <Data name="3BA_VaginaAnalLoose_v2" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaAnalLoose_v2</Data>
+            <Data name="3BA_AnusAnalLoose_v2" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusAnalLoose_v2</Data>
+            <Data name="Corset_NormalAnalLoose_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalAnalLoose_v2</Data>
+        </Slider>
+        <Slider name="AnalPosition_v2" invert="false" small="0" big="0">
+            <Data name="3BAAnalPosition_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAAnalPosition_v2</Data>
+            <Data name="3BA_VaginaAnalPosition_v2" target="3BA_Vagina">SE 3BBB Body Amazing v2.osd\3BA_VaginaAnalPosition_v2</Data>
+            <Data name="3BA_AnusAnalPosition_v2" target="3BA_Anus">SE 3BBB Body Amazing v2.osd\3BA_AnusAnalPosition_v2</Data>
+            <Data name="Corset_NormalAnalPosition_v2" target="Corset_Normal" local="true">Cuirass Black.osd\Corset_NormalAnalPosition_v2</Data>
+        </Slider>
+        <Slider name="AnalTexPos_v2" invert="false" small="0" big="0" uv="true">
+            <Data name="3BAAnalTexPos_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAAnalTexPos_v2</Data>
+        </Slider>
+        <Slider name="AnalTexPosRe_v2" invert="false" small="0" big="0" uv="true">
+            <Data name="3BAAnalTexPosRe_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAAnalTexPosRe_v2</Data>
+        </Slider>
+    </SliderSet>
+    <SliderSet name="PSQ 3BA 变身 - Hiroshi - 角饰">
+        <DataFolder>PSQ_Package_20261106\3BA\F014</DataFolder>
+        <SourceFile>Horns Black.nif</SourceFile>
+        <OutputPath>meshes\PSQ\Outfits\Set08</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">horns</OutputFile>
+        <Shape target="Earring">Earring</Shape>
+        <Shape target="Head_wing">Head_wing</Shape>
+        <Shape target="Horns">Horns</Shape>
+    </SliderSet>
+    <SliderSet name="PSQ 3BA 变身 - Hiroshi - 靴子">
+        <DataFolder>PSQ_Package_20261106\3BA\F014</DataFolder>
+        <SourceFile>Boots Black.nif</SourceFile>
+        <OutputPath>meshes\PSQ\Outfits\Set08</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">boots</OutputFile>
+        <Shape target="Boots">Boots</Shape>
+        <Shape target="Boots_Spikes">Boots_Spikes</Shape>
+        <Shape target="GarterN">GarterN</Shape>
+        <Shape target="LEg_Chain">LEg_Chain</Shape>
+        <Shape target="LEg_Rings_MEtal">LEg_Rings_MEtal</Shape>
+        <Shape target="LEg_Wing">LEg_Wing</Shape>
+        <Shape target="LEg_garter_Metals">LEg_garter_Metals</Shape>
+        <Shape target="Legrings">Legrings</Shape>
+        <Slider name="AnkleSize" invert="false" small="100" big="0">
+            <Data name="Boots_SpikesAnkleSize" target="Boots_Spikes" local="true">Boots Black.osd\Boots_SpikesAnkleSize</Data>
+            <Data name="BootsAnkleSize" target="Boots" local="true">Boots Black.osd\BootsAnkleSize</Data>
+            <Data name="LEg_ChainAnkleSize" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainAnkleSize</Data>
+            <Data name="LEg_WingAnkleSize" target="LEg_Wing" local="true">Boots Black.osd\LEg_WingAnkleSize</Data>
+        </Slider>
+        <Slider name="AppleCheeks" invert="false" small="0" big="0">
+            <Data name="BootsAppleCheeks" target="Boots" local="true">Boots Black.osd\BootsAppleCheeks</Data>
+            <Data name="GarterNAppleCheeks" target="GarterN" local="true">Boots Black.osd\GarterNAppleCheeks</Data>
+            <Data name="LEg_garter_MetalsAppleCheeks" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsAppleCheeks</Data>
+        </Slider>
+        <Slider name="Back" invert="false" small="0" big="0">
+            <Data name="GarterNBack" target="GarterN" local="true">Boots Black.osd\GarterNBack</Data>
+        </Slider>
+        <Slider name="BackArch" invert="false" small="0" big="0">
+            <Data name="GarterNBackArch" target="GarterN" local="true">Boots Black.osd\GarterNBackArch</Data>
+        </Slider>
+        <Slider name="Belly" invert="false" small="0" big="0">
+            <Data name="GarterNBelly" target="GarterN" local="true">Boots Black.osd\GarterNBelly</Data>
+        </Slider>
+        <Slider name="BellyFrontDownFat_v2" invert="false" small="0" big="0">
+            <Data name="GarterNBellyFrontDownFat_v2" target="GarterN" local="true">Boots Black.osd\GarterNBellyFrontDownFat_v2</Data>
+        </Slider>
+        <Slider name="BellySideDownFat_v2" invert="false" small="0" big="0">
+            <Data name="GarterNBellySideDownFat_v2" target="GarterN" local="true">Boots Black.osd\GarterNBellySideDownFat_v2</Data>
+        </Slider>
+        <Slider name="BellyUnder_v2" invert="false" small="0" big="0">
+            <Data name="GarterNBellyUnder_v2" target="GarterN" local="true">Boots Black.osd\GarterNBellyUnder_v2</Data>
+        </Slider>
+        <Slider name="BigBelly" invert="false" small="0" big="0">
+            <Data name="GarterNBigBelly" target="GarterN" local="true">Boots Black.osd\GarterNBigBelly</Data>
+            <Data name="LEg_garter_MetalsBigBelly" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsBigBelly</Data>
+        </Slider>
+        <Slider name="BigButt" invert="false" small="0" big="0">
+            <Data name="BootsBigButt" target="Boots" local="true">Boots Black.osd\BootsBigButt</Data>
+            <Data name="GarterNBigButt" target="GarterN" local="true">Boots Black.osd\GarterNBigButt</Data>
+            <Data name="LEg_garter_MetalsBigButt" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsBigButt</Data>
+            <Data name="LegringsBigButt" target="Legrings" local="true">Boots Black.osd\LegringsBigButt</Data>
+            <Data name="LEg_Rings_MEtalBigButt" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalBigButt</Data>
+        </Slider>
+        <Slider name="BigTorso" invert="false" small="0" big="0">
+            <Data name="GarterNBigTorso" target="GarterN" local="true">Boots Black.osd\GarterNBigTorso</Data>
+        </Slider>
+        <Slider name="BreastsSmall" invert="false" small="0" big="0">
+            <Data name="GarterNBreastsSmall" target="GarterN" local="true">Boots Black.osd\GarterNBreastsSmall</Data>
+        </Slider>
+        <Slider name="BreastsSmall2" invert="false" small="0" big="0">
+            <Data name="GarterNBreastsSmall2" target="GarterN" local="true">Boots Black.osd\GarterNBreastsSmall2</Data>
+        </Slider>
+        <Slider name="Butt" invert="false" small="0" big="0">
+            <Data name="BootsButt" target="Boots" local="true">Boots Black.osd\BootsButt</Data>
+            <Data name="GarterNButt" target="GarterN" local="true">Boots Black.osd\GarterNButt</Data>
+            <Data name="LEg_garter_MetalsButt" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsButt</Data>
+            <Data name="LegringsButt" target="Legrings" local="true">Boots Black.osd\LegringsButt</Data>
+            <Data name="LEg_Rings_MEtalButt" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalButt</Data>
+        </Slider>
+        <Slider name="ButtSaggy_v2" invert="false" small="0" big="0">
+            <Data name="BootsButtSaggy_v2" target="Boots" local="true">Boots Black.osd\BootsButtSaggy_v2</Data>
+            <Data name="GarterNButtSaggy_v2" target="GarterN" local="true">Boots Black.osd\GarterNButtSaggy_v2</Data>
+            <Data name="LEg_garter_MetalsButtSaggy_v2" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsButtSaggy_v2</Data>
+            <Data name="LegringsButtSaggy_v2" target="Legrings" local="true">Boots Black.osd\LegringsButtSaggy_v2</Data>
+            <Data name="LEg_Rings_MEtalButtSaggy_v2" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalButtSaggy_v2</Data>
+        </Slider>
+        <Slider name="ButtClassic" invert="false" small="0" big="0">
+            <Data name="BootsButtClassic" target="Boots" local="true">Boots Black.osd\BootsButtClassic</Data>
+            <Data name="GarterNButtClassic" target="GarterN" local="true">Boots Black.osd\GarterNButtClassic</Data>
+            <Data name="LEg_garter_MetalsButtClassic" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsButtClassic</Data>
+            <Data name="LegringsButtClassic" target="Legrings" local="true">Boots Black.osd\LegringsButtClassic</Data>
+            <Data name="LEg_Rings_MEtalButtClassic" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalButtClassic</Data>
+        </Slider>
+        <Slider name="ButtCrack" invert="false" small="0" big="0">
+            <Data name="GarterNButtCrack" target="GarterN" local="true">Boots Black.osd\GarterNButtCrack</Data>
+        </Slider>
+        <Slider name="ButtShape2" invert="false" small="0" big="0">
+            <Data name="BootsButtShape2" target="Boots" local="true">Boots Black.osd\BootsButtShape2</Data>
+            <Data name="GarterNButtShape2" target="GarterN" local="true">Boots Black.osd\GarterNButtShape2</Data>
+            <Data name="LEg_garter_MetalsButtShape2" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsButtShape2</Data>
+            <Data name="LegringsButtShape2" target="Legrings" local="true">Boots Black.osd\LegringsButtShape2</Data>
+            <Data name="LEg_Rings_MEtalButtShape2" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalButtShape2</Data>
+        </Slider>
+        <Slider name="ButtSmall" invert="false" small="0" big="0">
+            <Data name="BootsButtSmall" target="Boots" local="true">Boots Black.osd\BootsButtSmall</Data>
+            <Data name="GarterNButtSmall" target="GarterN" local="true">Boots Black.osd\GarterNButtSmall</Data>
+            <Data name="LEg_garter_MetalsButtSmall" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsButtSmall</Data>
+            <Data name="LegringsButtSmall" target="Legrings" local="true">Boots Black.osd\LegringsButtSmall</Data>
+            <Data name="LEg_Rings_MEtalButtSmall" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalButtSmall</Data>
+        </Slider>
+        <Slider name="ButtDimples" invert="false" small="0" big="0">
+            <Data name="GarterNButtDimples" target="GarterN" local="true">Boots Black.osd\GarterNButtDimples</Data>
+        </Slider>
+        <Slider name="ButtUnderFold" invert="false" small="0" big="0">
+            <Data name="GarterNButtUnderFold" target="GarterN" local="true">Boots Black.osd\GarterNButtUnderFold</Data>
+            <Data name="LEg_garter_MetalsButtUnderFold" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsButtUnderFold</Data>
+        </Slider>
+        <Slider name="ButtPressed_v2" invert="false" small="0" big="0">
+            <Data name="BootsButtPressed_v2" target="Boots" local="true">Boots Black.osd\BootsButtPressed_v2</Data>
+            <Data name="GarterNButtPressed_v2" target="GarterN" local="true">Boots Black.osd\GarterNButtPressed_v2</Data>
+            <Data name="LEg_garter_MetalsButtPressed_v2" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsButtPressed_v2</Data>
+        </Slider>
+        <Slider name="ButtNarrow_v2" invert="false" small="0" big="0">
+            <Data name="GarterNButtNarrow_v2" target="GarterN" local="true">Boots Black.osd\GarterNButtNarrow_v2</Data>
+        </Slider>
+        <Slider name="CalfSize" invert="false" small="0" big="0">
+            <Data name="BootsCalfSize" target="Boots" local="true">Boots Black.osd\BootsCalfSize</Data>
+            <Data name="LEg_ChainCalfSize" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainCalfSize</Data>
+            <Data name="LEg_WingCalfSize" target="LEg_Wing" local="true">Boots Black.osd\LEg_WingCalfSize</Data>
+        </Slider>
+        <Slider name="CalfSmooth" invert="false" small="0" big="0">
+            <Data name="BootsCalfSmooth" target="Boots" local="true">Boots Black.osd\BootsCalfSmooth</Data>
+            <Data name="LEg_ChainCalfSmooth" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainCalfSmooth</Data>
+            <Data name="LEg_WingCalfSmooth" target="LEg_Wing" local="true">Boots Black.osd\LEg_WingCalfSmooth</Data>
+        </Slider>
+        <Slider name="CalfFBThicc_v2" invert="false" small="0" big="0">
+            <Data name="BootsCalfFBThicc_v2" target="Boots" local="true">Boots Black.osd\BootsCalfFBThicc_v2</Data>
+            <Data name="LEg_ChainCalfFBThicc_v2" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainCalfFBThicc_v2</Data>
+            <Data name="LEg_WingCalfFBThicc_v2" target="LEg_Wing" local="true">Boots Black.osd\LEg_WingCalfFBThicc_v2</Data>
+        </Slider>
+        <Slider name="ChestDepth" invert="false" small="0" big="0">
+            <Data name="GarterNChestDepth" target="GarterN" local="true">Boots Black.osd\GarterNChestDepth</Data>
+        </Slider>
+        <Slider name="ChestWidth" invert="false" small="0" big="0">
+            <Data name="GarterNChestWidth" target="GarterN" local="true">Boots Black.osd\GarterNChestWidth</Data>
+        </Slider>
+        <Slider name="ChubbyButt" invert="false" small="0" big="0">
+            <Data name="BootsChubbyButt" target="Boots" local="true">Boots Black.osd\BootsChubbyButt</Data>
+            <Data name="GarterNChubbyButt" target="GarterN" local="true">Boots Black.osd\GarterNChubbyButt</Data>
+            <Data name="LEg_garter_MetalsChubbyButt" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsChubbyButt</Data>
+            <Data name="LegringsChubbyButt" target="Legrings" local="true">Boots Black.osd\LegringsChubbyButt</Data>
+            <Data name="LEg_Rings_MEtalChubbyButt" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalChubbyButt</Data>
+        </Slider>
+        <Slider name="ChubbyLegs" invert="false" small="0" big="0">
+            <Data name="BootsChubbyLegs" target="Boots" local="true">Boots Black.osd\BootsChubbyLegs</Data>
+            <Data name="LEg_ChainChubbyLegs" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainChubbyLegs</Data>
+            <Data name="LEg_WingChubbyLegs" target="LEg_Wing" local="true">Boots Black.osd\LEg_WingChubbyLegs</Data>
+            <Data name="GarterNChubbyLegs" target="GarterN" local="true">Boots Black.osd\GarterNChubbyLegs</Data>
+            <Data name="LEg_garter_MetalsChubbyLegs" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsChubbyLegs</Data>
+            <Data name="LegringsChubbyLegs" target="Legrings" local="true">Boots Black.osd\LegringsChubbyLegs</Data>
+            <Data name="LEg_Rings_MEtalChubbyLegs" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalChubbyLegs</Data>
+        </Slider>
+        <Slider name="ChubbyWaist" invert="false" small="0" big="0">
+            <Data name="GarterNChubbyWaist" target="GarterN" local="true">Boots Black.osd\GarterNChubbyWaist</Data>
+            <Data name="LEg_garter_MetalsChubbyWaist" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsChubbyWaist</Data>
+        </Slider>
+        <Slider name="CrotchBack" invert="false" small="0" big="0">
+            <Data name="BootsCrotchBack" target="Boots" local="true">Boots Black.osd\BootsCrotchBack</Data>
+            <Data name="GarterNCrotchBack" target="GarterN" local="true">Boots Black.osd\GarterNCrotchBack</Data>
+            <Data name="LEg_garter_MetalsCrotchBack" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsCrotchBack</Data>
+            <Data name="LegringsCrotchBack" target="Legrings" local="true">Boots Black.osd\LegringsCrotchBack</Data>
+            <Data name="LEg_Rings_MEtalCrotchBack" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalCrotchBack</Data>
+        </Slider>
+        <Slider name="Groin" invert="false" small="0" big="0">
+            <Data name="GarterNGroin" target="GarterN" local="true">Boots Black.osd\GarterNGroin</Data>
+            <Data name="LEg_garter_MetalsGroin" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsGroin</Data>
+        </Slider>
+        <Slider name="HipBone" invert="false" small="0" big="0">
+            <Data name="BootsHipBone" target="Boots" local="true">Boots Black.osd\BootsHipBone</Data>
+            <Data name="GarterNHipBone" target="GarterN" local="true">Boots Black.osd\GarterNHipBone</Data>
+            <Data name="LEg_garter_MetalsHipBone" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsHipBone</Data>
+        </Slider>
+        <Slider name="HipForward" invert="false" small="0" big="0">
+            <Data name="BootsHipForward" target="Boots" local="true">Boots Black.osd\BootsHipForward</Data>
+            <Data name="GarterNHipForward" target="GarterN" local="true">Boots Black.osd\GarterNHipForward</Data>
+            <Data name="LEg_garter_MetalsHipForward" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsHipForward</Data>
+            <Data name="LegringsHipForward" target="Legrings" local="true">Boots Black.osd\LegringsHipForward</Data>
+            <Data name="LEg_Rings_MEtalHipForward" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalHipForward</Data>
+        </Slider>
+        <Slider name="Hips" invert="false" small="0" big="0">
+            <Data name="BootsHips" target="Boots" local="true">Boots Black.osd\BootsHips</Data>
+            <Data name="GarterNHips" target="GarterN" local="true">Boots Black.osd\GarterNHips</Data>
+            <Data name="LEg_garter_MetalsHips" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsHips</Data>
+            <Data name="LegringsHips" target="Legrings" local="true">Boots Black.osd\LegringsHips</Data>
+            <Data name="LEg_Rings_MEtalHips" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalHips</Data>
+        </Slider>
+        <Slider name="HipUpperWidth" invert="false" small="0" big="0">
+            <Data name="GarterNHipUpperWidth" target="GarterN" local="true">Boots Black.osd\GarterNHipUpperWidth</Data>
+        </Slider>
+        <Slider name="HipCarved" invert="false" small="0" big="0">
+            <Data name="GarterNHipCarved" target="GarterN" local="true">Boots Black.osd\GarterNHipCarved</Data>
+        </Slider>
+        <Slider name="HipNarrow_v2" invert="false" small="0" big="0">
+            <Data name="BootsHipNarrow_v2" target="Boots" local="true">Boots Black.osd\BootsHipNarrow_v2</Data>
+            <Data name="GarterNHipNarrow_v2" target="GarterN" local="true">Boots Black.osd\GarterNHipNarrow_v2</Data>
+        </Slider>
+        <Slider name="KneeHeight" invert="false" small="0" big="0">
+            <Data name="BootsKneeHeight" target="Boots" local="true">Boots Black.osd\BootsKneeHeight</Data>
+            <Data name="LEg_ChainKneeHeight" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainKneeHeight</Data>
+            <Data name="LEg_WingKneeHeight" target="LEg_Wing" local="true">Boots Black.osd\LEg_WingKneeHeight</Data>
+            <Data name="GarterNKneeHeight" target="GarterN" local="true">Boots Black.osd\GarterNKneeHeight</Data>
+            <Data name="LEg_garter_MetalsKneeHeight" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsKneeHeight</Data>
+            <Data name="LegringsKneeHeight" target="Legrings" local="true">Boots Black.osd\LegringsKneeHeight</Data>
+            <Data name="LEg_Rings_MEtalKneeHeight" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalKneeHeight</Data>
+        </Slider>
+        <Slider name="KneeShape" invert="false" small="0" big="0">
+            <Data name="BootsKneeShape" target="Boots" local="true">Boots Black.osd\BootsKneeShape</Data>
+            <Data name="LEg_ChainKneeShape" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainKneeShape</Data>
+            <Data name="LEg_WingKneeShape" target="LEg_Wing" local="true">Boots Black.osd\LEg_WingKneeShape</Data>
+        </Slider>
+        <Slider name="KneeTogether_v2" invert="false" small="0" big="0">
+            <Data name="BootsKneeTogether_v2" target="Boots" local="true">Boots Black.osd\BootsKneeTogether_v2</Data>
+            <Data name="LEg_ChainKneeTogether_v2" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainKneeTogether_v2</Data>
+            <Data name="GarterNKneeTogether_v2" target="GarterN" local="true">Boots Black.osd\GarterNKneeTogether_v2</Data>
+            <Data name="LegringsKneeTogether_v2" target="Legrings" local="true">Boots Black.osd\LegringsKneeTogether_v2</Data>
+            <Data name="LEg_Rings_MEtalKneeTogether_v2" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalKneeTogether_v2</Data>
+        </Slider>
+        <Slider name="LegShapeClassic" invert="false" small="0" big="0">
+            <Data name="BootsLegShapeClassic" target="Boots" local="true">Boots Black.osd\BootsLegShapeClassic</Data>
+            <Data name="LEg_ChainLegShapeClassic" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainLegShapeClassic</Data>
+            <Data name="LEg_WingLegShapeClassic" target="LEg_Wing" local="true">Boots Black.osd\LEg_WingLegShapeClassic</Data>
+            <Data name="GarterNLegShapeClassic" target="GarterN" local="true">Boots Black.osd\GarterNLegShapeClassic</Data>
+            <Data name="LEg_garter_MetalsLegShapeClassic" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsLegShapeClassic</Data>
+            <Data name="LegringsLegShapeClassic" target="Legrings" local="true">Boots Black.osd\LegringsLegShapeClassic</Data>
+            <Data name="LEg_Rings_MEtalLegShapeClassic" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalLegShapeClassic</Data>
+        </Slider>
+        <Slider name="LegsThin" invert="false" small="0" big="0">
+            <Data name="BootsLegsThin" target="Boots" local="true">Boots Black.osd\BootsLegsThin</Data>
+            <Data name="LEg_ChainLegsThin" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainLegsThin</Data>
+            <Data name="LEg_WingLegsThin" target="LEg_Wing" local="true">Boots Black.osd\LEg_WingLegsThin</Data>
+            <Data name="GarterNLegsThin" target="GarterN" local="true">Boots Black.osd\GarterNLegsThin</Data>
+            <Data name="LEg_garter_MetalsLegsThin" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsLegsThin</Data>
+            <Data name="LegringsLegsThin" target="Legrings" local="true">Boots Black.osd\LegringsLegsThin</Data>
+            <Data name="LEg_Rings_MEtalLegsThin" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalLegsThin</Data>
+        </Slider>
+        <Slider name="MuscleAbs" invert="false" small="0" big="0">
+            <Data name="GarterNMuscleAbs" target="GarterN" local="true">Boots Black.osd\GarterNMuscleAbs</Data>
+        </Slider>
+        <Slider name="MuscleButt" invert="false" small="0" big="0">
+            <Data name="GarterNMuscleButt" target="GarterN" local="true">Boots Black.osd\GarterNMuscleButt</Data>
+            <Data name="LEg_garter_MetalsMuscleButt" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsMuscleButt</Data>
+        </Slider>
+        <Slider name="MuscleLegs" invert="false" small="0" big="0">
+            <Data name="BootsMuscleLegs" target="Boots" local="true">Boots Black.osd\BootsMuscleLegs</Data>
+            <Data name="LEg_ChainMuscleLegs" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainMuscleLegs</Data>
+            <Data name="GarterNMuscleLegs" target="GarterN" local="true">Boots Black.osd\GarterNMuscleLegs</Data>
+            <Data name="LEg_garter_MetalsMuscleLegs" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsMuscleLegs</Data>
+            <Data name="LegringsMuscleLegs" target="Legrings" local="true">Boots Black.osd\LegringsMuscleLegs</Data>
+            <Data name="LEg_Rings_MEtalMuscleLegs" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalMuscleLegs</Data>
+        </Slider>
+        <Slider name="MuscleBack_v2" invert="false" small="0" big="0">
+            <Data name="GarterNMuscleBack_v2" target="GarterN" local="true">Boots Black.osd\GarterNMuscleBack_v2</Data>
+        </Slider>
+        <Slider name="MuscleMoreAbs_v2" invert="false" small="0" big="0">
+            <Data name="GarterNMuscleMoreAbs_v2" target="GarterN" local="true">Boots Black.osd\GarterNMuscleMoreAbs_v2</Data>
+        </Slider>
+        <Slider name="MuscleMoreLegs_v2" invert="false" small="0" big="0">
+            <Data name="BootsMuscleMoreLegs_v2" target="Boots" local="true">Boots Black.osd\BootsMuscleMoreLegs_v2</Data>
+            <Data name="LEg_ChainMuscleMoreLegs_v2" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainMuscleMoreLegs_v2</Data>
+            <Data name="LEg_WingMuscleMoreLegs_v2" target="LEg_Wing" local="true">Boots Black.osd\LEg_WingMuscleMoreLegs_v2</Data>
+            <Data name="GarterNMuscleMoreLegs_v2" target="GarterN" local="true">Boots Black.osd\GarterNMuscleMoreLegs_v2</Data>
+            <Data name="LEg_garter_MetalsMuscleMoreLegs_v2" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsMuscleMoreLegs_v2</Data>
+            <Data name="LegringsMuscleMoreLegs_v2" target="Legrings" local="true">Boots Black.osd\LegringsMuscleMoreLegs_v2</Data>
+            <Data name="LEg_Rings_MEtalMuscleMoreLegs_v2" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalMuscleMoreLegs_v2</Data>
+        </Slider>
+        <Slider name="PregnancyBelly" invert="false" small="0" big="0">
+            <Data name="BootsPregnancyBelly" target="Boots" local="true">Boots Black.osd\BootsPregnancyBelly</Data>
+            <Data name="GarterNPregnancyBelly" target="GarterN" local="true">Boots Black.osd\GarterNPregnancyBelly</Data>
+            <Data name="LEg_garter_MetalsPregnancyBelly" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsPregnancyBelly</Data>
+        </Slider>
+        <Slider name="RoundAss" invert="false" small="0" big="0">
+            <Data name="GarterNRoundAss" target="GarterN" local="true">Boots Black.osd\GarterNRoundAss</Data>
+            <Data name="LEg_garter_MetalsRoundAss" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsRoundAss</Data>
+        </Slider>
+        <Slider name="SlimThighs" invert="false" small="0" big="0">
+            <Data name="BootsSlimThighs" target="Boots" local="true">Boots Black.osd\BootsSlimThighs</Data>
+            <Data name="LEg_ChainSlimThighs" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainSlimThighs</Data>
+            <Data name="GarterNSlimThighs" target="GarterN" local="true">Boots Black.osd\GarterNSlimThighs</Data>
+            <Data name="LEg_garter_MetalsSlimThighs" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsSlimThighs</Data>
+            <Data name="LegringsSlimThighs" target="Legrings" local="true">Boots Black.osd\LegringsSlimThighs</Data>
+            <Data name="LEg_Rings_MEtalSlimThighs" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalSlimThighs</Data>
+        </Slider>
+        <Slider name="Thighs" invert="false" small="0" big="0">
+            <Data name="BootsThighs" target="Boots" local="true">Boots Black.osd\BootsThighs</Data>
+            <Data name="LEg_ChainThighs" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainThighs</Data>
+            <Data name="GarterNThighs" target="GarterN" local="true">Boots Black.osd\GarterNThighs</Data>
+            <Data name="LEg_garter_MetalsThighs" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsThighs</Data>
+            <Data name="LegringsThighs" target="Legrings" local="true">Boots Black.osd\LegringsThighs</Data>
+            <Data name="LEg_Rings_MEtalThighs" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalThighs</Data>
+        </Slider>
+        <Slider name="ThighOutsideThicc_v2" invert="false" small="0" big="0">
+            <Data name="BootsThighOutsideThicc_v2" target="Boots" local="true">Boots Black.osd\BootsThighOutsideThicc_v2</Data>
+            <Data name="GarterNThighOutsideThicc_v2" target="GarterN" local="true">Boots Black.osd\GarterNThighOutsideThicc_v2</Data>
+            <Data name="LEg_garter_MetalsThighOutsideThicc_v2" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsThighOutsideThicc_v2</Data>
+            <Data name="LegringsThighOutsideThicc_v2" target="Legrings" local="true">Boots Black.osd\LegringsThighOutsideThicc_v2</Data>
+            <Data name="LEg_Rings_MEtalThighOutsideThicc_v2" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalThighOutsideThicc_v2</Data>
+        </Slider>
+        <Slider name="ThighInsideThicc_v2" invert="false" small="0" big="0">
+            <Data name="BootsThighInsideThicc_v2" target="Boots" local="true">Boots Black.osd\BootsThighInsideThicc_v2</Data>
+            <Data name="GarterNThighInsideThicc_v2" target="GarterN" local="true">Boots Black.osd\GarterNThighInsideThicc_v2</Data>
+            <Data name="LEg_garter_MetalsThighInsideThicc_v2" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsThighInsideThicc_v2</Data>
+            <Data name="LegringsThighInsideThicc_v2" target="Legrings" local="true">Boots Black.osd\LegringsThighInsideThicc_v2</Data>
+            <Data name="LEg_Rings_MEtalThighInsideThicc_v2" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalThighInsideThicc_v2</Data>
+        </Slider>
+        <Slider name="ThighFBThicc_v2" invert="false" small="0" big="0">
+            <Data name="BootsThighFBThicc_v2" target="Boots" local="true">Boots Black.osd\BootsThighFBThicc_v2</Data>
+            <Data name="GarterNThighFBThicc_v2" target="GarterN" local="true">Boots Black.osd\GarterNThighFBThicc_v2</Data>
+            <Data name="LEg_garter_MetalsThighFBThicc_v2" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsThighFBThicc_v2</Data>
+            <Data name="LegringsThighFBThicc_v2" target="Legrings" local="true">Boots Black.osd\LegringsThighFBThicc_v2</Data>
+            <Data name="LEg_Rings_MEtalThighFBThicc_v2" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalThighFBThicc_v2</Data>
+        </Slider>
+        <Slider name="LegSpread_v2" invert="false" small="0" big="0">
+            <Data name="BootsLegSpread_v2" target="Boots" local="true">Boots Black.osd\BootsLegSpread_v2</Data>
+            <Data name="LEg_ChainLegSpread_v2" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainLegSpread_v2</Data>
+            <Data name="GarterNLegSpread_v2" target="GarterN" local="true">Boots Black.osd\GarterNLegSpread_v2</Data>
+            <Data name="LEg_garter_MetalsLegSpread_v2" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsLegSpread_v2</Data>
+            <Data name="LegringsLegSpread_v2" target="Legrings" local="true">Boots Black.osd\LegringsLegSpread_v2</Data>
+            <Data name="LEg_Rings_MEtalLegSpread_v2" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalLegSpread_v2</Data>
+        </Slider>
+        <Slider name="TummyTuck" invert="false" small="0" big="0">
+            <Data name="GarterNTummyTuck" target="GarterN" local="true">Boots Black.osd\GarterNTummyTuck</Data>
+            <Data name="LEg_garter_MetalsTummyTuck" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsTummyTuck</Data>
+        </Slider>
+        <Slider name="UNPHip_v2" invert="false" small="0" big="0">
+            <Data name="BootsUNPHip_v2" target="Boots" local="true">Boots Black.osd\BootsUNPHip_v2</Data>
+            <Data name="GarterNUNPHip_v2" target="GarterN" local="true">Boots Black.osd\GarterNUNPHip_v2</Data>
+            <Data name="LEg_garter_MetalsUNPHip_v2" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsUNPHip_v2</Data>
+            <Data name="LegringsUNPHip_v2" target="Legrings" local="true">Boots Black.osd\LegringsUNPHip_v2</Data>
+            <Data name="LEg_Rings_MEtalUNPHip_v2" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalUNPHip_v2</Data>
+        </Slider>
+        <Slider name="Waist" invert="false" small="0" big="0">
+            <Data name="GarterNWaist" target="GarterN" local="true">Boots Black.osd\GarterNWaist</Data>
+        </Slider>
+        <Slider name="WaistHeight" invert="false" small="0" big="0">
+            <Data name="GarterNWaistHeight" target="GarterN" local="true">Boots Black.osd\GarterNWaistHeight</Data>
+        </Slider>
+        <Slider name="WideWaistLine" invert="false" small="0" big="0">
+            <Data name="GarterNWideWaistLine" target="GarterN" local="true">Boots Black.osd\GarterNWideWaistLine</Data>
+        </Slider>
+        <Slider name="7BLeg_v2" invert="false" small="0" big="0">
+            <Data name="Boots7BLeg_v2" target="Boots" local="true">Boots Black.osd\Boots7BLeg_v2</Data>
+            <Data name="LEg_Chain7BLeg_v2" target="LEg_Chain" local="true">Boots Black.osd\LEg_Chain7BLeg_v2</Data>
+            <Data name="LEg_Wing7BLeg_v2" target="LEg_Wing" local="true">Boots Black.osd\LEg_Wing7BLeg_v2</Data>
+            <Data name="GarterN7BLeg_v2" target="GarterN" local="true">Boots Black.osd\GarterN7BLeg_v2</Data>
+            <Data name="LEg_garter_Metals7BLeg_v2" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_Metals7BLeg_v2</Data>
+            <Data name="Legrings7BLeg_v2" target="Legrings" local="true">Boots Black.osd\Legrings7BLeg_v2</Data>
+            <Data name="LEg_Rings_MEtal7BLeg_v2" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtal7BLeg_v2</Data>
+        </Slider>
+        <Slider name="7B Lower" invert="false" small="0" big="0">
+            <Data name="Boots7B Lower" target="Boots" local="true">Boots Black.osd\Boots7B Lower</Data>
+            <Data name="LEg_Chain7B Lower" target="LEg_Chain" local="true">Boots Black.osd\LEg_Chain7B Lower</Data>
+            <Data name="LEg_Wing7B Lower" target="LEg_Wing" local="true">Boots Black.osd\LEg_Wing7B Lower</Data>
+            <Data name="GarterN7B Lower" target="GarterN" local="true">Boots Black.osd\GarterN7B Lower</Data>
+            <Data name="LEg_garter_Metals7B Lower" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_Metals7B Lower</Data>
+            <Data name="Legrings7B Lower" target="Legrings" local="true">Boots Black.osd\Legrings7B Lower</Data>
+            <Data name="LEg_Rings_MEtal7B Lower" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtal7B Lower</Data>
+        </Slider>
+        <Slider name="VanillaSSEHi" invert="false" small="0" big="0">
+            <Data name="BootsVanillaSSEHi" target="Boots" local="true">Boots Black.osd\BootsVanillaSSEHi</Data>
+            <Data name="LEg_ChainVanillaSSEHi" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainVanillaSSEHi</Data>
+            <Data name="LEg_WingVanillaSSEHi" target="LEg_Wing" local="true">Boots Black.osd\LEg_WingVanillaSSEHi</Data>
+            <Data name="GarterNVanillaSSEHi" target="GarterN" local="true">Boots Black.osd\GarterNVanillaSSEHi</Data>
+            <Data name="LEg_garter_MetalsVanillaSSEHi" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsVanillaSSEHi</Data>
+            <Data name="LegringsVanillaSSEHi" target="Legrings" local="true">Boots Black.osd\LegringsVanillaSSEHi</Data>
+            <Data name="LEg_Rings_MEtalVanillaSSEHi" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalVanillaSSEHi</Data>
+        </Slider>
+        <Slider name="VanillaSSELo" invert="false" small="0" big="0">
+            <Data name="BootsVanillaSSELo" target="Boots" local="true">Boots Black.osd\BootsVanillaSSELo</Data>
+            <Data name="LEg_ChainVanillaSSELo" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainVanillaSSELo</Data>
+            <Data name="LEg_WingVanillaSSELo" target="LEg_Wing" local="true">Boots Black.osd\LEg_WingVanillaSSELo</Data>
+            <Data name="GarterNVanillaSSELo" target="GarterN" local="true">Boots Black.osd\GarterNVanillaSSELo</Data>
+            <Data name="LEg_garter_MetalsVanillaSSELo" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsVanillaSSELo</Data>
+            <Data name="LegringsVanillaSSELo" target="Legrings" local="true">Boots Black.osd\LegringsVanillaSSELo</Data>
+            <Data name="LEg_Rings_MEtalVanillaSSELo" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalVanillaSSELo</Data>
+        </Slider>
+        <Slider name="OldBaseShape" invert="false" small="0" big="0">
+            <Data name="BootsOldBaseShape" target="Boots" local="true">Boots Black.osd\BootsOldBaseShape</Data>
+            <Data name="LEg_ChainOldBaseShape" target="LEg_Chain" local="true">Boots Black.osd\LEg_ChainOldBaseShape</Data>
+            <Data name="LEg_WingOldBaseShape" target="LEg_Wing" local="true">Boots Black.osd\LEg_WingOldBaseShape</Data>
+            <Data name="GarterNOldBaseShape" target="GarterN" local="true">Boots Black.osd\GarterNOldBaseShape</Data>
+            <Data name="LEg_garter_MetalsOldBaseShape" target="LEg_garter_Metals" local="true">Boots Black.osd\LEg_garter_MetalsOldBaseShape</Data>
+            <Data name="LegringsOldBaseShape" target="Legrings" local="true">Boots Black.osd\LegringsOldBaseShape</Data>
+            <Data name="LEg_Rings_MEtalOldBaseShape" target="LEg_Rings_MEtal" local="true">Boots Black.osd\LEg_Rings_MEtalOldBaseShape</Data>
+        </Slider>
+        <Slider name="Labiaspread" invert="false" small="0" big="0">
+            <Data name="GarterNLabiaspread" target="GarterN" local="true">Boots Black.osd\GarterNLabiaspread</Data>
+        </Slider>
+        <Slider name="LabiaNeat_v2" invert="false" small="0" big="0">
+            <Data name="GarterNLabiaNeat_v2" target="GarterN" local="true">Boots Black.osd\GarterNLabiaNeat_v2</Data>
+        </Slider>
+        <Slider name="CrotchGap" invert="false" small="0" big="0">
+            <Data name="BootsCrotchGap" target="Boots" local="true">Boots Black.osd\BootsCrotchGap</Data>
+            <Data name="GarterNCrotchGap" target="GarterN" local="true">Boots Black.osd\GarterNCrotchGap</Data>
+        </Slider>
+        <Slider name="AnalLoose_v2" invert="false" small="0" big="0">
+            <Data name="GarterNAnalLoose_v2" target="GarterN" local="true">Boots Black.osd\GarterNAnalLoose_v2</Data>
+        </Slider>
+    </SliderSet>
+    </SliderSetInfo>

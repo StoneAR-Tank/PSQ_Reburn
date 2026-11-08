@@ -1,0 +1,708 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SliderSetInfo version="1"><SliderSet name="PSQ 3BA 变身 - TERA魅魔2 - 尾巴">
+        <DataFolder>PSQ_Package_20261106\3BA\F009</DataFolder>
+        <SourceFile>tail.nif</SourceFile>
+        <OutputPath>meshes\PSQ\ExternalOutfits\TERA9DM</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">tail</OutputFile>
+        <Shape target="Tail">Tail</Shape>
+        <Shape target="VirtualGround">VirtualGround</Shape>
+        <Shape target="body_feet">body_feet</Shape>
+        <Shape target="uup">uup</Shape>
+    </SliderSet>
+    <SliderSet name="PSQ 3BA 变身 - TERA魅魔2 - 手套">
+        <DataFolder>PSQ_Package_20261106\3BA\F009</DataFolder>
+        <SourceFile>gloves.nif</SourceFile>
+        <OutputPath>meshes\PSQ\ExternalOutfits\TERA9DM</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">gloves</OutputFile>
+        <Shape target="TRSgloves9DMRx">TRSgloves9DMRx</Shape>
+        <Slider name="Arms" invert="false" small="0" big="0">
+            <Data name="TRSgloves9DMRxArms" target="TRSgloves9DMRx" local="true">GFB TERA Succubus gloves PSQ.osd\TRSgloves9DMRxArms</Data>
+        </Slider>
+        <Slider name="BigTorso" invert="false" small="0" big="0">
+            <Data name="TRSgloves9DMRxBigTorso" target="TRSgloves9DMRx" local="true">GFB TERA Succubus gloves PSQ.osd\TRSgloves9DMRxBigTorso</Data>
+        </Slider>
+        <Slider name="ChestWidth" invert="false" small="0" big="0">
+            <Data name="TRSgloves9DMRxChestWidth" target="TRSgloves9DMRx" local="true">GFB TERA Succubus gloves PSQ.osd\TRSgloves9DMRxChestWidth</Data>
+        </Slider>
+        <Slider name="ChubbyArms" invert="false" small="0" big="0">
+            <Data name="TRSgloves9DMRxChubbyArms" target="TRSgloves9DMRx" local="true">GFB TERA Succubus gloves PSQ.osd\TRSgloves9DMRxChubbyArms</Data>
+        </Slider>
+        <Slider name="ForearmSize" invert="false" small="0" big="0">
+            <Data name="TRSgloves9DMRxForearmSize" target="TRSgloves9DMRx" local="true">GFB TERA Succubus gloves PSQ.osd\TRSgloves9DMRxForearmSize</Data>
+        </Slider>
+        <Slider name="MuscleArms" invert="false" small="0" big="0">
+            <Data name="TRSgloves9DMRxMuscleArms" target="TRSgloves9DMRx" local="true">GFB TERA Succubus gloves PSQ.osd\TRSgloves9DMRxMuscleArms</Data>
+        </Slider>
+        <Slider name="ShoulderWidth" invert="false" small="0" big="0">
+            <Data name="TRSgloves9DMRxShoulderWidth" target="TRSgloves9DMRx" local="true">GFB TERA Succubus gloves PSQ.osd\TRSgloves9DMRxShoulderWidth</Data>
+        </Slider>
+        <Slider name="WristSize" invert="false" small="100" big="0">
+            <Data name="TRSgloves9DMRxWristSize" target="TRSgloves9DMRx" local="true">GFB TERA Succubus gloves PSQ.osd\TRSgloves9DMRxWristSize</Data>
+        </Slider>
+        <Slider name="7B Upper" invert="false" small="0" big="0">
+            <Data name="TRSgloves9DMRx7B Upper" target="TRSgloves9DMRx" local="true">GFB TERA Succubus gloves PSQ.osd\TRSgloves9DMRx7B Upper</Data>
+        </Slider>
+        <Slider name="VanillaSSEHi" invert="false" small="0" big="0">
+            <Data name="TRSgloves9DMRxVanillaSSEHi" target="TRSgloves9DMRx" local="true">GFB TERA Succubus gloves PSQ.osd\TRSgloves9DMRxVanillaSSEHi</Data>
+        </Slider>
+        <Slider name="VanillaSSELo" invert="false" small="0" big="0">
+            <Data name="TRSgloves9DMRxVanillaSSELo" target="TRSgloves9DMRx" local="true">GFB TERA Succubus gloves PSQ.osd\TRSgloves9DMRxVanillaSSELo</Data>
+        </Slider>
+    </SliderSet>
+    <SliderSet name="PSQ 3BA 变身 - TERA魅魔2 - 翅膀">
+        <DataFolder>PSQ_Package_20261106\3BA\F009</DataFolder>
+        <SourceFile>wings.nif</SourceFile>
+        <OutputPath>meshes\PSQ\ExternalOutfits\TERA9DM</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">wings</OutputFile>
+        <Shape target="TERASuccubusWings9DMRX:1">TERASuccubusWings9DMRX:1</Shape>
+        <Shape target="TERASuccubusWings9DMRX:2">TERASuccubusWings9DMRX:2</Shape>
+        <Shape target="TERASuccubusWings9DMRX:3">TERASuccubusWings9DMRX:3</Shape>
+    </SliderSet>
+<SliderSet name="PSQ 3BA 变身 - TERA魅魔2 - 胸甲">
+        <DataFolder>PSQ_Package_20261106\3BA\F009</DataFolder>
+        <SourceFile>cuirass.nif</SourceFile>
+        <OutputPath>meshes\PSQ\ExternalOutfits\TERA9DM</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">cuirass</OutputFile>
+        <Shape target="3BBB" DataFolder="PSQ_Package_20261106\3BA\F003">3BBB</Shape>
+        <Shape target="3BBB_Anus">3BBB_Anus</Shape>
+        <Shape target="3BBB_Vagina">3BBB_Vagina</Shape>
+        <Shape target="TRSclothes9DMRxZ:1">TRSclothes9DMRxZ:1</Shape>
+        <Shape target="TRSclothes9DMRxZ:2">TRSclothes9DMRxZ:2</Shape>
+        <Shape target="TRSclothes9DMRxZ:3">TRSclothes9DMRxZ:3</Shape>
+        <Slider name="AnkleSize" invert="false" small="100" big="0">
+            <Data name="3BBBAnkleSize" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBAnkleSize</Data>
+        </Slider>
+        <Slider name="AppleCheeks" invert="false" small="0" big="0">
+            <Data name="3BBBAppleCheeks" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBAppleCheeks</Data>
+            <Data name="TRSclothes9DMRxZ:1AppleCheeks" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1AppleCheeks</Data>
+            <Data name="3BBB_AnusAppleCheeks" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusAppleCheeks</Data>
+            <Data name="3BBB_VaginaAppleCheeks" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaAppleCheeks</Data>
+        </Slider>
+        <Slider name="AreolaSize" invert="false" small="0" big="0" uv="true">
+            <Data name="3BBBAreolaSize" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBAreolaSize</Data>
+        </Slider>
+        <Slider name="Arms" invert="false" small="0" big="0">
+            <Data name="3BBBArms" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBArms</Data>
+            <Data name="TRSclothes9DMRxZ:2Arms" target="TRSclothes9DMRxZ:2" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:2Arms</Data>
+            <Data name="TRSclothes9DMRxZ:3Arms" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:3Arms</Data>
+            <Data name="TRSclothes9DMRxZ:1Arms" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1Arms</Data>
+        </Slider>
+        <Slider name="Back" invert="false" small="0" big="0">
+            <Data name="3BBBBack" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBack</Data>
+            <Data name="TRSclothes9DMRxZ:2Back" target="TRSclothes9DMRxZ:2" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:2Back</Data>
+            <Data name="TRSclothes9DMRxZ:3Back" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:3Back</Data>
+            <Data name="TRSclothes9DMRxZ:1Back" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1Back</Data>
+            <Data name="3BBB_AnusBack" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusBack</Data>
+        </Slider>
+        <Slider name="BackArch" invert="false" small="0" big="0">
+            <Data name="3BBBBackArch" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBackArch</Data>
+            <Data name="TRSclothes9DMRxZ:1BackArch" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BackArch</Data>
+        </Slider>
+        <Slider name="Belly" invert="false" small="0" big="0">
+            <Data name="3BBBBelly" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBelly</Data>
+            <Data name="TRSclothes9DMRxZ:1Belly" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1Belly</Data>
+        </Slider>
+        <Slider name="BigBelly" invert="false" small="0" big="0">
+            <Data name="3BBBBigBelly" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBigBelly</Data>
+            <Data name="TRSclothes9DMRxZ:1BigBelly" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BigBelly</Data>
+            <Data name="3BBB_VaginaBigBelly" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaBigBelly</Data>
+        </Slider>
+        <Slider name="BigButt" invert="false" small="0" big="0">
+            <Data name="3BBBBigButt" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBigButt</Data>
+            <Data name="TRSclothes9DMRxZ:1BigButt" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BigButt</Data>
+            <Data name="3BBB_AnusBigButt" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusBigButt</Data>
+            <Data name="3BBB_VaginaBigButt" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaBigButt</Data>
+        </Slider>
+        <Slider name="BigTorso" invert="false" small="0" big="0">
+            <Data name="3BBBBigTorso" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBigTorso</Data>
+            <Data name="TRSclothes9DMRxZ:2BigTorso" target="TRSclothes9DMRxZ:2" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:2BigTorso</Data>
+            <Data name="TRSclothes9DMRxZ:3BigTorso" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:3BigTorso</Data>
+            <Data name="TRSclothes9DMRxZ:1BigTorso" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BigTorso</Data>
+        </Slider>
+        <Slider name="BreastCenter" invert="false" small="0" big="0">
+            <Data name="3BBBBreastCenter" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreastCenter</Data>
+            <Data name="TRSclothes9DMRxZ:1BreastCenter" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BreastCenter</Data>
+        </Slider>
+        <Slider name="BreastCenterBig" invert="false" small="0" big="0">
+            <Data name="3BBBBreastCenterBig" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreastCenterBig</Data>
+            <Data name="TRSclothes9DMRxZ:1BreastCenterBig" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BreastCenterBig</Data>
+        </Slider>
+        <Slider name="BreastCleavage" invert="false" small="0" big="0">
+            <Data name="3BBBBreastCleavage" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreastCleavage</Data>
+            <Data name="TRSclothes9DMRxZ:1BreastCleavage" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BreastCleavage</Data>
+        </Slider>
+        <Slider name="BreastFlatness2" invert="false" small="0" big="0">
+            <Data name="3BBBBreastFlatness2" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreastFlatness2</Data>
+            <Data name="TRSclothes9DMRxZ:1BreastFlatness2" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BreastFlatness2</Data>
+        </Slider>
+        <Slider name="BreastFlatness" invert="false" small="0" big="0">
+            <Data name="3BBBBreastFlatness" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreastFlatness</Data>
+            <Data name="TRSclothes9DMRxZ:1BreastFlatness" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BreastFlatness</Data>
+        </Slider>
+        <Slider name="BreastGravity2" invert="false" small="0" big="0">
+            <Data name="3BBBBreastGravity2" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreastGravity2</Data>
+            <Data name="TRSclothes9DMRxZ:1BreastGravity2" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BreastGravity2</Data>
+        </Slider>
+        <Slider name="BreastHeight" invert="false" small="0" big="0">
+            <Data name="3BBBBreastHeight" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreastHeight</Data>
+            <Data name="TRSclothes9DMRxZ:1BreastHeight" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BreastHeight</Data>
+        </Slider>
+        <Slider name="BreastPerkiness" invert="false" small="0" big="0">
+            <Data name="3BBBBreastPerkiness" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreastPerkiness</Data>
+            <Data name="TRSclothes9DMRxZ:1BreastPerkiness" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BreastPerkiness</Data>
+        </Slider>
+        <Slider name="Breasts" invert="false" small="0" big="0">
+            <Data name="3BBBBreasts" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreasts</Data>
+            <Data name="TRSclothes9DMRxZ:1Breasts" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1Breasts</Data>
+        </Slider>
+        <Slider name="BreastsFantasy" invert="false" small="0" big="0">
+            <Data name="3BBBBreastsFantasy" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreastsFantasy</Data>
+            <Data name="TRSclothes9DMRxZ:1BreastsFantasy" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BreastsFantasy</Data>
+        </Slider>
+        <Slider name="BreastsGone" invert="false" small="0" big="0">
+            <Data name="3BBBBreastsGone" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreastsGone</Data>
+            <Data name="TRSclothes9DMRxZ:1BreastsGone" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BreastsGone</Data>
+        </Slider>
+        <Slider name="BreastsNewSH" invert="false" small="0" big="0">
+            <Data name="3BBBBreastsNewSH" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreastsNewSH</Data>
+            <Data name="TRSclothes9DMRxZ:3BreastsNewSH" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:3BreastsNewSH</Data>
+            <Data name="TRSclothes9DMRxZ:1BreastsNewSH" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BreastsNewSH</Data>
+        </Slider>
+        <Slider name="BreastsSmall" invert="false" small="0" big="0">
+            <Data name="3BBBBreastsSmall" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreastsSmall</Data>
+            <Data name="TRSclothes9DMRxZ:3BreastsSmall" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:3BreastsSmall</Data>
+            <Data name="TRSclothes9DMRxZ:1BreastsSmall" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BreastsSmall</Data>
+        </Slider>
+        <Slider name="BreastsSmall2" invert="false" small="0" big="0">
+            <Data name="3BBBBreastsSmall2" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreastsSmall2</Data>
+            <Data name="TRSclothes9DMRxZ:3BreastsSmall2" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:3BreastsSmall2</Data>
+            <Data name="TRSclothes9DMRxZ:1BreastsSmall2" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BreastsSmall2</Data>
+        </Slider>
+        <Slider name="BreastsTogether" invert="false" small="0" big="0">
+            <Data name="3BBBBreastsTogether" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreastsTogether</Data>
+            <Data name="TRSclothes9DMRxZ:1BreastsTogether" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BreastsTogether</Data>
+        </Slider>
+        <Slider name="BreastTopSlope" invert="false" small="0" big="0">
+            <Data name="3BBBBreastTopSlope" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreastTopSlope</Data>
+            <Data name="TRSclothes9DMRxZ:1BreastTopSlope" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BreastTopSlope</Data>
+        </Slider>
+        <Slider name="BreastWidth" invert="false" small="0" big="0">
+            <Data name="3BBBBreastWidth" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreastWidth</Data>
+            <Data name="TRSclothes9DMRxZ:1BreastWidth" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BreastWidth</Data>
+        </Slider>
+        <Slider name="Butt" invert="false" small="0" big="0">
+            <Data name="3BBBButt" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBButt</Data>
+            <Data name="TRSclothes9DMRxZ:1Butt" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1Butt</Data>
+            <Data name="3BBB_AnusButt" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusButt</Data>
+            <Data name="3BBB_VaginaButt" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaButt</Data>
+        </Slider>
+        <Slider name="ButtClassic" invert="false" small="0" big="0">
+            <Data name="3BBBButtClassic" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBButtClassic</Data>
+            <Data name="TRSclothes9DMRxZ:1ButtClassic" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1ButtClassic</Data>
+            <Data name="3BBB_AnusButtClassic" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusButtClassic</Data>
+            <Data name="3BBB_VaginaButtClassic" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaButtClassic</Data>
+        </Slider>
+        <Slider name="ButtCrack" invert="false" small="0" big="0">
+            <Data name="3BBBButtCrack" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBButtCrack</Data>
+            <Data name="TRSclothes9DMRxZ:1ButtCrack" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1ButtCrack</Data>
+            <Data name="3BBB_AnusButtCrack" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusButtCrack</Data>
+            <Data name="3BBB_VaginaButtCrack" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaButtCrack</Data>
+        </Slider>
+        <Slider name="ButtShape2" invert="false" small="0" big="0">
+            <Data name="3BBBButtShape2" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBButtShape2</Data>
+            <Data name="TRSclothes9DMRxZ:1ButtShape2" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1ButtShape2</Data>
+            <Data name="3BBB_AnusButtShape2" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusButtShape2</Data>
+            <Data name="3BBB_VaginaButtShape2" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaButtShape2</Data>
+        </Slider>
+        <Slider name="ButtSmall" invert="false" small="0" big="0">
+            <Data name="3BBBButtSmall" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBButtSmall</Data>
+            <Data name="TRSclothes9DMRxZ:1ButtSmall" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1ButtSmall</Data>
+            <Data name="3BBB_AnusButtSmall" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusButtSmall</Data>
+            <Data name="3BBB_VaginaButtSmall" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaButtSmall</Data>
+        </Slider>
+        <Slider name="CalfSize" invert="false" small="0" big="0">
+            <Data name="3BBBCalfSize" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBCalfSize</Data>
+        </Slider>
+        <Slider name="CalfSmooth" invert="false" small="0" big="0">
+            <Data name="3BBBCalfSmooth" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBCalfSmooth</Data>
+        </Slider>
+        <Slider name="ChestDepth" invert="false" small="0" big="0">
+            <Data name="3BBBChestDepth" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBChestDepth</Data>
+            <Data name="TRSclothes9DMRxZ:3ChestDepth" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:3ChestDepth</Data>
+            <Data name="TRSclothes9DMRxZ:1ChestDepth" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1ChestDepth</Data>
+        </Slider>
+        <Slider name="ChestWidth" invert="false" small="0" big="0">
+            <Data name="3BBBChestWidth" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBChestWidth</Data>
+            <Data name="TRSclothes9DMRxZ:2ChestWidth" target="TRSclothes9DMRxZ:2" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:2ChestWidth</Data>
+            <Data name="TRSclothes9DMRxZ:3ChestWidth" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:3ChestWidth</Data>
+            <Data name="TRSclothes9DMRxZ:1ChestWidth" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1ChestWidth</Data>
+        </Slider>
+        <Slider name="ChubbyArms" invert="false" small="0" big="0">
+            <Data name="3BBBChubbyArms" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBChubbyArms</Data>
+            <Data name="TRSclothes9DMRxZ:2ChubbyArms" target="TRSclothes9DMRxZ:2" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:2ChubbyArms</Data>
+            <Data name="TRSclothes9DMRxZ:3ChubbyArms" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:3ChubbyArms</Data>
+            <Data name="TRSclothes9DMRxZ:1ChubbyArms" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1ChubbyArms</Data>
+        </Slider>
+        <Slider name="ChubbyButt" invert="false" small="0" big="0">
+            <Data name="3BBBChubbyButt" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBChubbyButt</Data>
+            <Data name="TRSclothes9DMRxZ:1ChubbyButt" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1ChubbyButt</Data>
+            <Data name="3BBB_AnusChubbyButt" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusChubbyButt</Data>
+            <Data name="3BBB_VaginaChubbyButt" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaChubbyButt</Data>
+        </Slider>
+        <Slider name="ChubbyLegs" invert="false" small="0" big="0">
+            <Data name="3BBBChubbyLegs" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBChubbyLegs</Data>
+            <Data name="TRSclothes9DMRxZ:1ChubbyLegs" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1ChubbyLegs</Data>
+            <Data name="3BBB_AnusChubbyLegs" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusChubbyLegs</Data>
+            <Data name="3BBB_VaginaChubbyLegs" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaChubbyLegs</Data>
+        </Slider>
+        <Slider name="ChubbyWaist" invert="false" small="0" big="0">
+            <Data name="3BBBChubbyWaist" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBChubbyWaist</Data>
+            <Data name="TRSclothes9DMRxZ:1ChubbyWaist" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1ChubbyWaist</Data>
+            <Data name="3BBB_AnusChubbyWaist" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusChubbyWaist</Data>
+            <Data name="3BBB_VaginaChubbyWaist" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaChubbyWaist</Data>
+        </Slider>
+        <Slider name="CrotchBack" invert="false" small="0" big="0">
+            <Data name="3BBBCrotchBack" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBCrotchBack</Data>
+            <Data name="TRSclothes9DMRxZ:1CrotchBack" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1CrotchBack</Data>
+            <Data name="3BBB_AnusCrotchBack" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusCrotchBack</Data>
+            <Data name="3BBB_VaginaCrotchBack" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaCrotchBack</Data>
+        </Slider>
+        <Slider name="DoubleMelon" invert="false" small="0" big="0">
+            <Data name="3BBBDoubleMelon" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBDoubleMelon</Data>
+            <Data name="TRSclothes9DMRxZ:1DoubleMelon" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1DoubleMelon</Data>
+        </Slider>
+        <Slider name="ForearmSize" invert="false" small="0" big="0">
+            <Data name="3BBBForearmSize" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBForearmSize</Data>
+        </Slider>
+        <Slider name="Groin" invert="false" small="0" big="0">
+            <Data name="3BBBGroin" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBGroin</Data>
+            <Data name="TRSclothes9DMRxZ:1Groin" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1Groin</Data>
+            <Data name="3BBB_AnusGroin" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusGroin</Data>
+            <Data name="3BBB_VaginaGroin" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaGroin</Data>
+        </Slider>
+        <Slider name="HipBone" invert="false" small="0" big="0">
+            <Data name="3BBBHipBone" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBHipBone</Data>
+            <Data name="TRSclothes9DMRxZ:1HipBone" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1HipBone</Data>
+            <Data name="3BBB_VaginaHipBone" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaHipBone</Data>
+        </Slider>
+        <Slider name="HipForward" invert="false" small="0" big="0">
+            <Data name="3BBBHipForward" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBHipForward</Data>
+            <Data name="TRSclothes9DMRxZ:1HipForward" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1HipForward</Data>
+            <Data name="3BBB_AnusHipForward" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusHipForward</Data>
+            <Data name="3BBB_VaginaHipForward" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaHipForward</Data>
+        </Slider>
+        <Slider name="Hips" invert="false" small="0" big="0">
+            <Data name="3BBBHips" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBHips</Data>
+            <Data name="TRSclothes9DMRxZ:1Hips" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1Hips</Data>
+            <Data name="3BBB_AnusHips" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusHips</Data>
+            <Data name="3BBB_VaginaHips" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaHips</Data>
+        </Slider>
+        <Slider name="HipUpperWidth" invert="false" small="0" big="0">
+            <Data name="3BBBHipUpperWidth" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBHipUpperWidth</Data>
+            <Data name="TRSclothes9DMRxZ:1HipUpperWidth" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1HipUpperWidth</Data>
+        </Slider>
+        <Slider name="KneeHeight" invert="false" small="0" big="0">
+            <Data name="3BBBKneeHeight" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBKneeHeight</Data>
+        </Slider>
+        <Slider name="KneeShape" invert="false" small="0" big="0">
+            <Data name="3BBBKneeShape" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBKneeShape</Data>
+        </Slider>
+        <Slider name="LegShapeClassic" invert="false" small="0" big="0">
+            <Data name="3BBBLegShapeClassic" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBLegShapeClassic</Data>
+        </Slider>
+        <Slider name="LegsThin" invert="false" small="0" big="0">
+            <Data name="3BBBLegsThin" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBLegsThin</Data>
+            <Data name="TRSclothes9DMRxZ:1LegsThin" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1LegsThin</Data>
+        </Slider>
+        <Slider name="MuscleAbs" invert="false" small="0" big="0">
+            <Data name="3BBBMuscleAbs" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBMuscleAbs</Data>
+            <Data name="TRSclothes9DMRxZ:1MuscleAbs" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1MuscleAbs</Data>
+        </Slider>
+        <Slider name="MuscleArms" invert="false" small="0" big="0">
+            <Data name="3BBBMuscleArms" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBMuscleArms</Data>
+            <Data name="TRSclothes9DMRxZ:2MuscleArms" target="TRSclothes9DMRxZ:2" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:2MuscleArms</Data>
+            <Data name="TRSclothes9DMRxZ:3MuscleArms" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:3MuscleArms</Data>
+            <Data name="TRSclothes9DMRxZ:1MuscleArms" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1MuscleArms</Data>
+        </Slider>
+        <Slider name="MuscleButt" invert="false" small="0" big="0">
+            <Data name="3BBBMuscleButt" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBMuscleButt</Data>
+            <Data name="TRSclothes9DMRxZ:1MuscleButt" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1MuscleButt</Data>
+            <Data name="3BBB_AnusMuscleButt" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusMuscleButt</Data>
+        </Slider>
+        <Slider name="MuscleLegs" invert="false" small="0" big="0">
+            <Data name="3BBBMuscleLegs" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBMuscleLegs</Data>
+            <Data name="TRSclothes9DMRxZ:1MuscleLegs" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1MuscleLegs</Data>
+            <Data name="3BBB_AnusMuscleLegs" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusMuscleLegs</Data>
+            <Data name="3BBB_VaginaMuscleLegs" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaMuscleLegs</Data>
+        </Slider>
+        <Slider name="MusclePecs" invert="false" small="0" big="0">
+            <Data name="3BBBMusclePecs" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBMusclePecs</Data>
+            <Data name="TRSclothes9DMRxZ:1MusclePecs" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1MusclePecs</Data>
+        </Slider>
+        <Slider name="NeckSeam" invert="false" small="100" big="0" hidden="true">
+            <Data name="3BBBNeckSeam" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBNeckSeam</Data>
+            <Data name="TRSclothes9DMRxZ:2NeckSeam" target="TRSclothes9DMRxZ:2" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:2NeckSeam</Data>
+            <Data name="TRSclothes9DMRxZ:3NeckSeam" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:3NeckSeam</Data>
+            <Data name="TRSclothes9DMRxZ:1NeckSeam" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1NeckSeam</Data>
+        </Slider>
+        <Slider name="NipBGone" invert="false" small="0" big="0">
+            <Data name="3BBBNipBGone" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBNipBGone</Data>
+            <Data name="TRSclothes9DMRxZ:1NipBGone" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1NipBGone</Data>
+        </Slider>
+        <Slider name="NippleDistance" invert="false" small="0" big="0">
+            <Data name="3BBBNippleDistance" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBNippleDistance</Data>
+            <Data name="TRSclothes9DMRxZ:1NippleDistance" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1NippleDistance</Data>
+        </Slider>
+        <Slider name="NippleDown" invert="false" small="0" big="0">
+            <Data name="3BBBNippleDown" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBNippleDown</Data>
+            <Data name="TRSclothes9DMRxZ:1NippleDown" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1NippleDown</Data>
+        </Slider>
+        <Slider name="NippleLength" invert="false" small="0" big="0">
+            <Data name="3BBBNippleLength" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBNippleLength</Data>
+            <Data name="TRSclothes9DMRxZ:1NippleLength" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1NippleLength</Data>
+        </Slider>
+        <Slider name="NippleManga" invert="false" small="0" big="0">
+            <Data name="3BBBNippleManga" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBNippleManga</Data>
+            <Data name="TRSclothes9DMRxZ:1NippleManga" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1NippleManga</Data>
+        </Slider>
+        <Slider name="NipplePerkiness" invert="false" small="0" big="0">
+            <Data name="3BBBNipplePerkiness" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBNipplePerkiness</Data>
+            <Data name="TRSclothes9DMRxZ:1NipplePerkiness" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1NipplePerkiness</Data>
+        </Slider>
+        <Slider name="NipplePerkManga" invert="false" small="0" big="0">
+            <Data name="3BBBNipplePerkManga" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBNipplePerkManga</Data>
+            <Data name="TRSclothes9DMRxZ:1NipplePerkManga" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1NipplePerkManga</Data>
+        </Slider>
+        <Slider name="NippleSize" invert="false" small="0" big="0">
+            <Data name="3BBBNippleSize" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBNippleSize</Data>
+            <Data name="TRSclothes9DMRxZ:1NippleSize" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1NippleSize</Data>
+        </Slider>
+        <Slider name="NippleTip" invert="false" small="0" big="0">
+            <Data name="3BBBNippleTip" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBNippleTip</Data>
+            <Data name="TRSclothes9DMRxZ:1NippleTip" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1NippleTip</Data>
+        </Slider>
+        <Slider name="NippleTipManga" invert="false" small="0" big="0">
+            <Data name="3BBBNippleTipManga" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBNippleTipManga</Data>
+            <Data name="TRSclothes9DMRxZ:1NippleTipManga" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1NippleTipManga</Data>
+        </Slider>
+        <Slider name="NippleUp" invert="false" small="0" big="0">
+            <Data name="3BBBNippleUp" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBNippleUp</Data>
+            <Data name="TRSclothes9DMRxZ:1NippleUp" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1NippleUp</Data>
+        </Slider>
+        <Slider name="PregnancyBelly" invert="false" small="0" big="0">
+            <Data name="3BBBPregnancyBelly" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBPregnancyBelly</Data>
+            <Data name="TRSclothes9DMRxZ:1PregnancyBelly" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1PregnancyBelly</Data>
+            <Data name="3BBB_VaginaPregnancyBelly" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaPregnancyBelly</Data>
+        </Slider>
+        <Slider name="PushUp" invert="false" small="0" big="0">
+            <Data name="3BBBPushUp" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBPushUp</Data>
+            <Data name="TRSclothes9DMRxZ:1PushUp" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1PushUp</Data>
+        </Slider>
+        <Slider name="RibsProminance" invert="false" small="0" big="0">
+            <Data name="3BBBRibsProminance" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBRibsProminance</Data>
+            <Data name="TRSclothes9DMRxZ:1RibsProminance" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1RibsProminance</Data>
+        </Slider>
+        <Slider name="RoundAss" invert="false" small="0" big="0">
+            <Data name="3BBBRoundAss" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBRoundAss</Data>
+            <Data name="TRSclothes9DMRxZ:1RoundAss" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1RoundAss</Data>
+            <Data name="3BBB_AnusRoundAss" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusRoundAss</Data>
+            <Data name="3BBB_VaginaRoundAss" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaRoundAss</Data>
+        </Slider>
+        <Slider name="ShoulderSmooth" invert="false" small="0" big="0">
+            <Data name="3BBBShoulderSmooth" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBShoulderSmooth</Data>
+            <Data name="TRSclothes9DMRxZ:2ShoulderSmooth" target="TRSclothes9DMRxZ:2" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:2ShoulderSmooth</Data>
+            <Data name="TRSclothes9DMRxZ:3ShoulderSmooth" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:3ShoulderSmooth</Data>
+            <Data name="TRSclothes9DMRxZ:1ShoulderSmooth" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1ShoulderSmooth</Data>
+        </Slider>
+        <Slider name="ShoulderTweak" invert="false" small="0" big="0">
+            <Data name="3BBBShoulderTweak" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBShoulderTweak</Data>
+            <Data name="TRSclothes9DMRxZ:2ShoulderTweak" target="TRSclothes9DMRxZ:2" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:2ShoulderTweak</Data>
+            <Data name="TRSclothes9DMRxZ:3ShoulderTweak" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:3ShoulderTweak</Data>
+            <Data name="TRSclothes9DMRxZ:1ShoulderTweak" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1ShoulderTweak</Data>
+        </Slider>
+        <Slider name="ShoulderWidth" invert="false" small="0" big="0">
+            <Data name="3BBBShoulderWidth" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBShoulderWidth</Data>
+            <Data name="TRSclothes9DMRxZ:2ShoulderWidth" target="TRSclothes9DMRxZ:2" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:2ShoulderWidth</Data>
+            <Data name="TRSclothes9DMRxZ:3ShoulderWidth" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:3ShoulderWidth</Data>
+            <Data name="TRSclothes9DMRxZ:1ShoulderWidth" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1ShoulderWidth</Data>
+        </Slider>
+        <Slider name="SlimThighs" invert="false" small="0" big="0">
+            <Data name="3BBBSlimThighs" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBSlimThighs</Data>
+            <Data name="TRSclothes9DMRxZ:1SlimThighs" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1SlimThighs</Data>
+            <Data name="3BBB_AnusSlimThighs" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusSlimThighs</Data>
+            <Data name="3BBB_VaginaSlimThighs" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaSlimThighs</Data>
+        </Slider>
+        <Slider name="SternumDepth" invert="false" small="0" big="0">
+            <Data name="3BBBSternumDepth" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBSternumDepth</Data>
+            <Data name="TRSclothes9DMRxZ:1SternumDepth" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1SternumDepth</Data>
+        </Slider>
+        <Slider name="SternumHeight" invert="false" small="0" big="0">
+            <Data name="3BBBSternumHeight" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBSternumHeight</Data>
+            <Data name="TRSclothes9DMRxZ:1SternumHeight" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1SternumHeight</Data>
+        </Slider>
+        <Slider name="Thighs" invert="false" small="0" big="0">
+            <Data name="3BBBThighs" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBThighs</Data>
+            <Data name="TRSclothes9DMRxZ:1Thighs" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1Thighs</Data>
+            <Data name="3BBB_AnusThighs" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusThighs</Data>
+            <Data name="3BBB_VaginaThighs" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaThighs</Data>
+        </Slider>
+        <Slider name="TummyTuck" invert="false" small="0" big="0">
+            <Data name="3BBBTummyTuck" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBTummyTuck</Data>
+            <Data name="TRSclothes9DMRxZ:1TummyTuck" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1TummyTuck</Data>
+            <Data name="3BBB_VaginaTummyTuck" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaTummyTuck</Data>
+        </Slider>
+        <Slider name="Waist" invert="false" small="0" big="0">
+            <Data name="3BBBWaist" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBWaist</Data>
+            <Data name="TRSclothes9DMRxZ:1Waist" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1Waist</Data>
+        </Slider>
+        <Slider name="WaistHeight" invert="false" small="0" big="0">
+            <Data name="3BBBWaistHeight" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBWaistHeight</Data>
+            <Data name="TRSclothes9DMRxZ:1WaistHeight" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1WaistHeight</Data>
+            <Data name="3BBB_AnusWaistHeight" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusWaistHeight</Data>
+            <Data name="3BBB_VaginaWaistHeight" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaWaistHeight</Data>
+        </Slider>
+        <Slider name="WideWaistLine" invert="false" small="0" big="0">
+            <Data name="3BBBWideWaistLine" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBWideWaistLine</Data>
+            <Data name="TRSclothes9DMRxZ:1WideWaistLine" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1WideWaistLine</Data>
+        </Slider>
+        <Slider name="WristSize" invert="false" small="100" big="0">
+            <Data name="3BBBWristSize" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBWristSize</Data>
+            <Data name="TRSclothes9DMRxZ:1WristSize" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1WristSize</Data>
+        </Slider>
+        <Slider name="7B Lower" invert="false" small="0" big="0">
+            <Data name="3BBB7B Lower" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB7B Lower</Data>
+            <Data name="TRSclothes9DMRxZ:17B Lower" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:17B Lower</Data>
+            <Data name="3BBB_Anus7B Lower" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_Anus7B Lower</Data>
+            <Data name="3BBB_Vagina7B Lower" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_Vagina7B Lower</Data>
+        </Slider>
+        <Slider name="7B Upper" invert="false" small="0" big="0">
+            <Data name="3BBB7B Upper" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB7B Upper</Data>
+            <Data name="TRSclothes9DMRxZ:27B Upper" target="TRSclothes9DMRxZ:2" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:27B Upper</Data>
+            <Data name="TRSclothes9DMRxZ:37B Upper" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:37B Upper</Data>
+            <Data name="TRSclothes9DMRxZ:17B Upper" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:17B Upper</Data>
+        </Slider>
+        <Slider name="VanillaSSEHi" invert="false" small="0" big="0">
+            <Data name="3BBBVanillaSSEHi" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBVanillaSSEHi</Data>
+            <Data name="TRSclothes9DMRxZ:2VanillaSSEHi" target="TRSclothes9DMRxZ:2" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:2VanillaSSEHi</Data>
+            <Data name="TRSclothes9DMRxZ:3VanillaSSEHi" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:3VanillaSSEHi</Data>
+            <Data name="TRSclothes9DMRxZ:1VanillaSSEHi" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1VanillaSSEHi</Data>
+            <Data name="3BBB_AnusVanillaSSEHi" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusVanillaSSEHi</Data>
+            <Data name="3BBB_VaginaVanillaSSEHi" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaVanillaSSEHi</Data>
+        </Slider>
+        <Slider name="VanillaSSELo" invert="false" small="0" big="0">
+            <Data name="3BBBVanillaSSELo" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBVanillaSSELo</Data>
+            <Data name="TRSclothes9DMRxZ:2VanillaSSELo" target="TRSclothes9DMRxZ:2" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:2VanillaSSELo</Data>
+            <Data name="TRSclothes9DMRxZ:3VanillaSSELo" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:3VanillaSSELo</Data>
+            <Data name="TRSclothes9DMRxZ:1VanillaSSELo" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1VanillaSSELo</Data>
+            <Data name="3BBB_AnusVanillaSSELo" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusVanillaSSELo</Data>
+            <Data name="3BBB_VaginaVanillaSSELo" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaVanillaSSELo</Data>
+        </Slider>
+        <Slider name="OldBaseShape" invert="false" small="0" big="0">
+            <Data name="3BBBOldBaseShape" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBOldBaseShape</Data>
+            <Data name="TRSclothes9DMRxZ:2OldBaseShape" target="TRSclothes9DMRxZ:2" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:2OldBaseShape</Data>
+            <Data name="TRSclothes9DMRxZ:3OldBaseShape" target="TRSclothes9DMRxZ:3" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:3OldBaseShape</Data>
+            <Data name="TRSclothes9DMRxZ:1OldBaseShape" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1OldBaseShape</Data>
+            <Data name="3BBB_AnusOldBaseShape" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusOldBaseShape</Data>
+            <Data name="3BBB_VaginaOldBaseShape" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaOldBaseShape</Data>
+        </Slider>
+        <Slider name="BreastsNewSHSymmetry" invert="false" small="0" big="0">
+            <Data name="3BBBBreastsNewSHSymmetry" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBBreastsNewSHSymmetry</Data>
+            <Data name="TRSclothes9DMRxZ:1BreastsNewSHSymmetry" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1BreastsNewSHSymmetry</Data>
+        </Slider>
+        <Slider name="Innieoutie" invert="false" small="0" big="0">
+            <Data name="3BBBInnieoutie" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBInnieoutie</Data>
+            <Data name="TRSclothes9DMRxZ:1Innieoutie" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1Innieoutie</Data>
+            <Data name="3BBB_VaginaInnieoutie" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaInnieoutie</Data>
+        </Slider>
+        <Slider name="Labiapuffyness" invert="false" small="0" big="0">
+            <Data name="3BBBLabiapuffyness" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBLabiapuffyness</Data>
+            <Data name="TRSclothes9DMRxZ:1Labiapuffyness" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1Labiapuffyness</Data>
+            <Data name="3BBB_VaginaLabiapuffyness" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaLabiapuffyness</Data>
+        </Slider>
+        <Slider name="Labiaprotrude" invert="false" small="0" big="0">
+            <Data name="3BBB_VaginaLabiaprotrude" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaLabiaprotrude</Data>
+        </Slider>
+        <Slider name="Labiaprotrude2" invert="false" small="0" big="0">
+            <Data name="3BBB_VaginaLabiaprotrude2" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaLabiaprotrude2</Data>
+        </Slider>
+        <Slider name="Vaginasize" invert="false" small="0" big="0">
+            <Data name="3BBB_VaginaVaginasize" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaVaginasize</Data>
+        </Slider>
+        <Slider name="Clit" invert="false" small="0" big="0">
+            <Data name="3BBB_VaginaClit" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaClit</Data>
+        </Slider>
+        <Slider name="CBPC" invert="false" small="100" big="100">
+            <Data name="3BBBCBPC" target="3BBB" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBBCBPC</Data>
+            <Data name="TRSclothes9DMRxZ:1CBPC" target="TRSclothes9DMRxZ:1" local="true">GFB TERA Succubus Cuirass PSQ.osd\TRSclothes9DMRxZ:1CBPC</Data>
+            <Data name="3BBB_AnusCBPC" target="3BBB_Anus" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_AnusCBPC</Data>
+            <Data name="3BBB_VaginaCBPC" target="3BBB_Vagina" local="true">GFB TERA Succubus Cuirass PSQ.osd\3BBB_VaginaCBPC</Data>
+        </Slider>
+    </SliderSet>
+    <SliderSet name="PSQ 3BA 变身 - TERA魅魔2 - 角饰">
+        <DataFolder>PSQ_Package_20261106\3BA\F009</DataFolder>
+        <SourceFile>horns.nif</SourceFile>
+        <OutputPath>meshes\PSQ\ExternalOutfits\TERA9DM</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">horns</OutputFile>
+        <Shape target="TR9DMSuccuCle:1">TR9DMSuccuCle:1</Shape>
+        <Shape target="TR9DMSuccuCle:2">TR9DMSuccuCle:2</Shape>
+    </SliderSet>
+    <SliderSet name="PSQ 3BA 变身 - TERA魅魔2 - 靴子">
+        <DataFolder>PSQ_Package_20261106\3BA\F009</DataFolder>
+        <SourceFile>boots.nif</SourceFile>
+        <OutputPath>meshes\PSQ\ExternalOutfits\TERA9DM</OutputPath>
+        <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">boots</OutputFile>
+        <Shape target="Feet" DataFolder="PSQ_Package_20261106\3BA\F002">Feet</Shape>
+        <Shape target="TRSShoes9DMRx">TRSShoes9DMRx</Shape>
+        <Slider name="AnkleSize" invert="false" small="100" big="0">
+            <Data name="FeetAnkleSize" target="Feet">CBBE Feet.osd\FeetAnkleSize</Data>
+            <Data name="TRSShoes9DMRxAnkleSize" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxAnkleSize</Data>
+        </Slider>
+        <Slider name="FeetFeminine" invert="false" small="0" big="0">
+            <Data name="FeetFeetFeminine" target="Feet">CBBE Feet.osd\FeetFeetFeminine</Data>
+        </Slider>
+        <Slider name="Feet H" invert="false" small="100" big="100" hidden="true" zap="true">
+            <Data name="FeetFeet H" target="Feet" local="true">GFB TERA Succubus boots PSQ.osd\FeetFeet H</Data>
+        </Slider>
+        <Slider name="AppleCheeks" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxAppleCheeks" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxAppleCheeks</Data>
+        </Slider>
+        <Slider name="Back" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxBack" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxBack</Data>
+        </Slider>
+        <Slider name="BackArch" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxBackArch" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxBackArch</Data>
+        </Slider>
+        <Slider name="Belly" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxBelly" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxBelly</Data>
+        </Slider>
+        <Slider name="BigBelly" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxBigBelly" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxBigBelly</Data>
+        </Slider>
+        <Slider name="BigButt" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxBigButt" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxBigButt</Data>
+        </Slider>
+        <Slider name="BigTorso" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxBigTorso" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxBigTorso</Data>
+        </Slider>
+        <Slider name="BreastsSmall" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxBreastsSmall" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxBreastsSmall</Data>
+        </Slider>
+        <Slider name="BreastsSmall2" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxBreastsSmall2" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxBreastsSmall2</Data>
+        </Slider>
+        <Slider name="Butt" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxButt" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxButt</Data>
+        </Slider>
+        <Slider name="ButtClassic" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxButtClassic" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxButtClassic</Data>
+        </Slider>
+        <Slider name="ButtCrack" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxButtCrack" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxButtCrack</Data>
+        </Slider>
+        <Slider name="ButtShape2" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxButtShape2" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxButtShape2</Data>
+        </Slider>
+        <Slider name="ButtSmall" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxButtSmall" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxButtSmall</Data>
+        </Slider>
+        <Slider name="CalfSize" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxCalfSize" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxCalfSize</Data>
+        </Slider>
+        <Slider name="CalfSmooth" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxCalfSmooth" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxCalfSmooth</Data>
+        </Slider>
+        <Slider name="ChestDepth" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxChestDepth" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxChestDepth</Data>
+        </Slider>
+        <Slider name="ChestWidth" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxChestWidth" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxChestWidth</Data>
+        </Slider>
+        <Slider name="ChubbyButt" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxChubbyButt" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxChubbyButt</Data>
+        </Slider>
+        <Slider name="ChubbyLegs" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxChubbyLegs" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxChubbyLegs</Data>
+        </Slider>
+        <Slider name="ChubbyWaist" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxChubbyWaist" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxChubbyWaist</Data>
+        </Slider>
+        <Slider name="CrotchBack" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxCrotchBack" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxCrotchBack</Data>
+        </Slider>
+        <Slider name="Groin" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxGroin" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxGroin</Data>
+        </Slider>
+        <Slider name="HipBone" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxHipBone" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxHipBone</Data>
+        </Slider>
+        <Slider name="HipForward" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxHipForward" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxHipForward</Data>
+        </Slider>
+        <Slider name="Hips" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxHips" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxHips</Data>
+        </Slider>
+        <Slider name="HipUpperWidth" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxHipUpperWidth" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxHipUpperWidth</Data>
+        </Slider>
+        <Slider name="KneeHeight" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxKneeHeight" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxKneeHeight</Data>
+        </Slider>
+        <Slider name="KneeShape" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxKneeShape" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxKneeShape</Data>
+        </Slider>
+        <Slider name="LegShapeClassic" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxLegShapeClassic" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxLegShapeClassic</Data>
+        </Slider>
+        <Slider name="LegsThin" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxLegsThin" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxLegsThin</Data>
+        </Slider>
+        <Slider name="MuscleAbs" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxMuscleAbs" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxMuscleAbs</Data>
+        </Slider>
+        <Slider name="MuscleButt" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxMuscleButt" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxMuscleButt</Data>
+        </Slider>
+        <Slider name="MuscleLegs" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxMuscleLegs" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxMuscleLegs</Data>
+        </Slider>
+        <Slider name="PregnancyBelly" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxPregnancyBelly" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxPregnancyBelly</Data>
+        </Slider>
+        <Slider name="RoundAss" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxRoundAss" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxRoundAss</Data>
+        </Slider>
+        <Slider name="SlimThighs" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxSlimThighs" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxSlimThighs</Data>
+        </Slider>
+        <Slider name="Thighs" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxThighs" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxThighs</Data>
+        </Slider>
+        <Slider name="TummyTuck" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxTummyTuck" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxTummyTuck</Data>
+        </Slider>
+        <Slider name="Waist" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxWaist" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxWaist</Data>
+        </Slider>
+        <Slider name="WaistHeight" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxWaistHeight" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxWaistHeight</Data>
+        </Slider>
+        <Slider name="WideWaistLine" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxWideWaistLine" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxWideWaistLine</Data>
+        </Slider>
+        <Slider name="7B Lower" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRx7B Lower" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRx7B Lower</Data>
+        </Slider>
+        <Slider name="7B Upper" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRx7B Upper" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRx7B Upper</Data>
+        </Slider>
+        <Slider name="VanillaSSEHi" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxVanillaSSEHi" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxVanillaSSEHi</Data>
+        </Slider>
+        <Slider name="VanillaSSELo" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxVanillaSSELo" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxVanillaSSELo</Data>
+        </Slider>
+        <Slider name="OldBaseShape" invert="false" small="0" big="0">
+            <Data name="TRSShoes9DMRxOldBaseShape" target="TRSShoes9DMRx" local="true">GFB TERA Succubus boots PSQ.osd\TRSShoes9DMRxOldBaseShape</Data>
+        </Slider>
+    </SliderSet>
+    </SliderSetInfo>

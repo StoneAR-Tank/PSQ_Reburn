@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SliderGroups>
+  <Group name="PSQ UBE Outfits">
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 尾巴" />
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 手套" />
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 翅膀" />
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 胸甲" />
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 角饰" />
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 靴子" />
+  </Group>
+  <Group name="UBE">
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 尾巴" />
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 手套" />
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 翅膀" />
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 胸甲" />
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 角饰" />
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 靴子" />
+  </Group>
+  <Group name="UBE Female">
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 尾巴" />
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 手套" />
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 翅膀" />
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 胸甲" />
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 角饰" />
+    <Member name="PSQ UBE 变身 - 海伦娜魅魔 - 靴子" />
+  </Group>
+</SliderGroups>
