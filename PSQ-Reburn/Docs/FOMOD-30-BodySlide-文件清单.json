@@ -28,7 +28,7 @@
   "CalienteTools/BodySlide/ShapeData/PSQ_Package_20261106/3BA/F006/tail.nif": "01d5dc81b5ed4ac9953a719d7bc6ad82086d42d6ed19f6ada1768b115617fd07",
   "CalienteTools/BodySlide/ShapeData/PSQ_Package_20261106/3BA/F006/wings.nif": "3ad2294d2ed3b26ab3df31565a9a6c68750cb3c4e98472e63f6039d7d0b32be3",
   "CalienteTools/BodySlide/ShapeData/PSQ_Package_20261106/3BA/F007/boots.nif": "5647a57f0aff03bcab05360b68e77a6af8144e32121782d883dc4fa7f0d04a4a",
-  "CalienteTools/BodySlide/ShapeData/PSQ_Package_20261106/3BA/F007/cuirass.nif": "d8b4d779453842d82bbba4c3a35f18a7f059f82d873c6dca90ac9048f9e6ce1f",
+  "CalienteTools/BodySlide/ShapeData/PSQ_Package_20261106/3BA/F007/cuirass.nif": "fa5666d9a64ce0638172057e4d626978171360767868dd29e5798189b1610fd7",
   "CalienteTools/BodySlide/ShapeData/PSQ_Package_20261106/3BA/F007/gloves.nif": "b4b489b6f130570f111f5387caad169cb960f5d8878ec358e4c0517393babb6b",
   "CalienteTools/BodySlide/ShapeData/PSQ_Package_20261106/3BA/F007/horns.nif": "4550ea620837e324538e45df5979d433089e0e550d1520ba4fc812a28821c9b1",
   "CalienteTools/BodySlide/ShapeData/PSQ_Package_20261106/3BA/F007/HS BOOTS C.osd": "ec91b89f7497abc0a645f8fbe74786e1979187270c8725af1c792337bd0d0b69",
@@ -106,10 +106,11 @@
   "CalienteTools/BodySlide/SliderGroups/PSQ-3BA-Transform-Hiroshi.xml": "c8cb0843663189864a2d76605d4125825c952d348dff1a1c45fee645a8104a6b",
   "CalienteTools/BodySlide/SliderSets/PSQ-3BA-Transform-DX.osp": "f1e25a79c0325c4ea05261b007cd32306945eb9e6748281b6bf96f42b58b95ec",
   "CalienteTools/BodySlide/SliderGroups/PSQ-3BA-Transform-DX.xml": "988d60550d7e8bb8dfa0e8c42595b116d516360ea7257e696b7164aa876e30a0",
-  "CalienteTools/BodySlide/SliderSets/PSQ-3BA-Transform-Helena.osp": "e2c4bdf0c6ed868f394dbf10209bece37ace1860a06c478e5eb6626f3e5fd6fe",
+  "CalienteTools/BodySlide/SliderSets/PSQ-3BA-Transform-Helena.osp": "148e5969a336d537541a34fe20a9c876185aa1522c4f79632159e4bb9ec3253d",
   "CalienteTools/BodySlide/SliderGroups/PSQ-3BA-Transform-Helena.xml": "4a8455ce421ab521f1da695593463e607cf7b340542aba6ef9ea898adae947c6",
   "CalienteTools/BodySlide/ShapeData/PSQ DX Transform Chest/cuirass.nif": "f6399b923131d1f9e35f22cab3ab6e09f4054921c5be4ec0dc4016b671900a42",
   "CalienteTools/BodySlide/ShapeData/PSQ DX Transform Chest/DX Succubus - PSQ Cuirass.osd": "a6ddb5757b8d88c4a57b7bd0866c39265c0c77160048f21ff6efca00bd542a99",
   "CalienteTools/BodySlide/ShapeData/PSQ DX Transform Chest/Strings.osd": "c0f29837ada4a499670628f6b791d3b9561ed39a01bfc937c896909bdfedd9e7",
-  "CalienteTools/BodySlide/ShapeData/PSQ DX Transform Chest/Skirt.osd": "9cf97613ff52e577668ec0c06a2abcd6b1a6faddd08ced4fec70f47aa157c4d9"
+  "CalienteTools/BodySlide/ShapeData/PSQ DX Transform Chest/Skirt.osd": "9cf97613ff52e577668ec0c06a2abcd6b1a6faddd08ced4fec70f47aa157c4d9",
+  "CalienteTools/BodySlide/ShapeData/PSQ_Package_20261106/3BA/F007/PSQNoCorsetWings.osd": "4639a22f25a0d642dc7b4051a782429a299bb1093726df9485586436fee539ea"
 }

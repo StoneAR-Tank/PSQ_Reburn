@@ -2029,7 +2029,7 @@
     <Slider name="AreolaeSizeSmall_UV_fix" invert="false" small="0" big="0" uv="true">
       <Data name="BaseShapeAreolaeSizeSmall_UV_fix" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAreolaeSizeSmall_UV_fix</Data>
     </Slider>
-  </SliderSet>
+  <Slider name="PSQNoCorsetWings" invert="false" small="100" big="100" zap="true" hidden="true"><Data name="CorsetPSQNoCorsetWings" target="Corset" local="true">PSQNoCorsetWings.osd\CorsetPSQNoCorsetWings</Data></Slider></SliderSet>
 <SliderSet name="PSQ UBE 变身 - 海伦娜魅魔 - 角饰">
     <ReferenceInfo ProjectFile="SliderSets\UBE SE 2.0 Release Body.osp" ProjectName="UBE SE 2.0 Release Body" ShapeName="BaseShape" />
     <DataFolder>PSQ_Package_20261106\UBE\F013</DataFolder>

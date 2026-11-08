@@ -1,6 +1,6 @@
 {
   "name": "PSQ Jump Dual Destruction",
-  "priority": 2147483613,
+  "priority": 1316129002,
   "replaceOnLoop": false,
   "conditions": [
     {
@@ -84,5 +84,8 @@
       ]
     }
   ],
-  "description": "Female player in PSQ transformed or flight state, both hands destruction magic, weapon drawn. Gunslicer jump animations."
+  "description": "Female player in PSQ transformed or flight state, both hands destruction magic, weapon drawn. Gunslicer jump animations.",
+  "interruptible": true,
+  "hasCustomBlendTimeOnInterrupt": true,
+  "blendTimeOnInterrupt": 0.15
 }

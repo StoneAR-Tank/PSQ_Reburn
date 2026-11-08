@@ -1,5 +1,113 @@
 ScriptName playersuccubusquestscript Extends Quest
 
+Int Property AWUWingID Auto Hidden
+Spell AWUOwnedWing
+; Only set when PSQ observed the control missing before a successful wing grant.
+; Existing saves begin with no evidence of ownership.
+Bool AWUMayRemoveSpell
+Bool AWUMayRemovePower
+Int AWUControlGeneration
+Int AWUControlChecks
+
+String Function GetAWUWingName(Int ID)
+  Int Index = JsonUtil.IntListFind("PSQ/AWUWings", "ids", ID)
+  If Index >= 0
+    Return "AWU · " + JsonUtil.StringListGet("PSQ/AWUWings", "names", Index)
+  EndIf
+  Return "$PSQ_WingsSwitchOff"
+EndFunction
+
+Spell Function GetAWUWing(Int ID)
+  If ID <= 0 || !Self.IsIntegrationPluginLoaded("Animated Wings Ultimate.esp")
+    Return None
+  EndIf
+  Return Game.GetFormFromFile(ID, "Animated Wings Ultimate.esp") as Spell
+EndFunction
+
+Function SyncAWUWing()
+  If PlayerRef == None || (AWUWingID == 0 && AWUOwnedWing == None)
+    Return
+  EndIf
+  Spell Desired
+  If IsHenshined && HenshinWings && !UninstallPrepared && !UninstallCleanupBusy
+    Desired = Self.GetAWUWing(AWUWingID)
+  EndIf
+  Bool ReplacingOwned = AWUOwnedWing != None && PlayerRef.HasSpell(AWUOwnedWing)
+  If AWUOwnedWing == Desired && (Desired == None || ReplacingOwned)
+    Return
+  EndIf
+  AWUControlGeneration += 1
+  AWUControlChecks = 0
+  If AWUOwnedWing != None && AWUOwnedWing != Desired
+    PlayerRef.RemoveSpell(AWUOwnedWing)
+    AWUOwnedWing = None
+  EndIf
+  If Desired != None && !PlayerRef.HasSpell(Desired)
+    Keyword WingsPresent = Game.GetFormFromFile(2048, "Animated Wings Ultimate.esp") as Keyword
+    Keyword Persistent = Game.GetFormFromFile(2051, "Animated Wings Ultimate.esp") as Keyword
+    If (Persistent && PlayerRef.HasMagicEffectWithKeyword(Persistent)) || (!ReplacingOwned && WingsPresent && PlayerRef.HasMagicEffectWithKeyword(WingsPresent))
+      Debug.Notification("已有独立启用的 AWU 翅膀，本次保留当前翼型。")
+      Return
+    EndIf
+    Spell Toggle = Self.GetAWUWing(2652)
+    Spell Power = Self.GetAWUWing(2653)
+    Bool MissingSpell = Toggle != None && !PlayerRef.HasSpell(Toggle)
+    Bool MissingPower = Power != None && !PlayerRef.HasSpell(Power)
+    If PlayerRef.AddSpell(Desired, False)
+      AWUMayRemoveSpell = AWUMayRemoveSpell || MissingSpell
+      AWUMayRemovePower = AWUMayRemovePower || MissingPower
+      AWUOwnedWing = Desired
+    EndIf
+  EndIf
+EndFunction
+
+
+; AWU grants its controls in OnEffectStart. Its OnEffectFinish releases the
+; ancillary effect, but leaves both controls in the spellbook. Check twice
+; on independent maintenance updates so a queued grant is also seen.
+Function SettleAWUWingControls()
+  If (!AWUMayRemoveSpell && !AWUMayRemovePower) || AWUOwnedWing != None || PlayerRef == None
+    Return
+  EndIf
+  Int Generation = AWUControlGeneration
+  Bool External = !Self.IsIntegrationPluginLoaded("Animated Wings Ultimate.esp")
+  Bool Preserve = False
+  If !External
+    Keyword Persistent = Game.GetFormFromFile(2051, "Animated Wings Ultimate.esp") as Keyword
+    Keyword Present = Game.GetFormFromFile(2048, "Animated Wings Ultimate.esp") as Keyword
+    ; Independently obtained wings may be toggled off and still need the controls.
+    External = Persistent && PlayerRef.HasMagicEffectWithKeyword(Persistent)
+    Preserve = Present && PlayerRef.HasMagicEffectWithKeyword(Present)
+  EndIf
+  If Generation != AWUControlGeneration || AWUOwnedWing != None
+    Return
+  EndIf
+  If !External && !Preserve
+    Spell Toggle = Self.GetAWUWing(2652)
+    Spell Power = Self.GetAWUWing(2653)
+    If AWUMayRemoveSpell && Toggle != None && PlayerRef.HasSpell(Toggle) && Generation == AWUControlGeneration && AWUOwnedWing == None
+      PlayerRef.RemoveSpell(Toggle)
+    EndIf
+    If AWUMayRemovePower && Power != None && PlayerRef.HasSpell(Power) && Generation == AWUControlGeneration && AWUOwnedWing == None
+      PlayerRef.RemoveSpell(Power)
+    EndIf
+  EndIf
+  If Generation != AWUControlGeneration || AWUOwnedWing != None
+    Return
+  EndIf
+  AWUControlChecks += 1
+  If External || AWUControlChecks >= 2
+    AWUMayRemoveSpell = False
+    AWUMayRemovePower = False
+    AWUControlChecks = 0
+  EndIf
+EndFunction
+
+Bool WingflightHasFlyingVar
+Bool WingflightHasHoverVar
+Bool WingflightHasTakeoffVar
+Bool WingflightHasLandingVar
+Bool WingflightHasPSQVar
 Int WingflightProbeLoadEpoch = -1
 Int WingflightProbeAttempts = 0
 Int WingflightProbeGeneration = 0
@@ -23,6 +131,7 @@ Int BCNGBodyRequestLoad = -1
 Bool BCNGBodyRequestActive = False
 String BCNGBodyRequestPreset = ""
 Float BCNGBodyRequestStarted = 0.0
+Int BCNGBodyAPIVerifiedLoad = -1
 Int BCNGBodyAppliedLoad = -1
 String BCNGBodyAppliedPreset = ""
 Int BCNGBodyStatus = 0
@@ -789,6 +898,9 @@ Event OnInit()
 EndEvent
 
 Event OnUpdate()
+  If !PSQReloadBusy && !UninstallCleanupBusy && (AWUMayRemoveSpell || AWUMayRemovePower) && AWUOwnedWing == None
+    Self.SettleAWUWingControls()
+  EndIf
   If PSQReloadBusy
     Self.RegisterForSingleUpdate(3.0)
     Return
@@ -825,7 +937,9 @@ Event OnUpdate()
     Return
   EndIf
   Float TransformSeconds = Self.TakeTransformEnergySeconds()
-  Self.ProcessRankUpAnimation()
+  If PendingRankAnimation > 0 || RankAnimationPreviewPending
+    Self.ProcessRankUpAnimation()
+  EndIf
   Self.RecoverFHUTransfer(False)
   ; Avoid noncritical native/appearance work while the foreground owns appearance.
   If !(AppearanceEditBusy || IsHenshinchu || BodySelectionRefreshBusy)
@@ -869,9 +983,6 @@ Event OnUpdate()
       If Decrement != 0.0
         storageutil.SetFloatValue(PlayerRef as Form, "PSQ_InternalSemen", storageutil.GetFloatValue(PlayerRef as Form, "PSQ_InternalSemen", 0.0) - Decrement)
         Self.ChangeSatiationEnergy(Decrement, False)
-        If Decrement > 0.0
-          Self.SetBellyScale()
-        EndIf
       EndIf
     EndIf
     If AppearanceEditBusy || IsHenshinchu || BodySelectionRefreshBusy
@@ -1920,17 +2031,22 @@ Function ChangeBodyPaint(Float Manpukudo, Bool Force)
   Bool Changed = False
   Bool ShowBuiltin = HenshinTattoo && PlayerIsSuccubus.GetValueInt() == 1
   Bool ShowDragonborn = EnableDragonbornSuccubusTattoo && PlayerIsSuccubus.GetValueInt() == 1
-  If psqracecompatibility.IsUBEActor(PlayerRef)
+  Bool UseUBE = psqracecompatibility.IsUBEActor(PlayerRef)
+  Bool DragonbornFemale = PlayerRef.GetLeveledActorBase().GetSex() == 1
+  If UseUBE
+    ; The original four-region set has no UBE hands/feet/face transfer.
     ShowBuiltin = False
-    ShowDragonborn = False
+    ShowDragonborn = ShowDragonborn && DragonbornFemale
   EndIf
   If ShowBuiltin || ShowDragonborn
     Self.ComputeTattooGradient(Manpukudo)
   EndIf
-  String DragonbornNode = Self.ResolveDragonbornTattooNode(ShowDragonborn)
-  Bool DragonbornFemale = PlayerRef.GetLeveledActorBase().GetSex() == 1
+  String DragonbornNode = Self.ResolvePlayerTattooSlot(ShowDragonborn, UseUBE)
   Bool TattooReady = !ShowDragonborn || DragonbornNode != ""
   String Texture = Self.GetSelectedSuccubusTattooTexture()
+  If ShowDragonborn && UseUBE
+    Texture = Self.GetUBEBodyTattooTexture(Texture)
+  EndIf
   Float Alpha = 1.0
   If EnableBodyPaintAlphaChangeSatiation
     Alpha = Manpukudo
@@ -2021,12 +2137,32 @@ Function ChangeAccursedBodyPaint(Actor Accursed)
 EndFunction
 
 Function ReloadSuccubusCharm()
-  Float ReloadTimer = GameDaysPassed.GetValue() - LastReloadTime
-  Int AddAmmo = Math.Floor(ReloadTimer * SuccubusRank.GetValue())
-  LastReloadTime = GameDaysPassed.GetValue() - ReloadTimer - (AddAmmo as Float / SuccubusRank.GetValue())
-  CharmSpellAmmo += AddAmmo
-  If CharmSpellAmmo > SuccubusRank.GetValueInt()
-    CharmSpellAmmo = SuccubusRank.GetValueInt()
+  Int Rank = SuccubusRank.GetValueInt()
+  Float Now = GameDaysPassed.GetValue()
+  If Rank < 1
+    CharmSpellAmmo = 0
+    LastReloadTime = Now
+    Return
+  EndIf
+  If CharmSpellAmmo < 0
+    CharmSpellAmmo = 0
+  EndIf
+  Float Elapsed = Now - LastReloadTime
+  ; A whole game day recharges every slot, including saves with a runaway clock.
+  If CharmSpellAmmo >= Rank || Elapsed >= 1.0
+    CharmSpellAmmo = Rank
+    LastReloadTime = Now
+  ElseIf !(Elapsed >= 0.0)
+    LastReloadTime = Now
+  Else
+    Int Added = Math.Floor(Elapsed * Rank)
+    If Added >= Rank - CharmSpellAmmo
+      CharmSpellAmmo = Rank
+      LastReloadTime = Now
+    ElseIf Added > 0
+      CharmSpellAmmo += Added
+      LastReloadTime += Added as Float / Rank
+    EndIf
   EndIf
 EndFunction
 
@@ -2235,6 +2371,8 @@ EndFunction
 
 Function BeginPSQLoadSession()
   PSQLoadEpoch += 1
+  AWUControlGeneration += 1
+  AWUControlChecks = 0
   BCNGBodyRequest = 0
   BCNGBodyRequestOwner = -1
   BCNGBodyRequestLoad = -1
@@ -3721,6 +3859,7 @@ Function QuitSuccubus()
         Return
       EndIf
       IsHenshined = False
+      Self.SyncAWUWing()
       If !Self.IsAppearanceOperationCurrent(RetirementOwner, OwnsAppearance)
         Return
       EndIf
@@ -4802,6 +4941,10 @@ Function ReleaseDragonbornTattoo(Bool ApplyNow)
 EndFunction
 
 String Function ResolveDragonbornTattooNode(Bool Show)
+  Return Self.ResolvePlayerTattooSlot(Show, psqracecompatibility.IsUBEActor(PlayerRef))
+EndFunction
+
+String Function ResolvePlayerTattooSlot(Bool Show, Bool AllowBuiltinSlot)
   Self.ReleaseLegacyDragonbornTattoo()
   If !Show
     Self.ReleaseDragonbornTattoo(False)
@@ -4819,16 +4962,22 @@ String Function ResolveDragonbornTattooNode(Bool Show)
     Bool SavedFemale = storageutil.GetIntValue(PlayerRef as Form, "PSQ_PlayerTattoo_Female", 1) == 1
     String Texture = storageutil.GetStringValue(PlayerRef as Form, "PSQ_PlayerTattoo_Texture", "")
     Bool Active = storageutil.GetIntValue(PlayerRef as Form, "PSQ_PlayerTattoo_Active", 0) == 1
-    Bool Owned = Active && Texture != "" && nioverride.GetNodeOverrideString(PlayerRef as ObjectReference, SavedFemale, Node, 9, 0) == Texture
-    If Owned && SavedFemale == Female && Slot >= 0 && Slot < Limit && Slot != 5 && Node == ("Body [Ovl" + Slot as String) + "]" && netimmerse.HasNode(PlayerRef as ObjectReference, Node, False)
-      Return Node
+    If Active && SavedFemale == Female && Slot >= 0 && Slot < Limit && (Slot != 5 || AllowBuiltinSlot) && Node == ("Body [Ovl" + Slot as String) + "]"
+      If !netimmerse.HasNode(PlayerRef as ObjectReference, Node, False)
+        ; Clothing can rebuild the skeleton between updates. Keep the saved
+        ; slot and retry after it is attached instead of releasing another layer.
+        Return ""
+      EndIf
+      If Texture != "" && nioverride.GetNodeOverrideString(PlayerRef as ObjectReference, SavedFemale, Node, 9, 0) == Texture
+        Return Node
+      EndIf
     EndIf
     Self.ReleaseDragonbornTattoo(False)
   EndIf
   Int CandidateSlot = 0
   While CandidateSlot < Limit
     String Candidate = ("Body [Ovl" + CandidateSlot as String) + "]"
-    If CandidateSlot != 5 && netimmerse.HasNode(PlayerRef as ObjectReference, Candidate, False)
+    If (CandidateSlot != 5 || AllowBuiltinSlot) && netimmerse.HasNode(PlayerRef as ObjectReference, Candidate, False)
       String StoredTexture = nioverride.GetNodeOverrideString(PlayerRef as ObjectReference, Female, Candidate, 9, 0)
       String LiveTexture = nioverride.GetNodePropertyString(PlayerRef as ObjectReference, False, Candidate, 9, 0)
       If Self.IsEmptyPlayerTattooTexture(StoredTexture) && Self.IsEmptyPlayerTattooTexture(LiveTexture)
@@ -4978,6 +5127,14 @@ Bool Function ApplyComputedTattooGradient(String Node, Float Manpukudo, Bool App
     EndIf
   EndIf
   Return Changed
+EndFunction
+
+String Function GetUBEBodyTattooTexture(String Texture)
+  String Root = "PSQ\\Overlays\\"
+  If StringUtil.Find(Texture, Root) != 0
+    Return ""
+  EndIf
+  Return Root + "UBE\\" + StringUtil.Substring(Texture, StringUtil.GetLength(Root))
 EndFunction
 
 String Function GetSelectedSuccubusTattooTexture()
@@ -5537,7 +5694,9 @@ Bool Function ApplySuccubusOutfitSelectionCore(Int Selection, Int Owner, Bool Re
   If Next0 == None || Next1 == None || Next2 == None || Next3 == None || Next4 == None || Next5 == None
     Return False
   EndIf
-  If PSQSuccubusWings != None
+  If AWUWingID > 0
+    Next5 = None
+  ElseIf PSQSuccubusWings != None
     Next5 = PSQSuccubusWings
   EndIf
   If Selection == SuccubusOutfitSelection && PSQSuccubusCuirass == Next0 && PSQSuccubusBoots == Next1 && PSQSuccubusGauntlets == Next2 && PSQSuccubusHorns == Next3 && PSQSuccubusTail == Next4 && PSQSuccubusWings == Next5
@@ -5826,7 +5985,11 @@ Function ApplyTransformBodyMorphs(Bool RefreshModel, Int Owner, Bool RequireBusy
   If !HenshinBody || !IsHenshined || psqracecompatibility.ShouldPreserveBCNGBody(PlayerRef)
     Return
   EndIf
-  Self.MigrateTransformPresetCatalog(Owner, RequireBusy)
+  ; The catalog and slot are invalidated together on load, race change or manual refresh.
+  ; RequestBCNGBodyChange still verifies the ID against the current native preset catalog.
+  If TransformPresetCatalogVersion < 2 || !TransformBodyCatalogReady || BCNGSelectedPresetId == "" || SuccubusBodySelection < 1 || SuccubusBodySelection > BCNGBodyPresetIds.Length || BCNGBodyPresetIds[SuccubusBodySelection - 1] != BCNGSelectedPresetId
+    Self.MigrateTransformPresetCatalog(Owner, RequireBusy)
+  EndIf
   If !Self.IsAppearanceOperationCurrent(Owner, RequireBusy)
     Return
   EndIf
@@ -5836,7 +5999,9 @@ Function ApplyTransformBodyMorphs(Bool RefreshModel, Int Owner, Bool RequireBusy
     BCNGBodyStatus = -3
     Return
   EndIf
-  Self.RequestBCNGBodyChange(True, BCNGSelectedPresetId, Owner, RequireBusy, True)
+  ; Normal entry checks the same request after equipping. Keep all other callers synchronous.
+  Bool DeferWait = RequireBusy && IsHenshinchu && AppearanceTransformDirection == 1 && !AppearanceRecoveryInProgress && !RefreshModel
+  Self.RequestBCNGBodyChange(True, BCNGSelectedPresetId, Owner, RequireBusy, !DeferWait)
 EndFunction
 
 Function RestoreTransformBody(Int Owner, Bool RequireBusy)
@@ -5874,7 +6039,8 @@ Function RestoreTransformBodyMorphs(Bool RefreshModel, Int Owner, Bool RequireBu
   EndIf
   ; BCNG removes only the PSQ temporary layer; its normal actor choice is intact.
   BCNGBodyClearOnly = True
-  Self.RequestBCNGBodyChange(False, "", Owner, RequireBusy, True)
+  Bool DeferWait = RequireBusy && IsHenshinchu && AppearanceTransformDirection == 2 && !AppearanceRecoveryInProgress && !RefreshModel
+  Self.RequestBCNGBodyChange(False, "", Owner, RequireBusy, !DeferWait)
 EndFunction
 
 Bool Function SetSuccubusBodySelection(Int Selection)
@@ -6599,102 +6765,17 @@ Function RefreshSatiationAttributesCore(Float Manpukudo, Int Owner, Int PoolEpoc
   If !Self.IsStatPoolEditCurrent(PoolEpoch, Owner)
     Return
   EndIf
-  Float RefreshNow = Utility.GetCurrentRealTime()
-  SatiationLastAttributeRefresh = RefreshNow
-  SatiationRefreshBusy = True
+  SatiationLastAttributeRefresh = Utility.GetCurrentRealTime()
   SatiationRefreshPending = False
-  Float EffectRatio = Self.GetSteppedSatiationRatio(Manpukudo)
-  Float SafeHealthRate = 0.0
-  If Self.GetSatiationEffectMode() != 0
-    SafeHealthRate = Self.GetSafeSatiationHealthRate(Self.GetSatiationModifier(EffectRatio, HealthRateBuffInc, HealthRateBuffDec, 100.0, 100.0))
-  EndIf
-  Float[] Inputs = Self.CaptureSatiationInputs(EffectRatio)
-  If !Inputs || Inputs.Length != 26
-    SatiationRefreshBusy = False
-    Debug.Trace("[PSQ] Satiation input allocation failed; retaining existing effects", 1)
+  Bool HasA = PlayerRef.HasSpell(SuccubusSatiatySpellA)
+  Bool HasB = PlayerRef.HasSpell(SuccubusSatiatySpellB)
+  If !HasA && !HasB
     Return
   EndIf
-  If !Self.IsStatPoolEditCurrent(PoolEpoch, Owner)
-    Return
-  EndIf
-  StableCachedSatiationInputs = EmptyFloatArray
-  Float[] Desired = new Float[9]
-  If !Desired || Desired.Length != 9
-    SatiationRefreshBusy = False
-    Debug.Trace("[PSQ] Satiation magnitude allocation failed; retaining existing effects", 1)
-    Return
-  EndIf
-  If Inputs[1] != 0.0
-    Desired[0] = Inputs[6] * Self.GetSatiationModifier(EffectRatio, HealthBuffInc, HealthBuffDec, 1.0, 0.200000003)
-    Desired[1] = Inputs[7] * Self.GetSatiationModifier(EffectRatio, MagickaBuffInc, MagickaBuffDec, 1.0, 0.200000003)
-    Desired[2] = Inputs[8] * Self.GetSatiationModifier(EffectRatio, StaminaBuffInc, StaminaBuffDec, 1.0, 0.200000003)
-    Desired[3] = SafeHealthRate
-    Desired[4] = Self.GetSatiationModifier(EffectRatio, MagickaRateBuffInc, MagickaRateBuffDec, 100.0, 100.0)
-    Desired[5] = Self.GetSatiationModifier(EffectRatio, StaminaRateBuffInc, StaminaRateBuffDec, 100.0, 100.0)
-    Desired[8] = Inputs[9] * Self.GetSatiationModifier(EffectRatio, CarryBuffInc, CarryBuffDec, 1.0, 0.200000003)
-  Else
-    Desired[0] = 0.0
-    Desired[1] = 0.0
-    Desired[2] = 0.0
-    Desired[3] = 0.0
-    Desired[4] = 0.0
-    Desired[5] = 0.0
-    Desired[8] = 0.0
-  EndIf
-  Desired[6] = Self.GetTotalSpeedBonus(EffectRatio)
-  Desired[7] = Manpukudo * 100.0
-  If Inputs[6] > 0.0 && Desired[0] < 1.0 - Inputs[6]
-    Desired[0] = 1.0 - Inputs[6]
-  EndIf
-  Bool HasA = PlayerRef.HasSpell(SuccubusSatiatySpellA as Form)
-  Bool HasB = PlayerRef.HasSpell(SuccubusSatiatySpellB as Form)
-  Float OtherHealthMaximum = PlayerRef.GetAVMax("Health")
-  If (StableAppliedSatiationMagnitudes as Bool && StableAppliedSatiationMagnitudes.Length == 9) && StableAppliedSatiationSpell != None && PlayerRef.HasSpell(StableAppliedSatiationSpell as Form) && !(HasA && HasB)
-    OtherHealthMaximum -= StableAppliedSatiationMagnitudes[0]
-  EndIf
-  If OtherHealthMaximum < 1.0
-    SatiationRefreshBusy = False
-    SatiationRefreshPending = True
-    Return
-  EndIf
-  If Desired[0] < 1.0 - OtherHealthMaximum
-    Desired[0] = 1.0 - OtherHealthMaximum
-  EndIf
-  Bool NeedsRefresh = True
-  If !NeedsRefresh
-    Int i = 0
-    While i < 9 && !NeedsRefresh
-      ; Slot 6 is owned by the movement ability. Slot 7 is display data.
-      If (i < 6 || i == 8) && Desired[i] != StableAppliedSatiationMagnitudes[i]
-        NeedsRefresh = True
-      EndIf
-      i += 1
-    EndWhile
-  EndIf
-  If !NeedsRefresh && Desired[6] != StableAppliedSatiationMagnitudes[6]
-    ; Old or overridden abilities may still carry movement in their own record.
-    ; Replace those once through the original guarded migration path.
-    NeedsRefresh = !((StableAppliedSatiationSpell == SuccubusSatiatySpellA && HasA && !HasB) || (StableAppliedSatiationSpell == SuccubusSatiatySpellB && HasB && !HasA)) || StableAppliedSatiationSpell.GetNthEffectMagnitude(6) != 0.0
-  EndIf
-  If !NeedsRefresh
-    Self.RestoreSatiationRuntimeRecords(Owner, PoolEpoch)
-    If !Self.IsStatPoolEditCurrent(PoolEpoch, Owner)
-      Return
-    EndIf
-    If Desired[6] != StableAppliedSatiationMagnitudes[6]
-      StableAppliedSatiationMagnitudes = Desired
-    EndIf
-    Self.RefreshManagedMovement(Desired[6])
-    If !Self.IsStatPoolEditCurrent(PoolEpoch, Owner)
-      Return
-    EndIf
-    Self.PublishSatiationInputs(Inputs)
-    SatiationRefreshBusy = False
-    If SatiationRefreshPending
-      Self.RefreshSatiationAttributes(Self.GetEnergyRatio())
-    EndIf
-    Return
-  EndIf
+  SatiationRefreshBusy = True
+  ; The temporary zero-magnitude replacement is only for pre-v0.29 saves.
+  Float[] Desired = Utility.CreateFloatArray(9, 0.0)
+  Desired[6] = Self.GetRankSpeedBonus(IsHenshined)
   Spell NextSpell = SuccubusSatiatySpellA
   Spell PreviousSpell = SuccubusSatiatySpellB
   If HasA
@@ -6714,9 +6795,6 @@ Function RefreshSatiationAttributesCore(Float Manpukudo, Int Owner, Int PoolEpoc
     Else
       RemovalHealth = PlayerRef.GetAVMax("Health")
     EndIf
-  EndIf
-  If Desired[0] < 0.0
-    RemovalHealth -= Desired[0]
   EndIf
   If OldHealth > 0.0 && !PlayerRef.IsDead() && RemovalHealth + 1.0 > OldHealth
     If !Self.IsStatPoolEditCurrent(PoolEpoch, Owner)
@@ -6803,7 +6881,6 @@ Function RefreshSatiationAttributesCore(Float Manpukudo, Int Owner, Int PoolEpoc
   Self.PreserveSatiationCurrentValue("Stamina", OldStamina, PoolEpoch, Owner)
   If StableAppliedSatiationMagnitudes as Bool && StableAppliedSatiationSpell as Bool
     Self.RefreshManagedMovement(Desired[6])
-    Self.PublishSatiationInputs(Inputs)
   EndIf
   ; Only remove the replacement after the owned zero effects have settled.
   If HealthEffectsReady && Self.IsStatPoolEditCurrent(PoolEpoch, Owner)
@@ -8054,6 +8131,7 @@ Bool Function PrepareForUninstall()
     SEBU.SyncVisibility()
   EndIf
   IsHenshined = False
+  Self.SyncAWUWing()
   IsHenshinchu = False
   OrgHairColor = None
   Self.ClearPSQSLIFOutput()
@@ -8152,6 +8230,13 @@ Bool Function PrepareForUninstall()
   Self.InvalidateTransformAppearanceCache()
   Self.ClearAppliedTransformBody(-1, False)
   AppliedTransformEyeTexture = None
+  ; Normal maintenance was stopped for uninstall, so settle any pending controls here.
+  Int AWUAttempt = 0
+  While AWUAttempt < 2 && (AWUMayRemoveSpell || AWUMayRemovePower) && AWUOwnedWing == None
+    Utility.WaitMenuMode(1.0)
+    Self.SettleAWUWingControls()
+    AWUAttempt += 1
+  EndWhile
   UninstallPrepared = True
   Self.SendWingflightCommand("policy", 0.0)
   WingflightPublishedPolicy = 0
@@ -9712,6 +9797,15 @@ Bool Function CanUseAnimatedFairyWings()
 EndFunction
 
 Function ResolveOptionalWingSelection()
+  If AWUWingID > 0
+    PSQSuccubusWings = None
+    If Self.GetAWUWing(AWUWingID) == None
+      AWUWingID = 0
+      HenshinWings = False
+    EndIf
+    Self.SyncAWUWing()
+    Return
+  EndIf
   If Self.IsWingflightAirborne()
     Return
   EndIf
@@ -10026,7 +10120,10 @@ Function StripTransformAccessories(Int Owner, Bool RequireBusy)
     EndIf
   EndIf
   HideAccessories = storageutil.GetIntValue(Self, "PSQ_EquipPlanHide", 0) == 1
-  Float PhaseStarted = Utility.GetCurrentRealTime()
+  Float PhaseStarted
+  If EnableEquipmentDiagnostics
+    PhaseStarted = Utility.GetCurrentRealTime()
+  EndIf
   Form[] Strip = storageutil.FormListToArray(Self, "PSQ_EquipPlanStrip")
   Int i = 0
   While i < Strip.Length
@@ -10048,7 +10145,9 @@ Function StripTransformAccessories(Int Owner, Bool RequireBusy)
   EndWhile
   If Self.IsAppearanceOperationCurrent(Owner, RequireBusy)
     Self.ApplyOriginalEquipmentVisibility()
-    Debug.Trace("[PSQ-PERF] entry.strip; candidates=" + Strip.Length + "; seconds=" + (Utility.GetCurrentRealTime() - PhaseStarted))
+    If EnableEquipmentDiagnostics
+      Debug.Trace("[PSQ-PERF] entry.strip; candidates=" + Strip.Length + "; seconds=" + (Utility.GetCurrentRealTime() - PhaseStarted))
+    EndIf
   EndIf
 EndFunction
 
@@ -10121,7 +10220,10 @@ Function RestoreTransformEquipment(Int Owner, Bool RequireBusy)
   If !Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, RecoveryLoad)
     Return
   EndIf
-  Float Started = Utility.GetCurrentRealTime()
+  Float Started
+  If EnableEquipmentDiagnostics
+    Started = Utility.GetCurrentRealTime()
+  EndIf
   Form[] Snapshot = OrgArmorList.ToArray()
   Form[] Protected = Self.GetTransformProtectedArmor()
   Armor[] primary = new Armor[6]
@@ -10135,6 +10237,7 @@ Function RestoreTransformEquipment(Int Owner, Bool RequireBusy)
   If !Plan || Plan.Length != Snapshot.Length + 6
     Return
   EndIf
+  Form[] LedgerOriginals = Plan
   Int Used = 0
   Int MainCount = 0
   Int Index = 0
@@ -10171,6 +10274,7 @@ Function RestoreTransformEquipment(Int Owner, Bool RequireBusy)
       EndIf
       Bool TemporaryTail = Mask >= 1024 && Self.IsPSQTransformTail(SnapshotArmor) && Protected.Find(item) < 0
       If TemporaryTail
+        LedgerOriginals = None
         Self.RemoveOriginalTransformTail(SnapshotArmor, Protected, Owner, RequireBusy, RecoveryLoad)
       Else
         If Mask % 1024 != 0
@@ -10227,7 +10331,11 @@ Function RestoreTransformEquipment(Int Owner, Bool RequireBusy)
   EndIf
   ; Release only the same PSQ selected/ledger entries as the former second
   ; phase. Original same-FormID items are excluded through Plan/OrgArmorList.
-  Started = Utility.GetCurrentRealTime()
+  If EnableEquipmentDiagnostics
+    Started = Utility.GetCurrentRealTime()
+  EndIf
+  ; The plan covers the saved originals and the primary fields added above.
+  ; Releases during plan construction or here can run callbacks; re-read originals then.
   Index = 0
   While Index < 6
     If RecoveryLoad != PSQLoadEpoch || Owner != AppearanceOperationId || (RequireBusy && !AppearanceEditBusy)
@@ -10236,6 +10344,7 @@ Function RestoreTransformEquipment(Int Owner, Bool RequireBusy)
     Armor item = Selected[Index]
     If item != None && Selected.find(item, 0) == Index && Plan.find(item as Form, 0) < 0 && Protected.find(item as Form, 0) < 0
       If !TransformInventoryLedgerReady || TransformInventoryItems.find(item as Form, 0) < 0
+        LedgerOriginals = None
         Self.ReleaseLedgerItemForLoad(item, -1, Owner, RequireBusy, RecoveryLoad)
       EndIf
     EndIf
@@ -10244,11 +10353,13 @@ Function RestoreTransformEquipment(Int Owner, Bool RequireBusy)
   If !Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, RecoveryLoad)
     Return
   EndIf
-  Self.CleanupTransformEquipmentLedger(Owner, RequireBusy)
+  Self.CleanupTransformLedgerForLoad(Owner, RequireBusy, RecoveryLoad, LedgerOriginals)
   If !Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, RecoveryLoad)
     Return
   EndIf
-  Debug.Trace("[PSQ-PERF] recovery.release; seconds=" + (Utility.GetCurrentRealTime() - Started) as String, 0)
+  If EnableEquipmentDiagnostics
+    Debug.Trace("[PSQ-PERF] recovery.release; seconds=" + (Utility.GetCurrentRealTime() - Started) as String, 0)
+  EndIf
   ; Main equipment is an explicit phase. Its bounded retry must finish
   ; before hidden accessories are revealed or any stripped extra is equipped.
   ; The same plan/retry arrays are reused; already-worn items never equip.
@@ -10258,7 +10369,9 @@ Function RestoreTransformEquipment(Int Owner, Bool RequireBusy)
   Int TotalRetryCount = 0
   Bool MainPending = False
   While Phase < 2
-    Started = Utility.GetCurrentRealTime()
+    If EnableEquipmentDiagnostics
+      Started = Utility.GetCurrentRealTime()
+    EndIf
     RetryCount = 0
     ; Hidden accessories are usually still worn. Take a fresh native snapshot
     ; for this phase, never a stored inventory cache. Larger/unsupported lists
@@ -10345,8 +10458,10 @@ Function RestoreTransformEquipment(Int Owner, Bool RequireBusy)
         Return
       EndIf
     EndIf
-    Debug.Trace("[PSQ-PERF] recovery.swap; phase=" + Phase + "; originals=" + (PhaseEnd - PhaseStart) + "; deferred=" + RetryCount + "; batched=" + SkippedCount + "; seconds=" + (Utility.GetCurrentRealTime() - Started), 0)
-    Started = Utility.GetCurrentRealTime()
+    If EnableEquipmentDiagnostics
+      Debug.Trace("[PSQ-PERF] recovery.swap; phase=" + Phase + "; originals=" + (PhaseEnd - PhaseStart) + "; deferred=" + RetryCount + "; batched=" + SkippedCount + "; seconds=" + (Utility.GetCurrentRealTime() - Started), 0)
+      Started = Utility.GetCurrentRealTime()
+    EndIf
     Int Pass = 0
     Bool HasFailure = RetryCount > 0
     While Pass < 3 && HasFailure && Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, RecoveryLoad)
@@ -10370,7 +10485,9 @@ Function RestoreTransformEquipment(Int Owner, Bool RequireBusy)
       Return
     EndIf
     TotalRetryCount += RetryCount
-    Debug.Trace("[PSQ-PERF] recovery.retry; phase=" + Phase + "; entries=" + RetryCount + "; pending=" + HasFailure + "; seconds=" + (Utility.GetCurrentRealTime() - Started), 0)
+    If EnableEquipmentDiagnostics
+      Debug.Trace("[PSQ-PERF] recovery.retry; phase=" + Phase + "; entries=" + RetryCount + "; pending=" + HasFailure + "; seconds=" + (Utility.GetCurrentRealTime() - Started), 0)
+    EndIf
     If Phase == 0
       MainPending = HasFailure
       If MainPending
@@ -10393,7 +10510,9 @@ Function RestoreTransformEquipment(Int Owner, Bool RequireBusy)
   If !Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, RecoveryLoad)
     Return
   EndIf
-  Started = Utility.GetCurrentRealTime()
+  If EnableEquipmentDiagnostics
+    Started = Utility.GetCurrentRealTime()
+  EndIf
   ; Transfer unresolved references first. A failed allocation leaves the
   ; original FormList intact, so the next manual attempt can still recover it.
   if Self.CommitPendingOriginalEquipment(Plan, Used, Protected, Owner, RequireBusy)
@@ -10405,7 +10524,9 @@ Function RestoreTransformEquipment(Int Owner, Bool RequireBusy)
   if Self.HasPendingOriginalEquipment()
     Debug.Notification("$PSQ_EquipmentRecoveryPending")
   endif
-  Debug.Trace("[PSQ-PERF] recovery.commit; retryEntries=" + TotalRetryCount + "; mainPending=" + MainPending + "; seconds=" + (Utility.GetCurrentRealTime() - Started), 0)
+  If EnableEquipmentDiagnostics
+    Debug.Trace("[PSQ-PERF] recovery.commit; retryEntries=" + TotalRetryCount + "; mainPending=" + MainPending + "; seconds=" + (Utility.GetCurrentRealTime() - Started), 0)
+  EndIf
 EndFunction
 
 Float Function GetSteppedSatiationRatio(Float Ratio)
@@ -11854,27 +11975,47 @@ Function ApplySuccubusThrallTattoo(Actor Target)
   If Target == None || !Self.IsSuccubusThrall(Target) || UninstallPrepared || UninstallCleanupBusy
     Return
   EndIf
-  If psqracecompatibility.IsUBEActor(Target)
-    Self.RestoreSuccubusThrallTattoo(Target)
-    Return
-  EndIf
   Int Choice = Self.GetSuccubusThrallTattooSelection(Target)
   If Choice < 1 || Choice > 18
     Choice = Utility.RandomInt(1, 18)
     storageutil.SetIntValue(Target as Form, "PSQ_ThrallTattooSelection", Choice)
   EndIf
-  If !Target.Is3DLoaded() || !Self.HasNiOverrideRuntime()
+  If !Self.HasNiOverrideRuntime()
+    Return
+  EndIf
+  If !Target.Is3DLoaded()
+    storageutil.SetIntValue(Target, "PSQ_ThrallTattooDeferred", 1)
     Return
   EndIf
   Bool Female = Target.GetLeveledActorBase().GetSex() == 1
-  String Texture = Self.GetFixedSuccubusTattooTexture(Choice)
+  String OriginalTexture = Self.GetFixedSuccubusTattooTexture(Choice)
+  String Texture = OriginalTexture
+  Bool UseUBE = psqracecompatibility.IsUBEActor(Target)
+  If UseUBE && !Female
+    Self.RestoreSuccubusThrallTattoo(Target)
+    storageutil.SetIntValue(Target as Form, "PSQ_ThrallTattooSelection", Choice)
+    Return
+  EndIf
+  If UseUBE
+    Texture = Self.GetUBEBodyTattooTexture(OriginalTexture)
+  EndIf
+  If !nioverride.HasOverlays(Target)
+    nioverride.AddOverlays(Target)
+  EndIf
+  String LastTexture = storageutil.GetStringValue(Target as Form, "PSQ_ThrallTattooTexture", OriginalTexture)
   String Node = storageutil.GetStringValue(Target as Form, "PSQ_ThrallTattooNode", "")
-  If Node != "" && nioverride.GetNodeOverrideString(Target as ObjectReference, Female, Node, 9, 0) != Texture
-    Self.RestoreThrallTattooProperty(Target, Female, Node, 9, 0, 0, False)
-    Self.RestoreThrallTattooProperty(Target, Female, Node, 7, -1, 1, False)
-    Self.RestoreThrallTattooProperty(Target, Female, Node, 8, -1, 2, False)
-    Self.RestoreThrallTattooProperty(Target, Female, Node, 0, -1, 1, False)
-    Self.RestoreThrallTattooProperty(Target, Female, Node, 1, -1, 2, False)
+  If Node != "" && !netimmerse.HasNode(Target, Node, False)
+    storageutil.SetIntValue(Target, "PSQ_ThrallTattooDeferred", 1)
+    Return
+  EndIf
+  Bool SavedFemale = storageutil.GetIntValue(Target, "PSQ_ThrallTattooFemale", Female as Int) == 1
+  If Node != "" && (SavedFemale != Female || nioverride.GetNodeOverrideString(Target as ObjectReference, SavedFemale, Node, 9, 0) != LastTexture)
+    Bool Owned = nioverride.GetNodeOverrideString(Target as ObjectReference, SavedFemale, Node, 9, 0) == LastTexture
+    Self.RestoreThrallTattooProperty(Target, SavedFemale, Node, 9, 0, 0, Owned)
+    Self.RestoreThrallTattooProperty(Target, SavedFemale, Node, 7, -1, 1, Owned)
+    Self.RestoreThrallTattooProperty(Target, SavedFemale, Node, 8, -1, 2, Owned)
+    Self.RestoreThrallTattooProperty(Target, SavedFemale, Node, 0, -1, 1, Owned)
+    Self.RestoreThrallTattooProperty(Target, SavedFemale, Node, 1, -1, 2, Owned)
     storageutil.UnsetStringValue(Target as Form, "PSQ_ThrallTattooNode")
     Node = ""
   EndIf
@@ -11883,14 +12024,20 @@ Function ApplySuccubusThrallTattoo(Actor Target)
     Int Limit = nioverride.GetNumBodyOverlays()
     While Slot < Limit && Node == ""
       String Candidate = ("Body [Ovl" + Slot as String) + "]"
-      String Existing = nioverride.GetNodeOverrideString(Target as ObjectReference, Female, Candidate, 9, 0)
-      If Existing == "" || Existing == "textures\\Actors\\Character\\Overlays\\Default.dds" || Existing == "Actors\\Character\\Overlays\\Default.dds"
-        Node = Candidate
+      If netimmerse.HasNode(Target, Candidate, False)
+        String Existing = nioverride.GetNodeOverrideString(Target as ObjectReference, Female, Candidate, 9, 0)
+        String Live = nioverride.GetNodePropertyString(Target as ObjectReference, False, Candidate, 9, 0)
+        If Self.IsEmptyPlayerTattooTexture(Existing) && Self.IsEmptyPlayerTattooTexture(Live)
+          Node = Candidate
+        EndIf
       EndIf
       Slot += 1
     EndWhile
     If Node == ""
-      Debug.Trace("[PSQ] Thrall tattoo deferred: no free body overlay for " + Target as String, 0)
+      If storageutil.GetIntValue(Target, "PSQ_ThrallTattooDeferred", 0) == 0
+        Debug.Trace("[PSQ] Thrall tattoo deferred: no free, loaded body overlay for " + Target as String, 0)
+      EndIf
+      storageutil.SetIntValue(Target, "PSQ_ThrallTattooDeferred", 1)
       Return
     EndIf
     Self.SaveThrallTattooProperty(Target, Female, Node, 9, 0, 0)
@@ -11901,9 +12048,8 @@ Function ApplySuccubusThrallTattoo(Actor Target)
     storageutil.SetStringValue(Target as Form, "PSQ_ThrallTattooNode", Node)
     storageutil.SetIntValue(Target as Form, "PSQ_ThrallTattooFemale", Female as Int)
   EndIf
-  If !nioverride.HasOverlays(Target as ObjectReference)
-    nioverride.AddOverlays(Target as ObjectReference)
-  EndIf
+  storageutil.UnsetIntValue(Target, "PSQ_ThrallTattooDeferred")
+  storageutil.SetStringValue(Target as Form, "PSQ_ThrallTattooTexture", Texture)
   nioverride.AddNodeOverrideString(Target as ObjectReference, Female, Node, 9, 0, Texture, True)
   nioverride.AddNodeOverrideInt(Target as ObjectReference, Female, Node, 7, -1, -1, True)
   nioverride.AddNodeOverrideFloat(Target as ObjectReference, Female, Node, 8, -1, 1.0, True)
@@ -11922,7 +12068,8 @@ Function RestoreSuccubusThrallTattoo(Actor Target)
   EndIf
   If Node != ""
     Bool Female = storageutil.GetIntValue(Target as Form, "PSQ_ThrallTattooFemale", 1) == 1
-    String Texture = Self.GetFixedSuccubusTattooTexture(Self.GetSuccubusThrallTattooSelection(Target))
+    String DefaultTexture = Self.GetFixedSuccubusTattooTexture(Self.GetSuccubusThrallTattooSelection(Target))
+    String Texture = storageutil.GetStringValue(Target as Form, "PSQ_ThrallTattooTexture", DefaultTexture)
     Bool Owned = nioverride.GetNodeOverrideString(Target as ObjectReference, Female, Node, 9, 0) == Texture
     Self.RestoreThrallTattooProperty(Target, Female, Node, 9, 0, 0, Owned)
     Self.RestoreThrallTattooProperty(Target, Female, Node, 7, -1, 1, Owned)
@@ -11934,6 +12081,8 @@ Function RestoreSuccubusThrallTattoo(Actor Target)
     EndIf
   EndIf
   storageutil.UnsetStringValue(Target as Form, "PSQ_ThrallTattooNode")
+  storageutil.UnsetStringValue(Target as Form, "PSQ_ThrallTattooTexture")
+  storageutil.UnsetIntValue(Target, "PSQ_ThrallTattooDeferred")
   storageutil.UnsetIntValue(Target as Form, "PSQ_ThrallTattooFemale")
   storageutil.UnsetIntValue(Target as Form, "PSQ_ThrallTattooSelection")
 EndFunction
@@ -12512,22 +12661,29 @@ Function CleanupTransformEquipmentLedger(Int Owner, Bool RequireBusy)
   ElseIf AppearanceEditBusy
     RequireBusy = True
   EndIf
-  If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
+  Self.CleanupTransformLedgerForLoad(Owner, RequireBusy, PSQLoadEpoch, None)
+EndFunction
+
+Function CleanupTransformLedgerForLoad(Int Owner, Bool RequireBusy, Int RecoveryLoad, Form[] Originals)
+  If RecoveryLoad != PSQLoadEpoch || Owner != AppearanceOperationId || (RequireBusy && !AppearanceEditBusy)
     Return
   EndIf
   If !TransformInventoryLedgerReady
     Return
   EndIf
-  Int RecoveryLoad = PSQLoadEpoch
-  Float Started = Utility.GetCurrentRealTime()
+  Float Started
+  If EnableEquipmentDiagnostics
+    Started = Utility.GetCurrentRealTime()
+  EndIf
   Int Used = TransformInventoryItems.find(None, 0)
   If Used < 0
     Used = TransformInventoryItems.Length
   EndIf
-  Form[] Originals
   Form[] Protected
   If Used > 0
-    Originals = OrgArmorList.ToArray()
+    If !Originals
+      Originals = OrgArmorList.ToArray()
+    EndIf
     Protected = Self.GetTransformProtectedArmor()
   EndIf
   Int Index = 0
@@ -12557,7 +12713,9 @@ Function CleanupTransformEquipmentLedger(Int Owner, Bool RequireBusy)
     Return
   EndIf
   TransformInventoryAdded = EmptyIntArray
-  Debug.Trace(("[PSQ-PERF] recovery.ledger; entries=" + Used as String) + "; seconds=" + (Utility.GetCurrentRealTime() - Started) as String, 0)
+  If EnableEquipmentDiagnostics
+    Debug.Trace(("[PSQ-PERF] recovery.ledger; entries=" + Used as String) + "; seconds=" + (Utility.GetCurrentRealTime() - Started) as String, 0)
+  EndIf
 EndFunction
 
 Bool Function IsTransformEnergyClockActive()
@@ -12666,7 +12824,7 @@ Bool Function HasAproposRepairIntegration()
   If !Self.IsAproposRepairPatchInstalled()
     Return False
   EndIf
-  If Game.GetModByName("Apropos2.esp") == 255
+  If !Self.IsIntegrationPluginLoaded("Apropos2.esp")
     Return False
   EndIf
   Quest Registry = Game.GetFormFromFile(167980, "Apropos2.esp") as Quest
@@ -13133,6 +13291,8 @@ EndFunction
 Function OnNiNodeUpdate(ObjectReference akActor)
   If (akActor == PlayerRef as ObjectReference) && !UninstallPrepared && !UninstallCleanupBusy
     Self.InvalidateTattooPresentation()
+  ElseIf akActor && !UninstallPrepared && !UninstallCleanupBusy && storageutil.GetIntValue(akActor, "PSQ_ThrallTattooDeferred", 0) == 1
+    Self.ApplySuccubusThrallTattoo(akActor as Actor)
   EndIf
   Self.QueueTRXFutaClothingIfNeeded(akActor as Actor)
 EndFunction
@@ -13613,12 +13773,17 @@ Function FinalizeTransformAttributeRefillCore(Int Owner, Bool RequireBusy, Int P
   If !Self.IsStatPoolEditCurrent(PoolEpoch, Owner) || !Self.IsAppearanceOperationCurrent(Owner, RequireBusy) || !IsHenshined || AppearanceTransformDirection != 1
     Return
   EndIf
-  Float Started = Utility.GetCurrentRealTime()
+  Float Started
+  If EnableEquipmentDiagnostics
+    Started = Utility.GetCurrentRealTime()
+  EndIf
   Bool ForceContinuous = ContinuousSyncPending
   ContinuousSyncPending = False
   Self.SyncContinuousAbilitiesCore(ForceContinuous, Owner, PoolEpoch)
-  Debug.Trace("[PSQ-PERF] refill.continuous; seconds=" + (Utility.GetCurrentRealTime() - Started))
-  Started = Utility.GetCurrentRealTime()
+  If EnableEquipmentDiagnostics
+    Debug.Trace("[PSQ-PERF] refill.continuous; seconds=" + (Utility.GetCurrentRealTime() - Started))
+    Started = Utility.GetCurrentRealTime()
+  EndIf
   If !Self.IsStatPoolEditCurrent(PoolEpoch, Owner)
     Return
   EndIf
@@ -13627,17 +13792,27 @@ Function FinalizeTransformAttributeRefillCore(Int Owner, Bool RequireBusy, Int P
   ForceTransformBuffRefresh = False
   TransformBuffRefreshPending = False
   Self.UpdateTransformBuffCore(True, Owner, PoolEpoch, ForceTransform)
-  Debug.Trace("[PSQ-PERF] refill.transform; seconds=" + (Utility.GetCurrentRealTime() - Started))
-  Started = Utility.GetCurrentRealTime()
+  If EnableEquipmentDiagnostics
+    Debug.Trace("[PSQ-PERF] refill.transform; seconds=" + (Utility.GetCurrentRealTime() - Started))
+    Started = Utility.GetCurrentRealTime()
+  EndIf
   If !Self.IsStatPoolEditCurrent(PoolEpoch, Owner)
     Return
   EndIf
   SatiationTimedRefreshEpoch += 1
   SatiationTimedRefreshQueued = False
   SatiationLastAttributeRefresh = -10.0
-  Self.RefreshSatiationAttributesCore(Self.GetEnergyRatio(), Owner, PoolEpoch)
-  Debug.Trace("[PSQ-PERF] refill.satiation; seconds=" + (Utility.GetCurrentRealTime() - Started))
-  Started = Utility.GetCurrentRealTime()
+  If PlayerRef.HasSpell(SuccubusSatiatySpellA) || PlayerRef.HasSpell(SuccubusSatiatySpellB) || PlayerRef.HasSpell(SuccubusSatiatySpellC)
+    Self.RefreshSatiationAttributesCore(0.0, Owner, PoolEpoch)
+  Else
+    SatiationRefreshPending = False
+  EndIf
+  If Self.IsStatPoolEditCurrent(PoolEpoch, Owner)
+    Self.RefreshManagedMovement(Self.GetRankSpeedBonus(IsHenshined))
+  EndIf
+  If EnableEquipmentDiagnostics
+    Debug.Trace("[PSQ-PERF] refill.satiation; seconds=" + (Utility.GetCurrentRealTime() - Started))
+  EndIf
   If !Self.IsStatPoolEditCurrent(PoolEpoch, Owner)
     Return
   EndIf
@@ -13655,6 +13830,17 @@ Function SendWingflightCommand(String Command, Float value)
 EndFunction
 
 Function InitializeWingflightIntegration()
+  String Definitions = ""
+  Bool HasBDI = SKSE.GetPluginVersion("BehaviorDataInjector") >= 0
+  String Path = "Data/SKSE/Plugins/BehaviorDataInjector/Wingflight_BDI.json"
+  If HasBDI && Self.HasWingflight() && MiscUtil.FileExists(Path)
+    Definitions = MiscUtil.ReadFromFile(Path)
+  EndIf
+  WingflightHasFlyingVar = StringUtil.Find(Definitions, "\"Wingflight_IsFlying\"") >= 0
+  WingflightHasHoverVar = StringUtil.Find(Definitions, "\"Wingflight_GroundHover\"") >= 0
+  WingflightHasTakeoffVar = StringUtil.Find(Definitions, "\"Wingflight_LocalTakeoff\"") >= 0
+  WingflightHasLandingVar = StringUtil.Find(Definitions, "\"Wingflight_LocalLanding\"") >= 0
+  WingflightHasPSQVar = HasBDI && MiscUtil.FileExists("Data/SKSE/Plugins/BehaviorDataInjector/PSQ_Wingflight_BDI.json")
   Self.UnregisterForModEvent("PSQ_WingflightReply")
   Self.RegisterForModEvent("PSQ_WingflightReply", "OnWingflightReply")
   WingflightBridgeReady = False
@@ -13745,7 +13931,10 @@ Function SyncWingflightPolicy()
 EndFunction
 
 Bool Function IsWingflightAirborne()
-  Return Self.HasWingflight() && PlayerRef != None && (PlayerRef.GetAnimationVariableBool("Wingflight_IsFlying") || PlayerRef.GetAnimationVariableBool("Wingflight_GroundHover") || PlayerRef.GetAnimationVariableBool("Wingflight_LocalTakeoff") || PlayerRef.GetAnimationVariableBool("Wingflight_LocalLanding") || PlayerRef.GetAnimationVariableBool("PSQ_WingflightAirborne") || PlayerRef.GetAnimationVariableBool("bInJumpState"))
+  If !Self.HasWingflight() || !PlayerRef || !PlayerRef.Is3DLoaded()
+    Return False
+  EndIf
+  Return PlayerRef.GetAnimationVariableBool("bInJumpState") || (WingflightHasFlyingVar && PlayerRef.GetAnimationVariableBool("Wingflight_IsFlying")) || (WingflightHasHoverVar && PlayerRef.GetAnimationVariableBool("Wingflight_GroundHover")) || (WingflightHasTakeoffVar && PlayerRef.GetAnimationVariableBool("Wingflight_LocalTakeoff")) || (WingflightHasLandingVar && PlayerRef.GetAnimationVariableBool("Wingflight_LocalLanding")) || (WingflightHasPSQVar && PlayerRef.GetAnimationVariableBool("PSQ_WingflightAirborne"))
 EndFunction
 
 Function OnWingflightReply(String EventName, String Status, Float value, Form Sender)
@@ -14255,7 +14444,10 @@ Bool Function AreEntryStatEffectsReady()
   If Self.GetContinuousAbilityMode() == 1 && !Self.AreStatPoolEffectsReady(Self.GetContinuousRankAbility())
     Return False
   EndIf
-  If Self.GetSatiationEffectMode() != 0 && !Self.AreStatPoolEffectsReady(StableAppliedSatiationSpell)
+  ; The current satiation tiers affect experience only. Wait for a legacy
+  ; pool ability only while the player actually owns that migrating spell.
+  Spell Legacy = StableAppliedSatiationSpell
+  If Legacy && PlayerRef.HasSpell(Legacy) && !Self.AreStatPoolEffectsReady(Legacy)
     Return False
   EndIf
   Return True
@@ -14292,11 +14484,17 @@ Bool Function AreTransformPoolsFull()
   Float HMax = Values[3]
   Float MMax = Values[4]
   Float SMax = Values[5]
+  Bool ValuesFull = H >= HMax - 0.01 && M >= MMax - 0.01 && S >= SMax - 0.01
+  If !ValuesFull && !EnableEquipmentDiagnostics
+    Return False
+  EndIf
   Float HPct = PlayerRef.GetActorValuePercentage("Health")
   Float MPct = PlayerRef.GetActorValuePercentage("Magicka")
   Float SPct = PlayerRef.GetActorValuePercentage("Stamina")
-  Debug.Trace("[PSQ-POOLS] verify owner=" + AppearanceOperationId + "; H=" + H + "/" + HMax + "; M=" + M + "/" + MMax + "; S=" + S + "/" + SMax + "; pct=" + HPct + "," + MPct + "," + SPct, 0)
-  Return H >= HMax - 0.01 && M >= MMax - 0.01 && S >= SMax - 0.01 && HPct >= 0.999 && (MMax <= 0.0 || MPct >= 0.999) && (SMax <= 0.0 || SPct >= 0.999)
+  If EnableEquipmentDiagnostics
+    Debug.Trace("[PSQ-POOLS] verify owner=" + AppearanceOperationId + "; H=" + H + "/" + HMax + "; M=" + M + "/" + MMax + "; S=" + S + "/" + SMax + "; pct=" + HPct + "," + MPct + "," + SPct, 0)
+  EndIf
+  Return ValuesFull && HPct >= 0.999 && (MMax <= 0.0 || MPct >= 0.999) && (SMax <= 0.0 || SPct >= 0.999)
 EndFunction
 
 
@@ -14603,17 +14801,24 @@ Bool Function CommitPendingOriginalEquipment(Form[] Originals, Int Used, Form[] 
   If !Pending || Pending.Length != Capacity
     Return False
   EndIf
-  Float Started = Utility.GetCurrentRealTime()
+  Float Started
+  If EnableEquipmentDiagnostics
+    Started = Utility.GetCurrentRealTime()
+  EndIf
   Form[] Worn
   If Self.CanUseSuccubusThrallEyes()
     Worn = po3_sksefunctions.AddAllEquippedItemsToArray(PlayerRef)
   EndIf
   Bool UseSnapshot = Worn && Worn.Length > 0
-  Debug.Trace("[PSQ-PERF] recovery.final_snapshot; native=" + UseSnapshot + "; seconds=" + (Utility.GetCurrentRealTime() - Started), 0)
+  If EnableEquipmentDiagnostics
+    Debug.Trace("[PSQ-PERF] recovery.final_snapshot; native=" + UseSnapshot + "; seconds=" + (Utility.GetCurrentRealTime() - Started), 0)
+  EndIf
   If !Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, LoadEpoch)
     Return False
   EndIf
-  Started = Utility.GetCurrentRealTime()
+  If EnableEquipmentDiagnostics
+    Started = Utility.GetCurrentRealTime()
+  EndIf
   Int Count = 0
   Int Index = 0
   ; Validate every previous and current original. Only local ownership checks
@@ -14677,7 +14882,9 @@ Bool Function CommitPendingOriginalEquipment(Form[] Originals, Int Used, Form[] 
       Index += 1
     EndWhile
   EndIf
-  Debug.Trace("[PSQ-PERF] recovery.final_validate; entries=" + Capacity + "; pending=" + Count + "; seconds=" + (Utility.GetCurrentRealTime() - Started), 0)
+  If EnableEquipmentDiagnostics
+    Debug.Trace("[PSQ-PERF] recovery.final_validate; entries=" + Capacity + "; pending=" + Count + "; seconds=" + (Utility.GetCurrentRealTime() - Started), 0)
+  EndIf
   If !Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, LoadEpoch)
     Return False
   EndIf
@@ -15147,21 +15354,32 @@ EndFunction
 
 
 Bool Function HasBodyChangeNGAPI()
-  ; The stock DLL has no Papyrus bridge. Never call an unregistered native.
+  ; Loaded DLL capabilities are fixed for the session. Never cache transient readiness or failures.
+  Int Epoch = PSQLoadEpoch
+  If Epoch > 0 && BCNGBodyAPIVerifiedLoad == Epoch
+    Return True
+  EndIf
   If !Self.HasExternalBodyChangeNG()
     Return False
   EndIf
   Int Version = skse.GetPluginVersion("Body Change NG")
+  Int Expected
   If Version == 16973937
-    Return BCNGPSQBridge.GetVersion() == 1
+    Expected = 1
   ElseIf Version == 16973938
-    Return BCNGPSQBridge.GetVersion() == 2
+    Expected = 2
   ElseIf Version == 16973939
-    Return BCNGPSQBridge.GetVersion() == 3
+    Expected = 3
   ElseIf Version == 16973953
-    Return BCNGPSQBridge.GetVersion() == 4
+    Expected = 4
+  Else
+    Return False
   EndIf
-  Return False
+  If BCNGPSQBridge.GetVersion() != Expected || Epoch != PSQLoadEpoch
+    Return False
+  EndIf
+  BCNGBodyAPIVerifiedLoad = Epoch
+  Return True
 EndFunction
 
 String Function GetBodyChangeStatusName()
@@ -15336,14 +15554,16 @@ Bool Function WaitForBCNGBodyRequest(Int Request, Int Owner, Bool RequireBusy)
   Int Epoch = PSQLoadEpoch
   Int Checks = 0
   Float Started = BCNGBodyRequestStarted
-  While Checks < 20 && Utility.GetCurrentRealTime() - Started < 2.0
+  ; A deferred join may already be past the deadline. Read once even then;
+  ; the native task often completed while equipment was being changed.
+  While Checks < 20
     If Epoch != PSQLoadEpoch || !Self.IsAppearanceOperationCurrent(Owner, RequireBusy) || Request != BCNGBodyRequest
       Return False
     EndIf
     If Self.ReadBCNGBodyRequest(Request, Owner, RequireBusy)
       Return True
     EndIf
-    If BCNGBodyRequest <= 0 || BCNGBodyStatus < 0
+    If BCNGBodyRequest <= 0 || BCNGBodyStatus < 0 || Utility.GetCurrentRealTime() - Started >= 2.0
       Return False
     EndIf
     Utility.Wait(0.1)
@@ -15356,6 +15576,9 @@ EndFunction
 Function SyncPendingBCNGBody()
   Int Owner = AppearanceOperationId
   If PlayerRef == None || UninstallPrepared || UninstallCleanupBusy
+    Return
+  EndIf
+  If !BCNGBodyNeedsSync && BCNGLegacyMorphCleanupEpoch == PSQLoadEpoch
     Return
   EndIf
   ; These states already forbid background body synchronization. Test them
@@ -17362,7 +17585,15 @@ Function ReleaseLedgerItemForLoad(Armor Item, Int Index, Int Owner, Bool Require
   EndIf
   If Index >= 0 && TransformInventoryAdded[Index] > 0 && TransformInventoryBaseline[Index] == 0
     Int OwnedCount = PlayerRef.GetItemCount(Item as Form)
-    If OwnedCount > 0 && OwnedCount <= TransformInventoryAdded[Index]
+    If OwnedCount <= 0
+      ; The temporary form has already left the inventory. No unequip or removal
+      ; is possible, and this ledger must not claim a later independently acquired copy.
+      If Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, RecoveryLoad)
+        TransformInventoryAdded[Index] = 0
+      EndIf
+      Return
+    EndIf
+    If OwnedCount <= TransformInventoryAdded[Index]
       If !Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, RecoveryLoad)
         Return
       EndIf
@@ -17430,14 +17661,31 @@ Bool Function TryRestoreOriginalForLoad(Armor Item, Form[] Protected, Int Owner,
   If Item == None || Protected.find(Item as Form, 0) >= 0
     Return True
   EndIf
-  If PlayerRef.IsEquipped(Item as Form)
+  If CheckSlots
+    If PlayerRef.GetItemCount(Item as Form) <= 0
+      Return True
+    EndIf
+    Int Mask = Item.GetSlotMask()
+    If Mask != 0
+      Form Worn = PlayerRef.GetWornForm(Mask)
+      If Worn == Item as Form
+        If PlayerRef.IsEquipped(Item as Form)
+          Return True
+        EndIf
+        ; A transitional same-form result can hide another occupied bit.
+        If !Self.CanRetryOriginalEquipment(Item)
+          Return False
+        EndIf
+      ElseIf Worn != None
+        ; Multiple worn forms can overlap a multi-slot mask. Never displace a
+        ; foreign occupant; the original can still be worn on a different bit.
+        Return PlayerRef.IsEquipped(Item as Form)
+      EndIf
+    ElseIf PlayerRef.IsEquipped(Item as Form)
+      Return True
+    EndIf
+  ElseIf PlayerRef.IsEquipped(Item as Form) || PlayerRef.GetItemCount(Item as Form) <= 0
     Return True
-  EndIf
-  If PlayerRef.GetItemCount(Item as Form) <= 0
-    Return True
-  EndIf
-  If CheckSlots && !Self.CanRetryOriginalEquipment(Item)
-    Return False
   EndIf
   ; Slot and inventory reads can yield. Always revalidate before equipping.
   If !Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, LoadEpoch)

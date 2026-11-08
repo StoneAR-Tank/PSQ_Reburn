@@ -1,7 +1,7 @@
 {
   "name": "Flight_Jump",
   "description": "Flight jump with wings",
-  "priority": 2147483604,
+  "priority": 1316129001,
   "replaceOnLoop": true,
   "conditions": [
     {
@@ -196,5 +196,8 @@
         }
       ]
     }
-  ]
+  ],
+  "interruptible": true,
+  "hasCustomBlendTimeOnInterrupt": true,
+  "blendTimeOnInterrupt": 0.15
 }

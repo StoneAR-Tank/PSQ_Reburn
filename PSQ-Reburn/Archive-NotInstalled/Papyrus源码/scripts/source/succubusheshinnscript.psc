@@ -4,6 +4,7 @@ ScriptName succubusheshinnscript Extends ActiveMagicEffect
 Bool NativeMotionStarted = False
 Int OperationOwner = 0
 Armor OrgArmorTemp
+Bool TraceStageTimings
 Float TransformStageClock = 0.0
 Int TransformVisualRank = 1
 
@@ -23,8 +24,12 @@ Event OnEffectStart(Actor akTarget, Actor akCaster)
     Return 
   EndIf
   OperationOwner = PSQ.AppearanceOperationId
-  Float AppearanceStarted = Utility.GetCurrentRealTime()
-  TransformStageClock = AppearanceStarted
+  Float AppearanceStarted
+  TraceStageTimings = PSQ.EnableEquipmentDiagnostics
+  If TraceStageTimings
+    AppearanceStarted = Utility.GetCurrentRealTime()
+    TransformStageClock = AppearanceStarted
+  EndIf
   If !PSQ.IsHenshined
     PSQ.AppearanceTransformDirection = 1
     PSQ.AppearanceSnapshotReady = False
@@ -40,7 +45,9 @@ Event OnEffectStart(Actor akTarget, Actor akCaster)
     Return 
   EndIf
   storageutil.SetIntValue(PSQ.PlayerRef as Form, "PSQ_SuccubusON", PSQ.IsHenshined as Int)
-  Debug.Trace(("[PSQ] Transform appearance finished; transformed=" + PSQ.IsHenshined as String) + ", scriptSeconds=" + (Utility.GetCurrentRealTime() - AppearanceStarted) as String, 0)
+  If TraceStageTimings
+    Debug.Trace(("[PSQ] Transform appearance finished; transformed=" + PSQ.IsHenshined as String) + ", scriptSeconds=" + (Utility.GetCurrentRealTime() - AppearanceStarted) as String, 0)
+  EndIf
   PSQ.EndAppearanceEdit(OperationOwner)
 EndEvent
 
@@ -48,6 +55,7 @@ Function Henshin(Actor Succu)
   If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
     Return 
   EndIf
+  Float BodyStarted
   Bool RefreshNodes = False
   If !PSQ.ApplySuccubusOutfitSelectionCore(PSQ.SuccubusOutfitSelection, OperationOwner, True)
     Return 
@@ -146,7 +154,13 @@ Function Henshin(Actor Succu)
     Succu.ChangeHeadPart(PSQ.PSQSuccubusEyes)
   EndIf
   If PSQ.HenshinBody
+    If TraceStageTimings
+      BodyStarted = Utility.GetCurrentRealTime()
+    EndIf
     PSQ.ApplyTransformBodyMorphs(False, OperationOwner, True)
+    If TraceStageTimings
+      Debug.Trace("[PSQ-PERF] enter.body_request; seconds=" + (Utility.GetCurrentRealTime() - BodyStarted))
+    EndIf
   EndIf
   If !Self.ContinueAppearance("enter.body_morphs")
     Return 
@@ -178,6 +192,7 @@ Function Henshin(Actor Succu)
   If !Self.ContinueAppearance("enter.pre_equipment")
     Return 
   EndIf
+  PSQ.SyncAWUWing()
   PSQ.EquipSelectedTransformParts(OperationOwner, True)
   If !Self.ContinueAppearance("enter.equipment_apply")
     Return 
@@ -220,7 +235,13 @@ Function Henshin(Actor Succu)
     Return 
   EndIf
   If PSQ.HenshinBody
+    If TraceStageTimings
+      BodyStarted = Utility.GetCurrentRealTime()
+    EndIf
     PSQ.RefreshEquippedTransformBody(OperationOwner, True)
+    If TraceStageTimings
+      Debug.Trace("[PSQ-PERF] enter.body_settle; seconds=" + (Utility.GetCurrentRealTime() - BodyStarted))
+    EndIf
   EndIf
   If RefreshNodes
     If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
@@ -255,6 +276,7 @@ Function DisHenshin(Actor Succu)
   If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
     Return 
   EndIf
+  Float BodyStarted
   Bool RefreshNodes = False
   Bool RefreshBody = PSQ.HenshinBody
   If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
@@ -271,6 +293,7 @@ Function DisHenshin(Actor Succu)
     Return 
   EndIf
   PSQ.IsHenshined = False
+  PSQ.SyncAWUWing()
   PSQ.ResetTransformEnergyClock()
   PSQ.SyncRankMagicCostReduction()
   Self.BeginTransformVisual(Succu, False)
@@ -302,7 +325,13 @@ Function DisHenshin(Actor Succu)
   PSQ.SetScaleHuman(OperationOwner, True)
   PSQ.RestoreOriginalPlayerEyes(OperationOwner, True)
   If PSQ.HenshinBody
+    If TraceStageTimings
+      BodyStarted = Utility.GetCurrentRealTime()
+    EndIf
     PSQ.RestoreTransformBodyMorphs(False, OperationOwner, True)
+    If TraceStageTimings
+      Debug.Trace("[PSQ-PERF] exit.body_request; seconds=" + (Utility.GetCurrentRealTime() - BodyStarted))
+    EndIf
   EndIf
   If PSQ.RestoreTransformSkinColor(OperationOwner, True)
     If PSQ.OrgHairColor == None
@@ -336,7 +365,13 @@ Function DisHenshin(Actor Succu)
     Return
   EndIf
   If RefreshBody
+    If TraceStageTimings
+      BodyStarted = Utility.GetCurrentRealTime()
+    EndIf
     PSQ.RefreshEquippedTransformBody(OperationOwner, True)
+    If TraceStageTimings
+      Debug.Trace("[PSQ-PERF] exit.body_settle; seconds=" + (Utility.GetCurrentRealTime() - BodyStarted))
+    EndIf
   EndIf
   If RefreshNodes
     If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
@@ -603,7 +638,9 @@ Bool Function ContinueAppearance(String Stage)
   If !PSQ.TouchAppearanceOperation(OperationOwner, Stage)
     Return False
   EndIf
-  Self.TraceTransformStage(Stage)
+  If TraceStageTimings
+    Self.TraceTransformStage(Stage)
+  EndIf
   Return True
 EndFunction
 

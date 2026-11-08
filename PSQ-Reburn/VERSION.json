@@ -1,6 +1,6 @@
 {
   "name": "PSQ Reburn",
-  "version": "0.29",
+  "version": "0.3",
   "date": "2026-11-08",
   "channel": "test-release",
   "optional_modules_separate": [
@@ -134,7 +134,7 @@
     "game_runtime_tested": false
   },
   "package_revision": 61,
-  "display_version": "v0.29",
+  "display_version": "v0.3",
   "version_relabel": {
     "date": "2026-10-26",
     "previous_package_label": "0.22",
@@ -1052,12 +1052,13 @@
     "bodyslide_project_installation": "included-with-core",
     "ube_outfits": "optional-included-user-builds-bodyslide",
     "satiation": "three-tier-drain-and-skill-experience",
-    "apropos_damage_repair": "optional-default-off",
+    "apropos_damage_repair": "optional-recommended-when-Apropos2.esp-active",
     "ube_dx": "merged variant of PSQ UBE Outfits.esp",
     "body_slide_groups": [
       "PSQ 3BA Outfits",
       "PSQ UBE Outfits"
     ],
-    "ube_softbody_layer": false
+    "ube_softbody_layer": false,
+    "ube_tattoo_textures": "included-with-core"
   }
 }

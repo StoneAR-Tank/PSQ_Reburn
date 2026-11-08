@@ -883,7 +883,7 @@
         <Slider name="AnalTexPosRe_v2" invert="false" small="0" big="0" uv="true">
             <Data name="3BAAnalTexPosRe_v2" target="3BA">SE 3BBB Body Amazing v2.osd\3BAAnalTexPosRe_v2</Data>
         </Slider>
-    </SliderSet>
+    <Slider name="PSQNoCorsetWings" invert="false" small="100" big="100" zap="true" hidden="true"><Data name="CorsetPSQNoCorsetWings" target="Corset" local="true">PSQNoCorsetWings.osd\CorsetPSQNoCorsetWings</Data></Slider></SliderSet>
 <SliderSet name="PSQ 3BA 变身 - 海伦娜魅魔 - 角饰">
         <DataFolder>PSQ_Package_20261106\3BA\F007</DataFolder>
         <SourceFile>horns.nif</SourceFile>

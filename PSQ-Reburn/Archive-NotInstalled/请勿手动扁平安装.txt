@@ -1,1 +1,1 @@
-本目录只保留原包历史资料，不会被FOMOD安装。请勿拖入Data或覆盖当前裸身、GT、Body Change或飞行文件。旧全局裸体已被当前CBBE/GT/Hands Redone提供者覆盖；旧Wingflight桥不再作为本包默认组件。
+这里保存历史文档、源码和作者信息，供查阅。请通过 FOMOD 安装游戏文件。

@@ -981,6 +981,7 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
       Return 
     EndIf
     PSQ.HenshinWings = !PSQ.HenshinWings
+    PSQ.SyncAWUWing()
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -3695,7 +3696,8 @@ Function DrawCompatibilityPage()
   If psqracecompatibility.IsUBEActor(PSQ.PlayerRef)
     Self.AddTextOption("UBE 变身身形", "Body Change 专用预设", 1)
     Self.AddTextOption("UBE 身体与皮肤", "保留当前模型、贴图和附件", 1)
-    Self.AddTextOption("UBE 服装与淫纹", "需对应 UBE 资源版本", 1)
+    Self.AddTextOption("UBE 变身服装", "需在安装器中选择 UBE 服装", 1)
+    Self.AddTextOption("UBE 自选与进化淫纹", "使用 PSQ 内置的 UBE 腹部贴图", 1)
   EndIf
   Self.CompatibilityRow("SLSO", Self.CompatibilityPluginLoaded("SLSO.esp"))
   If PSQ.IsAproposRepairPatchInstalled()
@@ -3731,6 +3733,7 @@ Function DrawCompatibilityPage()
   Self.CompatibilityRow("Wingflight／OSYRN（飞行控制）", PSQ.HasWingflight())
   Self.AddTextOption("飞行接口状态", PSQ.GetWingflightStatus(), 1)
   Self.AddTextOptionST("OSYRNFlightInfo", "OSYRN 飞行适配", PSQ.GetOSYRNFlightCompatibilityInfo(), 0)
+  Self.CompatibilityRow("Animated Wings Ultimate", Self.CompatibilityPluginLoaded("Animated Wings Ultimate.esp"))
   Self.CompatibilityRow("Animated Fairy Wings", PSQ.CanUseAnimatedFairyWings())
   Self.CompatibilityRow("Animated Dragon Wings 资源", PSQ.CanUseAnimatedDragonWings())
   Self.AddTextOption("DX魅魔原作适配", PSQ.GetExternalOutfitSourceStatus(1), 1)
@@ -4071,6 +4074,9 @@ String Function GetOutfitWingLabel(Int Selection)
 EndFunction
 
 String Function GetPlayerWingSelectionLabel()
+  If PSQ.HenshinWings && PSQ.AWUWingID > 0
+    Return PSQ.GetAWUWingName(PSQ.AWUWingID)
+  EndIf
   If !PSQ.HenshinWings || !PSQ.PSQSuccubusWings
     Return "$PSQ_WingsSwitchOff"
   EndIf
@@ -4168,50 +4174,24 @@ Function DrawTransformCompatibility()
   Self.AddTextOption("$PSQ_CompatHairCount", HairCount as String + "/4", 1)
   Self.CompatibilityRow("$PSQ_CompatEyesTullius", Self.CompatibilityPluginLoaded("Tullius Eyes.esp"))
   Bool PapyrusReady = skse.GetPluginVersion("papyrusutil plugin") >= 0 || skse.GetPluginVersion("PapyrusUtil") >= 0
-  Int EyeTotal = 0
-  Int EyeCount = 0
   Int BodyCount = 0
   String BuildBase = "$PSQ_CompatMissing"
   Bool BodyTRI = False
   Bool BodySlidePresent = False
-  Int OutfitTRICount = 0
   If PapyrusReady
-    EyeTotal = PSQ.GetCachedEyeMaterialCount()
-    i = 1
-    While i <= EyeTotal
-      If PSQ.GetExternalEyeTexture(i, -1, False) != None
-        EyeCount += 1
-      EndIf
-      i += 1
-    EndWhile
     BodyCount = PSQ.GetTransformBodyPresetCount(-1, False)
     BuildBase = PSQ.GetBodyChangeStatusName()
     BodyTRI = miscutil.FileExists("Data/meshes/actors/character/character assets/femalebody.tri")
-    BodySlidePresent = miscutil.FileExists("Data/CalienteTools/BodySlide/BodySlide x64.exe")
-    i = 1
-    While i <= 8
-      String Number = "0" + i as String
-      String BasePath = "Data/meshes/PSQ/Outfits/Set" + Number + "/"
-      If miscutil.FileExists(BasePath + "cuirass.tri")
-        OutfitTRICount += 1
-      EndIf
-      If miscutil.FileExists(BasePath + "boots.tri")
-        OutfitTRICount += 1
-      EndIf
-      If miscutil.FileExists(BasePath + "gloves.tri")
-        OutfitTRICount += 1
-      EndIf
-      i += 1
-    EndWhile
+    BodySlidePresent = miscutil.FileExists("Data/CalienteTools/BodySlide/BodySlide.exe") || miscutil.FileExists("Data/CalienteTools/BodySlide/BodySlide x64.exe")
   EndIf
-  Self.AddTextOption("$PSQ_CompatEyeCount", (EyeCount as String + "/") + EyeTotal as String, 1)
+  Self.AddTextOptionST("TulliusEyeMaterialsCheck", "$PSQ_CompatEyeCount", "$PSQ_CompatEyeCheck", (!PapyrusReady) as Int)
   Self.CompatibilityRow("$PSQ_CompatBodyRuntime", PSQ.HasBodyChangeNGAPI())
   Self.CompatibilityRow("$PSQ_CompatBodySlide", BodySlidePresent)
   Self.CompatibilityRow("$PSQ_CompatPresetIndex", PSQ.HasBodyChangeNGAPI() && BodyCount > 0)
   Self.AddTextOption("$PSQ_CompatBodyCount", BodyCount as String, 1)
   Self.AddTextOption("$PSQ_CompatBuildBase", BuildBase, 1)
   Self.CompatibilityRow("$PSQ_CompatBodyTRI", BodyTRI)
-  Self.AddTextOption("$PSQ_CompatOutfitTRI", OutfitTRICount as String + "/24", 1)
+  Self.AddTextOptionST("SelectedOutfitTRI", "$PSQ_CompatOutfitTRI", "$PSQ_CompatCheckTRI", (!PapyrusReady) as Int)
   Self.CompatibilityRow("$PSQ_CompatTattooRuntime", PSQ.HasNiOverrideRuntime())
   Self.AddTextOptionST("TransformCompatibilityInfo", "$PSQ_CompatTransformNotes", "$PSQ_CompatManual", 0)
 EndFunction
@@ -4621,6 +4601,24 @@ Function ApplyPlayerWingChoice(Int i, Int Owner, Bool RequireBusy)
     Self.ShowMessage("$PSQ_OutfitUnavailable", False, "$OK", "$Cancel")
     Return
   EndIf
+  If i < 0 && !PSQ.IsHenshinchu
+    If PSQ.GetAWUWing(-i) == None
+      Self.ShowMessage("$PSQ_AppearanceWingMissing", False, "$OK", "$Cancel")
+      Return
+    EndIf
+    If PSQ.IsHenshined && PSQ.HenshinWings && PSQ.PSQSuccubusWings != None
+      PSQ.RemoveTransformEquipmentItem(PSQ.PSQSuccubusWings, Owner, RequireBusy)
+    EndIf
+    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
+      Return
+    EndIf
+    PSQ.PSQSuccubusWings = None
+    PSQ.AWUWingID = -i
+    PSQ.HenshinWings = True
+    PSQ.SyncAWUWing()
+    Self.SetMenuOptionValueST(Self.GetPlayerWingSelectionLabel(), False, "")
+    Return
+  EndIf
   If i < 0 || i > 19 || PSQ.IsHenshinchu
     Return 
   EndIf
@@ -4630,6 +4628,10 @@ Function ApplyPlayerWingChoice(Int i, Int Owner, Bool RequireBusy)
   If i > 0 && !Wing[i - 1]
     Self.ShowMessage("$PSQ_AppearanceWingMissing", False, "$OK", "$Cancel")
     Return 
+  EndIf
+  If PSQ.AWUWingID > 0
+    PSQ.AWUWingID = 0
+    PSQ.SyncAWUWing()
   EndIf
   If i == 0 && !WasEnabled || i > 0 && WasEnabled && OldWing == Wing[i - 1]
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
@@ -6440,6 +6442,105 @@ State ThrallSkillsBack
 EndState
 
 ;-- State -------------------------------------------
+State TulliusEyeMaterialsCheck
+  Function OnSelectST()
+    String Provider = "Tullius Eyes.esp"
+    If !Self.CompatibilityPluginLoaded(Provider)
+      Self.SetTextOptionValueST("$PSQ_CompatEyeProviderMissing", False, "")
+      Return
+    EndIf
+    String Catalog = "PSQ/EyeMaterials"
+    String[] Plugins = JsonUtil.StringListToArray(Catalog, "plugins")
+    Int[] IDs = JsonUtil.IntListToArray(Catalog, "ids")
+    Int Size = JsonUtil.StringListCount(Catalog, "names")
+    If Size <= 0 || Plugins.Length != Size || IDs.Length != Size
+      Self.SetTextOptionValueST("$PSQ_CompatEyeCatalogMissing", False, "")
+      Return
+    EndIf
+    Self.SetTextOptionValueST("$PSQ_Processing", False, "")
+    Int Found = 0
+    Int Total = 0
+    Int i = 0
+    While i < Size
+      If Plugins[i] == Provider
+        Total += 1
+        If IDs[i] > 0
+          TextureSet Material = Game.GetFormFromFile(IDs[i], Provider) as TextureSet
+          If Material && Material.GetNthTexturePath(0) != ""
+            Found += 1
+          EndIf
+        EndIf
+      EndIf
+      i += 1
+    EndWhile
+    If Total > 0
+      Self.SetTextOptionValueST(Found as String + "/" + Total as String, False, "")
+    Else
+      Self.SetTextOptionValueST("$PSQ_CompatEyeCatalogMissing", False, "")
+    EndIf
+  EndFunction
+
+  Function OnHighlightST()
+    Self.SetInfoText("$PSQ_CompatEyeCheckInfo")
+  EndFunction
+EndState
+
+State SelectedOutfitTRI
+  Function OnSelectST()
+    Armor[] Parts = new Armor[3]
+    Int Capacity = 0
+    Int i = 0
+    While i < Parts.Length
+      If PSQ.IsTransformPartSelected(i)
+        Parts[i] = PSQ.GetTransformPartArmor(i)
+        If Parts[i]
+          Capacity += Parts[i].GetNumArmorAddons()
+        EndIf
+      EndIf
+      i += 1
+    EndWhile
+    Int Total = 0
+    Int Found = 0
+    If Capacity > 0
+      String[] Paths = Utility.CreateStringArray(Capacity, "")
+      i = 0
+      While i < Parts.Length
+        If Parts[i]
+          Int j = Parts[i].GetNumArmorAddons()
+          While j > 0
+            j -= 1
+            ArmorAddon Addon = Parts[i].GetNthArmorAddon(j)
+            If Addon
+              String Model = Addon.GetModelPath(False, True)
+              Int Suffix = StringUtil.GetLength(Model) - 6
+              If Suffix > 0 && (StringUtil.Substring(Model, Suffix) == "_1.nif" || StringUtil.Substring(Model, Suffix) == "_0.nif")
+                String TRI = StringUtil.Substring(Model, 0, Suffix) + ".tri"
+                If Paths.Find(TRI) == -1
+                  Paths[Total] = TRI
+                  Total += 1
+                  If MiscUtil.FileExists("Data/meshes/" + TRI)
+                    Found += 1
+                  EndIf
+                EndIf
+              EndIf
+            EndIf
+          EndWhile
+        EndIf
+        i += 1
+      EndWhile
+    EndIf
+    If Total > 0
+      Self.SetTextOptionValueST(Found as String + "/" + Total as String, False, "")
+    Else
+      Self.SetTextOptionValueST("$PSQ_CompatNoSelectedMesh", False, "")
+    EndIf
+  EndFunction
+
+  Function OnHighlightST()
+    Self.SetInfoText("$PSQ_CompatOutfitTRIInfo")
+  EndFunction
+EndState
+
 State TransformCompatibilityInfo
 
   Function OnSelectST()
@@ -7349,6 +7450,21 @@ Function OpenBodyMatchedWingMenu()
     EndIf
     i += 1
   EndWhile
+  Int[] AWUIds
+  String[] AWUNames
+  If PSQ.IsIntegrationPluginLoaded("Animated Wings Ultimate.esp")
+    AWUIds = JsonUtil.IntListToArray("PSQ/AWUWings", "ids")
+    AWUNames = JsonUtil.StringListToArray("PSQ/AWUWings", "names")
+    Int Total = AWUIds.Length
+    i = 0
+    While i < Total
+      Int ID = AWUIds[i]
+      If Game.GetFormFromFile(ID, "Animated Wings Ultimate.esp") as Spell
+        storageutil.IntListAdd(Self, Key, -ID, True)
+      EndIf
+      i += 1
+    EndWhile
+  EndIf
   Int Count = storageutil.IntListCount(Self, Key)
   String[] Options = PapyrusUtil.StringArray(Count, "")
   Options[0] = "$PSQ_WingsSwitchOff"
@@ -7356,12 +7472,17 @@ Function OpenBodyMatchedWingMenu()
   i = 1
   While i < Count
     Int Raw = storageutil.IntListGet(Self, Key, i)
-    If Raw <= 8
+    If Raw < 0
+      Options[i] = "AWU · " + AWUNames[AWUIds.Find(-Raw)]
+      If PSQ.HenshinWings && PSQ.AWUWingID == -Raw
+        Start = i
+      EndIf
+    ElseIf Raw <= 8
       Options[i] = Self.GetOutfitWingLabel(Raw)
     Else
       Options[i] = Wings[Raw - 1].GetName()
     EndIf
-    If PSQ.HenshinWings && Wings[Raw - 1] == PSQ.GetTransformPartArmor(5)
+    If Raw > 0 && PSQ.HenshinWings && Wings[Raw - 1] == PSQ.GetTransformPartArmor(5)
       Start = i
     EndIf
     i += 1
