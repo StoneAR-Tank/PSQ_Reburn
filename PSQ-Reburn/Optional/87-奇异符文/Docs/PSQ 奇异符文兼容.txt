@@ -1,0 +1,10 @@
+PSQ 元素法阵
+
+需要 powerofthree 的 Strange Runes 3.7.3 和它的前置。将 PSQ - Strange Runes.esp 排在 StrangeRunes.esp 之后，并让 PSQ 提供 psqplayeraliasscript.pex。
+
+玩家使用 PSQ 的十二个火焰、冰霜和雷电法术时，左手、右手及大师法阵按元素显示粉色。单手混用普通法术时，每只手独立选择。显隐、双手合并位置和施法设置仍由 Strange Runes 的 MCM 管理。
+
+本组件提供独立制作的火焰、冰晶和雷纹图案。魅魔法阵固定使用 PSQ 自有粉色模型；按手检查实际装备的法术。旧存档载入时只刷新仍在运行的旧玩家符文检测能力。若其他插件也覆盖该能力，可在 Strange Runes 的 MCM 使用 Reset mod 重新初始化。
+
+Strange Runes 原作与施法检测脚本由 powerofthree 制作，原作符文纹理使用 Obsidian Dawn 的图案。请从原址独立安装原模组。
+https://www.nexusmods.com/skyrimspecialedition/mods/19456

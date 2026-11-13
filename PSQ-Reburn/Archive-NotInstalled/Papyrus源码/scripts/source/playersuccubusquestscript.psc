@@ -385,6 +385,19 @@ Bool SatiationRecordSyncPending = True
 Float[] StableTransformMagnitudes
 
 ; Load generation belongs to the player alias OnPlayerLoadGame event.
+Bool StrongCarryInitialized = False
+Int StrongCarryLegacyTotal = 0
+Int StrongCarryLegacyRetained = -1
+Int StrongCarryRevision = 0
+Int StrongCarryApplied = 0
+Bool StrongCarryPending = True
+Bool StrongCarryBusy = False
+Bool ReviewStrongCarry = True
+Bool ReviewContinuousCarry = True
+Bool ReviewTransformCarry = True
+Int StrongBodyMenuTicket = 0
+Int StrongBodyMenuLoad = -1
+Float StrongBodyMenuLastUse = 0.0
 Int PSQLoadEpoch = 0
 Bool PSQReloadBusy = False
 Int PSQReloadBusyEpoch = -1
@@ -392,6 +405,8 @@ Int PSQReloadCompletedEpoch = -1
 Int RacialUISyncEpoch = -1
 
 Int TransformPoolsPrimedOwner = -1
+Float[] PrimedTransformPoolValues
+Int PrimedTransformPoolLoad = -1
 Int TransformRefillBusyOwner = -1
 Int DeferredTransformRefillRequest = 0
 Int DeferredTransformRefillOwner = -1
@@ -521,6 +536,7 @@ Bool Property EnableSuccubusDrainStaminaSpell = True Auto hidden
 Bool Property EnableSuccubusSpellBooster = True Auto hidden
 Float Property EnergyConsumption Auto hidden
 Float Property EnergyConsumptionPerMax = 14.0 Auto hidden
+; Retired save properties. No energy calculation or option reads them.
 Bool Property EnergyModeAlt Auto hidden
 Bool Property EnergySenseActive = False Auto hidden
 Int Property EnergySenseGeneration = 0 Auto hidden
@@ -637,7 +653,7 @@ Float Property MagickaRateBuffInc = 100.0 Auto hidden
 Bool Property ManualDigestionMode Auto hidden
 Spell Property MasturbationSpell Auto
 Float Property MaxEnergy Auto hidden
-Float Property MaxEnergyAtAltMode = 1000.0 Auto hidden
+Float Property MaxEnergyAtAltMode = 0.0 Auto hidden
 Float Property MinEnergyOfHuman = 500.0 Auto hidden
 Armor Property OrgArmor Auto hidden
 FormList Property OrgArmorList Auto
@@ -954,6 +970,18 @@ Event OnUpdate()
     Self.SyncRankMagicCostReduction()
   EndIf
   Self.MigrateHybridDefault()
+  If !AppearanceEditBusy && !IsHenshinchu && !UI.IsMenuOpen("Sleep/Wait Menu")
+    If PlayerIsSuccubus.GetValueInt() == 1 && GameDaysPassed.GetValue() - LastConsumeTime >= 0.025
+      Self.QueueStrongBodyCarrySync()
+      ReviewStrongCarry = True
+      ReviewContinuousCarry = True
+      ReviewTransformCarry = True
+      Debug.Trace("[PSQ Carry] time jump; inventory=" + PlayerRef.GetAV("InventoryWeight") + "; capacity=" + PlayerRef.GetAV("CarryWeight") + "; base=" + PlayerRef.GetBaseAV("CarryWeight"))
+    EndIf
+    If StrongCarryPending
+      Self.SyncStrongBodyCarry()
+    EndIf
+  EndIf
   ; Avoid noncritical native/appearance work while the foreground owns appearance.
   If !(AppearanceEditBusy || IsHenshinchu || BodySelectionRefreshBusy)
     Self.SyncContinuousAbilities(False)
@@ -2371,6 +2399,11 @@ EndFunction
 
 Function BeginPSQLoadSession()
   PSQLoadEpoch += 1
+  StrongCarryBusy = False
+  Self.QueueStrongBodyCarrySync()
+  ReviewStrongCarry = True
+  ReviewContinuousCarry = True
+  ReviewTransformCarry = True
   AWUControlGeneration += 1
   AWUControlChecks = 0
   BCNGBodyRequest = 0
@@ -2421,6 +2454,8 @@ Function PSQReloadCore(Int LoadEpoch)
   If !Self.IsPSQLoadCurrent(LoadEpoch)
     Return
   EndIf
+  EnergyModeAlt = False
+  MaxEnergyAtAltMode = 0.0
   Self.ResetPSQSexSceneState()
   If !Self.IsPSQLoadCurrent(LoadEpoch)
     Return
@@ -2446,6 +2481,19 @@ Function PSQReloadCore(Int LoadEpoch)
   Self.SyncPlayerAppearanceRace()
   If !Self.IsPSQLoadCurrent(LoadEpoch)
     Return
+  EndIf
+  If IsHenshined && HenshinHairColor && !AppearanceRecoveryPending && !IsHenshinchu && !AppearanceEditBusy && !UninstallPrepared && !UninstallCleanupBusy
+    Int ColorOwner = AppearanceOperationId
+    Self.ApplyTransformHairColor(False, ColorOwner, False)
+    If !Self.IsPSQLoadCurrent(LoadEpoch)
+      Return
+    EndIf
+    If ColorOwner == AppearanceOperationId && IsHenshined && OrgHairColor != None && PlayerRef.Is3DLoaded()
+      Game.UpdateHairColor()
+    EndIf
+    If !Self.IsPSQLoadCurrent(LoadEpoch)
+      Return
+    EndIf
   EndIf
   Self.CleanLoadedTransformTail(LoadEpoch)
   If !Self.IsPSQLoadCurrent(LoadEpoch)
@@ -2579,6 +2627,14 @@ Function PSQReloadCore(Int LoadEpoch)
       Return
     EndIf
     Return
+  EndIf
+  Bool RefreshLoadedClothes = IsHenshined && !AppearanceRecoveryPending && !IsHenshinchu && !AppearanceEditBusy
+  Int ClothesOwner = AppearanceOperationId
+  If RefreshLoadedClothes
+    Self.ApplyPSQOutfitBodyModels(False, ClothesOwner, False)
+    If !Self.IsPSQLoadCurrent(LoadEpoch)
+      Return
+    EndIf
   EndIf
   If SuccubusOutfitSelection == 0
     Self.ApplySuccubusOutfitSelection(4)
@@ -2755,12 +2811,6 @@ Function PSQReloadCore(Int LoadEpoch)
           Return
         EndIf
       EndIf
-      If HenshinHairColor
-        Self.ApplyTransformHairColor(False, -1, False)
-        If !Self.IsPSQLoadCurrent(LoadEpoch)
-          Return
-        EndIf
-      EndIf
       Float BoosterRate = Math.Sqrt(Math.Sqrt(SuccubusEXP.GetValue())) / 2.0
       If !Self.IsPSQLoadCurrent(LoadEpoch)
         Return
@@ -2814,7 +2864,7 @@ Function PSQReloadCore(Int LoadEpoch)
         Return
       EndIf
     EndIf
-    If HenshinSkin || HenshinHairColor
+    If HenshinSkin || HenshinHairColor || (RefreshLoadedClothes && ClothesOwner == AppearanceOperationId && !AppearanceEditBusy && !IsHenshinchu)
       PlayerRef.QueueNiNodeUpdate()
       If !Self.IsPSQLoadCurrent(LoadEpoch)
         Return
@@ -3604,6 +3654,10 @@ Function SettlePPlusOrgasm(Actor Source, Int TID, Actor[] actors, Int Count, Flo
   Debug.Trace((((("[PSQ SLCompat] P+ orgasm: tid=" + TID as String) + "; actor=" + Source as String) + "; count=" + Count as String) + "; routes=" + ContactMask as String) + "; seconds=" + SexTime as String, 0)
 EndFunction
 
+Spell Function GetRoseStormSpell()
+  Return Game.GetFormFromFile(0xB700, "PSQ PlayerSuccubusQuest.esm") as Spell
+EndFunction
+
 Function QuitSuccubus()
   If Self.IsWingflightAirborne()
     Debug.Notification("请先着陆，再解除魅魔。")
@@ -4258,6 +4312,16 @@ Function QuitSuccubus()
     PlayerRef.RemoveSpell(SuccuBlizzard)
     If !Self.IsAppearanceOperationCurrent(RetirementOwner, OwnsAppearance)
       Return
+    EndIf
+    Spell RoseStorm = Self.GetRoseStormSpell()
+    If RoseStorm
+      If !Self.IsAppearanceOperationCurrent(RetirementOwner, OwnsAppearance)
+        Return
+      EndIf
+      PlayerRef.RemoveSpell(RoseStorm)
+      If !Self.IsAppearanceOperationCurrent(RetirementOwner, OwnsAppearance)
+        Return
+      EndIf
     EndIf
     PlayerRef.RemoveSpell(SuccuCourage)
     If !Self.IsAppearanceOperationCurrent(RetirementOwner, OwnsAppearance)
@@ -5448,12 +5512,6 @@ Function UpdateAnimationEnergyPercent(Float Ratio)
 EndFunction
 
 Float Function CalculateEnergyCapacity()
-  If EnergyModeAlt
-    If MaxEnergyAtAltMode > 0.0
-      Return MaxEnergyAtAltMode
-    EndIf
-    Return 200.0
-  EndIf
   Float EXP = SuccubusEXP.GetValue()
   If EXP < 0.0
     EXP = 0.0
@@ -6620,10 +6678,25 @@ Function UpdateTransformBuffCore(Bool DuringTransform, Int Owner, Int PoolEpoch,
     EndIf
     Return
   EndIf
-  Float HealthBonus = PlayerRef.GetBaseAV("Health") * Self.GetTransformBuffRate(0) / 100.0
-  Float MagickaBonus = PlayerRef.GetBaseAV("Magicka") * Self.GetTransformBuffRate(1) / 100.0
-  Float StaminaBonus = PlayerRef.GetBaseAV("Stamina") * Self.GetTransformBuffRate(2) / 100.0
-  Float CarryBonus = PlayerRef.GetBaseAV("CarryWeight") * Self.GetTransformBuffRate(3) / 100.0
+  Float HealthBonus
+  Float MagickaBonus
+  Float StaminaBonus
+  Float CarryBonus
+  Float[] Bases
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777221
+    Bases = PSQAppearance.ReadTransformBases(PlayerRef)
+  EndIf
+  If Bases && Bases.Length == 4
+    HealthBonus = Bases[0] * Self.GetTransformBuffRate(0) / 100.0
+    MagickaBonus = Bases[1] * Self.GetTransformBuffRate(1) / 100.0
+    StaminaBonus = Bases[2] * Self.GetTransformBuffRate(2) / 100.0
+    CarryBonus = Bases[3] * Self.GetTransformBuffRate(3) / 100.0
+  Else
+    HealthBonus = PlayerRef.GetBaseAV("Health") * Self.GetTransformBuffRate(0) / 100.0
+    MagickaBonus = PlayerRef.GetBaseAV("Magicka") * Self.GetTransformBuffRate(1) / 100.0
+    StaminaBonus = PlayerRef.GetBaseAV("Stamina") * Self.GetTransformBuffRate(2) / 100.0
+    CarryBonus = PlayerRef.GetBaseAV("CarryWeight") * Self.GetTransformBuffRate(3) / 100.0
+  EndIf
   If HealthBonus < 0.0
     HealthBonus = 0.0
   EndIf
@@ -6635,6 +6708,12 @@ Function UpdateTransformBuffCore(Bool DuringTransform, Int Owner, Int PoolEpoch,
   EndIf
   If CarryBonus < 0.0
     CarryBonus = 0.0
+  EndIf
+  If ReviewTransformCarry && PlayerRef.Is3DLoaded() && !PlayerRef.IsDead() && !Utility.IsInMenuMode()
+    ReviewTransformCarry = False
+    If !ForceRefresh
+      ForceRefresh = Self.NeedsCarryEffectRepair(SuccubusHenshinBonusSpell, CarryBonus)
+    EndIf
   EndIf
   If !ForceRefresh && PlayerRef.HasSpell(SuccubusHenshinBonusSpell as Form) && Self.AreStatPoolEffectsReady(SuccubusHenshinBonusSpell)
     If StableTransformMagnitudes && StableTransformMagnitudes.Length == 4
@@ -8538,6 +8617,22 @@ Function RestoreAttributeCurrent(Actor Target, String ValueName, Float Saved)
   EndIf
 EndFunction
 
+Function RecordStrongBodyPurchase(Int Choice)
+  If PlayerRef == None || UninstallPrepared || UninstallCleanupBusy
+    Return
+  EndIf
+  If Choice == 1
+    StorageUtil.AdjustIntValue(PlayerRef, "PSQ_Growth_StrongBody_Magicka", 10)
+  ElseIf Choice == 2
+    Self.GetStrongBodyLegacyCarry()
+    StorageUtil.AdjustIntValue(PlayerRef, "PSQ_Growth_StrongBody_CarryWeight", 50)
+    Self.QueueStrongBodyCarrySync()
+    Self.SyncStrongBodyCarry()
+  ElseIf Choice == 3
+    StorageUtil.AdjustIntValue(PlayerRef, "PSQ_Growth_StrongBody_PerkPoints", 1)
+  EndIf
+EndFunction
+
 Function RecordGrowthAbsorption(String Category, String ValueName, Float Actual)
   If Actual <= 0.0 || PlayerRef == None || UninstallPrepared || UninstallCleanupBusy
     Return
@@ -9931,14 +10026,31 @@ EndFunction
 
 Bool Function SaveTransformEquipment(Int Owner, Bool RequireBusy)
   Form[] Worn
+  Bool Detailed = EnableEquipmentDiagnostics
+  Float Started
+  Float AfterTail
+  Float AfterLedger
+  Float AfterRecovery
+  Float BeforeNative
+  Float AfterNative
+  Float BeforeLegacy
+  Float AfterPrimarySlots
+  Float BeforeWornRead
+  Float AfterWornRead
+  Float BeforePlan
+  Float Finished
+  String Route = "native"
+  String Fallback = "none"
+  Bool HadWornList = False
+  Int SlotReads = 0
+  If Detailed
+    Started = Utility.GetCurrentRealTime()
+  EndIf
   If Owner < 0
     Owner = AppearanceOperationId
     RequireBusy = AppearanceEditBusy
   ElseIf AppearanceEditBusy
     RequireBusy = True
-  EndIf
-  If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
-    Return False
   EndIf
   If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
     Return False
@@ -9952,6 +10064,9 @@ Bool Function SaveTransformEquipment(Int Owner, Bool RequireBusy)
     Debug.Notification("$PSQ_EquipmentRecoveryPending")
     Return False
   EndIf
+  If Detailed
+    AfterTail = Utility.GetCurrentRealTime()
+  EndIf
   Self.CleanupTransformEquipmentLedger(Owner, RequireBusy)
   If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
     Return False
@@ -9959,6 +10074,9 @@ Bool Function SaveTransformEquipment(Int Owner, Bool RequireBusy)
   Self.InitializeTransformEquipmentLedger(Owner, RequireBusy)
   If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
     Return False
+  EndIf
+  If Detailed
+    AfterLedger = Utility.GetCurrentRealTime()
   EndIf
   ; Preserve a prior incomplete exit before taking the next outfit snapshot.
   Form[] PreviousSnapshot = OrgArmorList.ToArray()
@@ -9974,126 +10092,238 @@ Bool Function SaveTransformEquipment(Int Owner, Bool RequireBusy)
   If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
     Return False
   EndIf
-  OrgBoots = None
-  If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
-    Return False
+  If Detailed
+    AfterRecovery = Utility.GetCurrentRealTime()
   EndIf
-  OrgArmor = None
-  If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
-    Return False
-  EndIf
-  OrgGloves = None
-  If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
-    Return False
-  EndIf
-  OrgHorns = None
-  If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
-    Return False
-  EndIf
-  OrgWings = None
-  If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
-    Return False
-  EndIf
-  OrgTail = None
-  If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
-    Return False
-  EndIf
-  OrgSlot52 = None
-  If HenshinBoots
-    If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
-      Return False
+  Form[] Protected
+  Int HelperVersion = SKSE.GetPluginVersion("PSQ Appearance")
+  If HelperVersion >= 16777220
+    Protected = Self.GetTransformProtectedArmor()
+    If Self.CanUseSuccubusThrallEyes()
+      Worn = po3_sksefunctions.AddAllEquippedItemsToArray(PlayerRef)
     EndIf
-    OrgBoots = PlayerRef.GetWornForm(128) as Armor
-  EndIf
-  If HenshinCuirass
-    If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
-      Return False
+    If Detailed
+      BeforeNative = Utility.GetCurrentRealTime()
     EndIf
-    OrgArmor = PlayerRef.GetWornForm(4) as Armor
-  EndIf
-  If HenshinGloves
-    If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
-      Return False
+    Form[] NativeSnapshot = PSQAppearance.ReadOutfitSnapshot(PlayerRef, Worn, Protected, DiscardedTail)
+    If Detailed
+      AfterNative = Utility.GetCurrentRealTime()
     EndIf
-    OrgGloves = PlayerRef.GetWornForm(8) as Armor
-  EndIf
-  If HenshinHorn
-    If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
-      Return False
-    EndIf
-    OrgHorns = PlayerRef.GetWornForm(16384) as Armor
-  EndIf
-  If HenshinWings
-    If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
-      Return False
-    EndIf
-    OrgWings = PlayerRef.GetWornForm(32768) as Armor
-  EndIf
-  Armor CapturedTail = PlayerRef.GetWornForm(1024) as Armor
-  Bool CapturedTemporaryTail = Self.IsPSQTransformTail(CapturedTail)
-  If HenshinTail && !CapturedTemporaryTail
-    If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
-      Return False
-    EndIf
-    OrgTail = CapturedTail
-  EndIf
-  If HenshinPenis || storageutil.GetIntValue(PlayerRef as Form, "PSQ_HasPenis", 0) == 1
-    If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
-      Return False
-    EndIf
-    OrgSlot52 = PlayerRef.GetWornForm(4194304) as Armor
-  EndIf
-  Form[] Protected = Self.GetTransformProtectedArmor()
-  If Self.CanUseSuccubusThrallEyes()
-    If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
-      Return False
-    EndIf
-    Worn = po3_sksefunctions.AddAllEquippedItemsToArray(PlayerRef)
-  EndIf
-  If !Worn || Worn.Length == 0
-    Worn = new Form[32]
-    Int Slot = 0
-    While Slot < 32
-      If Owner != AppearanceOperationId
+    If NativeSnapshot && NativeSnapshot.Length >= 7
+      Armor NativeTail = NativeSnapshot[5] as Armor
+      Bool TemporaryTail = Self.IsPSQTransformTail(NativeTail)
+      Bool Save52 = HenshinPenis || storageutil.GetIntValue(PlayerRef as Form, "PSQ_HasPenis", 0) == 1
+      Form[] Originals = Utility.CreateFormArray(0)
+      If NativeSnapshot.Length > 7
+        Originals = PapyrusUtil.SliceFormArray(NativeSnapshot, 7)
+        If TemporaryTail
+          Originals = PapyrusUtil.RemoveForm(Originals, NativeTail)
+        EndIf
+      EndIf
+      If !Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, TailLoad)
         Return False
       EndIf
-      Worn[Slot] = PlayerRef.GetWornForm(Math.LeftShift(1, Slot))
-      Slot += 1
-    EndWhile
-  EndIf
-  Int Count = 0
-  Int Entry = 0
-  While Entry < Worn.Length
-    Armor Item = Worn[Entry] as Armor
-    If Item != None && Item != DiscardedTail && (!CapturedTemporaryTail || Item != CapturedTail) && Protected.find(Item as Form, 0) < 0 && Worn.find(Item as Form, 0) == Entry
-      Count += 1
+      ; Commit the original slot fields together, before publishing the plan.
+      OrgBoots = None
+      OrgArmor = None
+      OrgGloves = None
+      OrgHorns = None
+      OrgWings = None
+      OrgTail = None
+      OrgSlot52 = None
+      If HenshinBoots
+        OrgBoots = NativeSnapshot[0] as Armor
+      EndIf
+      If HenshinCuirass
+        OrgArmor = NativeSnapshot[1] as Armor
+      EndIf
+      If HenshinGloves
+        OrgGloves = NativeSnapshot[2] as Armor
+      EndIf
+      If HenshinHorn
+        OrgHorns = NativeSnapshot[3] as Armor
+      EndIf
+      If HenshinWings
+        OrgWings = NativeSnapshot[4] as Armor
+      EndIf
+      If HenshinTail && !TemporaryTail
+        OrgTail = NativeTail
+      EndIf
+      If Save52
+        OrgSlot52 = NativeSnapshot[6] as Armor
+      EndIf
+      If Originals.Length > 0
+        OrgArmorList.AddForms(Originals)
+      EndIf
+      If !Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, TailLoad)
+        Return False
+      EndIf
+      If Detailed
+        Debug.Trace("[PSQ-EQUIP] native snapshot; originals=" + Originals.Length + "; seconds=" + (Utility.GetCurrentRealTime() - AfterRecovery))
+      EndIf
     Else
-      Worn[Entry] = None
+      Fallback = "native-returned-no-valid-header"
     EndIf
-    Entry += 1
-  EndWhile
-  If Count > 0
-    ; The native list is often already unique and all armor. Use it
-    ; directly when the preceding filter accepted every entry.
-    Form[] Snapshot = Worn
-    If Count != Worn.Length
-      Snapshot = Utility.CreateFormArray(Count, None)
-      Entry = 0
-      Int Destination = 0
-      While Entry < Worn.Length
-        If Worn[Entry] != None
-          Snapshot[Destination] = Worn[Entry]
-          Destination += 1
-        EndIf
-        Entry += 1
-      EndWhile
+  Else
+    Fallback = "helper-version-unavailable"
+  EndIf
+  If Fallback != "none"
+    If !Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, TailLoad)
+      Return False
     EndIf
+    If Detailed
+      BeforeLegacy = Utility.GetCurrentRealTime()
+    EndIf
+    OrgBoots = None
     If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
       Return False
     EndIf
-    OrgArmorList.AddForms(Snapshot)
+    OrgArmor = None
+    If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
+      Return False
+    EndIf
+    OrgGloves = None
+    If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
+      Return False
+    EndIf
+    OrgHorns = None
+    If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
+      Return False
+    EndIf
+    OrgWings = None
+    If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
+      Return False
+    EndIf
+    OrgTail = None
+    If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
+      Return False
+    EndIf
+    OrgSlot52 = None
+    If HenshinBoots
+      If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
+        Return False
+      EndIf
+      OrgBoots = PlayerRef.GetWornForm(128) as Armor
+    EndIf
+    If HenshinCuirass
+      If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
+        Return False
+      EndIf
+      OrgArmor = PlayerRef.GetWornForm(4) as Armor
+    EndIf
+    If HenshinGloves
+      If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
+        Return False
+      EndIf
+      OrgGloves = PlayerRef.GetWornForm(8) as Armor
+    EndIf
+    If HenshinHorn
+      If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
+        Return False
+      EndIf
+      OrgHorns = PlayerRef.GetWornForm(16384) as Armor
+    EndIf
+    If HenshinWings
+      If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
+        Return False
+      EndIf
+      OrgWings = PlayerRef.GetWornForm(32768) as Armor
+    EndIf
+    Armor CapturedTail = PlayerRef.GetWornForm(1024) as Armor
+    Bool CapturedTemporaryTail = Self.IsPSQTransformTail(CapturedTail)
+    If HenshinTail && !CapturedTemporaryTail
+      If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
+        Return False
+      EndIf
+      OrgTail = CapturedTail
+    EndIf
+    If HenshinPenis || storageutil.GetIntValue(PlayerRef as Form, "PSQ_HasPenis", 0) == 1
+      If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
+        Return False
+      EndIf
+      OrgSlot52 = PlayerRef.GetWornForm(4194304) as Armor
+    EndIf
+    If Detailed
+      AfterPrimarySlots = Utility.GetCurrentRealTime()
+    EndIf
+    Protected = Self.GetTransformProtectedArmor()
+    ; Reuse the enumeration from this snapshot when native slot resolution declined it.
+    If Detailed
+      BeforeWornRead = Utility.GetCurrentRealTime()
+    EndIf
+    HadWornList = Worn && Worn.Length > 0
+    If !HadWornList && Self.CanUseSuccubusThrallEyes()
+      If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
+        Return False
+      EndIf
+      Worn = po3_sksefunctions.AddAllEquippedItemsToArray(PlayerRef)
+    EndIf
+    Route = "extender-list"
+    If !Worn || Worn.Length == 0
+      Route = "papyrus-slot-scan"
+      SlotReads = 32
+      Worn = new Form[32]
+      Int Slot = 0
+      While Slot < 32
+        If Owner != AppearanceOperationId
+          Return False
+        EndIf
+        Worn[Slot] = PlayerRef.GetWornForm(Math.LeftShift(1, Slot))
+        Slot += 1
+      EndWhile
+    EndIf
+    If Detailed
+      AfterWornRead = Utility.GetCurrentRealTime()
+    EndIf
+    Int Count = 0
+    Int Entry = 0
+    While Entry < Worn.Length
+      Armor Item = Worn[Entry] as Armor
+      If Item != None && Item != DiscardedTail && (!CapturedTemporaryTail || Item != CapturedTail) && Protected.find(Item as Form, 0) < 0 && Worn.find(Item as Form, 0) == Entry
+        Count += 1
+      Else
+        Worn[Entry] = None
+      EndIf
+      Entry += 1
+    EndWhile
+    If Count > 0
+      ; The native list is often already unique and all armor. Use it
+      ; directly when the preceding filter accepted every entry.
+      Form[] Snapshot = Worn
+      If Count != Worn.Length
+        Snapshot = Utility.CreateFormArray(Count, None)
+        Entry = 0
+        Int Destination = 0
+        While Entry < Worn.Length
+          If Worn[Entry] != None
+            Snapshot[Destination] = Worn[Entry]
+            Destination += 1
+          EndIf
+          Entry += 1
+        EndWhile
+      EndIf
+      If Owner != AppearanceOperationId || RequireBusy && !AppearanceEditBusy
+        Return False
+      EndIf
+      OrgArmorList.AddForms(Snapshot)
+    EndIf
   EndIf
-  Return Self.BuildEquipmentSwapPlan(OrgArmorList.ToArray(), Protected, Owner, RequireBusy)
+  If Detailed
+    BeforePlan = Utility.GetCurrentRealTime()
+  EndIf
+  Bool Planned = Self.BuildEquipmentSwapPlan(OrgArmorList.ToArray(), Protected, Owner, RequireBusy)
+  If Detailed
+    Finished = Utility.GetCurrentRealTime()
+    Debug.Trace("[PSQ-PERF] entry.snapshot; owner=" + Owner + "; route=" + Route + "; fallback=" + Fallback + "; fullScanSlots=" + SlotReads + "; reusedWornList=" + HadWornList + "; planned=" + Planned)
+    Debug.Trace("[PSQ-PERF] entry.snapshot_times; owner=" + Owner + "; tailAndGuards=" + (AfterTail - Started) + "; ledger=" + (AfterLedger - AfterTail) + "; priorRecovery=" + (AfterRecovery - AfterLedger) + "; readAndRecord=" + (BeforePlan - AfterRecovery) + "; fullPlan=" + (Finished - BeforePlan))
+    If HelperVersion >= 16777220
+      Debug.Trace("[PSQ-PERF] entry.snapshot_native; owner=" + Owner + "; prepare=" + (BeforeNative - AfterRecovery) + "; query=" + (AfterNative - BeforeNative))
+    EndIf
+    If Route != "native"
+      Debug.Trace("[PSQ-PERF] entry.snapshot_fallback; owner=" + Owner + "; primarySlots=" + (AfterPrimarySlots - BeforeLegacy) + "; protection=" + (BeforeWornRead - AfterPrimarySlots) + "; wornRead=" + (AfterWornRead - BeforeWornRead) + "; filterAndSave=" + (BeforePlan - AfterWornRead))
+    EndIf
+  EndIf
+  Return Planned
 EndFunction
 
 Function StripTransformAccessories(Int Owner, Bool RequireBusy)
@@ -10205,6 +10435,14 @@ Function RestoreTransformEquipmentItem(Armor Item, Int Owner, Bool RequireBusy)
 EndFunction
 
 Function RestoreTransformEquipment(Int Owner, Bool RequireBusy)
+  Bool Detailed = EnableEquipmentDiagnostics
+  Float CleanupStart
+  Float Prepared
+  Float AfterSelected
+  Float AfterLedger
+  If Detailed
+    CleanupStart = Utility.GetCurrentRealTime()
+  EndIf
   Self.SyncPlayerAppearanceRace()
   If Owner < 0
     Owner = AppearanceOperationId
@@ -10223,6 +10461,9 @@ Function RestoreTransformEquipment(Int Owner, Bool RequireBusy)
   Float Started
   If EnableEquipmentDiagnostics
     Started = Utility.GetCurrentRealTime()
+  EndIf
+  If Detailed
+    Prepared = Utility.GetCurrentRealTime()
   EndIf
   Form[] Snapshot = OrgArmorList.ToArray()
   Form[] Protected = Self.GetTransformProtectedArmor()
@@ -10353,12 +10594,21 @@ Function RestoreTransformEquipment(Int Owner, Bool RequireBusy)
   If !Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, RecoveryLoad)
     Return
   EndIf
+  If Detailed
+    AfterSelected = Utility.GetCurrentRealTime()
+  EndIf
   Self.CleanupTransformLedgerForLoad(Owner, RequireBusy, RecoveryLoad, LedgerOriginals)
   If !Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, RecoveryLoad)
     Return
   EndIf
+  If Detailed
+    AfterLedger = Utility.GetCurrentRealTime()
+  EndIf
   If EnableEquipmentDiagnostics
     Debug.Trace("[PSQ-PERF] recovery.release; seconds=" + (Utility.GetCurrentRealTime() - Started) as String, 0)
+  EndIf
+  If Detailed
+    Debug.Trace("[PSQ-PERF] recovery.cleanup_times; owner=" + Owner + "; raceTailGuards=" + (Prepared - CleanupStart) + "; buildPlan=" + (Started - Prepared) + "; selectedRelease=" + (AfterSelected - Started) + "; ledgerCleanup=" + (AfterLedger - AfterSelected))
   EndIf
   ; Main equipment is an explicit phase. Its bounded retry must finish
   ; before hidden accessories are revealed or any stripped extra is equipped.
@@ -10413,7 +10663,11 @@ Function RestoreTransformEquipment(Int Owner, Bool RequireBusy)
         SnapshotSkipped[SkippedCount] = item as Form
         SkippedCount += 1
       Else
-        Restored = Self.TryRestoreOriginalForLoad(item, Protected, Owner, RequireBusy, True, RecoveryLoad)
+        If Phase == 0 && EnableEquipmentDiagnostics
+          Restored = Self.TraceMainOriginalRestore(item, Protected, Owner, RequireBusy, RecoveryLoad, 1)
+        Else
+          Restored = Self.TryRestoreOriginalForLoad(item, Protected, Owner, RequireBusy, True, RecoveryLoad)
+        EndIf
         PhaseWornDirty = True
       EndIf
       If !Restored
@@ -10470,7 +10724,12 @@ Function RestoreTransformEquipment(Int Owner, Bool RequireBusy)
       Index = 0
       While Index < RetryCount && Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, RecoveryLoad)
         Armor Original = Retry[Index] as Armor
-        Bool Resolved = Self.TryRestoreOriginalForLoad(Original, Protected, Owner, RequireBusy, True, RecoveryLoad)
+        Bool Resolved
+        If Phase == 0 && EnableEquipmentDiagnostics
+          Resolved = Self.TraceMainOriginalRestore(Original, Protected, Owner, RequireBusy, RecoveryLoad, Pass + 2)
+        Else
+          Resolved = Self.TryRestoreOriginalForLoad(Original, Protected, Owner, RequireBusy, True, RecoveryLoad)
+        EndIf
         If !Resolved
           If !Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, RecoveryLoad)
             Return
@@ -11443,6 +11702,12 @@ Function SyncContinuousAbilitiesCore(Bool Force, Int Owner, Int PoolEpoch)
     Changed = Changed || StableAppliedContinuousRank != Rank || BH != StableAppliedContinuousHealth || BM != StableAppliedContinuousMagicka || BS != StableAppliedContinuousStamina || BC != StableAppliedContinuousCarry || BU != StableAppliedContinuousUnarmed || !PlayerRef.HasSpell(RankAbility as Form) || !PlayerRef.HasPerk(RankPerk)
   ElseIf Mode == 2
     Changed = Changed || StableAppliedContinuousRank != Rank
+  EndIf
+  If ReviewContinuousCarry && Mode == 1 && PlayerRef.Is3DLoaded() && !PlayerRef.IsDead() && !Utility.IsInMenuMode()
+    ReviewContinuousCarry = False
+    If !Changed
+      Changed = Self.NeedsCarryEffectRepair(RankAbility, BC * Rank * 0.1)
+    EndIf
   EndIf
   If !Changed
     Self.RestoreContinuousRuntimeRecords(Mode, Rank, BH, BM, BS, BC, BU, Owner, PoolEpoch)
@@ -12661,7 +12926,17 @@ Function CleanupTransformEquipmentLedger(Int Owner, Bool RequireBusy)
   ElseIf AppearanceEditBusy
     RequireBusy = True
   EndIf
-  Self.CleanupTransformLedgerForLoad(Owner, RequireBusy, PSQLoadEpoch, None)
+  If !TransformInventoryLedgerReady
+    Return
+  EndIf
+  Int RecoveryLoad = PSQLoadEpoch
+  Form[] Originals = OrgArmorList.ToArray()
+  If !Originals
+    ; SKSE returns None for an empty FormList. An allocated list with one
+    ; unused slot cannot match any of the non-None armor queried by cleanup.
+    Originals = new Form[1]
+  EndIf
+  Self.CleanupTransformLedgerForLoad(Owner, RequireBusy, RecoveryLoad, Originals)
 EndFunction
 
 Function CleanupTransformLedgerForLoad(Int Owner, Bool RequireBusy, Int RecoveryLoad, Form[] Originals)
@@ -12671,6 +12946,8 @@ Function CleanupTransformLedgerForLoad(Int Owner, Bool RequireBusy, Int Recovery
   If !TransformInventoryLedgerReady
     Return
   EndIf
+  Float BeforeItems
+  Float AfterItems
   Float Started
   If EnableEquipmentDiagnostics
     Started = Utility.GetCurrentRealTime()
@@ -12686,6 +12963,9 @@ Function CleanupTransformLedgerForLoad(Int Owner, Bool RequireBusy, Int Recovery
     EndIf
     Protected = Self.GetTransformProtectedArmor()
   EndIf
+  If EnableEquipmentDiagnostics
+    BeforeItems = Utility.GetCurrentRealTime()
+  EndIf
   Int Index = 0
   While Index < Used
     If RecoveryLoad != PSQLoadEpoch || Owner != AppearanceOperationId || (RequireBusy && !AppearanceEditBusy)
@@ -12699,6 +12979,9 @@ Function CleanupTransformLedgerForLoad(Int Owner, Bool RequireBusy, Int Recovery
   EndWhile
   If !Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, RecoveryLoad)
     Return
+  EndIf
+  If EnableEquipmentDiagnostics
+    AfterItems = Utility.GetCurrentRealTime()
   EndIf
   TransformInventoryLedgerReady = False
   If Owner != AppearanceOperationId || RecoveryLoad != PSQLoadEpoch || (RequireBusy && !AppearanceEditBusy)
@@ -12714,7 +12997,9 @@ Function CleanupTransformLedgerForLoad(Int Owner, Bool RequireBusy, Int Recovery
   EndIf
   TransformInventoryAdded = EmptyIntArray
   If EnableEquipmentDiagnostics
-    Debug.Trace(("[PSQ-PERF] recovery.ledger; entries=" + Used as String) + "; seconds=" + (Utility.GetCurrentRealTime() - Started) as String, 0)
+    Float Ended = Utility.GetCurrentRealTime()
+    Debug.Trace("[PSQ-PERF] recovery.ledger_times; owner=" + Owner + "; prepare=" + (BeforeItems - Started) + "; releaseItems=" + (AfterItems - BeforeItems) + "; clearRecords=" + (Ended - AfterItems))
+    Debug.Trace(("[PSQ-PERF] recovery.ledger; entries=" + Used as String) + "; seconds=" + (Ended - Started) as String, 0)
   EndIf
 EndFunction
 
@@ -13488,6 +13773,10 @@ Function PublishEnergySenseConfig()
 EndFunction
 
 Function EquipSelectedTransformParts(Int Owner, Bool RequireBusy)
+  Self.EquipTransformPartsPhase(Owner, RequireBusy, False, 0.0)
+EndFunction
+
+Function EquipTransformPartsPhase(Int Owner, Bool RequireBusy, Bool MainOnly, Float EntryStarted)
   Int EntryLoad = PSQLoadEpoch
   Self.SyncPlayerAppearanceRace()
   If Owner < 0
@@ -13505,6 +13794,13 @@ Function EquipSelectedTransformParts(Int Owner, Bool RequireBusy)
     EndIf
   EndIf
   Form[] Parts = storageutil.FormListToArray(Self, "PSQ_EquipPlanParts")
+  ; The planner ABI puts feet before torso. Reorder this private copy only.
+  Armor Chest = PSQSuccubusCuirass
+  Armor Boots = PSQSuccubusBoots
+  If Parts.Length >= 2 && Parts[0] == Boots && Parts[1] == Chest
+    Parts[0] = Chest
+    Parts[1] = Boots
+  EndIf
   ; Recheck dynamic native attachments once: slot 52/53 may change during body switching.
   Form[] Protected = Self.GetTransformProtectedArmor()
   Self.InitializeTransformEquipmentLedger(Owner, RequireBusy)
@@ -13512,7 +13808,9 @@ Function EquipSelectedTransformParts(Int Owner, Bool RequireBusy)
   ; owner and current body on every item; a skin switch can change the body
   ; family even when the race stays the same. Unknown results use the complete
   ; single-item resolver below, which also handles older appearance plugins.
-  Bool NativePlan = SKSE.GetPluginVersion("PSQ Appearance") >= 16777219
+  Int ApiVersion = SKSE.GetPluginVersion("PSQ Appearance")
+  Bool NativePlan = ApiVersion >= 16777219
+  Bool TraceEvents = EnableEquipmentDiagnostics && ApiVersion >= 16777221
   Race PlanRace
   Int PlanBody = -1
   If NativePlan
@@ -13526,7 +13824,8 @@ Function EquipSelectedTransformParts(Int Owner, Bool RequireBusy)
       Return
     EndIf
     Armor Item = Parts[i] as Armor
-    If Item != None && Protected.find(Item, 0) < 0
+    Bool Primary = (Item == Chest && HenshinCuirass) || (Item == Boots && HenshinBoots)
+    If Item != None && (!MainOnly || Primary) && Protected.find(Item, 0) < 0
       Float Started = 0.0
       If EnableEquipmentDiagnostics
         Started = Utility.GetCurrentRealTime()
@@ -13538,17 +13837,41 @@ Function EquipSelectedTransformParts(Int Owner, Bool RequireBusy)
       If EntryLoad != PSQLoadEpoch || Owner != AppearanceOperationId || (RequireBusy && !AppearanceEditBusy)
         Return
       EndIf
+      If MainOnly && !SamePlan && !Self.IsEquipmentSwapPlanCurrent(Owner, RequireBusy)
+        Return
+      EndIf
+      If TraceEvents && MainOnly
+        Int SlotIndex = 1
+        If Item == Chest && HenshinCuirass
+          SlotIndex = 0
+        EndIf
+        PSQAppearance.WatchPrimaryEquip(Owner, EntryLoad, SlotIndex, Item, Utility.GetCurrentRealTime() - EntryStarted)
+      EndIf
       If SamePlan
         Self.EquipResolvedPlanItem(Item, Owner, RequireBusy, EntryLoad)
       Else
         Self.EnsurePlannedTransformEquipment(Item, Owner, RequireBusy)
       EndIf
       If EnableEquipmentDiagnostics
+        If MainOnly
+          String Slot = "boots"
+          If Item == Chest && HenshinCuirass
+            Slot = "cuirass"
+          EndIf
+          Bool Worn = PlayerRef.IsEquipped(Item)
+          Debug.Trace("[PSQ-PERF] enter.first_equip; slot=" + Slot + "; item=" + Item + "; equipped=" + Worn + "; sinceEntry=" + (Utility.GetCurrentRealTime() - EntryStarted))
+        EndIf
         Debug.Trace("[PSQ-EQUIP] transform; item=" + Item + "; seconds=" + (Utility.GetCurrentRealTime() - Started))
       EndIf
     EndIf
     i += 1
   EndWhile
+  If TraceEvents && !MainOnly && EntryLoad == PSQLoadEpoch && Owner == AppearanceOperationId
+    Float[] Times = PSQAppearance.TakePrimaryEquipTimes(Owner, EntryLoad)
+    If Times && Times.Length == 2
+      Debug.Trace("[PSQ-PERF] enter.equip_events; owner=" + Owner + "; cuirassSinceEntry=" + Times[0] + "; bootsSinceEntry=" + Times[1] + "; -1=no matching event observed")
+    EndIf
+  EndIf
 EndFunction
 
 Int Function GetTransformBlockingSlotMask(Form[] Originals, Form[] Protected, Armor[] Selected, Int Owner, Bool RequireBusy)
@@ -13612,8 +13935,30 @@ Function RefillTransformAttributes(Int Owner, Bool RequireBusy)
       If Prepared && Self.IsStatPoolEditCurrent(PoolEpoch, Owner) && Self.IsEntryRefillCurrent(Owner, RequireBusy)
         Ready = Self.AreEntryStatEffectsReady()
         If Ready
-          Caps = Self.CaptureTransformPoolCaps()
-          Self.RefillTransformAttributesCore(Owner, RequireBusy, PoolEpoch)
+          ; Synchronization above can change caps. Compare its result with
+          ; the verified early sample before doing any further restores.
+          If Attempt == 0 && TransformPoolsPrimedOwner == Owner && PrimedTransformPoolLoad == PSQLoadEpoch && PrimedTransformPoolValues
+            Float[] FinalValues = Self.CaptureTransformPoolValues()
+            If Self.SameEntryPoolValues(PrimedTransformPoolValues, FinalValues) && Self.AreSampledPoolsFull(FinalValues) && Self.IsEntryRefillCurrent(Owner, RequireBusy) && Self.IsStatPoolEditCurrent(PoolEpoch, Owner)
+              TransformAttributesRefilledOwner = Owner
+              Self.EndStatPoolEdit(PoolEpoch)
+              If TransformRefillBusyOwner == Owner
+                TransformRefillBusyOwner = -1
+              EndIf
+              If EnableEquipmentDiagnostics
+                Debug.Trace("[PSQ-REFILL] unchanged; owner=" + Owner + "; full refill skipped")
+              EndIf
+              Self.TraceSampledPools("final", Owner, FinalValues)
+              Return
+            EndIf
+          EndIf
+          Float[] Before = Self.RefillAndSampleTransformPools(Owner, RequireBusy, PoolEpoch)
+          If Before && Before.Length == 6
+            Caps = new Float[3]
+            Caps[0] = Before[3]
+            Caps[1] = Before[4]
+            Caps[2] = Before[5]
+          EndIf
         EndIf
       EndIf
       Self.EndStatPoolEdit(PoolEpoch)
@@ -13622,7 +13967,12 @@ Function RefillTransformAttributes(Int Owner, Bool RequireBusy)
     If Ready && Self.IsEntryRefillCurrent(Owner, RequireBusy)
       PoolEpoch = Self.BeginStatPoolEdit(Owner, True)
       If PoolEpoch >= 0
-        Bool Complete = Self.AreEntryStatEffectsReady() && Self.TransformPoolCapsMatch(Caps) && Self.AreTransformPoolsFull()
+        Bool EffectsReady = Self.AreEntryStatEffectsReady()
+        Float[] Observed
+        If EffectsReady
+          Observed = Self.CaptureTransformPoolValues()
+        EndIf
+        Bool Complete = EffectsReady && Self.SampledCapsMatch(Caps, Observed) && Self.AreSampledPoolsFull(Observed)
         If Complete && Self.IsStatPoolEditCurrent(PoolEpoch, Owner) && Self.IsEntryRefillCurrent(Owner, RequireBusy)
           TransformAttributesRefilledOwner = Owner
           Self.EndStatPoolEdit(PoolEpoch)
@@ -13630,7 +13980,7 @@ Function RefillTransformAttributes(Int Owner, Bool RequireBusy)
             TransformRefillBusyOwner = -1
           EndIf
           Debug.Trace("[PSQ-REFILL] verified owner=" + Owner + "; attempts=" + (Attempt + 1), 0)
-          Self.TraceTransformPools("final", Owner)
+          Self.TraceSampledPools("final", Owner, Observed)
           Return
         EndIf
         Self.EndStatPoolEdit(PoolEpoch)
@@ -13649,8 +13999,12 @@ Function RefillTransformAttributes(Int Owner, Bool RequireBusy)
 EndFunction
 
 Function RefillTransformAttributesCore(Int Owner, Bool RequireBusy, Int PoolEpoch)
+  Self.RefillAndSampleTransformPools(Owner, RequireBusy, PoolEpoch)
+EndFunction
+
+Float[] Function RefillAndSampleTransformPools(Int Owner, Bool RequireBusy, Int PoolEpoch)
   If !Self.IsStatPoolEditCurrent(PoolEpoch, Owner) || !Self.IsEntryRefillCurrent(Owner, RequireBusy) || TransformAttributesRefilledOwner == Owner || Self.GetTransformBuffMode() == 0 || !PlayerRef.HasSpell(SuccubusHenshinBonusSpell as Form)
-    Return
+    Return None
   EndIf
   Float[] Values = Self.CaptureTransformPoolValues()
   Float HMax = Values[3]
@@ -13663,23 +14017,24 @@ Function RefillTransformAttributesCore(Int Owner, Bool RequireBusy, Int PoolEpoc
   MMax = Self.GetPoolRestoreMaximum("Magicka", M, MMax)
   SMax = Self.GetPoolRestoreMaximum("Stamina", S, SMax)
   If !Self.IsStatPoolEditCurrent(PoolEpoch, Owner) || !Self.IsEntryRefillCurrent(Owner, RequireBusy)
-    Return
+    Return None
   EndIf
   If HMax > H && H > 0.0
     PlayerRef.RestoreAV("Health", HMax - H)
   EndIf
   If !Self.IsStatPoolEditCurrent(PoolEpoch, Owner)
-    Return
+    Return None
   EndIf
   If MMax > M
     PlayerRef.RestoreAV("Magicka", MMax - M)
   EndIf
   If !Self.IsStatPoolEditCurrent(PoolEpoch, Owner)
-    Return
+    Return None
   EndIf
   If SMax > S
     PlayerRef.RestoreAV("Stamina", SMax - S)
   EndIf
+  Return Values
 EndFunction
 
 Int Function BeginStatPoolEdit(Int Owner, Bool AllowAppearance)
@@ -13705,6 +14060,8 @@ Function EndStatPoolEdit(Int PoolEpoch)
 EndFunction
 
 Function ResetStatPoolEditsOnLoad()
+  PrimedTransformPoolValues = None
+  PrimedTransformPoolLoad = -1
   Self.CancelDeferredTransformRefill()
   TransformRefillBusyOwner = -1
   Bool Interrupted = StatPoolEditBusy || SatiationRefreshBusy || ContinuousSyncBusy
@@ -13753,12 +14110,15 @@ Function BufferTransformEntryHealth(Int Owner)
     If PoolEpoch >= 0
       Self.RefillTransformAttributesCore(Owner, True, PoolEpoch)
       Bool Ready = Self.AreStatPoolEffectsReady(SuccubusHenshinBonusSpell)
-      Bool Full = Self.AreTransformPoolsFull()
+      Float[] Observed = Self.CaptureTransformPoolValues()
+      Bool Full = Self.AreSampledPoolsFull(Observed)
       Bool Current = Self.IsStatPoolEditCurrent(PoolEpoch, Owner) && Self.IsEntryRefillCurrent(Owner, True)
       Self.EndStatPoolEdit(PoolEpoch)
       If Current && Ready && Full
+        PrimedTransformPoolValues = Observed
+        PrimedTransformPoolLoad = TransformEntryLoadEpoch
         TransformPoolsPrimedOwner = Owner
-        Self.TraceTransformPools("early", Owner)
+        Self.TraceSampledPools("early", Owner, Observed)
         Return
       EndIf
     EndIf
@@ -14468,7 +14828,13 @@ Bool Function TransformPoolCapsMatch(Float[] Caps)
   If !Caps || Caps.Length != 3 || PlayerRef == None
     Return False
   EndIf
-  Float[] Values = Self.CaptureTransformPoolValues()
+  Return Self.SampledCapsMatch(Caps, Self.CaptureTransformPoolValues())
+EndFunction
+
+Bool Function SampledCapsMatch(Float[] Caps, Float[] Values)
+  If !Caps || Caps.Length != 3 || !Values || Values.Length != 6
+    Return False
+  EndIf
   Return Math.Abs(Values[3] - Caps[0]) < 0.01 && Math.Abs(Values[4] - Caps[1]) < 0.01 && Math.Abs(Values[5] - Caps[2]) < 0.01
 EndFunction
 
@@ -14477,7 +14843,13 @@ Bool Function AreTransformPoolsFull()
   If PlayerRef == None || PlayerRef.IsDead()
     Return False
   EndIf
-  Float[] Values = Self.CaptureTransformPoolValues()
+  Return Self.AreSampledPoolsFull(Self.CaptureTransformPoolValues())
+EndFunction
+
+Bool Function AreSampledPoolsFull(Float[] Values)
+  If !Values || Values.Length != 6 || PlayerRef == None || PlayerRef.IsDead()
+    Return False
+  EndIf
   Float H = Values[0]
   Float M = Values[1]
   Float S = Values[2]
@@ -14502,7 +14874,14 @@ Function TraceTransformPools(String Phase, Int Owner)
   If !EnableEquipmentDiagnostics
     Return
   EndIf
-  Debug.Trace("[PSQ-POOLS] " + Phase + "; owner=" + Owner + "; H=" + PlayerRef.GetAV("Health") + "/" + PlayerRef.GetAVMax("Health") + "; M=" + PlayerRef.GetAV("Magicka") + "/" + PlayerRef.GetAVMax("Magicka") + "; S=" + PlayerRef.GetAV("Stamina") + "/" + PlayerRef.GetAVMax("Stamina"), 0)
+  Self.TraceSampledPools(Phase, Owner, Self.CaptureTransformPoolValues())
+EndFunction
+
+Function TraceSampledPools(String Phase, Int Owner, Float[] Values)
+  If !EnableEquipmentDiagnostics || !Values || Values.Length != 6
+    Return
+  EndIf
+  Debug.Trace("[PSQ-POOLS] " + Phase + "; owner=" + Owner + "; H=" + Values[0] + "/" + Values[3] + "; M=" + Values[1] + "/" + Values[4] + "; S=" + Values[2] + "/" + Values[5], 0)
 EndFunction
 
 
@@ -17114,13 +17493,14 @@ Bool Function BuildEquipmentSwapPlan(Form[] Originals, Form[] Protected, Int Own
   If !Self.IsAppearanceOperationCurrent(Owner, RequireBusy)
     Return False
   EndIf
+  Int PlanEpoch = PSQLoadEpoch
   Armor DXCuirass = Self.ResolveTransformEquipmentItem(PSQSuccubusCuirass, 0)
   Armor DXBoots = Self.ResolveTransformEquipmentItem(PSQSuccubusBoots, 1)
   Armor DXGloves = Self.ResolveTransformEquipmentItem(PSQSuccubusGauntlets, 2)
   Armor DXHorns = Self.ResolveTransformEquipmentItem(PSQSuccubusHorns, 3)
   Armor DXTail = Self.ResolveTransformEquipmentItem(PSQSuccubusTail, 4)
   Armor DXWings = Self.ResolveTransformEquipmentItem(PSQSuccubusWings, 5)
-  If !Self.IsAppearanceOperationCurrent(Owner, RequireBusy)
+  If PlanEpoch != PSQLoadEpoch || !Self.IsAppearanceOperationCurrent(Owner, RequireBusy)
     Return False
   EndIf
   PSQSuccubusCuirass = DXCuirass
@@ -17144,57 +17524,79 @@ Bool Function BuildEquipmentSwapPlan(Form[] Originals, Form[] Protected, Int Own
   Enabled[3] = HenshinHorn && Parts[3] != None
   Enabled[4] = HenshinWings && Parts[4] != None
   Enabled[5] = HenshinTail && Parts[5] != None
-  Form[] Selected = new Form[6]
-  Int Count = 0
-  Int RawMask = 0
-  Int i = 0
-  While i < 6
-    Armor Item = Parts[i]
-    If Enabled[i] && Item != None && Selected.find(Item, 0) < 0 && Protected.find(Item, 0) < 0
-      Selected[Count] = Item
-      Count += 1
-      RawMask = Math.LogicalOr(RawMask, Item.GetSlotMask())
-    EndIf
-    i += 1
-  EndWhile
-  Int ConflictMask = Math.LogicalAnd(RawMask, 2142189872)
   Bool ReplaceCuirass = Enabled[1]
   Bool ReplaceHeadgear = ReplaceCuirass || Enabled[3] || (HenshinHair && !psqracecompatibility.ShouldPreserveHeadAppearance(PlayerRef))
   Bool HideAccessories = Self.GetOriginalEquipmentHideEnabled() && Self.HasPSQAppearanceAPI()
-  Form[] Strip = Utility.CreateFormArray(Originals.Length, None)
   Bool CountAutomatic = EnableEquipmentDiagnostics
+  Int Count = 0
+  Int i = 0
   Int StripCount = 0
   Int Automatic = 0
-  i = 0
-  While i < Originals.Length
-    Armor Item = Originals[i] as Armor
-    If Item != None && Originals.find(Item, 0) == i && Selected.find(Item, 0) < 0 && Protected.find(Item, 0) < 0
-      Int Mask = Item.GetSlotMask()
-      ; With hidden accessories, only head/body/hands/feet can enter the
-      ; manual strip list. Other slots stay equipped or displace naturally.
-      ; Diagnostics still classify them to report automatic conflicts.
-      If !HideAccessories || CountAutomatic || Math.LogicalAnd(Mask, 6287) != 0
-        Bool HeadMustStrip = ReplaceHeadgear && Math.LogicalAnd(Mask, 6147) != 0
-        Bool NeedsStrip = HeadMustStrip || Math.LogicalAnd(Mask, ConflictMask) != 0
-        If !NeedsStrip && ReplaceCuirass && Math.LogicalAnd(Mask, 2142222640) != 0
-          Int Kind = Item.GetWeightClass()
-          NeedsStrip = Kind == 0 || Kind == 1
-        EndIf
-        If NeedsStrip
-          If !HeadMustStrip && Math.LogicalAnd(Mask, RawMask) != 0
-            ; The selected armor displaces this exact slot conflict itself.
-            Automatic += 1
-          ElseIf !HideAccessories || Math.LogicalAnd(Mask, 6287) != 0
-            ; Hidden accessories remain worn: do not revisit them in the strip pass.
-            Strip[StripCount] = Item
-            StripCount += 1
+  Form[] Selected
+  Form[] Strip
+  Int[] Difference
+  Float DifferenceStart
+  If CountAutomatic
+    DifferenceStart = Utility.GetCurrentRealTime()
+  EndIf
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777220
+    Difference = PSQAppearance.PlanOutfitDifference(Parts, Enabled, Originals, Protected, ReplaceHeadgear, HideAccessories, CountAutomatic)
+  EndIf
+  Bool NativePlan = Difference && Difference.Length >= 3
+  If NativePlan
+    Count = Difference[0]
+    StripCount = Difference[1]
+    Automatic = Difference[2]
+    NativePlan = Count >= 0 && Count <= 6 && StripCount >= 0 && StripCount <= Originals.Length && Difference.Length == 3 + Count + StripCount
+  EndIf
+  If !NativePlan
+    Count = 0
+    StripCount = 0
+    Automatic = 0
+    Selected = new Form[6]
+    Strip = Utility.CreateFormArray(Originals.Length, None)
+    Int RawMask = 0
+    While i < 6
+      Armor Item = Parts[i]
+      If Enabled[i] && Item != None && Selected.find(Item, 0) < 0 && Protected.find(Item, 0) < 0
+        Selected[Count] = Item
+        Count += 1
+        RawMask = Math.LogicalOr(RawMask, Item.GetSlotMask())
+      EndIf
+      i += 1
+    EndWhile
+    Int ConflictMask = Math.LogicalAnd(RawMask, 2142189872)
+    i = 0
+    While i < Originals.Length
+      Armor Item = Originals[i] as Armor
+      If Item != None && Originals.find(Item, 0) == i && Selected.find(Item, 0) < 0 && Protected.find(Item, 0) < 0
+        Int Mask = Item.GetSlotMask()
+        ; With hidden accessories, only head/body/hands/feet can enter the
+        ; manual strip list. Other slots stay equipped or displace naturally.
+        ; Diagnostics still classify them to report automatic conflicts.
+        If !HideAccessories || CountAutomatic || Math.LogicalAnd(Mask, 6287) != 0
+          Bool HeadMustStrip = ReplaceHeadgear && Math.LogicalAnd(Mask, 6147) != 0
+          Bool NeedsStrip = HeadMustStrip || Math.LogicalAnd(Mask, ConflictMask) != 0
+          If !NeedsStrip && ReplaceCuirass && Math.LogicalAnd(Mask, 2142222640) != 0
+            Int Kind = Item.GetWeightClass()
+            NeedsStrip = Kind == 0 || Kind == 1
+          EndIf
+          If NeedsStrip
+            If !HeadMustStrip && Math.LogicalAnd(Mask, RawMask) != 0
+              ; The selected armor displaces this exact slot conflict itself.
+              Automatic += 1
+            ElseIf !HideAccessories || Math.LogicalAnd(Mask, 6287) != 0
+              ; Hidden accessories remain worn: do not revisit them in the strip pass.
+              Strip[StripCount] = Item
+              StripCount += 1
+            EndIf
           EndIf
         EndIf
       EndIf
-    EndIf
-    i += 1
-  EndWhile
-  If !Self.IsAppearanceOperationCurrent(Owner, RequireBusy)
+      i += 1
+    EndWhile
+  EndIf
+  If PlanEpoch != PSQLoadEpoch || !Self.IsAppearanceOperationCurrent(Owner, RequireBusy)
     Return False
   EndIf
   ; Publish only complete plans. The authoritative original-item ledger stays intact.
@@ -17203,7 +17605,11 @@ Bool Function BuildEquipmentSwapPlan(Form[] Originals, Form[] Protected, Int Own
     Form[] Compact = Utility.CreateFormArray(Count, None)
     i = 0
     While i < Count
-      Compact[i] = Selected[i]
+      If NativePlan
+        Compact[i] = Parts[Difference[3 + i]]
+      Else
+        Compact[i] = Selected[i]
+      EndIf
       i += 1
     EndWhile
     If !storageutil.FormListCopy(Self, "PSQ_EquipPlanParts", Compact)
@@ -17214,7 +17620,11 @@ Bool Function BuildEquipmentSwapPlan(Form[] Originals, Form[] Protected, Int Own
     Form[] CompactStrip = Utility.CreateFormArray(StripCount, None)
     i = 0
     While i < StripCount
-      CompactStrip[i] = Strip[i]
+      If NativePlan
+        CompactStrip[i] = Originals[Difference[3 + Count + i]]
+      Else
+        CompactStrip[i] = Strip[i]
+      EndIf
       i += 1
     EndWhile
     If !storageutil.FormListCopy(Self, "PSQ_EquipPlanStrip", CompactStrip)
@@ -17222,7 +17632,7 @@ Bool Function BuildEquipmentSwapPlan(Form[] Originals, Form[] Protected, Int Own
       Return False
     EndIf
   EndIf
-  If !Self.IsAppearanceOperationCurrent(Owner, RequireBusy)
+  If PlanEpoch != PSQLoadEpoch || !Self.IsAppearanceOperationCurrent(Owner, RequireBusy)
     Self.ClearEquipmentSwapPlan()
     Return False
   EndIf
@@ -17232,7 +17642,7 @@ Bool Function BuildEquipmentSwapPlan(Form[] Originals, Form[] Protected, Int Own
   storageutil.SetIntValue(Self, "PSQ_EquipPlanUBE", psqracecompatibility.IsUBEActor(PlayerRef) as Int)
   storageutil.SetIntValue(Self, "PSQ_EquipPlanOwner", Owner)
   If CountAutomatic
-    Debug.Trace("[PSQ-EQUIP] plan; originals=" + Originals.Length + "; manualStrip=" + StripCount + "; automaticConflicts=" + Automatic + "; selected=" + Count)
+    Debug.Trace("[PSQ-EQUIP] plan; originals=" + Originals.Length + "; manualStrip=" + StripCount + "; automaticConflicts=" + Automatic + "; selected=" + Count + "; nativePlan=" + NativePlan + "; planAndPublishSeconds=" + (Utility.GetCurrentRealTime() - DifferenceStart))
   EndIf
   Return True
 EndFunction
@@ -17530,8 +17940,26 @@ Function EquipResolvedPlanItem(Armor Item, Int Owner, Bool RequireBusy, Int Entr
   If !TransformInventoryLedgerReady
     Self.InitializeTransformEquipmentLedger(Owner, RequireBusy)
   EndIf
-  Int ExistingCount = PlayerRef.GetItemCount(Item as Form)
   Int Index = TransformInventoryItems.find(Item as Form, 0)
+  Int[] ArmorStatus
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777221
+    ArmorStatus = PSQAppearance.ReadArmorState(PlayerRef, Item)
+  EndIf
+  Bool Batched = ArmorStatus && ArmorStatus.Length == 2
+  Bool Worn = False
+  Int ExistingCount
+  If Batched
+    ExistingCount = ArmorStatus[0]
+    Worn = ArmorStatus[1] == 1
+  Else
+    Worn = PlayerRef.IsEquipped(Item as Form)
+  EndIf
+  If Index >= 0 && Worn
+    Return
+  EndIf
+  If !Batched
+    ExistingCount = PlayerRef.GetItemCount(Item as Form)
+  EndIf
   If Index < 0
     Index = TransformInventoryItems.find(None, 0)
     If Index < 0
@@ -17549,7 +17977,7 @@ Function EquipResolvedPlanItem(Armor Item, Int Owner, Bool RequireBusy, Int Entr
     EndIf
     TransformInventoryBaseline[Index] = ExistingCount
   EndIf
-  If PlayerRef.IsEquipped(Item as Form)
+  If Worn
     Return
   EndIf
   If ExistingCount == 0
@@ -17649,6 +18077,10 @@ Function ReleaseLedgerItemForLoad(Armor Item, Int Index, Int Owner, Bool Require
 EndFunction
 
 Bool Function TryRestoreOriginalForLoad(Armor Item, Form[] Protected, Int Owner, Bool RequireBusy, Bool CheckSlots, Int LoadEpoch)
+  Return Self.RestoreOriginalItemCore(Item, Protected, Owner, RequireBusy, CheckSlots, LoadEpoch, None)
+EndFunction
+
+Bool Function RestoreOriginalItemCore(Armor Item, Form[] Protected, Int Owner, Bool RequireBusy, Bool CheckSlots, Int LoadEpoch, Float[] Timing)
   If LoadEpoch != PSQLoadEpoch || Owner != AppearanceOperationId || (RequireBusy && !AppearanceEditBusy)
     Return False
   EndIf
@@ -17692,15 +18124,23 @@ Bool Function TryRestoreOriginalForLoad(Armor Item, Form[] Protected, Int Owner,
     Return False
   EndIf
   Float Started = 0.0
-  If EnableEquipmentDiagnostics
+  If Timing || EnableEquipmentDiagnostics
     Started = Utility.GetCurrentRealTime()
   EndIf
+  If Timing
+    Timing[0] = Started
+  EndIf
   PlayerRef.EquipItemEx(Item as Form, 0, False, True)
+  If Timing
+    Timing[1] = Utility.GetCurrentRealTime()
+  EndIf
   If !Self.IsEquipmentRecoveryCurrent(Owner, RequireBusy, LoadEpoch)
     Return False
   EndIf
   Bool Equipped = PlayerRef.IsEquipped(Item as Form)
-  If EnableEquipmentDiagnostics
+  If Timing
+    Timing[2] = Utility.GetCurrentRealTime()
+  ElseIf EnableEquipmentDiagnostics
     Debug.Trace((("[PSQ-EQUIP] swap-original; item=" + Item as String) + "; equipped=" + Equipped as String) + "; seconds=" + (Utility.GetCurrentRealTime() - Started) as String, 0)
   EndIf
   ; If a foreign callback removed the item during equip, it is no longer
@@ -17943,4 +18383,247 @@ Function SyncSatiationSkillPerks(Int Tier)
   ElseIf Tier == 2 && !PlayerRef.HasPerk(Full)
     PlayerRef.AddPerk(Full)
   EndIf
+EndFunction
+
+Int Function BeginStrongBodyMenu()
+  If UninstallPrepared || UninstallCleanupBusy || !PlayerRef || PlayerIsSuccubus.GetValueInt() != 1
+    Return -1
+  EndIf
+  Float Now = Utility.GetCurrentRealTime()
+  If StrongBodyMenuTicket > 0 && StrongBodyMenuLoad == PSQLoadEpoch
+    ; Reclaim an abandoned effect after its menu closes. Time in a visible menu is unlimited.
+    If UI.IsMenuOpen("CustomMenu") || (Now >= StrongBodyMenuLastUse && Now - StrongBodyMenuLastUse < 30.0)
+      Return -1
+    EndIf
+  EndIf
+  StrongBodyMenuTicket += 1
+  If StrongBodyMenuTicket <= 0
+    StrongBodyMenuTicket = 1
+  EndIf
+  StrongBodyMenuLoad = PSQLoadEpoch
+  StrongBodyMenuLastUse = Now
+  Return StrongBodyMenuTicket
+EndFunction
+
+Bool Function IsStrongBodyMenuCurrent(Int Ticket)
+  If Ticket <= 0 || Ticket != StrongBodyMenuTicket || StrongBodyMenuLoad != PSQLoadEpoch || UninstallPrepared || UninstallCleanupBusy || PlayerIsSuccubus.GetValueInt() != 1
+    Return False
+  EndIf
+  StrongBodyMenuLastUse = Utility.GetCurrentRealTime()
+  Return True
+EndFunction
+
+Function EndStrongBodyMenu(Int Ticket)
+  If Ticket == StrongBodyMenuTicket && StrongBodyMenuLoad == PSQLoadEpoch
+    StrongBodyMenuLoad = -1
+  EndIf
+EndFunction
+
+Int Function GetStrongBodyLegacyCarry()
+  If !StrongCarryInitialized && PlayerRef
+    Int Points = StorageUtil.GetIntValue(PlayerRef, "PSQ_Growth_StrongBody_CarryWeight", 0)
+    If !StrongCarryInitialized
+      If Points < 0
+        Points = 0
+      EndIf
+      StrongCarryLegacyTotal = Points
+      StrongCarryLegacyRetained = -1
+      StrongCarryInitialized = True
+    EndIf
+  EndIf
+  Return StrongCarryLegacyTotal
+EndFunction
+
+Int Function GetStrongBodyLegacyRetained()
+  Return StrongCarryLegacyRetained
+EndFunction
+
+Function SetStrongBodyLegacyRetained(Int Retained, Int Ticket)
+  Int Legacy = Self.GetStrongBodyLegacyCarry()
+  If Legacy <= 0 || Retained < 0 || Retained > Legacy || !Self.IsStrongBodyMenuCurrent(Ticket)
+    Return
+  EndIf
+  StrongCarryLegacyRetained = Retained
+  Self.QueueStrongBodyCarrySync()
+  Self.SyncStrongBodyCarry()
+EndFunction
+
+Function QueueStrongBodyCarrySync()
+  StrongCarryRevision += 1
+  StrongCarryPending = True
+EndFunction
+
+Function SyncStrongBodyCarry()
+  If !StrongCarryPending || StrongCarryBusy || !PlayerRef || UninstallPrepared || UninstallCleanupBusy
+    Return
+  EndIf
+  If !PlayerRef.Is3DLoaded() || PlayerRef.IsDead() || Utility.IsInMenuMode()
+    Return
+  EndIf
+  StrongCarryBusy = True
+  Int Load = PSQLoadEpoch
+  Int Revision = StrongCarryRevision
+  Int Old = StrongCarryApplied
+  Int Legacy = Self.GetStrongBodyLegacyCarry()
+  Int Retained = StrongCarryLegacyRetained
+  If Retained < 0
+    Retained = Legacy ; Unconfirmed points may already be in the actor's base.
+  EndIf
+  Int Wanted = StorageUtil.GetIntValue(PlayerRef, "PSQ_Growth_StrongBody_CarryWeight", 0) - Retained
+  If Wanted < 0
+    Wanted = 0
+  EndIf
+  ; On an interrupted save, inspect every private ability on the next pass.
+  StrongCarryApplied = -1
+  Bool Complete = True
+  Int Pass = 0
+  While Pass < 2 && Complete
+    Int Bit = 0
+    Int NewBits = Wanted
+    Int OldBits = Old
+    ; Add before removing old denominations, avoiding a transient loss of capacity.
+    While Bit < 31 && (NewBits > 0 || OldBits > 0 || Old < 0) && Complete
+      If Revision != StrongCarryRevision || Load != PSQLoadEpoch || UninstallPrepared || UninstallCleanupBusy
+        Complete = False
+      Else
+        Bool Need = NewBits % 2 == 1
+        Bool Inspect = Pass == 0 && Need || Pass == 1 && !Need && (Old < 0 || OldBits % 2 == 1)
+        If Inspect
+          Spell Bonus = Game.GetFormFromFile(0xB911 + Bit, "PSQ PlayerSuccubusQuest.esm") as Spell
+          If !Bonus
+            Complete = False
+          ElseIf Revision == StrongCarryRevision && Load == PSQLoadEpoch && !UninstallPrepared && !UninstallCleanupBusy
+            Bool HasBonus = PlayerRef.HasSpell(Bonus)
+            If Need && HasBonus && ReviewStrongCarry
+              If Self.NeedsCarryEffectRepair(Bonus, Bonus.GetNthEffectMagnitude(0), 0) && Revision == StrongCarryRevision && Load == PSQLoadEpoch && !UninstallPrepared && !UninstallCleanupBusy
+                PlayerRef.RemoveSpell(Bonus)
+                HasBonus = PlayerRef.HasSpell(Bonus)
+                If HasBonus
+                  Complete = False
+                EndIf
+              EndIf
+            EndIf
+            If Revision == StrongCarryRevision && Load == PSQLoadEpoch && !UninstallPrepared && !UninstallCleanupBusy
+              If Need && !HasBonus
+                Complete = PlayerRef.AddSpell(Bonus, False) || PlayerRef.HasSpell(Bonus)
+              ElseIf !Need && HasBonus
+                Complete = PlayerRef.RemoveSpell(Bonus) || !PlayerRef.HasSpell(Bonus)
+              EndIf
+            EndIf
+          EndIf
+        EndIf
+      EndIf
+      NewBits = NewBits / 2
+      OldBits = OldBits / 2
+      Bit += 1
+    EndWhile
+    Pass += 1
+  EndWhile
+  If Load == PSQLoadEpoch
+    If Complete && Revision == StrongCarryRevision && !UninstallPrepared && !UninstallCleanupBusy
+      StrongCarryApplied = Wanted
+      StrongCarryPending = False
+      ReviewStrongCarry = False
+    EndIf
+    StrongCarryBusy = False
+  EndIf
+EndFunction
+
+Bool Function NeedsCarryEffectRepair(Spell Ability, Float Expected, Int EffectIndex = 3)
+  If Expected <= 0.0 || !Ability || !PlayerRef.HasSpell(Ability)
+    Return False
+  EndIf
+  MagicEffect Carry = Ability.GetNthEffectMagicEffect(EffectIndex)
+  If !Carry
+    Return False
+  EndIf
+  If !PlayerRef.HasMagicEffect(Carry)
+    Return True
+  EndIf
+  ; Supplement the native presence check only on load / big game-time jumps.
+  ; A nonzero modifier from another spell is not evidence for this ability.
+  Int Version = SKSE.GetPluginVersion("powerofthree's Papyrus Extender")
+  If Version < 0
+    Version = SKSE.GetPluginVersion("po3_PapyrusExtender")
+  EndIf
+  ; SSE publishes the major version. AE's plugin data uses a packed REL::Version.
+  If (Version >= 6 && Version < 256) || Version >= 0x06000000
+    ActiveMagicEffect[] Items = PO3_SKSEFunctions.GetActiveMagicEffects(PlayerRef, Carry)
+    Bool FoundSource = False
+    Bool FoundOther = False
+    Float FormMagnitude = Ability.GetNthEffectMagnitude(EffectIndex)
+    Int i = 0
+    While i < Items.Length
+      ActiveMagicEffect Item = Items[i]
+      Form Source = None
+      If Item
+        Source = PO3_SKSEFunctions.GetActiveEffectSpell(Item)
+      EndIf
+      If Source == Ability
+        FoundSource = True
+        Float ActiveAmount = Item.GetMagnitude()
+        ; A stale cross-save record can be positive, too. Preserve any
+        ; independently scaled nonzero effect that does not match that stale record.
+        Bool MatchesWrongForm = Math.Abs(FormMagnitude - Expected) > 0.01 && Math.Abs(ActiveAmount - FormMagnitude) <= 0.01
+        If ActiveAmount > 0.0 && !MatchesWrongForm
+          Return False
+        EndIf
+      ElseIf Source
+        FoundOther = True
+      EndIf
+      i += 1
+    EndWhile
+    Return FoundSource || FoundOther
+  EndIf
+  Return False
+EndFunction
+
+
+; Called only by the failed entry, while it still owns the outer edit.
+Function RecoverFailedNativeEntry(Int Owner, Int Epoch)
+  If Owner != AppearanceOperationId || Epoch != PSQLoadEpoch || !AppearanceEditBusy || AppearanceTransformDirection != 1
+    Return
+  EndIf
+  ; Invalidate this owner before the first yielding call. Use the same
+  ; persisted snapshot and recovery path as an interrupted load.
+  Self.CancelInterruptedAppearanceOnLoad()
+  Self.RegisterForSingleUpdate(1.0)
+EndFunction
+
+
+Bool Function SameEntryPoolValues(Float[] Early, Float[] Current)
+  If !Early || Early.Length != 6 || !Current || Current.Length != 6
+    Return False
+  EndIf
+  Int i = 0
+  While i < 6
+    If Early[i] != Current[i]
+      Return False
+    EndIf
+    i += 1
+  EndWhile
+  Return True
+EndFunction
+
+
+Bool Function TraceMainOriginalRestore(Armor Item, Form[] Protected, Int Owner, Bool RequireBusy, Int LoadEpoch, Int Attempt)
+  Float[] Timing = new Float[3]
+  Timing[0] = -1.0
+  Timing[2] = -1.0
+  Float Start = Utility.GetCurrentRealTime()
+  Bool Resolved = Self.RestoreOriginalItemCore(Item, Protected, Owner, RequireBusy, True, LoadEpoch, Timing)
+  Float Total = Utility.GetCurrentRealTime() - Start
+  Float Equip = 0.0
+  Float Confirm = 0.0
+  Bool Called = Timing[0] >= 0.0
+  If Called
+    Equip = Timing[1] - Timing[0]
+    If Timing[2] >= 0.0
+      Confirm = Timing[2] - Timing[1]
+    Else
+      Confirm = -1.0
+    EndIf
+  EndIf
+  Debug.Trace("[PSQ-PERF] recovery.main_item; owner=" + Owner + "; item=" + Item + "; attempt=" + Attempt + "; equipCalled=" + Called + "; equipSeconds=" + Equip + "; confirmSeconds=" + Confirm + "; totalSeconds=" + Total + "; resolved=" + Resolved)
+  Return Resolved
 EndFunction

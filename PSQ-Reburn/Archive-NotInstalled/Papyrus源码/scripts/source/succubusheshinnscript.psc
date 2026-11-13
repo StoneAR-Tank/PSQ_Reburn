@@ -34,7 +34,9 @@ Event OnEffectStart(Actor akTarget, Actor akCaster)
     PSQ.AppearanceTransformDirection = 1
     PSQ.AppearanceSnapshotReady = False
     storageutil.SetIntValue(PSQ.PlayerRef as Form, "PSQ_SuccubusON", 1)
-    Self.Henshin(akCaster)
+    If !Self.RunEntryFlow(akCaster)
+      Return
+    EndIf
   Else
     storageutil.SetIntValue(PSQ.PlayerRef as Form, "PSQ_SuccubusON", 0)
     PSQ.AppearanceTransformDirection = 2
@@ -55,6 +57,7 @@ Function Henshin(Actor Succu)
   If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
     Return 
   EndIf
+  Float EntryStarted = TransformStageClock
   Float BodyStarted
   Bool RefreshNodes = False
   If !PSQ.ApplySuccubusOutfitSelectionCore(PSQ.SuccubusOutfitSelection, OperationOwner, True)
@@ -63,19 +66,34 @@ Function Henshin(Actor Succu)
   If !Self.ContinueAppearance("enter.outfit_resolve")
     Return 
   EndIf
+  Float SnapshotStart
+  Float GearDone
+  Float HairDone
+  If TraceStageTimings
+    SnapshotStart = Utility.GetCurrentRealTime()
+  EndIf
   if !PSQ.SaveTransformEquipment(OperationOwner, True)
     return
   endif
   If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
     Return 
   EndIf
+  If TraceStageTimings
+    GearDone = Utility.GetCurrentRealTime()
+  EndIf
   PSQ.CaptureOriginalTransformHair(OperationOwner)
   If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
     Return
   EndIf
   PSQ.AppearanceSnapshotReady = True
+  If TraceStageTimings
+    HairDone = Utility.GetCurrentRealTime()
+  EndIf
   If !Self.ContinueAppearance("enter.equipment_snapshot")
     Return 
+  EndIf
+  If TraceStageTimings
+    Debug.Trace("[PSQ-PERF] entry.snapshot_outer; owner=" + OperationOwner + "; equipmentAndGuard=" + (GearDone - SnapshotStart) + "; hairAndGuard=" + (HairDone - GearDone))
   EndIf
   Int i = 0
   If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
@@ -87,22 +105,13 @@ Function Henshin(Actor Succu)
   EndIf
   PSQ.IsHenshined = True
   PSQ.ResetTransformEnergyClock()
-  PSQ.SyncRankMagicCostReduction()
   If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
-    Return 
+    Return
   EndIf
-  Int HenshinMoan = PSQ.SoundHenshinMoan.Play(Succu as ObjectReference)
-  Self.BeginTransformVisual(Succu, True)
-  Bool IdleStarted = False
-  If IdleHenshin != None
-    IdleStarted = Succu.PlayIdle(IdleHenshin)
-  EndIf
-  PSQ.Satiety(-20.0)
-  If IdleStarted
-    Utility.Wait(0.25)
-  EndIf
-  If !Self.ContinueAppearance("enter.visual_and_energy")
-    Return 
+  ; Commit the cost once. The existing final Satiety(0) refreshes HUD and tier.
+  PSQ.ChangeSatiationEnergy(-20.0, False)
+  If !Self.ContinueAppearance("enter.energy_charge")
+    Return
   EndIf
   PSQ.UpdateTransformBuff(True, OperationOwner)
   If !Self.ContinueAppearance("enter.attribute_bonus")
@@ -113,6 +122,26 @@ Function Henshin(Actor Succu)
     Return
   EndIf
   If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+    Return 
+  EndIf
+  PSQ.EquipTransformPartsPhase(OperationOwner, True, True, EntryStarted)
+  If !Self.ContinueAppearance("enter.primary_equipment")
+    Return
+  EndIf
+  PSQ.SyncRankMagicCostReduction()
+  If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+    Return 
+  EndIf
+  Int HenshinMoan = PSQ.SoundHenshinMoan.Play(Succu as ObjectReference)
+  Self.BeginTransformVisual(Succu, True)
+  Bool IdleStarted = False
+  If IdleHenshin != None
+    IdleStarted = Succu.PlayIdle(IdleHenshin)
+  EndIf
+  If IdleStarted
+    Utility.Wait(0.25)
+  EndIf
+  If !Self.ContinueAppearance("enter.visual_after_primary")
     Return 
   EndIf
   PSQ.StripTransformAccessories(OperationOwner, True)
@@ -277,6 +306,16 @@ Function DisHenshin(Actor Succu)
     Return 
   EndIf
   Float BodyStarted
+  Float BuffStart
+  Float ScaleStart
+  Float EyesStart
+  Float BodyStart
+  Float SkinStart
+  Float ColorStart
+  Float SlotStart
+  Float LookDone
+  Float HairStart
+  Float HairEnd
   Bool RefreshNodes = False
   Bool RefreshBody = PSQ.HenshinBody
   If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
@@ -310,6 +349,9 @@ Function DisHenshin(Actor Succu)
   If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
     Return 
   EndIf
+  If TraceStageTimings
+    BuffStart = Utility.GetCurrentRealTime()
+  EndIf
   PSQ.RemoveTransformBuffSafely(OperationOwner, -1)
   If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
     Return 
@@ -322,8 +364,17 @@ Function DisHenshin(Actor Succu)
   If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
     Return 
   EndIf
+  If TraceStageTimings
+    ScaleStart = Utility.GetCurrentRealTime()
+  EndIf
   PSQ.SetScaleHuman(OperationOwner, True)
+  If TraceStageTimings
+    EyesStart = Utility.GetCurrentRealTime()
+  EndIf
   PSQ.RestoreOriginalPlayerEyes(OperationOwner, True)
+  If TraceStageTimings
+    BodyStart = Utility.GetCurrentRealTime()
+  EndIf
   If PSQ.HenshinBody
     If TraceStageTimings
       BodyStarted = Utility.GetCurrentRealTime()
@@ -333,17 +384,32 @@ Function DisHenshin(Actor Succu)
       Debug.Trace("[PSQ-PERF] exit.body_request; seconds=" + (Utility.GetCurrentRealTime() - BodyStarted))
     EndIf
   EndIf
+  If TraceStageTimings
+    SkinStart = Utility.GetCurrentRealTime()
+  EndIf
   If PSQ.RestoreTransformSkinColor(OperationOwner, True)
     If PSQ.OrgHairColor == None
       RefreshNodes = True
     EndIf
   EndIf
+  If TraceStageTimings
+    ColorStart = Utility.GetCurrentRealTime()
+  EndIf
   If PSQ.RestoreOriginalPlayerHairColor(OperationOwner, True)
     RefreshNodes = True
   EndIf
+  If TraceStageTimings
+    SlotStart = Utility.GetCurrentRealTime()
+  EndIf
   PSQ.ReleaseTransformSlot52(True, OperationOwner, True)
+  If TraceStageTimings
+    LookDone = Utility.GetCurrentRealTime()
+  EndIf
   If !Self.ContinueAppearance("exit.body_hair_restore")
     Return 
+  EndIf
+  If TraceStageTimings
+    Debug.Trace("[PSQ-PERF] exit.appearance_times; owner=" + OperationOwner + "; buffs=" + (ScaleStart - BuffStart) + "; scale=" + (EyesStart - ScaleStart) + "; eyes=" + (BodyStart - EyesStart) + "; body=" + (SkinStart - BodyStart) + "; skin=" + (ColorStart - SkinStart) + "; hairColor=" + (SlotStart - ColorStart) + "; slot52=" + (LookDone - SlotStart))
   EndIf
   PSQ.RestoreTransformEquipment(OperationOwner, True)
   If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
@@ -379,12 +445,21 @@ Function DisHenshin(Actor Succu)
     EndIf
     Succu.QueueNiNodeUpdate()
   EndIf
+  If TraceStageTimings
+    HairStart = Utility.GetCurrentRealTime()
+  EndIf
   PSQ.RestoreTransformHair(OperationOwner, True)
+  If TraceStageTimings
+    HairEnd = Utility.GetCurrentRealTime()
+  EndIf
   If !Self.ContinueAppearance("exit.model_refresh")
     Return 
   EndIf
   If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
     Return 
+  EndIf
+  If TraceStageTimings
+    Debug.Trace("[PSQ-PERF] exit.hair_restore; owner=" + OperationOwner + "; seconds=" + (HairEnd - HairStart))
   EndIf
   PSQ.IsHenshinchu = False
   PSQ.Satiety(0.0)
@@ -681,4 +756,327 @@ VisualEffect Function StopRitualMotions(Actor Target, Int RequestedID)
     i += 1
   EndWhile
   Return Requested
+EndFunction
+
+
+Bool Function RunEntryFlow(Actor Succu)
+  If SKSE.GetPluginVersion("PSQ Appearance") < 16777222 || !PSQAppearance.IsReady()
+    Self.Henshin(Succu)
+    Return True
+  EndIf
+  Int Epoch = PSQ.GetPSQLoadEpoch()
+  If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+    Return False
+  EndIf
+  Int Ticket = PSQAppearance.BeginEntryFlow(OperationOwner, Epoch)
+  If Ticket <= 0
+    Return False
+  EndIf
+  Float EntryStarted = TransformStageClock
+  Int Completed = 0
+  Int Nodes = 0
+  Bool Success = True
+  If TraceStageTimings
+    Debug.Trace("[PSQ-PERF] enter.native_flow.begin; api=6; owner=" + OperationOwner)
+  EndIf
+  While Success
+    Int Action = PSQAppearance.AdvanceEntryFlow(Ticket, PSQ.AppearanceOperationId, PSQ.GetPSQLoadEpoch(), Completed)
+    If Action == 0 && Completed == 6
+      If TraceStageTimings
+        Debug.Trace("[PSQ-PERF] enter.native_flow.complete; owner=" + OperationOwner)
+      EndIf
+      Return True
+    EndIf
+    If Action <= 0 || !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+      Success = False
+    ElseIf Action == 1
+      Success = Self.CaptureEntryOutfit()
+    ElseIf Action == 2
+      Success = Self.CommitEntryCostAndHealth()
+    ElseIf Action == 3
+      Success = Self.WearEntryPrimary(EntryStarted)
+    ElseIf Action == 4
+      Nodes = Self.ApplyEntryAppearance(Succu)
+      Success = Nodes >= 0
+    ElseIf Action == 5
+      Success = Self.WearEntryAccessories()
+    ElseIf Action == 6
+      Success = Self.FinishEntry(Succu, Nodes > 0)
+    Else
+      Success = False
+    EndIf
+    If Success
+      Completed = Action
+    EndIf
+  EndWhile
+  PSQAppearance.CancelEntryFlow(Ticket)
+  Debug.Trace("[PSQ-RECOVERY] Native entry interrupted; owner=" + OperationOwner + "; last completed=" + Completed)
+  PSQ.RecoverFailedNativeEntry(OperationOwner, Epoch)
+  Return False
+EndFunction
+
+Bool Function CaptureEntryOutfit()
+  If !PSQ.ApplySuccubusOutfitSelectionCore(PSQ.SuccubusOutfitSelection, OperationOwner, True)
+    Return False
+  EndIf
+  If !Self.ContinueAppearance("enter.outfit_resolve")
+    Return False
+  EndIf
+  Float SnapshotStart
+  Float GearDone
+  Float HairDone
+  If TraceStageTimings
+    SnapshotStart = Utility.GetCurrentRealTime()
+  EndIf
+  if !PSQ.SaveTransformEquipment(OperationOwner, True)
+    Return False
+  endif
+  If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+    Return False
+  EndIf
+  If TraceStageTimings
+    GearDone = Utility.GetCurrentRealTime()
+  EndIf
+  PSQ.CaptureOriginalTransformHair(OperationOwner)
+  If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+    Return False
+  EndIf
+  PSQ.AppearanceSnapshotReady = True
+  If TraceStageTimings
+    HairDone = Utility.GetCurrentRealTime()
+  EndIf
+  If !Self.ContinueAppearance("enter.equipment_snapshot")
+    Return False
+  EndIf
+  If TraceStageTimings
+    Debug.Trace("[PSQ-PERF] entry.snapshot_outer; owner=" + OperationOwner + "; equipmentAndGuard=" + (GearDone - SnapshotStart) + "; hairAndGuard=" + (HairDone - GearDone))
+  EndIf
+  Return True
+EndFunction
+
+Bool Function CommitEntryCostAndHealth()
+  If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+    Return False
+  EndIf
+  PSQ.IsHenshinchu = True
+  If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+    Return False
+  EndIf
+  PSQ.IsHenshined = True
+  PSQ.ResetTransformEnergyClock()
+  If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+    Return False
+  EndIf
+  ; Commit the cost once. The existing final Satiety(0) refreshes HUD and tier.
+  PSQ.ChangeSatiationEnergy(-20.0, False)
+  If !Self.ContinueAppearance("enter.energy_charge")
+    Return False
+  EndIf
+  PSQ.UpdateTransformBuff(True, OperationOwner)
+  If !Self.ContinueAppearance("enter.attribute_bonus")
+    Return False
+  EndIf
+  PSQ.BufferTransformEntryHealth(OperationOwner)
+  If !Self.ContinueAppearance("enter.attribute_prime")
+    Return False
+  EndIf
+  Return True
+EndFunction
+
+Bool Function WearEntryPrimary(Float EntryStarted)
+  If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+    Return False
+  EndIf
+  PSQ.EquipTransformPartsPhase(OperationOwner, True, True, EntryStarted)
+  If !Self.ContinueAppearance("enter.primary_equipment")
+    Return False
+  EndIf
+  Return True
+EndFunction
+
+Int Function ApplyEntryAppearance(Actor Succu)
+  Int i
+  Float BodyStarted
+  Bool RefreshNodes = False
+  PSQ.SyncRankMagicCostReduction()
+  If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+    Return -1
+  EndIf
+  Int HenshinMoan = PSQ.SoundHenshinMoan.Play(Succu as ObjectReference)
+  Self.BeginTransformVisual(Succu, True)
+  Bool IdleStarted = False
+  If IdleHenshin != None
+    IdleStarted = Succu.PlayIdle(IdleHenshin)
+  EndIf
+  If IdleStarted
+    Utility.Wait(0.25)
+  EndIf
+  If !Self.ContinueAppearance("enter.visual_after_primary")
+    Return -1
+  EndIf
+  PSQ.StripTransformAccessories(OperationOwner, True)
+  If !Self.ContinueAppearance("enter.strip_accessories")
+    Return -1
+  EndIf
+  If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+    Return -1
+  EndIf
+  PSQ.OrgHairColor = None
+  If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+    Return -1
+  EndIf
+  PSQ.SetScaleSuccubus(OperationOwner, True)
+  If PSQ.CanWalkOnTheWater
+    If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+      Return -1
+    EndIf
+    Succu.AddSpell(PSQ.SuccubusWaterWalking, False)
+  EndIf
+  If PSQ.HenshinEyes && !psqracecompatibility.ShouldPreserveAppearance(Succu) && psqracecompatibility.CanUseHeadPart(PSQ.PSQSuccubusEyes, Succu.GetRace())
+    ActorBase EyeBase = Succu.GetLeveledActorBase()
+    Int Eye = EyeBase.GetNumHeadParts()
+    i = 0
+    While i < Eye
+      headpart EyePart = EyeBase.GetNthHeadPart(i)
+      If EyePart != None && EyePart.GetType() == 2
+        If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+          Return -1
+        EndIf
+        PSQ.OrgEyes = EyePart
+        i = Eye
+      EndIf
+      i += 1
+    EndWhile
+    If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+      Return -1
+    EndIf
+    Succu.ChangeHeadPart(PSQ.PSQSuccubusEyes)
+  EndIf
+  If PSQ.HenshinBody
+    If TraceStageTimings
+      BodyStarted = Utility.GetCurrentRealTime()
+    EndIf
+    PSQ.ApplyTransformBodyMorphs(False, OperationOwner, True)
+    If TraceStageTimings
+      Debug.Trace("[PSQ-PERF] enter.body_request; seconds=" + (Utility.GetCurrentRealTime() - BodyStarted))
+    EndIf
+  EndIf
+  If !Self.ContinueAppearance("enter.body_morphs")
+    Return -1
+  EndIf
+  If PSQ.HenshinSkin
+    PSQ.ApplyTransformSkinColor(True, OperationOwner, True)
+    If !PSQ.HenshinHairColor
+      RefreshNodes = True
+    EndIf
+  EndIf
+  If PSQ.HenshinTattoo
+    Float Manpukudo = PSQ.GetEnergyRatio()
+    PSQ.ChangeBodyPaint(Manpukudo, True)
+  EndIf
+  If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+    Return -1
+  EndIf
+  PSQ.ApplySelectedTransformHair(OperationOwner, True)
+  If PSQ.HenshinHairColor
+    PSQ.ApplyTransformHairColor(True, OperationOwner, True)
+    If PSQ.OrgHairColor != None
+      RefreshNodes = True
+    EndIf
+  EndIf
+  If !Self.ContinueAppearance("enter.hair_and_tattoo")
+    Return -1
+  EndIf
+  Return RefreshNodes as Int
+EndFunction
+
+Bool Function WearEntryAccessories()
+  PSQ.ApplyTransformSlot52(OperationOwner, True)
+  If !Self.ContinueAppearance("enter.pre_equipment")
+    Return False
+  EndIf
+  PSQ.SyncAWUWing()
+  PSQ.EquipSelectedTransformParts(OperationOwner, True)
+  If !Self.ContinueAppearance("enter.equipment_apply")
+    Return False
+  EndIf
+  Return True
+EndFunction
+
+Bool Function FinishEntry(Actor Succu, Bool RefreshNodes)
+  Int i
+  Float BodyStarted
+  If PSQ.HenshinFear
+    If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+      Return False
+    EndIf
+    PSQ.SuccubusFormFearSpell.Cast(Succu as ObjectReference, None)
+  EndIf
+  If PSQ.HenshinIsCrime
+    If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+      Return False
+    EndIf
+    Succu.AddToFaction(PSQ.SuccubusFoeFaction)
+    If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+      Return False
+    EndIf
+    Succu.SetAttackActorOnSight(True)
+  EndIf
+  Float BoosterRate = Math.Sqrt(Math.Sqrt(PSQ.SuccubusEXP.GetValue())) / 2.0
+  If BoosterRate < 1.0
+    BoosterRate = 1.0
+  EndIf
+  i = 0
+  While i <= 6
+    If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+      Return False
+    EndIf
+    PSQ.SuccubusSpellBoostPerk.SetNthEntryValue(i, 1, BoosterRate)
+    i += 1
+  EndWhile
+  If PSQ.EnableSuccubusSpellBooster
+    If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+      Return False
+    EndIf
+    PSQ.TransformBooster.SetValue(1.0)
+  EndIf
+  If !Self.ContinueAppearance("enter.pre_model_refresh")
+    Return False
+  EndIf
+  If PSQ.HenshinBody
+    If TraceStageTimings
+      BodyStarted = Utility.GetCurrentRealTime()
+    EndIf
+    PSQ.RefreshEquippedTransformBody(OperationOwner, True)
+    If TraceStageTimings
+      Debug.Trace("[PSQ-PERF] enter.body_settle; seconds=" + (Utility.GetCurrentRealTime() - BodyStarted))
+    EndIf
+  EndIf
+  If RefreshNodes
+    If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+      Return False
+    EndIf
+    Succu.QueueNiNodeUpdate()
+  EndIf
+  If !Self.ContinueAppearance("enter.model_refresh")
+    Return False
+  EndIf
+  If !PSQ.IsAppearanceOperationCurrent(OperationOwner, True)
+    Return False
+  EndIf
+  PSQ.IsHenshinchu = False
+  PSQ.Satiety(0.0)
+  PSQ.ApplySelectedSuccubusEyes(OperationOwner, True)
+  If !Self.ContinueAppearance("enter.final_effects")
+    Return False
+  EndIf
+  Self.CompleteTransformVisual(Succu, True)
+  If !Self.ContinueAppearance("enter.visual_complete")
+    Return False
+  EndIf
+  PSQ.RefillTransformAttributes(OperationOwner, True)
+  If !Self.ContinueAppearance("enter.attribute_refill")
+    Return False
+  EndIf
+  Return True
 EndFunction

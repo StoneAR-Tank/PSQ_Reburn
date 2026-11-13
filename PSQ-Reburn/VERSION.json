@@ -1,7 +1,7 @@
 {
   "name": "PSQ Reburn",
-  "version": "0.3",
-  "date": "2026-11-08",
+  "version": "0.31",
+  "date": "2026-11-13",
   "channel": "test-release",
   "optional_modules_separate": [
     "Wingflight",
@@ -133,8 +133,8 @@
     "source_tests": 262,
     "game_runtime_tested": false
   },
-  "package_revision": 61,
-  "display_version": "v0.3",
+  "package_revision": 62,
+  "display_version": "v0.31",
   "version_relabel": {
     "date": "2026-10-26",
     "previous_package_label": "0.22",

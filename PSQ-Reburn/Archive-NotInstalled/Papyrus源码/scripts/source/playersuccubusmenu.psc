@@ -180,8 +180,6 @@ Function OnPageReset(String Page)
     Self.AddToggleOptionST("EnableSatiationNotification", "$PSQ_EnableNotification", PSQ.EnableSatiationNotification, 0)
     Self.AddSliderOptionST("EnergyConsumptionPerMax", "$PSQ_ConsumptionRate", PSQ.EnergyConsumptionPerMax, "{0} %", 0)
     Self.AddToggleOptionST("EnableStarvation", "$PSQ_EnableStarvationDeath", PSQ.EnableStarvation, 0)
-    Self.AddToggleOptionST("EnergyModeAlt", "$PSQ_EnergyModeAlt", PSQ.EnergyModeAlt, 0)
-    Self.AddSliderOptionST("MaxEnergyAtAltMode", "$PSQ_MaxEnergyAtAltMode", PSQ.MaxEnergyAtAltMode, "{0}", 0)
   EndIf
   If Page == "$PSQ_Page3"
     Self.SetCursorFillMode(Self.TOP_TO_BOTTOM)
@@ -720,43 +718,6 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
       Return 
     EndIf
     Self.SetToggleOptionValueST(PSQ.EnableStarvation, False, "")
-  ElseIf Option == "EnergyModeAlt"
-    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-      Return 
-    EndIf
-    PSQ.EnergyModeAlt = !PSQ.EnergyModeAlt
-    If PSQ.EnergyModeAlt
-      If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-        Return 
-      EndIf
-      PSQ.MaxEnergy = PSQ.MaxEnergyAtAltMode
-    ElseIf SuccubusEXP.GetValue() >= 10.0
-      If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-        Return 
-      EndIf
-      Float PendingAppearanceValue1 = 250.0 * Math.Sqrt(SuccubusEXP.GetValue())
-      If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-        Return 
-      EndIf
-      PSQ.MaxEnergy = PendingAppearanceValue1
-    Else
-      If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-        Return 
-      EndIf
-      Float PendingAppearanceValue2 = 60.0 * SuccubusEXP.GetValue() + 200.0
-      If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-        Return 
-      EndIf
-      PSQ.MaxEnergy = PendingAppearanceValue2
-    EndIf
-    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-      Return 
-    EndIf
-    PSQ.EnergyConsumption = PSQ.MaxEnergy * PSQ.EnergyConsumptionPerMax / 100.0
-    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-      Return 
-    EndIf
-    Self.SetToggleOptionValueST(PSQ.EnergyModeAlt, False, "")
   ElseIf Option == "AutoGenderSwitch"
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
@@ -2564,25 +2525,6 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
       Return 
     EndIf
     Self.SetSliderOptionValueST(value, "{0}", False, "")
-  ElseIf Option == "MaxEnergyAtAltMode"
-    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-      Return 
-    EndIf
-    PSQ.MaxEnergyAtAltMode = value
-    If PSQ.EnergyModeAlt
-      If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-        Return 
-      EndIf
-      PSQ.MaxEnergy = value
-      If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-        Return 
-      EndIf
-      PSQ.EnergyConsumption = PSQ.MaxEnergy * PSQ.EnergyConsumptionPerMax / 100.0
-    EndIf
-    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-      Return 
-    EndIf
-    Self.SetSliderOptionValueST(value, "{0}", False, "")
   ElseIf Option == "HealthBuffInc"
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
@@ -3425,11 +3367,6 @@ Function OnSliderOpenST()
     Self.SetSliderDialogDefaultValue(255.0)
     Self.SetSliderDialogRange(0.0, 255.0)
     Self.SetSliderDialogInterval(1.0)
-  ElseIf Option == "MaxEnergyAtAltMode"
-    Self.SetSliderDialogStartValue(PSQ.MaxEnergyAtAltMode)
-    Self.SetSliderDialogDefaultValue(1000.0)
-    Self.SetSliderDialogRange(100.0, 5000.0)
-    Self.SetSliderDialogInterval(50.0)
   ElseIf Option == "HealthBuffInc"
     Self.SetSliderDialogStartValue((PSQ.HealthBuffInc - PSQ.HealthBuffDec) * 100.0)
     Self.SetSliderDialogDefaultValue(40.0)
@@ -4280,8 +4217,6 @@ Function OnHighlightST()
     Else
       Self.SetInfoText("$PSQ_EnableStarvationDeathInfo2")
     EndIf
-  ElseIf Option == "EnergyModeAlt"
-    Self.SetInfoText("$PSQ_EnergyModeAltInfo")
   ElseIf Option == "FluidNeedArousal"
     Self.SetInfoText("$PSQ_FluidNeedArousalInfo")
   ElseIf Option == "HenshinIsCrime"
@@ -4421,6 +4356,11 @@ Function DrawGrowthOverview()
   Self.AddHeaderOption("$PSQ_GrowthSkillHeader", 0)
   Self.AddTextOption("$PSQ_GrowthSkillTotal", Self.GrowthNumber(PSQ.GetGrowthAbsorbed("Skill", "Total")), 0)
   Self.AddTextOptionST("GrowthStatsInfo", "$PSQ_GrowthStatsInfo", "$PSQ_GrowthView", 0)
+  Self.AddEmptyOption()
+  Self.AddHeaderOption("$PSQ_GrowthStrongBodyHeader", 0)
+  Self.AddTextOption("$PSQ_GrowthStrongBodyMagicka", StorageUtil.GetIntValue(PSQ.PlayerRef, "PSQ_Growth_StrongBody_Magicka", 0) as String, 0)
+  Self.AddTextOption("$PSQ_GrowthStrongBodyCarryWeight", StorageUtil.GetIntValue(PSQ.PlayerRef, "PSQ_Growth_StrongBody_CarryWeight", 0) as String, 0)
+  Self.AddTextOption("$PSQ_GrowthStrongBodyPerkPoints", StorageUtil.GetIntValue(PSQ.PlayerRef, "PSQ_Growth_StrongBody_PerkPoints", 0) as String, 0)
   Self.SetCursorPosition(40)
   Self.AddHeaderOption("$PSQ_GrowthSkillDetail", 0)
   String[] Skills = new String[18]

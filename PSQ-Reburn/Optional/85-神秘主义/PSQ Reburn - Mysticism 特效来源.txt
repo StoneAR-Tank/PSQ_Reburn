@@ -1,0 +1,2 @@
+﻿Mysticism - A Magic Overhaul，作者 SimonMagus。魅魔法术补丁适配 Mysticism 2.4.2 的法术效果，并将暴风雪施法模型调色为粉色。
+原作：https://www.nexusmods.com/skyrimspecialedition/mods/27839

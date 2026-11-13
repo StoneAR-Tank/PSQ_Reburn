@@ -1,4 +1,4 @@
-# PSQ Reburn v0.3 完整版（手动选择组件）
+# PSQ Reburn v0.31 完整版（手动选择组件）
 
 本包包含 PSQ 本体及其 FOMOD 中的全部可选组件。普通用户建议使用同版 FOMOD 安装包，由安装器根据前置推荐选项。
 
@@ -15,6 +15,9 @@ Optional 文件夹内的内容不会自动生效；需要时只把所选文件�
 - 50-TRX皮肤：需要 Body Change 接口和独立 TRX 扶她模组。
 - 60-UBE服装：仅用于已安装 UBE、SexLab 和 Heels Sound 的环境；按身形预设在 BodySlide 构建。
 - 80-UBE-DX：仅在已安装 60-UBE 服装且启用 DX Succubus Armor 原作时选择，覆盖 60-UBE 中同名 PSQ UBE Outfits.esp；不要同时启用两个同名版本。添加或移除 DX 后需要重新选择。
+- 85-神秘主义：需要 Mysticism 2.4.2；将该文件夹内容合并到本体根目录并覆盖其中的 PSQ 主插件。
+- 86-本机元素特效：需要匹配的 SKSE64 和 Address Library；为魅魔元素法术提供粉色特效。
+- 87-奇异符文：需要 Strange Runes 3.7.3 和 powerofthree 的 Papyrus Extender；启用 PSQ - Strange Runes.esp。
 - 90-Apropos修复：需要已启用 Apropos 2。
 
 Archive-NotInstalled 为历史资料，不要将它的文件复制到 Data 或覆盖当前身体、物理及飞行模组。详细说明和署名见 Docs。
