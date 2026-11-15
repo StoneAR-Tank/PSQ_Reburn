@@ -1,5 +1,7 @@
 # PSQ Reburn
 
+[简体中文](README.md) | [繁體中文](README.zh-TW.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md)
+
 PSQ Reburn 是《上古卷轴 V：天际特别版》的魅魔系统模组，基于 PSQ PlayerSuccubusQuest 和已有汉化、整合版本继续制作。
 
 成为魅魔，在普通形态与魅魔形态之间切换，通过吸取能量成长，并搭配自己喜欢的外观与服装。
