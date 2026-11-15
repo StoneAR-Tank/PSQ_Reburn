@@ -25,7 +25,7 @@ PSQ Reburn은 《The Elder Scrolls V: Skyrim Special Edition》의 서큐버스 
 
 게임 내 MCM 메뉴에서 설정을 조정할 수 있습니다. 사용 가능한 외형과 연동 기능은 설치한 모드에 따라 달라집니다.
 
-📖 [서큐버스 등급 및 능력 표](docs/succubus-ranks.md) (중국어)
+📖 [서큐버스 등급 및 능력 표](docs/succubus-ranks.ko.md)
 
 ## 선행 모드
 

@@ -25,7 +25,7 @@ PSQ Reburn は『The Elder Scrolls V: Skyrim Special Edition』向けのサキ�
 
 設定はゲーム内の MCM メニューで変更できます。利用できる外見や連携機能は、インストールした MOD によって異なります。
 
-📖 [サキュバスのランクと能力一覧](docs/succubus-ranks.md)（中国語）
+📖 [サキュバスのランクと能力一覧](docs/succubus-ranks.ja.md)
 
 ## 必要なもの
 

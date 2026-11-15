@@ -25,7 +25,7 @@ PSQ Reburn 是《上古卷軸 V：無界天際特別版》的魅魔系統模組�
 
 遊戲內可透過 MCM 選單調整設定。可用的外觀和連動功能取決於已安裝的模組。
 
-📖 [查看魅魔等級與能力圖表](docs/succubus-ranks.md)（簡體中文）
+📖 [查看魅魔等級與能力圖表](docs/succubus-ranks.zh-TW.md)
 
 ## 前置需求
 

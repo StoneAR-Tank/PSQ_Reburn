@@ -25,7 +25,7 @@ The release page offers a complete ZIP and a FOMOD installer. Most players shoul
 
 Adjust settings in the in-game MCM. Available appearances and integrations depend on the mods you have installed.
 
-📖 [Succubus rank and ability chart](docs/succubus-ranks.md) (Chinese)
+📖 [Succubus rank and ability chart](docs/succubus-ranks.en.md)
 
 ## Requirements
 
