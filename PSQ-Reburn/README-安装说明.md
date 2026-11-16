@@ -1,4 +1,4 @@
-# PSQ Reburn v0.31 完整版（手动选择组件）
+# PSQ Reburn v0.32 完整版（手动选择组件）
 
 本包包含 PSQ 本体及其 FOMOD 中的全部可选组件。普通用户建议使用同版 FOMOD 安装包，由安装器根据前置推荐选项。
 
@@ -10,7 +10,7 @@
 
 Optional 文件夹内的内容不会自动生效；需要时只把所选文件夹内的内容合并到 PSQ 模组根目录，选择覆盖，不要直接把整个 Optional 文件夹复制到 Data。各组件需满足自己的前置：
 
-- 10-配件隐藏：需要与游戏版本匹配的 SKSE 和 Address Library。
+- 10-原生变身与装备处理：推荐安装，可优化变身换装、外观切换和装备恢复；需要与游戏版本匹配的 SKSE64 和 Address Library。
 - 40-BodyChangeNG-1.3.8：仅用于已单独安装 Body Change NG 1.3.8 的环境；让 PSQ 的接口文件覆盖其本体。
 - 50-TRX皮肤：需要 Body Change 接口和独立 TRX 扶她模组。
 - 60-UBE服装：仅用于已安装 UBE、SexLab 和 Heels Sound 的环境；按身形预设在 BodySlide 构建。

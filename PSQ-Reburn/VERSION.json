@@ -1,7 +1,7 @@
 {
   "name": "PSQ Reburn",
-  "version": "0.31",
-  "date": "2026-11-13",
+  "version": "0.32",
+  "date": "2026-11-16",
   "channel": "test-release",
   "optional_modules_separate": [
     "Wingflight",
@@ -133,8 +133,8 @@
     "source_tests": 262,
     "game_runtime_tested": false
   },
-  "package_revision": 62,
-  "display_version": "v0.31",
+  "package_revision": 64,
+  "display_version": "v0.32",
   "version_relabel": {
     "date": "2026-10-26",
     "previous_package_label": "0.22",
@@ -1059,6 +1059,7 @@
       "PSQ UBE Outfits"
     ],
     "ube_softbody_layer": false,
-    "ube_tattoo_textures": "included-with-core"
+    "ube_tattoo_textures": "included-with-core",
+    "native_api": 42
   }
 }

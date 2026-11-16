@@ -17,10 +17,16 @@ Event onEndState()
 EndEvent
 
 Bool Function IsAvailable() Global
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777249
+    Return PSQAppearance.ExternalPluginLoaded33("RaceCompatibility.esm")
+  EndIf
   Return Game.GetModByName("RaceCompatibility.esm") != 255 || Game.GetLightModByName("RaceCompatibility.esm") != 65535 ; #DEBUG_LINE_NO:6
 EndFunction
 
 FormList Function GetRaceList(Bool Vampire) Global
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777250
+    Return PSQAppearance.RaceList34(Vampire)
+  EndIf
   If !PSQRaceCompatibility.IsAvailable() ; #DEBUG_LINE_NO:10
     Return None ; #DEBUG_LINE_NO:11
   EndIf
@@ -32,6 +38,12 @@ FormList Function GetRaceList(Bool Vampire) Global
 EndFunction
 
 Int Function GetPairIndex(Race Source) Global
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777250
+    Int NativeIndex = PSQAppearance.PairIndex34(Source)
+    If NativeIndex != -2
+      Return NativeIndex
+    EndIf
+  EndIf
   If Source == None ; #DEBUG_LINE_NO:21
     Return -1 ; #DEBUG_LINE_NO:22
   EndIf
@@ -97,6 +109,9 @@ Race Function GetVampireRace(Race Source) Global
 EndFunction
 
 Bool Function IsVanillaRace(Race Source) Global
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777250
+    Return PSQAppearance.Vanilla34(Source)
+  EndIf
   If Source == None ; #DEBUG_LINE_NO:86
     Return False ; #DEBUG_LINE_NO:87
   EndIf
@@ -108,6 +123,9 @@ Bool Function IsVanillaRace(Race Source) Global
 EndFunction
 
 Bool Function IsTemporaryBeastRace(Race Source) Global
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777250
+    Return PSQAppearance.BeastRace34(Source)
+  EndIf
   If Source == None ; #DEBUG_LINE_NO:99
     Return False ; #DEBUG_LINE_NO:100
   EndIf
@@ -137,6 +155,15 @@ Bool Function SetMode(Actor Target, Int Mode) Global
 EndFunction
 
 Bool Function ShouldPreserveAppearance(Actor Target) Global
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777249
+    If Target == None
+      Return True
+    EndIf
+    Int Policy = PSQAppearance.RacePolicy33(Target, GetMode(Target), 0)
+    If Policy >= 0
+      Return Policy == 1
+    EndIf
+  EndIf
   If Target == None ; #DEBUG_LINE_NO:128
     Return True ; #DEBUG_LINE_NO:129
   EndIf
@@ -153,6 +180,9 @@ Bool Function ShouldPreserveAppearance(Actor Target) Global
 EndFunction
 
 Bool Function CanUseHeadPart(HeadPart Part, Race TargetRace) Global
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777249
+    Return PSQAppearance.HeadPartAllowed33(Part, TargetRace)
+  EndIf
   If Part == None || TargetRace == None ; #DEBUG_LINE_NO:143
     Return False ; #DEBUG_LINE_NO:144
   EndIf
@@ -161,6 +191,23 @@ Bool Function CanUseHeadPart(HeadPart Part, Race TargetRace) Global
 EndFunction
 
 String Function GetRegistrationStatus(Race Source) Global
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777250
+    If !PSQRaceCompatibility.IsAvailable()
+      Return "未安装（可选）"
+    EndIf
+    Int Pair = PSQRaceCompatibility.GetPairIndex(Source)
+    If Pair < 0
+      Return "未找到完整配对／尚未注册"
+    EndIf
+    FormList Normals = PSQRaceCompatibility.GetRaceList(False)
+    FormList Vampires = PSQRaceCompatibility.GetRaceList(True)
+    If Normals && Normals.GetAt(Pair) == Source
+      Return "普通种族已注册"
+    ElseIf Vampires && Vampires.GetAt(Pair) == Source
+      Return "吸血鬼种族已注册"
+    EndIf
+    Return "映射更新中"
+  EndIf
   If !PSQRaceCompatibility.IsAvailable() ; #DEBUG_LINE_NO:151
     Return "未安装（可选）" ; #DEBUG_LINE_NO:152
   EndIf
@@ -192,10 +239,16 @@ String Function GetAppearanceStatus(Actor Target) Global
 EndFunction
 
 Bool Function HasUBE() Global
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777249
+    Return PSQAppearance.ExternalPluginLoaded33("UBE_AllRace.esp")
+  EndIf
   Return Game.GetModByName("UBE_AllRace.esp") != 255 || Game.GetLightModByName("UBE_AllRace.esp") != 65535
 EndFunction
 
 Bool Function SkinUsesUBE(Armor Skin) Global
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777250
+    Return PSQAppearance.SkinUBE34(Skin)
+  EndIf
   If Skin == None
     Return False
   EndIf
@@ -245,6 +298,15 @@ Bool Function IsUBEActor(Actor Target) Global
 EndFunction
 
 Bool Function ShouldPreserveBCNGBody(Actor Target) Global
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777249
+    If Target == None
+      Return True
+    EndIf
+    Int Policy = PSQAppearance.RacePolicy33(Target, GetMode(Target), 2)
+    If Policy >= 0
+      Return Policy == 1
+    EndIf
+  EndIf
   If Target == None || PSQRaceCompatibility.GetMode(Target) == 1 || PSQRaceCompatibility.IsTemporaryBeastRace(Target.GetRace())
     Return True
   EndIf
@@ -255,6 +317,15 @@ Bool Function ShouldPreserveBCNGBody(Actor Target) Global
 EndFunction
 
 Bool Function ShouldPreserveHeadAppearance(Actor Target) Global
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777249
+    If Target == None
+      Return True
+    EndIf
+    Int Policy = PSQAppearance.RacePolicy33(Target, GetMode(Target), 1)
+    If Policy >= 0
+      Return Policy == 1
+    EndIf
+  EndIf
   If Target == None || PSQRaceCompatibility.GetMode(Target) == 1
     Return True
   EndIf

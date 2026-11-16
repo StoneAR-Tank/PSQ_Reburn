@@ -4,6 +4,9 @@ ScriptName playersuccubusmenu Extends SKI_ConfigBase
 Int BodySelectionOption = -1
 Int BodyChangeMenuPage = 0
 Int BodyChangeMenuOffset = 0
+String[] BodyMenuIDs
+Race BodyMenuRace
+Int BodyMenuEpoch = -1
 Int BodyChangeMenuCount = 0
 Int DigestionModeOption = -1
 Bool DragonSoulExchangeBusy = False
@@ -494,6 +497,77 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
   EndIf
   Bool PSQVisualRuntime = skse.GetPluginVersion("skee") >= 0 || skse.GetPluginVersion("NiOverride") >= 0
   String Option = Self.GetState()
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+    Int Epoch = PSQ.GetPSQLoadEpoch()
+    Int[] Edit = PSQAppearance.MenuToggleAppearance(PSQ, Option, Owner, Epoch, RequireBusy)
+    If Edit && Edit.Length == 2
+      If Edit[0] < 0 || !PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, Epoch)
+        Return
+      EndIf
+      If Edit[0] == 1
+        PSQ.ChangeBodyPaint(PSQ.GetEnergyRatio(), True)
+      ElseIf Edit[0] == 2
+        PSQ.ChangeBodyPaint(0.0, True)
+      ElseIf Edit[0] == 3
+        PSQ.Satiety(0.0)
+      ElseIf Edit[0] == 4
+        PSQ.SyncTransformSkinColor(Owner, RequireBusy)
+      ElseIf Edit[0] == 5
+        PSQ.SyncAWUWing()
+      ElseIf Edit[0] == 6
+        PSQ.SyncTransformHairColor(Owner, RequireBusy)
+      ElseIf Edit[0] == 7
+        PSQ.PlayerRef.RemoveSpell(PSQ.SuccubusCurseCloakSpell)
+        Return
+      EndIf
+      If PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, Epoch)
+        Self.SetToggleOptionValueST(Edit[1] != 0, False, "")
+      EndIf
+      Return
+    EndIf
+  EndIf
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+    String NPCKey = PSQAppearance.MenuNPCKey(Option)
+    If NPCKey != ""
+      Int NPCEpoch = PSQ.GetPSQLoadEpoch()
+      Actor SelectedNPC = SuccubusNPC
+      Bool HasWing = True
+      If NPCKey == "PSQ_NPCTransformWings"
+        HasWing = StorageUtil.GetFormValue(SelectedNPC, "PSQ_NPCWings") != None
+      EndIf
+      Int NPCPlan = PSQAppearance.MenuNPCAction(PSQ, SelectedNPC, NPCKey, StorageUtil.GetIntValue(SelectedNPC, NPCKey, 0), HasWing, PSQVisualRuntime, Owner, NPCEpoch, RequireBusy)
+      If NPCPlan != 0
+        If NPCPlan < 0 || !PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, NPCEpoch)
+          Return
+        EndIf
+        Bool Enabled = Math.LogicalAnd(NPCPlan, 2) != 0
+        StorageUtil.SetIntValue(SelectedNPC, NPCKey, Enabled as Int)
+        If Math.LogicalAnd(NPCPlan, 8)
+          StorageUtil.SetFormValue(SelectedNPC, "PSQ_NPCWings", PSQ.SuccubusStaticWings)
+        EndIf
+        If Math.LogicalAnd(NPCPlan, 4)
+          String[] Nodes = new String[4]
+          Nodes[0] = "Face [Ovl0]"
+          Nodes[1] = "Body [Ovl0]"
+          Nodes[2] = "Feet [Ovl0]"
+          Nodes[3] = "Hands [Ovl0]"
+          String[] Textures = new String[4]
+          Textures[0] = "Textures\\PSQ\\Overlays\\FollowerSuccubusFace_0.dds"
+          Textures[1] = "Textures\\PSQ\\Overlays\\FollowerSuccubusBody_0.dds"
+          Textures[2] = Textures[1]
+          Textures[3] = "Textures\\PSQ\\Overlays\\FollowerSuccubusHands_0.dds"
+          Int NodeIndex = 0
+          While NodeIndex < 4 && PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, NPCEpoch)
+            NiOverride.AddNodeOverrideString(SelectedNPC, True, Nodes[NodeIndex], 9, 0, Textures[NodeIndex], True)
+            NiOverride.AddNodeOverrideFloat(SelectedNPC, True, Nodes[NodeIndex], 8, -1, 0.0, True)
+            NodeIndex += 1
+          EndWhile
+        EndIf
+        Self.SetToggleOptionValueST(Enabled, False, "")
+        Return
+      EndIf
+    EndIf
+  EndIf
   Int ManagedIndex = Self.GetManagedAbilityIndex(Option)
   If ManagedIndex >= 0
     If PSQ.GetAbilityManagementMode() == 2
@@ -509,7 +583,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableDrain = !PSQ.EnableDrain
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 0, 0, 0.0, False, True)
+      PSQ.EnableDrain = !PSQ.EnableDrain
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -518,7 +594,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.AllowDrainFromFemale = !PSQ.AllowDrainFromFemale
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 1, 0, 0.0, False, True)
+      PSQ.AllowDrainFromFemale = !PSQ.AllowDrainFromFemale
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -527,7 +605,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.AllowDrainFromBeast = !PSQ.AllowDrainFromBeast
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 2, 0, 0.0, False, True)
+      PSQ.AllowDrainFromBeast = !PSQ.AllowDrainFromBeast
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -536,7 +616,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.AllowDrainFromUndead = !PSQ.AllowDrainFromUndead
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 3, 0, 0.0, False, True)
+      PSQ.AllowDrainFromUndead = !PSQ.AllowDrainFromUndead
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -545,7 +627,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.ExtractSemenPotion = !PSQ.ExtractSemenPotion
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 4, 0, 0.0, False, True)
+      PSQ.ExtractSemenPotion = !PSQ.ExtractSemenPotion
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -554,7 +638,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.AutoExtractSemenPotion = !PSQ.AutoExtractSemenPotion
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 5, 0, 0.0, False, True)
+      PSQ.AutoExtractSemenPotion = !PSQ.AutoExtractSemenPotion
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -563,7 +649,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.FastMode = !PSQ.FastMode
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 6, 0, 0.0, False, True)
+      PSQ.FastMode = !PSQ.FastMode
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -572,7 +660,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.AdjustMinEnergyOfHuman = !PSQ.AdjustMinEnergyOfHuman
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 7, 0, 0.0, False, True)
+      PSQ.AdjustMinEnergyOfHuman = !PSQ.AdjustMinEnergyOfHuman
+    EndIf
     PSQ.PublishEnergySenseConfig()
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
@@ -582,7 +672,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableSoulTrap = !PSQ.EnableSoulTrap
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 8, 0, 0.0, False, True)
+      PSQ.EnableSoulTrap = !PSQ.EnableSoulTrap
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -591,7 +683,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.AllowKill = !PSQ.AllowKill
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 9, 0, 0.0, False, True)
+      PSQ.AllowKill = !PSQ.AllowKill
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -600,7 +694,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableCaptive = !PSQ.EnableCaptive
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 10, 0, 0.0, False, True)
+      PSQ.EnableCaptive = !PSQ.EnableCaptive
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -609,7 +705,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.UseArousalAtDrain = !PSQ.UseArousalAtDrain
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 11, 0, 0.0, False, True)
+      PSQ.UseArousalAtDrain = !PSQ.UseArousalAtDrain
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -682,7 +780,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableSatiationEffect = !PSQ.EnableSatiationEffect
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 12, 0, 0.0, False, True)
+      PSQ.EnableSatiationEffect = !PSQ.EnableSatiationEffect
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -691,7 +791,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableSatiationNotification = !PSQ.EnableSatiationNotification
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 13, 0, 0.0, False, True)
+      PSQ.EnableSatiationNotification = !PSQ.EnableSatiationNotification
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -700,7 +802,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableStarvation = !PSQ.EnableStarvation
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 14, 0, 0.0, False, True)
+      PSQ.EnableStarvation = !PSQ.EnableStarvation
+    EndIf
     If SuccubusEnergy.GetValue() == 0.0
       If PSQ.EnableStarvation
         If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
@@ -722,7 +826,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.AutoGenderSwitch = !PSQ.AutoGenderSwitch
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 15, 0, 0.0, False, True)
+      PSQ.AutoGenderSwitch = !PSQ.AutoGenderSwitch
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -731,7 +837,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableFutanariPower = !PSQ.EnableFutanariPower
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 16, 0, 0.0, False, True)
+      PSQ.EnableFutanariPower = !PSQ.EnableFutanariPower
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -744,7 +852,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableAutoAddFlying = !PSQ.EnableAutoAddFlying
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 17, 0, 0.0, False, True)
+      PSQ.EnableAutoAddFlying = !PSQ.EnableAutoAddFlying
+    EndIf
     PSQ.SyncWingflightPolicy()
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
@@ -754,7 +864,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.ChargeFull = !PSQ.ChargeFull
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 18, 0, 0.0, False, True)
+      PSQ.ChargeFull = !PSQ.ChargeFull
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -763,7 +875,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnablePSQRape = !PSQ.EnablePSQRape
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 19, 0, 0.0, False, True)
+      PSQ.EnablePSQRape = !PSQ.EnablePSQRape
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -772,7 +886,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableCumInflation = !PSQ.EnableCumInflation
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 20, 0, 0.0, False, True)
+      PSQ.EnableCumInflation = !PSQ.EnableCumInflation
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -781,7 +897,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.CumInflationAnal = !PSQ.CumInflationAnal
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 21, 0, 0.0, False, True)
+      PSQ.CumInflationAnal = !PSQ.CumInflationAnal
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -790,7 +908,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.CumInflationOral = !PSQ.CumInflationOral
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 22, 0, 0.0, False, True)
+      PSQ.CumInflationOral = !PSQ.CumInflationOral
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -799,7 +919,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.FluidNeedArousal = !PSQ.FluidNeedArousal
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 23, 0, 0.0, False, True)
+      PSQ.FluidNeedArousal = !PSQ.FluidNeedArousal
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -808,7 +930,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.AllowHybrid = !PSQ.AllowHybrid
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 24, 0, 0.0, False, True)
+      PSQ.AllowHybrid = !PSQ.AllowHybrid
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -817,7 +941,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableDragonbornSuccubusTattoo = !PSQ.EnableDragonbornSuccubusTattoo
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 25, 0, 0.0, False, True)
+      PSQ.EnableDragonbornSuccubusTattoo = !PSQ.EnableDragonbornSuccubusTattoo
+    EndIf
     If PlayerIsSuccubus.GetValueInt() == 1 && PSQ.MaxEnergy > 0.0
       PSQ.ChangeBodyPaint(PSQ.GetEnergyRatio(), True)
     Else
@@ -831,7 +957,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinTattoo = !PSQ.HenshinTattoo
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 26, 0, 0.0, False, True)
+      PSQ.HenshinTattoo = !PSQ.HenshinTattoo
+    EndIf
     If PlayerIsSuccubus.GetValueInt() == 1
       PSQ.Satiety(0.0)
     Else
@@ -845,7 +973,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableBodyPaintTintChangeSatiation = !PSQ.EnableBodyPaintTintChangeSatiation
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 27, 0, 0.0, False, True)
+      PSQ.EnableBodyPaintTintChangeSatiation = !PSQ.EnableBodyPaintTintChangeSatiation
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -854,7 +984,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableBodyPaintAlphaChangeSatiation = !PSQ.EnableBodyPaintAlphaChangeSatiation
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 28, 0, 0.0, False, True)
+      PSQ.EnableBodyPaintAlphaChangeSatiation = !PSQ.EnableBodyPaintAlphaChangeSatiation
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -863,7 +995,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableBodyPaintGlowTintChangeSatiation = !PSQ.EnableBodyPaintGlowTintChangeSatiation
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 29, 0, 0.0, False, True)
+      PSQ.EnableBodyPaintGlowTintChangeSatiation = !PSQ.EnableBodyPaintGlowTintChangeSatiation
+    EndIf
     PSQ.ChangeBodyPaint(PSQ.GetEnergyRatio(), True)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
@@ -873,7 +1007,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableBodyPaintGlowAlphaChangeSatiation = !PSQ.EnableBodyPaintGlowAlphaChangeSatiation
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 30, 0, 0.0, False, True)
+      PSQ.EnableBodyPaintGlowAlphaChangeSatiation = !PSQ.EnableBodyPaintGlowAlphaChangeSatiation
+    EndIf
     PSQ.ChangeBodyPaint(PSQ.GetEnergyRatio(), True)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
@@ -883,7 +1019,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableCursePaintGradient = False
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 31, 0, 0.0, False, False)
+      PSQ.EnableCursePaintGradient = False
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -892,7 +1030,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableCursePaintTint = !PSQ.EnableCursePaintTint
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 32, 0, 0.0, False, True)
+      PSQ.EnableCursePaintTint = !PSQ.EnableCursePaintTint
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -901,7 +1041,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableCursePaintAlpha = !PSQ.EnableCursePaintAlpha
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 33, 0, 0.0, False, True)
+      PSQ.EnableCursePaintAlpha = !PSQ.EnableCursePaintAlpha
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -910,7 +1052,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableCursePaintGlowTint = !PSQ.EnableCursePaintGlowTint
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 34, 0, 0.0, False, True)
+      PSQ.EnableCursePaintGlowTint = !PSQ.EnableCursePaintGlowTint
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -919,7 +1063,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableCursePaintGlowAlpha = !PSQ.EnableCursePaintGlowAlpha
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 35, 0, 0.0, False, True)
+      PSQ.EnableCursePaintGlowAlpha = !PSQ.EnableCursePaintGlowAlpha
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -928,7 +1074,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinSkin = !PSQ.HenshinSkin
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 36, 0, 0.0, False, True)
+      PSQ.HenshinSkin = !PSQ.HenshinSkin
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -941,7 +1089,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinWings = !PSQ.HenshinWings
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 37, 0, 0.0, False, True)
+      PSQ.HenshinWings = !PSQ.HenshinWings
+    EndIf
     PSQ.SyncAWUWing()
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
@@ -951,7 +1101,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinHorn = !PSQ.HenshinHorn
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 38, 0, 0.0, False, True)
+      PSQ.HenshinHorn = !PSQ.HenshinHorn
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -960,7 +1112,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinTail = !PSQ.HenshinTail
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 39, 0, 0.0, False, True)
+      PSQ.HenshinTail = !PSQ.HenshinTail
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -969,7 +1123,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinCuirass = !PSQ.HenshinCuirass
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 40, 0, 0.0, False, True)
+      PSQ.HenshinCuirass = !PSQ.HenshinCuirass
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -978,7 +1134,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinBoots = !PSQ.HenshinBoots
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 41, 0, 0.0, False, True)
+      PSQ.HenshinBoots = !PSQ.HenshinBoots
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -987,7 +1145,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinGloves = !PSQ.HenshinGloves
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 42, 0, 0.0, False, True)
+      PSQ.HenshinGloves = !PSQ.HenshinGloves
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -996,7 +1156,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinPenis = !PSQ.HenshinPenis
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 43, 0, 0.0, False, True)
+      PSQ.HenshinPenis = !PSQ.HenshinPenis
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -1014,7 +1176,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableSuccubusSpellBooster = !PSQ.EnableSuccubusSpellBooster
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 44, 0, 0.0, False, True)
+      PSQ.EnableSuccubusSpellBooster = !PSQ.EnableSuccubusSpellBooster
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -1023,7 +1187,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.CanWalkOnTheWater = !PSQ.CanWalkOnTheWater
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 45, 0, 0.0, False, True)
+      PSQ.CanWalkOnTheWater = !PSQ.CanWalkOnTheWater
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -1032,7 +1198,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinIsCrime = !PSQ.HenshinIsCrime
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 46, 0, 0.0, False, True)
+      PSQ.HenshinIsCrime = !PSQ.HenshinIsCrime
+    EndIf
     If PSQ.IsHenshined
       If PSQ.HenshinIsCrime
         If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
@@ -1054,7 +1222,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinFear = !PSQ.HenshinFear
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 47, 0, 0.0, False, True)
+      PSQ.HenshinFear = !PSQ.HenshinFear
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -1063,7 +1233,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.ArousedForceTransform = !PSQ.ArousedForceTransform
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 48, 0, 0.0, False, True)
+      PSQ.ArousedForceTransform = !PSQ.ArousedForceTransform
+    EndIf
     If PSQ.ArousedForceTransform
       If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
         Return 
@@ -1083,7 +1255,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.ArousedForceDeTransform = !PSQ.ArousedForceDeTransform
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 49, 0, 0.0, False, True)
+      PSQ.ArousedForceDeTransform = !PSQ.ArousedForceDeTransform
+    EndIf
     If PSQ.ArousedForceDeTransform
       If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
         Return 
@@ -1103,7 +1277,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.AllowHenshinAddExposure = !PSQ.AllowHenshinAddExposure
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 50, 0, 0.0, False, True)
+      PSQ.AllowHenshinAddExposure = !PSQ.AllowHenshinAddExposure
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -1116,7 +1292,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.AllowHenshinConsumeEnergy = !PSQ.AllowHenshinConsumeEnergy
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 51, 0, 0.0, False, True)
+      PSQ.AllowHenshinConsumeEnergy = !PSQ.AllowHenshinConsumeEnergy
+    EndIf
     PSQ.ResetTransformEnergyClock()
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
@@ -1126,7 +1304,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableHeightChangeSuccubus = !PSQ.EnableHeightChangeSuccubus
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 52, 0, 0.0, False, True)
+      PSQ.EnableHeightChangeSuccubus = !PSQ.EnableHeightChangeSuccubus
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -1135,7 +1315,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableButtChangeSuccubus = !PSQ.EnableButtChangeSuccubus
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 53, 0, 0.0, False, True)
+      PSQ.EnableButtChangeSuccubus = !PSQ.EnableButtChangeSuccubus
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -1144,7 +1326,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableGenitalsChangeSuccubus = !PSQ.EnableGenitalsChangeSuccubus
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 54, 0, 0.0, False, True)
+      PSQ.EnableGenitalsChangeSuccubus = !PSQ.EnableGenitalsChangeSuccubus
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -1153,7 +1337,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableScrotumChangeSuccubus = !PSQ.EnableScrotumChangeSuccubus
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 55, 0, 0.0, False, True)
+      PSQ.EnableScrotumChangeSuccubus = !PSQ.EnableScrotumChangeSuccubus
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -1162,7 +1348,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableSuccubusDrainHealthSpell = !PSQ.EnableSuccubusDrainHealthSpell
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 56, 0, 0.0, False, True)
+      PSQ.EnableSuccubusDrainHealthSpell = !PSQ.EnableSuccubusDrainHealthSpell
+    EndIf
     If PSQ.EnableSuccubusDrainHealthSpell
       If SuccubusRank.GetValue() == 1.0
         If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
@@ -1247,7 +1435,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableSuccubusDrainStaminaSpell = !PSQ.EnableSuccubusDrainStaminaSpell
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 57, 0, 0.0, False, True)
+      PSQ.EnableSuccubusDrainStaminaSpell = !PSQ.EnableSuccubusDrainStaminaSpell
+    EndIf
     If PSQ.EnableSuccubusDrainStaminaSpell
       If SuccubusRank.GetValue() == 1.0
         If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
@@ -1332,7 +1522,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableSuccubusDrainFF = !PSQ.EnableSuccubusDrainFF
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 58, 0, 0.0, False, True)
+      PSQ.EnableSuccubusDrainFF = !PSQ.EnableSuccubusDrainFF
+    EndIf
     If PSQ.EnableSuccubusDrainFF
       If SuccubusRank.GetValue() == 1.0
         If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
@@ -1608,7 +1800,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.PhysicalWeakness = !PSQ.PhysicalWeakness
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 59, 0, 0.0, False, True)
+      PSQ.PhysicalWeakness = !PSQ.PhysicalWeakness
+    EndIf
     If PlayerIsSuccubus.GetValueInt() == 1
       If PSQ.PhysicalWeakness
         If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
@@ -1630,7 +1824,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableEnergyConsumingBySuccubusSpell = !PSQ.EnableEnergyConsumingBySuccubusSpell
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 60, 0, 0.0, False, True)
+      PSQ.EnableEnergyConsumingBySuccubusSpell = !PSQ.EnableEnergyConsumingBySuccubusSpell
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -1639,7 +1835,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableSpellCastingNotification = !PSQ.EnableSpellCastingNotification
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 61, 0, 0.0, False, True)
+      PSQ.EnableSpellCastingNotification = !PSQ.EnableSpellCastingNotification
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -1652,7 +1850,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.StopEnergyConsuming = !PSQ.StopEnergyConsuming
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 62, 0, 0.0, False, True)
+      PSQ.StopEnergyConsuming = !PSQ.StopEnergyConsuming
+    EndIf
     PSQ.ResetTransformEnergyClock()
     If PlayerIsSuccubus.GetValue() == 1.0
       If PSQ.StopEnergyConsuming
@@ -1663,7 +1863,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
         If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
           Return 
         EndIf
-        PSQ.ConsumeTimer = PendingAppearanceValue3
+        If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 63, 0, PendingAppearanceValue3, False, False)
+          PSQ.ConsumeTimer = PendingAppearanceValue3
+        EndIf
         PSQ.Satiety(-1.0 * PSQ.EnergyConsumption * PSQ.ConsumeTimer)
         If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
           Return 
@@ -1672,7 +1874,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
         If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
           Return 
         EndIf
-        PSQ.LastConsumeTime = PendingAppearanceValue4
+        If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 64, 0, PendingAppearanceValue4, False, False)
+          PSQ.LastConsumeTime = PendingAppearanceValue4
+        EndIf
       Else
         If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
           Return 
@@ -1681,7 +1885,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
         If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
           Return 
         EndIf
-        PSQ.LastConsumeTime = PendingAppearanceValue5
+        If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 64, 0, PendingAppearanceValue5, False, False)
+          PSQ.LastConsumeTime = PendingAppearanceValue5
+        EndIf
       EndIf
     EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
@@ -1692,7 +1898,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableFortifyDestruction = !PSQ.EnableFortifyDestruction
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 65, 0, 0.0, False, True)
+      PSQ.EnableFortifyDestruction = !PSQ.EnableFortifyDestruction
+    EndIf
     If PSQ.EnableFortifyDestruction
       If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
         Return 
@@ -1716,7 +1924,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableFortifyIllusion = !PSQ.EnableFortifyIllusion
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 66, 0, 0.0, False, True)
+      PSQ.EnableFortifyIllusion = !PSQ.EnableFortifyIllusion
+    EndIf
     If PSQ.EnableFortifyIllusion
       If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
         Return 
@@ -1748,7 +1958,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableMagicResistance = !PSQ.EnableMagicResistance
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 67, 0, 0.0, False, True)
+      PSQ.EnableMagicResistance = !PSQ.EnableMagicResistance
+    EndIf
     If PSQ.EnableMagicResistance
       If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
         Return 
@@ -1772,7 +1984,9 @@ Function HandleAppearanceOnSelectST(Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnableFortifyBartar = !PSQ.EnableFortifyBartar
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 68, 0, 0.0, False, True)
+      PSQ.EnableFortifyBartar = !PSQ.EnableFortifyBartar
+    EndIf
     If PSQ.EnableFortifyBartar
       If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
         Return 
@@ -2191,11 +2405,32 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     Return 
   EndIf
   String Option = Self.GetState()
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+    Int Epoch = PSQ.GetPSQLoadEpoch()
+    Int Action = PSQAppearance.MenuShapeSlider(PSQ, Option, Value, Owner, Epoch, RequireBusy)
+    If Action != 0
+      If Action < 0 || !PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, Epoch)
+        Return
+      EndIf
+      If Action == 3
+        PSQ.SyncTransformSkinColor(Owner, RequireBusy)
+        Self.SetSliderOptionValueST(PSQ.PSQSkinColorAlpha as Float, "{0}", False, "")
+      Else
+        If Action == 2
+          PSQ.SetScaleSuccubus(Owner, RequireBusy)
+        EndIf
+        Self.SetSliderOptionValueST(Value, "{2}", False, "")
+      EndIf
+      Return
+    EndIf
+  EndIf
   If Option == "RapeArousalThreshold"
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.RapeArousalThreshold = value as Int
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 69, value as Int, 0.0, False, False)
+      PSQ.RapeArousalThreshold = value as Int
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2204,7 +2439,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.RapeHealthThreshold = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 70, 0, value, False, False)
+      PSQ.RapeHealthThreshold = value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2213,7 +2450,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.RapeChance = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 71, 0, value, False, False)
+      PSQ.RapeChance = value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2222,7 +2461,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.RestoreMagickaMAX = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 72, 0, value, False, False)
+      PSQ.RestoreMagickaMAX = value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2235,7 +2476,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.WingMaxJumpHeight = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 73, 0, value, False, False)
+      PSQ.WingMaxJumpHeight = value
+    EndIf
     PSQ.UpdatePSQWingJumpHeight(True)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
@@ -2245,7 +2488,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.DefaultJumpHeight = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 74, 0, value, False, False)
+      PSQ.DefaultJumpHeight = value
+    EndIf
     PSQ.ApplyPSQDefaultJumpPreference()
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
@@ -2259,7 +2504,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.CanFlyingLevel = value as Int
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 75, value as Int, 0.0, False, False)
+      PSQ.CanFlyingLevel = value as Int
+    EndIf
     PSQ.SyncWingflightPolicy()
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
@@ -2269,11 +2516,15 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnergyConsumptionPerMax = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 76, 0, value, False, False)
+      PSQ.EnergyConsumptionPerMax = value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.EnergyConsumption = PSQ.MaxEnergy * PSQ.EnergyConsumptionPerMax / 100.0
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 77, 0, PSQ.MaxEnergy * PSQ.EnergyConsumptionPerMax / 100.0, False, False)
+      PSQ.EnergyConsumption = PSQ.MaxEnergy * PSQ.EnergyConsumptionPerMax / 100.0
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2285,7 +2536,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinBuffRateHealth = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 78, 0, value, False, False)
+      PSQ.HenshinBuffRateHealth = value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2298,7 +2551,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinBuffRateMagicka = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 79, 0, value, False, False)
+      PSQ.HenshinBuffRateMagicka = value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2311,7 +2566,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinBuffRateStamina = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 80, 0, value, False, False)
+      PSQ.HenshinBuffRateStamina = value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2324,7 +2581,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinBuffRateCarry = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 81, 0, value, False, False)
+      PSQ.HenshinBuffRateCarry = value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2337,7 +2596,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.SuccubusArmorMagnitude = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 82, 0, value, False, False)
+      PSQ.SuccubusArmorMagnitude = value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2348,7 +2609,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.TransformThreshold = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 83, 0, value, False, False)
+      PSQ.TransformThreshold = value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2357,7 +2620,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.DeTransformThreshold = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 84, 0, value, False, False)
+      PSQ.DeTransformThreshold = value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2370,7 +2635,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinConsumeEnergy = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 85, 0, value, False, False)
+      PSQ.HenshinConsumeEnergy = value
+    EndIf
     PSQ.ResetTransformEnergyClock()
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
@@ -2380,7 +2647,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.ChargeValueAuto = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 86, 0, value, False, False)
+      PSQ.ChargeValueAuto = value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2389,7 +2658,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.CumInflationIncrement = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 87, 0, value, False, False)
+      PSQ.CumInflationIncrement = value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2398,7 +2669,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.RequiredToFluid = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 88, 0, value, False, False)
+      PSQ.RequiredToFluid = value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2439,7 +2712,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.SuccubusNightEyeStrength = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 89, 0, value, False, False)
+      PSQ.SuccubusNightEyeStrength = value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2448,7 +2723,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.SuccubusHeight = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 90, 0, value, False, False)
+      PSQ.SuccubusHeight = value
+    EndIf
     If PSQ.IsHenshined
       If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
         Return 
@@ -2463,7 +2740,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.SuccubusButt = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 91, 0, value, False, False)
+      PSQ.SuccubusButt = value
+    EndIf
     If PSQ.IsHenshined
       If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
         Return 
@@ -2478,7 +2757,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.SuccubusGenitals = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 92, 0, value, False, False)
+      PSQ.SuccubusGenitals = value
+    EndIf
     If PSQ.IsHenshined
       If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
         Return 
@@ -2493,7 +2774,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.SuccubusScrotum = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 93, 0, value, False, False)
+      PSQ.SuccubusScrotum = value
+    EndIf
     If PSQ.IsHenshined
       If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
         Return 
@@ -2508,7 +2791,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.PSQSkinColorAlpha = value as Int
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 94, value as Int, 0.0, False, False)
+      PSQ.PSQSkinColorAlpha = value as Int
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2516,7 +2801,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.PSQSkinColor = PendingAppearanceValue1
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 95, PendingAppearanceValue1, 0.0, False, False)
+      PSQ.PSQSkinColor = PendingAppearanceValue1
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2529,7 +2816,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HealthBuffInc = value / 100.0 + PSQ.HealthBuffDec
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 96, 0, value / 100.0 + PSQ.HealthBuffDec, False, False)
+      PSQ.HealthBuffInc = value / 100.0 + PSQ.HealthBuffDec
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2538,11 +2827,15 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HealthBuffInc = PSQ.HealthBuffInc - value / 100.0 - PSQ.HealthBuffDec
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 96, 0, PSQ.HealthBuffInc - value / 100.0 - PSQ.HealthBuffDec, False, False)
+      PSQ.HealthBuffInc = PSQ.HealthBuffInc - value / 100.0 - PSQ.HealthBuffDec
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HealthBuffDec = -value / 100.0
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 97, 0, -value / 100.0, False, False)
+      PSQ.HealthBuffDec = -value / 100.0
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2551,7 +2844,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.MagickaBuffInc = value / 100.0 + PSQ.MagickaBuffDec
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 98, 0, value / 100.0 + PSQ.MagickaBuffDec, False, False)
+      PSQ.MagickaBuffInc = value / 100.0 + PSQ.MagickaBuffDec
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2560,11 +2855,15 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.MagickaBuffInc = PSQ.MagickaBuffInc - value / 100.0 - PSQ.MagickaBuffDec
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 98, 0, PSQ.MagickaBuffInc - value / 100.0 - PSQ.MagickaBuffDec, False, False)
+      PSQ.MagickaBuffInc = PSQ.MagickaBuffInc - value / 100.0 - PSQ.MagickaBuffDec
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.MagickaBuffDec = -value / 100.0
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 99, 0, -value / 100.0, False, False)
+      PSQ.MagickaBuffDec = -value / 100.0
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2573,7 +2872,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.StaminaBuffInc = value / 100.0 + PSQ.StaminaBuffDec
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 100, 0, value / 100.0 + PSQ.StaminaBuffDec, False, False)
+      PSQ.StaminaBuffInc = value / 100.0 + PSQ.StaminaBuffDec
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2582,11 +2883,15 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.StaminaBuffInc = PSQ.StaminaBuffInc - value / 100.0 - PSQ.StaminaBuffDec
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 100, 0, PSQ.StaminaBuffInc - value / 100.0 - PSQ.StaminaBuffDec, False, False)
+      PSQ.StaminaBuffInc = PSQ.StaminaBuffInc - value / 100.0 - PSQ.StaminaBuffDec
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.StaminaBuffDec = -value / 100.0
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 101, 0, -value / 100.0, False, False)
+      PSQ.StaminaBuffDec = -value / 100.0
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2595,7 +2900,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.CarryBuffInc = value / 100.0 + PSQ.CarryBuffDec
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 102, 0, value / 100.0 + PSQ.CarryBuffDec, False, False)
+      PSQ.CarryBuffInc = value / 100.0 + PSQ.CarryBuffDec
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2604,11 +2911,15 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.CarryBuffInc = PSQ.CarryBuffInc - value / 100.0 - PSQ.CarryBuffDec
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 102, 0, PSQ.CarryBuffInc - value / 100.0 - PSQ.CarryBuffDec, False, False)
+      PSQ.CarryBuffInc = PSQ.CarryBuffInc - value / 100.0 - PSQ.CarryBuffDec
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.CarryBuffDec = -value / 100.0
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 103, 0, -value / 100.0, False, False)
+      PSQ.CarryBuffDec = -value / 100.0
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2617,7 +2928,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HealthRateBuffInc = value + PSQ.HealthRateBuffDec
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 104, 0, value + PSQ.HealthRateBuffDec, False, False)
+      PSQ.HealthRateBuffInc = value + PSQ.HealthRateBuffDec
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2626,11 +2939,15 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HealthRateBuffInc = PSQ.HealthRateBuffInc - value - PSQ.HealthRateBuffDec
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 104, 0, PSQ.HealthRateBuffInc - value - PSQ.HealthRateBuffDec, False, False)
+      PSQ.HealthRateBuffInc = PSQ.HealthRateBuffInc - value - PSQ.HealthRateBuffDec
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HealthRateBuffDec = -value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 105, 0, -value, False, False)
+      PSQ.HealthRateBuffDec = -value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2639,7 +2956,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.MagickaRateBuffInc = value + PSQ.MagickaRateBuffDec
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 106, 0, value + PSQ.MagickaRateBuffDec, False, False)
+      PSQ.MagickaRateBuffInc = value + PSQ.MagickaRateBuffDec
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2648,11 +2967,15 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.MagickaRateBuffInc = PSQ.MagickaRateBuffInc - value - PSQ.MagickaRateBuffDec
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 106, 0, PSQ.MagickaRateBuffInc - value - PSQ.MagickaRateBuffDec, False, False)
+      PSQ.MagickaRateBuffInc = PSQ.MagickaRateBuffInc - value - PSQ.MagickaRateBuffDec
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.MagickaRateBuffDec = -value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 107, 0, -value, False, False)
+      PSQ.MagickaRateBuffDec = -value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2661,7 +2984,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.StaminaRateBuffInc = value + PSQ.StaminaRateBuffDec
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 108, 0, value + PSQ.StaminaRateBuffDec, False, False)
+      PSQ.StaminaRateBuffInc = value + PSQ.StaminaRateBuffDec
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2670,11 +2995,15 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.StaminaRateBuffInc = PSQ.StaminaRateBuffInc - value - PSQ.StaminaRateBuffDec
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 108, 0, PSQ.StaminaRateBuffInc - value - PSQ.StaminaRateBuffDec, False, False)
+      PSQ.StaminaRateBuffInc = PSQ.StaminaRateBuffInc - value - PSQ.StaminaRateBuffDec
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.StaminaRateBuffDec = -value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 109, 0, -value, False, False)
+      PSQ.StaminaRateBuffDec = -value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2683,7 +3012,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.SpeedBuffInc = value + PSQ.SpeedBuffDec
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 110, 0, value + PSQ.SpeedBuffDec, False, False)
+      PSQ.SpeedBuffInc = value + PSQ.SpeedBuffDec
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2692,11 +3023,15 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.SpeedBuffInc = PSQ.SpeedBuffInc - value - PSQ.SpeedBuffDec
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 110, 0, PSQ.SpeedBuffInc - value - PSQ.SpeedBuffDec, False, False)
+      PSQ.SpeedBuffInc = PSQ.SpeedBuffInc - value - PSQ.SpeedBuffDec
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.SpeedBuffDec = -value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 111, 0, -value, False, False)
+      PSQ.SpeedBuffDec = -value
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2705,7 +3040,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.FortifyDestructionMult = value / 100.0
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 112, 0, value / 100.0, False, False)
+      PSQ.FortifyDestructionMult = value / 100.0
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2714,7 +3051,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.FortifyIllusionMult = value / 100.0
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 113, 0, value / 100.0, False, False)
+      PSQ.FortifyIllusionMult = value / 100.0
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2723,7 +3062,9 @@ Function HandleAppearanceOnSliderAcceptST(Float value, Int Owner, Bool RequireBu
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.MagicResistanceMult = value / 100.0
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 114, 0, value / 100.0, False, False)
+      PSQ.MagicResistanceMult = value / 100.0
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2815,6 +3156,22 @@ Function HandleAppearanceOnColorAcceptST(Int Color, Int Owner, Bool RequireBusy)
   EndIf
   Bool PSQVisualRuntime = skse.GetPluginVersion("skee") >= 0 || skse.GetPluginVersion("NiOverride") >= 0
   String Option = Self.GetState()
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236 && (Option == "PSQSkinColor" || Option == "PSQSuccubusHairColorInt")
+    Int Epoch = PSQ.GetPSQLoadEpoch()
+    Int Kind = (Option == "PSQSuccubusHairColorInt") as Int
+    Int Result = PSQAppearance.MenuColorCommit(PSQ, Kind, Color, Owner, Epoch, RequireBusy)
+    If Result != 0
+      If Result > 0 && PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, Epoch)
+        If Kind == 0
+          PSQ.SyncTransformSkinColor(Owner, RequireBusy)
+        Else
+          PSQ.SyncTransformHairColor(Owner, RequireBusy)
+        EndIf
+        Self.SetColorOptionValueST(Color, False, "")
+      EndIf
+      Return
+    EndIf
+  EndIf
   If Option == "PSQSkinColor"
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
@@ -2823,7 +3180,9 @@ Function HandleAppearanceOnColorAcceptST(Int Color, Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.PSQSkinColor = PendingAppearanceValue1
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 95, PendingAppearanceValue1, 0.0, False, False)
+      PSQ.PSQSkinColor = PendingAppearanceValue1
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2836,7 +3195,9 @@ Function HandleAppearanceOnColorAcceptST(Int Color, Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.PSQSuccubusHairColorInt = Color
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 115, Color, 0.0, False, False)
+      PSQ.PSQSuccubusHairColorInt = Color
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
@@ -2941,102 +3302,142 @@ Function OnKeyMapChangeST(Int KeyCode, String ConflictControl, String ConflictNa
   String Option = Self.GetState()
   If Option == "HotkeyEnableDrain"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyEnableDrain = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 116, KeyCode, 0.0, False, False)
+        PSQ.HotkeyEnableDrain = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyEnableDrain, False, "")
     EndIf
   ElseIf Option == "HotkeyAllowKill"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyAllowKill = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 117, KeyCode, 0.0, False, False)
+        PSQ.HotkeyAllowKill = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyAllowKill, False, "")
     EndIf
   ElseIf Option == "HotkeyHenshin"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyHenshin = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 118, KeyCode, 0.0, False, False)
+        PSQ.HotkeyHenshin = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyHenshin, False, "")
     EndIf
   ElseIf Option == "HotkeySuccubusStats"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeySuccubusStats = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 119, KeyCode, 0.0, False, False)
+        PSQ.HotkeySuccubusStats = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeySuccubusStats, False, "")
     EndIf
   ElseIf Option == "HotkeySuccubusCharmSpell"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeySuccubusCharmSpell = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 120, KeyCode, 0.0, False, False)
+        PSQ.HotkeySuccubusCharmSpell = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeySuccubusCharmSpell, False, "")
     EndIf
   ElseIf Option == "HotkeyMasturbation"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyMasturbation = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 121, KeyCode, 0.0, False, False)
+        PSQ.HotkeyMasturbation = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyMasturbation, False, "")
     EndIf
   ElseIf Option == "HotkeyRestoreMagicka"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyRestoreMagicka = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 122, KeyCode, 0.0, False, False)
+        PSQ.HotkeyRestoreMagicka = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyRestoreMagicka, False, "")
     EndIf
   ElseIf Option == "HotkeyExtractSemenPotion"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyExtractSemenPotion = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 123, KeyCode, 0.0, False, False)
+        PSQ.HotkeyExtractSemenPotion = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyExtractSemenPotion, False, "")
     EndIf
   ElseIf Option == "HotkeyEnableSoulTrap"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyEnableSoulTrap = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 124, KeyCode, 0.0, False, False)
+        PSQ.HotkeyEnableSoulTrap = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyEnableSoulTrap, False, "")
     EndIf
   ElseIf Option == "HotkeyCreatePenisSelf"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyCreatePenisSelf = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 125, KeyCode, 0.0, False, False)
+        PSQ.HotkeyCreatePenisSelf = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyCreatePenisSelf, False, "")
     EndIf
   ElseIf Option == "HotkeyEnergyBar"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyEnergyBar = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 126, KeyCode, 0.0, False, False)
+        PSQ.HotkeyEnergyBar = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyEnergyBar, False, "")
     EndIf
   ElseIf Option == "HotkeyNightEye"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyNightEye = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 127, KeyCode, 0.0, False, False)
+        PSQ.HotkeyNightEye = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyNightEye, False, "")
     EndIf
   ElseIf Option == "HotkeyDetectArousal"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyDetectArousal = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 128, KeyCode, 0.0, False, False)
+        PSQ.HotkeyDetectArousal = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyDetectArousal, False, "")
     EndIf
   ElseIf Option == "HotkeyIncreaseNode"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyIncreaseNode = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 129, KeyCode, 0.0, False, False)
+        PSQ.HotkeyIncreaseNode = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyIncreaseNode, False, "")
     EndIf
   ElseIf Option == "HotkeyDecreaseNode"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyDecreaseNode = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 130, KeyCode, 0.0, False, False)
+        PSQ.HotkeyDecreaseNode = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyDecreaseNode, False, "")
     EndIf
   ElseIf Option == "HotkeyHeight"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyHeight = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 131, KeyCode, 0.0, False, False)
+        PSQ.HotkeyHeight = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyHeight, False, "")
     EndIf
   ElseIf Option == "HotkeyButtNode"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyButtNode = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 132, KeyCode, 0.0, False, False)
+        PSQ.HotkeyButtNode = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyButtNode, False, "")
     EndIf
   ElseIf Option == "HotkeyGenitalsNode"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyGenitalsNode = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 133, KeyCode, 0.0, False, False)
+        PSQ.HotkeyGenitalsNode = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyGenitalsNode, False, "")
     EndIf
   ElseIf Option == "HotkeyScrotumNode"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyScrotumNode = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 134, KeyCode, 0.0, False, False)
+        PSQ.HotkeyScrotumNode = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyScrotumNode, False, "")
     EndIf
   ElseIf Option == "HotkeyDigestion"
     If !Self.KeyConflict(KeyCode, ConflictControl, ConflictName)
-      PSQ.HotkeyDigestion = KeyCode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 135, KeyCode, 0.0, False, False)
+        PSQ.HotkeyDigestion = KeyCode
+      EndIf
       Self.SetKeyMapOptionValueST(PSQ.HotkeyDigestion, False, "")
     EndIf
   EndIf
@@ -3076,6 +3477,10 @@ EndEvent
 
 Function SetSpell(Spell akSpell, Int ReqRank)
   If PlayerIsSuccubus.GetValueInt() == 1
+    If SKSE.GetPluginVersion("PSQ Appearance") >= 16777230 && PSQ.PlayerRef != None && akSpell != None
+      PSQAppearance.ToggleRankSpell(PSQ.PlayerRef, akSpell, SuccubusRank.GetValueInt(), ReqRank)
+      Return
+    EndIf
     If PSQ.PlayerRef.HasSpell(akSpell as Form)
       PSQ.PlayerRef.RemoveSpell(akSpell)
     ElseIf SuccubusRank.GetValueInt() >= ReqRank
@@ -3110,6 +3515,9 @@ String Function GetTitle()
 EndFunction
 
 String Function GetConditionalString(Int Cond)
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777250
+    Return PSQAppearance.GetConditionalString34(Cond)
+  EndIf
   If Cond == 0
     Return "$PSQ_Unconditional"
   ElseIf Cond == 1
@@ -3123,6 +3531,9 @@ String Function GetConditionalString(Int Cond)
 EndFunction
 
 Float Function GetNextExp()
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777250
+    Return PSQAppearance.NextXP34(SuccubusRank)
+  EndIf
   If SuccubusRank.GetValue() == 1.0
     Return 1000.0
   ElseIf SuccubusRank.GetValue() == 2.0
@@ -3512,30 +3923,48 @@ Function ExchangeDragonSoul()
     Return 
   EndIf
   Actor player = Game.GetPlayer()
-  If !PSQ || !PSQ.PlayerIsSuccubus || !PSQ.SuccubusEnergy
-    Self.ShowMessage("$PSQ_DragonSoulUnavailable", False, "$OK", "$Cancel")
-    Return 
+  Int Mode = DragonSoulExchangeMode
+  Int Payment = 0
+  If PSQ && SKSE.GetPluginVersion("PSQ Appearance") >= 16777233
+    Payment = PSQAppearance.SpendDragonSoul(player, Mode, PSQ.PlayerIsSuccubus, PSQ.SuccubusEnergy, PSQ.SuccubusEXP, PSQ.MaxEnergy)
   EndIf
-  If PSQ.PlayerIsSuccubus.GetValueInt() != 1 || PSQ.MaxEnergy <= 0.0
-    Self.ShowMessage("$PSQ_DragonSoulUnavailable", False, "$OK", "$Cancel")
-    Return 
+  If Payment < 0
+    If Payment == -2
+      Self.ShowMessage("$PSQ_DragonSoulMissing", False, "$OK", "$Cancel")
+    ElseIf Payment == -3
+      Self.ShowMessage("$PSQ_DragonSoulPerkLimit", False, "$OK", "$Cancel")
+    Else
+      Self.ShowMessage("$PSQ_DragonSoulUnavailable", False, "$OK", "$Cancel")
+    EndIf
+    Return
+  ElseIf Payment == 0
+    If !PSQ || !PSQ.PlayerIsSuccubus || !PSQ.SuccubusEnergy
+      Self.ShowMessage("$PSQ_DragonSoulUnavailable", False, "$OK", "$Cancel")
+      Return 
+    EndIf
+    If PSQ.PlayerIsSuccubus.GetValueInt() != 1 || PSQ.MaxEnergy <= 0.0
+      Self.ShowMessage("$PSQ_DragonSoulUnavailable", False, "$OK", "$Cancel")
+      Return 
+    EndIf
+    If player.GetActorValue("DragonSouls") < 1.0
+      Self.ShowMessage("$PSQ_DragonSoulMissing", False, "$OK", "$Cancel")
+      Return 
+    EndIf
+    If Mode == 2 && Game.GetPerkPoints() >= 255
+      Self.ShowMessage("$PSQ_DragonSoulPerkLimit", False, "$OK", "$Cancel")
+      Return 
+    EndIf
+    player.ModActorValue("DragonSouls", -1.0)
+    If Mode == 2
+      Game.ModPerkPoints(1)
+    EndIf
   EndIf
-  If player.GetActorValue("DragonSouls") < 1.0
-    Self.ShowMessage("$PSQ_DragonSoulMissing", False, "$OK", "$Cancel")
-    Return 
-  EndIf
-  If DragonSoulExchangeMode == 2 && Game.GetPerkPoints() >= 255
-    Self.ShowMessage("$PSQ_DragonSoulPerkLimit", False, "$OK", "$Cancel")
-    Return 
-  EndIf
-  player.ModActorValue("DragonSouls", -1.0)
-  If DragonSoulExchangeMode == 2
-    Game.ModPerkPoints(1)
-    PSQ.SuccubusEXP.SetValue(PSQ.SuccubusEXP.GetValue() + 10.0)
+  If Mode == 2
+    PSQ.SuccubusEXP.Mod(10.0)
     PSQ.SuccubusLevelUp(0.0)
   EndIf
   PSQ.Satiety(PSQ.MaxEnergy * 0.5)
-  If DragonSoulExchangeMode == 1
+  If Mode == 1
     Self.ShowMessage("$PSQ_DragonSoulEnergySuccess", False, "$OK", "$Cancel")
   Else
     Self.ShowMessage("$PSQ_DragonSoulSuccess", False, "$OK", "$Cancel")
@@ -3731,6 +4160,9 @@ String Function GetArousalModeLabel()
 EndFunction
 
 String Function GetSkillDrainModeName(Int Mode)
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777250
+    Return PSQAppearance.GetSkillDrainModeName34(Mode)
+  EndIf
   If Mode == 1
     Return "$PSQ_SkillDrainFixed"
   ElseIf Mode == 2
@@ -3773,6 +4205,11 @@ Function OnOptionMenuOpen(Int Option)
     BodyOptions[0] = "$PSQ_BodyNoChange"
     BodyOptions[1] = "$PSQ_BCNGPreviousPage"
     BodyOptions[2] = "$PSQ_BCNGNextPage"
+    If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+      BodyMenuEpoch = PSQ.GetPSQLoadEpoch()
+      BodyMenuRace = PSQ.PlayerRef.GetRace()
+      BodyMenuIDs = PSQAppearance.MenuBodyPageIDs(PSQ, BodyChangeMenuOffset, BodyChangeMenuCount)
+    EndIf
     Int i = 0
     While i < BodyChangeMenuCount
       BodyOptions[i + 3] = PSQ.GetTransformBodyPresetName(BodyChangeMenuOffset + i + 1, -1, False)
@@ -3835,17 +4272,31 @@ Function OnOptionMenuAccept(Int Option, Int Selection)
       BodyChangeMenuPage = (BodyChangeMenuPage + 1) % BodyPageCount
       Self.ForcePageReset()
     ElseIf Selection == 0
+      If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236 && (!BodyMenuRace || PSQAppearance.MenuListChoice(PSQ.PlayerRef, BodyMenuRace, 0, 0, BodyMenuEpoch, PSQ.GetPSQLoadEpoch(), 0, 1) < 0)
+        Self.ShowMessage("身形列表已变化，请重新打开菜单。", False, "$OK", "$Cancel")
+        Return
+      EndIf
       If PSQ.SetSuccubusBodySelection(0)
         Self.ForcePageReset()
       EndIf
     ElseIf Selection >= 3 && Selection < BodyChangeMenuCount + 3
+      If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+        Int LocalIndex = Selection - 3
+        String[] ActiveID = PSQAppearance.MenuBodyPageIDs(PSQ, BodyChangeMenuOffset + LocalIndex, 1)
+        If !BodyMenuRace || PSQAppearance.MenuListChoice(PSQ.PlayerRef, BodyMenuRace, 0, 0, BodyMenuEpoch, PSQ.GetPSQLoadEpoch(), LocalIndex, BodyChangeMenuCount) < 0 || !BodyMenuIDs || LocalIndex >= BodyMenuIDs.Length || !ActiveID || ActiveID.Length != 1 || ActiveID[0] != BodyMenuIDs[LocalIndex]
+          Self.ShowMessage("身形列表已变化，请重新打开菜单。", False, "$OK", "$Cancel")
+          Return
+        EndIf
+      EndIf
       If PSQ.SetSuccubusBodySelection(BodyChangeMenuOffset + Selection - 2)
         Self.ForcePageReset()
       EndIf
     EndIf
   ElseIf Option == DigestionModeOption
     If Selection >= 0 && Selection <= 2
-      PSQ.DigestionMode = Selection
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 136, Selection, 0.0, False, False)
+        PSQ.DigestionMode = Selection
+      EndIf
       Self.ForcePageReset()
     EndIf
   ElseIf Option == SatiationModeOption
@@ -3865,6 +4316,9 @@ Function OnOptionMenuAccept(Int Option, Int Selection)
 EndFunction
 
 String Function GetDragonSoulModeName(Int Mode)
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777250
+    Return PSQAppearance.GetDragonSoulModeName34(Mode)
+  EndIf
   If Mode == 1
     Return "$PSQ_DragonSoulModeEnergy"
   ElseIf Mode == 2
@@ -3898,7 +4352,9 @@ Function OnOptionDefault(Int Option)
       Self.ForcePageReset()
     EndIf
   ElseIf Option == DigestionModeOption
-    PSQ.DigestionMode = 1
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 136, 1, 0.0, False, False)
+      PSQ.DigestionMode = 1
+    EndIf
     Self.ForcePageReset()
   ElseIf Option == SatiationModeOption
     PSQ.SetSatiationEffectMode(0)
@@ -3912,6 +4368,9 @@ Function OnOptionDefault(Int Option)
 EndFunction
 
 String Function GetSatiationModeName(Int Mode)
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777250
+    Return PSQAppearance.GetSatiationModeName34(Mode)
+  EndIf
   If Mode != 0
     Return "$PSQ_SatiationXPMode"
   EndIf
@@ -3919,6 +4378,9 @@ String Function GetSatiationModeName(Int Mode)
 EndFunction
 
 String Function GetDigestionModeName(Int Mode)
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777250
+    Return PSQAppearance.GetDigestionModeName34(Mode)
+  EndIf
   If Mode == 0
     Return "$PSQ_DigestionAuto"
   ElseIf Mode == 2
@@ -4028,6 +4490,9 @@ String Function GetPlayerWingSelectionLabel()
 EndFunction
 
 Int Function GetManagedAbilityIndex(String Option)
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777231
+    Return PSQAppearance.SettingIndex(Option, False)
+  EndIf
   If Option == "EnableSuccubusDrainHealthSpell"
     Return 0
   ElseIf Option == "EnableSuccubusDrainStaminaSpell"
@@ -4530,109 +4995,7 @@ Function AcceptSuccubusThrallEyesMenu(Int Slot, Int Choice)
 EndFunction
 
 Function ApplyPlayerWingChoice(Int i, Int Owner, Bool RequireBusy)
-  If Owner < 0
-    Owner = PSQ.AppearanceOperationId
-    RequireBusy = PSQ.AppearanceEditBusy
-  EndIf
-  If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-    Return 
-  EndIf
-  If i >= 1 && i <= 8 && !PSQ.CanUseTransformOutfitChoice(5, i)
-    Self.ShowMessage("$PSQ_OutfitUnavailable", False, "$OK", "$Cancel")
-    Return
-  EndIf
-  If i < 0 && !PSQ.IsHenshinchu
-    If PSQ.GetAWUWing(-i) == None
-      Self.ShowMessage("$PSQ_AppearanceWingMissing", False, "$OK", "$Cancel")
-      Return
-    EndIf
-    If PSQ.IsHenshined && PSQ.HenshinWings && PSQ.PSQSuccubusWings != None
-      PSQ.RemoveTransformEquipmentItem(PSQ.PSQSuccubusWings, Owner, RequireBusy)
-    EndIf
-    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-      Return
-    EndIf
-    PSQ.PSQSuccubusWings = None
-    PSQ.AWUWingID = -i
-    PSQ.HenshinWings = True
-    PSQ.SyncAWUWing()
-    Self.SetMenuOptionValueST(Self.GetPlayerWingSelectionLabel(), False, "")
-    Return
-  EndIf
-  If i < 0 || i > 19 || PSQ.IsHenshinchu
-    Return 
-  EndIf
-  Bool WasEnabled = PSQ.HenshinWings
-  Armor OldWing = PSQ.PSQSuccubusWings
-  Armor[] Wing = Self.GetPlayerWingChoices(True)
-  If i > 0 && !Wing[i - 1]
-    Self.ShowMessage("$PSQ_AppearanceWingMissing", False, "$OK", "$Cancel")
-    Return 
-  EndIf
-  If PSQ.AWUWingID > 0
-    PSQ.AWUWingID = 0
-    PSQ.SyncAWUWing()
-  EndIf
-  If i == 0 && !WasEnabled || i > 0 && WasEnabled && OldWing == Wing[i - 1]
-    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-      Return 
-    EndIf
-    Self.SetMenuOptionValueST(Self.GetPlayerWingSelectionLabel(), False, "")
-    Return 
-  EndIf
-  If PSQ.IsHenshined && WasEnabled && OldWing as Bool
-    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-      Return 
-    EndIf
-    PSQ.RemoveTransformEquipmentItem(OldWing, Owner, RequireBusy)
-  EndIf
-  If i == 0
-    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-      Return 
-    EndIf
-    PSQ.HenshinWings = False
-    If PSQ.IsHenshined && WasEnabled
-      If PSQ.OrgWings as Bool && PSQ.PlayerRef.GetItemCount(PSQ.OrgWings as Form) > 0
-        If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-          Return 
-        EndIf
-        PSQ.PlayerRef.EquipItem(PSQ.OrgWings as Form, False, True)
-      EndIf
-      If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-        Return 
-      EndIf
-      PSQ.OrgWings = None
-    EndIf
-  Else
-    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-      Return 
-    EndIf
-    PSQ.PSQSuccubusWings = Wing[i - 1]
-    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-      Return 
-    EndIf
-    PSQ.HenshinWings = True
-    If PSQ.IsHenshined
-      If !WasEnabled
-        If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-          Return 
-        EndIf
-        Armor PendingAppearanceValue1 = PSQ.PlayerRef.GetWornForm(32768) as Armor
-        If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-          Return 
-        EndIf
-        PSQ.OrgWings = PendingAppearanceValue1
-      EndIf
-      If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-        Return 
-      EndIf
-      PSQ.EnsurePlayerTransformEquipment(PSQ.PSQSuccubusWings, Owner, RequireBusy)
-    EndIf
-  EndIf
-  If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
-    Return 
-  EndIf
-  Self.SetMenuOptionValueST(Self.GetPlayerWingSelectionLabel(), False, "")
+  Self.ApplyPlayerWingChoice40(i, Owner, RequireBusy)
 EndFunction
 
 Function ApplyPlayerEyeChoice(Int i, Int Owner, Bool RequireBusy)
@@ -4642,6 +5005,32 @@ Function ApplyPlayerEyeChoice(Int i, Int Owner, Bool RequireBusy)
   EndIf
   If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
     Return 
+  EndIf
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+    Int Epoch = PSQ.GetPSQLoadEpoch()
+    Int Count = PSQ.GetSuccubusEyeMaterialCount()
+    TextureSet Resource
+    Bool Applied = False
+    If i > 0 && i <= Count
+      Resource = PSQ.GetExternalEyeTexture(i, Owner, RequireBusy)
+      If Resource && PSQ.SuccubusEyeMaterialSelection == i
+        Applied = PSQ.IsSelectedEyeMaterialApplied()
+      EndIf
+    EndIf
+    Int Result = PSQAppearance.MenuChoiceCommit(PSQ, Owner, Epoch, RequireBusy, 0, i, Count, Resource, Applied)
+    If Result != 0
+      If Result == -2
+        Self.ShowMessage(PSQ.GetExternalEyeReadFailure(i), False, "$OK", "$Cancel")
+      ElseIf Result > 0
+        If Result == 2 && PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, Epoch)
+          PSQ.RefreshSuccubusEyeToggle(Owner, RequireBusy)
+        EndIf
+        If PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, Epoch)
+          Self.SetMenuOptionValueST(Self.GetSelectedEyeMaterialMenuName(), False, "")
+        EndIf
+      EndIf
+      Return
+    EndIf
   EndIf
   If i < 0 || i > PSQ.GetSuccubusEyeMaterialCount()
     Return 
@@ -4664,16 +5053,22 @@ Function ApplyPlayerEyeChoice(Int i, Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinEyes = False
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 138, 0, 0.0, False, False)
+      PSQ.HenshinEyes = False
+    EndIf
   Else
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.SuccubusEyeMaterialSelection = i
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 139, i, 0.0, False, False)
+      PSQ.SuccubusEyeMaterialSelection = i
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.HenshinEyes = True
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 138, 0, 0.0, True, False)
+      PSQ.HenshinEyes = True
+    EndIf
   EndIf
   If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
     Return 
@@ -4693,6 +5088,28 @@ Function ApplyPlayerHairChoice(Int Choice, Int Owner, Bool RequireBusy)
   If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
     Return 
   EndIf
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+    Int Epoch = PSQ.GetPSQLoadEpoch()
+    HeadPart Resource
+    If Choice > 0 && Choice <= 4
+      Resource = PSQ.GetTransformHairChoice(Choice, Owner, RequireBusy)
+    EndIf
+    Int Result = PSQAppearance.MenuChoiceCommit(PSQ, Owner, Epoch, RequireBusy, 1, Choice, 4, Resource, False)
+    If Result != 0
+      If Result == -2
+        Self.ShowMessage("$PSQ_TransformHairMissing", False, "$OK", "$Cancel")
+      ElseIf Result > 0 && PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, Epoch)
+        PSQ.ApplySelectedTransformHair(Owner, RequireBusy)
+        If PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, Epoch)
+          PSQ.ApplySelectedSuccubusEyes(Owner, RequireBusy)
+        EndIf
+        If PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, Epoch)
+          Self.SetMenuOptionValueST(Self.GetTransformHairLabel(Choice), False, "")
+        EndIf
+      EndIf
+      Return
+    EndIf
+  EndIf
   If Choice < 0 || Choice > 4 || PSQ.IsHenshinchu
     Return 
   EndIf
@@ -4706,7 +5123,9 @@ Function ApplyPlayerHairChoice(Int Choice, Int Owner, Bool RequireBusy)
   If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
     Return 
   EndIf
-  PSQ.SuccubusHairSelection = Choice
+  If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 140, Choice, 0.0, False, False)
+    PSQ.SuccubusHairSelection = Choice
+  EndIf
   If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
     Return 
   EndIf
@@ -4729,6 +5148,21 @@ Function ApplyPlayerTattooChoice(Int i, Int Owner, Bool RequireBusy)
   If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
     Return 
   EndIf
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+    Int Epoch = PSQ.GetPSQLoadEpoch()
+    Int Result = PSQAppearance.MenuChoiceCommit(PSQ, Owner, Epoch, RequireBusy, 2, i, 18, None, False)
+    If Result != 0
+      If Result > 0 && PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, Epoch)
+        Float Ratio = 0.0
+        If PlayerIsSuccubus.GetValueInt() == 1
+          Ratio = PSQ.GetEnergyRatio()
+        EndIf
+        PSQ.ChangeBodyPaint(Ratio, True)
+        Self.SetMenuOptionValueST(Self.GetSelectedSuccubusTattooName(), False, "")
+      EndIf
+      Return
+    EndIf
+  EndIf
   If i < 0 || i > 18
     Return 
   EndIf
@@ -4736,12 +5170,16 @@ Function ApplyPlayerTattooChoice(Int i, Int Owner, Bool RequireBusy)
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.SuccubusTattooSelection = 19
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 141, 19, 0.0, False, False)
+      PSQ.SuccubusTattooSelection = 19
+    EndIf
   Else
     If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
       Return 
     EndIf
-    PSQ.SuccubusTattooSelection = i
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 141, i, 0.0, False, False)
+      PSQ.SuccubusTattooSelection = i
+    EndIf
   EndIf
   If PlayerIsSuccubus.GetValueInt() == 1 && PSQ.MaxEnergy > 0.0
     PSQ.ChangeBodyPaint(PSQ.GetEnergyRatio(), True)
@@ -4763,6 +5201,15 @@ Function ApplyPlayerHumanSchlongChoice(Int i, Int Owner, Bool RequireBusy)
     Self.ShowMessage("未检测到对应 TRX 装备或模型，请启用 TRX 并完成 BodySlide 构建。", False, "$OK", "$Cancel")
     Return
   EndIf
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+    Int Result = PSQAppearance.MenuChoiceCommit(PSQ, Owner, PSQ.GetPSQLoadEpoch(), RequireBusy, 3, i, 2, Choice, False)
+    If Result != 0
+      If Result > 0
+        Self.SetMenuOptionValueST(PSQ.GetTRXFutaLabel(False), False, "")
+      EndIf
+      Return
+    EndIf
+  EndIf
   PSQ.PlayerHumanSchlong = Choice
   Self.SetMenuOptionValueST(PSQ.GetTRXFutaLabel(False), False, "")
 EndFunction
@@ -4776,11 +5223,23 @@ Function ApplyPlayerSuccubusSchlongChoice(Int i, Int Owner, Bool RequireBusy)
     Self.ShowMessage("未检测到对应 TRX 装备或模型，请启用 TRX 并完成 BodySlide 构建。", False, "$OK", "$Cancel")
     Return
   EndIf
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+    Int Result = PSQAppearance.MenuChoiceCommit(PSQ, Owner, PSQ.GetPSQLoadEpoch(), RequireBusy, 4, i, 2, Choice, False)
+    If Result != 0
+      If Result > 0
+        Self.SetMenuOptionValueST(PSQ.GetTRXFutaLabel(True), False, "")
+      EndIf
+      Return
+    EndIf
+  EndIf
   PSQ.PlayerSuccubusSchlong = Choice
   Self.SetMenuOptionValueST(PSQ.GetTRXFutaLabel(True), False, "")
 EndFunction
 
 Bool Function IsPlayerAppearanceSetting(String Option)
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+    Return PSQAppearance.MenuAppearanceLock(Option)
+  EndIf
   Return Option == "HenshinTattoo" || Option == "HenshinSkin" || Option == "HenshinWings" || Option == "HenshinHorn" || Option == "HenshinTail" || Option == "HenshinCuirass" || Option == "HenshinBoots" || Option == "HenshinGloves" || Option == "HenshinPenis" || Option == "HenshinHairColor" || Option == "PSQSkinColor" || Option == "PSQSuccubusHairColorInt" || Option == "HenshinSkinColorfulness" || Option == "SuccubusHeight" || Option == "SuccubusButt" || Option == "SuccubusGenitals" || Option == "SuccubusScrotum" || Option == "EnableHeightChangeSuccubus" || Option == "EnableButtChangeSuccubus" || Option == "EnableGenitalsChangeSuccubus" || Option == "EnableScrotumChangeSuccubus" || Option == "PlayerHumanSchlong"
 EndFunction
 
@@ -4792,6 +5251,9 @@ Int Function GetContinuousOptionsFlags()
 EndFunction
 
 Int Function GetContinuousOptionIndex(String Option)
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777231
+    Return PSQAppearance.SettingIndex(Option, True)
+  EndIf
   If Option == "FortifyMagickaSpell"
     Return 0
   ElseIf Option == "FortifyStaminaSpell"
@@ -4962,6 +5424,9 @@ Function OnColorAcceptST(Int Color)
 EndFunction
 
 String Function GetTattooGlowModeName(Int Mode)
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777250
+    Return PSQAppearance.GetTattooGlowModeName34(Mode)
+  EndIf
   If Mode == 1
     Return "$PSQ_GlowOriginal"
   ElseIf Mode == 2
@@ -4971,6 +5436,30 @@ String Function GetTattooGlowModeName(Int Mode)
 EndFunction
 
 Int Function AddRacialCollectionRows(String Catalog, Bool AcquiredOnly, Spell[] Sources, String[] Names, String[] Races, Int[] Statuses, Int Filled, Race OwnRace)
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777232
+    String[] Owners = JsonUtil.StringListToArray(Catalog,"Owner")
+    Int[] Primary = JsonUtil.IntListToArray(Catalog,"primary")
+    Int[] Rows = PSQAppearance.RacialCollectionRows(PSQ.PlayerRef,OwnRace,Owners,Primary,JsonUtil.IntListToArray(Catalog,"Grant"),StorageUtil.FormListToArray(PSQ.PlayerRef,"PSQ_RacialDrainAcquiredTraits"),Sources,AcquiredOnly,Sources.Length-Filled)
+    If Rows && Rows.Length > 0 && Rows[0] == -1
+      String[] Labels = JsonUtil.StringListToArray(Catalog,"Name")
+      String[] RaceLabels = JsonUtil.StringListToArray(Catalog,"Race")
+      Int Row = 1
+      While Row + 1 < Rows.Length && Filled < Sources.Length
+        Int CatalogIndex = Rows[Row]
+        Sources[Filled] = Game.GetFormFromFile(Primary[CatalogIndex],Owners[CatalogIndex]) as Spell
+        If CatalogIndex < Labels.Length
+          Names[Filled] = Labels[CatalogIndex]
+        EndIf
+        If CatalogIndex < RaceLabels.Length
+          Races[Filled] = RaceLabels[CatalogIndex]
+        EndIf
+        Statuses[Filled] = Rows[Row+1]
+        Filled += 1
+        Row += 2
+      EndWhile
+      Return Filled
+    EndIf
+  EndIf
   Int i = 0
   Int Count = jsonutil.StringListCount(Catalog, "Owner")
   While i < Count && Filled < Sources.Length
@@ -5127,7 +5616,9 @@ EndState
 State AllowHybrid
 
   Function OnDefaultST()
-    PSQ.AllowHybrid = True
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 24, 0, 0.0, True, False)
+      PSQ.AllowHybrid = True
+    EndIf
     Self.SetToggleOptionValueST(True, False, "")
   EndFunction
 EndState
@@ -5151,7 +5642,9 @@ State AproposRepairSpell
     If PSQ.GetAbilityManagementMode() != 2 || !PSQ.HasAproposRepairIntegration()
       Return 
     EndIf
-    PSQ.EnableAproposRepairSpell = !PSQ.EnableAproposRepairSpell
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 142, 0, 0.0, False, True)
+      PSQ.EnableAproposRepairSpell = !PSQ.EnableAproposRepairSpell
+    EndIf
     PSQ.SyncAproposRepairSpell()
     Self.SetToggleOptionValueST(PSQ.PlayerRef.HasSpell(PSQ.GetAproposRepairSpell() as Form), False, "")
   EndFunction
@@ -5208,7 +5701,9 @@ State AttributeDrainMode
     If Mode < 0 || Mode > 1
       Return 
     EndIf
-    PSQ.AttributeDrainMode = Mode
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 143, Mode, 0.0, False, False)
+      PSQ.AttributeDrainMode = Mode
+    EndIf
     Self.SetMenuOptionValueST(Self.GetAttributeDrainModeName(), False, "")
   EndFunction
 
@@ -5230,7 +5725,9 @@ EndState
 State AutoExtractSemenPotionThreshold
 
   Function OnSliderAcceptST(Float value)
-    PSQ.AutoExtractSemenPotionThreshold = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 144, 0, value, False, False)
+      PSQ.AutoExtractSemenPotionThreshold = value
+    EndIf
     Self.SetSliderOptionValueST(value, "{0}%", False, "")
   EndFunction
 
@@ -5272,7 +5769,9 @@ State CalcMaxEnergyHealth
   EndFunction
 
   Function OnSliderAcceptST(Float value)
-    PSQ.CalcMaxEnergyHealth = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 145, 0, value, False, False)
+      PSQ.CalcMaxEnergyHealth = value
+    EndIf
     PSQ.PublishEnergySenseConfig()
     Self.SetSliderOptionValueST(value, "{1}", False, "")
   EndFunction
@@ -5321,7 +5820,9 @@ State ConditionToKill
     Option[1] = "$PSQ_WhenAggressor"
     Option[2] = "$PSQ_WhenVictim"
     Option[3] = "$PSQ_WhenBoth"
-    PSQ.ConditionToKill = i
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 146, i, 0.0, False, False)
+      PSQ.ConditionToKill = i
+    EndIf
     Self.SetMenuOptionValueST(Option[i], False, "")
   EndFunction
 
@@ -5358,7 +5859,9 @@ State ConditionToSoulTrap
     Option[1] = "$PSQ_WhenAggressor"
     Option[2] = "$PSQ_WhenVictim"
     Option[3] = "$PSQ_WhenBoth"
-    PSQ.ConditionToSoulTrap = i
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 147, i, 0.0, False, False)
+      PSQ.ConditionToSoulTrap = i
+    EndIf
     Self.SetMenuOptionValueST(Option[i], False, "")
   EndFunction
 
@@ -5417,17 +5920,33 @@ EndState
 State CustomTattooGlowColor
 
   Function OnColorAcceptST(Int Color)
-    PSQ.CustomTattooGlowColor = Color
-    PSQ.preservetattooglowcolor = False
-    PSQ.TattooGlowMode = 2
-    PSQ.EnableCustomTattooGlow = True
+    If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236 && PSQAppearance.MenuGlowCommit(PSQ, 2, Color, True) > 0
+      PSQ.ChangeBodyPaint(PSQ.GetEnergyRatio(), True)
+      Self.SetColorOptionValueST(Color, False, "")
+      Self.SetMenuOptionValueST(Self.GetTattooGlowModeName(2), False, "TattooGlowMode")
+      Return
+    EndIf
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 148, Color, 0.0, False, False)
+      PSQ.CustomTattooGlowColor = Color
+    EndIf
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 149, 0, 0.0, False, False)
+      PSQ.preservetattooglowcolor = False
+    EndIf
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 150, 2, 0.0, False, False)
+      PSQ.TattooGlowMode = 2
+    EndIf
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 151, 0, 0.0, True, False)
+      PSQ.EnableCustomTattooGlow = True
+    EndIf
     PSQ.ChangeBodyPaint(PSQ.GetEnergyRatio(), True)
     Self.SetColorOptionValueST(Color, False, "")
     Self.SetMenuOptionValueST(Self.GetTattooGlowModeName(2), False, "TattooGlowMode")
   EndFunction
 
   Function OnDefaultST()
-    PSQ.CustomTattooGlowColor = 16738740
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 148, 16738740, 0.0, False, False)
+      PSQ.CustomTattooGlowColor = 16738740
+    EndIf
     PSQ.ChangeBodyPaint(PSQ.GetEnergyRatio(), True)
     Self.SetColorOptionValueST(16738740, False, "")
   EndFunction
@@ -5469,7 +5988,9 @@ EndState
 State DrainValueMultipliers
 
   Function OnSliderAcceptST(Float value)
-    PSQ.DrainValueMultipliers = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 152, 0, value, False, False)
+      PSQ.DrainValueMultipliers = value
+    EndIf
     Self.SetSliderOptionValueST(value, "{2}", False, "")
   EndFunction
 
@@ -5489,7 +6010,9 @@ EndState
 State EXPGainedMultipliers
 
   Function OnSliderAcceptST(Float value)
-    PSQ.EXPGainedMultipliers = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 153, 0, value, False, False)
+      PSQ.EXPGainedMultipliers = value
+    EndIf
     Self.SetSliderOptionValueST(value, "{2}", False, "")
   EndFunction
 
@@ -5509,7 +6032,9 @@ EndState
 State EnableCustomTattooGlow
 
   Function OnDefaultST()
-    PSQ.EnableCustomTattooGlow = False
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 151, 0, 0.0, False, False)
+      PSQ.EnableCustomTattooGlow = False
+    EndIf
     PSQ.ChangeBodyPaint(PSQ.GetEnergyRatio(), True)
     Self.SetToggleOptionValueST(False, False, "")
   EndFunction
@@ -5519,7 +6044,9 @@ State EnableCustomTattooGlow
   EndFunction
 
   Function OnSelectST()
-    PSQ.EnableCustomTattooGlow = !PSQ.EnableCustomTattooGlow
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 151, 0, 0.0, False, True)
+      PSQ.EnableCustomTattooGlow = !PSQ.EnableCustomTattooGlow
+    EndIf
     PSQ.ChangeBodyPaint(PSQ.GetEnergyRatio(), True)
     Self.SetToggleOptionValueST(PSQ.EnableCustomTattooGlow, False, "")
   EndFunction
@@ -5529,7 +6056,9 @@ EndState
 State EnableEnergyConsumingBySuccubusSpell
 
   Function OnDefaultST()
-    PSQ.EnableEnergyConsumingBySuccubusSpell = False
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 60, 0, 0.0, False, False)
+      PSQ.EnableEnergyConsumingBySuccubusSpell = False
+    EndIf
     Self.SetToggleOptionValueST(False, False, "")
   EndFunction
 
@@ -5538,7 +6067,9 @@ State EnableEnergyConsumingBySuccubusSpell
   EndFunction
 
   Function OnSelectST()
-    PSQ.EnableEnergyConsumingBySuccubusSpell = !PSQ.EnableEnergyConsumingBySuccubusSpell
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 60, 0, 0.0, False, True)
+      PSQ.EnableEnergyConsumingBySuccubusSpell = !PSQ.EnableEnergyConsumingBySuccubusSpell
+    EndIf
     Self.SetToggleOptionValueST(PSQ.EnableEnergyConsumingBySuccubusSpell, False, "")
   EndFunction
 EndState
@@ -5574,7 +6105,9 @@ State EnergySenseSpell
     If PSQ.GetAbilityManagementMode() != 2 || PSQ.SuccubusRank.GetValueInt() < 4
       Return 
     EndIf
-    PSQ.EnableEnergySenseSpell = !PSQ.EnableEnergySenseSpell
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 154, 0, 0.0, False, True)
+      PSQ.EnableEnergySenseSpell = !PSQ.EnableEnergySenseSpell
+    EndIf
     PSQ.SyncEnergySenseSpell()
     Self.SetToggleOptionValueST(PSQ.PlayerRef.HasSpell(PSQ.GetEnergySenseSpell() as Form), False, "")
   EndFunction
@@ -5584,7 +6117,9 @@ EndState
 State EquipmentDiagnostics
 
   Function OnDefaultST()
-    PSQ.EnableEquipmentDiagnostics = False
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 155, 0, 0.0, False, False)
+      PSQ.EnableEquipmentDiagnostics = False
+    EndIf
     Self.SetToggleOptionValueST(False, False, "")
   EndFunction
 
@@ -5593,7 +6128,9 @@ State EquipmentDiagnostics
   EndFunction
 
   Function OnSelectST()
-    PSQ.EnableEquipmentDiagnostics = !PSQ.EnableEquipmentDiagnostics
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 155, 0, 0.0, False, True)
+      PSQ.EnableEquipmentDiagnostics = !PSQ.EnableEquipmentDiagnostics
+    EndIf
     Self.SetToggleOptionValueST(PSQ.EnableEquipmentDiagnostics, False, "")
   EndFunction
 EndState
@@ -5613,7 +6150,9 @@ State FastModeTime
   EndFunction
 
   Function OnSliderAcceptST(Float value)
-    PSQ.FastModeTime = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 156, 0, value, False, False)
+      PSQ.FastModeTime = value
+    EndIf
     Self.SetSliderOptionValueST(value, "{0}", False, "")
   EndFunction
 EndState
@@ -5711,7 +6250,9 @@ State LoversRestoreMult
   EndFunction
 
   Function OnSliderAcceptST(Float value)
-    PSQ.LoversRestoreMult = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 157, 0, value, False, False)
+      PSQ.LoversRestoreMult = value
+    EndIf
     PSQ.PublishEnergySenseConfig()
     Self.SetSliderOptionValueST(value, "{1}", False, "")
   EndFunction
@@ -5728,7 +6269,9 @@ State MinEnergyOfHuman
   EndFunction
 
   Function OnSliderAcceptST(Float value)
-    PSQ.MinEnergyOfHuman = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 158, 0, value, False, False)
+      PSQ.MinEnergyOfHuman = value
+    EndIf
     PSQ.PublishEnergySenseConfig()
     Self.SetSliderOptionValueST(value, "{0}", False, "")
   EndFunction
@@ -5792,6 +6335,20 @@ State NPCSwitchWings
       Return 
     EndIf
     Armor NPCWings = storageutil.GetFormValue(SuccubusNPC as Form, "PSQ_NPCWings", None) as Armor
+    If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+      Int Result = PSQAppearance.MenuNPCWing(SuccubusNPC, NPCWings, Wing[i])
+      If Result != 0
+        If Result > 0
+          storageutil.SetFormValue(SuccubusNPC, "PSQ_NPCWings", Wing[i])
+          If i == 0
+            Self.SetMenuOptionValueST("$PSQ_OutfitWings", False, "")
+          Else
+            Self.SetMenuOptionValueST(Wing[i].GetName(), False, "")
+          EndIf
+        EndIf
+        Return
+      EndIf
+    EndIf
     Bool HasWings = False
     If NPCWings != None && SuccubusNPC.GetItemCount(NPCWings as Form) > 0
       SuccubusNPC.RemoveItem(NPCWings as Form, SuccubusNPC.GetItemCount(NPCWings as Form), True, None)
@@ -5956,7 +6513,9 @@ State RacialTraitDrainMode
     If Mode < 0 || Mode > 1
       Return 
     EndIf
-    PSQ.RacialTraitDrainMode = Mode
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 159, Mode, 0.0, False, False)
+      PSQ.RacialTraitDrainMode = Mode
+    EndIf
     Self.SetMenuOptionValueST(Self.GetRacialTraitDrainModeName(), False, "")
   EndFunction
 
@@ -5986,7 +6545,9 @@ EndState
 State RankMagicCostReduction
 
   Function OnDefaultST()
-    PSQ.EnableRankMagicCostReduction = True
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 160, 0, 0.0, True, False)
+      PSQ.EnableRankMagicCostReduction = True
+    EndIf
     PSQ.SyncRankMagicCostReduction()
     Self.ForcePageReset()
   EndFunction
@@ -5996,7 +6557,9 @@ State RankMagicCostReduction
   EndFunction
 
   Function OnSelectST()
-    PSQ.EnableRankMagicCostReduction = !PSQ.EnableRankMagicCostReduction
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 160, 0, 0.0, False, True)
+      PSQ.EnableRankMagicCostReduction = !PSQ.EnableRankMagicCostReduction
+    EndIf
     PSQ.SyncRankMagicCostReduction()
     Self.ForcePageReset()
   EndFunction
@@ -6006,7 +6569,9 @@ EndState
 State RankShoutBonusEnabled
 
   Function OnSelectST()
-    PSQ.EnableRankShoutCooldownBonus = !PSQ.EnableRankShoutCooldownBonus
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 161, 0, 0.0, False, True)
+      PSQ.EnableRankShoutCooldownBonus = !PSQ.EnableRankShoutCooldownBonus
+    EndIf
     PSQ.UpdateRankShoutCooldownBonus()
     Self.ForcePageReset()
   EndFunction
@@ -6016,7 +6581,9 @@ EndState
 State RankSpeedBonusEnabled
 
   Function OnDefaultST()
-    PSQ.EnableRankSpeedBonus = True
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 162, 0, 0.0, True, False)
+      PSQ.EnableRankSpeedBonus = True
+    EndIf
     PSQ.Satiety(0.0)
     Self.ForcePageReset()
   EndFunction
@@ -6026,7 +6593,9 @@ State RankSpeedBonusEnabled
   EndFunction
 
   Function OnSelectST()
-    PSQ.EnableRankSpeedBonus = !PSQ.EnableRankSpeedBonus
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 162, 0, 0.0, False, True)
+      PSQ.EnableRankSpeedBonus = !PSQ.EnableRankSpeedBonus
+    EndIf
     PSQ.Satiety(0.0)
     Self.ForcePageReset()
   EndFunction
@@ -6124,7 +6693,20 @@ State SetHairColor
     If !PSQ.IsAppearanceOperationCurrent(MenuAppearanceOwner, True)
       Return 
     EndIf
-    PSQ.PSQSuccubusHairColorInt = PendingAppearanceValue1
+    If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+      Int Result = PSQAppearance.MenuColorCommit(PSQ, 1, PendingAppearanceValue1, MenuAppearanceOwner, PSQ.GetPSQLoadEpoch(), True)
+      If Result != 0
+        If Result > 0
+        PSQ.SyncTransformHairColor(MenuAppearanceOwner, True)
+        Self.SetColorOptionValueST(PSQ.PSQSuccubusHairColorInt, False, "PSQSuccubusHairColorInt")
+        EndIf
+        PSQ.EndAppearanceEdit(MenuAppearanceOwner)
+        Return
+      EndIf
+    EndIf
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 115, PendingAppearanceValue1, 0.0, False, False)
+      PSQ.PSQSuccubusHairColorInt = PendingAppearanceValue1
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(MenuAppearanceOwner, True)
       Return 
     EndIf
@@ -6156,7 +6738,20 @@ State SetSkinColor
     If !PSQ.IsAppearanceOperationCurrent(MenuAppearanceOwner, True)
       Return 
     EndIf
-    PSQ.PSQSkinColor = PendingAppearanceValue1
+    If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+      Int Result = PSQAppearance.MenuColorCommit(PSQ, 5, PendingAppearanceValue1, MenuAppearanceOwner, PSQ.GetPSQLoadEpoch(), True)
+      If Result != 0
+        If Result > 0
+        Self.SetSliderOptionValueST(PSQ.PSQSkinColorAlpha as Float, "{0}", False, "HenshinSkinColorfulness")
+        Self.SetColorOptionValueST(PSQ.PSQSkinColor, False, "PSQSkinColor")
+        EndIf
+        PSQ.EndAppearanceEdit(MenuAppearanceOwner)
+        Return
+      EndIf
+    EndIf
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 95, PendingAppearanceValue1, 0.0, False, False)
+      PSQ.PSQSkinColor = PendingAppearanceValue1
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(MenuAppearanceOwner, True)
       Return 
     EndIf
@@ -6164,7 +6759,9 @@ State SetSkinColor
     If !PSQ.IsAppearanceOperationCurrent(MenuAppearanceOwner, True)
       Return 
     EndIf
-    PSQ.PSQSkinColorAlpha = PendingAppearanceValue2
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 94, PendingAppearanceValue2, 0.0, False, False)
+      PSQ.PSQSkinColorAlpha = PendingAppearanceValue2
+    EndIf
     If !PSQ.IsAppearanceOperationCurrent(MenuAppearanceOwner, True)
       Return 
     EndIf
@@ -6194,7 +6791,9 @@ State SkillDrainMode
 
   Function OnMenuAcceptST(Int Mode)
     If Mode >= 0 && Mode <= 2
-      PSQ.SkillDrainMode = Mode
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 163, Mode, 0.0, False, False)
+        PSQ.SkillDrainMode = Mode
+      EndIf
       Self.SetMenuOptionValueST(Self.GetSkillDrainModeName(Mode), False, "")
     EndIf
   EndFunction
@@ -6651,7 +7250,9 @@ State loversdrainmult
   EndFunction
 
   Function OnSliderAcceptST(Float value)
-    PSQ.loversdrainmult = value
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 164, 0, value, False, False)
+      PSQ.loversdrainmult = value
+    EndIf
     Self.SetSliderOptionValueST(value, "{1}", False, "")
   EndFunction
 EndState
@@ -6660,7 +7261,9 @@ EndState
 State preservetattooglowcolor
 
   Function OnDefaultST()
-    PSQ.preservetattooglowcolor = True
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 149, 0, 0.0, True, False)
+      PSQ.preservetattooglowcolor = True
+    EndIf
     PSQ.ChangeBodyPaint(PSQ.GetEnergyRatio(), True)
     Self.SetToggleOptionValueST(True, False, "")
   EndFunction
@@ -6670,9 +7273,13 @@ State preservetattooglowcolor
   EndFunction
 
   Function OnSelectST()
-    PSQ.preservetattooglowcolor = !PSQ.preservetattooglowcolor
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 149, 0, 0.0, False, True)
+      PSQ.preservetattooglowcolor = !PSQ.preservetattooglowcolor
+    EndIf
     If PSQ.preservetattooglowcolor
-      PSQ.EnableCustomTattooGlow = True
+      If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 151, 0, 0.0, True, False)
+        PSQ.EnableCustomTattooGlow = True
+      EndIf
       Self.SetToggleOptionValueST(True, False, "EnableCustomTattooGlow")
     EndIf
     PSQ.ChangeBodyPaint(PSQ.GetEnergyRatio(), True)
@@ -6897,6 +7504,9 @@ String Function GetEnergyBarFillDirectionName()
 EndFunction
 
 String Function GetEnergyBarDisplayName(Int Mode)
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777250
+    Return PSQAppearance.GetEnergyBarDisplayName34(Mode)
+  EndIf
   If Mode == 2
     Return "$PSQ_EnergyBarAngular"
   ElseIf Mode == 1
@@ -7041,6 +7651,9 @@ EndFunction
 
 Function AcceptTRXFutaSkinMenu(Int Index, Bool Transformed)
   String Key = "PSQ_BCNGFutaMenu_" + Self.GetState()
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+    Index = PSQAppearance.MenuListChoice(PSQ.PlayerRef, None, 0, 0, StorageUtil.GetIntValue(Self, Key + "_Load", -1), PSQ.GetBCNGFutaLoadEpoch(), Index, StorageUtil.StringListCount(Self, Key))
+  EndIf
   If storageutil.GetIntValue(Self, Key + "_Load", -1) != PSQ.GetBCNGFutaLoadEpoch() || Index < 0 || Index >= storageutil.StringListCount(Self, Key)
     Self.ShowMessage("皮肤列表已失效，请重新打开列表。", False, "$OK", "$Cancel")
     Return
@@ -7236,7 +7849,9 @@ EndState
 
 State EnableGenitalsChangeSuccubus
   Function OnSelectST()
-    PSQ.EnableGenitalsChangeSuccubus = !PSQ.EnableGenitalsChangeSuccubus
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 54, 0, 0.0, False, True)
+      PSQ.EnableGenitalsChangeSuccubus = !PSQ.EnableGenitalsChangeSuccubus
+    EndIf
     PSQ.QueueTRXFutaSize(PSQ.PlayerRef)
     Self.ForcePageReset()
   EndFunction
@@ -7247,7 +7862,9 @@ EndState
 
 State EnableScrotumChangeSuccubus
   Function OnSelectST()
-    PSQ.EnableScrotumChangeSuccubus = !PSQ.EnableScrotumChangeSuccubus
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 55, 0, 0.0, False, True)
+      PSQ.EnableScrotumChangeSuccubus = !PSQ.EnableScrotumChangeSuccubus
+    EndIf
     PSQ.QueueTRXFutaSize(PSQ.PlayerRef)
     Self.ForcePageReset()
   EndFunction
@@ -7317,6 +7934,12 @@ State BCNGTransformSkin
   EndFunction
 
   Function OnMenuAcceptST(Int Choice)
+    If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+      Race Cached = storageutil.GetFormValue(Self, "PSQ_SkinMenuRace", None) as Race
+      If !Cached || PSQAppearance.MenuListChoice(PSQ.PlayerRef, Cached, 0, 0, StorageUtil.GetIntValue(Self, "PSQ_SkinMenuEpoch", -1), PSQ.GetBCNGFutaLoadEpoch(), Choice, StorageUtil.StringListCount(Self, "PSQ_SkinMenuIDs") + 3) < 0
+        Return
+      EndIf
+    EndIf
     If !PSQ.HasBCNGSkinAPI() || storageutil.GetIntValue(Self, "PSQ_SkinMenuEpoch", -1) != PSQ.GetBCNGFutaLoadEpoch() || storageutil.GetFormValue(Self, "PSQ_SkinMenuRace", None) != PSQ.PlayerRef.GetRace()
       Return
     EndIf
@@ -7374,6 +7997,13 @@ Function SaveOutfitMenuIdentity(String Key)
 EndFunction
 
 Bool Function IsOutfitMenuIdentityCurrent(String Key)
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+    Race Cached = storageutil.GetFormValue(Self, Key + "Race", None) as Race
+    If !Cached
+      Return False
+    EndIf
+    Return PSQAppearance.MenuListChoice(PSQ.PlayerRef, Cached, StorageUtil.GetIntValue(Self, Key + "UBE", -1), psqracecompatibility.IsUBEActor(PSQ.PlayerRef) as Int, 0, 0, 0, 1) == 0
+  EndIf
   Return storageutil.GetFormValue(Self, Key + "Race", None) == PSQ.PlayerRef.GetRace() && storageutil.GetIntValue(Self, Key + "UBE", -1) == (psqracecompatibility.IsUBEActor(PSQ.PlayerRef) as Int)
 EndFunction
 
@@ -7430,4 +8060,180 @@ Function OpenBodyMatchedWingMenu()
   Self.SetMenuDialogOptions(Options)
   Self.SetMenuDialogStartIndex(Start)
   Self.SetMenuDialogDefaultIndex(0)
+EndFunction
+
+Function ApplyPlayerWingChoiceCompat39(Int i, Int Owner, Bool RequireBusy)
+  If Owner < 0
+    Owner = PSQ.AppearanceOperationId
+    RequireBusy = PSQ.AppearanceEditBusy
+  EndIf
+  If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
+    Return 
+  EndIf
+  If i >= 1 && i <= 8 && !PSQ.CanUseTransformOutfitChoice(5, i)
+    Self.ShowMessage("$PSQ_OutfitUnavailable", False, "$OK", "$Cancel")
+    Return
+  EndIf
+  If SKSE.GetPluginVersion("PSQ Appearance") >= 16777236
+    Int Epoch = PSQ.GetPSQLoadEpoch()
+    Armor Next
+    Spell AWU
+    If i < 0
+      AWU = PSQ.GetAWUWing(-i)
+    ElseIf i > 0 && i <= 19
+      Armor[] Choices = Self.GetPlayerWingChoices(True)
+      If Choices && i <= Choices.Length
+        Next = Choices[i - 1]
+      EndIf
+    EndIf
+    Armor Previous = PSQ.PSQSuccubusWings
+    Armor Original = PSQ.OrgWings
+    Int Actions = PSQAppearance.MenuWingCommit(PSQ, Owner, Epoch, RequireBusy, i, Next, AWU, Previous, Original)
+    If Actions != 0
+      If Actions == -2
+        Self.ShowMessage("$PSQ_AppearanceWingMissing", False, "$OK", "$Cancel")
+      ElseIf Actions > 0
+        If Math.LogicalAnd(Actions, 2) && PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, Epoch)
+          PSQ.RemoveTransformEquipmentItem(Previous, Owner, RequireBusy)
+        EndIf
+        If Math.LogicalAnd(Actions, 4) && PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, Epoch)
+          PSQ.SyncAWUWing()
+        EndIf
+        If Math.LogicalAnd(Actions, 16) && PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, Epoch) && PSQ.PlayerRef.GetItemCount(Original) > 0 && PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, Epoch)
+          PSQ.PlayerRef.EquipItem(Original, False, True)
+        EndIf
+        If Math.LogicalAnd(Actions, 8) && PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, Epoch)
+          PSQ.EnsurePlayerTransformEquipment(Next, Owner, RequireBusy)
+        EndIf
+        If PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, Epoch)
+          Self.SetMenuOptionValueST(Self.GetPlayerWingSelectionLabel(), False, "")
+        EndIf
+      EndIf
+      Return
+    EndIf
+  EndIf
+  If i < 0 && !PSQ.IsHenshinchu
+    If PSQ.GetAWUWing(-i) == None
+      Self.ShowMessage("$PSQ_AppearanceWingMissing", False, "$OK", "$Cancel")
+      Return
+    EndIf
+    If PSQ.IsHenshined && PSQ.HenshinWings && PSQ.PSQSuccubusWings != None
+      PSQ.RemoveTransformEquipmentItem(PSQ.PSQSuccubusWings, Owner, RequireBusy)
+    EndIf
+    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
+      Return
+    EndIf
+    PSQ.PSQSuccubusWings = None
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 137, -i, 0.0, False, False)
+      PSQ.AWUWingID = -i
+    EndIf
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 37, 0, 0.0, True, False)
+      PSQ.HenshinWings = True
+    EndIf
+    PSQ.SyncAWUWing()
+    Self.SetMenuOptionValueST(Self.GetPlayerWingSelectionLabel(), False, "")
+    Return
+  EndIf
+  If i < 0 || i > 19 || PSQ.IsHenshinchu
+    Return 
+  EndIf
+  Bool WasEnabled = PSQ.HenshinWings
+  Armor OldWing = PSQ.PSQSuccubusWings
+  Armor[] Wing = Self.GetPlayerWingChoices(True)
+  If i > 0 && !Wing[i - 1]
+    Self.ShowMessage("$PSQ_AppearanceWingMissing", False, "$OK", "$Cancel")
+    Return 
+  EndIf
+  If PSQ.AWUWingID > 0
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 137, 0, 0.0, False, False)
+      PSQ.AWUWingID = 0
+    EndIf
+    PSQ.SyncAWUWing()
+  EndIf
+  If i == 0 && !WasEnabled || i > 0 && WasEnabled && OldWing == Wing[i - 1]
+    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
+      Return 
+    EndIf
+    Self.SetMenuOptionValueST(Self.GetPlayerWingSelectionLabel(), False, "")
+    Return 
+  EndIf
+  If PSQ.IsHenshined && WasEnabled && OldWing as Bool
+    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
+      Return 
+    EndIf
+    PSQ.RemoveTransformEquipmentItem(OldWing, Owner, RequireBusy)
+  EndIf
+  If i == 0
+    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
+      Return 
+    EndIf
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 37, 0, 0.0, False, False)
+      PSQ.HenshinWings = False
+    EndIf
+    If PSQ.IsHenshined && WasEnabled
+      If PSQ.OrgWings as Bool && PSQ.PlayerRef.GetItemCount(PSQ.OrgWings as Form) > 0
+        If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
+          Return 
+        EndIf
+        PSQ.PlayerRef.EquipItem(PSQ.OrgWings as Form, False, True)
+      EndIf
+      If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
+        Return 
+      EndIf
+      PSQ.OrgWings = None
+    EndIf
+  Else
+    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
+      Return 
+    EndIf
+    PSQ.PSQSuccubusWings = Wing[i - 1]
+    If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
+      Return 
+    EndIf
+    If !(SKSE.GetPluginVersion("PSQ Appearance") >= 16777231) || !PSQAppearance.WriteMenuSetting(PSQ, 37, 0, 0.0, True, False)
+      PSQ.HenshinWings = True
+    EndIf
+    If PSQ.IsHenshined
+      If !WasEnabled
+        If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
+          Return 
+        EndIf
+        Armor PendingAppearanceValue1 = PSQ.PlayerRef.GetWornForm(32768) as Armor
+        If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
+          Return 
+        EndIf
+        PSQ.OrgWings = PendingAppearanceValue1
+      EndIf
+      If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
+        Return 
+      EndIf
+      PSQ.EnsurePlayerTransformEquipment(PSQ.PSQSuccubusWings, Owner, RequireBusy)
+    EndIf
+  EndIf
+  If !PSQ.IsAppearanceOperationCurrent(Owner, RequireBusy)
+    Return 
+  EndIf
+  Self.SetMenuOptionValueST(Self.GetPlayerWingSelectionLabel(), False, "")
+EndFunction
+Function ApplyPlayerWingChoice40(Int i, Int Owner, Bool RequireBusy)
+  If SKSE.GetPluginVersion("PSQ Appearance") < 16777256
+    Self.ApplyPlayerWingChoiceCompat39(i, Owner, RequireBusy)
+    Return
+  EndIf
+  If Owner < 0
+    Owner = PSQ.AppearanceOperationId
+    RequireBusy = PSQ.AppearanceEditBusy
+  EndIf
+  Int epoch = PSQ.GetPSQLoadEpoch()
+  Int job = PSQAppearance.StartWardrobe40(PSQ.PlayerRef, PSQ, Owner, epoch, RequireBusy, 5, i)
+  Int result = PSQ.WaitAppearanceReceipt27(job, Owner, epoch)
+  If PSQ.IsEquipmentRecoveryCurrent(Owner, RequireBusy, epoch)
+    If result == -2
+      Self.ShowMessage("$PSQ_AppearanceWingMissing", False, "$OK", "$Cancel")
+    ElseIf result == -3
+      Self.ShowMessage("$PSQ_OutfitUnavailable", False, "$OK", "$Cancel")
+    ElseIf result == 1
+      Self.SetMenuOptionValueST(Self.GetPlayerWingSelectionLabel(), False, "")
+    EndIf
+  EndIf
 EndFunction
