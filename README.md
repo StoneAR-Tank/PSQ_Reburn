@@ -9,12 +9,12 @@ PSQ Reburn 是《上古卷轴 V：天际特别版》的魅魔系统模组，基�
 **当前版本：v0.32**  
 [下载 PSQ Reburn](https://github.com/StoneAR-Tank/PSQ_Reburn/releases/tag/v0.32)
 
-下载页面提供完整版和 FOMOD 安装包。普通玩家推荐使用 FOMOD，在安装时选择自己需要的组件；完整版包含可手动选择的组件。独立服装、飞行或其他可选功能仍需另装对应模组。部分功能还需要进一步进行游戏内验证。
+下载页面提供完整版和 FOMOD 安装包。普通玩家推荐使用 FOMOD，在安装时选择自己需要的组件；完整版包含可手动选择的组件。独立服装、飞行或其他可选功能仍需另装对应模组。
 
 ## 功能介绍
 
 - **魅魔成长**：吸取能量，提升等级，解锁魅魔能力和属性加成。
-- **变身效率优化**：v0.32 将变身换装、外观切换和装备恢复的部分处理交由 C++ 原生组件，改善切换流程。FOMOD 中推荐选择「PSQ 原生变身与装备处理」，需要匹配的 SKSE64 和 Address Library。
+- **更顺畅的变身**：切换形态时更快地更换服装、调整外观；恢复原形后会帮你换回原来的装备。
 - **自由变身**：切换普通形态与魅魔形态，自定义身形、肤色、发色、纹样和变身特效。
 - **服装搭配**：上衣、靴子、手套、角、尾巴和翅膀可以分别选择、自由混搭。
 - **身形与皮肤切换**：配合 Body Change NG，为不同形态选择身形和皮肤。
@@ -53,21 +53,27 @@ PSQ Reburn 是《上古卷轴 V：天际特别版》的魅魔系统模组，基�
 
 所有前置请选择与自己的游戏版本相匹配的版本，并查看各自页面的安装要求。
 
+## 安装与升级
+
+1. 结束互动、退出变身和飞行，在安全地点保存游戏，并备份存档。
+2. 安装所需前置和 PSQ Reburn v0.32，停用旧版 PSQ 及旧的 PSQ 累积补丁。FOMOD 会根据已启用的前置推荐部分选项，请确认版本并按需调整。
+3. 根据需要安装服装、Body Change NG、TRX 或飞行模组，并按下方建议检查 MO2 排序。
+4. 重新启动游戏，在 PSQ 的 MCM 菜单中检查设置和兼容状态，然后即可变身。
+
+卸载前请先退出变身和互动，取回个人储物，并在 MCM 开关页执行卸载准备。建议保留清理前的存档。
+
 ## 服装下载
 
 以下服装可以按喜好选择，不需要全部安装。部分页面可能需要登录或开启成人内容显示。
 
-| 服装 | 下载页面或查找线索 | 安装提示 |
+| 服装 | 下载页面 | 安装提示 |
 | --- | --- | --- |
-| DX Succubus | [SE 原版](https://www.nexusmods.com/skyrimspecialedition/mods/36642) · [CBBE 版](https://www.nexusmods.com/skyrimspecialedition/mods/36619) · [UBE 版](https://www.nexusmods.com/skyrimspecialedition/mods/116652) | 选择与身体匹配的版本。 |
+| DX Succubus | [SE 原版](https://www.nexusmods.com/skyrimspecialedition/mods/36642) · [CBBE 版](https://www.nexusmods.com/skyrimspecialedition/mods/36619) · [UBE 版](https://www.nexusmods.com/skyrimspecialedition/mods/116652) | 原版提供基础资源；CBBE 或 UBE 用户请按页面要求安装对应的身形版本。 |
 | Helena Succubus | [服装页面](https://rektas.wixsite.com/website/post/helena-succubus) | 选择适合自己身体的 SE 版本。 |
-| Dragon Princess | [SE 3BF 版本线索](https://schaken-mods.com/forums/topic/32100-se-dragon-princess-3bf-bs/) | 这是相关移植版线索，作者原址尚未核实；请确认下载的版本与 PSQ 兼容。 |
-| Ageha Abyss | 原址待核实 | 请留意版本和下载来源。 |
-| TERA Succubus 9DM | [相关 SE 版本](https://schaken-mods.com/file/tera-succubus-9dm-se) | 该页面的版本是否与 PSQ 接入版本完全一致尚待确认；请勿与下方 Harry TERA 混淆。 |
 | SucubusSister Shinano | [lilyrim 发布页面](https://www.patreon.com/u11199437/posts/free-shinano-117275572) | 按页面说明安装所需身体及物理前置。 |
-| SW Vampire | [相关页面线索](https://arca.live/b/tullius/96130274) | 页面目前无法直接核实，请确认服装版本。 |
-| Hirosin X Succubus | [原帖线索](https://arca.live/b/tullius/90058800) · [服装资料](https://modbooru.com/mods/x-succubus-set.1670) | PSQ 的 Hiroshi／X 魅魔变身资源随本体提供；独立服装请按需安装。 |
-| TERA Succubus Armor（Harry TERA） | [作者页面](https://www.patreon.com/posts/tera-succubus-18130754) · [SE 移植页面](https://www.daymarrworkshop.com/post/tera-succubus-armor-cbbe-tbd-se) | 原版与 SE 移植版请按页面要求选择；不要与 TERA Succubus 9DM 混淆。 |
+| TERA Succubus Armor（Harry TERA） | [作者页面](https://www.patreon.com/posts/tera-succubus-18130754) · [SE 移植页面](https://www.daymarrworkshop.com/post/tera-succubus-armor-cbbe-tbd-se) | 按页面要求安装对应版本及前置。 |
+
+PSQ 本体已经包含 Hiroshi／X 魅魔的变身资源。
 
 装好服装后，可以在 PSQ 的 MCM 兼容页面查看是否识别。使用 BodySlide 时，选择与身体相同的预设，构建对应的 PSQ 服装，并勾选 **Build Morphs（建立变形）**。
 
@@ -87,14 +93,9 @@ PSQ Reburn 是《上古卷轴 V：天际特别版》的魅魔系统模组，基�
 
 MO2 **右侧插件列表**需要另外检查：启用所需的服装插件，并确保没有缺少前置。不要直接照搬左侧的顺序。
 
-## 安装与升级
+## 更多说明
 
-1. 结束互动、退出变身和飞行，在安全地点保存游戏，并备份存档。
-2. 安装所需前置和 PSQ Reburn v0.32，停用旧版 PSQ 及旧的 PSQ 累积补丁。FOMOD 会根据已启用的前置推荐部分选项，请确认版本并按需调整。
-3. 根据需要安装服装、Body Change NG、TRX 或飞行模组，并按上方建议检查 MO2 排序。
-4. 重新启动游戏，在 PSQ 的 MCM 菜单中检查设置和兼容状态，再尝试变身。
-
-卸载前请先退出变身和互动，取回个人储物，并在 MCM 开关页执行卸载准备。建议保留清理前的存档。
+v0.32 的变身换装、外观切换和装备恢复使用 C++ 原生组件优化。在 FOMOD 中推荐选择「PSQ 原生变身与装备处理」，并安装与游戏版本匹配的 SKSE64 和 Address Library。
 
 ## Credit
 

@@ -10,12 +10,12 @@ PSQ Reburn は『The Elder Scrolls V: Skyrim Special Edition』向けのサキ�
 
 [PSQ Reburn をダウンロード](https://github.com/StoneAR-Tank/PSQ_Reburn/releases/tag/v0.32)
 
-ダウンロードページには完全版 ZIP と FOMOD インストーラーがあります。通常は FOMOD を使い、必要な構成要素を選択してください。完全版には手動で選べる構成要素が含まれます。独立した衣装、飛行などのオプションには、それぞれの MOD を別途インストールする必要があります。一部の機能は引き続きゲーム内での検証が必要です。この翻訳は README のみで、ゲーム内メニューは中国語のままの場合があります。
+ダウンロードページには完全版 ZIP と FOMOD インストーラーがあります。通常は FOMOD を使い、必要な構成要素を選択してください。完全版には手動で選べる構成要素が含まれます。独立した衣装、飛行などのオプションには、それぞれの MOD を別途インストールする必要があります。この翻訳は README のみで、ゲーム内メニューは中国語のままの場合があります。
 
 ## 機能紹介
 
 - **サキュバスの成長**：エネルギーを吸収してランクを上げ、能力や属性ボーナスを解放します。
-- **変身処理の最適化**：v0.32 では着替え、外見の切り替え、装備の復元の一部を C++ のネイティブコンポーネントで処理し、変身の流れを改善します。FOMOD では推奨の PSQ ネイティブ変身・装備処理を選択してください。ゲームに合った SKSE64 と Address Library が必要です。
+- **よりスムーズな変身**：変身時の着替えと外見の切り替えが速くなり、元の姿に戻ると装備も戻ります。
 - **自由な変身**：通常形態とサキュバス形態を切り替え、体型、肌色、髪色、紋様、変身エフェクトを設定できます。
 - **衣装の組み合わせ**：上着、ブーツ、手袋、角、尻尾、翼を個別に選んで組み合わせられます。
 - **体型と肌の切り替え**：Body Change NG と組み合わせ、形態ごとの体型と肌を選べます。
@@ -54,21 +54,27 @@ PSQ Reburn は『The Elder Scrolls V: Skyrim Special Edition』向けのサキ�
 
 すべての前提 MOD はゲームバージョンに合ったものを選び、各ページの導入条件を確認してください。
 
+## インストールと更新
+
+1. シーンを終了し、変身と飛行を解除して安全な場所でセーブし、セーブデータをバックアップします。
+2. 必要な前提と PSQ Reburn v0.32 を導入し、旧 PSQ と旧累積パッチを無効にします。FOMOD は有効な前提に応じて一部を推奨するため、版を確認して必要に応じて調整してください。
+3. 必要に応じて衣装、Body Change NG、TRX、飛行 MOD を導入し、下記の MO2 順序を確認します。
+4. ゲームを再起動し、PSQ の MCM で設定と互換状態を確認してから変身できます。
+
+アンインストール前には変身とシーンを終了し、個人収納の中身を回収してから、MCM のスイッチページでアンインストール準備を実行してください。整理前のセーブを残すことを推奨します。
+
 ## 衣装のダウンロード
 
 好みの衣装だけを選んでください。すべてを導入する必要はありません。ページによってはログインまたは成人向けコンテンツの表示設定が必要です。
 
-| 衣装 | ダウンロード先または関連情報 | 導入時の注意 |
+| 衣装 | ダウンロードページ | 導入時の注意 |
 | --- | --- | --- |
-| DX Succubus | [SE 原版](https://www.nexusmods.com/skyrimspecialedition/mods/36642) · [CBBE 版](https://www.nexusmods.com/skyrimspecialedition/mods/36619) · [UBE 版](https://www.nexusmods.com/skyrimspecialedition/mods/116652) | 体型に合う版を選択。 |
+| DX Succubus | [SE 原版](https://www.nexusmods.com/skyrimspecialedition/mods/36642) · [CBBE 版](https://www.nexusmods.com/skyrimspecialedition/mods/36619) · [UBE 版](https://www.nexusmods.com/skyrimspecialedition/mods/116652) | 原版は基本リソースを提供します。CBBE または UBE を使う場合は、各ページの条件に従って対応版を導入してください。 |
 | Helena Succubus | [衣装ページ](https://rektas.wixsite.com/website/post/helena-succubus) | 体型に合う SE 版を選択。 |
-| Dragon Princess | [SE 3BF 版の情報](https://schaken-mods.com/forums/topic/32100-se-dragon-princess-3bf-bs/) | 関連する移植版の情報です。作者の原本ページは未確認のため、PSQ との互換性を確認してください。 |
-| Ageha Abyss | 原本ページ未確認 | バージョンと配布元を確認してください。 |
-| TERA Succubus 9DM | [関連する SE 版](https://schaken-mods.com/file/tera-succubus-9dm-se) | PSQ 対応版と完全に一致するかは未確認です。下記 Harry TERA と混同しないでください。 |
 | SucubusSister Shinano | [lilyrim の配布ページ](https://www.patreon.com/u11199437/posts/free-shinano-117275572) | ページに記載された体型・物理演算の前提を導入してください。 |
-| SW Vampire | [関連ページの情報](https://arca.live/b/tullius/96130274) | ページを直接確認できていないため、衣装の版を確認してください。 |
-| Hirosin X Succubus | [元投稿の情報](https://arca.live/b/tullius/90058800) · [衣装情報](https://modbooru.com/mods/x-succubus-set.1670) | PSQ 用 Hiroshi／X サキュバス変身リソースは本体に含まれます。独立衣装は必要に応じて導入。 |
-| TERA Succubus Armor（Harry TERA） | [作者ページ](https://www.patreon.com/posts/tera-succubus-18130754) · [SE 移植版](https://www.daymarrworkshop.com/post/tera-succubus-armor-cbbe-tbd-se) | 各ページの条件を確認し、TERA Succubus 9DM と混同しないでください。 |
+| TERA Succubus Armor（Harry TERA） | [作者ページ](https://www.patreon.com/posts/tera-succubus-18130754) · [SE 移植版](https://www.daymarrworkshop.com/post/tera-succubus-armor-cbbe-tbd-se) | ページの導入条件に従ってインストールしてください。 |
+
+Hiroshi／X サキュバスの変身リソースは PSQ 本体に含まれています。
 
 衣装導入後、PSQ の MCM 互換ページで認識状態を確認できます。BodySlide では使用する体型のプリセットを選び、対応する PSQ 衣装を **Build Morphs** を有効にして構築してください。
 
@@ -88,14 +94,9 @@ Body Change NG と衣装原作の関連ファイルは PSQ で上書きしてく
 
 MO2 **右側のプラグイン一覧**も別途確認してください。必要な衣装プラグインを有効にし、前提が不足していないことを確認します。左側の順序をそのままコピーしないでください。
 
-## インストールと更新
+## 詳細情報
 
-1. シーンを終了し、変身と飛行を解除して安全な場所でセーブし、セーブデータをバックアップします。
-2. 必要な前提と PSQ Reburn v0.32 を導入し、旧 PSQ と旧累積パッチを無効にします。FOMOD は有効な前提に応じて一部を推奨するため、版を確認して必要に応じて調整してください。
-3. 必要に応じて衣装、Body Change NG、TRX、飛行 MOD を導入し、上記の MO2 順序を確認します。
-4. ゲームを再起動し、PSQ の MCM で設定と互換状態を確認してから変身を試します。
-
-アンインストール前には変身とシーンを終了し、個人収納の中身を回収してから、MCM のスイッチページでアンインストール準備を実行してください。整理前のセーブを残すことを推奨します。
+v0.32 は C++ のネイティブコンポーネントで変身時の着替え、外見切り替え、装備の復元を最適化します。FOMOD の推奨項目「PSQ 原生变身与装备处理」を選び、ゲームに合う SKSE64 と Address Library を導入してください。
 
 ## クレジット
 

@@ -10,12 +10,12 @@ Become a succubus, switch between your ordinary and succubus forms, grow by drai
 
 [Download PSQ Reburn](https://github.com/StoneAR-Tank/PSQ_Reburn/releases/tag/v0.32)
 
-The release page offers a complete ZIP and a FOMOD installer. Most players should use the FOMOD to select the components they need; the complete ZIP contains components for manual selection. Standalone outfits, flight mods, and other optional features still require their respective mods. Some features need further in-game verification. This translation covers the README; the in-game menus may still be in Chinese.
+The release page offers a complete ZIP and a FOMOD installer. Most players should use the FOMOD to select the components they need; the complete ZIP contains components for manual selection. Standalone outfits, flight mods, and other optional features still require their respective mods. This translation covers the README; the in-game menus may still be in Chinese.
 
 ## Features
 
 - **Succubus progression:** Drain energy, gain ranks, and unlock abilities and attribute bonuses.
-- **Faster transformations:** v0.32 moves parts of outfit changes, appearance switching, and equipment restoration to a native C++ component to improve the transformation process. Select the recommended PSQ native transformation and equipment component in the FOMOD; it requires matching SKSE64 and Address Library versions.
+- **Smoother transformations:** Change outfits and appearance more quickly when transforming, then get your original equipment back when you return to normal.
 - **Transformation:** Switch forms and customize your body shape, skin and hair colors, markings, and transformation effects.
 - **Outfit customization:** Mix and match tops, boots, gloves, horns, tails, and wings independently.
 - **Body and skin switching:** Use Body Change NG to select a body shape and skin for each form.
@@ -54,21 +54,27 @@ Arousal features also need a compatible arousal mod, such as SLO Aroused NG or O
 
 Choose requirements compatible with your game version and check each mod's installation instructions.
 
+## Installation and upgrading
+
+1. End any scenes, leave transformation and flight, save in a safe location, and back up your save.
+2. Install the requirements and PSQ Reburn v0.32. Disable the old PSQ and its old cumulative patches. The FOMOD recommends some options based on enabled requirements; check versions and adjust as needed.
+3. Install outfits, Body Change NG, TRX, or a flight mod as needed, and check your MO2 order as described below.
+4. Restart the game, check settings and compatibility in PSQ's MCM, and then transform.
+
+Before uninstalling, leave transformation and scenes, retrieve your personal storage, and run the uninstall preparation on the MCM toggle page. Keep a save from before cleanup.
+
 ## Outfit downloads
 
 Choose the outfits you want; you do not need all of them. Some pages require an account or adult content settings.
 
-| Outfit | Download or source lead | Installation note |
+| Outfit | Download page | Installation note |
 | --- | --- | --- |
-| DX Succubus | [Original SE](https://www.nexusmods.com/skyrimspecialedition/mods/36642) · [CBBE](https://www.nexusmods.com/skyrimspecialedition/mods/36619) · [UBE](https://www.nexusmods.com/skyrimspecialedition/mods/116652) | Choose the version matching your body. |
+| DX Succubus | [Original SE](https://www.nexusmods.com/skyrimspecialedition/mods/36642) · [CBBE](https://www.nexusmods.com/skyrimspecialedition/mods/36619) · [UBE](https://www.nexusmods.com/skyrimspecialedition/mods/116652) | The original provides the base assets; install the CBBE or UBE version as directed on its page. |
 | Helena Succubus | [Outfit page](https://rektas.wixsite.com/website/post/helena-succubus) | Choose an SE version matching your body. |
-| Dragon Princess | [SE 3BF version lead](https://schaken-mods.com/forums/topic/32100-se-dragon-princess-3bf-bs/) | This is a related port; the original author's page has not been verified. Check PSQ compatibility. |
-| Ageha Abyss | Original page not yet verified | Check the version and download source. |
-| TERA Succubus 9DM | [Related SE version](https://schaken-mods.com/file/tera-succubus-9dm-se) | Exact compatibility with PSQ's integration is unconfirmed; do not confuse it with Harry TERA below. |
 | SucubusSister Shinano | [lilyrim's release page](https://www.patreon.com/u11199437/posts/free-shinano-117275572) | Follow the page's body and physics requirements. |
-| SW Vampire | [Related page lead](https://arca.live/b/tullius/96130274) | The page could not be directly verified; check the outfit version. |
-| Hirosin X Succubus | [Original post lead](https://arca.live/b/tullius/90058800) · [Outfit information](https://modbooru.com/mods/x-succubus-set.1670) | PSQ includes its Hiroshi/X succubus transformation resources; install standalone outfits as needed. |
-| TERA Succubus Armor (Harry TERA) | [Author's page](https://www.patreon.com/posts/tera-succubus-18130754) · [SE port](https://www.daymarrworkshop.com/post/tera-succubus-armor-cbbe-tbd-se) | Follow each page's requirements; do not confuse it with TERA Succubus 9DM. |
+| TERA Succubus Armor (Harry TERA) | [Author's page](https://www.patreon.com/posts/tera-succubus-18130754) · [SE port](https://www.daymarrworkshop.com/post/tera-succubus-armor-cbbe-tbd-se) | Follow the page's installation instructions and requirements. |
+
+PSQ includes the Hiroshi/X succubus transformation resources.
 
 After installing an outfit, check the PSQ MCM compatibility page to see whether it is recognized. In BodySlide, select the preset matching your body, build the corresponding PSQ outfit, and enable **Build Morphs**.
 
@@ -88,14 +94,9 @@ Let PSQ overwrite the relevant Body Change NG and original outfit files. When us
 
 Check MO2's **right-hand plugin list** separately: enable the necessary outfit plugins and make sure no masters are missing. Do not simply copy the left-pane order.
 
-## Installation and upgrading
+## More information
 
-1. End any scenes, leave transformation and flight, save in a safe location, and back up your save.
-2. Install the requirements and PSQ Reburn v0.32. Disable the old PSQ and its old cumulative patches. The FOMOD recommends some options based on enabled requirements; check versions and adjust as needed.
-3. Install outfits, Body Change NG, TRX, or a flight mod as needed, and check your MO2 order as described above.
-4. Restart the game, check settings and compatibility in PSQ's MCM, and then try transforming.
-
-Before uninstalling, leave transformation and scenes, retrieve your personal storage, and run the uninstall preparation on the MCM toggle page. Keep a save from before cleanup.
+v0.32 uses a native C++ component to optimize transformation outfits, appearance switching, and equipment restoration. In the FOMOD, the recommended option is “PSQ 原生变身与装备处理”; it requires SKSE64 and Address Library matching your game version.
 
 ## Credits
 
