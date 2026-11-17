@@ -62,18 +62,50 @@ Use the succubus Learning power to open the spell list and choose a spell. To le
 
 Ranks assume the default rank-based unlocking setting. Some abilities can be disabled or selected manually in the MCM.
 
-| In-game name | Rank | Effect |
+| In-game name | Default rank / condition | Effect |
 | --- | ---: | --- |
+| 变身魅魔 | 1 | Switch between normal and succubus forms; customize appearance and equipment in the MCM. |
 | 魅魔之术:学习 | 1 | Open the learning menu to choose and learn the spells listed above. |
+| 魅魔之恋:赤裸 | 1 | Unequip some items from the target and yourself, including body, hand, and foot equipment. |
+| 魅魔之恋:自慰 | 1 | Start a solo scene when no other SexLab scene is active; requires SexLab or P+ and a suitable animation. |
+| 魅魔之恋:体检 | 1 | View your succubus status, energy, and progression. |
+| 魅魔之术:魅惑 | 1 | Charm a target; a hotkey can be set in the MCM. Hotkey uses recharge over game time; at least one is required, and hotkey casting no longer consumes it at rank 8 or above. |
+| 魅魔之恋:肉棒 | 2 | Toggle the player’s TRX futanari appearance. Requires the separate TRX plugin and assets, applies to female characters; UBE uses its own body attachments. |
+| 魅魔之恋:欲望 | 2 | Increase a target’s arousal; requires an enabled compatible arousal mod. |
 | 魅魔之恋:吸吻 | 3 | Drain a target’s health. |
 | 魅魔之恋:吸精 | 3 | Drain a target’s stamina. |
 | 魅魔之恋:飞吻 | 3 | Attack at range and drain health, magicka, and stamina from nearby living targets. |
 | 魅魔之术:储物空间 | 3 | Open personal storage; requires the corresponding permanent-ability setting. |
 | 魅魔之眼：能量感知 | 4 | Highlight the energy state of nearby living adult humanoid NPCs; cast again to turn it off. Enable the ability first. |
+| 魅魔之术:束缚 | 4 | Temporarily paralyze the target. |
+| 魅魔之恋:强体 | 4 | Requires UIExtensions. Spend 1,000 energy for 10 maximum magicka or 50 carry weight, or 3,000 energy for one perk point. |
 | 魅魔之术:法转 | 5 | Convert succubus energy into magicka. |
 | 魅魔之术:召唤商人 | 6 | Summon the succubus merchant outside combat. |
+| 魅魔之恋:附棒 | 6 | Toggle a female target’s TRX futanari appearance. Requires the separate TRX plugin and assets; UBE uses its own body attachments. |
 | 魅魔之术：眷属化 | 7 | Turn a living adult humanoid NPC into a thrall; enable the ability first. |
+| 魅魔之惑:欲瘴 | 7 | Continuously affect the arousal of nearby targets; requires a compatible arousal mod. |
+| 魅魔之恋:免疫 | MCM | Provides an STI immunity effect; toggle it manually on the MCM magic and traits page. Effects depend on the disease mod. |
 | 魅魔之术：损伤修复 | 1 | Spend succubus energy to repair damage; requires Apropos 2 and the matching installer option. |
+
+## Ongoing abilities and progression
+
+| Ability | Default unlock / condition | Effect |
+| --- | --- | --- |
+| Summon Flame Atronach（召唤火元素） | Complete the matching familiar contract | Summon the flame atronach familiar; use again to dismiss it. |
+| Summon Spectral Horse（召唤幽灵马） | Complete the matching familiar contract | Summon the spectral horse familiar; use again to dismiss it. |
+| Summon Spectral Wolf（召唤幽冥狼） | Complete the matching familiar contract | Summon the spectral wolf familiar; use again to dismiss it. |
+| Health, magicka, stamina and carry weight | Rank 1+; rank-based ongoing abilities | By default, add 10% of each base value per rank. |
+| Unarmed, sneak and spell bonuses | Rank 1+; rank-based ongoing abilities | By default, add 5% per rank to unarmed damage, sneak, and spell strength or the corresponding duration. |
+| Magic resistance and speech | Rank 1+; rank-based ongoing abilities | By default, gain 3% magic resistance and 5 speech per rank. |
+| Skill absorption | Rank 1+; configurable in the MCM | On successful energy drain during a scene or orgasm, transfer the target’s highest skill; the default amount scales with rank. |
+| Attribute absorption | Rank 5+; can be disabled in the MCM | On successful energy drain during a scene, transfer maximum base health, magicka, or stamina; the amount increases with rank. Current followers, teammates, and thralls are protected. |
+| Racial trait absorption | Rank 4+; can be disabled in the MCM | On successful energy drain during a scene, gain a random unowned trait from the target’s race. |
+| Rank movement speed | Rank 2+; can be disabled in the MCM | Each rank above 1 adds 2% movement speed in normal form and 4% while transformed. |
+| Shout cooldown bonus | Rank 2+; can be disabled in the MCM | Reduce shout cooldown as rank rises; rank 1 has no bonus. |
+| Spell cost reduction | Rank 1+; can be disabled in the MCM | Reduce magicka costs for the five schools by rank; normal form receives half the transformed reduction. |
+| Transformation attributes and armor | Rank 1+; while transformed; configurable in the MCM | While transformed, increase health, magicka, stamina, carry weight, and armor according to mode and rank. |
+| Water walking | Enable in the MCM; while transformed | Walk on water while transformed. |
+| Soul trap on drain | Enable in the MCM and meet its conditions | Trigger soul trap on eligible drain kills. |
 
 The four magic-school tables list spells learned through the Learning power. Other succubus abilities have their own unlock conditions; see the [succubus rank and ability chart](succubus-ranks.en.md).
 
