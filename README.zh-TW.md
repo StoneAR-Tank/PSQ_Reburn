@@ -28,6 +28,8 @@ PSQ Reburn 是《上古卷軸 V：無界天際特別版》的魅魔系統模組�
 
 📖 [查看魅魔等級與能力圖表](docs/succubus-ranks.zh-TW.md)
 
+📖 [查看魅魔法術說明圖表](docs/succubus-spells.zh-TW.md)
+
 ## 前置需求
 
 ### 必要
@@ -50,7 +52,8 @@ PSQ Reburn 是《上古卷軸 V：無界天際特別版》的魅魔系統模組�
 - **飛行**：Wingflight 或 OSYRN 及其前置，需單獨安裝並使用其選單和按鍵。
 - **魅魔法術外觀相容**：按需安裝 Mysticism 2.4.2 或 Strange Runes 3.7.3；部分特效還需要與遊戲版本相符的 Address Library。
 - **能量感知、眷屬眼睛等功能**：powerofthree's Papyrus Extender 及其前置。
-- **其他連動**：FHU、SLSO、UIExtensions、EFF／NFF、iNeed、Mannaz 等可按需安裝。
+- **學習魅魔法術**：UIExtensions，用來開啟「學習」法術選單。
+- **其他連動**：FHU、SLSO、EFF／NFF、iNeed、Mannaz 等可按需安裝。
 
 所有前置請選擇與自己遊戲版本相符的版本，並查看各自頁面的安裝要求。
 

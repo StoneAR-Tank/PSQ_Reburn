@@ -28,6 +28,8 @@ PSQ Reburn은 《The Elder Scrolls V: Skyrim Special Edition》의 서큐버스 
 
 📖 [서큐버스 등급 및 능력 표](docs/succubus-ranks.ko.md)
 
+📖 [서큐버스 마법 안내](docs/succubus-spells.ko.md)
+
 ## 선행 모드
 
 ### 필수
@@ -50,7 +52,8 @@ PSQ Reburn은 《The Elder Scrolls V: Skyrim Special Edition》의 서큐버스 
 - **비행**: Wingflight 또는 OSYRN 및 그 선행 모드. 별도로 설치하고 해당 모드의 메뉴와 단축키를 사용하세요.
 - **마법 외형 호환성**: 필요에 따라 Mysticism 2.4.2 또는 Strange Runes 3.7.3을 설치하세요. 일부 효과에는 게임 버전에 맞는 Address Library도 필요합니다.
 - **에너지 감지, 권속의 눈 등**: powerofthree's Papyrus Extender 및 그 선행 모드.
-- **기타 연동**: FHU, SLSO, UIExtensions, EFF/NFF, iNeed, Mannaz 등을 필요에 따라 설치할 수 있습니다.
+- **서큐버스 마법 배우기**: 학습 메뉴를 열려면 UIExtensions가 필요합니다.
+- **기타 연동**: FHU, SLSO, EFF/NFF, iNeed, Mannaz 등을 필요에 따라 설치할 수 있습니다.
 
 모든 선행 모드는 게임 버전에 맞는 것을 선택하고 각 페이지의 설치 조건을 확인하세요.
 

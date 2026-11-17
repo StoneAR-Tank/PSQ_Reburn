@@ -28,6 +28,8 @@ Adjust settings in the in-game MCM. Available appearances and integrations depen
 
 📖 [Succubus rank and ability chart](docs/succubus-ranks.en.md)
 
+📖 [Succubus spell guide](docs/succubus-spells.en.md)
+
 ## Requirements
 
 ### Required
@@ -50,7 +52,8 @@ Arousal features also need a compatible arousal mod, such as SLO Aroused NG or O
 - **Flight:** Wingflight or OSYRN and its requirements; install separately and use its own menu and controls.
 - **Spell visuals:** Mysticism 2.4.2 or Strange Runes 3.7.3 as needed. Some effects also require Address Library matching your game version.
 - **Energy sensing, thrall eyes, and other features:** powerofthree's Papyrus Extender and its requirements.
-- **Other integrations:** FHU, SLSO, UIExtensions, EFF/NFF, iNeed, Mannaz, and others may be installed as needed.
+- **Learning succubus spells:** UIExtensions is needed to open the Learning menu.
+- **Other integrations:** FHU, SLSO, EFF/NFF, iNeed, Mannaz, and others may be installed as needed.
 
 Choose requirements compatible with your game version and check each mod's installation instructions.
 

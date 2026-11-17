@@ -28,6 +28,8 @@ PSQ Reburn は『The Elder Scrolls V: Skyrim Special Edition』向けのサキ�
 
 📖 [サキュバスのランクと能力一覧](docs/succubus-ranks.ja.md)
 
+📖 [サキュバス魔法ガイド](docs/succubus-spells.ja.md)
+
 ## 必要なもの
 
 ### 必須
@@ -50,7 +52,8 @@ PSQ Reburn は『The Elder Scrolls V: Skyrim Special Edition』向けのサキ�
 - **飛行**：Wingflight または OSYRN とその前提 MOD。別途インストールし、それぞれのメニューとキーを使用します。
 - **魔法の外見互換**：必要に応じて Mysticism 2.4.2 または Strange Runes 3.7.3。一部のエフェクトにはゲームバージョンに合った Address Library も必要です。
 - **エネルギー感知、眷属の目など**：powerofthree's Papyrus Extender とその前提 MOD。
-- **その他の連携**：FHU、SLSO、UIExtensions、EFF／NFF、iNeed、Mannaz などを必要に応じて導入できます。
+- **サキュバス魔法の習得**：「学習」メニューを開くには UIExtensions が必要です。
+- **その他の連携**：FHU、SLSO、EFF／NFF、iNeed、Mannaz などを必要に応じて導入できます。
 
 すべての前提 MOD はゲームバージョンに合ったものを選び、各ページの導入条件を確認してください。
 
