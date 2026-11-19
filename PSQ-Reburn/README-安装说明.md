@@ -32,4 +32,4 @@
 - `87-奇异符文`：需要 Strange Runes 3.7.3 和 powerofthree's Papyrus Extender；启用 `PSQ - Strange Runes.esp`。
 - `90-Apropos修复` 和 `93-Apropos-Patch-1.0023`：只能选择一个。前者用于 Apropos 2 原版；后者用于安装了 Patch 1.0023 的版本。先复制所选文件夹，再按步骤 4 覆盖对应语言的同代号文件夹。
 
-开发者源码包作为单独下载提供。详细说明和署名见 Docs。
+详细说明和署名见 Docs。
