@@ -1,4 +1,4 @@
-# PSQ Reburn v0.34
+# PSQ Reburn v0.35
 
 ## 変身時の着替えを高速化
 

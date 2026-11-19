@@ -1,8 +1,8 @@
 {
   "name": "PSQ Reburn",
-  "version": "0.34",
-  "date": "2026-11-19",
-  "channel": "test-release",
+  "version": "0.35",
+  "date": "2026-11-20",
+  "channel": "release",
   "optional_modules_separate": [
     "Wingflight",
     "YY Lovely Shout"
@@ -134,7 +134,7 @@
     "game_runtime_tested": false
   },
   "package_revision": 65,
-  "display_version": "v0.34",
+  "display_version": "v0.35",
   "version_relabel": {
     "date": "2026-10-26",
     "previous_package_label": "0.22",
