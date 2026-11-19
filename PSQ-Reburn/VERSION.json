@@ -1,7 +1,7 @@
 {
   "name": "PSQ Reburn",
-  "version": "0.32",
-  "date": "2026-11-16",
+  "version": "0.33",
+  "date": "2026-11-19",
   "channel": "test-release",
   "optional_modules_separate": [
     "Wingflight",
@@ -133,7 +133,7 @@
     "source_tests": 262,
     "game_runtime_tested": false
   },
-  "package_revision": 64,
+  "package_revision": 65,
   "display_version": "v0.32",
   "version_relabel": {
     "date": "2026-10-26",
@@ -1060,6 +1060,17 @@
     ],
     "ube_softbody_layer": false,
     "ube_tattoo_textures": "included-with-core",
-    "native_api": 42
-  }
+    "native_api": 63,
+    "panel_resolutions": [
+      "2560x1600",
+      "2560x1440",
+      "1920x1080"
+    ]
+  },
+  "languages": [
+    "简体中文",
+    "English",
+    "日本語",
+    "繁體中文"
+  ]
 }

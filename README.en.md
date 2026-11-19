@@ -6,15 +6,18 @@ PSQ Reburn is a succubus gameplay mod for *The Elder Scrolls V: Skyrim Special E
 
 Become a succubus, switch between your ordinary and succubus forms, grow by draining energy, and choose the appearance and outfits you like.
 
-**Current version: v0.32**
+**Current version: v0.33**
 
-[Download PSQ Reburn](https://github.com/StoneAR-Tank/PSQ_Reburn/releases/tag/v0.32)
+[Download PSQ Reburn](https://github.com/StoneAR-Tank/PSQ_Reburn/releases/tag/v0.33)
 
-The release page offers a complete ZIP and a FOMOD installer. Most players should use the FOMOD to select the components they need; the complete ZIP contains components for manual selection. Standalone outfits, flight mods, and other optional features still require their respective mods. This translation covers the README; the in-game menus may still be in Chinese.
+The release page offers a complete ZIP and a FOMOD installer. Most players should use the FOMOD to select the components they need; the complete ZIP contains components for manual selection. Standalone outfits, flight mods, and other optional features still require their respective mods.
+
+**Game languages:** Choose Simplified Chinese, English, Japanese, or Traditional Chinese during installation. Your choice applies to the PSQ installer and in-game text. To change it, reinstall the mod in MO2 and restart the game. Other mods keep their own languages.
 
 ## Features
 
 - **Succubus progression:** Drain energy, gain ranks, and unlock abilities and attribute bonuses.
+- **Succubus Panel:** View your growth and status and manage selected settings in game. Choose a layout that matches your screen during installation.
 - **Smoother transformations:** Change outfits and appearance more quickly when transforming, then get your original equipment back when you return to normal.
 - **Transformation:** Switch forms and customize your body shape, skin and hair colors, markings, and transformation effects.
 - **Outfit customization:** Mix and match tops, boots, gloves, horns, tails, and wings independently.
@@ -26,9 +29,9 @@ The release page offers a complete ZIP and a FOMOD installer. Most players shoul
 
 Adjust settings in the in-game MCM. Available appearances and integrations depend on the mods you have installed.
 
-📖 [Succubus rank and ability chart](docs/succubus-ranks.en.md)
+📖 [Succubus rank and ability chart](docs/succubus-ranks.en.md) (v0.29)
 
-📖 [Succubus spell guide](docs/succubus-spells.en.md)
+📖 [Succubus spell guide](docs/succubus-spells.en.md) (v0.32)
 
 ## Requirements
 
@@ -36,6 +39,7 @@ Adjust settings in the in-game MCM. Available appearances and integrations depen
 
 - *The Elder Scrolls V: Skyrim Special Edition*
 - **SKSE64** matching your game version
+- **Address Library for SKSE Plugins** matching your game version
 - **SkyUI**
 - **PapyrusUtil**
 - **Heels Sound**
@@ -60,7 +64,7 @@ Choose requirements compatible with your game version and check each mod's insta
 ## Installation and upgrading
 
 1. End any scenes, leave transformation and flight, save in a safe location, and back up your save.
-2. Install the requirements and PSQ Reburn v0.32. Disable the old PSQ and its old cumulative patches. The FOMOD recommends some options based on enabled requirements; check versions and adjust as needed.
+2. Install the requirements and PSQ Reburn v0.33. Disable the old PSQ and its old cumulative patches. On the first FOMOD page choose your language, select a panel layout for your resolution, and choose any compatibility options you need.
 3. Install outfits, Body Change NG, TRX, or a flight mod as needed, and check your MO2 order as described below.
 4. Restart the game, check settings and compatibility in PSQ's MCM, and then transform.
 
@@ -99,7 +103,7 @@ Check MO2's **right-hand plugin list** separately: enable the necessary outfit p
 
 ## More information
 
-v0.32 uses a native C++ component to optimize transformation outfits, appearance switching, and equipment restoration. In the FOMOD, the recommended option is “PSQ 原生变身与装备处理”; it requires SKSE64 and Address Library matching your game version.
+The required C++ native component is installed with v0.33 and supports the Succubus Panel, transformation, and standalone outfits. Install SKSE64 and Address Library for your game version.
 
 ## Credits
 

@@ -1,0 +1,21 @@
+{
+  "int": {
+    "schema": 1
+  },
+  "stringList": {
+    "names": [
+      "Pei the Devil Corner (full)",
+      "Pei the Devil Corner (cutting corner)"
+    ],
+    "plugins": [
+      "DPstylehorn.esp",
+      "DPstylehorn.esp"
+    ]
+  },
+  "intList": {
+    "forms": [
+      8941,
+      10322
+    ]
+  }
+}

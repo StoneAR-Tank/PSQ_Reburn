@@ -2,7 +2,7 @@
 
 Use the succubus Learning power to open the spell list and choose a spell. To learn it, meet the listed succubus rank, corresponding magic skill level, and energy requirement. Successfully learning the spell consumes the listed succubus energy.
 
-> The learning menu requires UIExtensions to be installed and enabled. Spell names below match the Chinese in-game menu; parentheses show the learned spell name when it differs. Rose Storm is selectable when it appears in the menu. Effects depend on your character, settings, and selected compatibility components.
+> The learning menu requires UIExtensions to be installed and enabled. Spell names below use the Simplified Chinese labels from v0.32; names differ when another language is selected in v0.33; parentheses show the learned spell name when it differs. Rose Storm is selectable when it appears in the menu. Effects depend on your character, settings, and selected compatibility components.
 
 ## Destruction
 

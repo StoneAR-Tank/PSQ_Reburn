@@ -1,0 +1,21 @@
+{
+  "int": {
+    "schema": 1
+  },
+  "stringList": {
+    "names": [
+      "Pei 惡魔角（完整）",
+      "Pei 惡魔角（斷角）"
+    ],
+    "plugins": [
+      "DPstylehorn.esp",
+      "DPstylehorn.esp"
+    ]
+  },
+  "intList": {
+    "forms": [
+      8941,
+      10322
+    ]
+  }
+}
