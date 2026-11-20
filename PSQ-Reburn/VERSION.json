@@ -1,6 +1,6 @@
 {
   "name": "PSQ Reburn",
-  "version": "0.35",
+  "version": "0.36",
   "date": "2026-11-20",
   "channel": "release",
   "optional_modules_separate": [
@@ -134,7 +134,7 @@
     "game_runtime_tested": false
   },
   "package_revision": 65,
-  "display_version": "v0.35",
+  "display_version": "v0.36",
   "version_relabel": {
     "date": "2026-10-26",
     "previous_package_label": "0.22",

@@ -1,7 +1,7 @@
 {
   "PSQ PlayerSuccubusQuest.esm": "1ab4f075d221b06b981551b4df9c790aace78736ccdae255320b7991a15f86fc",
-  "README-安装说明.md": "33e3d0ec168fd65fbf75fcc879c2eec00cbdd88225b476c781fa4effe35ec14d",
-  "VERSION.json": "b0b0877449920cc8aafb99775fa64b7f4154fc95187c30637fbb9e3dfb882e03",
+  "README-安装说明.md": "21bd71ecf1e5d384d38a6c90ff59311c5b032badc2162523d9b8d298c1324e90",
+  "VERSION.json": "abebba26948f3c3f13a06661d56d3964118dfdb272bf8e0f9a4bd7f062365af8",
   "scripts/arousaltransformscript.pex": "e452ea0daf2c6c6308d5931e8f42f0952bdf3868c229cb2fa73e1cb9e4f24dd4",
   "scripts/bb_pimpingandplayerquestutil.pex": "1cccce14855ebdb95832ae846ef59c83977624481d55a1ea3805e9c2d0e38a47",
   "scripts/bb_pimpingautoquestscript.pex": "e810916d2a5e94e51d8651f1139edaf6c2a16082f17c6bb3e16024294e10c148",
@@ -836,7 +836,7 @@
   "scripts/PSQSettings59.pex": "3aba5fd216070dc7df81e6d01bc190fb2bce24c7e9652b7927f158add4ef8495",
   "scripts/PSQPanel62.pex": "9853f4b80d4079040a2448e26d36c3b66af6dc0defc82e5839a84945abf8f7bc",
   "SKSE/Plugins/PSQ/Language.txt": "7b75deae4fcb230c17fd19612e7499b50bc479697299808d9b341c720816fb38",
-  "PSQ-Readme.md": "0d683d0fcc25781ecfda95e1f55e22766140f03d1cd67564dcff9d5bd99221bd",
+  "PSQ-Readme.md": "bad93a7939bce61cc2b4a4b6a4b6c50cab6c7a51a18cc9d6a3a838bf35a50b08",
   "interface/translations/psq playersuccubusquest_traditionalchinese.txt": "cbd71b9766615993c9b6efffcce2c44dfa8b86edaf40a6d05f7843771f78af20",
   "interface/translations/psq playersuccubusquest_schinese.txt": "cbd71b9766615993c9b6efffcce2c44dfa8b86edaf40a6d05f7843771f78af20",
   "interface/translations/psq playersuccubusquest_tchinese.txt": "cbd71b9766615993c9b6efffcce2c44dfa8b86edaf40a6d05f7843771f78af20"
