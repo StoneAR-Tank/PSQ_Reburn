@@ -6,9 +6,9 @@ PSQ Reburn is a succubus gameplay mod for *The Elder Scrolls V: Skyrim Special E
 
 Become a succubus, switch between your ordinary and succubus forms, grow by draining energy, and choose the appearance and outfits you like.
 
-**Current version: v0.37**
+**Current version: v0.38**
 
-[Download PSQ Reburn](https://github.com/StoneAR-Tank/PSQ_Reburn/releases/tag/v0.37)
+[Download PSQ Reburn](https://github.com/StoneAR-Tank/PSQ_Reburn/releases/tag/v0.38)
 
 The release page offers a complete ZIP and a FOMOD installer. Most players should use the FOMOD to select the components they need; the complete ZIP contains components for manual selection. Standalone outfits, flight mods, and other optional features still require their respective mods.
 
@@ -18,6 +18,7 @@ The release page offers a complete ZIP and a FOMOD installer. Most players shoul
 
 - **Succubus progression:** Drain energy, gain ranks, and unlock abilities and attribute bonuses.
 - **Succubus Panel:** View your growth and status and manage selected settings in game. Choose a layout for your screen, including 4K, during installation. Choose the energy bar style directly from the panel.
+- **Hotkeys:** Assign keys in the panel for Night Vision, Transform / Revert, and Digest Semen.
 - **Utility powers:** Use Digest Semen, Night Vision, and Succubus Vision from the game’s Powers menu. Digestion requires the corresponding FHU feature.
 - **Transformation outfits:** Change outfits when transforming and restore your equipment when returning to normal. Optional faster outfit changes can be enabled during installation; the original method is the default.
 - **Transformation:** Switch forms and customize your body shape, skin and hair colors, markings, and transformation effects.
@@ -65,7 +66,7 @@ Choose requirements compatible with your game version and check each mod's insta
 ## Installation and upgrading
 
 1. End any scenes, leave transformation and flight, save in a safe location, and back up your save.
-2. Install the requirements and PSQ Reburn v0.37. Disable the old PSQ and its old cumulative patches. On the first FOMOD page choose your language. Enable faster outfit changes if desired, select compatibility options, and choose a panel layout for your resolution.
+2. Install the requirements and PSQ Reburn v0.38. Disable the old PSQ and its old cumulative patches. On the first FOMOD page choose your language. Enable faster outfit changes if desired, select compatibility options, and choose a panel layout for your resolution. The FOMOD lets you preview outfits and choose the PSQ BodySlide projects you need.
 3. Install outfits, Body Change NG, TRX, or a flight mod as needed, and check your MO2 order as described below.
 4. Restart the game, check settings and compatibility in PSQ's MCM, and then transform.
 
@@ -104,7 +105,7 @@ Check MO2's **right-hand plugin list** separately: enable the necessary outfit p
 
 ## More information
 
-The required C++ native component is installed with v0.37 and supports the Succubus Panel, transformation, and standalone outfits. Install SKSE64 and Address Library for your game version.
+The required C++ native component is installed with v0.38 and supports the Succubus Panel, transformation, and standalone outfits. Install SKSE64 and Address Library for your game version.
 
 ## Credits
 

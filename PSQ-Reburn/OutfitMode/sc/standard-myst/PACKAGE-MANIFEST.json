@@ -1,7 +1,7 @@
 {
   "PSQ PlayerSuccubusQuest.esm": "1ab4f075d221b06b981551b4df9c790aace78736ccdae255320b7991a15f86fc",
-  "README-安装说明.md": "43e8f36c088d53b091bcf4e6bd038b9957d354112cb350de9792db54693a1416",
-  "VERSION.json": "2bff5ed78d020aeb9817d4db690694e23356f6503fc367d6e03e21d390f364d6",
+  "README-安装说明.md": "4bfe3c9ad2aa17e41a570fef754776859c69cda2d82e907853419951f3218c13",
+  "VERSION.json": "5618a6186a6c62885c145ac914a14d36f0a1dbbc7f0b5f278b83bacb59bbb494",
   "scripts/arousaltransformscript.pex": "3c198a63d6fc5b5a7001b0cdc45633ae725bd2f8e21fb25bb50cf5a71b0c2b1e",
   "scripts/bb_pimpingandplayerquestutil.pex": "1cccce14855ebdb95832ae846ef59c83977624481d55a1ea3805e9c2d0e38a47",
   "scripts/bb_pimpingautoquestscript.pex": "e810916d2a5e94e51d8651f1139edaf6c2a16082f17c6bb3e16024294e10c148",
@@ -10,8 +10,8 @@
   "scripts/BCNGPSQBridge.pex": "25bbf898839534e3130bba09c983559df367428ea3914002ccaa8ab788c185df",
   "scripts/dlc1vq04labtriggerscript.pex": "75f25505bcf7188afa2ca9bfce8b3b6495bc2c1bcf95187cec8c5137106019a4",
   "scripts/npcsuccubusquestscript.pex": "3454c37cf95a07809be3a3a81a3abde836603bb8c502e5f6781c4e1ab800b4c8",
-  "scripts/playersuccubusmenu.pex": "6ca79a7f08104d66b765a0e687bc346f92110eecf70b29beddedab979fa64973",
-  "scripts/playersuccubusquestscript.pex": "5dfec4537c97bd8b5add90223042c2efbceed1fdd762a759eab96aa2443d5959",
+  "scripts/playersuccubusmenu.pex": "c4ab5372836337e869158e849f97061c5f1afecf89de561491a1fbcd141b9820",
+  "scripts/playersuccubusquestscript.pex": "cfe853375c2ca38814c2c739b4c87f120f658e90e63405290685a74321dcee63",
   "scripts/PSQAppearance.pex": "496d94a7a9821e979b37eab2ab8f8cc35bac9368a1d0c31b288220d1ce124053",
   "scripts/psqaproposrepairscript.pex": "c8531f0419891eed201d899bd27457c2252095b255f301888d46d1264585e221",
   "scripts/psqarousalcloakscript.pex": "71732bc0faeed8bec8cf157cd985096e50e4836b25860a6e0626f075e2ac3305",
@@ -64,7 +64,7 @@
   "scripts/succubusfamiliarquestscript.pex": "4127d11d6b2d312cfac56277d9c92418841a5a1d9cb17b490192b92a1fd3470c",
   "scripts/succubusfeedscript.pex": "484ef0b49e25ad2ec270a23f9f39b347b863fa1f93732e3406c80875c7ccc3d7",
   "scripts/succubusfortifymsgboxscript.pex": "2572796fd5c505218e334aa03b986e34d67f618e987c54811cbe8cf10b042692",
-  "scripts/succubusheshinnscript.pex": "3725e791b7d702b7b499c3104ae5f0a11d64795d342f5b95d7cdde305ae98369",
+  "scripts/succubusheshinnscript.pex": "5979bdb7a43817fc6ee2f1c35c2bc6f6be9ed47401dd3b6041ba559e586d293f",
   "scripts/succubusmasturbationspellscript.pex": "1200ec9bc27473d3ced6d799ed91fb64e2e4bcc39e3831fce86ff0a563d9a3ab",
   "scripts/succubusmilkerscript.pex": "10683c8aa8dfa6d9ea1ce6a2942ef8427186f7fd96bd263a35f741624887fa80",
   "scripts/succubusmilkingeffectscript.pex": "26ebb1e3cb03c46803aa4665f4a35b43e33c92c79c69b626a7ca607f39e5526e",
@@ -839,5 +839,6 @@
   "PSQ-Readme.md": "bad93a7939bce61cc2b4a4b6a4b6c50cab6c7a51a18cc9d6a3a838bf35a50b08",
   "interface/translations/psq playersuccubusquest_traditionalchinese.txt": "cbd71b9766615993c9b6efffcce2c44dfa8b86edaf40a6d05f7843771f78af20",
   "interface/translations/psq playersuccubusquest_schinese.txt": "cbd71b9766615993c9b6efffcce2c44dfa8b86edaf40a6d05f7843771f78af20",
-  "interface/translations/psq playersuccubusquest_tchinese.txt": "cbd71b9766615993c9b6efffcce2c44dfa8b86edaf40a6d05f7843771f78af20"
+  "interface/translations/psq playersuccubusquest_tchinese.txt": "cbd71b9766615993c9b6efffcce2c44dfa8b86edaf40a6d05f7843771f78af20",
+  "scripts/psqstandardoutfitlog.pex": "f7aece03fc2f0d7cd7fa41360f84a4c59ce324c66a1f77a9ff8623e0708a2d67"
 }
