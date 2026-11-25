@@ -119,7 +119,7 @@ The required C++ native component is installed with v0.39 and supports the Succu
 - **[yuboge](https://github.com/yuboge) and [DouerGan](https://github.com/DouerGan)** — thank you for reporting issues, sharing analysis, and suggesting fixes. Thanks also to everyone who reports problems and helps improve the mod.
 - **StoneAR-Tank** — PSQ Reburn modifications, integration, and release. The evolution markings were designed with AI assistance.
 
-Rights and licenses belong to the respective creators. Relevant license files are in the main package's [Docs folder](PSQ-Reburn/Docs/).
+Rights and licenses belong to the respective creators.
 
 ## Support the project
 

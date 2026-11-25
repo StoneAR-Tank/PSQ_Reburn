@@ -119,7 +119,7 @@ v0.39 的 C++ 原生組件隨本體安裝，用於魅魔面板、變身和獨立
 - **[yuboge](https://github.com/yuboge) 與 [DouerGan](https://github.com/DouerGan)** — 感謝回報問題、提供分析與修復建議。也感謝所有回報問題、協助改進模組的玩家。
 - **StoneAR-Tank** — PSQ Reburn 的修改、整合與發布。進化紋樣採用 AI 輔助設計。
 
-各資源的權利和許可歸其原作者所有；相關許可檔案可在本體的 [Docs 資料夾](PSQ-Reburn/Docs/)中查看。
+各資源的權利和許可歸其原作者所有。
 
 ## 支持專案
 
