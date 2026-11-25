@@ -6,9 +6,9 @@ PSQ Reburn은 《The Elder Scrolls V: Skyrim Special Edition》의 서큐버스 
 
 서큐버스가 되어 일반 모습과 서큐버스 모습 사이를 전환하고, 에너지를 흡수해 성장하며, 원하는 외형과 의상을 조합할 수 있습니다.
 
-**현재 버전: v0.39**
+**현재 버전: v0.4**
 
-[PSQ Reburn 다운로드](https://github.com/StoneAR-Tank/PSQ_Reburn/releases/tag/v0.39)
+[PSQ Reburn 다운로드](https://github.com/StoneAR-Tank/PSQ_Reburn/releases/tag/v0.4)
 
 다운로드 페이지에서 완전판 ZIP과 FOMOD 설치 파일을 제공합니다. 일반적으로 FOMOD를 사용하여 필요한 구성 요소를 선택하는 것을 권장합니다. 완전판에는 수동으로 선택할 수 있는 구성 요소가 들어 있습니다. 독립 의상, 비행 및 기타 선택 기능을 사용하려면 해당 모드를 별도로 설치해야 합니다.
 
@@ -18,6 +18,7 @@ PSQ Reburn은 《The Elder Scrolls V: Skyrim Special Edition》의 서큐버스 
 
 - **서큐버스 성장**: 에너지를 흡수해 등급을 올리고 능력과 능력치 보너스를 해금합니다.
 - **서큐버스 패널**: 게임에서 성장과 상태를 확인하고 일부 설정을 관리합니다. 설치할 때 4K를 포함해 화면에 맞는 레이아웃을 선택하세요. 패널에서 에너지 바 스타일도 바로 선택할 수 있습니다.
+- **마법 배우기**: 서큐버스 패널에서 네 계열의 마법과 습득 조건, 이미 배운 마법을 확인할 수 있습니다.
 - **단축키**: 패널에서 야간 시야, 변신／변신 해제, 정액 소화에 키를 지정할 수 있습니다.
 - **편의 능력**: 정액 소화와 야간 시야를 게임의 능력 목록에서 사용할 수 있습니다. 정액 소화에는 해당 FHU 기능이 필요합니다.
 - **변신 의상 교체**: 변신할 때 의상을 갈아입고 원래 모습으로 돌아오면 기존 장비를 복원합니다. 설치할 때 빠른 의상 교체를 선택할 수 있으며 기본값은 기존 방식입니다.
@@ -33,7 +34,7 @@ PSQ Reburn은 《The Elder Scrolls V: Skyrim Special Edition》의 서큐버스 
 
 📖 [서큐버스 등급 및 능력 표](docs/succubus-ranks.ko.md) (v0.29)
 
-📖 [서큐버스 마법 안내](docs/succubus-spells.ko.md) (v0.32; v0.35에서 일부 능력과 조작 방식이 변경되었습니다)
+📖 [서큐버스 마법 안내](docs/succubus-spells.ko.md) (v0.32 기준이며, 일부 능력과 마법 습득 방식은 이후 버전에서 변경되었습니다)
 
 ## 선행 모드
 
@@ -58,7 +59,6 @@ PSQ Reburn은 《The Elder Scrolls V: Skyrim Special Edition》의 서큐버스 
 - **비행**: Wingflight 또는 OSYRN 및 그 선행 모드. 별도로 설치하고 해당 모드의 메뉴와 단축키를 사용하세요.
 - **마법 외형 호환성**: 필요에 따라 Mysticism 2.4.2 또는 Strange Runes 3.7.3을 설치하세요. 일부 효과에는 게임 버전에 맞는 Address Library도 필요합니다.
 - **에너지 감지, 권속의 눈 등**: powerofthree's Papyrus Extender 및 그 선행 모드.
-- **서큐버스 마법 배우기**: 학습 메뉴를 열려면 UIExtensions가 필요합니다.
 - **TDF 연동**: TDF Enhanced Prostitution을 사용한다면 설치 프로그램에서 호환 항목을 선택할 수 있습니다. TDF 본체는 별도로 설치하세요.
 - **기타 연동**: FHU, SLSO, EFF/NFF, iNeed, Mannaz 등을 필요에 따라 설치할 수 있습니다.
 
@@ -67,7 +67,7 @@ PSQ Reburn은 《The Elder Scrolls V: Skyrim Special Edition》의 서큐버스 
 ## 설치 및 업데이트
 
 1. 상호작용을 종료하고 변신 및 비행을 해제한 후 안전한 장소에서 저장하고 세이브를 백업하세요.
-2. 필요한 선행 모드와 PSQ Reburn v0.39을 설치하고 이전 PSQ와 누적 패치를 비활성화하세요. FOMOD 첫 페이지에서 언어를 선택하고 필요에 따라 빠른 의상 교체와 호환 항목을 고른 뒤 해상도에 맞는 패널을 선택하세요. FOMOD에서 의상을 미리 보고 필요한 PSQ BodySlide 파일을 선택할 수 있습니다.
+2. 필요한 선행 모드와 PSQ Reburn v0.4을 설치하고 이전 PSQ와 누적 패치를 비활성화하세요. FOMOD 첫 페이지에서 언어를 선택하고 필요에 따라 빠른 의상 교체와 호환 항목을 고른 뒤 해상도에 맞는 패널을 선택하세요. FOMOD에서 의상을 미리 보고 필요한 PSQ BodySlide 파일을 선택할 수 있습니다.
 3. 필요에 따라 의상, Body Change NG, TRX 또는 비행 모드를 설치하고 아래 MO2 순서를 확인하세요.
 4. 게임을 다시 시작한 뒤 PSQ의 MCM에서 설정과 호환 상태를 확인한 뒤 변신하세요.
 
@@ -106,7 +106,7 @@ MO2 **오른쪽 플러그인 목록**도 따로 확인하세요. 필요한 의�
 
 ## 추가 정보
 
-v0.39의 필수 C++ 네이티브 구성 요소는 본체와 함께 설치되며 서큐버스 패널, 변신, 독립 의상 연동에 사용됩니다. 게임 버전에 맞는 SKSE64와 Address Library를 설치하세요.
+v0.4의 필수 C++ 네이티브 구성 요소는 본체와 함께 설치되며 서큐버스 패널, 변신, 독립 의상 연동에 사용됩니다. 게임 버전에 맞는 SKSE64와 Address Library를 설치하세요.
 
 ## 크레딧
 

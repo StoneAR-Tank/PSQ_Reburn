@@ -1,4 +1,4 @@
-# PSQ Reburn v0.39
+# PSQ Reburn v0.4
 
 ## 變身換裝加速
 
