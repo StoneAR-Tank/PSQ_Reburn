@@ -1,12 +1,12 @@
-# PSQ Reburn v0.38 完整版（手动安装）
+# PSQ Reburn v0.39 完整版（手动安装）
 
 本包包含 PSQ 本体和可选组件。一般玩家推荐使用同版 FOMOD，在安装时选择语言、换装方式、分辨率和所需组件。
 
 ## 基本安装
 
-先安装所需前置，并将本包安装为一个新的 MO2 模组。根目录已经包含本体、必装原生组件、全部 PSQ 3BA BodySlide 工程、简体中文、默认换装方式和 2560 × 1600 面板。若需要按单套服装选择工程，推荐使用 FOMOD。需要与游戏版本匹配的 SKSE64 和 Address Library。
+先安装所需前置，并将本包安装为一个新的 MO2 模组。根目录已经包含本体、必装原生组件、随本体保留的 PSQ 3BA BodySlide 工程、简体中文、默认换装方式和 2560 × 1600 面板。若需要按单套服装选择工程，推荐使用 FOMOD。需要与游戏版本匹配的 SKSE64 和 Address Library。
 
-独立服装、飞行、动作包及各项前置仍需另行安装。升级前先结束互动、退出变身和飞行，备份存档并停用旧版 PSQ。
+独立服装、飞行、动作包及各项前置仍需另行安装。为龙服装需要独立安装原作并启用 WeiLong.esp；各套服装请按原作要求构建身形。升级前先结束互动、退出变身和飞行，备份存档并停用旧版 PSQ。
 
 ## 手动选择语言、换装方式与组件
 
@@ -25,11 +25,12 @@
 
 - `40-BodyChangeNG-1.3.8`：需要单独安装 Body Change NG 1.3.8，并让 PSQ 的接口文件覆盖本体。
 - `50-TRX皮肤`：需要 Body Change 接口与独立 TRX 模组。
-- `60-UBE服装`：包含全部 PSQ UBE BodySlide 工程，需要 UBE、SexLab、Heels Sound 和相应原作服装；自行使用 BodySlide 构建。
+- `60-UBE服装`：包含随本体保留的 PSQ UBE BodySlide 工程，需要 UBE、SexLab、Heels Sound 和相应原作服装；自行使用 BodySlide 构建。
 - `80-UBE-DX`：仅在已安装 UBE 组件并启用 DX Succubus Armor 原作时使用，覆盖普通 UBE 的同名插件。添加或移除 DX 后需要重新选择。
 - `85-神秘主义`：需要 Mysticism 2.4.2；会替换 PSQ 主插件，注意再覆盖对应语言的 85 文件。
 - `86-本机元素特效`：需要匹配的 SKSE64 和 Address Library。
 - `87-奇异符文`：需要 Strange Runes 3.7.3 和 powerofthree's Papyrus Extender；启用 `PSQ - Strange Runes.esp`。
 - `90-Apropos修复` 和 `93-Apropos-Patch-1.0023`：只能选择一个。前者用于 Apropos 2 原版；后者用于安装了 Patch 1.0023 的版本。先复制所选文件夹，再按步骤 4 覆盖对应语言的同代号文件夹。
+- `95-TDF-Optimization`：需要已启用 TDF Enhanced Prostitution。先复制 `common` 文件夹内容，再复制所选语言代码下 `scripts` 文件夹的内容到模组根目录的 `scripts` 文件夹。
 
 详细说明和署名见 Docs。

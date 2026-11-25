@@ -1,7 +1,7 @@
 {
   "name": "PSQ Reburn",
-  "version": "0.38",
-  "date": "2026-11-22",
+  "version": "0.39",
+  "date": "2026-11-25",
   "channel": "release",
   "optional_modules_separate": [
     "Wingflight",
@@ -133,8 +133,8 @@
     "source_tests": 262,
     "game_runtime_tested": false
   },
-  "package_revision": 65,
-  "display_version": "v0.38",
+  "package_revision": 66,
+  "display_version": "v0.39",
   "version_relabel": {
     "date": "2026-10-26",
     "previous_package_label": "0.22",
@@ -1060,7 +1060,7 @@
     ],
     "ube_softbody_layer": false,
     "ube_tattoo_textures": "included-with-core",
-    "native_api": 63,
+    "native_api": 66,
     "panel_resolutions": [
       "2560x1600",
       "2560x1440",
@@ -1072,5 +1072,55 @@
     "English",
     "日本語",
     "繁體中文"
-  ]
+  ],
+  "v039_consolidation": {
+    "base_release": "0.38",
+    "WeiLong_optional_plugin": "WeiLong.esp",
+    "new_records": 127,
+    "new_mesh_and_morph_files": 13,
+    "runtime_acceptance_complete": false,
+    "WeiLong_asset_reuse": {
+      "direct_original_addons": 72,
+      "original_asset_path_addons": 12,
+      "retained_repair_files": 8,
+      "removed_duplicate_files": 183
+    },
+    "eight_outfit_reuse": {
+      "three_ba_mesh_routes": 29,
+      "ube_mesh_routes": 4,
+      "removed_assets": 159,
+      "runtime_tested": false
+    },
+    "outfit_accessory_slots": {
+      "shinano_chest": [
+        32,
+        47,
+        48,
+        53,
+        60
+      ],
+      "helena_choker": 35,
+      "ageha_boot_wings": 54,
+      "ageha_pauldrons": 57,
+      "runtime_tested": false
+    }
+  },
+  "background_satiety_tattoo": {
+    "mode": "native-coalesced",
+    "runtime_tested": false
+  },
+  "tdf_compatibility_scan": {
+    "player_auto_stops_when_disabled": true,
+    "shared_actor_classification": "native-batched",
+    "runtime_tested": false,
+    "candidate_refresh": "engine-events-and-roster-change",
+    "provider_events": [
+      "DOMOnCaptured",
+      "DOMOnRecruited",
+      "DOMOnReleased",
+      "DOMOnTrainingStatusUpdate",
+      "PAHE_NewSlave"
+    ],
+    "silent_status_probe_seconds": 30
+  }
 }

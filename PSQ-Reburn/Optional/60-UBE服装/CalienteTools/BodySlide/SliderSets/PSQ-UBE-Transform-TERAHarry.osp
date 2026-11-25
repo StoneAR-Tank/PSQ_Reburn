@@ -1,711 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<SliderSetInfo version="1"><SliderSet name="PSQ UBE 变身 - TERA魅魔 - 内裤">
-    <ReferenceInfo ProjectFile="SliderSets\UBE SE 2.0 Release Body.osp" ProjectName="UBE SE 2.0 Release Body" ShapeName="BaseShape" />
-    <DataFolder>PSQ_Package_20261106\UBE\F011</DataFolder>
-    <SourceFile>Panty.nif</SourceFile>
-    <OutputPath>meshes/!UBE/PSQ/ExternalOutfits/TERAHarry</OutputPath>
-    <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">Panty</OutputFile>
-    <Shape target="panty">panty</Shape>
-    <Slider name="Amazon" invert="false" small="0" big="0">
-      <Data name="pantyAmazon" target="panty" local="true">Panty.osd\pantyAmazon</Data>
-    </Slider>
-    <Slider name="FitnessDetails_2.0" invert="false" small="0" big="0">
-      <Data name="pantyFitnessDetails_2.0" target="panty" local="true">Panty.osd\pantyFitnessDetails_2.0</Data>
-    </Slider>
-    <Slider name="Skinny2.0" invert="false" small="0" big="0">
-      <Data name="pantySkinny2.0" target="panty" local="true">Panty.osd\pantySkinny2.0</Data>
-    </Slider>
-    <Slider name="SquarePeg3d" invert="false" small="0" big="0">
-      <Data name="pantySquarePeg3d" target="panty" local="true">Panty.osd\pantySquarePeg3d</Data>
-    </Slider>
-    <Slider name="TBD  2.0" invert="false" small="0" big="0">
-      <Data name="pantyTBD  2.0" target="panty" local="true">Panty.osd\pantyTBD  2.0</Data>
-    </Slider>
-    <Slider name="Donaught" invert="false" small="0" big="0">
-      <Data name="pantyDonaught" target="panty" local="true">Panty.osd\pantyDonaught</Data>
-    </Slider>
-    <Slider name="Juicy_body" invert="false" small="0" big="0">
-      <Data name="pantyJuicy_body" target="panty" local="true">Panty.osd\pantyJuicy_body</Data>
-    </Slider>
-    <Slider name="Peachy" invert="false" small="0" big="0">
-      <Data name="pantyPeachy" target="panty" local="true">Panty.osd\pantyPeachy</Data>
-    </Slider>
-    <Slider name="Venus" invert="false" small="0" big="0">
-      <Data name="pantyVenus" target="panty" local="true">Panty.osd\pantyVenus</Data>
-    </Slider>
-    <Slider name="ClaviclesFront" invert="false" small="0" big="0">
-      <Data name="pantyClaviclesFront" target="panty" local="true">Panty.osd\pantyClaviclesFront</Data>
-    </Slider>
-    <Slider name="SternumDepth n|p" invert="false" small="0" big="0">
-      <Data name="pantySternumDepth n|p" target="panty" local="true">Panty.osd\pantySternumDepth n|p</Data>
-    </Slider>
-    <Slider name="RibcageSize n|p" invert="false" small="0" big="0">
-      <Data name="pantyRibcageSize n|p" target="panty" local="true">Panty.osd\pantyRibcageSize n|p</Data>
-    </Slider>
-    <Slider name="SpineMuscles" invert="false" small="0" big="0">
-      <Data name="pantySpineMuscles" target="panty" local="true">Panty.osd\pantySpineMuscles</Data>
-    </Slider>
-    <Slider name="BackDepth n|p" invert="false" small="0" big="0">
-      <Data name="pantyBackDepth n|p" target="panty" local="true">Panty.osd\pantyBackDepth n|p</Data>
-    </Slider>
-    <Slider name="BackValley" invert="false" small="0" big="0">
-      <Data name="pantyBackValley" target="panty" local="true">Panty.osd\pantyBackValley</Data>
-    </Slider>
-    <Slider name="BackFatFolds" invert="false" small="0" big="0">
-      <Data name="pantyBackFatFolds" target="panty" local="true">Panty.osd\pantyBackFatFolds</Data>
-    </Slider>
-    <Slider name="WaistLine n|p" invert="false" small="0" big="0">
-      <Data name="pantyWaistLine n|p" target="panty" local="true">Panty.osd\pantyWaistLine n|p</Data>
-    </Slider>
-    <Slider name="WaistThickness n|p" invert="false" small="0" big="0">
-      <Data name="pantyWaistThickness n|p" target="panty" local="true">Panty.osd\pantyWaistThickness n|p</Data>
-    </Slider>
-    <Slider name="BellyCenterDepth n|p" invert="false" small="0" big="0">
-      <Data name="pantyBellyCenterDepth n|p" target="panty" local="true">Panty.osd\pantyBellyCenterDepth n|p</Data>
-    </Slider>
-    <Slider name="BellyLowerDepth n|p" invert="false" small="0" big="0">
-      <Data name="pantyBellyLowerDepth n|p" target="panty" local="true">Panty.osd\pantyBellyLowerDepth n|p</Data>
-    </Slider>
-    <Slider name="BellyWidth n|p" invert="false" small="0" big="0">
-      <Data name="pantyBellyWidth n|p" target="panty" local="true">Panty.osd\pantyBellyWidth n|p</Data>
-    </Slider>
-    <Slider name="ExternalObliqueStraighten" invert="false" small="0" big="0">
-      <Data name="pantyExternalObliqueStraighten" target="panty" local="true">Panty.osd\pantyExternalObliqueStraighten</Data>
-    </Slider>
-    <Slider name="Belly_lower_crease" invert="false" small="0" big="0">
-      <Data name="pantyBelly_lower_crease" target="panty" local="true">Panty.osd\pantyBelly_lower_crease</Data>
-    </Slider>
-    <Slider name="BellyFatty" invert="false" small="0" big="0">
-      <Data name="pantyBellyFatty" target="panty" local="true">Panty.osd\pantyBellyFatty</Data>
-    </Slider>
-    <Slider name="SoftBelly" invert="false" small="0" big="0">
-      <Data name="pantySoftBelly" target="panty" local="true">Panty.osd\pantySoftBelly</Data>
-    </Slider>
-    <Slider name="LessProminentAbs" invert="false" small="0" big="0">
-      <Data name="pantyLessProminentAbs" target="panty" local="true">Panty.osd\pantyLessProminentAbs</Data>
-    </Slider>
-    <Slider name="Belly_Prominence" invert="false" small="0" big="0">
-      <Data name="pantyBelly_Prominence" target="panty" local="true">Panty.osd\pantyBelly_Prominence</Data>
-    </Slider>
-    <Slider name="RectusOuterDepth" invert="false" small="0" big="0">
-      <Data name="pantyRectusOuterDepth" target="panty" local="true">Panty.osd\pantyRectusOuterDepth</Data>
-    </Slider>
-    <Slider name="AbsAsymmetry n|p" invert="false" small="0" big="0">
-      <Data name="pantyAbsAsymmetry n|p" target="panty" local="true">Panty.osd\pantyAbsAsymmetry n|p</Data>
-    </Slider>
-    <Slider name="LowerAbs" invert="false" small="0" big="0">
-      <Data name="pantyLowerAbs" target="panty" local="true">Panty.osd\pantyLowerAbs</Data>
-    </Slider>
-    <Slider name="AponeurosisExternalOblique" invert="false" small="0" big="0">
-      <Data name="pantyAponeurosisExternalOblique" target="panty" local="true">Panty.osd\pantyAponeurosisExternalOblique</Data>
-    </Slider>
-    <Slider name="PregnancyBelly" invert="false" small="0" big="0">
-      <Data name="pantyPregnancyBelly" target="panty" local="true">Panty.osd\pantyPregnancyBelly</Data>
-    </Slider>
-    <Slider name="HipSize p|n" invert="false" small="0" big="0">
-      <Data name="pantyHipSize p|n" target="panty" local="true">Panty.osd\pantyHipSize p|n</Data>
-    </Slider>
-    <Slider name="HipsAndLegsDistanceApart p|n" invert="false" small="0" big="0">
-      <Data name="pantyHipsAndLegsDistanceApart p|n" target="panty" local="true">Panty.osd\pantyHipsAndLegsDistanceApart p|n</Data>
-    </Slider>
-    <Slider name="HipHeight p|n" invert="false" small="0" big="0">
-      <Data name="pantyHipHeight p|n" target="panty" local="true">Panty.osd\pantyHipHeight p|n</Data>
-    </Slider>
-    <Slider name="HipWideSideway p|n" invert="false" small="0" big="0">
-      <Data name="pantyHipWideSideway p|n" target="panty" local="true">Panty.osd\pantyHipWideSideway p|n</Data>
-    </Slider>
-    <Slider name="SmoothHips" invert="false" small="0" big="0">
-      <Data name="pantySmoothHips" target="panty" local="true">Panty.osd\pantySmoothHips</Data>
-    </Slider>
-    <Slider name="HipPointyBones" invert="false" small="0" big="0">
-      <Data name="pantyHipPointyBones" target="panty" local="true">Panty.osd\pantyHipPointyBones</Data>
-    </Slider>
-    <Slider name="Hipbone p|n" invert="false" small="0" big="0">
-      <Data name="pantyHipbone p|n" target="panty" local="true">Panty.osd\pantyHipbone p|n</Data>
-    </Slider>
-    <Slider name="Hip_Upper_Width n|p" invert="false" small="0" big="0">
-      <Data name="pantyHip_Upper_Width n|p" target="panty" local="true">Panty.osd\pantyHip_Upper_Width n|p</Data>
-    </Slider>
-    <Slider name="Hip_Wide" invert="false" small="0" big="0">
-      <Data name="pantyHip_Wide" target="panty" local="true">Panty.osd\pantyHip_Wide</Data>
-    </Slider>
-    <Slider name="Hip_narrow" invert="false" small="0" big="0">
-      <Data name="pantyHip_narrow" target="panty" local="true">Panty.osd\pantyHip_narrow</Data>
-    </Slider>
-    <Slider name="HipsOuterBonesFatty" invert="false" small="0" big="0">
-      <Data name="pantyHipsOuterBonesFatty" target="panty" local="true">Panty.osd\pantyHipsOuterBonesFatty</Data>
-    </Slider>
-    <Slider name="HipsSideMuscles" invert="false" small="0" big="0">
-      <Data name="pantyHipsSideMuscles" target="panty" local="true">Panty.osd\pantyHipsSideMuscles</Data>
-    </Slider>
-    <Slider name="SacralDimples" invert="false" small="0" big="0">
-      <Data name="pantySacralDimples" target="panty" local="true">Panty.osd\pantySacralDimples</Data>
-    </Slider>
-    <Slider name="GluteSize p|n" invert="false" small="0" big="0">
-      <Data name="pantyGluteSize p|n" target="panty" local="true">Panty.osd\pantyGluteSize p|n</Data>
-    </Slider>
-    <Slider name="GluteHeight p|n" invert="false" small="0" big="0">
-      <Data name="pantyGluteHeight p|n" target="panty" local="true">Panty.osd\pantyGluteHeight p|n</Data>
-    </Slider>
-    <Slider name="GluteSpread p|n" invert="false" small="0" big="0">
-      <Data name="pantyGluteSpread p|n" target="panty" local="true">Panty.osd\pantyGluteSpread p|n</Data>
-    </Slider>
-    <Slider name="GluteStretch p|n" invert="false" small="0" big="0">
-      <Data name="pantyGluteStretch p|n" target="panty" local="true">Panty.osd\pantyGluteStretch p|n</Data>
-    </Slider>
-    <Slider name="GluteTwistX p|n" invert="false" small="0" big="0">
-      <Data name="pantyGluteTwistX p|n" target="panty" local="true">Panty.osd\pantyGluteTwistX p|n</Data>
-    </Slider>
-    <Slider name="GluteOuterHeight p|n" invert="false" small="0" big="0">
-      <Data name="pantyGluteOuterHeight p|n" target="panty" local="true">Panty.osd\pantyGluteOuterHeight p|n</Data>
-    </Slider>
-    <Slider name="GluteSeparateWidth p|n" invert="false" small="0" big="0">
-      <Data name="pantyGluteSeparateWidth p|n" target="panty" local="true">Panty.osd\pantyGluteSeparateWidth p|n</Data>
-    </Slider>
-    <Slider name="GlutesUpperDepth p|n" invert="false" small="0" big="0">
-      <Data name="pantyGlutesUpperDepth p|n" target="panty" local="true">Panty.osd\pantyGlutesUpperDepth p|n</Data>
-    </Slider>
-    <Slider name="GluteUpperWidth p|n" invert="false" small="0" big="0">
-      <Data name="pantyGluteUpperWidth p|n" target="panty" local="true">Panty.osd\pantyGluteUpperWidth p|n</Data>
-    </Slider>
-    <Slider name="GluteLower" invert="false" small="0" big="0">
-      <Data name="pantyGluteLower" target="panty" local="true">Panty.osd\pantyGluteLower</Data>
-    </Slider>
-    <Slider name="GluteLowerHeight p|n" invert="false" small="0" big="0">
-      <Data name="pantyGluteLowerHeight p|n" target="panty" local="true">Panty.osd\pantyGluteLowerHeight p|n</Data>
-    </Slider>
-    <Slider name="GluteLowerWidth p|n" invert="false" small="0" big="0">
-      <Data name="pantyGluteLowerWidth p|n" target="panty" local="true">Panty.osd\pantyGluteLowerWidth p|n</Data>
-    </Slider>
-    <Slider name="GluteInnerHeight p|n" invert="false" small="0" big="0">
-      <Data name="pantyGluteInnerHeight p|n" target="panty" local="true">Panty.osd\pantyGluteInnerHeight p|n</Data>
-    </Slider>
-    <Slider name="Glutes_tighter" invert="false" small="0" big="0">
-      <Data name="pantyGlutes_tighter" target="panty" local="true">Panty.osd\pantyGlutes_tighter</Data>
-    </Slider>
-    <Slider name="GluteusDefinition" invert="false" small="0" big="0">
-      <Data name="pantyGluteusDefinition" target="panty" local="true">Panty.osd\pantyGluteusDefinition</Data>
-    </Slider>
-    <Slider name="GluteFolds" invert="false" small="0" big="0">
-      <Data name="pantyGluteFolds" target="panty" local="true">Panty.osd\pantyGluteFolds</Data>
-    </Slider>
-    <Slider name="PubicAreaSize p|n" invert="false" small="0" big="0">
-      <Data name="pantyPubicAreaSize p|n" target="panty" local="true">Panty.osd\pantyPubicAreaSize p|n</Data>
-    </Slider>
-    <Slider name="PubicAreaHilly" invert="false" small="0" big="0">
-      <Data name="pantyPubicAreaHilly" target="panty" local="true">Panty.osd\pantyPubicAreaHilly</Data>
-    </Slider>
-    <Slider name="PussyCute" invert="false" small="0" big="0">
-      <Data name="pantyPussyCute" target="panty" local="true">Panty.osd\pantyPussyCute</Data>
-    </Slider>
-    <Slider name="ClitorisErection" invert="false" small="0" big="0">
-      <Data name="pantyClitorisErection" target="panty" local="true">Panty.osd\pantyClitorisErection</Data>
-    </Slider>
-    <Slider name="Vagina_shape" invert="false" small="0" big="0">
-      <Data name="pantyVagina_shape" target="panty" local="true">Panty.osd\pantyVagina_shape</Data>
-    </Slider>
-    <Slider name="Vagina_shape_wider" invert="false" small="0" big="0">
-      <Data name="pantyVagina_shape_wider" target="panty" local="true">Panty.osd\pantyVagina_shape_wider</Data>
-    </Slider>
-    <Slider name="Vagina_Fantasy" invert="false" small="0" big="0">
-      <Data name="pantyVagina_Fantasy" target="panty" local="true">Panty.osd\pantyVagina_Fantasy</Data>
-    </Slider>
-    <Slider name="Vagina_spread" invert="false" small="0" big="0" hidden="true">
-      <Data name="pantyVagina_spread" target="panty" local="true">Panty.osd\pantyVagina_spread</Data>
-    </Slider>
-    <Slider name="AnusSize" invert="false" small="0" big="0">
-      <Data name="pantyAnusSize" target="panty" local="true">Panty.osd\pantyAnusSize</Data>
-    </Slider>
-    <Slider name="BiggerAnus" invert="false" small="0" big="0">
-      <Data name="pantyBiggerAnus" target="panty" local="true">Panty.osd\pantyBiggerAnus</Data>
-    </Slider>
-    <Slider name="AnusTriangular" invert="false" small="0" big="0">
-      <Data name="pantyAnusTriangular" target="panty" local="true">Panty.osd\pantyAnusTriangular</Data>
-    </Slider>
-    <Slider name="AnusSpread" invert="false" small="0" big="0" hidden="true">
-      <Data name="pantyAnusSpread" target="panty" local="true">Panty.osd\pantyAnusSpread</Data>
-    </Slider>
-    <Slider name="UpperThighsSizeBig" invert="false" small="0" big="0">
-      <Data name="pantyUpperThighsSizeBig" target="panty" local="true">Panty.osd\pantyUpperThighsSizeBig</Data>
-    </Slider>
-    <Slider name="LowerThighsSizeBig" invert="false" small="0" big="0">
-      <Data name="pantyLowerThighsSizeBig" target="panty" local="true">Panty.osd\pantyLowerThighsSizeBig</Data>
-    </Slider>
-    <Slider name="UpperThighsSizeSmall" invert="false" small="0" big="0">
-      <Data name="pantyUpperThighsSizeSmall" target="panty" local="true">Panty.osd\pantyUpperThighsSizeSmall</Data>
-    </Slider>
-    <Slider name="UpperThighsChubby" invert="false" small="0" big="0">
-      <Data name="pantyUpperThighsChubby" target="panty" local="true">Panty.osd\pantyUpperThighsChubby</Data>
-    </Slider>
-    <Slider name="ThighApart" invert="false" small="0" big="0">
-      <Data name="pantyThighApart" target="panty" local="true">Panty.osd\pantyThighApart</Data>
-    </Slider>
-    <Slider name="ThighFrontDepth" invert="false" small="0" big="0">
-      <Data name="pantyThighFrontDepth" target="panty" local="true">Panty.osd\pantyThighFrontDepth</Data>
-    </Slider>
-    <Slider name="UpperThighsDepth" invert="false" small="0" big="0">
-      <Data name="pantyUpperThighsDepth" target="panty" local="true">Panty.osd\pantyUpperThighsDepth</Data>
-    </Slider>
-    <Slider name="UpperInnerThighSize p|n" invert="false" small="0" big="0">
-      <Data name="pantyUpperInnerThighSize p|n" target="panty" local="true">Panty.osd\pantyUpperInnerThighSize p|n</Data>
-    </Slider>
-    <Slider name="ThighsOuter big" invert="false" small="0" big="0">
-      <Data name="pantyThighsOuter big" target="panty" local="true">Panty.osd\pantyThighsOuter big</Data>
-    </Slider>
-    <Slider name="ThighsOuter small" invert="false" small="0" big="0">
-      <Data name="pantyThighsOuter small" target="panty" local="true">Panty.osd\pantyThighsOuter small</Data>
-    </Slider>
-    <Slider name="RectusFemoris" invert="false" small="0" big="0">
-      <Data name="pantyRectusFemoris" target="panty" local="true">Panty.osd\pantyRectusFemoris</Data>
-    </Slider>
-    <Slider name="GluteFlex_L" invert="false" small="0" big="0" hidden="true">
-      <Data name="pantyGluteFlex_L" target="panty" local="true">Panty.osd\pantyGluteFlex_L</Data>
-    </Slider>
-    <Slider name="GluteFlex_R" invert="false" small="0" big="0" hidden="true">
-      <Data name="pantyGluteFlex_R" target="panty" local="true">Panty.osd\pantyGluteFlex_R</Data>
-    </Slider>
-    <Slider name="ThighsFlex_L" invert="false" small="0" big="0" hidden="true">
-      <Data name="pantyThighsFlex_L" target="panty" local="true">Panty.osd\pantyThighsFlex_L</Data>
-    </Slider>
-    <Slider name="ThighsFlex_R" invert="false" small="0" big="0" hidden="true">
-      <Data name="pantyThighsFlex_R" target="panty" local="true">Panty.osd\pantyThighsFlex_R</Data>
-    </Slider>
-    <Slider name="AbsFlex" invert="false" small="0" big="0" hidden="true">
-      <Data name="pantyAbsFlex" target="panty" local="true">Panty.osd\pantyAbsFlex</Data>
-    </Slider>
-    <Slider name="Nyl2_Root" invert="false" small="0" big="0" hidden="true">
-      <Data name="pantyNyl2_Root" target="panty" local="true">Panty.osd\pantyNyl2_Root</Data>
-    </Slider>
-  </SliderSet>
-<SliderSet name="PSQ UBE 变身 - TERA魅魔 - 吊袜带">
-    <ReferenceInfo ProjectFile="SliderSets\UBE SE 2.0 Release Body.osp" ProjectName="UBE SE 2.0 Release Body" ShapeName="BaseShape" />
-    <DataFolder>PSQ_Package_20261106\UBE\F011</DataFolder>
-    <SourceFile>Garter.nif</SourceFile>
-    <OutputPath>meshes/!UBE/PSQ/ExternalOutfits/TERAHarry</OutputPath>
-    <OutputFile GenWeights="true" PreventMorphFile="false" KeepZappedShapes="false">Garter</OutputFile>
-    <Shape target="garter">garter</Shape>
-    <Shape target="garter_laces">garter_laces</Shape>
-    <Shape target="garter_metal">garter_metal</Shape>
-    <Slider name="Amazon" invert="false" small="0" big="0">
-      <Data name="garterAmazon" target="garter" local="true">Garter.osd\garterAmazon</Data>
-      <Data name="garter_lacesAmazon" target="garter_laces" local="true">Garter.osd\garter_lacesAmazon</Data>
-      <Data name="garter_metalAmazon" target="garter_metal" local="true">Garter.osd\garter_metalAmazon</Data>
-    </Slider>
-    <Slider name="FitnessDetails_2.0" invert="false" small="0" big="0">
-      <Data name="garterFitnessDetails_2.0" target="garter" local="true">Garter.osd\garterFitnessDetails_2.0</Data>
-      <Data name="garter_lacesFitnessDetails_2.0" target="garter_laces" local="true">Garter.osd\garter_lacesFitnessDetails_2.0</Data>
-      <Data name="garter_metalFitnessDetails_2.0" target="garter_metal" local="true">Garter.osd\garter_metalFitnessDetails_2.0</Data>
-    </Slider>
-    <Slider name="Skinny2.0" invert="false" small="0" big="0">
-      <Data name="garterSkinny2.0" target="garter" local="true">Garter.osd\garterSkinny2.0</Data>
-      <Data name="garter_lacesSkinny2.0" target="garter_laces" local="true">Garter.osd\garter_lacesSkinny2.0</Data>
-      <Data name="garter_metalSkinny2.0" target="garter_metal" local="true">Garter.osd\garter_metalSkinny2.0</Data>
-    </Slider>
-    <Slider name="SquarePeg3d" invert="false" small="0" big="0">
-      <Data name="garterSquarePeg3d" target="garter" local="true">Garter.osd\garterSquarePeg3d</Data>
-      <Data name="garter_lacesSquarePeg3d" target="garter_laces" local="true">Garter.osd\garter_lacesSquarePeg3d</Data>
-      <Data name="garter_metalSquarePeg3d" target="garter_metal" local="true">Garter.osd\garter_metalSquarePeg3d</Data>
-    </Slider>
-    <Slider name="TBD  2.0" invert="false" small="0" big="0">
-      <Data name="garterTBD  2.0" target="garter" local="true">Garter.osd\garterTBD  2.0</Data>
-      <Data name="garter_lacesTBD  2.0" target="garter_laces" local="true">Garter.osd\garter_lacesTBD  2.0</Data>
-      <Data name="garter_metalTBD  2.0" target="garter_metal" local="true">Garter.osd\garter_metalTBD  2.0</Data>
-    </Slider>
-    <Slider name="Donaught" invert="false" small="0" big="0">
-      <Data name="garterDonaught" target="garter" local="true">Garter.osd\garterDonaught</Data>
-      <Data name="garter_lacesDonaught" target="garter_laces" local="true">Garter.osd\garter_lacesDonaught</Data>
-      <Data name="garter_metalDonaught" target="garter_metal" local="true">Garter.osd\garter_metalDonaught</Data>
-    </Slider>
-    <Slider name="Juicy_body" invert="false" small="0" big="0">
-      <Data name="garterJuicy_body" target="garter" local="true">Garter.osd\garterJuicy_body</Data>
-      <Data name="garter_lacesJuicy_body" target="garter_laces" local="true">Garter.osd\garter_lacesJuicy_body</Data>
-      <Data name="garter_metalJuicy_body" target="garter_metal" local="true">Garter.osd\garter_metalJuicy_body</Data>
-    </Slider>
-    <Slider name="Peachy" invert="false" small="0" big="0">
-      <Data name="garterPeachy" target="garter" local="true">Garter.osd\garterPeachy</Data>
-      <Data name="garter_lacesPeachy" target="garter_laces" local="true">Garter.osd\garter_lacesPeachy</Data>
-      <Data name="garter_metalPeachy" target="garter_metal" local="true">Garter.osd\garter_metalPeachy</Data>
-    </Slider>
-    <Slider name="Venus" invert="false" small="0" big="0">
-      <Data name="garterVenus" target="garter" local="true">Garter.osd\garterVenus</Data>
-      <Data name="garter_lacesVenus" target="garter_laces" local="true">Garter.osd\garter_lacesVenus</Data>
-      <Data name="garter_metalVenus" target="garter_metal" local="true">Garter.osd\garter_metalVenus</Data>
-    </Slider>
-    <Slider name="RibcageSize n|p" invert="false" small="0" big="0">
-      <Data name="garterRibcageSize n|p" target="garter" local="true">Garter.osd\garterRibcageSize n|p</Data>
-      <Data name="garter_lacesRibcageSize n|p" target="garter_laces" local="true">Garter.osd\garter_lacesRibcageSize n|p</Data>
-      <Data name="garter_metalRibcageSize n|p" target="garter_metal" local="true">Garter.osd\garter_metalRibcageSize n|p</Data>
-    </Slider>
-    <Slider name="SpineMuscles" invert="false" small="0" big="0">
-      <Data name="garterSpineMuscles" target="garter" local="true">Garter.osd\garterSpineMuscles</Data>
-      <Data name="garter_lacesSpineMuscles" target="garter_laces" local="true">Garter.osd\garter_lacesSpineMuscles</Data>
-    </Slider>
-    <Slider name="SpineDiscs_Prominence" invert="false" small="0" big="0">
-      <Data name="garter_lacesSpineDiscs_Prominence" target="garter_laces" local="true">Garter.osd\garter_lacesSpineDiscs_Prominence</Data>
-    </Slider>
-    <Slider name="BackDepth n|p" invert="false" small="0" big="0">
-      <Data name="garterBackDepth n|p" target="garter" local="true">Garter.osd\garterBackDepth n|p</Data>
-      <Data name="garter_lacesBackDepth n|p" target="garter_laces" local="true">Garter.osd\garter_lacesBackDepth n|p</Data>
-    </Slider>
-    <Slider name="BackValley" invert="false" small="0" big="0">
-      <Data name="garterBackValley" target="garter" local="true">Garter.osd\garterBackValley</Data>
-      <Data name="garter_lacesBackValley" target="garter_laces" local="true">Garter.osd\garter_lacesBackValley</Data>
-    </Slider>
-    <Slider name="BackFatFolds" invert="false" small="0" big="0">
-      <Data name="garterBackFatFolds" target="garter" local="true">Garter.osd\garterBackFatFolds</Data>
-      <Data name="garter_lacesBackFatFolds" target="garter_laces" local="true">Garter.osd\garter_lacesBackFatFolds</Data>
-    </Slider>
-    <Slider name="WaistThickness n|p" invert="false" small="0" big="0">
-      <Data name="garterWaistThickness n|p" target="garter" local="true">Garter.osd\garterWaistThickness n|p</Data>
-      <Data name="garter_lacesWaistThickness n|p" target="garter_laces" local="true">Garter.osd\garter_lacesWaistThickness n|p</Data>
-    </Slider>
-    <Slider name="BellyLowerDepth n|p" invert="false" small="0" big="0">
-      <Data name="garterBellyLowerDepth n|p" target="garter" local="true">Garter.osd\garterBellyLowerDepth n|p</Data>
-      <Data name="garter_lacesBellyLowerDepth n|p" target="garter_laces" local="true">Garter.osd\garter_lacesBellyLowerDepth n|p</Data>
-      <Data name="garter_metalBellyLowerDepth n|p" target="garter_metal" local="true">Garter.osd\garter_metalBellyLowerDepth n|p</Data>
-    </Slider>
-    <Slider name="BellyWidth n|p" invert="false" small="0" big="0">
-      <Data name="garterBellyWidth n|p" target="garter" local="true">Garter.osd\garterBellyWidth n|p</Data>
-      <Data name="garter_lacesBellyWidth n|p" target="garter_laces" local="true">Garter.osd\garter_lacesBellyWidth n|p</Data>
-      <Data name="garter_metalBellyWidth n|p" target="garter_metal" local="true">Garter.osd\garter_metalBellyWidth n|p</Data>
-    </Slider>
-    <Slider name="ExternalObliqueStraighten" invert="false" small="0" big="0">
-      <Data name="garterExternalObliqueStraighten" target="garter" local="true">Garter.osd\garterExternalObliqueStraighten</Data>
-      <Data name="garter_lacesExternalObliqueStraighten" target="garter_laces" local="true">Garter.osd\garter_lacesExternalObliqueStraighten</Data>
-    </Slider>
-    <Slider name="BellyVerticalCrease_Lower" invert="false" small="0" big="0">
-      <Data name="garterBellyVerticalCrease_Lower" target="garter" local="true">Garter.osd\garterBellyVerticalCrease_Lower</Data>
-      <Data name="garter_lacesBellyVerticalCrease_Lower" target="garter_laces" local="true">Garter.osd\garter_lacesBellyVerticalCrease_Lower</Data>
-      <Data name="garter_metalBellyVerticalCrease_Lower" target="garter_metal" local="true">Garter.osd\garter_metalBellyVerticalCrease_Lower</Data>
-    </Slider>
-    <Slider name="Belly_lower_crease" invert="false" small="0" big="0">
-      <Data name="garterBelly_lower_crease" target="garter" local="true">Garter.osd\garterBelly_lower_crease</Data>
-      <Data name="garter_lacesBelly_lower_crease" target="garter_laces" local="true">Garter.osd\garter_lacesBelly_lower_crease</Data>
-      <Data name="garter_metalBelly_lower_crease" target="garter_metal" local="true">Garter.osd\garter_metalBelly_lower_crease</Data>
-    </Slider>
-    <Slider name="BellyFatty" invert="false" small="0" big="0">
-      <Data name="garterBellyFatty" target="garter" local="true">Garter.osd\garterBellyFatty</Data>
-      <Data name="garter_lacesBellyFatty" target="garter_laces" local="true">Garter.osd\garter_lacesBellyFatty</Data>
-      <Data name="garter_metalBellyFatty" target="garter_metal" local="true">Garter.osd\garter_metalBellyFatty</Data>
-    </Slider>
-    <Slider name="SoftBelly" invert="false" small="0" big="0">
-      <Data name="garterSoftBelly" target="garter" local="true">Garter.osd\garterSoftBelly</Data>
-      <Data name="garter_lacesSoftBelly" target="garter_laces" local="true">Garter.osd\garter_lacesSoftBelly</Data>
-      <Data name="garter_metalSoftBelly" target="garter_metal" local="true">Garter.osd\garter_metalSoftBelly</Data>
-    </Slider>
-    <Slider name="LessProminentAbs" invert="false" small="0" big="0">
-      <Data name="garterLessProminentAbs" target="garter" local="true">Garter.osd\garterLessProminentAbs</Data>
-      <Data name="garter_lacesLessProminentAbs" target="garter_laces" local="true">Garter.osd\garter_lacesLessProminentAbs</Data>
-      <Data name="garter_metalLessProminentAbs" target="garter_metal" local="true">Garter.osd\garter_metalLessProminentAbs</Data>
-    </Slider>
-    <Slider name="Belly_Prominence" invert="false" small="0" big="0">
-      <Data name="garterBelly_Prominence" target="garter" local="true">Garter.osd\garterBelly_Prominence</Data>
-      <Data name="garter_lacesBelly_Prominence" target="garter_laces" local="true">Garter.osd\garter_lacesBelly_Prominence</Data>
-    </Slider>
-    <Slider name="RectusOuterDepth" invert="false" small="0" big="0">
-      <Data name="garterRectusOuterDepth" target="garter" local="true">Garter.osd\garterRectusOuterDepth</Data>
-      <Data name="garter_lacesRectusOuterDepth" target="garter_laces" local="true">Garter.osd\garter_lacesRectusOuterDepth</Data>
-      <Data name="garter_metalRectusOuterDepth" target="garter_metal" local="true">Garter.osd\garter_metalRectusOuterDepth</Data>
-    </Slider>
-    <Slider name="AbsAsymmetry n|p" invert="false" small="0" big="0">
-      <Data name="garterAbsAsymmetry n|p" target="garter" local="true">Garter.osd\garterAbsAsymmetry n|p</Data>
-      <Data name="garter_lacesAbsAsymmetry n|p" target="garter_laces" local="true">Garter.osd\garter_lacesAbsAsymmetry n|p</Data>
-      <Data name="garter_metalAbsAsymmetry n|p" target="garter_metal" local="true">Garter.osd\garter_metalAbsAsymmetry n|p</Data>
-    </Slider>
-    <Slider name="LowerAbs" invert="false" small="0" big="0">
-      <Data name="garterLowerAbs" target="garter" local="true">Garter.osd\garterLowerAbs</Data>
-      <Data name="garter_lacesLowerAbs" target="garter_laces" local="true">Garter.osd\garter_lacesLowerAbs</Data>
-      <Data name="garter_metalLowerAbs" target="garter_metal" local="true">Garter.osd\garter_metalLowerAbs</Data>
-    </Slider>
-    <Slider name="AponeurosisExternalOblique" invert="false" small="0" big="0">
-      <Data name="garterAponeurosisExternalOblique" target="garter" local="true">Garter.osd\garterAponeurosisExternalOblique</Data>
-      <Data name="garter_lacesAponeurosisExternalOblique" target="garter_laces" local="true">Garter.osd\garter_lacesAponeurosisExternalOblique</Data>
-    </Slider>
-    <Slider name="PregnancyBelly" invert="false" small="0" big="0">
-      <Data name="garterPregnancyBelly" target="garter" local="true">Garter.osd\garterPregnancyBelly</Data>
-      <Data name="garter_lacesPregnancyBelly" target="garter_laces" local="true">Garter.osd\garter_lacesPregnancyBelly</Data>
-      <Data name="garter_metalPregnancyBelly" target="garter_metal" local="true">Garter.osd\garter_metalPregnancyBelly</Data>
-    </Slider>
-    <Slider name="HipSize p|n" invert="false" small="0" big="0">
-      <Data name="garterHipSize p|n" target="garter" local="true">Garter.osd\garterHipSize p|n</Data>
-      <Data name="garter_lacesHipSize p|n" target="garter_laces" local="true">Garter.osd\garter_lacesHipSize p|n</Data>
-      <Data name="garter_metalHipSize p|n" target="garter_metal" local="true">Garter.osd\garter_metalHipSize p|n</Data>
-    </Slider>
-    <Slider name="HipsAndLegsDistanceApart p|n" invert="false" small="0" big="0">
-      <Data name="garterHipsAndLegsDistanceApart p|n" target="garter" local="true">Garter.osd\garterHipsAndLegsDistanceApart p|n</Data>
-      <Data name="garter_lacesHipsAndLegsDistanceApart p|n" target="garter_laces" local="true">Garter.osd\garter_lacesHipsAndLegsDistanceApart p|n</Data>
-      <Data name="garter_metalHipsAndLegsDistanceApart p|n" target="garter_metal" local="true">Garter.osd\garter_metalHipsAndLegsDistanceApart p|n</Data>
-    </Slider>
-    <Slider name="HipHeight p|n" invert="false" small="0" big="0">
-      <Data name="garterHipHeight p|n" target="garter" local="true">Garter.osd\garterHipHeight p|n</Data>
-      <Data name="garter_lacesHipHeight p|n" target="garter_laces" local="true">Garter.osd\garter_lacesHipHeight p|n</Data>
-      <Data name="garter_metalHipHeight p|n" target="garter_metal" local="true">Garter.osd\garter_metalHipHeight p|n</Data>
-    </Slider>
-    <Slider name="HipWideSideway p|n" invert="false" small="0" big="0">
-      <Data name="garterHipWideSideway p|n" target="garter" local="true">Garter.osd\garterHipWideSideway p|n</Data>
-      <Data name="garter_lacesHipWideSideway p|n" target="garter_laces" local="true">Garter.osd\garter_lacesHipWideSideway p|n</Data>
-      <Data name="garter_metalHipWideSideway p|n" target="garter_metal" local="true">Garter.osd\garter_metalHipWideSideway p|n</Data>
-    </Slider>
-    <Slider name="SmoothHips" invert="false" small="0" big="0">
-      <Data name="garterSmoothHips" target="garter" local="true">Garter.osd\garterSmoothHips</Data>
-      <Data name="garter_lacesSmoothHips" target="garter_laces" local="true">Garter.osd\garter_lacesSmoothHips</Data>
-      <Data name="garter_metalSmoothHips" target="garter_metal" local="true">Garter.osd\garter_metalSmoothHips</Data>
-    </Slider>
-    <Slider name="HipPointyBones" invert="false" small="0" big="0">
-      <Data name="garterHipPointyBones" target="garter" local="true">Garter.osd\garterHipPointyBones</Data>
-      <Data name="garter_lacesHipPointyBones" target="garter_laces" local="true">Garter.osd\garter_lacesHipPointyBones</Data>
-    </Slider>
-    <Slider name="Hipbone p|n" invert="false" small="0" big="0">
-      <Data name="garterHipbone p|n" target="garter" local="true">Garter.osd\garterHipbone p|n</Data>
-      <Data name="garter_lacesHipbone p|n" target="garter_laces" local="true">Garter.osd\garter_lacesHipbone p|n</Data>
-      <Data name="garter_metalHipbone p|n" target="garter_metal" local="true">Garter.osd\garter_metalHipbone p|n</Data>
-    </Slider>
-    <Slider name="Hip_Upper_Width n|p" invert="false" small="0" big="0">
-      <Data name="garterHip_Upper_Width n|p" target="garter" local="true">Garter.osd\garterHip_Upper_Width n|p</Data>
-      <Data name="garter_lacesHip_Upper_Width n|p" target="garter_laces" local="true">Garter.osd\garter_lacesHip_Upper_Width n|p</Data>
-      <Data name="garter_metalHip_Upper_Width n|p" target="garter_metal" local="true">Garter.osd\garter_metalHip_Upper_Width n|p</Data>
-    </Slider>
-    <Slider name="Hip_Wide" invert="false" small="0" big="0">
-      <Data name="garterHip_Wide" target="garter" local="true">Garter.osd\garterHip_Wide</Data>
-      <Data name="garter_lacesHip_Wide" target="garter_laces" local="true">Garter.osd\garter_lacesHip_Wide</Data>
-      <Data name="garter_metalHip_Wide" target="garter_metal" local="true">Garter.osd\garter_metalHip_Wide</Data>
-    </Slider>
-    <Slider name="Hip_narrow" invert="false" small="0" big="0">
-      <Data name="garterHip_narrow" target="garter" local="true">Garter.osd\garterHip_narrow</Data>
-      <Data name="garter_lacesHip_narrow" target="garter_laces" local="true">Garter.osd\garter_lacesHip_narrow</Data>
-      <Data name="garter_metalHip_narrow" target="garter_metal" local="true">Garter.osd\garter_metalHip_narrow</Data>
-    </Slider>
-    <Slider name="HipsOuterBonesFatty" invert="false" small="0" big="0">
-      <Data name="garterHipsOuterBonesFatty" target="garter" local="true">Garter.osd\garterHipsOuterBonesFatty</Data>
-      <Data name="garter_lacesHipsOuterBonesFatty" target="garter_laces" local="true">Garter.osd\garter_lacesHipsOuterBonesFatty</Data>
-      <Data name="garter_metalHipsOuterBonesFatty" target="garter_metal" local="true">Garter.osd\garter_metalHipsOuterBonesFatty</Data>
-    </Slider>
-    <Slider name="HipsSideMuscles" invert="false" small="0" big="0">
-      <Data name="garterHipsSideMuscles" target="garter" local="true">Garter.osd\garterHipsSideMuscles</Data>
-      <Data name="garter_lacesHipsSideMuscles" target="garter_laces" local="true">Garter.osd\garter_lacesHipsSideMuscles</Data>
-      <Data name="garter_metalHipsSideMuscles" target="garter_metal" local="true">Garter.osd\garter_metalHipsSideMuscles</Data>
-    </Slider>
-    <Slider name="SacralDimples" invert="false" small="0" big="0">
-      <Data name="garterSacralDimples" target="garter" local="true">Garter.osd\garterSacralDimples</Data>
-      <Data name="garter_lacesSacralDimples" target="garter_laces" local="true">Garter.osd\garter_lacesSacralDimples</Data>
-    </Slider>
-    <Slider name="GreaterTrochanterBone" invert="false" small="0" big="0">
-      <Data name="garterGreaterTrochanterBone" target="garter" local="true">Garter.osd\garterGreaterTrochanterBone</Data>
-      <Data name="garter_lacesGreaterTrochanterBone" target="garter_laces" local="true">Garter.osd\garter_lacesGreaterTrochanterBone</Data>
-    </Slider>
-    <Slider name="GluteSize p|n" invert="false" small="0" big="0">
-      <Data name="garterGluteSize p|n" target="garter" local="true">Garter.osd\garterGluteSize p|n</Data>
-      <Data name="garter_lacesGluteSize p|n" target="garter_laces" local="true">Garter.osd\garter_lacesGluteSize p|n</Data>
-      <Data name="garter_metalGluteSize p|n" target="garter_metal" local="true">Garter.osd\garter_metalGluteSize p|n</Data>
-    </Slider>
-    <Slider name="GluteHeight p|n" invert="false" small="0" big="0">
-      <Data name="garterGluteHeight p|n" target="garter" local="true">Garter.osd\garterGluteHeight p|n</Data>
-      <Data name="garter_lacesGluteHeight p|n" target="garter_laces" local="true">Garter.osd\garter_lacesGluteHeight p|n</Data>
-      <Data name="garter_metalGluteHeight p|n" target="garter_metal" local="true">Garter.osd\garter_metalGluteHeight p|n</Data>
-    </Slider>
-    <Slider name="GluteSpread p|n" invert="false" small="0" big="0">
-      <Data name="garterGluteSpread p|n" target="garter" local="true">Garter.osd\garterGluteSpread p|n</Data>
-      <Data name="garter_lacesGluteSpread p|n" target="garter_laces" local="true">Garter.osd\garter_lacesGluteSpread p|n</Data>
-      <Data name="garter_metalGluteSpread p|n" target="garter_metal" local="true">Garter.osd\garter_metalGluteSpread p|n</Data>
-    </Slider>
-    <Slider name="GluteStretch p|n" invert="false" small="0" big="0">
-      <Data name="garterGluteStretch p|n" target="garter" local="true">Garter.osd\garterGluteStretch p|n</Data>
-      <Data name="garter_lacesGluteStretch p|n" target="garter_laces" local="true">Garter.osd\garter_lacesGluteStretch p|n</Data>
-      <Data name="garter_metalGluteStretch p|n" target="garter_metal" local="true">Garter.osd\garter_metalGluteStretch p|n</Data>
-    </Slider>
-    <Slider name="GluteTwistX p|n" invert="false" small="0" big="0">
-      <Data name="garterGluteTwistX p|n" target="garter" local="true">Garter.osd\garterGluteTwistX p|n</Data>
-      <Data name="garter_lacesGluteTwistX p|n" target="garter_laces" local="true">Garter.osd\garter_lacesGluteTwistX p|n</Data>
-      <Data name="garter_metalGluteTwistX p|n" target="garter_metal" local="true">Garter.osd\garter_metalGluteTwistX p|n</Data>
-    </Slider>
-    <Slider name="GluteOuterHeight p|n" invert="false" small="0" big="0">
-      <Data name="garterGluteOuterHeight p|n" target="garter" local="true">Garter.osd\garterGluteOuterHeight p|n</Data>
-      <Data name="garter_lacesGluteOuterHeight p|n" target="garter_laces" local="true">Garter.osd\garter_lacesGluteOuterHeight p|n</Data>
-      <Data name="garter_metalGluteOuterHeight p|n" target="garter_metal" local="true">Garter.osd\garter_metalGluteOuterHeight p|n</Data>
-    </Slider>
-    <Slider name="GluteSeparateWidth p|n" invert="false" small="0" big="0">
-      <Data name="garterGluteSeparateWidth p|n" target="garter" local="true">Garter.osd\garterGluteSeparateWidth p|n</Data>
-      <Data name="garter_lacesGluteSeparateWidth p|n" target="garter_laces" local="true">Garter.osd\garter_lacesGluteSeparateWidth p|n</Data>
-      <Data name="garter_metalGluteSeparateWidth p|n" target="garter_metal" local="true">Garter.osd\garter_metalGluteSeparateWidth p|n</Data>
-    </Slider>
-    <Slider name="GlutesUpperDepth p|n" invert="false" small="0" big="0">
-      <Data name="garterGlutesUpperDepth p|n" target="garter" local="true">Garter.osd\garterGlutesUpperDepth p|n</Data>
-      <Data name="garter_lacesGlutesUpperDepth p|n" target="garter_laces" local="true">Garter.osd\garter_lacesGlutesUpperDepth p|n</Data>
-      <Data name="garter_metalGlutesUpperDepth p|n" target="garter_metal" local="true">Garter.osd\garter_metalGlutesUpperDepth p|n</Data>
-    </Slider>
-    <Slider name="GluteUpperWidth p|n" invert="false" small="0" big="0">
-      <Data name="garterGluteUpperWidth p|n" target="garter" local="true">Garter.osd\garterGluteUpperWidth p|n</Data>
-      <Data name="garter_lacesGluteUpperWidth p|n" target="garter_laces" local="true">Garter.osd\garter_lacesGluteUpperWidth p|n</Data>
-      <Data name="garter_metalGluteUpperWidth p|n" target="garter_metal" local="true">Garter.osd\garter_metalGluteUpperWidth p|n</Data>
-    </Slider>
-    <Slider name="GluteLower" invert="false" small="0" big="0">
-      <Data name="garterGluteLower" target="garter" local="true">Garter.osd\garterGluteLower</Data>
-      <Data name="garter_lacesGluteLower" target="garter_laces" local="true">Garter.osd\garter_lacesGluteLower</Data>
-      <Data name="garter_metalGluteLower" target="garter_metal" local="true">Garter.osd\garter_metalGluteLower</Data>
-    </Slider>
-    <Slider name="GluteLowerHeight p|n" invert="false" small="0" big="0">
-      <Data name="garterGluteLowerHeight p|n" target="garter" local="true">Garter.osd\garterGluteLowerHeight p|n</Data>
-      <Data name="garter_lacesGluteLowerHeight p|n" target="garter_laces" local="true">Garter.osd\garter_lacesGluteLowerHeight p|n</Data>
-      <Data name="garter_metalGluteLowerHeight p|n" target="garter_metal" local="true">Garter.osd\garter_metalGluteLowerHeight p|n</Data>
-    </Slider>
-    <Slider name="GluteLowerWidth p|n" invert="false" small="0" big="0">
-      <Data name="garterGluteLowerWidth p|n" target="garter" local="true">Garter.osd\garterGluteLowerWidth p|n</Data>
-      <Data name="garter_lacesGluteLowerWidth p|n" target="garter_laces" local="true">Garter.osd\garter_lacesGluteLowerWidth p|n</Data>
-      <Data name="garter_metalGluteLowerWidth p|n" target="garter_metal" local="true">Garter.osd\garter_metalGluteLowerWidth p|n</Data>
-    </Slider>
-    <Slider name="GluteInnerHeight p|n" invert="false" small="0" big="0">
-      <Data name="garterGluteInnerHeight p|n" target="garter" local="true">Garter.osd\garterGluteInnerHeight p|n</Data>
-      <Data name="garter_lacesGluteInnerHeight p|n" target="garter_laces" local="true">Garter.osd\garter_lacesGluteInnerHeight p|n</Data>
-      <Data name="garter_metalGluteInnerHeight p|n" target="garter_metal" local="true">Garter.osd\garter_metalGluteInnerHeight p|n</Data>
-    </Slider>
-    <Slider name="Glutes_tighter" invert="false" small="0" big="0">
-      <Data name="garterGlutes_tighter" target="garter" local="true">Garter.osd\garterGlutes_tighter</Data>
-    </Slider>
-    <Slider name="GluteusDefinition" invert="false" small="0" big="0">
-      <Data name="garterGluteusDefinition" target="garter" local="true">Garter.osd\garterGluteusDefinition</Data>
-      <Data name="garter_lacesGluteusDefinition" target="garter_laces" local="true">Garter.osd\garter_lacesGluteusDefinition</Data>
-      <Data name="garter_metalGluteusDefinition" target="garter_metal" local="true">Garter.osd\garter_metalGluteusDefinition</Data>
-    </Slider>
-    <Slider name="GluteFolds" invert="false" small="0" big="0">
-      <Data name="garter_lacesGluteFolds" target="garter_laces" local="true">Garter.osd\garter_lacesGluteFolds</Data>
-      <Data name="garter_metalGluteFolds" target="garter_metal" local="true">Garter.osd\garter_metalGluteFolds</Data>
-    </Slider>
-    <Slider name="PubicAreaSize p|n" invert="false" small="0" big="0">
-      <Data name="garterPubicAreaSize p|n" target="garter" local="true">Garter.osd\garterPubicAreaSize p|n</Data>
-      <Data name="garter_metalPubicAreaSize p|n" target="garter_metal" local="true">Garter.osd\garter_metalPubicAreaSize p|n</Data>
-    </Slider>
-    <Slider name="PubicAreaHilly" invert="false" small="0" big="0">
-      <Data name="garterPubicAreaHilly" target="garter" local="true">Garter.osd\garterPubicAreaHilly</Data>
-      <Data name="garter_lacesPubicAreaHilly" target="garter_laces" local="true">Garter.osd\garter_lacesPubicAreaHilly</Data>
-      <Data name="garter_metalPubicAreaHilly" target="garter_metal" local="true">Garter.osd\garter_metalPubicAreaHilly</Data>
-    </Slider>
-    <Slider name="PussyCute" invert="false" small="0" big="0">
-      <Data name="garterPussyCute" target="garter" local="true">Garter.osd\garterPussyCute</Data>
-    </Slider>
-    <Slider name="Vagina_Fantasy" invert="false" small="0" big="0">
-      <Data name="garterVagina_Fantasy" target="garter" local="true">Garter.osd\garterVagina_Fantasy</Data>
-    </Slider>
-    <Slider name="UpperThighsSizeBig" invert="false" small="0" big="0">
-      <Data name="garterUpperThighsSizeBig" target="garter" local="true">Garter.osd\garterUpperThighsSizeBig</Data>
-      <Data name="garter_lacesUpperThighsSizeBig" target="garter_laces" local="true">Garter.osd\garter_lacesUpperThighsSizeBig</Data>
-      <Data name="garter_metalUpperThighsSizeBig" target="garter_metal" local="true">Garter.osd\garter_metalUpperThighsSizeBig</Data>
-    </Slider>
-    <Slider name="LowerThighsSizeBig" invert="false" small="0" big="0">
-      <Data name="garterLowerThighsSizeBig" target="garter" local="true">Garter.osd\garterLowerThighsSizeBig</Data>
-      <Data name="garter_lacesLowerThighsSizeBig" target="garter_laces" local="true">Garter.osd\garter_lacesLowerThighsSizeBig</Data>
-      <Data name="garter_metalLowerThighsSizeBig" target="garter_metal" local="true">Garter.osd\garter_metalLowerThighsSizeBig</Data>
-    </Slider>
-    <Slider name="UpperThighsSizeSmall" invert="false" small="0" big="0">
-      <Data name="garterUpperThighsSizeSmall" target="garter" local="true">Garter.osd\garterUpperThighsSizeSmall</Data>
-      <Data name="garter_lacesUpperThighsSizeSmall" target="garter_laces" local="true">Garter.osd\garter_lacesUpperThighsSizeSmall</Data>
-      <Data name="garter_metalUpperThighsSizeSmall" target="garter_metal" local="true">Garter.osd\garter_metalUpperThighsSizeSmall</Data>
-    </Slider>
-    <Slider name="LowerThighsSizeSmall" invert="false" small="0" big="0">
-      <Data name="garterLowerThighsSizeSmall" target="garter" local="true">Garter.osd\garterLowerThighsSizeSmall</Data>
-      <Data name="garter_lacesLowerThighsSizeSmall" target="garter_laces" local="true">Garter.osd\garter_lacesLowerThighsSizeSmall</Data>
-      <Data name="garter_metalLowerThighsSizeSmall" target="garter_metal" local="true">Garter.osd\garter_metalLowerThighsSizeSmall</Data>
-    </Slider>
-    <Slider name="UpperThighsChubby" invert="false" small="0" big="0">
-      <Data name="garterUpperThighsChubby" target="garter" local="true">Garter.osd\garterUpperThighsChubby</Data>
-      <Data name="garter_lacesUpperThighsChubby" target="garter_laces" local="true">Garter.osd\garter_lacesUpperThighsChubby</Data>
-      <Data name="garter_metalUpperThighsChubby" target="garter_metal" local="true">Garter.osd\garter_metalUpperThighsChubby</Data>
-    </Slider>
-    <Slider name="ThighApart" invert="false" small="0" big="0">
-      <Data name="garterThighApart" target="garter" local="true">Garter.osd\garterThighApart</Data>
-      <Data name="garter_lacesThighApart" target="garter_laces" local="true">Garter.osd\garter_lacesThighApart</Data>
-      <Data name="garter_metalThighApart" target="garter_metal" local="true">Garter.osd\garter_metalThighApart</Data>
-    </Slider>
-    <Slider name="ThighFrontDepth" invert="false" small="0" big="0">
-      <Data name="garterThighFrontDepth" target="garter" local="true">Garter.osd\garterThighFrontDepth</Data>
-      <Data name="garter_lacesThighFrontDepth" target="garter_laces" local="true">Garter.osd\garter_lacesThighFrontDepth</Data>
-      <Data name="garter_metalThighFrontDepth" target="garter_metal" local="true">Garter.osd\garter_metalThighFrontDepth</Data>
-    </Slider>
-    <Slider name="UpperThighsDepth" invert="false" small="0" big="0">
-      <Data name="garterUpperThighsDepth" target="garter" local="true">Garter.osd\garterUpperThighsDepth</Data>
-      <Data name="garter_lacesUpperThighsDepth" target="garter_laces" local="true">Garter.osd\garter_lacesUpperThighsDepth</Data>
-      <Data name="garter_metalUpperThighsDepth" target="garter_metal" local="true">Garter.osd\garter_metalUpperThighsDepth</Data>
-    </Slider>
-    <Slider name="ThighBackDepth" invert="false" small="0" big="0">
-      <Data name="garter_lacesThighBackDepth" target="garter_laces" local="true">Garter.osd\garter_lacesThighBackDepth</Data>
-      <Data name="garter_metalThighBackDepth" target="garter_metal" local="true">Garter.osd\garter_metalThighBackDepth</Data>
-    </Slider>
-    <Slider name="UpperInnerThighSize p|n" invert="false" small="0" big="0">
-      <Data name="garterUpperInnerThighSize p|n" target="garter" local="true">Garter.osd\garterUpperInnerThighSize p|n</Data>
-      <Data name="garter_lacesUpperInnerThighSize p|n" target="garter_laces" local="true">Garter.osd\garter_lacesUpperInnerThighSize p|n</Data>
-      <Data name="garter_metalUpperInnerThighSize p|n" target="garter_metal" local="true">Garter.osd\garter_metalUpperInnerThighSize p|n</Data>
-    </Slider>
-    <Slider name="LowerOuterThighSize Bigger" invert="false" small="0" big="0">
-      <Data name="garter_lacesLowerOuterThighSize Bigger" target="garter_laces" local="true">Garter.osd\garter_lacesLowerOuterThighSize Bigger</Data>
-      <Data name="garter_metalLowerOuterThighSize Bigger" target="garter_metal" local="true">Garter.osd\garter_metalLowerOuterThighSize Bigger</Data>
-    </Slider>
-    <Slider name="ThighsOuter big" invert="false" small="0" big="0">
-      <Data name="garterThighsOuter big" target="garter" local="true">Garter.osd\garterThighsOuter big</Data>
-      <Data name="garter_lacesThighsOuter big" target="garter_laces" local="true">Garter.osd\garter_lacesThighsOuter big</Data>
-      <Data name="garter_metalThighsOuter big" target="garter_metal" local="true">Garter.osd\garter_metalThighsOuter big</Data>
-    </Slider>
-    <Slider name="ThighsOuter small" invert="false" small="0" big="0">
-      <Data name="garterThighsOuter small" target="garter" local="true">Garter.osd\garterThighsOuter small</Data>
-      <Data name="garter_lacesThighsOuter small" target="garter_laces" local="true">Garter.osd\garter_lacesThighsOuter small</Data>
-      <Data name="garter_metalThighsOuter small" target="garter_metal" local="true">Garter.osd\garter_metalThighsOuter small</Data>
-    </Slider>
-    <Slider name="Thighs_Inner_Size_n|p" invert="false" small="0" big="0">
-      <Data name="garter_lacesThighs_Inner_Size_n|p" target="garter_laces" local="true">Garter.osd\garter_lacesThighs_Inner_Size_n|p</Data>
-      <Data name="garter_metalThighs_Inner_Size_n|p" target="garter_metal" local="true">Garter.osd\garter_metalThighs_Inner_Size_n|p</Data>
-    </Slider>
-    <Slider name="RectusFemoris" invert="false" small="0" big="0">
-      <Data name="garterRectusFemoris" target="garter" local="true">Garter.osd\garterRectusFemoris</Data>
-      <Data name="garter_lacesRectusFemoris" target="garter_laces" local="true">Garter.osd\garter_lacesRectusFemoris</Data>
-      <Data name="garter_metalRectusFemoris" target="garter_metal" local="true">Garter.osd\garter_metalRectusFemoris</Data>
-    </Slider>
-    <Slider name="VastusLateralis" invert="false" small="0" big="0">
-      <Data name="garter_lacesVastusLateralis" target="garter_laces" local="true">Garter.osd\garter_lacesVastusLateralis</Data>
-      <Data name="garter_metalVastusLateralis" target="garter_metal" local="true">Garter.osd\garter_metalVastusLateralis</Data>
-    </Slider>
-    <Slider name="IllotibialTract" invert="false" small="0" big="0">
-      <Data name="garterIllotibialTract" target="garter" local="true">Garter.osd\garterIllotibialTract</Data>
-      <Data name="garter_lacesIllotibialTract" target="garter_laces" local="true">Garter.osd\garter_lacesIllotibialTract</Data>
-      <Data name="garter_metalIllotibialTract" target="garter_metal" local="true">Garter.osd\garter_metalIllotibialTract</Data>
-    </Slider>
-    <Slider name="Hamstrings" invert="false" small="0" big="0">
-      <Data name="garter_lacesHamstrings" target="garter_laces" local="true">Garter.osd\garter_lacesHamstrings</Data>
-      <Data name="garter_metalHamstrings" target="garter_metal" local="true">Garter.osd\garter_metalHamstrings</Data>
-    </Slider>
-    <Slider name="Bowed_Calves" invert="false" small="0" big="0">
-      <Data name="garter_lacesBowed_Calves" target="garter_laces" local="true">Garter.osd\garter_lacesBowed_Calves</Data>
-      <Data name="garter_metalBowed_Calves" target="garter_metal" local="true">Garter.osd\garter_metalBowed_Calves</Data>
-    </Slider>
-    <Slider name="GluteFlex_L" invert="false" small="0" big="0" hidden="true">
-      <Data name="garterGluteFlex_L" target="garter" local="true">Garter.osd\garterGluteFlex_L</Data>
-      <Data name="garter_lacesGluteFlex_L" target="garter_laces" local="true">Garter.osd\garter_lacesGluteFlex_L</Data>
-      <Data name="garter_metalGluteFlex_L" target="garter_metal" local="true">Garter.osd\garter_metalGluteFlex_L</Data>
-    </Slider>
-    <Slider name="GluteFlex_R" invert="false" small="0" big="0" hidden="true">
-      <Data name="garterGluteFlex_R" target="garter" local="true">Garter.osd\garterGluteFlex_R</Data>
-      <Data name="garter_lacesGluteFlex_R" target="garter_laces" local="true">Garter.osd\garter_lacesGluteFlex_R</Data>
-      <Data name="garter_metalGluteFlex_R" target="garter_metal" local="true">Garter.osd\garter_metalGluteFlex_R</Data>
-    </Slider>
-    <Slider name="ThighsFlex_L" invert="false" small="0" big="0" hidden="true">
-      <Data name="garterThighsFlex_L" target="garter" local="true">Garter.osd\garterThighsFlex_L</Data>
-      <Data name="garter_lacesThighsFlex_L" target="garter_laces" local="true">Garter.osd\garter_lacesThighsFlex_L</Data>
-      <Data name="garter_metalThighsFlex_L" target="garter_metal" local="true">Garter.osd\garter_metalThighsFlex_L</Data>
-    </Slider>
-    <Slider name="ThighsFlex_R" invert="false" small="0" big="0" hidden="true">
-      <Data name="garterThighsFlex_R" target="garter" local="true">Garter.osd\garterThighsFlex_R</Data>
-      <Data name="garter_lacesThighsFlex_R" target="garter_laces" local="true">Garter.osd\garter_lacesThighsFlex_R</Data>
-      <Data name="garter_metalThighsFlex_R" target="garter_metal" local="true">Garter.osd\garter_metalThighsFlex_R</Data>
-    </Slider>
-    <Slider name="AbsFlex" invert="false" small="0" big="0" hidden="true">
-      <Data name="garterAbsFlex" target="garter" local="true">Garter.osd\garterAbsFlex</Data>
-      <Data name="garter_lacesAbsFlex" target="garter_laces" local="true">Garter.osd\garter_lacesAbsFlex</Data>
-      <Data name="garter_metalAbsFlex" target="garter_metal" local="true">Garter.osd\garter_metalAbsFlex</Data>
-    </Slider>
-    <Slider name="Nyl2_Root" invert="false" small="0" big="0" hidden="true">
-      <Data name="garterNyl2_Root" target="garter" local="true">Garter.osd\garterNyl2_Root</Data>
-      <Data name="garter_lacesNyl2_Root" target="garter_laces" local="true">Garter.osd\garter_lacesNyl2_Root</Data>
-      <Data name="garter_metalNyl2_Root" target="garter_metal" local="true">Garter.osd\garter_metalNyl2_Root</Data>
-    </Slider>
-  </SliderSet>
-<SliderSet name="PSQ UBE 变身 - TERA魅魔 - 尾巴">
+<SliderSetInfo version="1">
+  <SliderSet name="PSQ UBE 变身 - TERA魅魔 - 尾巴">
     <ReferenceInfo ProjectFile="SliderSets\UBE SE 2.0 Release Body.osp" ProjectName="UBE SE 2.0 Release Body" ShapeName="BaseShape" />
     <DataFolder>PSQ_Package_20261106\UBE\F011</DataFolder>
     <SourceFile>tail.nif</SourceFile>
@@ -833,7 +128,7 @@
       <Data name="tailGluteFlex_R" target="tail" local="true">tail.osd\tailGluteFlex_R</Data>
     </Slider>
   </SliderSet>
-<SliderSet name="PSQ UBE 变身 - TERA魅魔 - 护手">
+  <SliderSet name="PSQ UBE 变身 - TERA魅魔 - 护手">
     <ReferenceInfo ProjectFile="SliderSets\UBE SE 2.0 Release Hands.osp" ProjectName="UBE SE 2.0 Release Hands" ShapeName="Hands" />
     <DataFolder>PSQ_Package_20261106\UBE\F011</DataFolder>
     <SourceFile>Gauntlets.nif</SourceFile>
@@ -850,17 +145,20 @@
       <Data name="HandsBiggerHands_CBBE-like" target="Hands">UBE SE 2.0 Release Hands.osd\HandsBiggerHands_CBBE-like</Data>
       <Data name="glovesBiggerHands_CBBE-like" target="gloves">Gauntlets.osd\glovesBiggerHands_CBBE-like</Data>
       <Data name="gloves_feathersBiggerHands_CBBE-like" target="gloves_feathers">Gauntlets.osd\gloves_feathersBiggerHands_CBBE-like</Data>
-    <Data name="gloves_metalBiggerHands_CBBE-like" target="gloves_metal">Gauntlets.osd\gloves_metalBiggerHands_CBBE-like</Data></Slider>
+      <Data name="gloves_metalBiggerHands_CBBE-like" target="gloves_metal">Gauntlets.osd\gloves_metalBiggerHands_CBBE-like</Data>
+    </Slider>
     <Slider name="Amazon" invert="false" small="0" big="0">
       <Data name="HandsAmazon" target="Hands">UBE SE 2.0 Release Hands.osd\HandsAmazon</Data>
       <Data name="glovesAmazon" target="gloves">Gauntlets.osd\glovesAmazon</Data>
       <Data name="gloves_feathersAmazon" target="gloves_feathers">Gauntlets.osd\gloves_feathersAmazon</Data>
-    <Data name="gloves_metalAmazon" target="gloves_metal">Gauntlets.osd\gloves_metalAmazon</Data></Slider>
+      <Data name="gloves_metalAmazon" target="gloves_metal">Gauntlets.osd\gloves_metalAmazon</Data>
+    </Slider>
     <Slider name="FitnessDetails_2.0" invert="false" small="0" big="0">
       <Data name="HandsFitnessDetails_2.0" target="Hands">UBE SE 2.0 Release Hands.osd\HandsFitnessDetails_2.0</Data>
       <Data name="glovesFitnessDetails_2.0" target="gloves">Gauntlets.osd\glovesFitnessDetails_2.0</Data>
       <Data name="gloves_feathersFitnessDetails_2.0" target="gloves_feathers">Gauntlets.osd\gloves_feathersFitnessDetails_2.0</Data>
-    <Data name="gloves_metalFitnessDetails_2.0" target="gloves_metal">Gauntlets.osd\gloves_metalFitnessDetails_2.0</Data></Slider>
+      <Data name="gloves_metalFitnessDetails_2.0" target="gloves_metal">Gauntlets.osd\gloves_metalFitnessDetails_2.0</Data>
+    </Slider>
     <Slider name="Skinny2.0" invert="false" small="0" big="0">
       <Data name="HandsSkinny2.0" target="Hands">UBE SE 2.0 Release Hands.osd\HandsSkinny2.0</Data>
       <Data name="glovesSkinny2.0" target="gloves">Gauntlets.osd\glovesSkinny2.0</Data>
@@ -883,7 +181,8 @@
       <Data name="HandsJuicy_body" target="Hands">UBE SE 2.0 Release Hands.osd\HandsJuicy_body</Data>
       <Data name="glovesJuicy_body" target="gloves">Gauntlets.osd\glovesJuicy_body</Data>
       <Data name="gloves_feathersJuicy_body" target="gloves_feathers">Gauntlets.osd\gloves_feathersJuicy_body</Data>
-    <Data name="gloves_metalJuicy_body" target="gloves_metal">Gauntlets.osd\gloves_metalJuicy_body</Data></Slider>
+      <Data name="gloves_metalJuicy_body" target="gloves_metal">Gauntlets.osd\gloves_metalJuicy_body</Data>
+    </Slider>
     <Slider name="Peachy" invert="false" small="0" big="0">
       <Data name="HandsPeachy" target="Hands">UBE SE 2.0 Release Hands.osd\HandsPeachy</Data>
       <Data name="glovesPeachy" target="gloves">Gauntlets.osd\glovesPeachy</Data>
@@ -944,7 +243,8 @@
       <Data name="HandsThicc_forearms" target="Hands">UBE SE 2.0 Release Hands.osd\HandsThicc_forearms</Data>
       <Data name="glovesThicc_forearms" target="gloves">Gauntlets.osd\glovesThicc_forearms</Data>
       <Data name="gloves_feathersThicc_forearms" target="gloves_feathers">Gauntlets.osd\gloves_feathersThicc_forearms</Data>
-    <Data name="gloves_metalThicc_forearms" target="gloves_metal">Gauntlets.osd\gloves_metalThicc_forearms</Data></Slider>
+      <Data name="gloves_metalThicc_forearms" target="gloves_metal">Gauntlets.osd\gloves_metalThicc_forearms</Data>
+    </Slider>
     <Slider name="ForearmSize" invert="false" small="0" big="0">
       <Data name="HandsForearmSize" target="Hands">UBE SE 2.0 Release Hands.osd\HandsForearmSize</Data>
       <Data name="glovesForearmSize" target="gloves">Gauntlets.osd\glovesForearmSize</Data>
@@ -1058,7 +358,7 @@
       <Data name="gloves_feathersart_Curve" target="gloves_feathers">Gauntlets.osd\gloves_feathersart_Curve</Data>
     </Slider>
   </SliderSet>
-<SliderSet name="PSQ UBE 变身 - TERA魅魔 - 胸衣">
+  <SliderSet name="PSQ UBE 变身 - TERA魅魔 - 胸衣">
     <ReferenceInfo ProjectFile="SliderSets\UBE SE 2.0 Release Body.osp" ProjectName="UBE SE 2.0 Release Body" ShapeName="BaseShape" />
     <DataFolder>PSQ_Package_20261106\UBE\F011</DataFolder>
     <SourceFile>cuirass.nif</SourceFile>
@@ -1946,7 +1246,7 @@
       <Data name="BaseShapeAreolaeSizeSmall_UV_fix" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAreolaeSizeSmall_UV_fix</Data>
     </Slider>
   </SliderSet>
-<SliderSet name="PSQ UBE 变身 - TERA魅魔 - 长袜">
+  <SliderSet name="PSQ UBE 变身 - TERA魅魔 - 长袜">
     <ReferenceInfo ProjectFile="SliderSets\UBE SE 2.0 Release Body.osp" ProjectName="UBE SE 2.0 Release Body" ShapeName="BaseShape" />
     <DataFolder>PSQ_Package_20261106\UBE\F011</DataFolder>
     <SourceFile>Stockings.nif</SourceFile>
@@ -2624,7 +1924,7 @@
       <Data name="BaseShapeAreolaeSizeSmall_UV_fix" target="BaseShape">UBE SE 2.0 Release Body.osd\BaseShapeAreolaeSizeSmall_UV_fix</Data>
     </Slider>
   </SliderSet>
-<SliderSet name="PSQ UBE 变身 - TERA魅魔 - 靴子">
+  <SliderSet name="PSQ UBE 变身 - TERA魅魔 - 靴子">
     <ReferenceInfo ProjectFile="RefTemplates\PSQ UBE\PSQ UBE Heel Reference.osp" ProjectName="PSQ UBE Heel Reference" ShapeName="Feet" />
     <DataFolder>PSQ_Package_20261106\UBE\F011</DataFolder>
     <SourceFile>Boots.nif</SourceFile>
@@ -2879,7 +2179,7 @@
       <Data name="FeetToeNailsZap" target="Feet">PSQ UBE Heel Reference.osd\FeetToeNailsZap</Data>
     </Slider>
   </SliderSet>
-<SliderSet name="PSQ UBE 变身 - TERA魅魔 - 项圈">
+  <SliderSet name="PSQ UBE 变身 - TERA魅魔 - 项圈">
     <ReferenceInfo ProjectFile="SliderSets\UBE SE 2.0 Release Body.osp" ProjectName="UBE SE 2.0 Release Body" ShapeName="BaseShape" />
     <DataFolder>PSQ_Package_20261106\UBE\F011</DataFolder>
     <SourceFile>Collar.nif</SourceFile>
