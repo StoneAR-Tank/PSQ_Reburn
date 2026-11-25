@@ -111,9 +111,11 @@ v0.38 の C++ ネイティブコンポーネントは本体と共に導入され
 
 - **ojanen** — [PSQ PlayerSuccubusQuest for SexLab](https://www.loverslab.com/files/file/667-psq-playersuccubusquest-for-sexlab/) 原作。
 - **PSQ 中国語翻訳・統合版の作者と貢献者** — 翻訳・統合作業に感謝します。
+- **零式** — 以前の PSQ 中国語翻訳。
 - **[Body Change NG](https://github.com/compilecraftworks/Body-Change-NG) の作者と貢献者** — 体型・肌の管理。
 - **TRX Futanari SOS Addon の作者と貢献者** — ふたなり装備とテクスチャ。
 - **衣装、アニメーション、モデル、テクスチャ、音声、フレームワーク、その他の互換 MOD の作者と貢献者** — 制作に感謝します。
+- **[yuboge](https://github.com/yuboge) と [DouerGan](https://github.com/DouerGan)** — 不具合の報告、分析、修正案をありがとうございます。問題を報告し、MOD の改善に協力してくださる皆さんにも感謝します。
 - **StoneAR-Tank** — PSQ Reburn の改変、統合、公開。進化紋様には AI を補助的に使用しています。
 
 各リソースの権利とライセンスはそれぞれの作者に帰属します。関連ライセンスは本体の [Docs フォルダー](PSQ-Reburn/Docs/)を参照してください。

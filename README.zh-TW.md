@@ -111,9 +111,11 @@ v0.38 的 C++ 原生組件隨本體安裝，用於魅魔面板、變身和獨立
 
 - **ojanen** — [PSQ PlayerSuccubusQuest for SexLab](https://www.loverslab.com/files/file/667-psq-playersuccubusquest-for-sexlab/) 原作。
 - **PSQ 漢化與整合版本的作者及貢獻者** — 感謝原有漢化與整合工作。
+- **零式** — 早期 PSQ 中文翻譯。
 - **[Body Change NG](https://github.com/compilecraftworks/Body-Change-NG) 的作者與貢獻者** — 身形和皮膚管理。
 - **TRX Futanari SOS Addon 的作者與貢獻者** — 扶她裝備和貼圖資源。
 - **服裝、動作、模型、貼圖、音效、框架和其他相容模組的作者與貢獻者** — 感謝各位的創作。
+- **[yuboge](https://github.com/yuboge) 與 [DouerGan](https://github.com/DouerGan)** — 感謝回報問題、提供分析與修復建議。也感謝所有回報問題、協助改進模組的玩家。
 - **StoneAR-Tank** — PSQ Reburn 的修改、整合與發布。進化紋樣採用 AI 輔助設計。
 
 各資源的權利和許可歸其原作者所有；相關許可檔案可在本體的 [Docs 資料夾](PSQ-Reburn/Docs/)中查看。

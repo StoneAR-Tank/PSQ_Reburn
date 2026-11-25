@@ -111,9 +111,11 @@ The required C++ native component is installed with v0.38 and supports the Succu
 
 - **ojanen** — original [PSQ PlayerSuccubusQuest for SexLab](https://www.loverslab.com/files/file/667-psq-playersuccubusquest-for-sexlab/).
 - **Authors and contributors of the Chinese PSQ translations and compilations** — thank you for the earlier work.
+- **零式** — the earlier Chinese translation of PSQ.
 - **[Body Change NG](https://github.com/compilecraftworks/Body-Change-NG) authors and contributors** — body and skin management.
 - **TRX Futanari SOS Addon authors and contributors** — futanari equipment and textures.
 - **Authors and contributors of outfits, animations, models, textures, sounds, frameworks, and other compatible mods** — thank you for your work.
+- **[yuboge](https://github.com/yuboge) and [DouerGan](https://github.com/DouerGan)** — thank you for reporting issues, sharing analysis, and suggesting fixes. Thanks also to everyone who reports problems and helps improve the mod.
 - **StoneAR-Tank** — PSQ Reburn modifications, integration, and release. The evolution markings were designed with AI assistance.
 
 Rights and licenses belong to the respective creators. Relevant license files are in the main package's [Docs folder](PSQ-Reburn/Docs/).

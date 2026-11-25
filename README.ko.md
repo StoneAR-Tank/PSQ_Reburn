@@ -111,9 +111,11 @@ v0.38의 필수 C++ 네이티브 구성 요소는 본체와 함께 설치되며 
 
 - **ojanen** — [PSQ PlayerSuccubusQuest for SexLab](https://www.loverslab.com/files/file/667-psq-playersuccubusquest-for-sexlab/) 원작.
 - **PSQ 중국어 번역 및 통합판 제작자와 기여자** — 기존 번역과 통합 작업에 감사드립니다.
+- **零式** — 이전 PSQ 중국어 번역.
 - **[Body Change NG](https://github.com/compilecraftworks/Body-Change-NG) 제작자와 기여자** — 체형과 피부 관리.
 - **TRX Futanari SOS Addon 제작자와 기여자** — 후타나리 장비와 텍스처 리소스.
 - **의상, 애니메이션, 모델, 텍스처, 사운드, 프레임워크 및 기타 호환 모드의 제작자와 기여자** — 여러분의 작업에 감사드립니다.
+- **[yuboge](https://github.com/yuboge)와 [DouerGan](https://github.com/DouerGan)** — 문제 제보와 분석, 수정 제안에 감사드립니다. 문제를 제보하고 모드 개선을 도와주시는 모든 분께도 감사드립니다.
 - **StoneAR-Tank** — PSQ Reburn 수정, 통합 및 배포. 진화 문양 디자인에는 AI를 보조적으로 사용했습니다.
 
 각 리소스의 권리와 라이선스는 원작자에게 있습니다. 관련 라이선스 파일은 본체의 [Docs 폴더](PSQ-Reburn/Docs/)에서 확인할 수 있습니다.
