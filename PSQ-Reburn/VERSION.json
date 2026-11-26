@@ -1,6 +1,6 @@
 {
   "name": "PSQ Reburn",
-  "version": "0.4",
+  "version": "0.41",
   "date": "2026-11-26",
   "channel": "release",
   "optional_modules_separate": [
@@ -134,7 +134,7 @@
     "game_runtime_tested": false
   },
   "package_revision": 66,
-  "display_version": "v0.4",
+  "display_version": "v0.41",
   "version_relabel": {
     "date": "2026-10-26",
     "previous_package_label": "0.22",
@@ -1127,5 +1127,15 @@
     "base_release": "0.39",
     "game_runtime_tested": false,
     "tdf_optional": true
+  },
+  "v041_consolidation": {
+    "base_release": "0.4",
+    "inline_body_proportion_sliders": true,
+    "default_proportions_percent": {
+      "height": 100,
+      "breast": 100,
+      "hips": 100
+    },
+    "game_runtime_tested": false
   }
 }

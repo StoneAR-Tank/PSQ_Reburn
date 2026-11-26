@@ -1,4 +1,4 @@
-# PSQ Reburn v0.4 完整版（手动安装）
+# PSQ Reburn v0.41 完整版（手动安装）
 
 本包包含 PSQ 本体和可选组件。一般玩家推荐使用同版 FOMOD，在安装时选择语言、换装方式、分辨率和所需组件。
 
@@ -33,4 +33,3 @@
 - `90-Apropos修复` 和 `93-Apropos-Patch-1.0023`：只能选择一个。前者用于 Apropos 2 原版；后者用于安装了 Patch 1.0023 的版本。先复制所选文件夹，再按步骤 4 覆盖对应语言的同代号文件夹。
 - `95-TDF-Optimization`：需要已启用 TDF Enhanced Prostitution。先复制 `common` 文件夹内容，再复制所选语言代码下 `scripts` 文件夹的内容到模组根目录的 `scripts` 文件夹。
 
-详细说明和署名见 Docs。
