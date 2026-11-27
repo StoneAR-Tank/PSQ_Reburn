@@ -1,7 +1,7 @@
 {
   "PSQ PlayerSuccubusQuest.esm": "07c77729a9ba9aa67fdbe455eae09ab61f790ff81a34299087729c6f6027ee77",
-  "README-安装说明.md": "d255a931ce21933e8e6934054e4cd6e331ac9ed8d164ab5fba89151debe1e40f",
-  "VERSION.json": "1f6905f03b98c08db58bf017840ffa3c0aadb59522296fdabd04fe8e9c5ee8cb",
+  "README-安装说明.md": "5c6428faca22e00b60d7d4161c4261abfe7b55c6618aa2743ef0d5da33c60874",
+  "VERSION.json": "80e1bd0494f02bd2aca6eaf489fab2edb4cfb62a23a9bad6aef46e68177e6432",
   "scripts/arousaltransformscript.pex": "3c198a63d6fc5b5a7001b0cdc45633ae725bd2f8e21fb25bb50cf5a71b0c2b1e",
   "scripts/bb_pimpingandplayerquestutil.pex": "eb9c6069f1b558de81a73d8438397b28b746151d65dab8376e83d24a89a44c6e",
   "scripts/bb_pimpingautoquestscript.pex": "e30470b30dbf5ee75ca0d6fec4e56652a756e2db3ba494f5267790196e2eff90",
@@ -710,7 +710,7 @@
   "meshes/PSQ/WeiLongCrowns/Putra/ElveniaSilver/ElveniaEarrings_1.nif": "235b2004845f96e9d1682f1a2ffb6b4a291ad0c780df9a4d84663ed1d024189c",
   "meshes/PSQ/WeiLongCrowns/Shas'/Chains & Silks/Chains & Silks - Veil TR.nif": "1715a582a00229d4c7eb5bb83e3e78f5e22acf3a33e95791e0aee1e313ca94c1",
   "meshes/PSQ/WeiLongCrowns/vtaw/Fiend/circlet.nif": "be5afd1e88927c07905844471afc1475dd524053df43a9529a36b5d3ec15194c",
-  "SKSE/Plugins/PSQAppearance.dll": "6b455e8d8e48cccaa8aa0884dbbcde7061a32d441d2018769fa4ddf4f2c43313",
+  "SKSE/Plugins/PSQAppearance.dll": "c2bfb699e8165bcb16e463d9440921c6358d6b937ade27a50782c8c42d63a4f2",
   "scripts/PSQSenseScene039.pex": "28f742d2313309bb1a8ca9f807f0a4374ace13221071db6c76d07c99de612378",
   "SKSE/Plugins/PSQTDFCompatibility.dll": "1dd15625e3577f2aa94b8fe885325175022bc54644a7b389fb94ab44fbfad658",
   "scripts/PSQTDFCompat039.pex": "ed57894d2989ca7034a5d026e430d0a8ddca7d8dce2dcb0379556ba9e0926f8f",
@@ -722,5 +722,6 @@
   "meshes/PSQ/FX/Prototype/PSQFX_EntryRelease.nif": "2cec35c320a197cab39a70de364590759a38e3ff5c1545f472091599cfd8de54",
   "SKSE/Plugins/PSQ/TransformBreastScale.txt": "eea8254c7500ba3de996aa8ad6af399183f04e17d4a8102fde539dbc93a90012",
   "textures/PSQ/RoseStorm/HenshinBriarRose.dds": "6396b0f7e3f4ce7aef3a82f3acc42fe586cecef959b63ac6f22021a350e35393",
-  "textures/PSQ/RoseStorm/TurnedRoseSilk.dds": "d08513346244fe93fb99a1532ddac6c596b4e7d21aaa2f9da335d4e09ca79123"
+  "textures/PSQ/RoseStorm/TurnedRoseSilk.dds": "d08513346244fe93fb99a1532ddac6c596b4e7d21aaa2f9da335d4e09ca79123",
+  "Docs/PSQ/Panel-Font-License.txt": "aeae4fec641c96cf3daf77a166c7dcd88af72b9169225e1908d7b4c9d4dc2b89"
 }

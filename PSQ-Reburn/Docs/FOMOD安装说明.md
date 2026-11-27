@@ -1,4 +1,4 @@
-# PSQ Reburn v0.41 安装说明
+# PSQ Reburn v0.42 安装说明
 
 PSQ Reburn 是《上古卷轴 V：天际特别版》的魅魔系统模组。详细功能、前置需求、服装下载、排序建议和致谢，请查看 [项目主页](https://github.com/StoneAR-Tank/PSQ_Reburn)。
 
